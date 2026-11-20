@@ -30,25 +30,15 @@ function parseArgs(argv) {
   return args;
 }
 
-function makeAutoCover(videoFilename) {
-  const raw = videoFilename.replace(/\.mp4$/i, "").replace(/^\d{6}\s+/, "").trim();
-  const title = raw
-    .split(/\s+/)
-    .map((w) => (w ? w[0].toUpperCase() + w.slice(1).toLowerCase() : ""))
-    .join(" ");
-  const words = title.split(/\s+/);
-  let hookLine = "";
-  let mainLine = title;
-  if (words.length > 5) {
-    const mid = Math.max(4, Math.min(6, Math.round(words.length * 0.43)));
-    hookLine = words.slice(0, mid).join(" ");
-    mainLine = words.slice(mid).join(" ");
-  }
-  const bg = "D:\\AI\\full studio\\edit\\tiktok_cover_synced_bg.jpg";
-  const out = "D:\\AI\\full studio\\edit\\.tmp_tiktok_cover.png";
+function makeAutoCover(localVideoPath, titleSource) {
+  const pyExe =
+    process.env.PYTHON && fs.existsSync(process.env.PYTHON)
+      ? process.env.PYTHON
+      : "C:\Users\Hang thu\AppData\Local\Programs\Python\Python311\python.exe";
+  const out = "D:\AI\full studio\edit\.tmp_tiktok_cover.png";
   execFileSync(
-    process.execPath,
-    ["D:\\AI\\full studio\\edit\\render_cover_poster.mjs", bg, hookLine, mainLine, out],
+    pyExe,
+    ["D:\AI\full studio\edit\make_tiktok_cover.py", localVideoPath, out, titleSource],
     { stdio: "inherit" }
   );
   return out;
@@ -62,10 +52,12 @@ function pickOldestMp4() {
     .map((d) => {
       const full = path.join(SRC_DIR, d.name);
       const st = fs.statSync(full);
-      return { name: d.name, full, mtimeMs: st.mtimeMs };
+      const isFull = /full/i.test(d.name);
+      return { name: d.name, full, mtimeMs: st.mtimeMs, isFull };
     })
     .sort((a, b) => a.mtimeMs - b.mtimeMs);
-  return files[0] || null;
+  const singles = files.filter((f) => !f.isFull);
+  return singles[0] || files[0] || null;
 }
 
 function fallbackCaption(filename) {
@@ -205,7 +197,7 @@ async function main() {
   await page.keyboard.press("Escape");
 
   // Always attach synchronized cover image
-  const coverPath = args.cover && fs.existsSync(args.cover) ? args.cover : makeAutoCover(picked.name);
+  const coverPath = args.cover && fs.existsSync(args.cover) ? args.cover : makeAutoCover(localTemp, captionText || picked.name);
   if (fs.existsSync(coverPath)) {
     const editCoverBtn = page.locator('button:has-text("Sửa ảnh bìa"), div:has-text("Sửa ảnh bìa"), button:has-text("Edit cover"), div:has-text("Edit cover")').last();
     if (await editCoverBtn.isVisible({ timeout: 15000 }).catch(() => false)) {

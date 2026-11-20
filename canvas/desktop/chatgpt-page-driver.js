@@ -197,28 +197,56 @@
   function poll({ prevAssistantCount = 0, t0 = 0 }) {
     const elapsed = Date.now() - t0;
     const stopBtn = findStopButton();
+    const assistantTurns = $$('[data-message-author-role="assistant"]');
+    const newTurns = assistantTurns.slice(Math.max(0, prevAssistantCount));
+    const latestScope = newTurns.length ? newTurns[newTurns.length - 1] : null;
+    const rawScopeText = latestScope ? txt(latestScope) : "";
     const mainText = txt($("main") || document.body);
+
+    // Nhận diện đầy đủ trạng thái đang Suy luận (Thinking) hoặc đang dựng khung ảnh (shimmer/progressbar) của ChatGPT mới
+    const hasRenderSkeleton = Boolean(
+      latestScope &&
+      $$('[role="progressbar"], [aria-busy="true"], [class*="shimmer"], [class*="skeleton"]', latestScope).some(visible)
+    );
     const creatingIndicator =
       !!stopBtn ||
-      (elapsed < 90000 && /Creating image\.\.\.|Đang tạo hình ảnh\.\.\./i.test(mainText));
+      hasRenderSkeleton ||
+      (elapsed < 150000 &&
+        /Creating image|Đang tạo hình ảnh|Getting started|Đang bắt đầu|Đang suy luận|Thinking\.\.\./i.test(
+          rawScopeText || mainText
+        ));
     const isStreaming = !!stopBtn || creatingIndicator;
 
     const images = collectGeneratedImages();
 
-    // Chỉ nhận DONE khi ChatGPT đã dừng stream hoàn toàn (hết nút Stop) VÀ có ít nhất 1 ảnh hoàn chỉnh!
+    // Chỉ nhận DONE khi ChatGPT đã dừng stream hoàn toàn (hết nút Stop & hết khung chờ) VÀ có ít nhất 1 ảnh hoàn chỉnh!
     if (!isStreaming && images.length > 0 && elapsed > 3000) {
       return { state: "done", images, elapsed };
     }
 
-    const assistantTurns = $$('[data-message-author-role="assistant"]');
-    const newTurns = assistantTurns.slice(Math.max(0, prevAssistantCount));
-    const latestScope = newTurns.length ? newTurns[newTurns.length - 1] : null;
-    const scopeText = latestScope ? txt(latestScope) : "";
+    // Loại bỏ dòng tiêu đề 'Đã suy luận trong X giây / Thought for Xs' để không bao giờ nhầm trạng thái Suy luận thành 'trả lời bằng chữ'!
+    const cleanedReplyText = rawScopeText
+      .replace(/^(Đã suy luận|Suy luận|Thought)\s*(trong|for)?\s*\d+\s*(giây|phút|s|sec|seconds|m)?\s*/gi, "")
+      .trim();
 
-    if (!isStreaming && newTurns.length > 0 && images.length === 0 && elapsed > 15000 && scopeText.length > 15) {
+    const isHardQuotaOrLimit =
+      /reached your.*limit|đạt đến giới hạn|đạt giới hạn tạo|try again later|thử lại sau|too many requests/i.test(
+        cleanedReplyText
+      );
+    if (!isStreaming && newTurns.length > 0 && images.length === 0 && isHardQuotaOrLimit && elapsed > 5000) {
       return {
         state: "failed",
-        error: "ChatGPT trả lời bằng chữ thay vì tạo ảnh: " + scopeText.replace(/\s+/g, " ").slice(0, 260),
+        hardLimit: true,
+        error: "ChatGPT chạm giới hạn lượt tạo ảnh: " + cleanedReplyText.replace(/\s+/g, " ").slice(0, 260),
+        images: [],
+      };
+    }
+
+    // Chờ tối thiểu 45 giây sau khi dừng hẳn stream mà vẫn chỉ có văn bản thực sự (dài > 25 ký tự sau khi bỏ dòng 'Đã suy luận') mới báo lỗi
+    if (!isStreaming && newTurns.length > 0 && images.length === 0 && elapsed > 45000 && cleanedReplyText.length > 25) {
+      return {
+        state: "failed",
+        error: "ChatGPT trả lời bằng chữ thay vì tạo ảnh: " + cleanedReplyText.replace(/\s+/g, " ").slice(0, 260),
         images: [],
       };
     }

@@ -1,69 +1,318 @@
-"""Extract 3 close-up emotional character frames from a video and render a 1080x1920 cinema poster cover."""
+"""Pick 1 best dramatic frame from a video and render a 1080x1920 TikTok cover with phrase-safe Vietnamese line breaks."""
+import json
 import os
 import re
 import subprocess
 import sys
 import tempfile
-import numpy as np
 import cv2
+import numpy as np
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-FONT_DIR = r"Z:\Máy tính khác\My Computer\Document HT Media\TLH\Edit\04_Font Chữ TVC & Chữ Gradient"
+
+TYPO_FIXES = [
+    (r"\bnhà trồng\b", "nhà chồng"),
+    (r"\bchữ hiêu\b", "chữ hiếu"),
+    (r"\btrong nha\b", "trong nhà"),
+    (r"\bkhó thể sao\b", "khó thế sao"),
+]
+
+# Inseparable Vietnamese compound words & tight collocations (longest first)
+COMPOUND_PHRASES = [
+    "vô tích sự",
+    "trọng nam khinh nữ",
+    "ơn sinh thành",
+    "cả một đời",
+    "khó thế sao",
+    "đã đi đâu",
+    "300 triệu",
+    "nhà chồng",
+    "nhà ngoại",
+    "nhà nội",
+    "nhà vợ",
+    "mẹ chồng",
+    "bố chồng",
+    "ba chồng",
+    "em chồng",
+    "chị chồng",
+    "anh chồng",
+    "mẹ ruột",
+    "mẹ quê",
+    "con dâu",
+    "nàng dâu",
+    "làm dâu",
+    "con ruột",
+    "con trai",
+    "con gái",
+    "con rể",
+    "vợ chồng",
+    "người dưng",
+    "gọi mẹ",
+    "gia đình",
+    "bữa cơm",
+    "vui vẻ",
+    "chăm lo",
+    "quần quật",
+    "cả ngày",
+    "lục túi",
+    "đáy túi",
+    "thứ này",
+    "đã lâu",
+    "chưa có",
+    "động tĩnh",
+    "lợi dụng",
+    "cái kết",
+    "vất vả",
+    "ngược xuôi",
+    "chỉ lo",
+    "đi nhậu",
+    "chữ hiếu",
+    "nên tròn",
+    "chữ nhân",
+    "bất nghĩa",
+    "túi cá",
+    "số tiền",
+    "quản lý",
+    "chi tiêu",
+    "trong nhà",
+    "sinh thành",
+    "lớn hơn",
+    "biển cả",
+    "một đời",
+    "thả vườn",
+    "gà quê",
+    "rau sạch",
+    "ở cữ",
+    "tập 1",
+    "tập 2",
+    "tập 3",
+]
+
+# Natural clause/phrase starters where starting a new line reads very smoothly in Vietnamese
+NATURAL_LINE_STARTERS = {
+    "nhưng",
+    "mà",
+    "vẫn",
+    "thì",
+    "và",
+    "cho",
+    "vào",
+    "với",
+    "để",
+    "vì",
+    "khi",
+    "lén",
+    "chỉ",
+    "chưa",
+    "đã",
+    "khó",
+    "cả",
+    "trọng",
+    "chi",
+}
 
 
 def clean_title(raw: str) -> str:
-    s = os.path.basename(raw)
-    s = re.sub(r"\.mp4$", "", s, flags=re.I)
+    s = raw.strip()
+    if s.lower().endswith(".mp4") or "\\" in s or "/" in s:
+        s = os.path.basename(s)
+        s = re.sub(r"\.mp4$", "", s, flags=re.I)
+    s = re.sub(r"#\S+", "", s)
     s = re.sub(r"^\d{6}\s+", "", s)
-    s = s.strip()
-    # Title Case works best for expressive brush-script calligraphy fonts
-    return " ".join(w[:1].upper() + w[1:].lower() if w else "" for w in s.split())
+    s = re.sub(r"\(\s*(?:full|\d+)\s*\)", "", s, flags=re.I)
+    s = re.sub(r"\bfull\b$", "", s, flags=re.I)
+    s = re.sub(r"\s+", " ", s).strip(" -_,.")
+    for pat, rep in TYPO_FIXES:
+        s = re.sub(pat, rep, s, flags=re.I)
+    return s.strip()
 
 
-def score_closeup_emotion(bgr: np.ndarray) -> tuple[float, np.ndarray]:
-    """Score higher for close-up portraits (shallow DOF center vs blurred edges + skin tone in upper-center)."""
+def tokenize_vietnamese_units(title: str) -> list[str]:
+    """Group compound Vietnamese words into atomic units so they are never split across lines."""
+    words = title.split()
+    lower_words = [re.sub(r"[^\w\dàáảãạăắằẳẵặâấầẩẫậèéẻẽẹêếềểễệìíỉĩịòóỏõọôốồổỗộơớờởỡợùúủũụưứừửữựỳýỷỹỵđ]", "", w.lower()) for w in words]
+    phrases_sorted = sorted([p.split() for p in COMPOUND_PHRASES], key=len, reverse=True)
+
+    units = []
+    i = 0
+    n = len(words)
+    while i < n:
+        matched_len = 1
+        for ph in phrases_sorted:
+            k = len(ph)
+            if i + k <= n and lower_words[i : i + k] == ph:
+                matched_len = k
+                break
+        unit = " ".join(words[i : i + matched_len])
+        # If punctuation ends a clause (comma), keep it attached to this unit
+        units.append(unit)
+        i += matched_len
+    return units
+
+
+def split_semantic_lines(title: str) -> tuple[list[str], list[str]]:
+    """
+    Partition Vietnamese title into 2 or 3 phrase-complete lines (never splitting compound words,
+    never leaving a 1-syllable orphan line).
+    Returns (hook_lines_white, main_lines_gold).
+    """
+    words = title.split()
+    n_syllables = len(words)
+    if n_syllables == 0:
+        return [], []
+    if n_syllables <= 3:
+        return [], [title.upper()]
+    if n_syllables == 4:
+        return [" ".join(words[:2]).upper()], [" ".join(words[2:]).upper()]
+
+    units = tokenize_vietnamese_units(title)
+    if len(units) == 1:
+        mid = n_syllables // 2
+        return [" ".join(words[:mid]).upper()], [" ".join(words[mid:]).upper()]
+
+    target_lines = 2 if n_syllables <= 9 else 3
+    target_lines = min(target_lines, len(units))
+
+    def syl_count(line_str: str) -> int:
+        return len(line_str.split())
+
+    def score_partition(lines: list[str]) -> float:
+        # Reject any line with only 1 syllable or overly long (> 6 syllables when 3 lines, > 6 when 2 lines)
+        counts = [syl_count(ln) for ln in lines]
+        if any(c < 2 for c in counts):
+            return 1e9
+        char_lens = [len(ln) for ln in lines]
+        if any(cl > 28 for cl in char_lens):
+            return 1e8 + max(char_lens) * 100.0
+
+        mean_len = sum(char_lens) / len(char_lens)
+        variance = sum((cl - mean_len) ** 2 for cl in char_lens)
+
+        bonus = 0.0
+        # Reward breaking right after a comma or before a natural Vietnamese clause/preposition starter
+        for idx in range(1, len(lines)):
+            prev_ln = lines[idx - 1].strip()
+            first_word = re.sub(r"[^\wđàáảãạăắằẳẵặâấầẩẫậèéẻẽẹêếềểễệìíỉĩịòóỏõọôốồổỗộơớờởỡợùúủũụưứừửữựỳýỷỹỵ]", "", lines[idx].split()[0].lower())
+            if prev_ln.endswith(","):
+                bonus -= 65.0
+            if first_word in NATURAL_LINE_STARTERS:
+                bonus -= 38.0
+        return variance + bonus
+
+    best_lines = None
+    best_cost = 1e12
+    m = len(units)
+
+    if target_lines == 2:
+        for i in range(1, m):
+            cand = [" ".join(units[:i]), " ".join(units[i:])]
+            c = score_partition(cand)
+            if c < best_cost:
+                best_cost = c
+                best_lines = cand
+    else:
+        for i in range(1, m - 1):
+            for j in range(i + 1, m):
+                cand = [" ".join(units[:i]), " ".join(units[i:j]), " ".join(units[j:])]
+                c = score_partition(cand)
+                if c < best_cost:
+                    best_cost = c
+                    best_lines = cand
+
+    # Fallback if 2-line partition exceeded 28 chars per line -> try 3 lines
+    if best_lines is None or (best_cost >= 1e8 and m >= 3 and target_lines == 2):
+        for i in range(1, m - 1):
+            for j in range(i + 1, m):
+                cand = [" ".join(units[:i]), " ".join(units[i:j]), " ".join(units[j:])]
+                c = score_partition(cand)
+                if c < best_cost:
+                    best_cost = c
+                    best_lines = cand
+
+    if not best_lines:
+        mid = max(2, n_syllables // 2)
+        best_lines = [" ".join(words[:mid]), " ".join(words[mid:])]
+
+    upper_lines = [ln.strip(" ,").upper() for ln in best_lines]
+    return [upper_lines[0]], upper_lines[1:]
+
+
+def score_frame(bgr: np.ndarray) -> float:
     h, w = bgr.shape[:2]
     gray = cv2.cvtColor(bgr, cv2.COLOR_BGR2GRAY)
 
-    # Center face/head ROI vs outer background
-    cy0, cy1 = int(h * 0.12), int(h * 0.52)
-    cx0, cx1 = int(w * 0.22), int(w * 0.78)
-    center_roi = gray[cy0:cy1, cx0:cx1]
-    center_sharp = float(cv2.Laplacian(center_roi, cv2.CV_64F).var())
+    uy0, uy1 = int(h * 0.14), int(h * 0.58)
+    ux0, ux1 = int(w * 0.06), int(w * 0.94)
+    roi_gray = gray[uy0:uy1, ux0:ux1]
+    sharpness = float(cv2.Laplacian(roi_gray, cv2.CV_64F).var())
+    mean_lum = float(np.mean(roi_gray))
+    if mean_lum < 35 or mean_lum > 235:
+        return -1e9
 
-    left_edge = gray[cy0:cy1, 0 : int(w * 0.14)]
-    right_edge = gray[cy0:cy1, int(w * 0.86) : w]
-    edge_sharp = (float(cv2.Laplacian(left_edge, cv2.CV_64F).var()) + float(cv2.Laplacian(right_edge, cv2.CV_64F).var())) / 2.0
+    ycrcb = cv2.cvtColor(bgr[uy0:uy1, ux0:ux1], cv2.COLOR_BGR2YCrCb)
+    skin = cv2.inRange(ycrcb, np.array([0, 133, 77]), np.array([255, 173, 127]))
+    kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (9, 9))
+    skin = cv2.morphologyEx(skin, cv2.MORPH_OPEN, kernel)
+    skin = cv2.morphologyEx(skin, cv2.MORPH_CLOSE, kernel)
 
-    # Skin-tone ratio in YCrCb inside upper-center ROI
-    ycrcb = cv2.cvtColor(bgr[cy0:cy1, cx0:cx1], cv2.COLOR_BGR2YCrCb)
-    skin_mask = cv2.inRange(ycrcb, np.array([0, 133, 77]), np.array([255, 173, 127]))
-    skin_ratio = float(np.count_nonzero(skin_mask)) / max(1, skin_mask.size)
+    skin_ratio = float(np.count_nonzero(skin)) / max(1, skin.size)
+    if skin_ratio < 0.025:
+        return -1e6
 
-    # Reject frames with almost no skin (empty room / object shots) or overly dark frames
-    if skin_ratio < 0.08:
-        score = 0.0
+    num_labels, _, stats, centroids = cv2.connectedComponentsWithStats(skin)
+    min_blob_area = int(skin.size * 0.012)
+    max_blob_area = int(skin.size * 0.45)
+    face_blobs = []
+    for lbl in range(1, num_labels):
+        area = int(stats[lbl, cv2.CC_STAT_AREA])
+        bw = int(stats[lbl, cv2.CC_STAT_WIDTH])
+        bh = int(stats[lbl, cv2.CC_STAT_HEIGHT])
+        if min_blob_area <= area <= max_blob_area and 0.35 <= (bw / max(1, bh)) <= 2.4:
+            face_blobs.append((centroids[lbl][0] / max(1, ux1 - ux0), area))
+
+    face_blobs.sort(key=lambda x: x[1], reverse=True)
+    distinct_x = []
+    for cx, _ in face_blobs:
+        if all(abs(cx - ox) > 0.18 for ox in distinct_x):
+            distinct_x.append(cx)
+
+    n_chars = len(distinct_x)
+    if n_chars >= 2:
+        char_score = 260.0 + min(n_chars, 3) * 45.0
+    elif n_chars == 1:
+        char_score = 195.0
     else:
-        dof_ratio = min(4.0, (center_sharp + 10.0) / (edge_sharp + 15.0))
-        score = skin_ratio * 100.0 * dof_ratio + min(center_sharp, 300.0) * 0.05
+        char_score = skin_ratio * 200.0
 
-    # Compare character ROI histogram (upper-center) so the same actor/outfit isn't picked twice
-    roi_bgr = bgr[int(h * 0.10) : int(h * 0.65), int(w * 0.20) : int(w * 0.80)]
-    hist = cv2.calcHist([roi_bgr], [0, 1, 2], None, [8, 8, 8], [0, 256, 0, 256, 0, 256]).flatten()
-    cv2.normalize(hist, hist)
-    return score, skin_ratio, hist
+    sub_band = gray[int(h * 0.66) : int(h * 0.86), int(w * 0.10) : int(w * 0.90)]
+    sub_edges = cv2.Canny(sub_band, 150, 245)
+    bright_sub = float(np.count_nonzero((sub_band > 235) & (sub_edges > 0))) / max(1, sub_band.size)
+    sub_penalty = bright_sub * 2500.0
+
+    return char_score + min(sharpness, 350.0) * 0.35 - sub_penalty
 
 
-def extract_3_closeups(video_path: str, out_dir: str) -> list[str]:
+def pick_best_frame(video_path: str, out_jpg: str) -> str:
     dur_str = subprocess.check_output(
-        ["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "default=noprint_wrappers=1:nokey=1", video_path],
+        [
+            "ffprobe",
+            "-v",
+            "error",
+            "-show_entries",
+            "format=duration",
+            "-of",
+            "default=noprint_wrappers=1:nokey=1",
+            video_path,
+        ],
         text=True,
     ).strip()
-    dur = max(4.0, float(dur_str))
+    dur = max(3.0, float(dur_str))
 
-    scored = []
+    best_score = -1e12
+    best_img = None
+
     with tempfile.TemporaryDirectory() as tmp:
-        pcts = (0.06, 0.13, 0.20, 0.27, 0.34, 0.41, 0.48, 0.55, 0.62, 0.69, 0.76, 0.83, 0.89, 0.94)
+        pcts = [0.07, 0.13, 0.19, 0.25, 0.31, 0.37, 0.43, 0.49, 0.55, 0.61, 0.67, 0.73, 0.79, 0.85, 0.91]
         for idx, pct in enumerate(pcts, 1):
             t = round(dur * pct, 2)
             p = os.path.join(tmp, f"f{idx}.jpg")
@@ -78,73 +327,34 @@ def extract_3_closeups(video_path: str, out_dir: str) -> list[str]:
             bgr = cv2.imread(p)
             if bgr is None:
                 continue
-            sc, skin_r, hist = score_closeup_emotion(bgr)
-            scored.append((sc, skin_r, pct, p, hist))
+            sc = score_frame(bgr)
+            if sc > best_score:
+                best_score = sc
+                best_img = bgr
 
-        # Pick 4 distinct close-up character portraits + 1 wide establishing shot (lowest skin_ratio)
-        scored_faces = sorted(scored, key=lambda x: x[0], reverse=True)
-        picked = []
-        for item in scored_faces:
-            sc, skin_r, pct, p, hist = item
-            too_close = False
-            for _, _, p_pct, _, p_hist in picked:
-                sim = float(cv2.compareHist(hist, p_hist, cv2.HISTCMP_CORREL))
-                if abs(pct - p_pct) < 0.10 or sim > 0.74:
-                    too_close = True
-                    break
-            if not too_close:
-                picked.append(item)
-            if len(picked) >= 4:
-                break
+    if best_img is None:
+        raise RuntimeError(f"Could not extract a valid frame from {video_path}")
 
-        while len(picked) < 4 and len(scored_faces) > len(picked):
-            for item in scored_faces:
-                if item not in picked:
-                    picked.append(item)
-                    break
-
-        # Wide shot = lowest skin_ratio among remaining frames (room/group establishing shot)
-        used_pcts = {x[2] for x in picked}
-        wide_candidates = [x for x in scored if x[2] not in used_pcts]
-        wide_candidates.sort(key=lambda x: x[1])
-        if wide_candidates:
-            picked.append(wide_candidates[0])
-        elif len(scored_faces) > 4:
-            picked.append(scored_faces[-1])
-
-        os.makedirs(out_dir, exist_ok=True)
-        out_paths = []
-        for i, (_, _, _, p, _) in enumerate(picked, 1):
-            suffix = "_wide.jpg" if i == 5 else ".jpg"
-            dst = os.path.join(out_dir, f"c{i}{suffix}")
-            img = cv2.imread(p)
-            cv2.imwrite(dst, img, [cv2.IMWRITE_JPEG_QUALITY, 95])
-            out_paths.append(dst)
-        return out_paths
-
-
-def split_title_cinema(title: str) -> tuple[str, str]:
-    """Split a long Vietnamese title into (Top Accent Hook, Main Dramatic Title)."""
-    words = title.split()
-    if len(words) <= 5:
-        return "", title
-    mid = max(4, min(6, round(len(words) * 0.43)))
-    return " ".join(words[:mid]), " ".join(words[mid:])
+    os.makedirs(os.path.dirname(os.path.abspath(out_jpg)), exist_ok=True)
+    cv2.imwrite(out_jpg, best_img, [cv2.IMWRITE_JPEG_QUALITY, 96])
+    return out_jpg
 
 
 if __name__ == "__main__":
     video_arg = sys.argv[1]
     out_png = sys.argv[2] if len(sys.argv) > 2 else os.path.join(HERE, "tiktok_cover_preview.png")
-    frames_dir = os.path.join(HERE, ".cover_frames")
-    crops = extract_3_closeups(video_arg, frames_dir)
-    c4 = crops[3] if len(crops) >= 4 else crops[-1]
-    c5_wide = crops[4] if len(crops) >= 5 else crops[-1]
-    title = clean_title(video_arg)
-    hook_line, main_line = split_title_cinema(title)
+    raw_title = sys.argv[3] if len(sys.argv) > 3 and sys.argv[3].strip() else video_arg
+
+    frame_jpg = os.path.join(HERE, ".tmp_cover_frame.jpg")
+    pick_best_frame(video_arg, frame_jpg)
+
+    title = clean_title(raw_title)
+    hook_lines, main_lines = split_semantic_lines(title)
+    payload = json.dumps({"hook": hook_lines, "main": main_lines}, ensure_ascii=False)
 
     render_js = os.path.join(HERE, "render_cover_poster.mjs")
     subprocess.run(
-        ["node", render_js, crops[0], crops[1], crops[2], c4, c5_wide, hook_line, main_line, out_png],
+        ["node", render_js, frame_jpg, payload, out_png],
         check=True,
     )
     print(out_png)

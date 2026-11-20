@@ -557,15 +557,28 @@ function setup(app) {
   );
   ipcMain.handle("chatgpt:generate-image", async (_e, job) => {
     const reqJob = job || {};
-    try {
-      // Tầng 1 (Ưu tiên số 1): Tạo ảnh bằng ChatGPT trong dự án HTPM
-      const items = await generateImages(reqJob);
-      return { ok: true, provider: "chatgpt", items, data: items[0].data, mime: items[0].mime };
-    } catch (gptErr) {
+    let lastGptErr = null;
+    // BẮT BUỘC thử tối đa 2 lần liên tiếp trên chính ChatGPT (dự án HTPM) trước khi được phép chuyển sang Flow dự phòng!
+    // (Chỉ nhảy ngay sang Flow ở lần 1 nếu ChatGPT báo rõ ràng đã chạm trần giới hạn lượt tạo tài khoản).
+    for (let attempt = 1; attempt <= 2; attempt++) {
+      try {
+        const items = await generateImages(reqJob);
+        return { ok: true, provider: "chatgpt", items, data: items[0].data, mime: items[0].mime };
+      } catch (e) {
+        lastGptErr = e;
+        const msg = String(e?.message || e);
+        const isHardLimit = /chạm giới hạn lượt tạo|reached your.*limit|đạt đến giới hạn|too many requests|Cần đăng nhập ChatGPT/i.test(msg);
+        if (isHardLimit || attempt === 2) break;
+        console.warn(`[chatgpt] Lần thử #1 gặp trục trặc tạm thời (${msg}) -> thử lại lần #2 ngay trên ChatGPT trước khi xét dự phòng!`);
+        await sleep(1500);
+      }
+    }
+    const gptErr = lastGptErr || new Error("ChatGPT không phản hồi.");
+    {
       if (reqJob.noFallback === true) {
         return { ok: false, error: String(gptErr.message || gptErr) };
       }
-      console.warn("[chatgpt -> flow fallback] ChatGPT không tạo được ảnh, tự động chuyển sang dự phòng Google Flow / Gemini:", gptErr.message || gptErr);
+      console.warn("[chatgpt -> flow fallback] Cả 2 lần thử ChatGPT đều không tạo được ảnh, mới tự động chuyển sang dự phòng Google Flow / Gemini:", gptErr.message || gptErr);
       try {
         // Tầng 2 (Dự phòng): Google Flow / Gemini Image (Nano Banana)
         if (typeof flow.generateImageFallback === "function") {

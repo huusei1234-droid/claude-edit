@@ -81,9 +81,17 @@
   async function setModel(name) {
     const btn = $$('button').find((b) => /arrow_drop_down/.test(txt(b)) && b.getBoundingClientRect().width);
     if (!btn) return;
-    if (txt(btn).includes(name)) return;
+    const aliases = [name];
+    if (/Nhanh/i.test(name)) aliases.push(name.replace(/Nhanh/gi, 'Fast'));
+    if (/Fast/i.test(name)) aliases.push(name.replace(/Fast/gi, 'Nhanh'));
+    if (/Chất lượng/i.test(name)) aliases.push(name.replace(/Chất lượng/gi, 'Quality'));
+    if (/Quality/i.test(name)) aliases.push(name.replace(/Quality/gi, 'Chất lượng'));
+    if (aliases.some((a) => txt(btn).includes(a))) return;
     realClick(btn);
-    const opt = await waitFor(() => $$('[role=option],mat-option,.mat-mdc-option,[role=menuitem]').find((o) => txt(o).split('\n')[0].trim().endsWith(name)), 4000, 150, 'model ' + name);
+    const opt = await waitFor(() => $$('[role=option],mat-option,.mat-mdc-option,[role=menuitem]').find((o) => {
+      const line0 = txt(o).split('\n')[0].trim();
+      return aliases.some((a) => line0.endsWith(a) || line0.includes(a));
+    }), 4000, 150, 'model ' + name);
     realClick(opt);
     await sleep(300);
   }
@@ -138,12 +146,21 @@
   async function clearComposer() {
     const clr = $(SEL.clearPrompt);
     if (clr) { realClick(clr); await sleep(400); }
-    // gỡ thumbnail thành phần còn sót
-    // (cả thumbnail thành phần lẫn ô khung hình đầu/cuối đã có ảnh đều có nút "cancel")
-    for (let i = 0; i < 10; i++) {
-      const rm = $$('button', $(SEL.composer) || document).find((b) => txt(b).split('\n').includes('cancel'));
+    const ed = $(SEL.editor);
+    if (ed) {
+      ed.focus();
+      document.execCommand('selectAll', false, null);
+      document.execCommand('delete', false, null);
+    }
+    // Gỡ sạch 100% mọi thumbnail / chip thành phần còn sót (tránh vượt giới hạn 3 ảnh của Flow gây lỗi 'Maximum number of attachments reached')
+    for (let i = 0; i < 12; i++) {
+      const rm = $$('button', $(SEL.composer) || document).find((b) => {
+        const t = txt(b).split('\n').map((s) => s.trim());
+        const aria = (b.getAttribute('aria-label') || '').toLowerCase();
+        return t.includes('cancel') || t.includes('close') || /remove|xoá|xóa|delete/i.test(aria);
+      });
       if (!rm) break;
-      realClick(rm); await sleep(250);
+      realClick(rm); await sleep(220);
     }
   }
 
@@ -187,7 +204,7 @@
     const raw = txt(o);
     if (isUploadingText(raw)) return '';
     const lines = raw.split('\n').map((s) => s.trim()).filter(Boolean);
-    return lines.find((s) => !/^(image|videocam|voice_selection|accessibility_new|face|Hình ảnh|Video|Giọng nói)$/i.test(s)) || lines[0] || '';
+    return lines.find((s) => !/^(image|images|videocam|videos|voice_selection|accessibility_new|face|Hình ảnh|Video|Giọng nói|Image|Audio|Voice)$/i.test(s)) || lines[0] || '';
   };
   const isImageOption = (o) => !/^(videocam)\b|\bVideo\b/i.test(txt(o));
 
@@ -415,17 +432,30 @@
     await sleep(120);
   }
 
-  /** Điền prompt; mọi lần xuất hiện của tên ảnh (có hoặc không có @) được đổi thành mention chip. */
-  async function fillPrompt(prompt, names, fallbackByName = {}) {
+  /** Điền prompt; chỉ biến LẦN XUẤT HIỆN ĐẦU TIÊN của mỗi tên ảnh (tối đa 3 chip theo giới hạn của Google Flow) thành mention chip để không bao giờ vượt trần 'Maximum number of attachments reached'! */
+  async function fillPrompt(prompt, names, fallbackByName = {}, maxChips = 3) {
     const ed = $$(SEL.editor).find((e) => e.getBoundingClientRect().width > 0) || $(SEL.editor);
     ed.focus();
     document.execCommand('selectAll', false, null);
     document.execCommand('delete', false, null);
-    const uniqNames = [...new Set(names.filter(Boolean))];
+    const uniqNames = [...new Set(names.filter(Boolean))].slice(0, maxChips);
     const sorted = [...uniqNames].sort((a, b) => b.length - a.length).map((n) => n.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'));
     const re = sorted.length ? new RegExp('@?(' + sorted.join('|') + ')', 'g') : null;
     let last = 0; const parts = [];
-    if (re) for (const m of prompt.matchAll(re)) { parts.push({ t: prompt.slice(last, m.index) }, { ref: m[1] }); last = m.index + m[0].length; }
+    const chippedAlready = new Set();
+    if (re) {
+      for (const m of prompt.matchAll(re)) {
+        parts.push({ t: prompt.slice(last, m.index) });
+        if (!chippedAlready.has(m[1]) && chippedAlready.size < maxChips) {
+          chippedAlready.add(m[1]);
+          parts.push({ ref: m[1] });
+        } else {
+          // Lần nhắc thứ 2+ của cùng nhân vật giữ chữ thường (bỏ '@') để không bị đính kèm trùng làm tràn 3 slot của Flow!
+          parts.push({ t: m[1].replace(/\.[a-z0-9]{2,4}$/i, '') });
+        }
+        last = m.index + m[0].length;
+      }
+    }
     parts.push({ t: prompt.slice(last) });
     for (const p of parts) {
       if (p.ref) {
@@ -473,28 +503,51 @@
     await clearComposer();
     await applySettings(job);
     const rawImages = job.images || [];
-    const names = [];
-    const fallbackByName = {};
-    let promptText = job.prompt || '';
+    const maxAllowedRefs = job.mode === 'frames' ? 2 : 3;
+    const dedupedImages = [];
     const seenInputKeys = new Set();
+    let promptText = job.prompt || '';
 
     for (const im of rawImages) {
       const dedupKey = `${im.name || ''}:${fastHash(im.base64 || '')}`;
       if (seenInputKeys.has(dedupKey)) continue;
       seenInputKeys.add(dedupKey);
+      dedupedImages.push(im);
+    }
 
-      const mentionedInPrompt = Boolean(
-        im.name && (
-          promptText.includes(im.name) ||
-          (!isGenericAssetName(im.name) && new RegExp('@' + stemOf(im.name).replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '(?![\\w-])', 'i').test(promptText))
-        )
-      );
-      const attachViaPlus = job.mode !== 'frames' && !mentionedInPrompt;
-      const actualName = await ensureAssetInFlow(im, { attachNow: attachViaPlus });
+    // Ưu tiên giữ các ảnh được gọi tên '@...' trực tiếp trong prompt trước, sau đó cắt đúng trần của Google Flow (tối đa 3 ảnh Thành phần / 2 ảnh Khung hình)
+    dedupedImages.sort((a, b) => {
+      const score = (x) => {
+        if (!x?.name) return 0;
+        if (promptText.includes(x.name)) return 2;
+        if (!isGenericAssetName(x.name) && new RegExp('@' + stemOf(x.name).replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '(?![\\w-])', 'i').test(promptText)) return 2;
+        return 1;
+      };
+      return score(b) - score(a);
+    });
+    const selectedImages = dedupedImages.slice(0, maxAllowedRefs);
+    // Gỡ dấu '@' của các ảnh thừa vượt quá 3 slot (nếu có) để chữ trong prompt vẫn sạch
+    for (const dropped of dedupedImages.slice(maxAllowedRefs)) {
+      if (dropped?.name) {
+        promptText = promptText.split('@' + dropped.name).join(stemOf(dropped.name));
+        if (stemOf(dropped.name)) {
+          const dropRe = new RegExp('@' + stemOf(dropped.name).replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '(?![\\w.-])', 'gi');
+          promptText = promptText.replace(dropRe, stemOf(dropped.name));
+        }
+      }
+    }
+
+    const names = [];
+    const fallbackByName = {};
+    let plusAttachedCount = 0;
+
+    for (const im of selectedImages) {
+      // Bước 1: Đảm bảo ảnh có sẵn trên thư viện Flow (CHƯA gắn vội qua nút '+' để tránh gắn đúp 2 lần!)
+      const actualName = await ensureAssetInFlow(im, { attachNow: false });
       names.push(actualName);
       fallbackByName[actualName] = { ...im, name: actualName };
 
-      // Đồng bộ tên ảnh thực tế trong Flow vào prompt (ví dụ Flow đã có sẵn CH1.jpg trong khi Canvas gửi CH1.png, hoặc ảnh không tên được gắn mã hash)
+      // Bước 2: Đồng bộ tên thực tế vào prompt trước
       if (im.name && actualName !== im.name) {
         promptText = promptText.split('@' + im.name).join('@' + actualName).split(im.name).join(actualName);
       }
@@ -502,11 +555,20 @@
         const bareTagRe = new RegExp('@' + stemOf(im.name).replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '(?![\\w.-])', 'gi');
         promptText = promptText.replace(bareTagRe, '@' + actualName);
       }
+
+      // Bước 3: Chỉ bấm nút '+' gắn ảnh nếu sau khi đồng bộ tên, ảnh đó KHÔNG xuất hiện trong prompt (nếu có trong prompt thì fillPrompt sẽ tự gắn bằng '@')!
+      if (job.mode !== 'frames' && !promptText.includes(actualName)) {
+        await openPicker();
+        await pickAsset(actualName, fallbackByName[actualName]);
+        await closePicker();
+        plusAttachedCount++;
+      }
     }
     if (job.mode === 'frames' && names.length) await attachFrames(names, fallbackByName);
     if (job.mode === 'frames') for (const n of names) promptText = promptText.split('@' + n).join('').split(n).join(''); // ảnh đã nằm ở ô khung hình, không cần tên file trong prompt
     const cleanPrompt = promptText.replace(/\n{3,}/g, '\n\n').trim();
-    await fillPrompt(cleanPrompt, job.mode === 'frames' ? [] : names, fallbackByName);
+    const remainingChipSlots = Math.max(0, maxAllowedRefs - plusAttachedCount);
+    await fillPrompt(cleanPrompt, job.mode === 'frames' ? [] : names, fallbackByName, remainingChipSlots);
     await sleep(350);
 
     // Dọn các thẻ lỗi cũ (delete_forever) nếu còn tồn đọng trên lưới dự án để tránh Angular vẽ lại làm nhận nhầm!

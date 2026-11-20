@@ -220,6 +220,11 @@ if (Test-Path -LiteralPath $syncScript) {
     powershell.exe -NoProfile -ExecutionPolicy Bypass -File "$studioRoot\.sync\sync_engine.ps1" -Mode InstallTask
 }
 
+# Neu la PC o nha (khac HUUSEIZ) -> Tu dong dang ky lich nhan tai nguyen GitHub luc 22:00 hang ngay
+if ($env:COMPUTERNAME -ne "HUUSEIZ" -and (Test-Path -LiteralPath "$studioRoot\00_CAI_DAT_PC_NHA\CAI_NHAN_DONG_BO_22H_MAY_NHA.ps1")) {
+    powershell.exe -NoProfile -ExecutionPolicy Bypass -File "$studioRoot\00_CAI_DAT_PC_NHA\CAI_NHAN_DONG_BO_22H_MAY_NHA.ps1"
+}
+
 Write-Host "`n======================================================================" -ForegroundColor Green
 Write-Host "  HOAN TAT 100%! PC '$env:COMPUTERNAME' DA SAN SANG LAM PHIM AI!      " -ForegroundColor Green
 Write-Host "  Mo Google Antigravity -> File -> Open Folder -> $studioRoot         " -ForegroundColor White

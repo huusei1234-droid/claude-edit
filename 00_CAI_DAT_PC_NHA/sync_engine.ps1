@@ -335,6 +335,26 @@ sh.Run "powershell.exe -NoProfile -NonInteractive -WindowStyle Hidden -Execution
             Set-Content -LiteralPath $optFlag -Value (Get-Date).ToString("o") -Encoding UTF8
         }
 
+        # Tự động cài đặt lịch nhận đồng bộ GitHub lúc 22:00 hàng ngày cho máy tính ở nhà (mọi máy khác máy công ty HUUSEIZ)
+        if ($env:COMPUTERNAME -ne "HUUSEIZ") {
+            $pullTaskName = "AI_Full_Studio_GitHub_Pull_22h00"
+            if (-not (Get-ScheduledTask -TaskName $pullTaskName -ErrorAction SilentlyContinue)) {
+                $cloudPullPs1 = Join-Path $syncDir "github_sync_22h_pull.ps1"
+                $localPullPs1 = Join-Path $localSyncBin "github_sync_22h_pull.ps1"
+                if (Test-Path -LiteralPath $cloudPullPs1) {
+                    Copy-Item -LiteralPath $cloudPullPs1 -Destination $localPullPs1 -Force
+                } elseif (Test-Path -LiteralPath "$localStudio\00_CAI_DAT_PC_NHA\github_sync_22h_pull.ps1") {
+                    Copy-Item -LiteralPath "$localStudio\00_CAI_DAT_PC_NHA\github_sync_22h_pull.ps1" -Destination $localPullPs1 -Force
+                }
+                if (Test-Path -LiteralPath $localPullPs1) {
+                    $tr22 = New-ScheduledTaskTrigger -Daily -At "22:00"
+                    $ac22 = New-ScheduledTaskAction -Execute "powershell.exe" -Argument "-NoProfile -ExecutionPolicy Bypass -WindowStyle Hidden -File `"$localPullPs1`""
+                    $st22 = New-ScheduledTaskSettingsSet -AllowStartIfOnBatteries -DontStopIfGoingOnBatteries -StartWhenAvailable -MultipleInstances IgnoreNew -ExecutionTimeLimit (New-TimeSpan -Minutes 20)
+                    Register-ScheduledTask -TaskName $pullTaskName -Trigger $tr22 -Action $ac22 -Settings $st22 -Description "Tự động nhận đồng bộ tài nguyên từ GitHub lúc 22:00 hàng ngày cho PC ở nhà" -Force | Out-Null
+                }
+            }
+        }
+
         $stamp = @{
             lastAutoSyncAt = (Get-Date).ToString("yyyy-MM-dd HH:mm:ss")
             computer       = $env:COMPUTERNAME

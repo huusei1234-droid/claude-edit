@@ -72,3 +72,49 @@
     linear-gradient(115deg, rgba(255,255,255,0) 34%, rgba(255,255,255,0.94) 50%, rgba(255,255,255,0) 66%),
     linear-gradient(180deg, #FFFFFF 0%, #DFCAFF 25%, #8446E3 52%, #EFE5FF 76%, #45188A 100%);
 }
+
+/* 7. Quầng Sáng Băng Ngọc Tâm Giữa (Podcast × BĐS Cyan-Ice Spotlight — Chuẩn @lopphovlog) */
+.grad-cyan-ice-spotlight {
+  background-image: radial-gradient(
+    ellipse 58% 92% at 50% 56%,
+    #9EFFFF 0%,
+    #35F2DF 28%,
+    #24AEE0 56%,
+    #1F42A6 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 0 24px rgba(46, 232, 228, 0.28));
+}
+
+/* Khung Chữ Kép Podcast × BĐS (Chữ lớn Spotlight + Chữ ký trắng đè chân hoặc gác vai trái) */
+.podcast-sig-lockup {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.podcast-sig-lockup .sig-main {
+  line-height: 0.92;
+  letter-spacing: -0.01em;
+}
+.podcast-sig-lockup .sig-script {
+  position: absolute;
+  color: #ffffff;
+  white-space: nowrap;
+  pointer-events: none;
+  text-shadow:
+    0 3px 10px rgba(4, 8, 22, 0.88),
+    0 0 14px rgba(255, 242, 210, 0.45);
+}
+.podcast-sig-lockup.mode-bottom-center .sig-script {
+  top: 60%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.podcast-sig-lockup.mode-top-left .sig-script {
+  top: -32%;
+  left: 2%;
+}

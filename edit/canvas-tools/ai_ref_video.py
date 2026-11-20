@@ -43,6 +43,7 @@ MANIFEST_CANDIDATES = [
 
 IMAGE_FALLBACK_CHAIN = [
     ("ChatGPT", "chatgpt::chatgpt-image"),
+    ("ChatGPT-Retry", "chatgpt::chatgpt-image"),
     ("Gemini-2.1", "flow::flow-nano-banana-2-1"),
     ("Google-Flow", "flow::flow-nano-banana-pro"),
     ("Muse", "muse::muse-image"),
@@ -211,10 +212,9 @@ def generate_ref_image_4tier(
     )
 
     last_err = "unknown"
+    prompt_sig = prompt.strip()[:56]
     for provider_name, model_id in chain:
-        cfg_title = f"CFG_{clean_tag}_{int(time.time()) % 10000}"
-        before_r, before_nodes = get_canvas_state()
-        before_ids = set(before_nodes.keys())
+        cfg_title = f"CFG_{clean_tag}_{uuid.uuid4().hex[:6]}"
 
         payload = {
             "prompt": full_prompt,
@@ -239,26 +239,35 @@ def generate_ref_image_4tier(
             continue
 
         t0 = time.time()
-        created_ids = []
+        owned_ids = []
         while time.time() - t0 < timeout_per_tier:
             time.sleep(6)
             cur_r, cur_nodes = get_canvas_state()
-            created_ids = [nid for nid in cur_nodes.keys() if nid not in before_ids]
 
             cfgs = [
                 n for n in cur_nodes.values()
-                if n.get("type") == "config" and (n.get("title") or "").startswith(cfg_title)
+                if n.get("type") == "config" and (n.get("title") or "") == cfg_title
+            ]
+            txts = [
+                n for n in cur_nodes.values()
+                if n.get("type") == "text" and (n.get("title") or "") == cfg_title
             ]
             img_node = None
+            out_imgs = []
             if cfgs:
-                outs = _outs(cur_r, cur_nodes, cfgs[0]["id"], "image")
-                if outs:
-                    img_node = outs[0]
-            if not img_node:
-                new_imgs = [cur_nodes[nid] for nid in created_ids if cur_nodes[nid].get("type") == "image"]
-                if new_imgs:
-                    img_node = new_imgs[-1]
+                out_imgs = _outs(cur_r, cur_nodes, cfgs[0]["id"], "image")
+                if out_imgs:
+                    img_node = out_imgs[0]
+            if not img_node and prompt_sig:
+                sig_imgs = [
+                    n for n in cur_nodes.values()
+                    if n.get("type") == "image" and prompt_sig in ((n.get("metadata") or {}).get("prompt") or "")
+                ]
+                if sig_imgs:
+                    img_node = sig_imgs[-1]
+                    out_imgs = [img_node]
 
+            owned_ids = [n["id"] for n in txts] + [n["id"] for n in cfgs] + [n["id"] for n in out_imgs]
             if not img_node:
                 continue
 
@@ -269,18 +278,19 @@ def generate_ref_image_4tier(
                     call("canvas_update_node", {"id": img_node["id"], "patch": {"title": clean_tag}})
                 except Exception:
                     call("canvas_apply_ops", {"ops": [{"type": "update_node", "id": img_node["id"], "title": clean_tag}]})
+                _delete_nodes_safe([n["id"] for n in txts] + [n["id"] for n in cfgs])
                 print(f"[RefImage] [{clean_tag}] SUCCESS via '{provider_name}' -> node={img_node['id']}", flush=True)
                 return img_node["id"], provider_name
 
             if st == "error":
                 last_err = meta.get("error") or "node status=error"
                 print(f"[RefImage] [{clean_tag}] Tier '{provider_name}' failed: {last_err}", flush=True)
-                _delete_nodes_safe(created_ids)
+                _delete_nodes_safe(owned_ids)
                 break
         else:
             last_err = f"timeout after {timeout_per_tier}s"
             print(f"[RefImage] [{clean_tag}] Tier '{provider_name}' timed out -> falling back...", flush=True)
-            _delete_nodes_safe(created_ids)
+            _delete_nodes_safe(owned_ids)
 
     raise RuntimeError(f"All 4 image fallback tiers (ChatGPT -> Gemini -> Flow -> Muse) failed for {clean_tag}: {last_err}")
 
@@ -366,17 +376,28 @@ def generate_video_with_ref(
             )
 
         t0 = time.time()
-        created_ids = []
+        motion_sig = motion_prompt.strip()[:48]
+        owned_vid_ids = [vid_id] if vid_id else []
         while time.time() - t0 < timeout_per_tier:
             time.sleep(8)
             cur_r, cur_nodes = get_canvas_state()
-            created_ids = [nid for nid in cur_nodes.keys() if nid not in before_ids]
 
             vnode = cur_nodes.get(vid_id) if vid_id else None
-            if not vnode:
-                v_candidates = [cur_nodes[nid] for nid in created_ids if cur_nodes[nid].get("type") == "video"]
+            if not vnode and not vid_id:
+                v_candidates = [
+                    n for n in cur_nodes.values()
+                    if n.get("type") == "video" and (
+                        (n.get("title") or "") == out_title
+                        or (motion_sig and motion_sig in ((n.get("metadata") or {}).get("prompt") or ""))
+                    )
+                ]
+                cfgs_v = [
+                    n for n in cur_nodes.values()
+                    if (n.get("title") or "") == out_title and n.get("type") in ("config", "text")
+                ]
                 if v_candidates:
                     vnode = v_candidates[-1]
+                owned_vid_ids = [n["id"] for n in cfgs_v] + ([vnode["id"]] if vnode else [])
             if not vnode:
                 continue
 
@@ -393,12 +414,12 @@ def generate_video_with_ref(
             if vst == "error":
                 last_err = vmeta.get("error") or "video status=error"
                 print(f"[RefVideo] [{out_title}] '{provider_name}' failed: {last_err}", flush=True)
-                _delete_nodes_safe([vid_id] if vid_id else created_ids)
+                _delete_nodes_safe(owned_vid_ids)
                 break
         else:
             last_err = f"timeout after {timeout_per_tier}s"
             print(f"[RefVideo] [{out_title}] '{provider_name}' timed out -> falling back...", flush=True)
-            _delete_nodes_safe([vid_id] if vid_id else created_ids)
+            _delete_nodes_safe(owned_vid_ids)
 
     raise RuntimeError(f"Video generation with reference failed across Flow & Muse for {out_title}: {last_err}")
 
