@@ -21,7 +21,7 @@ Muse (muse.ai) tạo ảnh và video qua **muse2api**: cổng OpenAI-kiểu ch�
 - **Video báo "không khả dụng ở khu vực/tài khoản này"**: là giới hạn phía Muse theo tài khoản; **đổi tài khoản là được** (ảnh vẫn tạo bình thường trên tài khoản đó).
 - Video Muse dài 1–10 giây; tỉ lệ đặt qua `aspect_ratio`.
 - Ảnh thử Muse ra đúng phong cách phấn trắng trên nền đen 9:16 (1152×2048).
-- Chạy theo đợt nhỏ, mỗi tài khoản chỉ vài yêu cầu cùng lúc (`MUSE2API_ACCOUNT_MAX_CONCURRENCY`). Đừng tạo song song với người khác trên cùng tài khoản.
+- **Tạo từng video 1 (bắt buộc cho mọi thể loại video)**: luôn tạo tuần tự xong video này mới sang video tiếp theo (`MUSE2API_ACCOUNT_MAX_CONCURRENCY=1`), không chạy song song nhiều video cùng lúc trên cùng tài khoản.
 - Muse2API là cầu nối không chính thức điều khiển web Muse; có rủi ro điều khoản/khóa tài khoản.
 
 ## Kiểm tra nhanh

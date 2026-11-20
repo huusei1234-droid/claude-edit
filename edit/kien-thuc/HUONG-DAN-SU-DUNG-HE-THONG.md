@@ -196,7 +196,7 @@ MUSE2API_HEADLESS=true
 |---|---|
 | Độ dài | 1–10 giây. Chọn 6/8/10 theo độ dài giọng của cảnh (`clip_s.py N`). Cảnh ngắn vẫn cần clip 6 giây, dựng cắt bớt |
 | Tỉ lệ | Đặt qua `aspect_ratio` (9:16) |
-| Theo đợt nhỏ | Mỗi tài khoản chỉ vài yêu cầu cùng lúc (`MUSE2API_ACCOUNT_MAX_CONCURRENCY`). Chạy 3 cái thử, rồi 5–6 cái mỗi đợt. Đừng tạo song song với người khác trên cùng tài khoản |
+| Theo đợt nhỏ | **Tạo từng video 1** (xong video này mới tạo video tiếp theo, `MUSE2API_ACCOUNT_MAX_CONCURRENCY=1`), áp dụng cho **tất cả các thể loại video**. Đừng tạo song song |
 | Camera | Muse hay zoom quá mạnh. Prompt **bắt buộc** ghi camera gần như tĩnh, đẩy vào rất nhẹ dưới 3%. Không viết chuyển động camera trong `motion` |
 | Chuyển động | Một hành động chậm, nhỏ (hơi thở, khói, nước gợn, đèn nhấp nháy). Không hành động mạnh |
 | Kết quả | Video Muse dùng kiểu cũ (node cấu hình), không dùng thẻ `@` |

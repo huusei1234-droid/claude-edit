@@ -11,19 +11,28 @@
   var H = $.global.H;
   if (!H) throw new Error('Nạp saas-lib.jsx trước th-lib.jsx');
   var T = $.global.T = {};
-  T.VERSION = '1.0';
+  T.VERSION = '1.1';
   var F = 1 / 30;
   T.F = F;
 
   // ======================================================================
-  // 0. CẤU HÌNH
+  // 0. CẤU HÌNH (ĐÃ ĐỒNG BỘ BỘ 39 FONT TIẾNG VIỆT & CHỮ GRADIENT ƯU TIÊN SỐ 1)
   // ======================================================================
-  // fonts: PostScript name có trên máy (xem T.fontList). Font PHẢI có dấu tiếng Việt nếu chữ là tiếng Việt.
+  // Bộ font Tiếng Việt mặc định đã cài sẵn trên Windows (đủ 100% dấu ă, â, đ, ê, ô, ơ, ư):
+  T.FONT_VI = {
+    title: 'Oswald-Bold',
+    cap: 'PlayfairDisplay-BoldItalic',
+    script: 'DancingScript-Bold',
+    wide: 'Montserrat-Black',
+    wideUp: 'BeVietnamPro-ExtraBold',
+    serif: 'Fraunces-Black'
+  };
+  // fonts: PostScript name có trên máy (xem T.fontList). Mặc định ưu tiên T.FONT_VI cho tiếng Việt!
   T.init = function (cfg) {
     T.W = cfg.w || 1080; T.HT = cfg.h || 1920; T.DUR = cfg.dur; T.FPS = cfg.fps || 30;
     H.FPS = T.FPS; H.HUE = 0; F = 1 / T.FPS; T.F = F;
     T.MEDIA = cfg.media; T.ASSETS = cfg.assets;
-    T.FONT = cfg.fonts || { title: 'TRImpact', cap: 'PensumDisplay-BookItalic', script: 'SVN-RosellindaAlyamore', wide: 'TacticSansExd-BlkIt', wideUp: 'TacticSansExd-Blk' };
+    T.FONT = (cfg.fonts && cfg.fonts !== 'vi') ? cfg.fonts : T.FONT_VI;
     T.COL = cfg.colors || { titleTop: '#7563ff', titleBot: '#dcd3ff', label: '#1f4fff', labelGlow: '#2a5cff',
       digit: '#9a82ff', digitEdge: '#8ff8ff', digitGlow: '#5ff4ff', cap: '#5cf7e0', capAlt: '#d35bff',
       card: '#101318', cardGlow: '#7a1cff', edge: '#9b3cff', sweep: '#e9d6ff', icon: '#55f2ff', iconGlow: '#3fd8ff', iconGlow2: '#a040ff' };
@@ -63,6 +72,42 @@
     H.fx(l, 'ADBE Ramp', { 'ADBE Ramp-0001': [r.left + r.width / 2, r.top], 'ADBE Ramp-0002': H.rgb(top),
                            'ADBE Ramp-0003': [r.left + r.width / 2, r.top + r.height], 'ADBE Ramp-0004': H.rgb(bot) });
     var sm = H.fx(l, 'ADBE Set Matte3', {}); sm.property('ADBE Set Matte3-0001').setValue(l.index); sm.property('ADBE Set Matte3-0002').setValue(4);
+    return l;
+  };
+  // Gradient đa điểm ưu tiên số 1 cho Tiêu đề / Từ khoá / Hook (4-Color Gradient + Tách viền sau + CC Light Sweep):
+  // presetName: 'gold_champagne' | 'rose_silk' | 'emerald_jade' | 'royal_pearl' | 'sunset_coral' | 'platinum_ice'
+  T.gradPreset = function (comp, l, presetName, sweepT0, sweepDur, sw) {
+    var pr = (H.GRAD_PRESETS && H.GRAD_PRESETS[presetName || 'gold_champagne']) || { c1: '#FFF8DB', c2: '#F6CF65', c3: '#C8871E', c4: '#FFE599', stroke: '#4A2B05' };
+    var r = l.sourceRectAtTime(l.inPoint > 0 ? l.inPoint : 0, false);
+    var xL = r.left, xR = r.left + r.width, yT = r.top, yB = r.top + r.height;
+    if (sw !== 0) {
+      var back = l.duplicate(); back.name = l.name + '_StrokeBack'; back.moveAfter(l);
+      var sp = back.property('ADBE Text Properties').property('ADBE Text Document'), bd = sp.value;
+      bd.applyFill = false; bd.applyStroke = true; bd.strokeColor = H.rgbRaw(pr.stroke); bd.strokeWidth = sw || 8;
+      sp.setValue(bd);
+      T.shadow(back, 65, 6, 18);
+      H.attach(back, l, l.inPoint > 0 ? l.inPoint : 0);
+    }
+    try {
+      H.fx(l, 'ADBE 4ColorGradient', {
+        'ADBE 4ColorGradient-0001': [xL + r.width * 0.15, yT], 'ADBE 4ColorGradient-0002': H.rgbRaw(pr.c1),
+        'ADBE 4ColorGradient-0003': [xR - r.width * 0.15, yT + r.height * 0.35], 'ADBE 4ColorGradient-0004': H.rgbRaw(pr.c2),
+        'ADBE 4ColorGradient-0005': [xL + r.width * 0.25, yB], 'ADBE 4ColorGradient-0006': H.rgbRaw(pr.c3),
+        'ADBE 4ColorGradient-0007': [xR - r.width * 0.1, yB - r.height * 0.15], 'ADBE 4ColorGradient-0008': H.rgbRaw(pr.c4)
+      });
+    } catch (e) {
+      T.grad(l, pr.c1, pr.c3);
+      return l;
+    }
+    var sm = H.fx(l, 'ADBE Set Matte3', {}); sm.property('ADBE Set Matte3-0001').setValue(l.index); sm.property('ADBE Set Matte3-0002').setValue(4);
+    if (sweepT0 !== undefined) {
+      try {
+        var swp = H.fx(l, 'CC Light Sweep', {});
+        swp.property('CC Light Sweep-0002').setValue(-28); swp.property('CC Light Sweep-0004').setValue(42); swp.property('CC Light Sweep-0005').setValue(75);
+        var posNow = H.pos(l).value;
+        H.anim(swp.property('CC Light Sweep-0001'), [sweepT0, sweepT0 + (sweepDur || 0.6)], [[posNow[0] - r.width * 0.7, posNow[1]], [posNow[0] + r.width * 0.7, posNow[1]]], 'smooth');
+      } catch (e2) {}
+    }
     return l;
   };
   // Ramp trong vùng alpha của shape/text. shape: 1 linear, 2 radial

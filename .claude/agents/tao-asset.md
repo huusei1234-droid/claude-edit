@@ -18,11 +18,12 @@ Mở `output/<slug>/job.json`. Nếu `trang_thai` **không** phải `da-duyet-ki
 ## Việc của bạn
 1. **Giọng đọc** (nếu job có lời đọc): tạo bằng node âm thanh trên canvas, lời nhập thẳng vào ô soạn (không nối node văn bản). Dùng đúng giọng
    ghi trong `job.json`; **không đổi giọng**. Xuất file, cắt lặng đầu/cuối, whisper nghe lại lấy mốc từng chữ, chuẩn âm lượng. Sai chữ thì tạo lại tối đa 4 lần.
-2. **Clip/ảnh AI** theo `scenes[]` có nguồn `flow` hoặc `muse`:
-   - **Flow**: dùng model trong `HUONG-DAN-AI.md` mục 6.1; theo đợt nhỏ (3 rồi 5–6 clip). **Muse**: tạo **từng clip một**, tuần tự.
+2. **Clip/ảnh AI** theo `scenes[]` có nguồn `chatgpt`, `flow` hoặc `muse`:
+   - **Ảnh AI mặc định**: dùng **`chatgpt::chatgpt-image`** (qua Tab ChatGPT trên trình duyệt Brave chung của Canvas — tự động đưa vào dự án **`HTPM`** `g-p-6afbde0b943481919c6ec31a3b4f8642` và tự xóa đoạn chat ngay sau khi tải ảnh xong để sạch bộ nhớ). Chỉ dùng `flow::flow-nano-banana-pro` hoặc `muse::muse-image` khi người dùng chỉ định rõ.
+   - **Video AI**: **Flow** dùng model trong `HUONG-DAN-AI.md` mục 6.1 (`flow::flow-omni-1.2-flash`); theo đợt nhỏ (3 rồi 5–6 clip). **Muse**: tạo **từng clip một**, tuần tự.
    - Dùng đúng prompt đã duyệt trong `job.json`; chỉ sửa prompt khi bị chặn (và ghi lại thay đổi).
 2b. **Hình hook** (talking head): chỉ làm với `kich_ban.hook_da_chon`. Nếu rỗng thì **dừng và báo** người dùng chưa chọn phương án hook.
-   Tạo từng hình trong phương án đã chọn bằng `canvas_generate_image` (ảnh rẻ hơn clip), 9:16 hoặc tỉ lệ ghi trong `job.json`; chép vào `output/<slug>/media/hook_NN.png`
+   Tạo từng hình trong phương án đã chọn bằng `canvas_generate_image` với `model: "chatgpt::chatgpt-image"` (ảnh rẻ hơn clip), 9:16 hoặc tỉ lệ ghi trong `job.json`; chép vào `output/<slug>/media/hook_NN.png`
    và ghi `kich_ban.hook_phuong_an[].hinh[].asset`. Prompt hình: không chữ nêu tuổi/giới tính người, không trẻ em; nội dung y tế dùng sơ đồ/minh hoạ, **không ảnh cơ thể thật**,
    không có chữ trong ảnh (chữ do agent `edit` đặt). Số ảnh tính vào `credit.so_anh_ai_da_tao`. Hình `icon` hoặc `quay-that` thì chỉ kiểm file có mặt.
 3. **Xuất file** bằng node "Xuất file" (`exportRequest` giá trị mới mỗi lần), đọc `manifest.json`, map `nodeId` → cảnh. Chép vào `output/<slug>/media/cNN.mp4`.

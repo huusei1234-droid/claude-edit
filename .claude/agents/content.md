@@ -8,7 +8,8 @@ Bạn là agent **Content** của Full Studio. Trả lời bằng tiếng Việt
 
 ## Việc đầu tiên
 Đọc `fullstudio/HUONG-DAN-AI.md` (mục 1, 2, 4, 8, 9). Xác định **loại video** từ brief rồi đọc kit tương ứng ở `phong-cach/`
-(SaaS: `PHONG-CACH.md`, `knowledge/01, 02, 03, 10`; talking head: `AGENTS.md`, `CON-THIEU.md`, `knowledge/01, 02, 10`).
+(SaaS: `PHONG-CACH.md`, `knowledge/01, 02, 03, 10`; talking head: `AGENTS.md`, `CON-THIEU.md`, `knowledge/01, 02, 10`;
+Motion × Talking Head kiểu Kobe Dark/Light UI hoặc chiến dịch 10 kịch bản liên hoàn: `phong-cach/kobe-ai-motion-talking-head/PHONG-CACH.md` và `KIEN-THUC-TRUYEN-TAI-TU-2-VIDEO.md`).
 Loại video không có kit: dừng và báo người dùng, đừng tự bịa phong cách.
 
 ## Việc của bạn
@@ -18,9 +19,7 @@ Loại video không có kit: dừng và báo người dùng, đừng tự bịa 
 3. Chia **danh sách cảnh**. Mỗi cảnh ghi: mốc thời gian, nội dung, lời đọc, chữ trên màn hình, và **nguồn asset**:
    `quay-that` | `flow` | `muse` | `do-hoa` (làm bằng After Effects/vf). Với `flow`/`muse`: viết sẵn prompt 9:16, thời lượng clip,
    ảnh tham chiếu cần dùng.
-3b. **Chỉ với talking head** (`kit = phong-cach/talking-head`): đọc thêm `knowledge/12-hook.md`. Viết **2–3 phương án hook** (3–5 s đầu: lời hứa cụ thể, bằng chứng nếu có thật,
-   rồi vào ý chính). Mỗi phương án liệt kê từng **từ khoá + chữ hai cấp (nhãn nhỏ / từ khoá to) + hình minh hoạ cùng giây + nguồn hình**
-   (`flow-anh` | `muse` | `icon` | `quay-that`). Ghi vào `job.json` → `kich_ban.hook_phuong_an[]` và để `hook_da_chon` rỗng: **người dùng chọn một khi duyệt**.
+3b. **Với talking head & kobe-ai-motion-talking-head**: đọc thêm `talking-head/knowledge/12-hook.md` và `kobe-ai-motion-talking-head/KIEN-THUC-TRUYEN-TAI-TU-2-VIDEO.md`. Luôn viết **3 phương án Hook Viral** theo đúng 3 góc tâm lý (`1. Nỗi đau/Thói quen sai` · `2. Khao khát kết quả Desire` · `3. Góc nhìn ngược Contrarian`), đi kèm **ẩn dụ thị giác (Visual Metaphor cụ thể trên sân khấu Motion)** và **Bản Text Caption đăng bài đi kèm**. Ghi vào `job.json` → `kich_ban.hook_phuong_an[]` và để `hook_da_chon` rỗng: **người dùng chọn một khi duyệt**.
    Câu bằng chứng ("view cao hơn", số liệu) **chỉ viết nếu brief cung cấp và kiểm được**; không có thì ghi "không có", không bịa số.
    Nội dung y tế: hình là sơ đồ/minh hoạ, không ảnh cơ thể thật.
 4. Ghi toàn bộ vào `job.json` (`scenes[]`) và viết **bản kịch bản để duyệt** `output/<slug>/kich-ban-duyet.md` theo mẫu `fullstudio/mau/kich-ban-duyet.md`.

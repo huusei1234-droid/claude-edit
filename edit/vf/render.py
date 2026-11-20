@@ -1,7 +1,26 @@
 # Dựng video từ file dự án bằng FFmpeg: cắt từng clip (tốc độ, zoom), nối, đốt phụ đề, trộn giọng + nhạc (nhạc tự nhỏ khi có giọng).
 # Có chế độ dọc 9:16 (cắt giữa khung, hoặc theo focus_x của từng clip).
 import hashlib, os, shutil, subprocess
+from concurrent.futures import ThreadPoolExecutor
 from . import media, project, subs, tts
+
+
+def _detect_nvenc():
+    if os.environ.get('VF_FORCE_CPU') == '1':
+        return False
+    try:
+        r = subprocess.run(
+            ['ffmpeg', '-hide_banner', '-loglevel', 'error', '-f', 'lavfi', '-i', 'color=c=black:s=256x256:d=0.1', '-c:v', 'h264_nvenc', '-f', 'null', '-'],
+            stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, timeout=5,
+        )
+        return r.returncode == 0
+    except Exception:
+        return False
+
+
+_HAS_NVENC = _detect_nvenc()
+_VENC_CLIP = ['-c:v', 'h264_nvenc', '-preset', 'p5', '-rc', 'vbr', '-cq', '18', '-b:v', '0'] if _HAS_NVENC else ['-c:v', 'libx264', '-crf', '17', '-preset', 'fast']
+_VENC_FINAL = ['-c:v', 'h264_nvenc', '-preset', 'p5', '-rc', 'vbr', '-cq', '18', '-b:v', '0', '-pix_fmt', 'yuv420p'] if _HAS_NVENC else ['-c:v', 'libx264', '-crf', '18', '-preset', 'medium', '-pix_fmt', 'yuv420p']
 
 
 def _run(*a): subprocess.run(['ffmpeg', '-y', '-hide_banner', '-loglevel', 'error', *a], check=True)
@@ -36,22 +55,25 @@ def render_clip(c, W, H, vertical, tmp):
     out = os.path.join(tmp, f'c_{key}.mp4')
     if not os.path.exists(out):
         _run('-ss', str(c['in']), '-i', c['src'], '-filter_complex', _clip_filter(c, W, H, vertical), '-map', '[v]', '-t', f"{c['tdur']:.4f}",
-             '-an', '-c:v', 'libx264', '-crf', '17', '-preset', 'fast', '-r', '30', out)
+             '-an', *_VENC_CLIP, '-r', '30', out)
     return out
 
 
 def render(p, out, vertical=False, burn=True, audio=True, sub_mode=None):
     W, H = (p['canvas']['h'], p['canvas']['w']) if vertical else (p['canvas']['w'], p['canvas']['h'])
     base = os.path.dirname(os.path.abspath(p['_path'])); tmp = os.path.join(base, 'tmp'); os.makedirs(tmp, exist_ok=True)
-    parts = []
-    for i, c in enumerate(p['clips']):
+
+    def _build_part(ic):
+        i, c = ic
         if 'gap' in c:
             g = os.path.join(tmp, f'gap_{c["gap"]}_{W}x{H}.mp4')
             if not os.path.exists(g):
-                _run('-f', 'lavfi', '-i', f'color=c=0x15412c:s={W}x{H}:r=30:d={c["gap"]}', '-vf', 'vignette=PI/4,format=yuv420p', '-an', '-c:v', 'libx264', '-crf', '17', '-r', '30', g)
-            parts.append(g)
-        else:
-            parts.append(render_clip(next(t for t in p['timeline'] if t['idx'] == i), W, H, vertical, tmp))
+                _run('-f', 'lavfi', '-i', f'color=c=0x15412c:s={W}x{H}:r=30:d={c["gap"]}', '-vf', 'vignette=PI/4,format=yuv420p', '-an', *_VENC_CLIP, '-r', '30', g)
+            return g
+        return render_clip(next(t for t in p['timeline'] if t['idx'] == i), W, H, vertical, tmp)
+
+    with ThreadPoolExecutor(max_workers=3 if _HAS_NVENC else 4) as pool:
+        parts = list(pool.map(_build_part, enumerate(p['clips'])))
     lst = os.path.join(tmp, 'list.txt'); open(lst, 'w', encoding='utf-8').write(''.join("file '%s'\n" % x.replace('\\', '/') for x in parts))
     vid = os.path.join(tmp, 'video.mp4'); _run('-f', 'concat', '-safe', '0', '-i', lst, '-c', 'copy', vid)
     vf = []
@@ -59,6 +81,11 @@ def render(p, out, vertical=False, burn=True, audio=True, sub_mode=None):
         ev = subs.events(p, sub_mode)
         fd = os.path.join(tmp, 'fonts'); os.makedirs(fd, exist_ok=True)
         for f in ('segoeui.ttf', 'segoeuib.ttf', 'segoeuii.ttf'): shutil.copy('C:/Windows/Fonts/' + f, os.path.join(fd, f))
+        extra_fdir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', 'BO_KIEN_THUC_TVC_AI_PORTABLE', '03_TAI_NGUYEN_DUNG_CHUNG', 'fonts_tvc_vi'))
+        if os.path.isdir(extra_fdir):
+            for fn in os.listdir(extra_fdir):
+                if fn.lower().endswith(('.ttf', '.otf')) and not os.path.exists(os.path.join(fd, fn)):
+                    shutil.copy2(os.path.join(extra_fdir, fn), os.path.join(fd, fn))
         open(os.path.join(tmp, 'subs.ass'), 'w', encoding='utf-8-sig').write(subs.to_ass(p, ev, vertical=vertical)); vf = ['subtitles=subs.ass:fontsdir=fonts']
     ins = ['-i', 'video.mp4']; fc = []; amap = []
     if audio and p.get('voiceover'):
@@ -77,7 +104,7 @@ def render(p, out, vertical=False, burn=True, audio=True, sub_mode=None):
     if fc: args += ['-filter_complex', ';'.join(fc)]
     args += ['-map', '0:v', *amap]
     if vf: args += ['-vf', ','.join(vf)]
-    args += ['-c:v', 'libx264', '-crf', '18', '-preset', 'medium', '-pix_fmt', 'yuv420p']
+    args += [*_VENC_FINAL]
     if amap: args += ['-c:a', 'aac', '-b:a', '192k']
     args += ['-t', str(p['duration']), os.path.abspath(out)]
     cwd = os.getcwd(); os.chdir(tmp)

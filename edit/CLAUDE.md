@@ -25,6 +25,7 @@ Từ thư mục gốc này: `python -X utf8 -m vf <lệnh> ...` (xem đầu `vf/
 - Cảnh đứng im thì zoom nhẹ (`zoom: [1.0, 1.12]` trong clip). Chủ thể ở giữa khung khi zoom.
 - Chữ nằm vùng dưới, cố định. Mỗi lần chuyển cảnh nên rơi đúng nhịp nhạc.
 - Cỡ cảnh do bạn xem ảnh (`look` rồi Read ảnh) và gán vào `size`; không đoán mù.
+- **Tạo video bằng Muse (`muse::muse-video` / `muse2api`)**: bắt buộc **tạo từng video 1** (xong video này mới tạo video tiếp theo, `MUSE2API_ACCOUNT_MAX_CONCURRENCY=1`), áp dụng cho **tất cả các thể loại video**.
 
 ## File dự án
 `clips` nối tiếp nhau: `{src, in, dur, speed?, size, label, zoom?, inset?, focus_x?}` hoặc `{gap: giây}`. `sections` mỗi mục có `id, start, end, script` (lời đọc), `onscreen` (chữ trên màn hình: `{start,end,text,style?,pos?,parts?}`).

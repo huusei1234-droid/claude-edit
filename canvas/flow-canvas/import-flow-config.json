@@ -9,6 +9,20 @@
         "apiFormat": "openai",
         "channels": [
             {
+                "id": "chatgpt",
+                "name": "ChatGPT Web (tự động)",
+                "baseUrl": "https://chatgpt.com",
+                "apiKey": "chatgpt-web",
+                "apiFormat": "openai",
+                "models": [
+                    {
+                        "name": "chatgpt-image",
+                        "capability": "image",
+                        "script": "/**\n * Infinite Canvas model request script: tạo ảnh qua ChatGPT Web (chatgpt.com),\n * app desktop tự điều khiển cửa sổ Chrome/Brave thật (window.desktop.chatgpt).\n * Lần đầu: menu ChatGPT > \"Mở cửa sổ ChatGPT (đăng nhập)\", đăng nhập tài khoản ChatGPT Plus/Pro/Team.\n * Hỗ trợ: tỉ lệ 9:16 (1024x1536), 16:9 (1536x1024), 1:1 (1024x1024) và ảnh tham chiếu (referenceNodeIds).\n */\nasync function chatgptImage({ prompt, images, params, model }) {\n  const chatgpt = window.desktop && window.desktop.chatgpt;\n  if (!chatgpt) {\n    throw new Error(\"Cần chạy trong app desktop (canvas/app.bat). Trình duyệt thường không điều khiển được ChatGPT Web.\");\n  }\n\n  const size = String((params && params.size) || \"auto\").trim();\n  let ratio = [\"16:9\", \"4:3\", \"3:2\", \"1:1\", \"3:4\", \"2:3\", \"9:16\"].includes(size) ? size : \"\";\n  if (!ratio) {\n    const m = size.match(/^(\\d+)x(\\d+)$/i);\n    if (m) {\n      const r = Number(m[1]) / Number(m[2]);\n      ratio = r > 1.2 ? \"16:9\" : r < 0.85 ? \"9:16\" : \"1:1\";\n    } else {\n      ratio = \"1:1\";\n    }\n  }\n\n  const count = Math.min(4, Math.max(1, Number(params && params.count) || 1));\n  const quality = String((params && params.quality) || \"auto\");\n\n  // Lấy tên ảnh tham chiếu mà Canvas gắn vào đầu prompt (\"Ảnh 1 (tên)\")\n  const refNames = [];\n  for (const nm of String(prompt).matchAll(/Ảnh (\\d+) \\(([^)\\n]{1,32})\\)/g)) {\n    if (!refNames[nm[1] - 1]) refNames[nm[1] - 1] = nm[2].trim();\n  }\n  const fileNameOf = (i) => {\n    const raw = (refNames[i] || `ref_${i + 1}`).replace(/[\\\\/:*?\"<>|]+/g, \"_\");\n    return /\\.(png|jpe?g|webp)$/i.test(raw) ? raw : raw + \".png\";\n  };\n\n  // Làm sạch nhãn nội bộ của Canvas khỏi prompt gửi sang ChatGPT\n  const cleanPrompt = String(prompt)\n    .replace(/^Nhãn ảnh tham chiếu:[^\\n]*\\n+/i, \"\")\n    .replace(/【[^】\\n]*】\\s*/g, \"\")\n    .trim();\n\n  const imgs = (images || []).slice(0, 7).map((d, i) => {\n    const m = String(d).match(/^data:([^;]+);base64,(.*)$/);\n    if (!m) throw new Error(\"Ảnh tham chiếu không phải định dạng data URL hợp lệ.\");\n    return { mime: m[1], base64: m[2], name: fileNameOf(i) };\n  });\n\n  const res = await chatgpt.generateImage({\n    prompt: cleanPrompt,\n    model: model || \"chatgpt-image\",\n    ratio,\n    quality,\n    count,\n    images: imgs,\n  });\n  if (!res.ok) throw new Error(res.error);\n\n  const toDataUrl = (blob) =>\n    new Promise((ok, no) => {\n      const fr = new FileReader();\n      fr.onload = () => ok(fr.result);\n      fr.onerror = no;\n      fr.readAsDataURL(blob);\n    });\n\n  const out = [];\n  for (const it of res.items || []) {\n    out.push(await toDataUrl(new Blob([it.data], { type: it.mime || \"image/png\" })));\n  }\n  if (!out.length) throw new Error(\"ChatGPT không trả về dữ liệu ảnh.\");\n  return out;\n}\n\nreturn await chatgptImage({ prompt, images, params, model });\n"
+                    }
+                ]
+            },
+            {
                 "id": "flow",
                 "name": "Google Flow (tự động)",
                 "baseUrl": "http://127.0.0.1:8100",
@@ -94,8 +108,8 @@
                 ]
             }
         ],
-        "model": "flow::flow-nano-banana-pro",
-        "imageModel": "flow::flow-nano-banana-pro",
+        "model": "chatgpt::chatgpt-image",
+        "imageModel": "chatgpt::chatgpt-image",
         "videoModel": "flow::flow-omni-flash",
         "textModel": "default::gpt-5.5",
         "audioModel": "default::gpt-4o-mini-tts",
@@ -111,6 +125,7 @@
         "systemPrompt": "",
         "reasoningEffort": "auto",
         "models": [
+            "chatgpt::chatgpt-image",
             "flow::flow-nano-banana-pro",
             "flow::flow-omni-flash",
             "default::gpt-5.5",

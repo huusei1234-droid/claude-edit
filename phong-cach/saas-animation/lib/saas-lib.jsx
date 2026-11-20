@@ -4,7 +4,7 @@
 // Quy ước toạ độ: comp 1920×1080, 30 fps, điểm (0,0) ở góc trên trái.
 (function () {
   var H = {};
-  H.VERSION = '1.3.0';
+  H.VERSION = '1.4.0';
   // H.W/H.Hh = KHÔNG GIAN THIẾT KẾ của cảnh (luôn 1920×1080 — mọi hàm cảnh vẽ theo toạ độ này).
   // H.FRAME = khung ra thật của MAIN/ENV: 16:9 1920×1080 hoặc 9:16 1080×1920 (H.setFormat).
   H.W = 1920; H.Hh = 1080; H.FPS = 30;
@@ -224,10 +224,27 @@
   };
   H.t = function (comp, name, text, x, y, size, color, font, just) { return H.text(comp, { name: name, text: text, size: size, color: color, font: font, just: just || 'l', pos: [x, y] }); };
 
-  H.FONT = { regular: 'SegoeUI', medium: 'SegoeUI-Semibold', bold: 'SegoeUI-Bold', black: 'SegoeUIBlack' };
-  // Chọn font: ưu tiên Inter nếu máy có, không thì Segoe UI. Trả danh sách font tìm được.
+  H.FONT = { regular: 'BeVietnamPro-Medium', medium: 'BeVietnamPro-SemiBold', bold: 'BeVietnamPro-Bold', black: 'BeVietnamPro-ExtraBold' };
+  // Bộ 18 họ font Tiếng Việt TVC & Thương mại (39 PostScript names đã cài sẵn trong Windows Fonts, kiểm chứng 100% dấu Việt):
+  H.FONT_VI = {
+    sansRegular: 'Inter-Regular', sansMedium: 'BeVietnamPro-Medium', sansSemi: 'BeVietnamPro-SemiBold',
+    sansBold: 'BeVietnamPro-Bold', sansBlack: 'BeVietnamPro-ExtraBold',
+    geoSemi: 'Montserrat-SemiBold', geoBold: 'Montserrat-Bold', geoExtra: 'Montserrat-ExtraBold', geoBlack: 'Montserrat-Black',
+    jakartaBold: 'PlusJakartaSans-Bold', jakartaExtra: 'PlusJakartaSans-ExtraBold',
+    serifLuxury: 'Fraunces-Black', serifBold: 'PlayfairDisplay-ExtraBold', serifItalic: 'PlayfairDisplay-BoldItalic',
+    serifEditorial: 'CormorantGaramond-Bold', serifPrata: 'Prata-Regular', serifYeseva: 'YesevaOne-Regular',
+    loraBold: 'Lora-Bold', loraItalic: 'Lora-Italic', notoExtra: 'NotoSerifDisplay-ExtraBold',
+    condensedBold: 'Oswald-Bold', impact: 'Anton-Regular', rounded: 'Baloo2-ExtraBold', paytone: 'PaytoneOne-Regular',
+    scriptBold: 'DancingScript-Bold', scriptVibes: 'GreatVibes-Regular', scriptAlex: 'AlexBrush-Regular'
+  };
+  // Chọn font: ưu tiên Be Vietnam Pro / Plus Jakarta Sans / Montserrat / Inter (đủ 100% dấu Việt), dự phòng Segoe UI.
   H.pickFonts = function () {
-    var want = { regular: ['Inter-Regular', 'Inter'], medium: ['Inter-SemiBold', 'Inter-Medium'], bold: ['Inter-Bold'], black: ['Inter-Black', 'Inter-ExtraBold'] };
+    var want = {
+      regular: ['BeVietnamPro-Medium', 'Inter-Regular', 'Inter', 'SegoeUI'],
+      medium: ['BeVietnamPro-SemiBold', 'PlusJakartaSans-SemiBold', 'Inter-SemiBold', 'SegoeUI-Semibold'],
+      bold: ['BeVietnamPro-Bold', 'Montserrat-Bold', 'Inter-Bold', 'SegoeUI-Bold'],
+      black: ['BeVietnamPro-ExtraBold', 'Montserrat-Black', 'PlusJakartaSans-ExtraBold', 'SegoeUIBlack']
+    };
     var have = {};
     try { var all = app.fonts.allFonts; for (var i = 0; i < all.length; i++) for (var j = 0; j < all[i].length; j++) have[all[i][j].postScriptName] = 1; } catch (e) { return H.FONT; }
     for (var k in want) for (var m = 0; m < want[k].length; m++) if (have[want[k][m]]) { H.FONT[k] = want[k][m]; break; }
@@ -748,8 +765,8 @@
   // Chạy lại được: xoá layer SFX_/MUSIC_ cũ trước.
   H.buildAudio = function (main, o) {
     for (var i = main.numLayers; i >= 1; i--) if (/^(SFX_|MUSIC_)/.test(main.layer(i).name)) main.layer(i).remove();
-    var dir = new Folder(o.sfxDir), files = dir.getFiles('*.wav'), byType = {}, k;
-    for (k = 0; k < files.length; k++) { var n = decodeURI(files[k].name).replace(/\.wav$/, ''), ty = n.replace(/_[a-z]$/, ''); (byType[ty] = byType[ty] || []).push(files[k].fsName); }
+    var dir = new Folder(o.sfxDir), files = dir.getFiles(function (f) { return (f instanceof File) && /\.(wav|mp3)$/i.test(f.name); }), byType = {}, k;
+    for (k = 0; k < files.length; k++) { var n = decodeURI(files[k].name).replace(/\.(wav|mp3)$/i, ''), ty = n.replace(/_[a-z]$/, ''); (byType[ty] = byType[ty] || []).push(files[k].fsName); }
     var placed = [], rot = {}, count = 0;
     for (i = 1; i <= main.numLayers; i++) {
       var L = main.layer(i); if (!(L.source instanceof CompItem)) continue;
@@ -795,6 +812,112 @@
     var a = [];
     for (var i = 1; i <= comp.numLayers; i++) { var l = comp.layer(i); a.push(i + ' ' + l.name + ' [' + l.inPoint.toFixed(2) + '–' + l.outPoint.toFixed(2) + ']' + (l.parent ? ' ⟵ ' + l.parent.name : '')); }
     return a;
+  };
+
+  // =====================================================================
+  // 9. CHỮ GRADIENT ĐA ĐIỂM + TÁCH 2 LỚP VIỀN + HIỆU ỨNG FINAL CUT PRO
+  // =====================================================================
+  // 6 Preset Chữ Gradient thương hiệu đồng bộ 100% với HyperFrames (`gradient-text-presets.css`):
+  H.GRAD_PRESETS = {
+    gold_champagne: { c1: '#FFF8DB', c2: '#F6CF65', c3: '#C8871E', c4: '#FFE599', stroke: '#4A2B05', sheen: '#FFFDF2' },
+    rose_silk:      { c1: '#FFF0F6', c2: '#FF85B3', c3: '#C91860', c4: '#FFC2DC', stroke: '#590829', sheen: '#FFF5FA' },
+    emerald_jade:   { c1: '#E6FFF5', c2: '#5CE6B0', c3: '#0B7A53', c4: '#A8F5D8', stroke: '#043824', sheen: '#F0FFF9' },
+    royal_pearl:    { c1: '#FFFFFF', c2: '#D8E2FF', c3: '#6C8CFF', c4: '#EEF3FF', stroke: '#162459', sheen: '#FFFFFF' },
+    sunset_coral:   { c1: '#FFF5E6', c2: '#FF9E66', c3: '#E03E2D', c4: '#FFD1B3', stroke: '#4F110A', sheen: '#FFF8F0' },
+    platinum_ice:   { c1: '#FFFFFF', c2: '#CBD5E1', c3: '#64748B', c4: '#F1F5F9', stroke: '#0F172A', sheen: '#FFFFFF' }
+  };
+
+  // Tạo Chữ Gradient 4 điểm màu + tách riêng lớp viền sau (không ăn lẹm vào mặt chữ) + quét ánh kim CC Light Sweep:
+  // o = {text, size, font, pos, just, track, name, preset:'gold_champagne', sw:8, stroke:'#4A2B05', sweepT0, sweepDur}
+  H.gradText = function (comp, o) {
+    var pr = H.GRAD_PRESETS[o.preset || 'gold_champagne'] || H.GRAD_PRESETS.gold_champagne;
+    var fnt = o.font || H.FONT_VI.serifLuxury;
+    var front = H.text(comp, { text: o.text, size: o.size || 72, font: fnt, color: pr.c1, pos: o.pos, just: o.just || 'c', track: o.track || 0, name: (o.name || 'TXT_Grad') + '_Front' });
+    var r = front.sourceRectAtTime(0, false);
+    var xL = r.left, xR = r.left + r.width, yT = r.top, yB = r.top + r.height;
+
+    // Lớp viền tách biệt phía sau (.grad-back) để viền dày sắc nét mà không lẹm vào Gradient:
+    var back = null;
+    if (o.sw !== 0) {
+      back = front.duplicate();
+      back.name = (o.name || 'TXT_Grad') + '_StrokeBack';
+      back.moveAfter(front);
+      var sp = back.property('ADBE Text Properties').property('ADBE Text Document'), bd = sp.value;
+      bd.applyFill = false; bd.applyStroke = true;
+      bd.strokeColor = H.rgbRaw(o.stroke || pr.stroke);
+      bd.strokeWidth = o.sw || 8;
+      sp.setValue(bd);
+      H.fx(back, 'ADBE Drop Shadow', { 'ADBE Drop Shadow-0002': 165, 'ADBE Drop Shadow-0004': 6, 'ADBE Drop Shadow-0005': 18 });
+      H.attach(back, front, 0);
+    }
+
+    // Áp 4-Color Gradient (ADBE 4ColorGradient) + Set Matte lấy alpha chữ gốc:
+    try {
+      H.fx(front, 'ADBE 4ColorGradient', {
+        'ADBE 4ColorGradient-0001': [xL + r.width * 0.15, yT],
+        'ADBE 4ColorGradient-0002': H.rgbRaw(pr.c1),
+        'ADBE 4ColorGradient-0003': [xR - r.width * 0.15, yT + r.height * 0.35],
+        'ADBE 4ColorGradient-0004': H.rgbRaw(pr.c2),
+        'ADBE 4ColorGradient-0005': [xL + r.width * 0.25, yB],
+        'ADBE 4ColorGradient-0006': H.rgbRaw(pr.c3),
+        'ADBE 4ColorGradient-0007': [xR - r.width * 0.1, yB - r.height * 0.15],
+        'ADBE 4ColorGradient-0008': H.rgbRaw(pr.c4)
+      });
+    } catch (e) {
+      H.fx(front, 'ADBE Ramp', {
+        'ADBE Ramp-0001': [xL + r.width / 2, yT], 'ADBE Ramp-0002': H.rgbRaw(pr.c1),
+        'ADBE Ramp-0003': [xL + r.width / 2, yB], 'ADBE Ramp-0004': H.rgbRaw(pr.c3)
+      });
+    }
+    var sm = H.fx(front, 'ADBE Set Matte3', {});
+    sm.property('ADBE Set Matte3-0001').setValue(front.index);
+    sm.property('ADBE Set Matte3-0002').setValue(4);
+
+    // Quét sáng ánh kim (CC Light Sweep) nếu truyền sweepT0:
+    if (o.sweepT0 !== undefined) {
+      try {
+        var swp = H.fx(front, 'CC Light Sweep', {});
+        swp.property('CC Light Sweep-0002').setValue(-28); // Direction
+        swp.property('CC Light Sweep-0004').setValue(42);  // Width
+        swp.property('CC Light Sweep-0005').setValue(75);  // Sweep Intensity
+        var dur = o.sweepDur || 0.65;
+        var posNow = H.pos(front).value;
+        H.anim(swp.property('CC Light Sweep-0001'), [o.sweepT0, o.sweepT0 + dur], [[posNow[0] - r.width * 0.7, posNow[1]], [posNow[0] + r.width * 0.7, posNow[1]]], 'smooth');
+      } catch (e2) {}
+    }
+    return { front: front, back: back };
+  };
+
+  // Hiệu ứng Chữ mở nét quang học kiểu Final Cut Pro / Apple (`focus-blur-resolve`):
+  H.blurFocusIn = function (l, t, dur, blurPx, fromScale) {
+    dur = dur || 0.42; blurPx = blurPx || 26; fromScale = fromScale || 94;
+    var gb = H.fx(l, 'ADBE Gaussian Blur 2', {});
+    gb.property('ADBE Gaussian Blur 2-0002').setValue(1);
+    H.anim(gb.property('ADBE Gaussian Blur 2-0001'), [t, t + dur], [blurPx, 0], 'snap');
+    H.anim(H.scl(l), [t, t + dur], [[fromScale, fromScale], [100, 100]], 'snap');
+    H.anim(H.opa(l), [t, t + dur * 0.55], [0, 100], 'smooth');
+    return l;
+  };
+
+  // Chuyển cảnh Whip-Pan kiểu Final Cut Pro (Adjustment Layer đè lên điểm cắt `tCut`):
+  H.whipPan = function (comp, tCut, dur, dir) {
+    dur = dur || 0.28; dir = dir || 1;
+    var t0 = Math.max(0, tCut - dur / 2), t1 = Math.min(comp.duration, tCut + dur / 2);
+    var adj = H.adj(comp, 'FX_WhipPan_' + tCut.toFixed(2));
+    adj.inPoint = t0; adj.outPoint = t1;
+    try {
+      var mt = H.fx(adj, 'ADBE Tile', {});
+      mt.property('ADBE Tile-0004').setValue(300);
+      mt.property('ADBE Tile-0005').setValue(300);
+      mt.property('ADBE Tile-0006').setValue(1); // Mirror Edges
+      H.anim(mt.property('ADBE Tile-0001'), [t0, tCut, t1], [[comp.width / 2, comp.height / 2], [comp.width / 2 + dir * comp.width, comp.height / 2], [comp.width / 2 + dir * comp.width * 2, comp.height / 2]], 'snap');
+    } catch (e) {}
+    try {
+      var db = H.fx(adj, 'ADBE Motion Blur', {});
+      db.property('ADBE Motion Blur-0001').setValue(90);
+      H.anim(db.property('ADBE Motion Blur-0002'), [t0, tCut, t1], [0, 85, 0], 'smooth');
+    } catch (e2) {}
+    return adj;
   };
 
   $.global.H = H;

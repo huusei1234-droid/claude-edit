@@ -23,23 +23,51 @@ async function flowVideo({ prompt, images, videos, audios, params, model, signal
     "flow-omni-flash": "Omni 1.2 Flash", "flow-omni-flash-11": "Omni 1.1 Flash", // tên cũ, node cũ vẫn chạy
   }[model] || "Omni 1.2 Flash";
 
+  const fastHash = (str) => {
+    const s = String(str || "");
+    let h = 2166136261 >>> 0;
+    const step = Math.max(1, Math.floor(s.length / 4096));
+    h ^= s.length; h = Math.imul(h, 16777619) >>> 0;
+    for (let i = 0; i < s.length; i += step) { h ^= s.charCodeAt(i); h = Math.imul(h, 16777619) >>> 0; }
+    return h.toString(16).padStart(8, "0");
+  };
+  const extFromMime = (mime, fallbackName) => {
+    const m = String(fallbackName || "").match(/\.(png|jpe?g|webp)$/i);
+    if (m) return m[0].toLowerCase();
+    if (/jpeg|jpg/i.test(mime || "")) return ".jpg";
+    if (/webp/i.test(mime || "")) return ".webp";
+    return ".png";
+  };
+
   // tên ảnh trên Flow = tên node: canvas gắn nhãn "Ảnh N (tên node)" vào prompt (tên <= 24 ký tự)
   const refNames = [];
   for (const nm of String(prompt).matchAll(/Ảnh (\d+) \(([^)\n]{1,24})\)/g)) if (!refNames[nm[1] - 1]) refNames[nm[1] - 1] = nm[2].trim();
-  // ưu tiên tên do canvas gửi kèm (params.imageNames = tiêu đề node + .png); nhãn trong prompt chỉ là dự phòng
   const given = Array.isArray(p.imageNames) ? p.imageNames : [];
-  const fileNameOf = (i) => { const n = String(given[i] || "").trim() || refNames[i] || `Ảnh ${i + 1}`; return /\.(png|jpe?g|webp)$/i.test(n) ? n : n + ".png"; };
+
+  const rawImgs = (images || []).slice(0, 7).map((d) => {
+    const m = String(d).match(/^data:([^;]+);base64,(.*)$/);
+    if (!m) throw new Error("Ảnh tham chiếu không phải data URL");
+    return { mime: m[1], base64: m[2] };
+  });
+
+  const fileNameOf = (i) => {
+    const raw = String(given[i] || "").trim() || refNames[i] || "";
+    const stem = raw.replace(/\.(png|jpe?g|webp)$/i, "").trim();
+    const isGeneric = !stem || /^(ảnh|anh|image|img|asset|node|unnamed|untitled)[\s_-]*\d*$/i.test(stem);
+    const im = rawImgs[i];
+    const ext = extFromMime(im && im.mime, raw);
+    if (isGeneric && im) return `ref-${fastHash(im.base64)}${ext}`;
+    const base = stem || `Ảnh ${i + 1}`;
+    return /\.(png|jpe?g|webp)$/i.test(raw) ? raw : base + ext;
+  };
+
   const text = String(prompt)
     .replace(/^Nhãn ảnh tham chiếu:[^\n]*\n+/, "")
     .replace(/【[^】\n]*】\s*/g, "") // nhãn node văn bản do canvas thêm
     .replace(/Ảnh (\d+) \(([^)\n]{1,24})\)/g, (_, n) => fileNameOf(n - 1))
     .replace(/Ảnh (\d+)(?!\d)/g, (_, n) => fileNameOf(n - 1));
 
-  const imgs = (images || []).slice(0, 7).map((d, i) => {
-    const m = String(d).match(/^data:([^;]+);base64,(.*)$/);
-    if (!m) throw new Error("Ảnh tham chiếu không phải data URL");
-    return { mime: m[1], base64: m[2], name: fileNameOf(i) };
-  });
+  const imgs = rawImgs.map((im, i) => ({ mime: im.mime, base64: im.base64, name: fileNameOf(i) }));
 
   const res = await flow.generateVideo({
     prompt: text, model: MODEL, aspect, resolution, seconds, count: 1, images: imgs,

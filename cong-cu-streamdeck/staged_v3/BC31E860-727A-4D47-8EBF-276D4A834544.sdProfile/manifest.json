@@ -1,0 +1,17 @@
+{
+  "Device": {
+    "Model": "20GBA9901",
+    "UUID": "@(1)[4057/128/A2RQA3462I3ASB]"
+  },
+  "Name": "Full Studio Pro (3 Trang)",
+  "Pages": {
+    "Current": "c3e3afaa-e139-41a4-bf81-024772cefb8b",
+    "Default": "1fa1adb6-a4c5-41b4-9b7c-ec90ece20fde",
+    "Pages": [
+      "c3e3afaa-e139-41a4-bf81-024772cefb8b",
+      "6f68edd9-e505-4360-8f84-8ffa6e2066a7",
+      "8a42f190-7b31-4e88-9c12-55d90e11a303"
+    ]
+  },
+  "Version": "3.0"
+}

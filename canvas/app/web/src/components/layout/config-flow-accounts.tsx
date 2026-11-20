@@ -15,13 +15,26 @@ type FlowApi = {
     refreshCredits: () => Promise<FlowState>;
     setMinCredits: (n: number) => Promise<FlowState>;
 };
-const flow = (window as unknown as { desktop?: { flow?: FlowApi } }).desktop?.flow;
+type ChatGptAccount = { id: string; name: string; active: boolean };
+type ChatGptState = { browserOpen?: boolean; loggedIn?: boolean | null; accounts: ChatGptAccount[] };
+type ChatGptApi = {
+    accounts: () => Promise<ChatGptState>;
+    switchAccount: (id: string) => Promise<ChatGptState>;
+    addAccount: () => Promise<ChatGptState>;
+    removeAccount: (id: string) => Promise<ChatGptState>;
+    renameAccount: (id: string, name: string) => Promise<ChatGptState>;
+    openAccount: (id: string) => Promise<ChatGptState>;
+};
+const desktopWin = window as unknown as { desktop?: { flow?: FlowApi; chatgpt?: ChatGptApi } };
+const flow = desktopWin.desktop?.flow;
+const chatgpt = desktopWin.desktop?.chatgpt;
 
 /** Chỉ có trong app desktop: quản lý nhiều tài khoản Google Flow, xem điểm còn lại, tự đổi khi hết điểm. */
 export function ConfigFlowAccounts({ active }: { active: boolean }) {
     const { modal, message } = App.useApp();
     const { t } = useTranslation();
     const [state, setState] = useState<FlowState | null>(null);
+    const [gptState, setGptState] = useState<ChatGptState | null>(null);
     const [busy, setBusy] = useState("");
 
     const run = useCallback(
@@ -38,14 +51,76 @@ export function ConfigFlowAccounts({ active }: { active: boolean }) {
         [message],
     );
 
+    const runGpt = useCallback(
+        async (key: string, action: () => Promise<ChatGptState>) => {
+            setBusy(key);
+            try {
+                setGptState(await action());
+            } catch (reason) {
+                void message.error(reason instanceof Error ? reason.message : String(reason));
+            } finally {
+                setBusy("");
+            }
+        },
+        [message],
+    );
+
     useEffect(() => {
         if (active && flow) void run("load", flow.accounts);
-    }, [active, run]);
+        if (active && chatgpt) void runGpt("load-gpt", chatgpt.accounts);
+    }, [active, run, runGpt]);
 
     if (!flow) return <div className="text-sm text-stone-500">{t("config.flow.desktopOnly")}</div>;
 
     return (
         <div className="space-y-3">
+            {chatgpt ? (
+                <section className="rounded-lg border border-emerald-300/60 bg-emerald-50/40 p-4 dark:border-emerald-800/60 dark:bg-emerald-950/20">
+                    <div className="flex flex-wrap items-start justify-between gap-3">
+                        <div className="min-w-0">
+                            <div className="text-sm font-semibold">ChatGPT Web — Tạo ảnh tự động (chatgpt::chatgpt-image)</div>
+                            <div className="mt-1 text-xs text-stone-500">
+                                Mở cửa sổ Chrome/Brave riêng (cổng 9334), đăng nhập tài khoản ChatGPT Plus/Pro/Team một lần để Canvas tự tạo ảnh không tốn API key.
+                            </div>
+                        </div>
+                        <Button type="primary" icon={<Plus className="size-4" />} loading={busy === "gpt-add"} disabled={!!busy && busy !== "gpt-add"} onClick={() => void runGpt("gpt-add", chatgpt.addAccount)}>
+                            Thêm tài khoản ChatGPT
+                        </Button>
+                    </div>
+                    <div className="mt-3 space-y-2">
+                        {gptState?.accounts.map((acc) => (
+                            <div key={acc.id} className="flex flex-wrap items-center justify-between gap-2 rounded-md border border-stone-200 bg-white p-2.5 dark:border-stone-800 dark:bg-stone-900">
+                                <div className="flex flex-wrap items-center gap-2">
+                                    <Input
+                                        key={acc.name}
+                                        className="max-w-56"
+                                        defaultValue={acc.name}
+                                        onBlur={(event) => event.target.value.trim() && event.target.value !== acc.name && void runGpt("gpt-ren", () => chatgpt.renameAccount(acc.id, event.target.value))}
+                                    />
+                                    {acc.active ? <Tag color="green">Đang dùng</Tag> : null}
+                                    {acc.active && gptState.loggedIn === true ? <Tag color="cyan">Đã đăng nhập</Tag> : null}
+                                    {acc.active && gptState.loggedIn === false ? <Tag color="orange">Cần đăng nhập</Tag> : null}
+                                </div>
+                                <div className="flex shrink-0 gap-2">
+                                    {!acc.active ? (
+                                        <Button icon={<UserCheck className="size-4" />} loading={busy === "gpt-use-" + acc.id} disabled={!!busy} onClick={() => void runGpt("gpt-use-" + acc.id, () => chatgpt.switchAccount(acc.id))}>
+                                            Dùng tài khoản này
+                                        </Button>
+                                    ) : null}
+                                    <Button icon={<LogIn className="size-4" />} loading={busy === "gpt-open-" + acc.id} disabled={!!busy} onClick={() => void runGpt("gpt-open-" + acc.id, () => chatgpt.openAccount(acc.id))}>
+                                        Mở cửa sổ ChatGPT
+                                    </Button>
+                                    {gptState.accounts.length > 1 ? (
+                                        <Button danger icon={<Trash2 className="size-4" />} disabled={!!busy} onClick={() => void runGpt("gpt-rm-" + acc.id, () => chatgpt.removeAccount(acc.id))}>
+                                            Xóa
+                                        </Button>
+                                    ) : null}
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </section>
+            ) : null}
             <section className="rounded-lg border border-stone-200 p-4 dark:border-stone-800">
                 <div className="flex flex-wrap items-start justify-between gap-3">
                     <div className="min-w-0">

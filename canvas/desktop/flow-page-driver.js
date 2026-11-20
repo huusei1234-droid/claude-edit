@@ -12,14 +12,14 @@
   const SEL = {
     editor: '.ProseMirror',
     composer: '.base-prompt-box',
-    generate: 'button[aria-label="Bắt đầu tạo"], button[aria-label="Start generating"], button[aria-label="Generate"]',
+    generate: 'button.generate-icon-button, button[aria-label="Bắt đầu tạo"], button[aria-label="Start generating"], button[aria-label="Generate"]',
     settings: 'button.settings-trigger-button',
-    clearPrompt: 'button[aria-label="Xoá câu lệnh"]',
-    addMedia: 'button[aria-label="Thêm thành phần vào ô nhập câu lệnh"]',
-    pickerSearch: '.cdk-overlay-container input.search-input, input[aria-label="Tìm kiếm thành phần"], input[aria-label="Search for assets"]',
-    pickerOption: 'button[role=option].asset-item',
+    clearPrompt: 'button[aria-label="Xoá câu lệnh"], button[aria-label="Clear prompt"]',
+    addMedia: 'button[aria-label="Thêm thành phần vào ô nhập câu lệnh"], button[aria-label="Add media to prompt"], button[aria-label="Add ingredient to prompt"]',
+    pickerSearch: '.cdk-overlay-container input.search-input, .cdk-overlay-container input[aria-label="Tìm kiếm"], .cdk-overlay-container input[aria-label="Tìm kiếm thành phần"], .cdk-overlay-container input[aria-label="Search"], .cdk-overlay-container input[aria-label="Search for assets"]',
+    pickerOption: 'button.asset-item, button[role=option].asset-item',
     pickerAdd: 'button.detail-add-to-prompt-btn',
-    pickerUpload: '.sidebar-footer',
+    pickerUpload: 'button.sidebar-upload-btn, .sidebar-footer',
     chip: '.mention-chip',
     composerThumbRemove: '.chip-container',
   };
@@ -159,35 +159,231 @@
     try { await waitFor(shown, 7000, 150, 'asset picker'); }
     catch { if (shown()) return; realClick(add); await waitFor(shown, 7000, 150, 'asset picker (retry)'); }
   }
-  const optName = (o) => txt(o).split('\n')[0].trim();
-  async function pickAsset(name) {
-    const opt = await waitFor(() => $$(SEL.pickerOption).find((o) => optName(o) === name), 15000, 200, 'asset ' + name);
-    realClick(opt); await sleep(500);
-    // chọn từ "@" thì Flow chèn chip luôn; chọn từ nút + thì phải bấm "Thêm vào câu lệnh"
-    const addBtn = await waitFor(() => { const b = $(SEL.pickerAdd); return b && b.getBoundingClientRect().width && !b.disabled ? b : null; }, 2500, 150, 'add').catch(() => null);
-    if (addBtn) realClick(addBtn);
-    await sleep(900);
+  const stemOf = (name) => String(name || '').trim().replace(/\.(png|jpe?g|webp|gif)$/i, '').trim();
+  const extOf = (name, mime) => {
+    const m = String(name || '').match(/\.(png|jpe?g|webp|gif)$/i);
+    if (m) return m[0].toLowerCase();
+    if (/jpeg|jpg/i.test(mime || '')) return '.jpg';
+    if (/webp/i.test(mime || '')) return '.webp';
+    return '.png';
+  };
+  const isGenericAssetName = (name) => /^(ảnh|anh|image|img|asset|node|unnamed|untitled)[\s_-]*\d*$/i.test(stemOf(name));
+  const fastHash = (str) => {
+    const s = String(str || '');
+    let h = 2166136261 >>> 0;
+    const step = Math.max(1, Math.floor(s.length / 4096));
+    h ^= s.length;
+    h = Math.imul(h, 16777619) >>> 0;
+    for (let i = 0; i < s.length; i += step) {
+      h ^= s.charCodeAt(i);
+      h = Math.imul(h, 16777619) >>> 0;
+    }
+    return h.toString(16).padStart(8, '0');
+  };
+  const isUploadingText = (s) => /Đang tải lên|Uploading|\b\d{1,3}%/i.test(String(s || ''));
+
+  const optName = (o) => {
+    if (!o || o.disabled || o.getAttribute('aria-disabled') === 'true') return '';
+    const raw = txt(o);
+    if (isUploadingText(raw)) return '';
+    const lines = raw.split('\n').map((s) => s.trim()).filter(Boolean);
+    return lines.find((s) => !/^(image|videocam|voice_selection|accessibility_new|face|Hình ảnh|Video|Giọng nói)$/i.test(s)) || lines[0] || '';
+  };
+  const isImageOption = (o) => !/^(videocam)\b|\bVideo\b/i.test(txt(o));
+
+  const pickerShown = () => { const s = $(SEL.pickerSearch); return !!(s && s.getBoundingClientRect().width); };
+
+  async function setPickerSearch(q) {
+    const s = $(SEL.pickerSearch);
+    if (!s || !s.getBoundingClientRect().width) return false;
+    const want = String(q || '');
+    if (s.value === want) return true;
+    s.focus();
+    document.execCommand('selectAll', false, null);
+    if (want) document.execCommand('insertText', false, want);
+    else document.execCommand('delete', false, null);
+    const setter = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value')?.set;
+    if (s.value !== want) {
+      if (setter) setter.call(s, want); else s.value = want;
+      s.dispatchEvent(new Event('input', { bubbles: true }));
+    }
+    await sleep(want ? 320 : 220);
+    return true;
   }
 
-  async function uploadFile(file) {
+  function findMatchingOptionInPicker(targetName, allowStemMatch = true) {
+    const tLow = String(targetName || '').trim().toLowerCase();
+    const tStem = stemOf(targetName).toLowerCase();
+    const opts = $$(SEL.pickerOption).filter((o) => o.getBoundingClientRect().width > 0 && isImageOption(o));
+    const exact = opts.find((o) => optName(o).toLowerCase() === tLow);
+    if (exact) return exact;
+    if (allowStemMatch && tStem && !isGenericAssetName(targetName)) {
+      return opts.find((o) => {
+        const on = optName(o);
+        return on && stemOf(on).toLowerCase() === tStem;
+      }) || null;
+    }
+    return null;
+  }
+
+  function findExistingNameOnGrid(targetName, allowStemMatch = true) {
+    const tLow = String(targetName || '').trim().toLowerCase();
+    const tStem = stemOf(targetName).toLowerCase();
+    if (!tLow) return '';
+    const tiles = $$('flow-image-tile').filter((t) => !t.closest('.cdk-overlay-container') && !isUploadingText(txt(t)) && !!($('img', t)?.src));
+    for (const t of tiles) {
+      const ft = txt($('.footer-title', t));
+      if (ft && ft.toLowerCase() === tLow) return ft;
+    }
+    if (allowStemMatch && tStem && !isGenericAssetName(targetName)) {
+      for (const t of tiles) {
+        const ft = txt($('.footer-title', t));
+        if (ft && stemOf(ft).toLowerCase() === tStem) return ft;
+      }
+    }
+    return '';
+  }
+
+  async function selectOptionElement(opt) {
+    realClick(opt);
+    await sleep(450);
+    // chọn từ "@" thì Flow chèn chip luôn; chọn từ nút + thì phải bấm "Thêm vào câu lệnh"
+    const addBtn = await waitFor(() => {
+      const b = $(SEL.pickerAdd);
+      return b && b.getBoundingClientRect().width && !b.disabled ? b : null;
+    }, 1800, 120, 'add').catch(() => null);
+    if (addBtn) realClick(addBtn);
+    await sleep(650);
+  }
+
+  async function uploadFileInOpenPicker(file) {
+    if (!$(SEL.pickerUpload)) {
+      await closePicker().catch(() => {});
+      await sleep(250);
+    }
     await openPicker();
+    await setPickerSearch('');
     cap.on = true; cap.input = null;
-    const up = await waitFor(() => $(SEL.pickerUpload), 4000, 150, 'upload button');
+    const up = await waitFor(() => $(SEL.pickerUpload) || $$('button').find((b) => /sidebar-upload-btn|Tải nội dung nghe nhìn lên|Upload media/i.test(b.className + ' ' + txt(b))), 5000, 150, 'upload button');
     realClick(up.closest('button') || up.querySelector('button') || up);
     try { await waitFor(() => cap.input, 4000, 100, 'file input'); } finally { cap.on = false; }
     const dt = new DataTransfer(); dt.items.add(file);
     cap.input.files = dt.files;
     cap.input.dispatchEvent(new Event('change', { bubbles: true }));
-    await waitFor(() => $$(SEL.pickerOption).find((o) => optName(o) === file.name), 30000, 300, 'upload ' + file.name);
-    await sleep(3500); // chờ upload xong (thanh tiến trình)
+    await waitFor(() => findMatchingOptionInPicker(file.name, false), 60000, 300, 'upload ' + file.name);
+    await sleep(1200); // chờ thumbnail ổn định sau khi hết trạng thái "Đang tải lên"
+  }
+
+  async function pickAsset(name, fallbackIm = null) {
+    let opt = findMatchingOptionInPicker(name, true);
+    if (!opt) {
+      // Nếu dự án có nhiều ảnh khiến ảnh cũ cuộn xuống dưới virtual-scroll -> gõ tìm theo tên để lọc tức thì!
+      await setPickerSearch(stemOf(name));
+      opt = await waitFor(() => findMatchingOptionInPicker(name, true), 3500, 180, 'asset ' + name).catch(() => null);
+    }
+    if (!opt && fallbackIm && fallbackIm.base64) {
+      note('asset missing in picker, uploading fallback once: ' + name);
+      const f = b64ToFile(fallbackIm.base64, fallbackIm.mime, name);
+      await uploadFileInOpenPicker(f);
+      opt = await waitFor(() => findMatchingOptionInPicker(name, true), 8000, 200, 'asset after fallback ' + name);
+    }
+    if (!opt) throw new Error('UI_TIMEOUT: asset ' + name);
+    await selectOptionElement(opt);
+    if (pickerShown()) await setPickerSearch('').catch(() => {});
+  }
+
+  async function uploadFile(file) {
+    await uploadFileInOpenPicker(file);
     await closePicker();
   }
-  const pickerShown = () => { const s = $(SEL.pickerSearch); return !!(s && s.getBoundingClientRect().width); };
+
   async function closePicker() {
     if (!pickerShown()) return;
+    await setPickerSearch('').catch(() => {});
+    const bd = $('.cdk-overlay-backdrop');
+    if (bd) { bd.click(); await sleep(250); }
+    if (!pickerShown()) return;
     const s = $(SEL.pickerSearch);
-    for (const type of ['keydown', 'keyup']) s.dispatchEvent(new KeyboardEvent(type, { key: 'Escape', code: 'Escape', keyCode: 27, which: 27, bubbles: true }));
-    try { await waitFor(() => !pickerShown(), 2000, 100, 'close picker'); } catch { document.body.click(); await sleep(500); }
+    if (s) {
+      for (const type of ['keydown', 'keyup']) {
+        s.dispatchEvent(new KeyboardEvent(type, { key: 'Escape', code: 'Escape', keyCode: 27, which: 27, bubbles: true }));
+      }
+    }
+    try { await waitFor(() => !pickerShown(), 2000, 100, 'close picker'); } catch { $('.cdk-overlay-backdrop')?.click(); document.body.click(); await sleep(500); }
+  }
+
+  /**
+   * Đảm bảo ảnh tham chiếu có mặt trong dự án Flow hiện tại mà KHÔNG BAO GIỜ tải trùng lặp:
+   * 1. Nếu đã xác thực trong bộ nhớ phiên của project này (cùng mã băm nội dung) -> tái sử dụng ngay (0ms).
+   * 2. Nếu đã có sẵn thẻ <flow-image-tile> hoàn tất trên lưới dự án -> tái sử dụng ngay (0ms).
+   * 3. Mở hộp chọn thành phần, lọc theo tên -> nếu đã có trong Flow -> tái sử dụng ngay, KHÔNG upload lại!
+   * 4. Chỉ khi thực sự chưa có trong dự án Flow mới tải lên đúng 1 lần duy nhất.
+   */
+  async function ensureAssetInFlow(im, { attachNow = false } = {}) {
+    const projKey = location.pathname;
+    const reg = (window.__flowAssetRegistry = window.__flowAssetRegistry || {});
+    const projMap = (reg[projKey] = reg[projKey] || {});
+    const hash = fastHash(im.base64 || '');
+
+    let desiredName = String(im.name || 'ref.png').trim();
+    if (isGenericAssetName(desiredName) && hash) {
+      desiredName = `ref-${hash}${extOf(desiredName, im.mime)}`;
+    } else if (projMap[desiredName] && projMap[desiredName].hash && projMap[desiredName].hash !== hash) {
+      // Nội dung ảnh thay đổi nhưng giữ tên node cũ -> gắn hậu tố hash để không dùng nhầm ảnh cũ
+      desiredName = `${stemOf(desiredName)}-${hash.slice(0, 6)}${extOf(desiredName, im.mime)}`;
+    }
+
+    const allowStem = !isGenericAssetName(desiredName);
+    const cached = projMap[desiredName];
+    if (cached && cached.hash === hash && cached.flowName) {
+      const gridStillThere = findExistingNameOnGrid(cached.flowName, false);
+      if (gridStillThere || (Date.now() - (cached.verifiedAt || 0) < 25 * 60 * 1000)) {
+        note('reuse cached Flow asset: ' + cached.flowName);
+        if (attachNow) {
+          await openPicker();
+          await pickAsset(cached.flowName, { ...im, name: desiredName });
+          await closePicker();
+        }
+        return cached.flowName;
+      }
+    }
+
+    const onGrid = findExistingNameOnGrid(desiredName, allowStem);
+    if (onGrid) {
+      projMap[desiredName] = projMap[im.name] = { hash, flowName: onGrid, verifiedAt: Date.now() };
+      note('reuse grid Flow asset: ' + onGrid);
+      if (attachNow) {
+        await openPicker();
+        await pickAsset(onGrid, { ...im, name: desiredName });
+        await closePicker();
+      }
+      return onGrid;
+    }
+
+    await openPicker();
+    await setPickerSearch(stemOf(desiredName));
+    const existingOpt = findMatchingOptionInPicker(desiredName, allowStem);
+    if (existingOpt) {
+      const foundName = optName(existingOpt);
+      projMap[desiredName] = projMap[im.name] = { hash, flowName: foundName, verifiedAt: Date.now() };
+      note('reuse picker Flow asset: ' + foundName);
+      if (attachNow) {
+        await selectOptionElement(existingOpt);
+      }
+      await closePicker();
+      return foundName;
+    }
+
+    const f = b64ToFile(im.base64, im.mime, desiredName);
+    await uploadFileInOpenPicker(f);
+    projMap[desiredName] = projMap[im.name] = { hash, flowName: desiredName, verifiedAt: Date.now() };
+    note('uploaded new Flow asset once: ' + desiredName);
+    if (attachNow) {
+      const newOpt = findMatchingOptionInPicker(desiredName, false);
+      if (newOpt) await selectOptionElement(newOpt);
+    }
+    await closePicker();
+    return desiredName;
   }
 
   const b64ToFile = (b64, mime, name) => {
@@ -196,93 +392,169 @@
     return new File([u8], name, { type: mime || 'image/png' });
   };
 
+  function focusEditorAtEnd() {
+    const ed = $$(SEL.editor).find((e) => e.getBoundingClientRect().width > 0) || $(SEL.editor);
+    if (!ed) return null;
+    ed.focus();
+    try {
+      const sel = window.getSelection();
+      const range = document.createRange();
+      range.selectNodeContents(ed);
+      range.collapse(false);
+      sel.removeAllRanges();
+      sel.addRange(range);
+    } catch {}
+    return ed;
+  }
+
   async function typeText(s) {
     if (!s) return;
-    const ed = $(SEL.editor); ed.focus();
+    const ed = focusEditorAtEnd();
+    if (!ed) return;
     document.execCommand('insertText', false, s);
     await sleep(120);
   }
 
   /** Điền prompt; mọi lần xuất hiện của tên ảnh (có hoặc không có @) được đổi thành mention chip. */
-  async function fillPrompt(prompt, names) {
-    const ed = $(SEL.editor); ed.focus();
+  async function fillPrompt(prompt, names, fallbackByName = {}) {
+    const ed = $$(SEL.editor).find((e) => e.getBoundingClientRect().width > 0) || $(SEL.editor);
+    ed.focus();
     document.execCommand('selectAll', false, null);
     document.execCommand('delete', false, null);
-    const sorted = [...names].sort((a, b) => b.length - a.length).map((n) => n.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'));
+    const uniqNames = [...new Set(names.filter(Boolean))];
+    const sorted = [...uniqNames].sort((a, b) => b.length - a.length).map((n) => n.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'));
     const re = sorted.length ? new RegExp('@?(' + sorted.join('|') + ')', 'g') : null;
     let last = 0; const parts = [];
     if (re) for (const m of prompt.matchAll(re)) { parts.push({ t: prompt.slice(last, m.index) }, { ref: m[1] }); last = m.index + m[0].length; }
     parts.push({ t: prompt.slice(last) });
     for (const p of parts) {
       if (p.ref) {
+        await waitFor(() => !pickerShown(), 1800, 80, 'prev picker close').catch(() => {});
         // Flow chỉ mở hộp chọn khi "@" đứng sau khoảng trắng/ký tự; ở đầu ô trống thì không
-        const before = $(SEL.editor).innerText.replace(/\n+$/, '');
+        const curEd = focusEditorAtEnd();
+        const before = (curEd?.innerText || '').replace(/\n+$/, '');
         if (!before || !/\s$/.test(before)) await typeText(' ');
         await typeText('@');
-        await waitFor(() => { const s = $(SEL.pickerSearch); return s && s.getBoundingClientRect().width; }, 5000, 150, 'mention picker');
-        await pickAsset(p.ref);
-        $(SEL.editor).focus();
+        await waitFor(() => pickerShown(), 5000, 150, 'mention picker');
+        await pickAsset(p.ref, fallbackByName[p.ref] || null);
+        await waitFor(() => !pickerShown(), 2000, 100, 'mention picker close').catch(() => closePicker());
+        focusEditorAtEnd();
       } else await typeText(p.t);
     }
   }
 
-  const videoSrc = (v) => v.currentSrc || v.src || $('source', v)?.src || '';
+  const videoSrc = (v) => (v && (v.currentSrc || v.src || $('source', v)?.src)) || '';
   // baseline = mọi video đang có trên trang (theo src) để nhận ra video MỚI sau khi bấm tạo
   // ảnh sinh ra nằm trong lưới tile; lấy theo src (asb/ hoặc flow-content/image)
   // chữ ký (?Expires=...&Signature=...) đổi liên tục nên so sánh theo URL đã bỏ query
-  const keyOf = (u) => String(u).split('?')[0];
+  const keyOf = (u) => String(u || '').split('?')[0];
   const tileImgSrcs = () => $$('cdk-virtual-scroll-viewport img, .tiles-container img')
     .filter((i) => !i.closest('.cdk-overlay-container') && !/\b\d{1,3}%/.test(txt(i.closest('flow-image-tile, .tile, [class*=tile]') || i.parentElement || i)))
     .map((i) => i.currentSrc || i.src || '').filter((u) => /flow\.google\.com\/asb\/|flow-content\.google\/image\//.test(u));
-  // video xong: thẻ <flow-video-tile> có ảnh thu nhỏ mà URL chính là URL video (không cần <video>, thẻ đang tạo thì chưa có)
+  // video xong: thẻ <flow-video-tile> bản mới có sẵn <video src="...=mm,22,15"> (720p MP4 trực tiếp) hoặc img.thumbnail
+  const tileMediaUrl = (t) => videoSrc($('video', t)) || $('img.thumbnail', t)?.src || '';
+  const gridTiles = () => $$('flow-video-tile, flow-error-tile').filter((t) => !t.closest('.cdk-overlay-container'));
+  const gridVideoTiles = () => $$('flow-video-tile').filter((t) => !t.closest('.cdk-overlay-container'));
+  const isPendingDom = (t) => Boolean($('flow-pending-tile, flow-soupy-overlay', t));
   const videoSrcs = () => [...new Set([
-    ...$$('flow-video-tile').filter((t) => !/\b\d{1,3}%/.test(txt(t))).map((t) => $('img.thumbnail', t)?.src || ''),
-    ...$$('video').map(videoSrc),
+    ...gridVideoTiles().filter((t) => !isPendingDom(t) && !/\b\d{1,3}%/.test(txt(t))).map(tileMediaUrl),
+    ...$$('video').filter((v) => !v.closest('.cdk-overlay-container')).map(videoSrc),
   ].filter((u) => /flow\.google\.com\/asb\/|flow-content\.google\//.test(u)))];
   const mediaIdsOnPage = (kind) => [...new Set(kind === 'image' ? tileImgSrcs() : videoSrcs())];
 
   async function submit(job) {
-    note('submit ' + (job.prompt || '').slice(0, 40));
+    const jobId = job.jobId || ('fj_' + Date.now() + '_' + Math.random().toString(36).slice(2, 6));
+    note('submit [' + jobId + '] ' + (job.prompt || '').slice(0, 40));
     await waitFor(() => $(SEL.editor), 20000, 300, 'editor').catch(() => {}); // trang vừa tải lại: chờ ô nhập
     if (!$(SEL.editor)) throw new Error('UI_NO_EDITOR: mở tab project Flow trước');
+    // Tự động đóng hộp thoại "Xem tất cả nhật ký thay đổi / Bắt đầu" (What's New modal) nếu che màn hình!
+    const whatsNewBtn = $$('.cdk-overlay-container button').find((b) => /^(Bắt đầu|Got it|Đóng|Close|OK)$/i.test(txt(b)));
+    if (whatsNewBtn) { realClick(whatsNewBtn); await sleep(350); }
     await clearComposer();
     await applySettings(job);
-    const images = job.images || [];
+    const rawImages = job.images || [];
     const names = [];
-    for (const im of images) {
-      const f = b64ToFile(im.base64, im.mime, im.name);
-      await uploadFile(f);
-      names.push(im.name);
-      if (job.mode === 'frames') continue; // khung hình: gắn sau (xem attachFrames)
-      // ảnh được nhắc trong prompt sẽ tự gắn khi chèn chip @; ảnh còn lại gắn bằng nút +
-      if (!(job.prompt || '').includes(im.name)) { await openPicker(); await pickAsset(im.name); }
-    }
-    if (job.mode === 'frames' && images.length) await attachFrames(names);
+    const fallbackByName = {};
     let promptText = job.prompt || '';
+    const seenInputKeys = new Set();
+
+    for (const im of rawImages) {
+      const dedupKey = `${im.name || ''}:${fastHash(im.base64 || '')}`;
+      if (seenInputKeys.has(dedupKey)) continue;
+      seenInputKeys.add(dedupKey);
+
+      const mentionedInPrompt = Boolean(
+        im.name && (
+          promptText.includes(im.name) ||
+          (!isGenericAssetName(im.name) && new RegExp('@' + stemOf(im.name).replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '(?![\\w-])', 'i').test(promptText))
+        )
+      );
+      const attachViaPlus = job.mode !== 'frames' && !mentionedInPrompt;
+      const actualName = await ensureAssetInFlow(im, { attachNow: attachViaPlus });
+      names.push(actualName);
+      fallbackByName[actualName] = { ...im, name: actualName };
+
+      // Đồng bộ tên ảnh thực tế trong Flow vào prompt (ví dụ Flow đã có sẵn CH1.jpg trong khi Canvas gửi CH1.png, hoặc ảnh không tên được gắn mã hash)
+      if (im.name && actualName !== im.name) {
+        promptText = promptText.split('@' + im.name).join('@' + actualName).split(im.name).join(actualName);
+      }
+      if (!isGenericAssetName(im.name) && stemOf(im.name)) {
+        const bareTagRe = new RegExp('@' + stemOf(im.name).replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '(?![\\w.-])', 'gi');
+        promptText = promptText.replace(bareTagRe, '@' + actualName);
+      }
+    }
+    if (job.mode === 'frames' && names.length) await attachFrames(names, fallbackByName);
     if (job.mode === 'frames') for (const n of names) promptText = promptText.split('@' + n).join('').split(n).join(''); // ảnh đã nằm ở ô khung hình, không cần tên file trong prompt
-    await fillPrompt(promptText.replace(/\n{3,}/g, '\n\n').trim(), job.mode === 'frames' ? [] : names);
-    // chờ mọi tile đang tải lên/đang tạo (hiện "NN%") xong để thumbnail ổn định trước khi chụp baseline
-    await waitFor(() => !$$('cdk-virtual-scroll-viewport, .tiles-container').some((v) => /\b\d{1,3}%/.test(txt(v))), 40000, 500, 'upload tiles settle').catch(() => {});
-    await sleep(1500);
+    const cleanPrompt = promptText.replace(/\n{3,}/g, '\n\n').trim();
+    await fillPrompt(cleanPrompt, job.mode === 'frames' ? [] : names, fallbackByName);
+    await sleep(350);
+
+    // Dọn các thẻ lỗi cũ (delete_forever) nếu còn tồn đọng trên lưới dự án để tránh Angular vẽ lại làm nhận nhầm!
+    for (const et of $$('flow-error-tile').filter((t) => !t.closest('.cdk-overlay-container')).slice(0, 8)) {
+      const delB = $$('button', et.closest('flow-video-tile') || et).find((b) => /delete_forever|Xoá|Delete/i.test((b.getAttribute('aria-label') || '') + ' ' + txt(b)));
+      if (delB) { delB.click(); await sleep(180); }
+    }
+
+    // Đánh dấu mọi tile cũ trên lưới chính trước lúc bấm Tạo (loại trừ hộp chọn .cdk-overlay-container) để khi chạy song song nhiều luồng, mỗi lệnh nhận diện đúng 100% ô của mình!
+    for (const t of gridTiles()) {
+      if (!t.dataset.flowJobId) t.dataset.flowJobId = 'prior';
+    }
+    let plainPrefix = cleanPrompt;
+    for (const n of names) plainPrefix = plainPrefix.split('@' + n).join('').split(n).join('');
+    plainPrefix = plainPrefix.replace(/\s+/g, ' ').trim().slice(0, 24).toLowerCase();
+
+    const isErrTile = (t) => t.tagName === 'FLOW-ERROR-TILE' || !!t.querySelector('flow-error-tile') || /Không thành công|Generation failed|unusual activity/i.test(txt(t));
     const baseline = mediaIdsOnPage(job.kind);
+    const errBefore = gridTiles().filter(isErrTile).length;
     const btn = $(SEL.generate) || iconBtn($(SEL.composer) || document, 'arrow_forward');
     await waitFor(() => btn && !btn.disabled && btn.getAttribute('aria-disabled') !== 'true', 8000, 200, 'generate enabled');
-    const state = { baseline, t0: Date.now(), expect: job.count || 1, kind: job.kind === 'image' ? 'image' : 'video' };
+    const state = { jobId, promptPrefix: plainPrefix, baseline, errBefore, t0: Date.now(), expect: job.count || 1, kind: job.kind === 'image' ? 'image' : 'video' };
     if (job.dryRun) return { ...state, dryRun: true, log: log.slice(-12) };
     if (job.trustedClick) {
       // Flow bỏ qua click giả lập ở chế độ ẩn: trả vị trí nút để Electron click bằng chuột thật
       btn.scrollIntoView({ block: 'center' });
-      await sleep(200);
+      await sleep(180);
       const r = btn.getBoundingClientRect();
       return { ...state, clickAt: { x: r.left + r.width / 2, y: r.top + r.height / 2 }, log: log.slice(-12) };
     }
     realClick(btn);
-    await sleep(1500);
+    await sleep(1200);
+    claimSpawnedTiles(jobId, state.expect);
     return { ...state, log: log.slice(-12) };
   }
 
+  function claimSpawnedTiles(jobId, expect = 1) {
+    const unclaimed = gridTiles().filter((t) => !t.dataset.flowJobId);
+    const picked = unclaimed.slice(0, expect);
+    for (const t of picked) {
+      t.dataset.flowJobId = jobId;
+    }
+    const already = gridTiles().filter((t) => t.dataset.flowJobId === jobId);
+    return already.length;
+  }
+
   // Khung hình đầu/cuối: bấm ô "Bắt đầu"/"Kết thúc" -> hộp chọn ảnh; chọn ảnh là hộp tự đóng và ô nhận ảnh
-  async function attachFrames(names) {
+  async function attachFrames(names, fallbackByName = {}) {
     for (const [i, n] of names.slice(0, 2).entries()) {
       const slot = await waitFor(() => $$('.frame-trigger')[i], 6000, 200, 'frame slot ' + i);
       await sleep(600); // chờ hộp chọn cũ đóng hẳn, kẻo bấm trúng lúc nó đang đóng
@@ -291,24 +563,70 @@
         try { await waitFor(pickerShown, 2500, 150, 'frame picker ' + i); } catch { /* bấm lại */ }
       }
       await waitFor(pickerShown, 1000, 150, 'frame picker ' + i);
-      await pickAsset(n);
+      await pickAsset(n, fallbackByName[n] || null);
       await waitFor(() => !pickerShown(), 4000, 150, 'frame picker close');
     }
   }
 
-  // Video: ô mới nhất nằm ĐẦU lưới. Chỉ coi là xong khi đã thấy ô đang chạy (NN%) của chính lệnh này ở đầu lưới,
-  // rồi các ô đầu lưới (đủ số lượng) đã có ảnh thu nhỏ và hết %. Không dựa vào "video mới bất kỳ" vì video của các lần tạo trước có thể vừa xong.
-  const isRunning = (t) => /\b\d{1,3}%/.test(txt(t));
+  // Hỗ trợ chạy song song đa Tab (u/0, u/1, u/3): kiểm tra cả thẻ <flow-pending-tile> của giao diện Flow mới để không bao giờ báo xong sớm khi video còn đang render!
+  const isRunning = (t) => {
+    if (isPendingDom(t)) return true;
+    if (/\b\d{1,3}%/.test(txt(t))) return true;
+    const pb = $('.progress-bar', t);
+    const st = pb?.getAttribute('style') || '';
+    const m = st.match(/--progress-percent:\s*(\d+)%/);
+    return !!(m && Number(m[1]) > 0 && Number(m[1]) < 100 && !tileMediaUrl(t));
+  };
+
+  function findJobTiles(j) {
+    const all = gridTiles();
+    const expect = j.expect || 1;
+    if (j.jobId) {
+      const direct = all.filter((t) => t.dataset.flowJobId === j.jobId);
+      if (direct.length >= expect) return direct.slice(0, expect);
+      // Dự phòng nếu Angular virtual-scroll vẽ lại thẻ DOM làm mất dataset: khớp theo chữ đầu của prompt trên footer-title & không nằm trong baseline
+      if (j.promptPrefix && j.promptPrefix.length >= 6) {
+        const baseKeys = new Set((j.baseline || []).map(keyOf));
+        const isErrDom = (t) => t.tagName === 'FLOW-ERROR-TILE' || !!t.querySelector('flow-error-tile') || /Không thành công|Generation failed|unusual activity/i.test(txt(t));
+        const curErrCount = all.filter(isErrDom).length;
+        const allowErrFallback = typeof j.errBefore === 'number' ? curErrCount > j.errBefore : true;
+        const byPrefix = all.filter((t) => {
+          if (t.dataset.flowJobId && t.dataset.flowJobId !== j.jobId) return false;
+          if (isErrDom(t) && !allowErrFallback) return false;
+          const ft = txt($('.footer-title', t) || '').toLowerCase();
+          const u = tileMediaUrl(t);
+          if (u && baseKeys.has(keyOf(u))) return false;
+          return ft && ft.startsWith(j.promptPrefix.slice(0, 16));
+        });
+        if (byPrefix.length >= expect) {
+          for (const t of byPrefix.slice(0, expect)) t.dataset.flowJobId = j.jobId;
+          return byPrefix.slice(0, expect);
+        }
+      }
+      if (direct.length > 0) return direct;
+    }
+    return all.slice(0, expect);
+  }
+
   function pollVideo(j) {
-    const g = (window.__flowPollState = window.__flowPollState && window.__flowPollState.t0 === j.t0 ? window.__flowPollState : { t0: j.t0, seen: false });
-    const top = $$('flow-video-tile, flow-error-tile').slice(0, j.expect || 1);
+    const map = (window.__flowPollMap = window.__flowPollMap || {});
+    const pKey = j.jobId || String(j.t0);
+    const g = (map[pKey] = map[pKey] || { t0: j.t0, seen: false });
+    const myTiles = findJobTiles(j);
     const elapsed = Date.now() - j.t0;
-    if (top.some(isRunning)) g.seen = true;
-    // ô lỗi của Flow nằm TRONG <flow-video-tile> (có chữ "Không thành công"), không chỉ là thẻ <flow-error-tile> riêng
-    const err = top.find((t) => t.tagName === 'FLOW-ERROR-TILE' || t.querySelector('flow-error-tile') || /Không thành công|Generation failed|unusual activity/i.test(txt(t)));
-    if (err && (g.seen || elapsed > 4000)) return { state: 'failed', error: txt(err).replace(/\s+/g, ' ').slice(0, 220), videos: [] };
-    if (g.seen && top.length >= (j.expect || 1) && top.every((t) => !isRunning(t) && $('img.thumbnail', t)?.src)) {
-      return { state: 'done', videos: top.map((t) => { const u = $('img.thumbnail', t).src; return { id: keyOf(u), url: u }; }) };
+    if (myTiles.some((t) => isRunning(t) || t.dataset.flowJobId === j.jobId)) g.seen = true;
+    const isErr = (t) => t.tagName === 'FLOW-ERROR-TILE' || !!t.querySelector('flow-error-tile') || /Không thành công|Generation failed|unusual activity/i.test(txt(t));
+    const err = myTiles.find(isErr);
+    if (err && g.seen) return { state: 'failed', error: txt(err).replace(/\s+/g, ' ').slice(0, 220), videos: [] };
+    if (g.seen && myTiles.length >= (j.expect || 1) && myTiles.every((t) => !isRunning(t) && !!tileMediaUrl(t))) {
+      return {
+        state: 'done',
+        videos: myTiles.map((t) => {
+          const vDirect = videoSrc($('video', t));
+          const u = vDirect || $('img.thumbnail', t)?.src || '';
+          return { id: keyOf(u), url: u, directMp4: Boolean(vDirect) };
+        }),
+      };
     }
     if (!g.seen && elapsed > 120000) return { state: 'failed', error: 'Không thấy ô video mới xuất hiện trên Flow sau khi bấm tạo', videos: [] };
     return { state: 'running', videos: [], elapsed, seen: g.seen };
@@ -328,5 +646,5 @@
     return { state: 'running', videos, elapsed: Date.now() - j.t0 };
   }
 
-  window.__flowUi = { version: 1, submit, poll, log, mediaIdsOnPage, SEL };
+  window.__flowUi = { version: 3, submit, ensureAssetInFlow, claimSpawnedTiles, poll, log, mediaIdsOnPage, SEL };
 })();

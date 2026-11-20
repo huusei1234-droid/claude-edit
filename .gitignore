@@ -1,0 +1,41 @@
+# Environments & Dependencies
+.venv/
+venv/
+**/node_modules/
+**/__pycache__/
+*.pyc
+
+# Local Machine Sync & Temp State
+.sync/
+output/
+projects/
+live-wallpapers/
+BO_KIEN_THUC_TVC_AI_PORTABLE/
+canvas/exports/
+canvas/muse2api/data/
+canvas/muse2api/.env
+edit/.tiktok-brave-profile/
+edit/mcp_open_folder_build/
+
+# Secrets, Profiles, Cookies & Keys (NEVER COMMIT)
+.env
+**/.env
+*.env.local
+**/api_key*
+**/auth.json
+**/canvas-agent.json
+**/gemini-api-keys.txt
+**/*.token
+**/*cookies*
+
+# Heavy Media & Model Weights (>45MB)
+*.mp4
+*.mov
+*.mkv
+*.avi
+*.pth
+*.onnx
+*.safetensors
+*.ckpt
+*.bak
+*.tmp

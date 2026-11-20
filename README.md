@@ -7,6 +7,7 @@ Hệ thống làm video bằng lệnh và AI, gồm 3 mắt xích chạy cục b
 | `canvas/` | **Infinity Studio**: canvas tạo ảnh và video AI (Google Flow), có agent điều khiển bằng HTTP | 17371 (agent), 3100 (web) |
 | `voice-studio/` | **Voice Studio**: tạo giọng đọc, nhân bản giọng, nhận dạng chữ (whisper) | 3900 |
 | `edit/` | **Hệ thống edit** (`vf`): file dự án JSON, dựng bằng ffmpeg, app web xem trước, xuất CapCut, script làm series | 5180 |
+| `BO_KIEN_THUC_TVC_AI_PORTABLE/` | **Bộ kiến thức & công cụ TVC AI Portable**: quy trình 7 pha, mẫu prompt ChatGPT + Flow `Omni 1.2`, giọng `THANH THANH TVC`, kho BGM + 10 Studio SFX, code mẫu HyperFrames `24fps` & 24 skills (`.agents/skills/`) | — |
 
 ## Luồng làm một video
 1. Viết kịch bản và lời đọc (`edit/kich-ban`, `edit/kien-thuc`).

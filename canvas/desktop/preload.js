@@ -18,4 +18,15 @@ contextBridge.exposeInMainWorld("desktop", {
     generateVideo: (job) => ipcRenderer.invoke("flow:generate-video", job),
     generateImage: (job) => ipcRenderer.invoke("flow:generate-image", job),
   },
+  chatgpt: {
+    status: () => ipcRenderer.invoke("chatgpt:status"),
+    show: () => ipcRenderer.invoke("chatgpt:show"),
+    accounts: () => ipcRenderer.invoke("chatgpt:accounts"),
+    switchAccount: (id) => ipcRenderer.invoke("chatgpt:switch-account", id),
+    addAccount: () => ipcRenderer.invoke("chatgpt:add-account"),
+    removeAccount: (id) => ipcRenderer.invoke("chatgpt:remove-account", id),
+    renameAccount: (id, name) => ipcRenderer.invoke("chatgpt:rename-account", id, name),
+    openAccount: (id) => ipcRenderer.invoke("chatgpt:open-account", id),
+    generateImage: (job) => ipcRenderer.invoke("chatgpt:generate-image", job),
+  },
 });

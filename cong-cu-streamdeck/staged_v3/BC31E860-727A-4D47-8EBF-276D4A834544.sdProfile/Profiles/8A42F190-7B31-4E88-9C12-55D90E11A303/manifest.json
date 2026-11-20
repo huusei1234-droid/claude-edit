@@ -1,0 +1,349 @@
+{
+  "Controllers": [
+    {
+      "Actions": {
+        "0,0": {
+          "ActionID": "89844e83-4ec6-4de6-99fc-8f288a6d72b8",
+          "LinkedTitle": true,
+          "Name": "Website",
+          "Plugin": {
+            "Name": "Website",
+            "UUID": "com.elgato.streamdeck.system.website",
+            "Version": "1.0"
+          },
+          "Resources": null,
+          "Settings": {
+            "browser": "",
+            "openInBrowser": true,
+            "path": "https://flow.google.com/"
+          },
+          "State": 0,
+          "States": [
+            {
+              "Image": "Images/key_0_0.png",
+              "Title": ""
+            }
+          ],
+          "UUID": "com.elgato.streamdeck.system.website"
+        },
+        "1,0": {
+          "ActionID": "fba6d54a-dabf-4a9a-a859-1e407012515b",
+          "LinkedTitle": true,
+          "Name": "Website",
+          "Plugin": {
+            "Name": "Website",
+            "UUID": "com.elgato.streamdeck.system.website",
+            "Version": "1.0"
+          },
+          "Resources": null,
+          "Settings": {
+            "browser": "",
+            "openInBrowser": true,
+            "path": "https://chatgpt.com/g/g-p-69b17f05d8b481919dd06a0fbdaa4746-hang-thu-pharma"
+          },
+          "State": 0,
+          "States": [
+            {
+              "Image": "Images/key_1_0.png",
+              "Title": ""
+            }
+          ],
+          "UUID": "com.elgato.streamdeck.system.website"
+        },
+        "2,0": {
+          "ActionID": "4a575f83-01e0-499b-bfe4-bab715bb7eb9",
+          "LinkedTitle": true,
+          "Name": "Open",
+          "Plugin": {
+            "Name": "Open",
+            "UUID": "com.elgato.streamdeck.system.open",
+            "Version": "1.0"
+          },
+          "Resources": null,
+          "Settings": {
+            "path": "\"d:\\AI\\full studio\\BO_KIEN_THUC_TVC_AI_PORTABLE\\03_TAI_NGUYEN_DUNG_CHUNG\\fcp_hyperframes_pack\\XEM_TOAN_BO_448_HIEU_UNG_3D_AE_FCP.html\""
+          },
+          "State": 0,
+          "States": [
+            {
+              "Image": "Images/key_2_0.png",
+              "Title": ""
+            }
+          ],
+          "UUID": "com.elgato.streamdeck.system.open"
+        },
+        "3,0": {
+          "ActionID": "74b04120-7a02-45c0-a308-36d37839745b",
+          "LinkedTitle": true,
+          "Name": "Open",
+          "Plugin": {
+            "Name": "Open",
+            "UUID": "com.elgato.streamdeck.system.open",
+            "Version": "1.0"
+          },
+          "Resources": null,
+          "Settings": {
+            "path": "\"d:\\AI\\full studio\\BO_KIEN_THUC_TVC_AI_PORTABLE\\03_TAI_NGUYEN_DUNG_CHUNG\\fonts_tvc_vi\\XEM_TRUOC_TOAN_BO_18_FONT_VA_GRADIENT.html\""
+          },
+          "State": 0,
+          "States": [
+            {
+              "Image": "Images/key_3_0.png",
+              "Title": ""
+            }
+          ],
+          "UUID": "com.elgato.streamdeck.system.open"
+        },
+        "4,0": {
+          "ActionID": "759c3586-b89b-40c3-9182-6a42f48a2a73",
+          "LinkedTitle": true,
+          "Name": "Open",
+          "Plugin": {
+            "Name": "Open",
+            "UUID": "com.elgato.streamdeck.system.open",
+            "Version": "1.0"
+          },
+          "Resources": null,
+          "Settings": {
+            "path": "\"Z:\\Máy tính khác\\My Computer\\Document HT Media\\TLH\\Edit\\_2_CAP_NHAT_NHAC_VA_SFX_TU_CAPCUT.bat\""
+          },
+          "State": 0,
+          "States": [
+            {
+              "Image": "Images/key_4_0.png",
+              "Title": ""
+            }
+          ],
+          "UUID": "com.elgato.streamdeck.system.open"
+        },
+        "0,1": {
+          "ActionID": "af13aac0-c474-44b8-b5f7-642b8f8830a8",
+          "LinkedTitle": true,
+          "Name": "Open",
+          "Plugin": {
+            "Name": "Open",
+            "UUID": "com.elgato.streamdeck.system.open",
+            "Version": "1.0"
+          },
+          "Resources": null,
+          "Settings": {
+            "path": "\"Z:\\Máy tính khác\\My Computer\\Document HT Media\\TLH\\Edit\\01_Nhạc Nền (BGM)\""
+          },
+          "State": 0,
+          "States": [
+            {
+              "Image": "Images/key_0_1.png",
+              "Title": ""
+            }
+          ],
+          "UUID": "com.elgato.streamdeck.system.open"
+        },
+        "1,1": {
+          "ActionID": "06fda100-25e6-4d68-bd73-2a90ce4eae67",
+          "LinkedTitle": true,
+          "Name": "Open",
+          "Plugin": {
+            "Name": "Open",
+            "UUID": "com.elgato.streamdeck.system.open",
+            "Version": "1.0"
+          },
+          "Resources": null,
+          "Settings": {
+            "path": "\"Z:\\Máy tính khác\\My Computer\\Document HT Media\\TLH\\Edit\\02_Hiệu Ứng Âm Thanh (SFX)\""
+          },
+          "State": 0,
+          "States": [
+            {
+              "Image": "Images/key_1_1.png",
+              "Title": ""
+            }
+          ],
+          "UUID": "com.elgato.streamdeck.system.open"
+        },
+        "2,1": {
+          "ActionID": "2abf57e3-097c-46b8-b998-0432578448a3",
+          "LinkedTitle": true,
+          "Name": "Open",
+          "Plugin": {
+            "Name": "Open",
+            "UUID": "com.elgato.streamdeck.system.open",
+            "Version": "1.0"
+          },
+          "Resources": null,
+          "Settings": {
+            "path": "\"Z:\\Máy tính khác\\My Computer\\Document HT Media\\TLH\\Edit\\03_Video Meme & Chèn Cảnh\""
+          },
+          "State": 0,
+          "States": [
+            {
+              "Image": "Images/key_2_1.png",
+              "Title": ""
+            }
+          ],
+          "UUID": "com.elgato.streamdeck.system.open"
+        },
+        "3,1": {
+          "ActionID": "4be8e228-9b9e-428b-9976-6d5c4586c311",
+          "LinkedTitle": true,
+          "Name": "Open",
+          "Plugin": {
+            "Name": "Open",
+            "UUID": "com.elgato.streamdeck.system.open",
+            "Version": "1.0"
+          },
+          "Resources": null,
+          "Settings": {
+            "path": "\"Z:\\Máy tính khác\\My Computer\\Document HT Media\\TLH\\Edit\\06_LUTs Chỉnh Màu Điện Ảnh (.cube)\""
+          },
+          "State": 0,
+          "States": [
+            {
+              "Image": "Images/key_3_1.png",
+              "Title": ""
+            }
+          ],
+          "UUID": "com.elgato.streamdeck.system.open"
+        },
+        "4,1": {
+          "ActionID": "b16760a3-2138-4bed-a64b-881ce34c861b",
+          "LinkedTitle": true,
+          "Name": "Open",
+          "Plugin": {
+            "Name": "Open",
+            "UUID": "com.elgato.streamdeck.system.open",
+            "Version": "1.0"
+          },
+          "Resources": null,
+          "Settings": {
+            "path": "\"Z:\\Máy tính khác\\My Computer\\Document HT Media\\TLH\\Edit\\07_Video Overlay Bụi Vàng & Light Leaks\""
+          },
+          "State": 0,
+          "States": [
+            {
+              "Image": "Images/key_4_1.png",
+              "Title": ""
+            }
+          ],
+          "UUID": "com.elgato.streamdeck.system.open"
+        },
+        "0,2": {
+          "ActionID": "77420495-6836-43d4-bddd-1d258c5916dc",
+          "LinkedTitle": true,
+          "Name": "Open",
+          "Plugin": {
+            "Name": "Open",
+            "UUID": "com.elgato.streamdeck.system.open",
+            "Version": "1.0"
+          },
+          "Resources": null,
+          "Settings": {
+            "path": "\"Z:\\Máy tính khác\\My Computer\\Document HT Media\\TLH\\Edit\\08_Brand Kits Thương Hiệu & Ảnh PNG\""
+          },
+          "State": 0,
+          "States": [
+            {
+              "Image": "Images/key_0_2.png",
+              "Title": ""
+            }
+          ],
+          "UUID": "com.elgato.streamdeck.system.open"
+        },
+        "1,2": {
+          "ActionID": "4243903a-f5ed-4184-b237-7150515b47e4",
+          "LinkedTitle": true,
+          "Name": "Open",
+          "Plugin": {
+            "Name": "Open",
+            "UUID": "com.elgato.streamdeck.system.open",
+            "Version": "1.0"
+          },
+          "Resources": null,
+          "Settings": {
+            "path": "\"d:\\AI\\full studio\""
+          },
+          "State": 0,
+          "States": [
+            {
+              "Image": "Images/key_1_2.png",
+              "Title": ""
+            }
+          ],
+          "UUID": "com.elgato.streamdeck.system.open"
+        },
+        "2,2": {
+          "ActionID": "d38ff253-1a72-4452-be7a-9309c5e15b45",
+          "LinkedTitle": true,
+          "Name": "Open",
+          "Plugin": {
+            "Name": "Open",
+            "UUID": "com.elgato.streamdeck.system.open",
+            "Version": "1.0"
+          },
+          "Resources": null,
+          "Settings": {
+            "path": "\"Z:\\Drive của tôi\\AI_Full_Studio\\03_Du_An\""
+          },
+          "State": 0,
+          "States": [
+            {
+              "Image": "Images/key_2_2.png",
+              "Title": ""
+            }
+          ],
+          "UUID": "com.elgato.streamdeck.system.open"
+        },
+        "3,2": {
+          "ActionID": "ff5f1ae8-fe52-475b-ba03-09e1d8374390",
+          "LinkedTitle": true,
+          "Name": "Switch Profile",
+          "Plugin": {
+            "Name": "Switch Profile",
+            "UUID": "com.elgato.streamdeck.profile.rotate",
+            "Version": "1.0"
+          },
+          "Resources": null,
+          "Settings": {
+            "DeviceUUID": "",
+            "PageIndex": 2,
+            "ProfileUUID": "bc31e860-727a-4d47-8ebf-276d4a834544"
+          },
+          "State": 0,
+          "States": [
+            {
+              "Image": "Images/key_3_2.png",
+              "Title": ""
+            }
+          ],
+          "UUID": "com.elgato.streamdeck.profile.rotate"
+        },
+        "4,2": {
+          "ActionID": "4756659b-b09d-4550-922a-88025b16a825",
+          "LinkedTitle": true,
+          "Name": "Switch Profile",
+          "Plugin": {
+            "Name": "Switch Profile",
+            "UUID": "com.elgato.streamdeck.profile.rotate",
+            "Version": "1.0"
+          },
+          "Resources": null,
+          "Settings": {
+            "DeviceUUID": "",
+            "PageIndex": 1,
+            "ProfileUUID": "bc31e860-727a-4d47-8ebf-276d4a834544"
+          },
+          "State": 0,
+          "States": [
+            {
+              "Image": "Images/key_4_2.png",
+              "Title": ""
+            }
+          ],
+          "UUID": "com.elgato.streamdeck.profile.rotate"
+        }
+      },
+      "Type": "Keypad"
+    }
+  ],
+  "Icon": "",
+  "Name": "AI Web & Kho Hậu Kỳ 3.000+ Files"
+}

@@ -12,14 +12,16 @@
 | Athelas | **thiếu** (ơ ư và các dấu đi kèm) |
 | SVN-Rosellinda Alyamore | đủ (bộ "SVN-" là font Việt hoá) |
 
-Thay thế đề xuất (miễn phí, đủ dấu, có trên Google Fonts). Cần tải và cài, rồi kiểm lại bằng `fonts_vi.py`:
+Thay thế **đã cài sẵn 100% vào Windows Fonts & `assets_dung_chung/fonts/`** (`39/39` file đạt `OK` qua `tools/fonts_vi.py`, đã cấu hình mặc định trong `T.FONT_VI` của `lib/th-lib.jsx` v1.1):
 
-| Vai trò | Thay cho | Gợi ý |
+| Vai trò | Thay cho | PostScript Name chuẩn trong After Effects (`T.FONT_VI` / `H.FONT_VI`) |
 |---|---|---|
-| Từ khoá to, đậm hẹp | TR Impact | Anton, Bebas Neue (bản có dấu Việt), Oswald Bold, Be Vietnam Pro Black |
-| Phụ đề serif nghiêng | Pensum Italic | Playfair Display Italic, Lora Italic, Noto Serif Display Italic |
-| Chữ hook rộng, đậm | Tactic Sans Expanded | Montserrat ExtraBold/Black, Be Vietnam Pro ExtraBold |
-| Viết tay | Rosellinda | giữ SVN-Rosellinda, hoặc Dancing Script |
+| Từ khoá to, đậm hẹp | TR Impact | `Oswald-Bold`, `Anton-Regular`, `BeVietnamPro-ExtraBold` |
+| Phụ đề serif nghiêng | Pensum Italic | `PlayfairDisplay-BoldItalic`, `Lora-Italic`, `CormorantGaramond-BoldItalic` |
+| Chữ hook rộng, sang trọng | Tactic Sans Expanded | `Montserrat-Black`, `Fraunces-Black`, `PlayfairDisplay-ExtraBold`, `PaytoneOne-Regular` |
+| Viết tay / Chữ ký | Rosellinda | `DancingScript-Bold`, `GreatVibes-Regular`, `AlexBrush-Regular` |
+
+> **Ưu tiên số 1 Chữ Gradient trong After Effects**: Luôn ưu tiên gọi `T.gradPreset(comp, layer, 'gold_champagne' | 'rose_silk' | 'emerald_jade' | ..., sweepT0, sweepDur, sw)` (tạo Chữ Gradient 4 điểm màu + tách riêng lớp viền sau `_StrokeBack` + quét sáng `CC Light Sweep`). Xem chi tiết tại `assets_dung_chung/AE_FONTS_VA_GRADIENT.md`.
 
 Cỡ chữ: dấu tiếng Việt cao hơn chữ Latin. Tăng `lead` (khoảng cách dòng) thêm khoảng 10% và kiểm phần dấu của dòng trên có chạm dòng dưới không.
 Câu tiếng Việt dài hơn tiếng Anh khoảng 20–30%, nên phụ đề để 1–2 từ mỗi dòng (`caption_groups.py --max-chars 10`).

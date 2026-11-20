@@ -24,7 +24,7 @@ Người dùng sẽ cập nhật file này dần. Mục nào đã xong thì đá
 
 | # | Thiếu | Cách tạm |
 |---|---|---|
-| [ ] B1 | **Chưa có bộ font tiếng Việt đã kiểm tra.** Font Foodtage (TR Impact, Pensum, Tactic Sans, Athelas) thiếu dấu | Chọn theo bảng gợi ý ở knowledge/10, kiểm bằng `tools/fonts_vi.py`, hỏi người dùng có font thương hiệu không |
+| [x] B1 (2026-11-18) | **Đã cài và kiểm chứng 100% bộ `39` font `.ttf` Tiếng Việt (`18` họ font)** trong `assets_dung_chung/fonts/` & Windows Fonts (`T.FONT_VI` mặc định trong `th-lib.jsx` v1.1 + `T.gradPreset` Chữ Gradient 4 điểm tách viền) | Xem danh sách `PostScript name` đầy đủ tại `assets_dung_chung/AE_FONTS_VA_GRADIENT.md` |
 | [ ] B2 | **Chưa có bộ phong cách y tế** (màu pastel, grade da sáng, glow nhẹ, nhịp vừa) đã dựng thử | Đổi `T.init({colors})` và grade theo knowledge/10; gửi khung thử cho người dùng duyệt sớm |
 | [ ] B3 | **Thiếu khối:** thẻ tên + chức danh dược sĩ, thẻ sản phẩm (packshot), khung kết có CTA + câu khuyến cáo, danh sách triệu chứng/gạch đầu dòng | Dựng bằng `T.txt` + `H.shape` + `T.punchIn`; sau đó thêm vào `lib/th-lib.jsx` và knowledge/03 |
 | [ ] B3b | **Thiếu khối từ video HD-VN (knowledge/11, chưa có hàm `T.*`)**: chữ hai cấp ở ngực, thẻ tên người được nhắc, nháy trắng + chữ đen nghiêng, chia đôi màn hình (đồ hoạ 46% trên / người dưới), thẻ điện thoại bay vào + số lượt xem, khung nét đứt sáng + bong bóng emoji, B-roll thẻ dọc tối nền, zoom giật có nhoè | Dựng bằng `T.txt` + `H.shape` + `T.punchIn`; hỏi người dùng trước khi thêm vào `th-lib.jsx` |
@@ -35,8 +35,8 @@ Người dùng sẽ cập nhật file này dần. Mục nào đã xong thì đá
 
 | # | Thiếu | Cách tạm |
 |---|---|---|
-| [ ] C1 | SFX, meme, clip và font trong `examples/foodtage/assets/` **thuộc bộ tài liệu khoá học**, chỉ dùng để học | Video thương mại: hỏi người dùng nguồn SFX/nhạc có bản quyền |
-| [ ] C2 | **Không có nhạc nền** | Hỏi người dùng; mức −20 đến −24 dB dưới giọng |
+| [x] C1 (2026-11-18) | **Đã nạp bộ `10` Studio SFX sạch thương mại** tại `assets_dung_chung/sfx/` và kho mở rộng `1.043` SFX phẳng tại `Z:\Máy tính khác\My Computer\Document HT Media\TLH\Edit\02_Hiệu Ứng Âm Thanh (SFX)` | Không dùng tài nguyên khóa học Foodtage cho video thương mại |
+| [x] C2 (2026-11-18) | **Đã nạp bộ `3` BGM C-Major chuẩn** tại `assets_dung_chung/bgm/` (cùng `8` bài đã đo BPM tại `saas-animation/audio/music/INDEX.md` và `1.340` bài 12 thể loại trên `Z:\...\01_Nhạc Nền (BGM)`) | Mức −20 đến −24 dB dưới giọng |
 | [ ] C3 | **Chưa có bảng ghi đoạn đẹp** của file light leak (bản v1 chọn sai 3 đoạn: nhiễu, loé đỏ, vệt trắng) | Đo độ sáng và xem khung theo knowledge/06 mục 7 trước khi chọn |
 
 ## D. Công cụ

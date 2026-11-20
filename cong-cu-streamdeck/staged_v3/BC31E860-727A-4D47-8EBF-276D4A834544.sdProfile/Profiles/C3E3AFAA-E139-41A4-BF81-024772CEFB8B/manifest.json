@@ -1,0 +1,433 @@
+{
+  "Controllers": [
+    {
+      "Actions": {
+        "0,0": {
+          "ActionID": "9f2d5d5d-c16e-4e68-a96d-e7055d2cc1fe",
+          "LinkedTitle": true,
+          "Name": "Open Application",
+          "Plugin": {
+            "Name": "Open Application",
+            "UUID": "com.elgato.streamdeck.system.openapp",
+            "Version": "1.0"
+          },
+          "Resources": null,
+          "Settings": {
+            "app_name": "Full Studio",
+            "args": "",
+            "bring_to_front": true,
+            "bundle_id": "d:\\AI\\full studio\\full studido.exe",
+            "bundle_path": "d:/AI/full studio/full studido.exe",
+            "exec": "d:/AI/full studio/full studido.exe",
+            "is_bundle": false,
+            "long_press": "quit",
+            "source": "d:/AI/full studio/full studido.exe"
+          },
+          "State": 0,
+          "States": [
+            {
+              "Image": "Images/key_0_0.png",
+              "Title": ""
+            }
+          ],
+          "UUID": "com.elgato.streamdeck.system.openapp"
+        },
+        "1,0": {
+          "ActionID": "7dabdd09-7116-4815-a32b-deae5166bd55",
+          "LinkedTitle": true,
+          "Name": "Open Application",
+          "Plugin": {
+            "Name": "Open Application",
+            "UUID": "com.elgato.streamdeck.system.openapp",
+            "Version": "1.0"
+          },
+          "Resources": null,
+          "Settings": {
+            "app_name": "Antigravity",
+            "args": "",
+            "bring_to_front": true,
+            "bundle_id": "C:\\Users\\Hang thu\\AppData\\Local\\Programs\\Antigravity\\Antigravity.exe",
+            "bundle_path": "C:/Users/Hang thu/AppData/Local/Programs/Antigravity/Antigravity.exe",
+            "exec": "C:/Users/Hang thu/AppData/Local/Programs/Antigravity/Antigravity.exe",
+            "is_bundle": false,
+            "long_press": "quit",
+            "source": "C:/Users/Hang thu/AppData/Local/Programs/Antigravity/Antigravity.exe"
+          },
+          "State": 0,
+          "States": [
+            {
+              "Image": "Images/key_1_0.png",
+              "Title": ""
+            }
+          ],
+          "UUID": "com.elgato.streamdeck.system.openapp"
+        },
+        "2,0": {
+          "ActionID": "31d3f7fb-9546-4eee-9eb1-5b43b5be0718",
+          "LinkedTitle": true,
+          "Name": "Open Application",
+          "Plugin": {
+            "Name": "Open Application",
+            "UUID": "com.elgato.streamdeck.system.openapp",
+            "Version": "1.0"
+          },
+          "Resources": null,
+          "Settings": {
+            "app_name": "VoiceStudio",
+            "args": "",
+            "bring_to_front": true,
+            "bundle_id": "C:\\Program Files\\VoiceStudio\\VoiceStudio.exe",
+            "bundle_path": "C:/Program Files/VoiceStudio/VoiceStudio.exe",
+            "exec": "C:/Program Files/VoiceStudio/VoiceStudio.exe",
+            "is_bundle": false,
+            "long_press": "quit",
+            "source": "C:/Program Files/VoiceStudio/VoiceStudio.exe"
+          },
+          "State": 0,
+          "States": [
+            {
+              "Image": "Images/key_2_0.png",
+              "Title": ""
+            }
+          ],
+          "UUID": "com.elgato.streamdeck.system.openapp"
+        },
+        "3,0": {
+          "ActionID": "5fc8347f-1416-4ded-a4cc-e91905d0a9ea",
+          "LinkedTitle": true,
+          "Name": "Open Application",
+          "Plugin": {
+            "Name": "Open Application",
+            "UUID": "com.elgato.streamdeck.system.openapp",
+            "Version": "1.0"
+          },
+          "Resources": null,
+          "Settings": {
+            "app_name": "CapCut",
+            "args": "--src3",
+            "bring_to_front": true,
+            "bundle_id": "C:\\Users\\Hang thu\\AppData\\Local\\CapCut\\Apps\\CapCut.exe",
+            "bundle_path": "C:/Users/Hang thu/AppData/Local/CapCut/Apps/CapCut.exe",
+            "exec": "C:/Users/Hang thu/AppData/Local/CapCut/Apps/CapCut.exe",
+            "is_bundle": false,
+            "long_press": "quit",
+            "source": "C:/Users/Hang thu/AppData/Local/CapCut/Apps/CapCut.exe"
+          },
+          "State": 0,
+          "States": [
+            {
+              "Image": "Images/key_3_0.png",
+              "Title": ""
+            }
+          ],
+          "UUID": "com.elgato.streamdeck.system.openapp"
+        },
+        "4,0": {
+          "ActionID": "7ffae855-e33f-46a4-b78e-31dc097edf53",
+          "LinkedTitle": true,
+          "Name": "Switch Profile",
+          "Plugin": {
+            "Name": "Switch Profile",
+            "UUID": "com.elgato.streamdeck.profile.rotate",
+            "Version": "1.0"
+          },
+          "Resources": null,
+          "Settings": {
+            "DeviceUUID": "",
+            "PageIndex": 2,
+            "ProfileUUID": "bc31e860-727a-4d47-8ebf-276d4a834544"
+          },
+          "State": 0,
+          "States": [
+            {
+              "Image": "Images/key_4_0.png",
+              "Title": ""
+            }
+          ],
+          "UUID": "com.elgato.streamdeck.profile.rotate"
+        },
+        "0,1": {
+          "ActionID": "534356ce-eb27-4923-82e6-858d9b91c24a",
+          "LinkedTitle": true,
+          "Name": "Open Application",
+          "Plugin": {
+            "Name": "Open Application",
+            "UUID": "com.elgato.streamdeck.system.openapp",
+            "Version": "1.0"
+          },
+          "Resources": null,
+          "Settings": {
+            "app_name": "Adobe Photoshop 2026",
+            "args": "",
+            "bring_to_front": true,
+            "bundle_id": "C:\\Program Files\\Adobe\\Adobe Photoshop 2026\\Photoshop.exe",
+            "bundle_path": "C:/Program Files/Adobe/Adobe Photoshop 2026/Photoshop.exe",
+            "exec": "C:/Program Files/Adobe/Adobe Photoshop 2026/Photoshop.exe",
+            "is_bundle": false,
+            "long_press": "quit",
+            "source": "C:/Program Files/Adobe/Adobe Photoshop 2026/Photoshop.exe"
+          },
+          "State": 0,
+          "States": [
+            {
+              "Image": "Images/key_0_1.png",
+              "Title": ""
+            }
+          ],
+          "UUID": "com.elgato.streamdeck.system.openapp"
+        },
+        "1,1": {
+          "ActionID": "407192ff-cec3-4a3e-a329-efdb494b2a52",
+          "LinkedTitle": true,
+          "Name": "Open Application",
+          "Plugin": {
+            "Name": "Open Application",
+            "UUID": "com.elgato.streamdeck.system.openapp",
+            "Version": "1.0"
+          },
+          "Resources": null,
+          "Settings": {
+            "app_name": "Adobe Lightroom",
+            "args": "",
+            "bring_to_front": true,
+            "bundle_id": "C:\\Program Files\\Adobe\\Adobe Lightroom CC\\lightroom.exe",
+            "bundle_path": "C:/Program Files/Adobe/Adobe Lightroom CC/lightroom.exe",
+            "exec": "C:/Program Files/Adobe/Adobe Lightroom CC/lightroom.exe",
+            "is_bundle": false,
+            "long_press": "quit",
+            "source": "C:/Program Files/Adobe/Adobe Lightroom CC/lightroom.exe"
+          },
+          "State": 0,
+          "States": [
+            {
+              "Image": "Images/key_1_1.png",
+              "Title": ""
+            }
+          ],
+          "UUID": "com.elgato.streamdeck.system.openapp"
+        },
+        "2,1": {
+          "ActionID": "dd383086-791f-4359-a964-1763aede6cc5",
+          "LinkedTitle": true,
+          "Name": "Open Application",
+          "Plugin": {
+            "Name": "Open Application",
+            "UUID": "com.elgato.streamdeck.system.openapp",
+            "Version": "1.0"
+          },
+          "Resources": null,
+          "Settings": {
+            "app_name": "Capture One",
+            "args": "",
+            "bring_to_front": true,
+            "bundle_id": "C:\\Program Files\\Capture One\\Capture One\\CaptureOne.exe",
+            "bundle_path": "C:/Program Files/Capture One/Capture One/CaptureOne.exe",
+            "exec": "C:/Program Files/Capture One/Capture One/CaptureOne.exe",
+            "is_bundle": false,
+            "long_press": "quit",
+            "source": "C:/Program Files/Capture One/Capture One/CaptureOne.exe"
+          },
+          "State": 0,
+          "States": [
+            {
+              "Image": "Images/key_2_1.png",
+              "Title": ""
+            }
+          ],
+          "UUID": "com.elgato.streamdeck.system.openapp"
+        },
+        "3,1": {
+          "ActionID": "8c323d03-9c7a-4d68-8d94-664296aa830f",
+          "LinkedTitle": true,
+          "Name": "Open Application",
+          "Plugin": {
+            "Name": "Open Application",
+            "UUID": "com.elgato.streamdeck.system.openapp",
+            "Version": "1.0"
+          },
+          "Resources": null,
+          "Settings": {
+            "app_name": "RAW Viewer",
+            "args": "",
+            "bring_to_front": true,
+            "bundle_id": "C:\\Program Files\\Sony\\RAW Viewer\\RAW Viewer.exe",
+            "bundle_path": "C:/Program Files/Sony/RAW Viewer/RAW Viewer.exe",
+            "exec": "C:/Program Files/Sony/RAW Viewer/RAW Viewer.exe",
+            "is_bundle": false,
+            "long_press": "quit",
+            "source": "C:/Program Files/Sony/RAW Viewer/RAW Viewer.exe"
+          },
+          "State": 0,
+          "States": [
+            {
+              "Image": "Images/key_3_1.png",
+              "Title": ""
+            }
+          ],
+          "UUID": "com.elgato.streamdeck.system.openapp"
+        },
+        "4,1": {
+          "ActionID": "f36d27b2-06ea-49e4-9d64-35a7c302f389",
+          "LinkedTitle": true,
+          "Name": "Switch Profile",
+          "Plugin": {
+            "Name": "Switch Profile",
+            "UUID": "com.elgato.streamdeck.profile.rotate",
+            "Version": "1.0"
+          },
+          "Resources": null,
+          "Settings": {
+            "DeviceUUID": "",
+            "PageIndex": 3,
+            "ProfileUUID": "bc31e860-727a-4d47-8ebf-276d4a834544"
+          },
+          "State": 0,
+          "States": [
+            {
+              "Image": "Images/key_4_1.png",
+              "Title": ""
+            }
+          ],
+          "UUID": "com.elgato.streamdeck.profile.rotate"
+        },
+        "0,2": {
+          "ActionID": "e283f5aa-7056-423d-951d-3395fc887565",
+          "LinkedTitle": true,
+          "Name": "Open Application",
+          "Plugin": {
+            "Name": "Open Application",
+            "UUID": "com.elgato.streamdeck.system.openapp",
+            "Version": "1.0"
+          },
+          "Resources": null,
+          "Settings": {
+            "app_name": "Zalo",
+            "args": "",
+            "bring_to_front": true,
+            "bundle_id": "C:\\Users\\Hang thu\\AppData\\Local\\Programs\\Zalo\\Zalo.exe",
+            "bundle_path": "C:/Users/Hang thu/AppData/Local/Programs/Zalo/Zalo.exe",
+            "exec": "C:/Users/Hang thu/AppData/Local/Programs/Zalo/Zalo.exe",
+            "is_bundle": false,
+            "long_press": "quit",
+            "source": "C:/Users/Hang thu/AppData/Local/Programs/Zalo/Zalo.exe"
+          },
+          "State": 0,
+          "States": [
+            {
+              "Image": "Images/key_0_2.png",
+              "Title": ""
+            }
+          ],
+          "UUID": "com.elgato.streamdeck.system.openapp"
+        },
+        "1,2": {
+          "ActionID": "abd6b9bc-faf5-4d01-982d-9ef1bd9ebc24",
+          "LinkedTitle": true,
+          "Name": "Open Application",
+          "Plugin": {
+            "Name": "Open Application",
+            "UUID": "com.elgato.streamdeck.system.openapp",
+            "Version": "1.0"
+          },
+          "Resources": null,
+          "Settings": {
+            "app_name": "hữu - Cốc Cốc",
+            "args": "--profile-directory=\"Default\"",
+            "bring_to_front": true,
+            "bundle_id": "C:\\Program Files\\CocCoc\\Browser\\Application\\browser.exe",
+            "bundle_path": "C:/Program Files/CocCoc/Browser/Application/browser.exe",
+            "exec": "C:/Program Files/CocCoc/Browser/Application/browser.exe",
+            "is_bundle": false,
+            "long_press": "quit",
+            "source": "C:/Program Files/CocCoc/Browser/Application/browser.exe"
+          },
+          "State": 0,
+          "States": [
+            {
+              "Image": "Images/key_1_2.png",
+              "Title": ""
+            }
+          ],
+          "UUID": "com.elgato.streamdeck.system.openapp"
+        },
+        "2,2": {
+          "ActionID": "7fdc2d83-1fb9-488a-b16b-d542407a7b78",
+          "LinkedTitle": true,
+          "Name": "Open Application",
+          "Plugin": {
+            "Name": "Open Application",
+            "UUID": "com.elgato.streamdeck.system.openapp",
+            "Version": "1.0"
+          },
+          "Resources": null,
+          "Settings": {
+            "app_name": "Everything",
+            "args": "",
+            "bring_to_front": true,
+            "bundle_id": "C:\\Program Files (x86)\\Everything\\Everything.exe",
+            "bundle_path": "C:/Program Files (x86)/Everything/Everything.exe",
+            "exec": "C:/Program Files (x86)/Everything/Everything.exe",
+            "is_bundle": false,
+            "long_press": "quit",
+            "source": "C:/Program Files (x86)/Everything/Everything.exe"
+          },
+          "State": 0,
+          "States": [
+            {
+              "Image": "Images/key_2_2.png",
+              "Title": ""
+            }
+          ],
+          "UUID": "com.elgato.streamdeck.system.openapp"
+        },
+        "3,2": {
+          "ActionID": "66a6b445-410c-4ad0-8734-12e13d0a3c4f",
+          "LinkedTitle": true,
+          "Name": "Open",
+          "Plugin": {
+            "Name": "Open",
+            "UUID": "com.elgato.streamdeck.system.open",
+            "Version": "1.0"
+          },
+          "Resources": null,
+          "Settings": {
+            "path": "\"D:\\XUẤT CAPCUT\""
+          },
+          "State": 0,
+          "States": [
+            {
+              "Image": "Images/key_3_2.png",
+              "Title": ""
+            }
+          ],
+          "UUID": "com.elgato.streamdeck.system.open"
+        },
+        "4,2": {
+          "ActionID": "1c2c3f5e-010d-4539-a0b8-922494e8dba4",
+          "LinkedTitle": true,
+          "Name": "Open",
+          "Plugin": {
+            "Name": "Open",
+            "UUID": "com.elgato.streamdeck.system.open",
+            "Version": "1.0"
+          },
+          "Resources": null,
+          "Settings": {
+            "path": "\"Z:\\Drive của tôi\\AI_Full_Studio\\04_Videos_Final\""
+          },
+          "State": 0,
+          "States": [
+            {
+              "Image": "Images/key_4_2.png",
+              "Title": ""
+            }
+          ],
+          "UUID": "com.elgato.streamdeck.system.open"
+        }
+      },
+      "Type": "Keypad"
+    }
+  ],
+  "Icon": "",
+  "Name": "Trang Chính - Studio & Ảnh"
+}
