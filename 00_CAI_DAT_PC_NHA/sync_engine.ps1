@@ -201,7 +201,7 @@ sh.Run "powershell.exe -NoProfile -NonInteractive -WindowStyle Hidden -Execution
 
         $taskName = "AI_Full_Studio_Continuous_Sync"
         $trLogon  = New-ScheduledTaskTrigger -AtLogOn -User $env:USERNAME
-        $trRepeat = New-ScheduledTaskTrigger -Once -At (Get-Date).Date -RepetitionInterval (New-TimeSpan -Minutes 3) -RepetitionDuration (New-TimeSpan -Days 3650)
+        $trRepeat = New-ScheduledTaskTrigger -Once -At (Get-Date).Date -RepetitionInterval (New-TimeSpan -Minutes 30) -RepetitionDuration (New-TimeSpan -Days 3650)
         $action   = New-ScheduledTaskAction -Execute "wscript.exe" -Argument "//B //NoLogo `"$vbsPath`""
         $settings = New-ScheduledTaskSettingsSet -AllowStartIfOnBatteries -DontStopIfGoingOnBatteries -StartWhenAvailable -MultipleInstances IgnoreNew -ExecutionTimeLimit (New-TimeSpan -Minutes 10)
 
