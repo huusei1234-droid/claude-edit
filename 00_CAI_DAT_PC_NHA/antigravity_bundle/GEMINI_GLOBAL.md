@@ -124,4 +124,12 @@ Tài liệu này lưu trữ **toàn bộ phong cách dựng phim (Editing DNA)**
 
 ---
 
+## 5. Quy Tắc Tự Động Phân Luồng Model Theo Độ Khó Tác Vụ (Smart Auto-Tier Routing — Đã Được Người Dùng Ủy Quyền)
+Người dùng đã yêu cầu hệ thống **tự động cân đối tốc độ phản hồi và chiều sâu trí tuệ theo nội dung câu hỏi**:
+- **Tầng 1 — Tác vụ nhanh / Hỏi đáp ngắn / Mở file / Chạy lệnh đơn giản**: Xử lý trực tiếp ngay lập tức tại luồng chính ở tốc độ cao nhất, trả lời ngắn gọn dứt điểm, không gọi subagent dư thừa.
+- **Tầng 2 — Tra cứu tệp hàng loạt / Quét dữ liệu / Thao tác trình duyệt / Việc lặp lại đơn giản**: Khi gọi `invoke_subagent`, chủ động truyền `Model: "flash_lite"` (cho việc vặt/số lượng lớn) hoặc `Model: "flash"` (cho tra cứu chuẩn & `browser`) để trả kết quả cực nhanh và tiết kiệm quota.
+- **Tầng 3 — Tác vụ sáng tạo & kỹ thuật chuyên sâu (Viết chuỗi kịch bản TVC/VSL đắt giá, kiến trúc Motion Graphics/Shader 3D lớn, gỡ lỗi hệ thống phức tạp)**: Khi cần suy luận sâu mà khung chat chính đang ở chế độ nhanh (`Low`), chủ động gọi `invoke_subagent` với `Model: "pro"` để đảm bảo chất lượng đầu ra cao nhất mà không làm chậm các câu lệnh thường ngày.
+
+---
+
 *Để xem chi tiết mã JSON (`effect_id`, `resource_id`, đường dẫn cache và công cụ tự động hóa), hãy kích hoạt skill `capcut-pro-editor`, `hyperframes` hoặc `remotion-best-practices`.*
