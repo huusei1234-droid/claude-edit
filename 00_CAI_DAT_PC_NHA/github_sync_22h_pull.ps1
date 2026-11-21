@@ -74,7 +74,10 @@ $agyCfg    = Join-Path $env:USERPROFILE ".gemini\config"
 $bundleDir = Join-Path $studioRoot "00_CAI_DAT_PC_NHA"
 New-Item -ItemType Directory -Force -Path $agyCfg, "$agyCfg\skills", "$agyCfg\plugins" | Out-Null
 
-if (Test-Path -LiteralPath "$studioRoot\.agents\skills") {
+if (Test-Path -LiteralPath "$studioRoot\huu\skills") {
+    robocopy "$studioRoot\huu\skills" "$agyCfg\skills" /E /XO /NFL /NDL /NJH /NJS /R:1 /W:1 | Out-Null
+    robocopy "$studioRoot\huu\skills" "$studioRoot\.agents\skills" /E /XO /NFL /NDL /NJH /NJS /R:1 /W:1 | Out-Null
+} elseif (Test-Path -LiteralPath "$studioRoot\.agents\skills") {
     robocopy "$studioRoot\.agents\skills" "$agyCfg\skills" /E /XO /NFL /NDL /NJH /NJS /R:1 /W:1 | Out-Null
 }
 if (Test-Path -LiteralPath "$bundleDir\antigravity_bundle\plugins") {
@@ -105,11 +108,11 @@ if (Test-Path -LiteralPath "$syncBin\sync_engine.ps1") {
     powershell.exe -NoProfile -ExecutionPolicy Bypass -File "$syncBin\sync_engine.ps1" -Mode Pull | Out-Null
 }
 
-# 4b. Tự động cài đặt & cập nhật bộ Hình nền động 4K Hữu Seiz (Code từ GitHub + Media 4K từ Drive Z:)
-$wpInstaller = Join-Path $bundleDir "live_wallpapers_bundle\install_live_wallpapers_home.ps1"
+# 4b. Tự động cài đặt & cập nhật bộ Hình nền động 4K Hữu Seiz (Code từ GitHub huu/wallpapers + Media 4K từ Drive Z:)
+$wpInstaller = Join-Path $studioRoot "huu\wallpapers\install_live_wallpapers_home.ps1"
 if (Test-Path -LiteralPath $wpInstaller) {
     powershell.exe -NoProfile -ExecutionPolicy Bypass -File $wpInstaller | Out-Null
-    Write-PullLog "  [WALLPAPER] Da dong bo & cap nhat hinh nen dong 4K Huu Seiz."
+    Write-PullLog "  [WALLPAPER] Da dong bo & cap nhat hinh nen dong 4K Huu Seiz tu huu/wallpapers."
 }
 
 # 5. Ghi dấu xác nhận máy nhà đã nhận đồng bộ 22h lên Google Drive (nếu có) để dễ kiểm tra từ xa

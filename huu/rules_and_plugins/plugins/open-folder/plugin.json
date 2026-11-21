@@ -1,0 +1,11 @@
+{
+  "name": "open-folder",
+  "displayName": "Mở Vị Trí Tệp (Windows Explorer)",
+  "description": "Hiển thị thẻ nút bấm 1 chạm mở thẳng thư mục Windows Explorer và tô chọn sẵn tệp (explorer.exe /select) ngay trong cuộc trò chuyện mà không qua trình duyệt web.",
+  "version": "1.0.0",
+  "suggestedPrompts": [
+    "Mở vị trí tệp video Final vừa xuất trong D:\\XUẤT CAPCUT",
+    "Hiển thị nút mở thư mục chứa tệp trên Windows Explorer",
+    "Mở thư mục Google Drive 04_Videos_Final"
+  ]
+}
