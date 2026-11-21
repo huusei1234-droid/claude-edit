@@ -105,6 +105,13 @@ if (Test-Path -LiteralPath "$syncBin\sync_engine.ps1") {
     powershell.exe -NoProfile -ExecutionPolicy Bypass -File "$syncBin\sync_engine.ps1" -Mode Pull | Out-Null
 }
 
+# 4b. Tự động cài đặt & cập nhật bộ Hình nền động 4K Hữu Seiz (Code từ GitHub + Media 4K từ Drive Z:)
+$wpInstaller = Join-Path $bundleDir "live_wallpapers_bundle\install_live_wallpapers_home.ps1"
+if (Test-Path -LiteralPath $wpInstaller) {
+    powershell.exe -NoProfile -ExecutionPolicy Bypass -File $wpInstaller | Out-Null
+    Write-PullLog "  [WALLPAPER] Da dong bo & cap nhat hinh nen dong 4K Huu Seiz."
+}
+
 # 5. Ghi dấu xác nhận máy nhà đã nhận đồng bộ 22h lên Google Drive (nếu có) để dễ kiểm tra từ xa
 foreach ($letter in @("Z", "G", "H", "E", "F", "I", "D")) {
     foreach ($sub in @("Drive của tôi\AI_Full_Studio\00_DONG_BO_2_MAY\machines", "My Drive\AI_Full_Studio\00_DONG_BO_2_MAY\machines")) {
@@ -121,5 +128,20 @@ foreach ($letter in @("Z", "G", "H", "E", "F", "I", "D")) {
         }
     }
 }
+
+# 6. Đặt biểu tượng Shortcut gọn đẹp ngoài Desktop máy ở nhà (không để rác file .bat)
+try {
+    $homeDesk = [Environment]::GetFolderPath("Desktop")
+    $sh = New-Object -ComObject WScript.Shell
+    $tmpPull = Join-Path $homeDesk "CapNhatTuGitHubNgay.lnk"
+    $sp = $sh.CreateShortcut($tmpPull)
+    $sp.TargetPath = Join-Path $studioRoot "_2_CAP_NHAT_TU_GITHUB_VE_MAY_NHA.bat"
+    $sp.WorkingDirectory = $studioRoot
+    $sp.IconLocation = "C:\Windows\System32\shell32.dll,238"
+    $sp.Save()
+    $finalPullLnk = Join-Path $homeDesk "Cập nhật từ GitHub ngay.lnk"
+    if (Test-Path -LiteralPath $finalPullLnk) { Remove-Item -LiteralPath $finalPullLnk -Force }
+    Move-Item -LiteralPath $tmpPull -Destination $finalPullLnk -Force
+} catch {}
 
 Write-PullLog "=== HOAN TAT NHAN DONG BO 22H00 TREN MAY '$env:COMPUTERNAME' ==="
