@@ -1,0 +1,3 @@
+﻿After Reset -> Mode=Unknown, Count=0
+VERIFIED CURVE[0]: Mode=SmartFanMode Points: (0C->85%), (20C->85%), (30C->88%), (40C->92%), (50C->97%), (60C->100%), (70C->100%), (75C->100%)
+CPU Temp Now: 47 C | RPMs: 0, 0, 0, 0

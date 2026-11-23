@@ -1,0 +1,1333 @@
+{
+ "lang": "vi",
+ "duration": 66.432,
+ "segments": [
+  {
+   "start": 0.0,
+   "end": 15.06,
+   "text": "Muốn con cao lớn mẹ đã quan tâm đến bữa ăn hàng ngày hay chưa? Con ăn thất thường, ít lựa chọn thực phẩm, lịch học kín mít khiến giờ sinh hoạt thiếu đều đặn. Những điều ấy khiến bố mẹ dễ băn khoăn liệu con đã được chăm sóc dinh dưỡng đầy đủ hay chưa?",
+   "words": [
+    {
+     "start": 0.0,
+     "end": 0.3,
+     "word": "Muốn",
+     "p": 0.73
+    },
+    {
+     "start": 0.3,
+     "end": 0.44,
+     "word": "con",
+     "p": 1.0
+    },
+    {
+     "start": 0.44,
+     "end": 0.64,
+     "word": "cao",
+     "p": 0.98
+    },
+    {
+     "start": 0.64,
+     "end": 0.94,
+     "word": "lớn",
+     "p": 1.0
+    },
+    {
+     "start": 0.94,
+     "end": 1.24,
+     "word": "mẹ",
+     "p": 0.68
+    },
+    {
+     "start": 1.24,
+     "end": 1.36,
+     "word": "đã",
+     "p": 0.98
+    },
+    {
+     "start": 1.36,
+     "end": 1.56,
+     "word": "quan",
+     "p": 1.0
+    },
+    {
+     "start": 1.56,
+     "end": 1.8,
+     "word": "tâm",
+     "p": 1.0
+    },
+    {
+     "start": 1.8,
+     "end": 1.98,
+     "word": "đến",
+     "p": 0.99
+    },
+    {
+     "start": 1.98,
+     "end": 2.2,
+     "word": "bữa",
+     "p": 1.0
+    },
+    {
+     "start": 2.2,
+     "end": 2.38,
+     "word": "ăn",
+     "p": 1.0
+    },
+    {
+     "start": 2.38,
+     "end": 2.54,
+     "word": "hàng",
+     "p": 0.62
+    },
+    {
+     "start": 2.54,
+     "end": 2.72,
+     "word": "ngày",
+     "p": 1.0
+    },
+    {
+     "start": 2.72,
+     "end": 2.86,
+     "word": "hay",
+     "p": 1.0
+    },
+    {
+     "start": 2.86,
+     "end": 3.14,
+     "word": "chưa?",
+     "p": 1.0
+    },
+    {
+     "start": 3.52,
+     "end": 3.9,
+     "word": "Con",
+     "p": 0.99
+    },
+    {
+     "start": 3.9,
+     "end": 4.06,
+     "word": "ăn",
+     "p": 1.0
+    },
+    {
+     "start": 4.06,
+     "end": 4.24,
+     "word": "thất",
+     "p": 0.82
+    },
+    {
+     "start": 4.24,
+     "end": 4.6,
+     "word": "thường,",
+     "p": 0.89
+    },
+    {
+     "start": 4.82,
+     "end": 5.26,
+     "word": "ít",
+     "p": 0.99
+    },
+    {
+     "start": 5.26,
+     "end": 5.46,
+     "word": "lựa",
+     "p": 1.0
+    },
+    {
+     "start": 5.46,
+     "end": 5.66,
+     "word": "chọn",
+     "p": 1.0
+    },
+    {
+     "start": 5.66,
+     "end": 5.82,
+     "word": "thực",
+     "p": 1.0
+    },
+    {
+     "start": 5.82,
+     "end": 6.16,
+     "word": "phẩm,",
+     "p": 1.0
+    },
+    {
+     "start": 6.32,
+     "end": 6.64,
+     "word": "lịch",
+     "p": 1.0
+    },
+    {
+     "start": 6.64,
+     "end": 6.86,
+     "word": "học",
+     "p": 0.99
+    },
+    {
+     "start": 6.86,
+     "end": 7.24,
+     "word": "kín",
+     "p": 0.65
+    },
+    {
+     "start": 7.24,
+     "end": 7.46,
+     "word": "mít",
+     "p": 0.91
+    },
+    {
+     "start": 7.46,
+     "end": 7.76,
+     "word": "khiến",
+     "p": 1.0
+    },
+    {
+     "start": 7.76,
+     "end": 7.92,
+     "word": "giờ",
+     "p": 0.49
+    },
+    {
+     "start": 7.92,
+     "end": 8.12,
+     "word": "sinh",
+     "p": 0.98
+    },
+    {
+     "start": 8.12,
+     "end": 8.4,
+     "word": "hoạt",
+     "p": 1.0
+    },
+    {
+     "start": 8.4,
+     "end": 8.82,
+     "word": "thiếu",
+     "p": 0.94
+    },
+    {
+     "start": 8.82,
+     "end": 9.0,
+     "word": "đều",
+     "p": 0.97
+    },
+    {
+     "start": 9.0,
+     "end": 9.24,
+     "word": "đặn.",
+     "p": 0.98
+    },
+    {
+     "start": 9.58,
+     "end": 10.02,
+     "word": "Những",
+     "p": 1.0
+    },
+    {
+     "start": 10.02,
+     "end": 10.2,
+     "word": "điều",
+     "p": 1.0
+    },
+    {
+     "start": 10.2,
+     "end": 10.46,
+     "word": "ấy",
+     "p": 1.0
+    },
+    {
+     "start": 10.46,
+     "end": 10.82,
+     "word": "khiến",
+     "p": 1.0
+    },
+    {
+     "start": 10.82,
+     "end": 10.96,
+     "word": "bố",
+     "p": 0.91
+    },
+    {
+     "start": 10.96,
+     "end": 11.24,
+     "word": "mẹ",
+     "p": 1.0
+    },
+    {
+     "start": 11.24,
+     "end": 11.44,
+     "word": "dễ",
+     "p": 0.98
+    },
+    {
+     "start": 11.44,
+     "end": 11.62,
+     "word": "băn",
+     "p": 0.99
+    },
+    {
+     "start": 11.62,
+     "end": 11.92,
+     "word": "khoăn",
+     "p": 0.99
+    },
+    {
+     "start": 11.92,
+     "end": 12.68,
+     "word": "liệu",
+     "p": 0.92
+    },
+    {
+     "start": 12.68,
+     "end": 12.96,
+     "word": "con",
+     "p": 1.0
+    },
+    {
+     "start": 12.96,
+     "end": 13.08,
+     "word": "đã",
+     "p": 0.64
+    },
+    {
+     "start": 13.08,
+     "end": 13.28,
+     "word": "được",
+     "p": 1.0
+    },
+    {
+     "start": 13.28,
+     "end": 13.5,
+     "word": "chăm",
+     "p": 1.0
+    },
+    {
+     "start": 13.5,
+     "end": 13.74,
+     "word": "sóc",
+     "p": 1.0
+    },
+    {
+     "start": 13.74,
+     "end": 14.04,
+     "word": "dinh",
+     "p": 0.97
+    },
+    {
+     "start": 14.04,
+     "end": 14.3,
+     "word": "dưỡng",
+     "p": 1.0
+    },
+    {
+     "start": 14.3,
+     "end": 14.52,
+     "word": "đầy",
+     "p": 0.99
+    },
+    {
+     "start": 14.52,
+     "end": 14.66,
+     "word": "đủ",
+     "p": 1.0
+    },
+    {
+     "start": 14.66,
+     "end": 14.82,
+     "word": "hay",
+     "p": 1.0
+    },
+    {
+     "start": 14.82,
+     "end": 15.06,
+     "word": "chưa?",
+     "p": 1.0
+    }
+   ]
+  },
+  {
+   "start": 15.4,
+   "end": 29.04,
+   "text": "Mong con phát triển khỏe mạnh là điều rất tự nhiên, nhưng lựa chọn sản phẩm bổ sung cần bắt đầu từ việc xem xét chế độ ăn, độ tuổi và nhu cầu của con. Canxi và Vitamin D là những dưỡng chất quan trọng đối với xương.",
+   "words": [
+    {
+     "start": 15.4,
+     "end": 15.62,
+     "word": "Mong",
+     "p": 0.99
+    },
+    {
+     "start": 15.62,
+     "end": 15.84,
+     "word": "con",
+     "p": 1.0
+    },
+    {
+     "start": 15.84,
+     "end": 16.02,
+     "word": "phát",
+     "p": 0.96
+    },
+    {
+     "start": 16.02,
+     "end": 16.2,
+     "word": "triển",
+     "p": 1.0
+    },
+    {
+     "start": 16.2,
+     "end": 16.44,
+     "word": "khỏe",
+     "p": 1.0
+    },
+    {
+     "start": 16.44,
+     "end": 16.68,
+     "word": "mạnh",
+     "p": 0.98
+    },
+    {
+     "start": 16.68,
+     "end": 16.82,
+     "word": "là",
+     "p": 1.0
+    },
+    {
+     "start": 16.82,
+     "end": 17.02,
+     "word": "điều",
+     "p": 0.98
+    },
+    {
+     "start": 17.02,
+     "end": 17.28,
+     "word": "rất",
+     "p": 1.0
+    },
+    {
+     "start": 17.28,
+     "end": 17.46,
+     "word": "tự",
+     "p": 0.95
+    },
+    {
+     "start": 17.46,
+     "end": 17.76,
+     "word": "nhiên,",
+     "p": 1.0
+    },
+    {
+     "start": 17.96,
+     "end": 18.32,
+     "word": "nhưng",
+     "p": 0.71
+    },
+    {
+     "start": 18.32,
+     "end": 18.56,
+     "word": "lựa",
+     "p": 0.99
+    },
+    {
+     "start": 18.56,
+     "end": 18.72,
+     "word": "chọn",
+     "p": 1.0
+    },
+    {
+     "start": 18.72,
+     "end": 18.96,
+     "word": "sản",
+     "p": 1.0
+    },
+    {
+     "start": 18.96,
+     "end": 19.18,
+     "word": "phẩm",
+     "p": 1.0
+    },
+    {
+     "start": 19.18,
+     "end": 19.48,
+     "word": "bổ",
+     "p": 1.0
+    },
+    {
+     "start": 19.48,
+     "end": 19.7,
+     "word": "sung",
+     "p": 0.98
+    },
+    {
+     "start": 19.7,
+     "end": 20.16,
+     "word": "cần",
+     "p": 0.95
+    },
+    {
+     "start": 20.16,
+     "end": 20.4,
+     "word": "bắt",
+     "p": 0.99
+    },
+    {
+     "start": 20.4,
+     "end": 20.56,
+     "word": "đầu",
+     "p": 1.0
+    },
+    {
+     "start": 20.56,
+     "end": 20.7,
+     "word": "từ",
+     "p": 1.0
+    },
+    {
+     "start": 20.7,
+     "end": 20.92,
+     "word": "việc",
+     "p": 1.0
+    },
+    {
+     "start": 20.92,
+     "end": 21.14,
+     "word": "xem",
+     "p": 0.93
+    },
+    {
+     "start": 21.14,
+     "end": 21.38,
+     "word": "xét",
+     "p": 0.74
+    },
+    {
+     "start": 21.38,
+     "end": 21.88,
+     "word": "chế",
+     "p": 0.96
+    },
+    {
+     "start": 21.88,
+     "end": 22.04,
+     "word": "độ",
+     "p": 0.99
+    },
+    {
+     "start": 22.04,
+     "end": 22.26,
+     "word": "ăn,",
+     "p": 1.0
+    },
+    {
+     "start": 22.74,
+     "end": 22.9,
+     "word": "độ",
+     "p": 1.0
+    },
+    {
+     "start": 22.9,
+     "end": 23.28,
+     "word": "tuổi",
+     "p": 1.0
+    },
+    {
+     "start": 23.28,
+     "end": 23.6,
+     "word": "và",
+     "p": 0.99
+    },
+    {
+     "start": 23.6,
+     "end": 23.74,
+     "word": "nhu",
+     "p": 1.0
+    },
+    {
+     "start": 23.74,
+     "end": 23.92,
+     "word": "cầu",
+     "p": 1.0
+    },
+    {
+     "start": 23.92,
+     "end": 24.08,
+     "word": "của",
+     "p": 1.0
+    },
+    {
+     "start": 24.08,
+     "end": 24.38,
+     "word": "con.",
+     "p": 1.0
+    },
+    {
+     "start": 25.02,
+     "end": 25.46,
+     "word": "Canxi",
+     "p": 0.78
+    },
+    {
+     "start": 25.46,
+     "end": 25.86,
+     "word": "và",
+     "p": 1.0
+    },
+    {
+     "start": 25.86,
+     "end": 26.16,
+     "word": "Vitamin",
+     "p": 0.06
+    },
+    {
+     "start": 26.16,
+     "end": 26.46,
+     "word": "D",
+     "p": 0.99
+    },
+    {
+     "start": 26.46,
+     "end": 27.0,
+     "word": "là",
+     "p": 1.0
+    },
+    {
+     "start": 27.0,
+     "end": 27.22,
+     "word": "những",
+     "p": 1.0
+    },
+    {
+     "start": 27.22,
+     "end": 27.4,
+     "word": "dưỡng",
+     "p": 0.96
+    },
+    {
+     "start": 27.4,
+     "end": 27.6,
+     "word": "chất",
+     "p": 1.0
+    },
+    {
+     "start": 27.6,
+     "end": 27.98,
+     "word": "quan",
+     "p": 1.0
+    },
+    {
+     "start": 27.98,
+     "end": 28.34,
+     "word": "trọng",
+     "p": 1.0
+    },
+    {
+     "start": 28.34,
+     "end": 28.62,
+     "word": "đối",
+     "p": 0.89
+    },
+    {
+     "start": 28.62,
+     "end": 28.78,
+     "word": "với",
+     "p": 0.6
+    },
+    {
+     "start": 28.78,
+     "end": 29.04,
+     "word": "xương.",
+     "p": 0.96
+    }
+   ]
+  },
+  {
+   "start": 29.04,
+   "end": 34.36,
+   "text": "Tuy nhiên bổ sung canxi không đồng nghĩa với việc là sẽ đảm bảo con sẽ cao hơn",
+   "words": [
+    {
+     "start": 29.04,
+     "end": 29.76,
+     "word": "Tuy",
+     "p": 0.91
+    },
+    {
+     "start": 29.76,
+     "end": 30.06,
+     "word": "nhiên",
+     "p": 1.0
+    },
+    {
+     "start": 30.06,
+     "end": 30.48,
+     "word": "bổ",
+     "p": 0.73
+    },
+    {
+     "start": 30.48,
+     "end": 30.64,
+     "word": "sung",
+     "p": 0.97
+    },
+    {
+     "start": 30.64,
+     "end": 31.06,
+     "word": "canxi",
+     "p": 0.96
+    },
+    {
+     "start": 31.06,
+     "end": 31.6,
+     "word": "không",
+     "p": 0.83
+    },
+    {
+     "start": 31.6,
+     "end": 31.8,
+     "word": "đồng",
+     "p": 0.96
+    },
+    {
+     "start": 31.8,
+     "end": 31.96,
+     "word": "nghĩa",
+     "p": 0.61
+    },
+    {
+     "start": 31.96,
+     "end": 32.1,
+     "word": "với",
+     "p": 0.47
+    },
+    {
+     "start": 32.1,
+     "end": 32.4,
+     "word": "việc",
+     "p": 0.99
+    },
+    {
+     "start": 32.4,
+     "end": 32.56,
+     "word": "là",
+     "p": 0.75
+    },
+    {
+     "start": 32.56,
+     "end": 32.72,
+     "word": "sẽ",
+     "p": 0.99
+    },
+    {
+     "start": 32.72,
+     "end": 33.06,
+     "word": "đảm",
+     "p": 1.0
+    },
+    {
+     "start": 33.06,
+     "end": 33.32,
+     "word": "bảo",
+     "p": 1.0
+    },
+    {
+     "start": 33.32,
+     "end": 33.64,
+     "word": "con",
+     "p": 0.97
+    },
+    {
+     "start": 33.64,
+     "end": 33.8,
+     "word": "sẽ",
+     "p": 0.99
+    },
+    {
+     "start": 33.8,
+     "end": 34.12,
+     "word": "cao",
+     "p": 1.0
+    },
+    {
+     "start": 34.12,
+     "end": 34.36,
+     "word": "hơn",
+     "p": 1.0
+    }
+   ]
+  },
+  {
+   "start": 34.36,
+   "end": 35.94,
+   "text": "Với Bojomi An Vượng",
+   "words": [
+    {
+     "start": 34.36,
+     "end": 34.88,
+     "word": "Với",
+     "p": 0.81
+    },
+    {
+     "start": 34.88,
+     "end": 35.34,
+     "word": "Bojomi",
+     "p": 0.71
+    },
+    {
+     "start": 35.34,
+     "end": 35.64,
+     "word": "An",
+     "p": 0.51
+    },
+    {
+     "start": 35.64,
+     "end": 35.94,
+     "word": "Vượng",
+     "p": 0.63
+    }
+   ]
+  },
+  {
+   "start": 35.94,
+   "end": 39.54,
+   "text": "Điểm đáng chú ý của công thức này đó là canxi từ tảo biển",
+   "words": [
+    {
+     "start": 35.94,
+     "end": 36.74,
+     "word": "Điểm",
+     "p": 0.84
+    },
+    {
+     "start": 36.74,
+     "end": 37.0,
+     "word": "đáng",
+     "p": 0.99
+    },
+    {
+     "start": 37.0,
+     "end": 37.24,
+     "word": "chú",
+     "p": 0.99
+    },
+    {
+     "start": 37.24,
+     "end": 37.36,
+     "word": "ý",
+     "p": 1.0
+    },
+    {
+     "start": 37.36,
+     "end": 37.52,
+     "word": "của",
+     "p": 1.0
+    },
+    {
+     "start": 37.52,
+     "end": 37.72,
+     "word": "công",
+     "p": 1.0
+    },
+    {
+     "start": 37.72,
+     "end": 37.92,
+     "word": "thức",
+     "p": 1.0
+    },
+    {
+     "start": 37.92,
+     "end": 38.14,
+     "word": "này",
+     "p": 1.0
+    },
+    {
+     "start": 38.14,
+     "end": 38.28,
+     "word": "đó",
+     "p": 0.86
+    },
+    {
+     "start": 38.28,
+     "end": 38.42,
+     "word": "là",
+     "p": 1.0
+    },
+    {
+     "start": 38.42,
+     "end": 38.82,
+     "word": "canxi",
+     "p": 0.95
+    },
+    {
+     "start": 38.82,
+     "end": 39.02,
+     "word": "từ",
+     "p": 0.98
+    },
+    {
+     "start": 39.02,
+     "end": 39.28,
+     "word": "tảo",
+     "p": 0.95
+    },
+    {
+     "start": 39.28,
+     "end": 39.54,
+     "word": "biển",
+     "p": 1.0
+    }
+   ]
+  },
+  {
+   "start": 39.54,
+   "end": 42.34,
+   "text": "Phối hợp với D3, K2, collagen",
+   "words": [
+    {
+     "start": 39.54,
+     "end": 40.08,
+     "word": "Phối",
+     "p": 0.46
+    },
+    {
+     "start": 40.08,
+     "end": 40.22,
+     "word": "hợp",
+     "p": 1.0
+    },
+    {
+     "start": 40.22,
+     "end": 40.34,
+     "word": "với",
+     "p": 1.0
+    },
+    {
+     "start": 40.34,
+     "end": 40.78,
+     "word": "D3,",
+     "p": 0.99
+    },
+    {
+     "start": 40.94,
+     "end": 41.58,
+     "word": "K2,",
+     "p": 0.99
+    },
+    {
+     "start": 41.82,
+     "end": 42.34,
+     "word": "collagen",
+     "p": 0.85
+    }
+   ]
+  },
+  {
+   "start": 42.34,
+   "end": 48.22,
+   "text": "Mỗi gói như vậy sẽ có 418mg canxi từ tảo biển",
+   "words": [
+    {
+     "start": 42.34,
+     "end": 43.28,
+     "word": "Mỗi",
+     "p": 0.99
+    },
+    {
+     "start": 43.28,
+     "end": 43.62,
+     "word": "gói",
+     "p": 0.84
+    },
+    {
+     "start": 43.62,
+     "end": 43.72,
+     "word": "như",
+     "p": 1.0
+    },
+    {
+     "start": 43.72,
+     "end": 43.96,
+     "word": "vậy",
+     "p": 0.85
+    },
+    {
+     "start": 43.96,
+     "end": 44.3,
+     "word": "sẽ",
+     "p": 0.99
+    },
+    {
+     "start": 44.3,
+     "end": 44.7,
+     "word": "có",
+     "p": 1.0
+    },
+    {
+     "start": 44.7,
+     "end": 46.34,
+     "word": "418mg",
+     "p": 0.98
+    },
+    {
+     "start": 46.34,
+     "end": 47.4,
+     "word": "canxi",
+     "p": 0.97
+    },
+    {
+     "start": 47.4,
+     "end": 47.74,
+     "word": "từ",
+     "p": 1.0
+    },
+    {
+     "start": 47.74,
+     "end": 47.96,
+     "word": "tảo",
+     "p": 1.0
+    },
+    {
+     "start": 47.96,
+     "end": 48.22,
+     "word": "biển",
+     "p": 1.0
+    }
+   ]
+  },
+  {
+   "start": 49.1,
+   "end": 54.32,
+   "text": "779 IU D3 và 170mcg K2 MK7",
+   "words": [
+    {
+     "start": 49.1,
+     "end": 49.66,
+     "word": "779",
+     "p": 0.95
+    },
+    {
+     "start": 49.66,
+     "end": 50.04,
+     "word": "IU",
+     "p": 0.35
+    },
+    {
+     "start": 50.04,
+     "end": 50.58,
+     "word": "D3",
+     "p": 0.92
+    },
+    {
+     "start": 50.58,
+     "end": 51.36,
+     "word": "và",
+     "p": 0.76
+    },
+    {
+     "start": 51.36,
+     "end": 53.24,
+     "word": "170mcg",
+     "p": 0.83
+    },
+    {
+     "start": 53.24,
+     "end": 53.78,
+     "word": "K2",
+     "p": 1.0
+    },
+    {
+     "start": 53.78,
+     "end": 54.32,
+     "word": "MK7",
+     "p": 0.76
+    }
+   ]
+  },
+  {
+   "start": 54.32,
+   "end": 58.94,
+   "text": "Chỉ cần mỗi ngày bổ sung 1 gói là con của các bạn đã đủ dinh dưỡng",
+   "words": [
+    {
+     "start": 54.32,
+     "end": 54.82,
+     "word": "Chỉ",
+     "p": 0.99
+    },
+    {
+     "start": 54.82,
+     "end": 55.1,
+     "word": "cần",
+     "p": 1.0
+    },
+    {
+     "start": 55.1,
+     "end": 55.38,
+     "word": "mỗi",
+     "p": 1.0
+    },
+    {
+     "start": 55.38,
+     "end": 55.62,
+     "word": "ngày",
+     "p": 1.0
+    },
+    {
+     "start": 55.62,
+     "end": 55.88,
+     "word": "bổ",
+     "p": 1.0
+    },
+    {
+     "start": 55.88,
+     "end": 56.06,
+     "word": "sung",
+     "p": 1.0
+    },
+    {
+     "start": 56.06,
+     "end": 56.26,
+     "word": "1",
+     "p": 0.85
+    },
+    {
+     "start": 56.26,
+     "end": 56.66,
+     "word": "gói",
+     "p": 1.0
+    },
+    {
+     "start": 56.66,
+     "end": 57.14,
+     "word": "là",
+     "p": 0.99
+    },
+    {
+     "start": 57.14,
+     "end": 57.4,
+     "word": "con",
+     "p": 1.0
+    },
+    {
+     "start": 57.4,
+     "end": 57.54,
+     "word": "của",
+     "p": 0.99
+    },
+    {
+     "start": 57.54,
+     "end": 57.68,
+     "word": "các",
+     "p": 1.0
+    },
+    {
+     "start": 57.68,
+     "end": 57.88,
+     "word": "bạn",
+     "p": 0.99
+    },
+    {
+     "start": 57.88,
+     "end": 58.22,
+     "word": "đã",
+     "p": 1.0
+    },
+    {
+     "start": 58.22,
+     "end": 58.44,
+     "word": "đủ",
+     "p": 1.0
+    },
+    {
+     "start": 58.44,
+     "end": 58.66,
+     "word": "dinh",
+     "p": 0.89
+    },
+    {
+     "start": 58.66,
+     "end": 58.94,
+     "word": "dưỡng",
+     "p": 1.0
+    }
+   ]
+  },
+  {
+   "start": 58.94,
+   "end": 61.3,
+   "text": "cho xương, nhắn dinh dưỡng cho con",
+   "words": [
+    {
+     "start": 58.94,
+     "end": 59.18,
+     "word": "cho",
+     "p": 0.92
+    },
+    {
+     "start": 59.18,
+     "end": 59.5,
+     "word": "xương,",
+     "p": 0.7
+    },
+    {
+     "start": 59.76,
+     "end": 60.26,
+     "word": "nhắn",
+     "p": 1.0
+    },
+    {
+     "start": 60.26,
+     "end": 60.56,
+     "word": "dinh",
+     "p": 0.87
+    },
+    {
+     "start": 60.56,
+     "end": 60.8,
+     "word": "dưỡng",
+     "p": 0.97
+    },
+    {
+     "start": 60.8,
+     "end": 60.94,
+     "word": "cho",
+     "p": 1.0
+    },
+    {
+     "start": 60.94,
+     "end": 61.3,
+     "word": "con",
+     "p": 1.0
+    }
+   ]
+  },
+  {
+   "start": 61.3,
+   "end": 62.64,
+   "text": "để nhận bảng thành phần",
+   "words": [
+    {
+     "start": 61.3,
+     "end": 61.7,
+     "word": "để",
+     "p": 0.95
+    },
+    {
+     "start": 61.7,
+     "end": 61.92,
+     "word": "nhận",
+     "p": 0.73
+    },
+    {
+     "start": 61.92,
+     "end": 62.16,
+     "word": "bảng",
+     "p": 0.87
+    },
+    {
+     "start": 62.16,
+     "end": 62.36,
+     "word": "thành",
+     "p": 0.98
+    },
+    {
+     "start": 62.36,
+     "end": 62.64,
+     "word": "phần",
+     "p": 0.71
+    }
+   ]
+  },
+  {
+   "start": 62.64,
+   "end": 64.46,
+   "text": "và đối chiếu thông tin sản phẩm",
+   "words": [
+    {
+     "start": 62.64,
+     "end": 62.88,
+     "word": "và",
+     "p": 0.99
+    },
+    {
+     "start": 62.88,
+     "end": 63.08,
+     "word": "đối",
+     "p": 1.0
+    },
+    {
+     "start": 63.08,
+     "end": 63.34,
+     "word": "chiếu",
+     "p": 0.89
+    },
+    {
+     "start": 63.34,
+     "end": 63.52,
+     "word": "thông",
+     "p": 1.0
+    },
+    {
+     "start": 63.52,
+     "end": 63.68,
+     "word": "tin",
+     "p": 1.0
+    },
+    {
+     "start": 63.68,
+     "end": 63.94,
+     "word": "sản",
+     "p": 1.0
+    },
+    {
+     "start": 63.94,
+     "end": 64.46,
+     "word": "phẩm",
+     "p": 1.0
+    }
+   ]
+  },
+  {
+   "start": 64.46,
+   "end": 65.92,
+   "text": "trước khi quyết định bạn nhé.",
+   "words": [
+    {
+     "start": 64.46,
+     "end": 64.62,
+     "word": "trước",
+     "p": 0.69
+    },
+    {
+     "start": 64.62,
+     "end": 64.88,
+     "word": "khi",
+     "p": 1.0
+    },
+    {
+     "start": 64.88,
+     "end": 65.16,
+     "word": "quyết",
+     "p": 1.0
+    },
+    {
+     "start": 65.16,
+     "end": 65.4,
+     "word": "định",
+     "p": 1.0
+    },
+    {
+     "start": 65.4,
+     "end": 65.7,
+     "word": "bạn",
+     "p": 0.72
+    },
+    {
+     "start": 65.7,
+     "end": 65.92,
+     "word": "nhé.",
+     "p": 0.91
+    }
+   ]
+  }
+ ]
+}

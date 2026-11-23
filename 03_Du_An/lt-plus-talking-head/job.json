@@ -1,0 +1,35 @@
+{
+  "slug": "lt-plus-talking-head",
+  "brief": {
+    "chu_de": "Tư vấn nhận biết dấu hiệu Viêm lộ tuyến & chăm sóc phụ khoa chuẩn Dược sĩ — Sản phẩm Viên đặt LT PLUS Hằng Thu",
+    "san_pham_hoac_noi_dung": "Viên đặt phụ khoa LT PLUS - Hằng Thu Pharma (Hoàng bá, Ích mẫu, Kim ngân hoa, Trà xanh, Trầu không, Acid Lactic — Hộp 15 viên)",
+    "thong_diep_chinh": "Biểu hiện bên ngoài như khí hư nhiều, ngứa, mùi hay ra máu bất thường chưa thể tự khẳng định là lộ tuyến; cần khám chuyên khoa theo hướng dẫn bác sĩ và tìm hiểu kỹ bảng thành phần thảo dược + Acid Lactic của LT Plus Hằng Thu trước khi dùng",
+    "doi_tuong": "Phụ nữ quan tâm sức khoẻ phụ khoa, cân bằng độ pH và hỗ trợ chăm sóc viêm lộ tuyến",
+    "nen_tang": "tiktok | reels | shorts",
+    "thoi_luong_giay": 70.37,
+    "ty_le": "9:16",
+    "ngon_ngu": "vi"
+  },
+  "the_loai": "talking-head",
+  "kit": "phong-cach/talking-head",
+  "trang_thai": "cho-nguoi-dung-xem",
+  "giong": {
+    "co_loi_doc": false,
+    "ma_giong": "giu-giong-that-aroll",
+    "file": "output/lt-plus-talking-head/aroll/main_cut.mp4",
+    "da_nghe_bang_tai": false
+  },
+  "kich_ban": {
+    "hook": "Khí hư ra nhiều hoặc ra máu sau quan hệ có phải là viêm lộ tuyến?",
+    "cta": "Nhắn thành phần để nhận thông tin và tìm hiểu rõ trước khi mua.",
+    "cau_khang_dinh_suc_khoe": [
+      "Lộ tuyến có thể không có triệu chứng, một số người có thể tăng tiết dịch, ra máu giữa kỳ kinh hoặc sau quan hệ, nhưng dấu hiệu này có thể xuất hiện trong các tình trạng khác nên cần được kiểm tra.",
+      "Ngứa, mùi khó chịu hoặc khí hư đổi màu không phải là dấu hiệu riêng biệt của lộ tuyến.",
+      "Đừng tự chẩn đoán rồi dùng viên đặt theo lời truyền miệng. Điều cần là cần phải khám phụ khoa, mô tả rõ triệu chứng, và thực hiện xét nghiệm theo hướng dẫn của bác sĩ.",
+      "Nếu đang tìm hiểu một loại viên đặt hỗ trợ điều trị viêm lộ tuyến, thì có thể xem xét đến sản phẩm viên đặt LT Plus của Hằng Thu.",
+      "Sản phẩm có Hoàng bá, Ích mẫu, Kim ngân hoa, Trà xanh, Trầu không và Acid Lactic.",
+      "3 ngày các chị dùng 1 lần. 1 hộp như thế này 15 viên, dùng trong vòng 30 ngày đến 40 ngày, các chị sẽ cảm nhận sự khác biệt so với trước khi chưa dùng sản phẩm."
+    ],
+    "dong_phap_ly": "Sản phẩm không phải là thuốc, không có tác dụng thay thế thuốc chữa bệnh • Tham khảo ý kiến bác sĩ"
+  }
+}

@@ -1,0 +1,588 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>HTPM Final Cut Pro & After Effects Emphasis Overlays (1080x1920 @ 30fps Alpha)</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      @font-face {
+        font-family: "Be Vietnam Pro";
+        src: url("assets/fonts/BeVietnamPro-SemiBold.ttf") format("truetype");
+        font-weight: 600;
+        font-display: block;
+      }
+      @font-face {
+        font-family: "Be Vietnam Pro";
+        src: url("assets/fonts/BeVietnamPro-Bold.ttf") format("truetype");
+        font-weight: 700;
+        font-display: block;
+      }
+      @font-face {
+        font-family: "Be Vietnam Pro";
+        src: url("assets/fonts/BeVietnamPro-ExtraBold.ttf") format("truetype");
+        font-weight: 800;
+        font-display: block;
+      }
+      @font-face {
+        font-family: "Montserrat";
+        src: url("assets/fonts/Montserrat-ExtraBold.ttf") format("truetype");
+        font-weight: 800;
+        font-display: block;
+      }
+      @font-face {
+        font-family: "Montserrat";
+        src: url("assets/fonts/Montserrat-Black.ttf") format("truetype");
+        font-weight: 900;
+        font-display: block;
+      }
+      @font-face {
+        font-family: "Cormorant Garamond";
+        src: url("assets/fonts/CormorantGaramond-BoldItalic.ttf") format("truetype");
+        font-weight: 700;
+        font-style: italic;
+        font-display: block;
+      }
+
+      *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body {
+        width: 1080px;
+        height: 1920px;
+        overflow: hidden;
+        background: transparent;
+        font-family: "Be Vietnam Pro", sans-serif;
+      }
+      #root {
+        position: relative;
+        width: 1080px;
+        height: 1920px;
+        overflow: hidden;
+        background: transparent;
+      }
+
+      /* 5-Stop Gradient + Specular Shimmer Sweep System */
+      .grad-text {
+        display: inline-block;
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        background-size: 240% 100%, 100% 100%;
+        background-position: -130% 0, 0 0;
+        filter: drop-shadow(0 4px 12px rgba(10, 12, 24, 0.90)) drop-shadow(0 2px 3px rgba(8, 10, 18, 0.96));
+      }
+      .grad-rose {
+        background-image:
+          linear-gradient(115deg, rgba(255,255,255,0) 35%, rgba(255,255,255,0.96) 50%, rgba(255,255,255,0) 65%),
+          linear-gradient(180deg, #FFEAF5 0%, #FF82C2 26%, #E82E86 52%, #FFB4DA 78%, #AC145E 100%);
+      }
+      .grad-gold {
+        background-image:
+          linear-gradient(115deg, rgba(255,255,255,0) 35%, rgba(255,255,255,0.96) 50%, rgba(255,255,255,0) 65%),
+          linear-gradient(180deg, #FFFDF2 0%, #FFE486 26%, #E29E2A 52%, #FFF0B2 78%, #B06E12 100%);
+      }
+      .grad-emerald {
+        background-image:
+          linear-gradient(115deg, rgba(255,255,255,0) 35%, rgba(255,255,255,0.95) 50%, rgba(255,255,255,0) 65%),
+          linear-gradient(180deg, #EEFFF9 0%, #76F2C6 26%, #1AB882 52%, #B2FCE2 78%, #0E7A54 100%);
+      }
+      .grad-sapphire {
+        background-image:
+          linear-gradient(115deg, rgba(255,255,255,0) 35%, rgba(255,255,255,0.95) 50%, rgba(255,255,255,0) 65%),
+          linear-gradient(180deg, #EFFBFF 0%, #84E0FF 26%, #2692F8 52%, #BAEEFF 78%, #125CBA 100%);
+      }
+      .grad-coral {
+        background-image:
+          linear-gradient(115deg, rgba(255,255,255,0) 35%, rgba(255,255,255,0.95) 50%, rgba(255,255,255,0) 65%),
+          linear-gradient(180deg, #FFF6EC 0%, #FFAE70 26%, #F45834 52%, #FFD0AA 78%, #B22A12 100%);
+      }
+
+      /* 1. HOOK: Final Cut yt-prism-title + lt-mask-reveal */
+      #hook-stage {
+        position: absolute;
+        left: 0; right: 0; top: 242px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 18px;
+      }
+      .fcp-mask-wrap {
+        position: relative;
+        overflow: hidden;
+        padding: 7px 28px;
+        border-radius: 999px;
+        background: rgba(14, 16, 28, 0.84);
+        border: 1.5px solid rgba(255, 228, 134, 0.65);
+        box-shadow: 0 10px 26px rgba(0, 0, 0, 0.45);
+      }
+      .fcp-mask-text {
+        font-family: "Cormorant Garamond", serif;
+        font-style: italic;
+        font-weight: 700;
+        font-size: 38px;
+        color: #fffaf4;
+        white-space: nowrap;
+      }
+      .fcp-sweep-bar {
+        position: absolute;
+        top: 0; bottom: 0; left: 0;
+        width: 12px;
+        background: linear-gradient(180deg, #fffdf2, #ffd23f);
+        box-shadow: 0 0 20px #ffd23f;
+      }
+      .prism-bow {
+        position: relative;
+        padding: 14px 36px;
+        border-radius: 28px;
+        background: rgba(15, 14, 28, 0.88);
+        border: 2.5px solid rgba(255, 130, 194, 0.78);
+        box-shadow: 0 18px 42px rgba(10, 8, 20, 0.58);
+      }
+      .prism-line {
+        position: relative;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 900;
+        font-size: 64px;
+        letter-spacing: -0.015em;
+        line-height: 1.08;
+        white-space: nowrap;
+      }
+      .prism-copy {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+      }
+      .prism-copy.r { color: #ff2a6d; mix-blend-mode: screen; }
+      .prism-copy.b { color: #2ad4ff; mix-blend-mode: screen; }
+
+      /* Shared Top Callout Stage (FCP lt-mask-reveal / lt-clean-bar) */
+      .top-callout-stage {
+        position: absolute;
+        left: 0; right: 0; top: 54px;
+        display: flex;
+        justify-content: center;
+      }
+      .lt-bar-box {
+        position: relative;
+        overflow: hidden;
+        padding: 13px 34px 13px 44px;
+        border-radius: 20px;
+        background: rgba(14, 18, 32, 0.92);
+        border: 2px solid rgba(255, 228, 134, 0.78);
+        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.50);
+      }
+      .lt-bar-box.sapphire {
+        border-color: rgba(132, 224, 255, 0.80);
+      }
+      .lt-bar-box.emerald {
+        border-color: rgba(118, 242, 198, 0.80);
+      }
+      .lt-bar-box.coral {
+        border-color: rgba(255, 174, 112, 0.82);
+      }
+      .lt-bar-accent {
+        position: absolute;
+        left: 0; top: 0; bottom: 0;
+        width: 11px;
+        background: linear-gradient(180deg, #ffe486, #e29e2a);
+      }
+      .lt-bar-accent.sapphire { background: linear-gradient(180deg, #84e0ff, #2692f8); }
+      .lt-bar-accent.emerald  { background: linear-gradient(180deg, #76f2c6, #1ab882); }
+      .lt-bar-accent.coral    { background: linear-gradient(180deg, #ffae70, #f45834); }
+
+      /* 3. WARNING BADGE: MotionVFX lt-neon-border + AE marker-highlight */
+      #warn-stage {
+        position: absolute;
+        left: 70px; top: 44px;
+        width: 940px; height: 108px;
+      }
+      .neon-svg {
+        position: absolute;
+        inset: 0;
+        overflow: visible;
+      }
+      .warn-inner {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 14px;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 900;
+        font-size: 31px;
+        color: #ffffff;
+      }
+      .mh-em {
+        position: relative;
+        display: inline-block;
+      }
+      .mh-svg {
+        position: absolute;
+        left: -4%; bottom: -10px;
+        width: 108%; height: 18px;
+        overflow: visible;
+      }
+
+      /* 4. EXPERT ADVICE HERO: lt-neon-border + bottom-up-letters + shimmer-sweep */
+      #expert-stage {
+        position: absolute;
+        left: 70px; top: 215px;
+        width: 940px; height: 292px;
+      }
+      .expert-content {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 20px 36px;
+      }
+      .word-mask {
+        display: inline-block;
+        overflow: hidden;
+        vertical-align: bottom;
+        padding: 2px 4px;
+      }
+      .word-inner {
+        display: inline-block;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 900;
+        font-size: 42px;
+        line-height: 1.12;
+      }
+      .gold-rule {
+        width: 460px;
+        height: 2.5px;
+        background: linear-gradient(90deg, transparent, #ffe486, transparent);
+        margin: 4px 0;
+      }
+
+      /* 5. PRODUCT SHOWCASE BAR: Apple FCP lt-clean-bar */
+      #prod-stage {
+        position: absolute;
+        left: 64px; top: 112px;
+        width: 952px;
+        border-radius: 30px;
+        background: rgba(12, 24, 22, 0.92);
+        border: 2.5px solid rgba(118, 242, 198, 0.84);
+        box-shadow: 0 18px 42px rgba(0, 0, 0, 0.55);
+        padding: 22px 34px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        overflow: hidden;
+      }
+      .chip-row {
+        display: flex;
+        gap: 12px;
+        margin-top: 4px;
+      }
+      .ing-chip {
+        padding: 6px 18px;
+        border-radius: 999px;
+        background: rgba(26, 184, 130, 0.25);
+        border: 1.5px solid rgba(118, 242, 198, 0.78);
+        font-weight: 700;
+        font-size: 19px;
+        color: #f0fff9;
+      }
+
+      /* 6. FINALE 3 PILLARS + CTA: AE success-check + line-by-line-slide + lt-clean-bar */
+      #finale-stage {
+        position: absolute;
+        left: 110px; top: 205px;
+        width: 860px;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+      .check-card {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        height: 78px;
+        padding: 0 28px 0 18px;
+        border-radius: 39px;
+        background: rgba(14, 20, 34, 0.92);
+        border: 2px solid rgba(118, 242, 198, 0.82);
+        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.48);
+      }
+      .check-label {
+        font-family: "Be Vietnam Pro", sans-serif;
+        font-weight: 800;
+        font-size: 27px;
+        letter-spacing: -0.01em;
+        white-space: nowrap;
+      }
+      #cta-stage {
+        position: absolute;
+        left: 60px; top: 1790px;
+        width: 960px; height: 64px;
+        border-radius: 32px;
+        background: rgba(16, 18, 32, 0.93);
+        border: 2px solid rgba(255, 228, 134, 0.88);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.55);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 14px;
+        overflow: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="37.8" data-width="1080" data-height="1920" data-fps="30">
+      <svg width="0" height="0" style="position:absolute">
+        <defs>
+          <filter id="neon-glow" x="-40%" y="-40%" width="180%" height="180%">
+            <feGaussianBlur stdDeviation="6" result="blur1" />
+            <feGaussianBlur stdDeviation="14" result="blur2" />
+            <feMerge>
+              <feMergeNode in="blur2" />
+              <feMergeNode in="blur1" />
+              <feMergeNode in="SourceGraphic" />
+            </feMerge>
+          </filter>
+        </defs>
+      </svg>
+
+      <!-- 1. HOOK (0.05 - 2.82s): Final Cut yt-prism-title + lt-mask-reveal + shimmer-sweep -->
+      <div id="clip-hook" class="clip" data-start="0.05" data-duration="2.77" data-track-index="1" data-layout-allow-overlap data-layout-allow-safe-zone>
+        <div id="hook-stage">
+          <div id="hk-kicker-box" class="fcp-mask-wrap">
+            <div id="hk-kicker-txt" class="fcp-mask-text">Không chỉ gây khó chịu...</div>
+            <div id="hk-sweep" class="fcp-sweep-bar"></div>
+          </div>
+          <div id="hk-prism-bow" class="prism-bow">
+            <div class="prism-line" data-layout-allow-overlap>
+              <span id="hk-pr-r" class="prism-copy r">KHÔ RÁT VÙNG KÍN!</span>
+              <span id="hk-pr-b" class="prism-copy b">KHÔ RÁT VÙNG KÍN!</span>
+              <span id="hk-pr-main" class="grad-text grad-rose">KHÔ RÁT VÙNG KÍN!</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2A. DIAGONAL SPLIT CALLOUT (2.88 - 5.66s): Final Cut lt-mask-reveal -->
+      <div id="clip-split" class="clip" data-start="2.88" data-duration="2.78" data-track-index="1" data-layout-allow-safe-zone>
+        <div class="top-callout-stage">
+          <div id="sp-box" class="lt-bar-box coral">
+            <div class="lt-bar-accent coral"></div>
+            <span id="sp-txt" class="grad-text grad-coral" style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:24px;">TÌNH TRẠNG KHÔ RÁT KÉO DÀI • DỄ BỎ QUA</span>
+            <div id="sp-sweep" class="fcp-sweep-bar"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2B. BARRIER TAG (8.55 - 11.25s): Final Cut lt-mask-reveal -->
+      <div id="clip-barrier" class="clip" data-start="8.55" data-duration="2.70" data-track-index="1" data-layout-allow-safe-zone>
+        <div class="top-callout-stage">
+          <div id="br-box" class="lt-bar-box">
+            <div class="lt-bar-accent"></div>
+            <span id="br-txt" class="grad-text grad-gold" style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:24px;">SUY YẾU HÀNG RÀO BẢO VỆ TỰ NHIÊN</span>
+            <div id="br-sweep" class="fcp-sweep-bar"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. WARNING BADGE (14.18 - 16.02s): MotionVFX lt-neon-border + AE marker-highlight -->
+      <div id="clip-warn" class="clip" data-start="14.18" data-duration="1.84" data-track-index="1" data-layout-allow-overlap data-layout-allow-safe-zone>
+        <div id="warn-stage">
+          <svg class="neon-svg" width="940" height="108" viewBox="0 0 940 108">
+            <rect x="4" y="4" width="932" height="100" rx="28" fill="rgba(20, 14, 24, 0.92)" stroke="rgba(255, 140, 100, 0.38)" stroke-width="2" />
+            <rect id="warn-neon-arc" x="4" y="4" width="932" height="100" rx="28" fill="none" stroke="#ff7a52" stroke-width="4.5" stroke-linecap="round" stroke-dasharray="360 1720" filter="url(#neon-glow)" />
+          </svg>
+          <div id="warn-inner" class="warn-inner">
+            <span style="color:#ffd8cc;font-weight:800;">LÀM TĂNG NGUY CƠ</span>
+            <span class="mh-em" data-layout-allow-overlap>
+              <span id="warn-em-word" class="grad-text grad-coral">VIÊM NHIỄM!</span>
+              <svg class="mh-svg" viewBox="0 0 260 20" preserveAspectRatio="none">
+                <path id="warn-marker-path" d="M 4 13 Q 130 5 256 12" fill="none" stroke="#ffd23f" stroke-width="6" stroke-linecap="round" />
+              </svg>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. EXPERT ADVICE (16.06 - 20.46s): lt-neon-border + bottom-up-letters + shimmer-sweep -->
+      <div id="clip-expert" class="clip" data-start="16.06" data-duration="4.40" data-track-index="1" data-layout-allow-overlap>
+        <div id="expert-stage">
+          <svg class="neon-svg" width="940" height="292" viewBox="0 0 940 292">
+            <rect x="4" y="4" width="932" height="284" rx="40" fill="rgba(16, 18, 34, 0.92)" stroke="rgba(246, 207, 101, 0.40)" stroke-width="2" />
+            <rect id="exp-neon-a" x="4" y="4" width="932" height="284" rx="40" fill="none" stroke="#ffe486" stroke-width="4.5" stroke-linecap="round" stroke-dasharray="420 2020" filter="url(#neon-glow)" />
+            <rect id="exp-neon-b" x="4" y="4" width="932" height="284" rx="40" fill="none" stroke="#ff72b6" stroke-width="4" stroke-linecap="round" stroke-dasharray="320 2120" stroke-dashoffset="-1220" filter="url(#neon-glow)" />
+          </svg>
+          <div id="exp-content" class="expert-content">
+            <div id="exp-kicker" style="font-weight:700;font-size:21px;color:#ffe486;letter-spacing:0.14em;">LỜI KHUYÊN KHOA HỌC TỪ HẰNG THU</div>
+            <div style="display:flex;gap:12px;justify-content:center;">
+              <span class="word-mask"><span class="word-inner exp-w grad-text grad-rose">CHỌN</span></span>
+              <span class="word-mask"><span class="word-inner exp-w grad-text grad-rose">ĐÚNG</span></span>
+              <span class="word-mask"><span class="word-inner exp-w grad-text grad-rose">THÀNH</span></span>
+              <span class="word-mask"><span class="word-inner exp-w grad-text grad-rose">PHẦN</span></span>
+            </div>
+            <div style="display:flex;gap:12px;justify-content:center;">
+              <span class="word-mask"><span class="word-inner exp-w grad-text grad-gold">DƯỠNG</span></span>
+              <span class="word-mask"><span class="word-inner exp-w grad-text grad-gold">ẨM</span></span>
+              <span class="word-mask"><span class="word-inner exp-w grad-text grad-gold">+</span></span>
+              <span class="word-mask"><span class="word-inner exp-w grad-text grad-emerald">PHỤC</span></span>
+              <span class="word-mask"><span class="word-inner exp-w grad-text grad-emerald">HỒI</span></span>
+            </div>
+            <div id="exp-rule" class="gold-rule"></div>
+            <div id="exp-sub" style="font-weight:600;font-size:20px;color:#eef2ff;letter-spacing:0.04em;">BẢO VỆ HÀNG RÀO TỰ NHIÊN CỦA VÙNG KÍN</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4B. DUAL BENTO CALLOUT (20.56 - 25.10s): FCP lt-clean-bar center-split wipe -->
+      <div id="clip-bento-tag" class="clip" data-start="20.56" data-duration="4.54" data-track-index="1" data-layout-allow-safe-zone>
+        <div class="top-callout-stage">
+          <div id="bt-box" class="lt-bar-box sapphire">
+            <div class="lt-bar-accent sapphire"></div>
+            <span id="bt-txt" class="grad-text grad-sapphire" style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:24px;">CƠ CHẾ KÉP: CẤP ẨM SÂU &amp; PHỤC HỒI TỪ GỐC</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4C. 4-INGREDIENT HEADER (25.26 - 30.14s): FCP lt-mask-reveal + shimmer -->
+      <div id="clip-ing-tag" class="clip" data-start="25.26" data-duration="4.88" data-track-index="1" data-layout-allow-safe-zone>
+        <div class="top-callout-stage">
+          <div id="ig-box" class="lt-bar-box emerald">
+            <div class="lt-bar-accent emerald"></div>
+            <span id="ig-txt" class="grad-text grad-emerald" style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:23px;">BỘ 4 HOẠT CHẤT DƯỠNG ẨM &amp; LÀM DỊU CHUYÊN BIỆT</span>
+            <div id="ig-sweep" class="fcp-sweep-bar"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. PRODUCT SHOWCASE BAR (30.26 - 33.16s): Apple FCP lt-clean-bar + staggered chips -->
+      <div id="clip-prod" class="clip" data-start="30.26" data-duration="2.90" data-track-index="1" data-layout-allow-safe-zone>
+        <div id="prod-stage">
+          <div id="pr-kicker" style="font-weight:700;font-size:20px;color:#ffe486;letter-spacing:0.12em;">GIẢI PHÁP CHUYÊN BIỆT HẰNG THU PHARMA</div>
+          <div id="pr-title" class="grad-text grad-emerald" style="font-family:'Montserrat',sans-serif;font-weight:900;font-size:40px;">VIÊN ĐẶT PHỤ KHOA HẰNG THU</div>
+          <div class="chip-row">
+            <span class="ing-chip pr-chip">GLYCERIN</span>
+            <span class="ing-chip pr-chip">NIACINAMIDE</span>
+            <span class="ing-chip pr-chip">CÚC LA MÃ</span>
+            <span class="ing-chip pr-chip">CAM THẢO</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6. FINALE 3 PILLARS + CTA (33.22 - 37.76s): AE success-check + line-by-line-slide + FCP CTA -->
+      <div id="clip-finale" class="clip" data-start="33.22" data-duration="4.54" data-track-index="1" data-layout-allow-safe-zone>
+        <div id="finale-stage">
+          <div id="chk-row-1" class="check-card">
+            <svg width="50" height="50" viewBox="0 0 50 50">
+              <circle id="chk-ring-1" cx="25" cy="25" r="22" fill="#0e8a60" stroke="#a6f9dc" stroke-width="2.5" />
+              <path id="chk-path-1" d="M 14 26 L 22 34 L 37 17" fill="none" stroke="#ffffff" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="40" stroke-dashoffset="40" />
+            </svg>
+            <span class="check-label" style="color:#ffffff;">KHÔNG CHỈ LÀM SẠCH DỊU NHẸ</span>
+          </div>
+          <div id="chk-row-2" class="check-card">
+            <svg width="50" height="50" viewBox="0 0 50 50">
+              <circle id="chk-ring-2" cx="25" cy="25" r="22" fill="#0e8a60" stroke="#ffe486" stroke-width="2.5" />
+              <path id="chk-path-2" d="M 14 26 L 22 34 L 37 17" fill="none" stroke="#ffffff" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="40" stroke-dashoffset="40" />
+            </svg>
+            <span class="check-label grad-text grad-gold">CÂN BẰNG MÔI TRƯỜNG SINH LÝ</span>
+          </div>
+          <div id="chk-row-3" class="check-card">
+            <svg width="50" height="50" viewBox="0 0 50 50">
+              <circle id="chk-ring-3" cx="25" cy="25" r="22" fill="#0e8a60" stroke="#a6f9dc" stroke-width="2.5" />
+              <path id="chk-path-3" d="M 14 26 L 22 34 L 37 17" fill="none" stroke="#ffffff" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="40" stroke-dashoffset="40" />
+            </svg>
+            <span class="check-label grad-text grad-emerald">ĐỦ ĐỘ ẨM TỰ NHIÊN • KHỎE BỀN VỮNG</span>
+          </div>
+        </div>
+        <div id="cta-stage">
+          <span style="width:12px;height:12px;border-radius:50%;background:#76f2c6;box-shadow:0 0 10px #76f2c6;"></span>
+          <span id="cta-txt" class="grad-text grad-gold" style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:23px;">VIÊN ĐẶT PHỤ KHOA HẰNG THU  •  CÂN BẰNG &amp; ĐỦ ĐỘ ẨM TỰ NHIÊN</span>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      (function () {
+        window.__timelines = window.__timelines || {};
+        var tl = gsap.timeline({ paused: true });
+
+        /* 1. HOOK (0.05 -> 2.82s): FCP lt-mask-reveal + yt-prism-title + shimmer-sweep */
+        tl.fromTo("#hk-kicker-box", { clipPath: "inset(0 100% 0 0)", opacity: 0 }, { clipPath: "inset(0 0% 0 0)", opacity: 1, duration: 0.44, ease: "power3.inOut" }, 0.06);
+        tl.fromTo("#hk-sweep", { x: 0, opacity: 1 }, { x: 520, opacity: 0, duration: 0.48, ease: "power2.inOut" }, 0.06);
+
+        tl.fromTo("#hk-prism-bow",
+          { opacity: 0, scale: 0.86, y: 30, rotationX: 24, transformPerspective: 950, filter: "blur(18px)" },
+          { opacity: 1, scale: 1.0, y: 0, rotationX: 0, filter: "blur(0px)", duration: 0.52, ease: "power4.out" },
+          0.38
+        );
+        tl.fromTo("#hk-pr-r", { x: -30, opacity: 0.90 }, { x: 0, opacity: 0, duration: 0.58, ease: "power3.out" }, 0.38);
+        tl.fromTo("#hk-pr-b", { x: 30, opacity: 0.90 }, { x: 0, opacity: 0, duration: 0.58, ease: "power3.out" }, 0.38);
+        tl.fromTo("#hk-pr-main", { backgroundPosition: "-130% 0, 0 0" }, { backgroundPosition: "220% 0, 0 0", duration: 0.90, ease: "power2.inOut" }, 0.70);
+        tl.to("#hook-stage", { opacity: 0, y: -22, filter: "blur(10px)", duration: 0.30, ease: "power2.in" }, 2.48);
+
+        /* 2A. SPLIT CALLOUT (2.88 -> 5.66s): FCP lt-mask-reveal */
+        tl.fromTo("#sp-box", { clipPath: "inset(0 100% 0 0)", y: -12 }, { clipPath: "inset(0 0% 0 0)", y: 0, duration: 0.44, ease: "power3.out" }, 2.90);
+        tl.fromTo("#sp-sweep", { x: 0, opacity: 1 }, { x: 740, opacity: 0, duration: 0.50, ease: "power2.inOut" }, 2.90);
+        tl.fromTo("#sp-txt", { backgroundPosition: "-130% 0, 0 0" }, { backgroundPosition: "220% 0, 0 0", duration: 0.90, ease: "power2.inOut" }, 3.30);
+        tl.to("#sp-box", { clipPath: "inset(0 0 0 100%)", opacity: 0, duration: 0.30, ease: "power2.in" }, 5.32);
+
+        /* 2B. BARRIER TAG (8.55 -> 11.25s): FCP lt-mask-reveal */
+        tl.fromTo("#br-box", { clipPath: "inset(0 100% 0 0)", y: -12 }, { clipPath: "inset(0 0% 0 0)", y: 0, duration: 0.44, ease: "power3.out" }, 8.56);
+        tl.fromTo("#br-sweep", { x: 0, opacity: 1 }, { x: 660, opacity: 0, duration: 0.50, ease: "power2.inOut" }, 8.56);
+        tl.fromTo("#br-txt", { backgroundPosition: "-130% 0, 0 0" }, { backgroundPosition: "220% 0, 0 0", duration: 0.90, ease: "power2.inOut" }, 8.95);
+        tl.to("#br-box", { clipPath: "inset(0 0 0 100%)", opacity: 0, duration: 0.30, ease: "power2.in" }, 10.90);
+
+        /* 3. WARNING BADGE (14.18 -> 16.02s): lt-neon-border + AE marker-highlight */
+        tl.fromTo("#warn-stage", { opacity: 0, scale: 0.90, y: -20, filter: "blur(10px)" }, { opacity: 1, scale: 1, y: 0, filter: "blur(0px)", duration: 0.36, ease: "back.out(1.3)" }, 14.20);
+        tl.fromTo("#warn-neon-arc", { strokeDashoffset: 0 }, { strokeDashoffset: -2080, duration: 1.78, ease: "none" }, 14.20);
+        tl.fromTo("#warn-marker-path", { strokeDasharray: 270, strokeDashoffset: 270 }, { strokeDashoffset: 0, duration: 0.45, ease: "power3.out" }, 14.50);
+        tl.fromTo("#warn-em-word", { scale: 1.0 }, { scale: 1.09, duration: 0.18, yoyo: true, repeat: 1, ease: "power2.out" }, 14.52);
+        tl.to("#warn-stage", { opacity: 0, y: -16, filter: "blur(8px)", duration: 0.26, ease: "power2.in" }, 15.72);
+
+        /* 4. EXPERT ADVICE (16.06 -> 20.46s): lt-neon-border + bottom-up-letters + shimmer-sweep */
+        tl.fromTo("#expert-stage", { opacity: 0, scale: 0.94, filter: "blur(12px)" }, { opacity: 1, scale: 1.0, filter: "blur(0px)", duration: 0.42, ease: "power3.out" }, 16.08);
+        tl.fromTo("#exp-neon-a", { strokeDashoffset: 0 }, { strokeDashoffset: -2440, duration: 4.30, ease: "none" }, 16.08);
+        tl.fromTo("#exp-neon-b", { strokeDashoffset: -1220 }, { strokeDashoffset: -3660, duration: 4.30, ease: "none" }, 16.08);
+        tl.fromTo("#exp-kicker", { opacity: 0, scale: 1.06, y: -10 }, { opacity: 1, scale: 1.0, y: 0, duration: 0.46, ease: "power3.out" }, 16.14);
+        tl.fromTo(".exp-w", { yPercent: 120, opacity: 0 }, { yPercent: 0, opacity: 1, duration: 0.46, stagger: 0.055, ease: "power4.out" }, 16.22);
+        tl.fromTo(".exp-w", { backgroundPosition: "-130% 0, 0 0" }, { backgroundPosition: "220% 0, 0 0", duration: 0.95, stagger: 0.04, ease: "power2.inOut" }, 16.85);
+        tl.fromTo("#exp-rule", { scaleX: 0, opacity: 0 }, { scaleX: 1, opacity: 1, duration: 0.48, ease: "power3.out" }, 16.65);
+        tl.fromTo("#exp-sub", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.40, ease: "power2.out" }, 16.78);
+        tl.to("#expert-stage", { opacity: 0, y: -20, filter: "blur(10px)", duration: 0.34, ease: "power2.in" }, 20.08);
+
+        /* 4B. DUAL BENTO CALLOUT (20.56 -> 25.10s): FCP center-split wipe */
+        tl.fromTo("#bt-box", { clipPath: "inset(0 50% 0 50%)", opacity: 0 }, { clipPath: "inset(0 0% 0 0%)", opacity: 1, duration: 0.46, ease: "power4.out" }, 20.58);
+        tl.fromTo("#bt-txt", { backgroundPosition: "-130% 0, 0 0" }, { backgroundPosition: "220% 0, 0 0", duration: 0.95, ease: "power2.inOut" }, 21.05);
+        tl.to("#bt-box", { clipPath: "inset(0 50% 0 50%)", opacity: 0, duration: 0.32, ease: "power2.in" }, 24.72);
+
+        /* 4C. 4-INGREDIENT HEADER (25.26 -> 30.14s): FCP lt-mask-reveal */
+        tl.fromTo("#ig-box", { clipPath: "inset(0 100% 0 0)", y: -10 }, { clipPath: "inset(0 0% 0 0)", y: 0, duration: 0.46, ease: "power3.out" }, 25.28);
+        tl.fromTo("#ig-sweep", { x: 0, opacity: 1 }, { x: 780, opacity: 0, duration: 0.52, ease: "power2.inOut" }, 25.28);
+        tl.fromTo("#ig-txt", { backgroundPosition: "-130% 0, 0 0" }, { backgroundPosition: "220% 0, 0 0", duration: 1.00, ease: "power2.inOut" }, 25.80);
+        tl.to("#ig-box", { clipPath: "inset(0 0 0 100%)", opacity: 0, duration: 0.32, ease: "power2.in" }, 29.78);
+
+        /* 5. PRODUCT SHOWCASE BAR (30.26 -> 33.16s): FCP lt-clean-bar clip-wipe + staggered chips */
+        tl.fromTo("#prod-stage", { clipPath: "inset(0 100% 0 0)", opacity: 0 }, { clipPath: "inset(0 0% 0 0)", opacity: 1, duration: 0.46, ease: "power4.out" }, 30.28);
+        tl.fromTo("#pr-title", { backgroundPosition: "-130% 0, 0 0" }, { backgroundPosition: "220% 0, 0 0", duration: 0.90, ease: "power2.inOut" }, 30.65);
+        tl.fromTo(".pr-chip", { opacity: 0, y: 14, scale: 0.88 }, { opacity: 1, y: 0, scale: 1.0, duration: 0.34, stagger: 0.07, ease: "back.out(1.4)" }, 30.52);
+        tl.to("#prod-stage", { opacity: 0, y: -18, filter: "blur(8px)", duration: 0.30, ease: "power2.in" }, 32.82);
+
+        /* 6. FINALE 3 PILLARS + CTA (33.22 -> 37.76s): AE success-check + line-by-line-slide */
+        var chkTimes = [33.34, 34.84, 35.86];
+        chkTimes.forEach(function (tCue, i) {
+          var id = i + 1;
+          tl.fromTo("#chk-row-" + id, { opacity: 0, x: 70, filter: "blur(8px)" }, { opacity: 1, x: 0, filter: "blur(0px)", duration: 0.42, ease: "power4.out" }, tCue);
+          tl.fromTo("#chk-ring-" + id, { scale: 0, transformOrigin: "25px 25px" }, { scale: 1, duration: 0.36, ease: "back.out(1.7)" }, tCue + 0.06);
+          tl.fromTo("#chk-path-" + id, { strokeDashoffset: 40 }, { strokeDashoffset: 0, duration: 0.34, ease: "power3.out" }, tCue + 0.16);
+        });
+        tl.fromTo("#cta-stage", { clipPath: "inset(0 50% 0 50%)", opacity: 0 }, { clipPath: "inset(0 0% 0 0%)", opacity: 1, duration: 0.48, ease: "power4.out" }, 33.82);
+        tl.fromTo("#cta-txt", { backgroundPosition: "-130% 0, 0 0" }, { backgroundPosition: "220% 0, 0 0", duration: 1.10, ease: "power2.inOut" }, 34.35);
+        tl.to(["#finale-stage", "#cta-stage"], { opacity: 0, duration: 0.30, ease: "power2.in" }, 37.44);
+
+        window.__timelines["main"] = tl;
+      })();
+    </script>
+  </body>
+</html>

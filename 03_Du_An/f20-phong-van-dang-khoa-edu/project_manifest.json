@@ -1,0 +1,1153 @@
+{
+  "draft_name": "261121 F20 Phỏng Vấn Đăng Khoa Edu",
+  "total_s": 220.9667,
+  "total_u": 220966666,
+  "track0": [
+    {
+      "id": "01_doorway",
+      "path": "Z:\\Máy tính khác\\My Computer\\F20\\video gốc\\261116\\Anh Hậu\\C3925.MP4",
+      "src_in": 1.7,
+      "src_out": 14.35,
+      "speed": 1.05,
+      "vol": 1.15,
+      "speaker": "oanh",
+      "tl_start_u": 0,
+      "tl_dur_u": 12033333,
+      "tl_end_u": 12033333,
+      "tl_start": 0.0,
+      "tl_end": 12.0333
+    },
+    {
+      "id": "02_room_pan",
+      "path": "Z:\\Máy tính khác\\My Computer\\F20\\video gốc\\261116\\Chi Oanh\\dọc\\C3908.MP4",
+      "src_in": 0.8,
+      "src_out": 2.3,
+      "speed": 1.0,
+      "vol": 0.0,
+      "speaker": "broll",
+      "tl_start_u": 12033333,
+      "tl_dur_u": 1500000,
+      "tl_end_u": 13533333,
+      "tl_start": 12.0333,
+      "tl_end": 13.5333
+    },
+    {
+      "id": "03_handshake",
+      "path": "Z:\\Máy tính khác\\My Computer\\F20\\video gốc\\261116\\Anh Hậu\\C3925.MP4",
+      "src_in": 18.75,
+      "src_out": 23.3,
+      "speed": 1.0,
+      "vol": 1.35,
+      "speaker": "both",
+      "tl_start_u": 13533333,
+      "tl_dur_u": 4566667,
+      "tl_end_u": 18100000,
+      "tl_start": 13.5333,
+      "tl_end": 18.1
+    },
+    {
+      "id": "04_q1_oanh",
+      "path": "Z:\\Máy tính khác\\My Computer\\F20\\video gốc\\261116\\Anh Hậu\\C3926.MP4",
+      "src_in": 5.75,
+      "src_out": 15.55,
+      "speed": 1.05,
+      "vol": 1.15,
+      "speaker": "oanh",
+      "tl_start_u": 18100000,
+      "tl_dur_u": 9333333,
+      "tl_end_u": 27433333,
+      "tl_start": 18.1,
+      "tl_end": 27.4333
+    },
+    {
+      "id": "05_a1_reason",
+      "path": "Z:\\Máy tính khác\\My Computer\\F20\\video gốc\\261116\\Anh Hậu\\C3926.MP4",
+      "src_in": 16.9,
+      "src_out": 22.95,
+      "speed": 1.05,
+      "vol": 1.8,
+      "speaker": "hau",
+      "tl_start_u": 27433333,
+      "tl_dur_u": 5766667,
+      "tl_end_u": 33200000,
+      "tl_start": 27.4333,
+      "tl_end": 33.2
+    },
+    {
+      "id": "06_a1_quality",
+      "path": "Z:\\Máy tính khác\\My Computer\\F20\\video gốc\\261116\\Anh Hậu\\C3926.MP4",
+      "src_in": 23.5,
+      "src_out": 33.8,
+      "speed": 1.05,
+      "vol": 1.8,
+      "speaker": "hau",
+      "tl_start_u": 33200000,
+      "tl_dur_u": 9800000,
+      "tl_end_u": 43000000,
+      "tl_start": 33.2,
+      "tl_end": 43.0
+    },
+    {
+      "id": "07a_a1_used",
+      "path": "Z:\\Máy tính khác\\My Computer\\F20\\video gốc\\261116\\Anh Hậu\\C3926.MP4",
+      "src_in": 35.15,
+      "src_out": 45.2,
+      "speed": 1.05,
+      "vol": 1.8,
+      "speaker": "hau",
+      "tl_start_u": 43000000,
+      "tl_dur_u": 9566667,
+      "tl_end_u": 52566667,
+      "tl_start": 43.0,
+      "tl_end": 52.5667
+    },
+    {
+      "id": "07b_a1_ngon",
+      "path": "Z:\\Máy tính khác\\My Computer\\F20\\video gốc\\261116\\Anh Hậu\\C3926.MP4",
+      "src_in": 53.85,
+      "src_out": 56.1,
+      "speed": 1.05,
+      "vol": 1.8,
+      "speaker": "hau",
+      "tl_start_u": 52566667,
+      "tl_dur_u": 2133333,
+      "tl_end_u": 54700000,
+      "tl_start": 52.5667,
+      "tl_end": 54.7
+    },
+    {
+      "id": "08_a1_handmade",
+      "path": "Z:\\Máy tính khác\\My Computer\\F20\\video gốc\\261116\\Anh Hậu\\C3926.MP4",
+      "src_in": 57.85,
+      "src_out": 69.05,
+      "speed": 1.05,
+      "vol": 1.8,
+      "speaker": "hau",
+      "tl_start_u": 54700000,
+      "tl_dur_u": 10666667,
+      "tl_end_u": 65366667,
+      "tl_start": 54.7,
+      "tl_end": 65.3667
+    },
+    {
+      "id": "09_a1_seaweed",
+      "path": "Z:\\Máy tính khác\\My Computer\\F20\\video gốc\\261116\\Anh Hậu\\C3926.MP4",
+      "src_in": 69.75,
+      "src_out": 79.85,
+      "speed": 1.05,
+      "vol": 1.8,
+      "speaker": "hau",
+      "tl_start_u": 65366667,
+      "tl_dur_u": 9633333,
+      "tl_end_u": 75000000,
+      "tl_start": 65.3667,
+      "tl_end": 75.0
+    },
+    {
+      "id": "10_a1_energy",
+      "path": "Z:\\Máy tính khác\\My Computer\\F20\\video gốc\\261116\\Anh Hậu\\C3926.MP4",
+      "src_in": 86.75,
+      "src_out": 98.1,
+      "speed": 1.05,
+      "vol": 1.8,
+      "speaker": "hau",
+      "tl_start_u": 75000000,
+      "tl_dur_u": 10800000,
+      "tl_end_u": 85800000,
+      "tl_start": 75.0,
+      "tl_end": 85.8
+    },
+    {
+      "id": "11_q2_oanh",
+      "path": "Z:\\Máy tính khác\\My Computer\\F20\\video gốc\\261116\\Anh Hậu\\C3926.MP4",
+      "src_in": 108.0,
+      "src_out": 116.5,
+      "speed": 1.05,
+      "vol": 1.15,
+      "speaker": "oanh",
+      "tl_start_u": 85800000,
+      "tl_dur_u": 8100000,
+      "tl_end_u": 93900000,
+      "tl_start": 85.8,
+      "tl_end": 93.9
+    },
+    {
+      "id": "12_a2_happy",
+      "path": "Z:\\Máy tính khác\\My Computer\\F20\\video gốc\\261116\\Anh Hậu\\C3926.MP4",
+      "src_in": 133.2,
+      "src_out": 142.55,
+      "speed": 1.05,
+      "vol": 1.8,
+      "speaker": "hau",
+      "tl_start_u": 93900000,
+      "tl_dur_u": 8900000,
+      "tl_end_u": 102800000,
+      "tl_start": 93.9,
+      "tl_end": 102.8
+    },
+    {
+      "id": "13_a2_handle",
+      "path": "Z:\\Máy tính khác\\My Computer\\F20\\video gốc\\261116\\Anh Hậu\\C3926.MP4",
+      "src_in": 143.15,
+      "src_out": 149.15,
+      "speed": 1.05,
+      "vol": 1.8,
+      "speaker": "hau",
+      "tl_start_u": 102800000,
+      "tl_dur_u": 5700000,
+      "tl_end_u": 108500000,
+      "tl_start": 102.8,
+      "tl_end": 108.5
+    },
+    {
+      "id": "14_a2_mica",
+      "path": "Z:\\Máy tính khác\\My Computer\\F20\\video gốc\\261116\\Anh Hậu\\C3926.MP4",
+      "src_in": 150.2,
+      "src_out": 165.4,
+      "speed": 1.05,
+      "vol": 1.55,
+      "speaker": "both",
+      "tl_start_u": 108500000,
+      "tl_dur_u": 14466667,
+      "tl_end_u": 122966667,
+      "tl_start": 108.5,
+      "tl_end": 122.9667
+    },
+    {
+      "id": "15_q3_consult",
+      "path": "Z:\\Máy tính khác\\My Computer\\F20\\video gốc\\261116\\Anh Hậu\\C3926.MP4",
+      "src_in": 187.55,
+      "src_out": 198.9,
+      "speed": 1.05,
+      "vol": 1.15,
+      "speaker": "oanh",
+      "tl_start_u": 122966667,
+      "tl_dur_u": 10800000,
+      "tl_end_u": 133766667,
+      "tl_start": 122.9667,
+      "tl_end": 133.7667
+    },
+    {
+      "id": "16_a3_minimal",
+      "path": "Z:\\Máy tính khác\\My Computer\\F20\\video gốc\\261116\\Anh Hậu\\C3926.MP4",
+      "src_in": 204.9,
+      "src_out": 212.8,
+      "speed": 1.05,
+      "vol": 1.8,
+      "speaker": "hau",
+      "tl_start_u": 133766667,
+      "tl_dur_u": 7533333,
+      "tl_end_u": 141300000,
+      "tl_start": 133.7667,
+      "tl_end": 141.3
+    },
+    {
+      "id": "17_a3_4items",
+      "path": "Z:\\Máy tính khác\\My Computer\\F20\\video gốc\\261116\\Anh Hậu\\C3926.MP4",
+      "src_in": 213.35,
+      "src_out": 233.35,
+      "speed": 1.05,
+      "vol": 1.8,
+      "speaker": "hau",
+      "tl_start_u": 141300000,
+      "tl_dur_u": 19033333,
+      "tl_end_u": 160333333,
+      "tl_start": 141.3,
+      "tl_end": 160.3333
+    },
+    {
+      "id": "18_gift_intro",
+      "path": "Z:\\Máy tính khác\\My Computer\\F20\\video gốc\\261116\\Anh Hậu\\C3932.MP4",
+      "src_in": 2.6,
+      "src_out": 16.45,
+      "speed": 1.05,
+      "vol": 1.15,
+      "speaker": "oanh",
+      "tl_start_u": 160333333,
+      "tl_dur_u": 13200000,
+      "tl_end_u": 173533333,
+      "tl_start": 160.3333,
+      "tl_end": 173.5333
+    },
+    {
+      "id": "19_gift_give",
+      "path": "Z:\\Máy tính khác\\My Computer\\F20\\video gốc\\261116\\Anh Hậu\\C3932.MP4",
+      "src_in": 47.65,
+      "src_out": 51.35,
+      "speed": 1.05,
+      "vol": 1.35,
+      "speaker": "both",
+      "tl_start_u": 173533333,
+      "tl_dur_u": 3533333,
+      "tl_end_u": 177066666,
+      "tl_start": 173.5333,
+      "tl_end": 177.0667
+    },
+    {
+      "id": "20_book1",
+      "path": "Z:\\Máy tính khác\\My Computer\\F20\\video gốc\\261116\\Anh Hậu\\C3932.MP4",
+      "src_in": 63.8,
+      "src_out": 74.05,
+      "speed": 1.05,
+      "vol": 1.15,
+      "speaker": "oanh",
+      "tl_start_u": 177066666,
+      "tl_dur_u": 9766667,
+      "tl_end_u": 186833333,
+      "tl_start": 177.0667,
+      "tl_end": 186.8333
+    },
+    {
+      "id": "21_book2a",
+      "path": "Z:\\Máy tính khác\\My Computer\\F20\\video gốc\\261116\\Anh Hậu\\C3932.MP4",
+      "src_in": 78.6,
+      "src_out": 84.7,
+      "speed": 1.05,
+      "vol": 1.15,
+      "speaker": "oanh",
+      "tl_start_u": 186833333,
+      "tl_dur_u": 5800000,
+      "tl_end_u": 192633333,
+      "tl_start": 186.8333,
+      "tl_end": 192.6333
+    },
+    {
+      "id": "22_book2b",
+      "path": "Z:\\Máy tính khác\\My Computer\\F20\\video gốc\\261116\\Anh Hậu\\C3932.MP4",
+      "src_in": 91.4,
+      "src_out": 96.25,
+      "speed": 1.05,
+      "vol": 1.15,
+      "speaker": "oanh",
+      "tl_start_u": 192633333,
+      "tl_dur_u": 4633333,
+      "tl_end_u": 197266666,
+      "tl_start": 192.6333,
+      "tl_end": 197.2667
+    },
+    {
+      "id": "23_hau_thanks",
+      "path": "Z:\\Máy tính khác\\My Computer\\F20\\video gốc\\261116\\Anh Hậu\\C3932.MP4",
+      "src_in": 122.4,
+      "src_out": 130.0,
+      "speed": 1.05,
+      "vol": 1.8,
+      "speaker": "hau",
+      "tl_start_u": 197266666,
+      "tl_dur_u": 7233333,
+      "tl_end_u": 204499999,
+      "tl_start": 197.2667,
+      "tl_end": 204.5
+    },
+    {
+      "id": "24_oanh_cta",
+      "path": "Z:\\Máy tính khác\\My Computer\\F20\\video gốc\\261116\\Chi Oanh\\dọc\\C3864.MP4",
+      "src_in": 5.15,
+      "src_out": 19.3,
+      "speed": 1.05,
+      "vol": 1.2,
+      "speaker": "oanh",
+      "tl_start_u": 204499999,
+      "tl_dur_u": 13466667,
+      "tl_end_u": 217966666,
+      "tl_start": 204.5,
+      "tl_end": 217.9667
+    },
+    {
+      "id": "25_banner",
+      "path": "d:\\AI\\full studio\\output\\f20-set-qua-2011\\capcut_1117_2_work\\v7_assets\\outro_banner_f20_brand.mp4",
+      "src_in": 0.0,
+      "src_out": 3.0,
+      "speed": 1.0,
+      "vol": 0.0,
+      "speaker": "banner",
+      "tl_start_u": 217966666,
+      "tl_dur_u": 3000000,
+      "tl_end_u": 220966666,
+      "tl_start": 217.9667,
+      "tl_end": 220.9667
+    }
+  ],
+  "brolls": [
+    {
+      "t0": 2.7619,
+      "t1": 5.619,
+      "path": "Z:\\Máy tính khác\\My Computer\\F20\\video gốc\\261116\\Chi Oanh\\dọc\\C3909.MP4",
+      "src_in": 1.5,
+      "speed": 1.0,
+      "in_anim": null,
+      "out_anim": null,
+      "note": "Cận mượt 77 set quà trong phòng Đăng Khoa Edu"
+    },
+    {
+      "t0": 5.619,
+      "t1": 8.0,
+      "path": "Z:\\Máy tính khác\\My Computer\\F20\\video gốc\\261116\\Chi Oanh\\dọc\\C3914.MP4",
+      "src_in": 3.0,
+      "speed": 1.0,
+      "in_anim": null,
+      "out_anim": null,
+      "note": "Nhân viên F20 bày trí set quà gọn gàng lên bàn"
+    },
+    {
+      "t0": 38.2476,
+      "t1": 42.0571,
+      "path": "Z:\\Máy tính khác\\My Computer\\F20\\video gốc\\261116\\Chi Oanh\\dọc\\C3910.MP4",
+      "src_in": 1.0,
+      "speed": 0.9,
+      "in_anim": null,
+      "out_anim": null,
+      "note": "Toàn cảnh dãy 77 set quà chất lượng tại Đăng Khoa Edu"
+    },
+    {
+      "t0": 50.0952,
+      "t1": 54.6143,
+      "path": "Z:\\Máy tính khác\\My Computer\\F20\\video gốc\\261116\\Chi Oanh\\dọc\\C3867.MP4",
+      "src_in": 0.35,
+      "speed": 0.85,
+      "in_anim": null,
+      "out_anim": null,
+      "note": "Cận tổ yến tinh chế SKANEST cao cấp"
+    },
+    {
+      "t0": 57.2238,
+      "t1": 60.3667,
+      "path": "Z:\\Máy tính khác\\My Computer\\F20\\video gốc\\261116\\Chi Oanh\\dọc\\C3869.MP4",
+      "src_in": 1.2,
+      "speed": 1.0,
+      "in_anim": null,
+      "out_anim": null,
+      "note": "Hộp yến sào SKANEST làm thủ công không hóa chất"
+    },
+    {
+      "t0": 72.4619,
+      "t1": 74.9857,
+      "path": "Z:\\Máy tính khác\\My Computer\\F20\\video gốc\\261116\\Chi Oanh\\dọc\\C3882.MP4",
+      "src_in": 0.6,
+      "speed": 1.0,
+      "in_anim": null,
+      "out_anim": null,
+      "note": "Rong biển Tuệ Tâm tiện lợi"
+    },
+    {
+      "t0": 75.0,
+      "t1": 77.7143,
+      "path": "Z:\\Máy tính khác\\My Computer\\F20\\video gốc\\261116\\Chi Oanh\\dọc\\C3887.MP4",
+      "src_in": 0.5,
+      "speed": 1.0,
+      "in_anim": null,
+      "out_anim": null,
+      "note": "Bánh thuyền mix hạt tiếp năng lượng"
+    },
+    {
+      "t0": 86.181,
+      "t1": 89.419,
+      "path": "Z:\\Máy tính khác\\My Computer\\F20\\video gốc\\261116\\Anh Hậu\\C3922.MP4",
+      "src_in": 9.0,
+      "speed": 1.0,
+      "in_anim": null,
+      "out_anim": null,
+      "note": "Anh Hậu & Chị Oanh xem thành phẩm set quà"
+    },
+    {
+      "t0": 111.3571,
+      "t1": 114.5952,
+      "path": "Z:\\Máy tính khác\\My Computer\\F20\\video gốc\\261116\\Chi Oanh\\dọc\\C3873.MP4",
+      "src_in": 0.8,
+      "speed": 0.85,
+      "in_anim": null,
+      "out_anim": null,
+      "note": "Cận túi giỏ Mica trong suốt khoe trọn 4 món"
+    },
+    {
+      "t0": 126.0619,
+      "t1": 129.3,
+      "path": "Z:\\Máy tính khác\\My Computer\\F20\\video gốc\\261116\\Chi Oanh\\dọc\\C3918.MP4",
+      "src_in": 0.8,
+      "speed": 1.0,
+      "in_anim": null,
+      "out_anim": null,
+      "note": "Chị Oanh chăm chút từng set quà trên bàn"
+    },
+    {
+      "t0": 171.1904,
+      "t1": 173.5238,
+      "path": "Z:\\Máy tính khác\\My Computer\\F20\\video gốc\\261116\\Anh Hậu\\C3921.MP4",
+      "src_in": 1.0,
+      "speed": 1.0,
+      "in_anim": null,
+      "out_anim": null,
+      "note": "Khoảnh khắc giao lưu thân tình tại Đăng Khoa Edu"
+    },
+    {
+      "t0": 212.4524,
+      "t1": 215.3095,
+      "path": "Z:\\Máy tính khác\\My Computer\\F20\\video gốc\\261116\\Chi Oanh\\dọc\\C3875.MP4",
+      "src_in": 2.0,
+      "speed": 0.9,
+      "in_anim": null,
+      "out_anim": null,
+      "note": "Dãy set quà 20/11 F20 sẵn sàng giao ngay"
+    }
+  ],
+  "circles": [
+    {
+      "t0": 46.2857,
+      "t1": 50.0,
+      "png": "circle_01_to_yen_a5.png",
+      "path": "d:\\AI\\full studio\\output\\f20-set-qua-2011\\capcut_1117_2_work\\v7_assets\\circle_overlays\\circle_01_to_yen_a5.png",
+      "px": 0.08,
+      "py": 0.34,
+      "sc": 0.41
+    },
+    {
+      "t0": 66.1762,
+      "t1": 69.1286,
+      "png": "circle_02_2hop_rong_bien.png",
+      "path": "d:\\AI\\full studio\\output\\f20-set-qua-2011\\capcut_1117_2_work\\v7_assets\\circle_overlays\\circle_02_2hop_rong_bien.png",
+      "px": 0.08,
+      "py": 0.34,
+      "sc": 0.41
+    },
+    {
+      "t0": 69.2715,
+      "t1": 72.3667,
+      "png": "circle_03_banh_thuyen.png",
+      "path": "d:\\AI\\full studio\\output\\f20-set-qua-2011\\capcut_1117_2_work\\v7_assets\\circle_overlays\\circle_03_banh_thuyen.png",
+      "px": 0.08,
+      "py": 0.34,
+      "sc": 0.41
+    },
+    {
+      "t0": 141.5381,
+      "t1": 143.9667,
+      "png": "circle_02_2hop_rong_bien.png",
+      "path": "d:\\AI\\full studio\\output\\f20-set-qua-2011\\capcut_1117_2_work\\v7_assets\\circle_overlays\\circle_02_2hop_rong_bien.png",
+      "px": 0.08,
+      "py": 0.34,
+      "sc": 0.41
+    },
+    {
+      "t0": 144.0619,
+      "t1": 147.1571,
+      "png": "circle_01_to_yen_a5.png",
+      "path": "d:\\AI\\full studio\\output\\f20-set-qua-2011\\capcut_1117_2_work\\v7_assets\\circle_overlays\\circle_01_to_yen_a5.png",
+      "px": 0.08,
+      "py": 0.34,
+      "sc": 0.41
+    },
+    {
+      "t0": 147.2524,
+      "t1": 150.4429,
+      "png": "circle_08_duong_phen.png",
+      "path": "d:\\AI\\full studio\\output\\f20-set-qua-2011\\capcut_1117_2_work\\v7_assets\\circle_overlays\\circle_08_duong_phen.png",
+      "px": 0.08,
+      "py": 0.34,
+      "sc": 0.41
+    },
+    {
+      "t0": 150.5381,
+      "t1": 154.1571,
+      "png": "circle_03_banh_thuyen.png",
+      "path": "d:\\AI\\full studio\\output\\f20-set-qua-2011\\capcut_1117_2_work\\v7_assets\\circle_overlays\\circle_03_banh_thuyen.png",
+      "px": 0.08,
+      "py": 0.34,
+      "sc": 0.41
+    },
+    {
+      "t0": 154.2524,
+      "t1": 157.5381,
+      "png": "circle_04_kep_hat_500g.png",
+      "path": "d:\\AI\\full studio\\output\\f20-set-qua-2011\\capcut_1117_2_work\\v7_assets\\circle_overlays\\circle_04_kep_hat_500g.png",
+      "px": 0.08,
+      "py": 0.34,
+      "sc": 0.41
+    }
+  ],
+  "subtitles": [
+    {
+      "t0": 0.0476,
+      "t1": 2.7279,
+      "text": "Bên Oanh đã chuẩn\nbị xong 77 set quà",
+      "highlight": true
+    },
+    {
+      "t0": 2.7619,
+      "t1": 5.3946,
+      "text": "giao tới văn phòng\nĐăng Khoa Edu",
+      "highlight": false
+    },
+    {
+      "t0": 5.4286,
+      "t1": 8.0612,
+      "text": "tại 23 Thái Nguyên\nrồi nhé mọi người!",
+      "highlight": false
+    },
+    {
+      "t0": 8.0952,
+      "t1": 11.9524,
+      "text": "Giờ cùng Oanh vào giao\nquà cho anh Hậu nhé!",
+      "highlight": false
+    },
+    {
+      "t0": 13.6333,
+      "t1": 14.9493,
+      "text": "Xin chào anh Hậu ạ!",
+      "highlight": false
+    },
+    {
+      "t0": 14.9833,
+      "t1": 18.1136,
+      "text": "Chào em, chào Oanh F20!",
+      "highlight": true
+    },
+    {
+      "t0": 18.1476,
+      "t1": 20.7803,
+      "text": "Vì sao năm nay\nĐăng Khoa Edu",
+      "highlight": false
+    },
+    {
+      "t0": 20.8143,
+      "t1": 23.5422,
+      "text": "chọn sản phẩm\ncủa Thực phẩm F20",
+      "highlight": true
+    },
+    {
+      "t0": 23.5762,
+      "t1": 27.4469,
+      "text": "làm quà tri ân thầy\ncô dịp 20/11 ạ?",
+      "highlight": false
+    },
+    {
+      "t0": 27.4809,
+      "t1": 33.2136,
+      "text": "Thầy cô Đăng Khoa Edu đã có nhiều\nđóng góp rất là tuyệt vời",
+      "highlight": false
+    },
+    {
+      "t0": 33.2476,
+      "t1": 37.6422,
+      "text": "Hậu muốn gửi lời\ncảm ơn đến thầy cô,",
+      "highlight": false
+    },
+    {
+      "t0": 37.6762,
+      "t1": 43.0136,
+      "text": "muốn có một chút quà —\nnhưng phải chất lượng!",
+      "highlight": true
+    },
+    {
+      "t0": 43.0476,
+      "t1": 46.9184,
+      "text": "Ở F20, bản thân Hậu\nđã dùng rất nhiều rồi",
+      "highlight": false
+    },
+    {
+      "t0": 46.9524,
+      "t1": 52.5803,
+      "text": "từ bánh hạt, yến cho\nđến yến chưng tươi...",
+      "highlight": false
+    },
+    {
+      "t0": 52.6143,
+      "t1": 54.7136,
+      "text": "thấy rất là ngon!",
+      "highlight": true
+    },
+    {
+      "t0": 54.7476,
+      "t1": 59.9517,
+      "text": "F20 làm yến thủ công\nhết, không hóa chất!",
+      "highlight": true
+    },
+    {
+      "t0": 59.9857,
+      "t1": 65.3803,
+      "text": "Gia đình dùng, tặng\nbạn bè ai cũng khen!",
+      "highlight": false
+    },
+    {
+      "t0": 65.4143,
+      "t1": 68.666,
+      "text": "Đặc biệt rất thích\nrong biển và bánh hạt",
+      "highlight": true
+    },
+    {
+      "t0": 68.7,
+      "t1": 75.0136,
+      "text": "Giáo viên nhiều khi bận\nbịu không kịp ăn sáng,",
+      "highlight": false
+    },
+    {
+      "t0": 75.0476,
+      "t1": 79.5374,
+      "text": "ăn 1–2 cái tiếp năng\nlượng rất là ngon!",
+      "highlight": false
+    },
+    {
+      "t0": 79.5714,
+      "t1": 85.8136,
+      "text": "Rong biển và các loại hạt\nhoàn toàn thiên nhiên!",
+      "highlight": true
+    },
+    {
+      "t0": 85.8476,
+      "t1": 88.9089,
+      "text": "Hôm nay giao những\nset quà tới đây,",
+      "highlight": false
+    },
+    {
+      "t0": 88.9429,
+      "t1": 93.9136,
+      "text": "anh Hậu chia sẻ cảm\nnhận khi nhận quà nhé!",
+      "highlight": false
+    },
+    {
+      "t0": 93.9476,
+      "t1": 98.7231,
+      "text": "77 set quà đã tới\nĐăng Khoa Edu,",
+      "highlight": true
+    },
+    {
+      "t0": 98.7571,
+      "t1": 102.8136,
+      "text": "cầm trên tay cảm\nthấy rất là ưng ý!",
+      "highlight": false
+    },
+    {
+      "t0": 102.8476,
+      "t1": 108.5136,
+      "text": "Có quai xách tiện tay,\ncũng dễ thương nữa!",
+      "highlight": false
+    },
+    {
+      "t0": 108.5476,
+      "t1": 110.9898,
+      "text": "Phía dưới đây\nlà mica hả em?",
+      "highlight": false
+    },
+    {
+      "t0": 111.0238,
+      "t1": 114.085,
+      "text": "Dạ túi giỏ đựng quà\nchất liệu mica trong ạ!",
+      "highlight": false
+    },
+    {
+      "t0": 114.119,
+      "t1": 118.1803,
+      "text": "Mica trong luôn —\nkhông giấu giếm gì hết!",
+      "highlight": true
+    },
+    {
+      "t0": 118.2143,
+      "t1": 122.9803,
+      "text": "Show hết luôn — cái\ngì tốt mình khoe hết!",
+      "highlight": true
+    },
+    {
+      "t0": 123.0143,
+      "t1": 128.7422,
+      "text": "Anh Hậu nói muốn set quà\ntập trung chất lượng,",
+      "highlight": false
+    },
+    {
+      "t0": 128.7762,
+      "t1": 133.7803,
+      "text": "thầy cô dùng bồi bổ\nsức khỏe và tiện lợi!",
+      "highlight": false
+    },
+    {
+      "t0": 133.8143,
+      "t1": 138.3517,
+      "text": "Toán học gọi là tối giản\nđể tập trung chất lượng!",
+      "highlight": true
+    },
+    {
+      "t0": 138.3857,
+      "t1": 141.3612,
+      "text": "Cái gì đơn giản\nlà nghệ thuật hết!",
+      "highlight": true
+    },
+    {
+      "t0": 141.3952,
+      "t1": 144.0279,
+      "text": "Đây là rong biển nè,",
+      "highlight": false
+    },
+    {
+      "t0": 144.0619,
+      "t1": 147.2184,
+      "text": "đây là yến sào cao cấp nè,",
+      "highlight": true
+    },
+    {
+      "t0": 147.2524,
+      "t1": 150.5041,
+      "text": "hộp đường phèn nè,",
+      "highlight": false
+    },
+    {
+      "t0": 150.5381,
+      "t1": 154.2184,
+      "text": "bánh thuyền mix hạt nè,",
+      "highlight": false
+    },
+    {
+      "t0": 154.2524,
+      "t1": 156.266,
+      "text": "rong biển kẹp hạt nè!",
+      "highlight": false
+    },
+    {
+      "t0": 156.3,
+      "t1": 160.3945,
+      "text": "Những món rất hợp với\nthầy cô giáo — tuyệt vời!",
+      "highlight": true
+    },
+    {
+      "t0": 160.4285,
+      "t1": 166.1088,
+      "text": "Hôm nay đến giao quà\ncho Đăng Khoa Edu,",
+      "highlight": false
+    },
+    {
+      "t0": 166.1428,
+      "t1": 173.5469,
+      "text": "F20 có món quà nhỏ tặng\nthầy Hậu dịp 20/11!",
+      "highlight": true
+    },
+    {
+      "t0": 173.5809,
+      "t1": 175.4041,
+      "text": "Em xin gửi anh\nmón quà nhỏ ạ!",
+      "highlight": false
+    },
+    {
+      "t0": 175.4381,
+      "t1": 177.0803,
+      "text": "Cảm ơn Thực phẩm F20!",
+      "highlight": true
+    },
+    {
+      "t0": 177.1143,
+      "t1": 180.366,
+      "text": "Biết anh Hậu là\nngười cực kỳ mê sách,",
+      "highlight": false
+    },
+    {
+      "t0": 180.4,
+      "t1": 186.8469,
+      "text": "F20 tặng anh cuốn\n'Danh Nhân Thế Giới'!",
+      "highlight": true
+    },
+    {
+      "t0": 186.8809,
+      "t1": 192.6469,
+      "text": "Và quyển thứ 2 — vì anh\ncòn là doanh nhân...",
+      "highlight": false
+    },
+    {
+      "t0": 192.6809,
+      "t1": 197.3279,
+      "text": "cuốn 'Toán Học\nCủa Thịnh Vượng'!",
+      "highlight": true
+    },
+    {
+      "t0": 197.3619,
+      "t1": 200.3756,
+      "text": "Tuyệt vời! Cảm ơn\nOanh và F20 rất nhiều!",
+      "highlight": true
+    },
+    {
+      "t0": 200.4096,
+      "t1": 204.5136,
+      "text": "Món quà tan chảy đó\n— siêu thích luôn!",
+      "highlight": true
+    },
+    {
+      "t0": 204.5476,
+      "t1": 209.7993,
+      "text": "Oanh xin cảm ơn quý anh chị đã tin tưởng\nđặt hàng Thực phẩm F20!",
+      "highlight": false
+    },
+    {
+      "t0": 209.8333,
+      "t1": 213.6565,
+      "text": "Anh chị cần đặt set\nquà tặng dịp lễ 20/11",
+      "highlight": false
+    },
+    {
+      "t0": 213.6905,
+      "t1": 217.9286,
+      "text": "hãy inbox ngay\ncho Oanh nhé!",
+      "highlight": true
+    }
+  ],
+  "headers": [
+    {
+      "t0": 0.3,
+      "t1": 4.8,
+      "text": "GIAO 77 SET QUÀ\nĐĂNG KHOA EDU",
+      "px": 0.0,
+      "py": 0.66,
+      "size": 12.2
+    },
+    {
+      "t0": 18.3,
+      "t1": 22.9,
+      "text": "01 • LÝ DO CHỌN F20",
+      "px": 0.0,
+      "py": 0.66,
+      "size": 12.8
+    },
+    {
+      "t0": 54.7,
+      "t1": 59.9,
+      "text": "YẾN THỦ CÔNG\nKHÔNG HÓA CHẤT",
+      "px": 0.0,
+      "py": 0.66,
+      "size": 12.2
+    },
+    {
+      "t0": 86.0,
+      "t1": 90.4,
+      "text": "02 • CẢM NHẬN THÀNH PHẨM",
+      "px": 0.0,
+      "py": 0.66,
+      "size": 12.2
+    },
+    {
+      "t0": 114.0238,
+      "t1": 122.7667,
+      "text": "GIỎ MICA TRONG\nSHOW HẾT!",
+      "px": 0.0,
+      "py": 0.66,
+      "size": 12.6
+    },
+    {
+      "t0": 133.7667,
+      "t1": 141.3,
+      "text": "TỐI GIẢN\nTẬP TRUNG CHẤT LƯỢNG",
+      "px": 0.0,
+      "py": 0.66,
+      "size": 12.0
+    },
+    {
+      "t0": 160.5333,
+      "t1": 165.5333,
+      "text": "QUÀ TRI ÂN\nTHẦY HẬU 20/11",
+      "px": 0.0,
+      "py": 0.66,
+      "size": 12.4
+    },
+    {
+      "t0": 197.4667,
+      "t1": 204.5,
+      "text": "MÓN QUÀ TAN CHẢY\nSIÊU THÍCH!",
+      "px": 0.0,
+      "py": 0.66,
+      "size": 12.2
+    },
+    {
+      "t0": 212.4524,
+      "t1": 217.8667,
+      "text": "INBOX OANH NGAY\nĐẶT QUÀ 20/11",
+      "px": 0.0,
+      "py": 0.64,
+      "size": 12.2
+    }
+  ],
+  "bgm": {
+    "path": "Z:\\Máy tính khác\\My Computer\\Document HT Media\\TLH\\Edit\\01_Nhạc Nền (BGM)\\05_Acoustic - Guitar - Nhẹ Nhàng Mộc Mạc\\Gentle acoustic guitar background music recommended for corporate VPs(1595921) (3p47s).mp3",
+    "vol_cc": 0.22,
+    "start_s": 0.0,
+    "end_s": 220.9667
+  },
+  "sfx": [
+    {
+      "t0": 0.25,
+      "file": "Whoosh - Hiện chữ mượt tiêu chuẩn TVC.mp3",
+      "path": "Z:\\Máy tính khác\\My Computer\\Document HT Media\\TLH\\Edit\\02_Hiệu Ứng Âm Thanh (SFX)\\Whoosh - Hiện chữ mượt tiêu chuẩn TVC.mp3",
+      "label": "Air Mở Cảnh",
+      "vol_cc": 0.11,
+      "max_dur": 0.7
+    },
+    {
+      "t0": 0.35,
+      "file": "Ting & Chuông Đúng - Chimes 6115_04_1 (7s).mp3",
+      "path": "Z:\\Máy tính khác\\My Computer\\Document HT Media\\TLH\\Edit\\02_Hiệu Ứng Âm Thanh (SFX)\\Ting & Chuông Đúng - Chimes 6115_04_1 (7s).mp3",
+      "label": "Chuông Gió Mở",
+      "vol_cc": 0.09,
+      "max_dur": 1.8
+    },
+    {
+      "t0": 12.0333,
+      "file": "Whoosh - Gió lướt chữ nhẹ (Swoosh 02).mp3",
+      "path": "Z:\\Máy tính khác\\My Computer\\Document HT Media\\TLH\\Edit\\02_Hiệu Ứng Âm Thanh (SFX)\\Whoosh - Gió lướt chữ nhẹ (Swoosh 02).mp3",
+      "label": "Lướt Vào Phòng",
+      "vol_cc": 0.1,
+      "max_dur": 0.6
+    },
+    {
+      "t0": 18.25,
+      "file": "Whoosh - Fast Swoosh Pop 01 (1s).mp3",
+      "path": "Z:\\Máy tính khác\\My Computer\\Document HT Media\\TLH\\Edit\\02_Hiệu Ứng Âm Thanh (SFX)\\Whoosh - Fast Swoosh Pop 01 (1s).mp3",
+      "label": "Mở Phần 01",
+      "vol_cc": 0.1,
+      "max_dur": 0.6
+    },
+    {
+      "t0": 46.2857,
+      "file": "Click & Máy Chữ - click (1s).mp3",
+      "path": "Z:\\Máy tính khác\\My Computer\\Document HT Media\\TLH\\Edit\\02_Hiệu Ứng Âm Thanh (SFX)\\Click & Máy Chữ - click (1s).mp3",
+      "label": "Circle Yến Sào",
+      "vol_cc": 0.11,
+      "max_dur": 0.35
+    },
+    {
+      "t0": 54.7,
+      "file": "Lấp Lánh & Phép Thuật - Shine_03 (1s).mp3",
+      "path": "Z:\\Máy tính khác\\My Computer\\Document HT Media\\TLH\\Edit\\02_Hiệu Ứng Âm Thanh (SFX)\\Lấp Lánh & Phép Thuật - Shine_03 (1s).mp3",
+      "label": "Shine Thủ Công",
+      "vol_cc": 0.09,
+      "max_dur": 0.9
+    },
+    {
+      "t0": 66.1762,
+      "file": "Click & Máy Chữ - click (1s).mp3",
+      "path": "Z:\\Máy tính khác\\My Computer\\Document HT Media\\TLH\\Edit\\02_Hiệu Ứng Âm Thanh (SFX)\\Click & Máy Chữ - click (1s).mp3",
+      "label": "Circle Rong Biển",
+      "vol_cc": 0.11,
+      "max_dur": 0.35
+    },
+    {
+      "t0": 69.2715,
+      "file": "Click & Máy Chữ - click (1s).mp3",
+      "path": "Z:\\Máy tính khác\\My Computer\\Document HT Media\\TLH\\Edit\\02_Hiệu Ứng Âm Thanh (SFX)\\Click & Máy Chữ - click (1s).mp3",
+      "label": "Circle Bánh Thuyền",
+      "vol_cc": 0.11,
+      "max_dur": 0.35
+    },
+    {
+      "t0": 85.95,
+      "file": "Whoosh - Fast Swoosh Pop 01 (1s).mp3",
+      "path": "Z:\\Máy tính khác\\My Computer\\Document HT Media\\TLH\\Edit\\02_Hiệu Ứng Âm Thanh (SFX)\\Whoosh - Fast Swoosh Pop 01 (1s).mp3",
+      "label": "Mở Phần 02",
+      "vol_cc": 0.1,
+      "max_dur": 0.6
+    },
+    {
+      "t0": 114.0238,
+      "file": "Ding - Tiếng chuông ngân trong trẻo.mp3",
+      "path": "Z:\\Máy tính khác\\My Computer\\Document HT Media\\TLH\\Edit\\02_Hiệu Ứng Âm Thanh (SFX)\\Ding - Tiếng chuông ngân trong trẻo.mp3",
+      "label": "Ding Mica Trong",
+      "vol_cc": 0.1,
+      "max_dur": 1.1
+    },
+    {
+      "t0": 133.7667,
+      "file": "Whoosh - Gió lướt chữ nhẹ (Swoosh 02).mp3",
+      "path": "Z:\\Máy tính khác\\My Computer\\Document HT Media\\TLH\\Edit\\02_Hiệu Ứng Âm Thanh (SFX)\\Whoosh - Gió lướt chữ nhẹ (Swoosh 02).mp3",
+      "label": "Swoosh Tối Giản",
+      "vol_cc": 0.1,
+      "max_dur": 0.6
+    },
+    {
+      "t0": 141.5381,
+      "file": "Click & Máy Chữ - click (1s).mp3",
+      "path": "Z:\\Máy tính khác\\My Computer\\Document HT Media\\TLH\\Edit\\02_Hiệu Ứng Âm Thanh (SFX)\\Click & Máy Chữ - click (1s).mp3",
+      "label": "Món 1 Rong Biển",
+      "vol_cc": 0.11,
+      "max_dur": 0.35
+    },
+    {
+      "t0": 144.0619,
+      "file": "Click & Máy Chữ - click (1s).mp3",
+      "path": "Z:\\Máy tính khác\\My Computer\\Document HT Media\\TLH\\Edit\\02_Hiệu Ứng Âm Thanh (SFX)\\Click & Máy Chữ - click (1s).mp3",
+      "label": "Món 2 Yến Sào",
+      "vol_cc": 0.11,
+      "max_dur": 0.35
+    },
+    {
+      "t0": 147.2524,
+      "file": "Click & Máy Chữ - click (1s).mp3",
+      "path": "Z:\\Máy tính khác\\My Computer\\Document HT Media\\TLH\\Edit\\02_Hiệu Ứng Âm Thanh (SFX)\\Click & Máy Chữ - click (1s).mp3",
+      "label": "Món 3 Đường Phèn",
+      "vol_cc": 0.11,
+      "max_dur": 0.35
+    },
+    {
+      "t0": 150.5381,
+      "file": "Click & Máy Chữ - click (1s).mp3",
+      "path": "Z:\\Máy tính khác\\My Computer\\Document HT Media\\TLH\\Edit\\02_Hiệu Ứng Âm Thanh (SFX)\\Click & Máy Chữ - click (1s).mp3",
+      "label": "Món 4 Bánh Thuyền",
+      "vol_cc": 0.11,
+      "max_dur": 0.35
+    },
+    {
+      "t0": 154.2524,
+      "file": "Ting & Chuông Đúng - Bell sound title animation(954662) (2s).mp3",
+      "path": "Z:\\Máy tính khác\\My Computer\\Document HT Media\\TLH\\Edit\\02_Hiệu Ứng Âm Thanh (SFX)\\Ting & Chuông Đúng - Bell sound title animation(954662) (2s).mp3",
+      "label": "Món 5 Kẹp Hạt",
+      "vol_cc": 0.1,
+      "max_dur": 1.0
+    },
+    {
+      "t0": 160.4833,
+      "file": "Whoosh - Hiện chữ mượt tiêu chuẩn TVC.mp3",
+      "path": "Z:\\Máy tính khác\\My Computer\\Document HT Media\\TLH\\Edit\\02_Hiệu Ứng Âm Thanh (SFX)\\Whoosh - Hiện chữ mượt tiêu chuẩn TVC.mp3",
+      "label": "Mở Quà Tri Ân",
+      "vol_cc": 0.1,
+      "max_dur": 0.6
+    },
+    {
+      "t0": 177.0667,
+      "file": "Đời Thường & ASMR - Paper page turn sound 1 scene change swipe (1s).mp3",
+      "path": "Z:\\Máy tính khác\\My Computer\\Document HT Media\\TLH\\Edit\\02_Hiệu Ứng Âm Thanh (SFX)\\Đời Thường & ASMR - Paper page turn sound 1 scene change swipe (1s).mp3",
+      "label": "Lật Sách 1",
+      "vol_cc": 0.11,
+      "max_dur": 0.7
+    },
+    {
+      "t0": 192.6333,
+      "file": "Đời Thường & ASMR - Paper page turn sound 1 scene change swipe (1s).mp3",
+      "path": "Z:\\Máy tính khác\\My Computer\\Document HT Media\\TLH\\Edit\\02_Hiệu Ứng Âm Thanh (SFX)\\Đời Thường & ASMR - Paper page turn sound 1 scene change swipe (1s).mp3",
+      "label": "Lật Sách 2",
+      "vol_cc": 0.11,
+      "max_dur": 0.7
+    },
+    {
+      "t0": 197.2667,
+      "file": "Lấp Lánh & Phép Thuật - Shine_03 (1s).mp3",
+      "path": "Z:\\Máy tính khác\\My Computer\\Document HT Media\\TLH\\Edit\\02_Hiệu Ứng Âm Thanh (SFX)\\Lấp Lánh & Phép Thuật - Shine_03 (1s).mp3",
+      "label": "Shine Cảm Ơn",
+      "vol_cc": 0.09,
+      "max_dur": 0.9
+    },
+    {
+      "t0": 212.4524,
+      "file": "Ting & Chuông Đúng - Bell sound title animation(954662) (2s).mp3",
+      "path": "Z:\\Máy tính khác\\My Computer\\Document HT Media\\TLH\\Edit\\02_Hiệu Ứng Âm Thanh (SFX)\\Ting & Chuông Đúng - Bell sound title animation(954662) (2s).mp3",
+      "label": "Bell CTA",
+      "vol_cc": 0.1,
+      "max_dur": 1.1
+    },
+    {
+      "t0": 217.9167,
+      "file": "Whoosh - Title Swoosh (1s).mp3",
+      "path": "Z:\\Máy tính khác\\My Computer\\Document HT Media\\TLH\\Edit\\02_Hiệu Ứng Âm Thanh (SFX)\\Whoosh - Title Swoosh (1s).mp3",
+      "label": "Swoosh Banner",
+      "vol_cc": 0.12,
+      "max_dur": 0.8
+    },
+    {
+      "t0": 218.0667,
+      "file": "Ting & Chuông Đúng - Chimes 6115_04_1 (7s).mp3",
+      "path": "Z:\\Máy tính khác\\My Computer\\Document HT Media\\TLH\\Edit\\02_Hiệu Ứng Âm Thanh (SFX)\\Ting & Chuông Đúng - Chimes 6115_04_1 (7s).mp3",
+      "label": "Chimes Banner",
+      "vol_cc": 0.11,
+      "max_dur": 2.5
+    }
+  ]
+}

@@ -1,0 +1,256 @@
+{
+  "overlays": [
+    [
+      0.0,
+      1.47,
+      "d:\\AI\\full studio\\output\\f20-set-qua-2011\\v2_1117\\intro_clips\\intro_01_wide_showroom.mp4",
+      1.0,
+      1.0,
+      1.05,
+      "intro_wide_1"
+    ],
+    [
+      1.47,
+      2.87,
+      "d:\\AI\\full studio\\output\\f20-set-qua-2011\\v2_1117\\intro_clips\\intro_02_wide_dangkhoa.mp4",
+      1.0,
+      1.05,
+      1.0,
+      "intro_wide_2"
+    ],
+    [
+      2.87,
+      4.2,
+      "d:\\AI\\full studio\\output\\f20-set-qua-2011\\v2_1117\\intro_clips\\intro_03_wide_cabinet.mp4",
+      1.0,
+      1.0,
+      1.06,
+      "intro_wide_3"
+    ],
+    [
+      9.2,
+      13.35,
+      "d:\\AI\\full studio\\output\\f20-set-qua-2011\\v2_1117\\brolls_1117\\br1117_03_wide_row.mp4",
+      0.9,
+      1.0,
+      1.06,
+      "broll_2011_sets"
+    ],
+    [
+      16.1,
+      18.2,
+      "d:\\AI\\full studio\\output\\f20-set-qua-2011\\capcut_media\\broll_12_handover_gift.mp4",
+      0.95,
+      1.0,
+      1.05,
+      "broll_anh_hau_real"
+    ],
+    [
+      18.2,
+      20.15,
+      "d:\\AI\\full studio\\output\\f20-set-qua-2011\\v2_1117\\flow_videos\\OUT_f20_v7_anh_hau.mp4",
+      0.9,
+      1.0,
+      1.05,
+      "ai_anh_hau_77sets"
+    ],
+    [
+      22.1,
+      24.3,
+      "d:\\AI\\full studio\\output\\f20-set-qua-2011\\v2_1117\\brolls_1117\\br1117_01_ribbon_team.mp4",
+      0.95,
+      1.0,
+      1.06,
+      "broll_13sets_team"
+    ],
+    [
+      24.3,
+      28.85,
+      "d:\\AI\\full studio\\output\\f20-set-qua-2011\\capcut_media\\broll_10_factory_carton.mp4",
+      0.92,
+      1.0,
+      1.06,
+      "broll_hanoi_carton_cutcover"
+    ],
+    [
+      28.85,
+      33.1,
+      "d:\\AI\\full studio\\output\\f20-set-qua-2011\\capcut_media\\broll_11_delivery_car.mp4",
+      0.95,
+      1.05,
+      1.0,
+      "broll_hcmc_suv"
+    ],
+    [
+      37.6,
+      40.5,
+      "d:\\AI\\full studio\\output\\f20-set-qua-2011\\v2_1117\\flow_videos\\OUT_f20_v8_showroom.mp4",
+      0.88,
+      1.0,
+      1.05,
+      "ai_showroom_104sets"
+    ],
+    [
+      40.5,
+      42.9,
+      "d:\\AI\\full studio\\output\\f20-set-qua-2011\\v2_1117\\brolls_1117\\br1117_08_arrange_sets.mp4",
+      0.95,
+      1.04,
+      1.0,
+      "broll_completed_sets"
+    ],
+    [
+      46.8,
+      51.4,
+      "d:\\AI\\full studio\\output\\f20-set-qua-2011\\v2_1117\\flow_videos\\OUT_f20_v6_gio_mica.mp4",
+      0.85,
+      1.0,
+      1.05,
+      "flow_gio_mica_intro"
+    ],
+    [
+      51.4,
+      54.1,
+      "d:\\AI\\full studio\\output\\f20-set-qua-2011\\v2_1117\\flow_videos\\OUT_f20_v5_skanest_box.mp4",
+      0.85,
+      1.0,
+      1.05,
+      "flow_skanest_open"
+    ],
+    [
+      54.1,
+      63.1,
+      "d:\\AI\\full studio\\output\\f20-set-qua-2011\\v2_1117\\flow_videos\\OUT_f20_v1_full_to_yen.mp4",
+      0.68,
+      1.0,
+      1.06,
+      "flow_full_to_yen_bubbles"
+    ],
+    [
+      63.1,
+      71.15,
+      "d:\\AI\\full studio\\output\\f20-set-qua-2011\\v2_1117\\flow_videos\\OUT_f20_v2_hai_rong_bien.mp4",
+      0.72,
+      1.0,
+      1.06,
+      "flow_hai_rong_bien"
+    ],
+    [
+      71.15,
+      76.75,
+      "d:\\AI\\full studio\\output\\f20-set-qua-2011\\v2_1117\\flow_videos\\OUT_f20_v3_banh_thuyen.mp4",
+      0.82,
+      1.0,
+      1.06,
+      "flow_banh_thuyen_250g"
+    ],
+    [
+      76.75,
+      82.8,
+      "d:\\AI\\full studio\\output\\f20-set-qua-2011\\v2_1117\\flow_videos\\OUT_f20_v4_kep_hat.mp4",
+      0.8,
+      1.0,
+      1.05,
+      "flow_kep_hat_500g"
+    ],
+    [
+      82.8,
+      86.85,
+      "d:\\AI\\full studio\\output\\f20-set-qua-2011\\v2_1117\\flow_videos\\OUT_f20_v4_kep_hat.mp4",
+      0.75,
+      1.12,
+      1.18,
+      "flow_kep_hat_macro_24thanh"
+    ],
+    [
+      90.6,
+      95.6,
+      "d:\\AI\\full studio\\output\\f20-set-qua-2011\\v2_1117\\flow_videos\\OUT_f20_v5_skanest_box.mp4",
+      0.82,
+      1.02,
+      1.08,
+      "flow_skanest_hero"
+    ],
+    [
+      95.6,
+      101.4,
+      "d:\\AI\\full studio\\output\\f20-set-qua-2011\\capcut_media\\broll_08_cam_nang_close.mp4",
+      0.92,
+      1.0,
+      1.06,
+      "broll_cam_nang_blue"
+    ],
+    [
+      103.2,
+      106.75,
+      "d:\\AI\\full studio\\output\\f20-set-qua-2011\\v2_1117\\brolls_1117\\br1117_06_bag_overhead.mp4",
+      0.88,
+      1.0,
+      1.06,
+      "broll_bag_overhead"
+    ],
+    [
+      110.8,
+      114.6,
+      "d:\\AI\\full studio\\output\\f20-set-qua-2011\\capcut_media\\broll_04_mica_sunlit.mp4",
+      0.9,
+      1.0,
+      1.06,
+      "broll_mica_sunlit"
+    ],
+    [
+      114.6,
+      118.6,
+      "d:\\AI\\full studio\\output\\f20-set-qua-2011\\capcut_media\\broll_05_quai_da_macro.mp4",
+      0.85,
+      1.0,
+      1.07,
+      "broll_quai_da_do_do"
+    ],
+    [
+      121.6,
+      126.0,
+      "d:\\AI\\full studio\\output\\f20-set-qua-2011\\capcut_media\\broll_06_hoa_no_macro.mp4",
+      0.85,
+      1.0,
+      1.07,
+      "broll_hoa_no_mau_be"
+    ],
+    [
+      129.6,
+      132.4,
+      "d:\\AI\\full studio\\output\\f20-set-qua-2011\\v2_1117\\brolls_1117\\br1117_04_counter_pack.mp4",
+      0.95,
+      1.0,
+      1.06,
+      "broll_factory_counter"
+    ],
+    [
+      132.4,
+      135.1,
+      "d:\\AI\\full studio\\output\\f20-set-qua-2011\\capcut_media\\broll_09_factory_pack1.mp4",
+      0.95,
+      1.05,
+      1.0,
+      "broll_factory_pack"
+    ],
+    [
+      140.4,
+      144.6,
+      "d:\\AI\\full studio\\output\\f20-set-qua-2011\\v2_1117\\brolls_1117\\br1117_05_storefront.mp4",
+      0.9,
+      1.0,
+      1.06,
+      "broll_storefront_f20"
+    ],
+    [
+      147.6,
+      150.7,
+      "d:\\AI\\full studio\\output\\f20-set-qua-2011\\v2_1117\\brolls_1117\\br1117_05_storefront.mp4",
+      0.75,
+      1.06,
+      1.1,
+      "endcard_backdrop"
+    ]
+  ]
+}

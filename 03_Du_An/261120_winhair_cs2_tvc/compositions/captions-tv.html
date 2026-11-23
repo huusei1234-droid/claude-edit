@@ -1,0 +1,491 @@
+<template>
+  <style>
+@font-face {
+  font-family: "Anton";
+  src: url("assets/fonts/Anton-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: "Asap Condensed";
+  src: url("assets/fonts/AsapCondensed-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: "Asap Condensed";
+  src: url("assets/fonts/AsapCondensed-ExtraBold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: "Asap Condensed";
+  src: url("assets/fonts/AsapCondensed-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("assets/fonts/Montserrat-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("assets/fonts/Montserrat-ExtraBold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("assets/fonts/Montserrat-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: "Be Vietnam Pro";
+  src: url("assets/fonts/BeVietnamPro-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: "Be Vietnam Pro";
+  src: url("assets/fonts/BeVietnamPro-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: "Be Vietnam Pro";
+  src: url("assets/fonts/BeVietnamPro-ExtraBold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: block;
+}
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    #root {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+    .tv-cap-host {
+      position: absolute;
+      left: 130px;
+      right: 130px;
+      bottom: 42px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 30;
+    }
+    .tv-cap-pill {
+      display: inline-block;
+      max-width: 1620px;
+      padding: 13px 34px;
+      border-radius: 16px;
+      background: linear-gradient(180deg, rgba(14, 10, 9, 0.92) 0%, rgba(8, 5, 5, 0.95) 100%);
+      border: 2px solid rgba(250, 208, 102, 0.78);
+      box-shadow: 0 14px 36px rgba(0, 0, 0, 0.88), 0 0 20px rgba(248, 204, 96, 0.20);
+      font-family: "Montserrat", sans-serif;
+      font-weight: 900;
+      font-size: 38px;
+      line-height: 1.25;
+      letter-spacing: 0.02em;
+      color: #FFFFFF;
+      text-align: center;
+      text-transform: uppercase;
+      text-shadow: 0 3px 10px rgba(0, 0, 0, 0.98);
+    }
+    .tv-kw {
+      color: #FFE066;
+      font-weight: 900;
+      text-shadow: 0 3px 12px rgba(245, 180, 30, 0.45), 0 2px 6px rgba(0, 0, 0, 0.95);
+    }
+  </style>
+  <div id="root" data-composition-id="captions-tv" data-width="1920" data-height="1080">
+    <div id="cap-000" class="clip tv-cap-host" data-start="5.00" data-duration="1.63" data-track-index="0"><div id="cap-000-in" class="tv-cap-pill"><span class="tv-kw">DỊCH VỤ ĐA DẠNG</span></div></div>
+    <div id="cap-001" class="clip tv-cap-host" data-start="6.63" data-duration="0.87" data-track-index="0"><div id="cap-001-in" class="tv-cap-pill"><span class="tv-kw">KHÔNG GIAN ĐẲNG CẤP</span></div></div>
+    <div id="cap-002" class="clip tv-cap-host" data-start="7.50" data-duration="1.80" data-track-index="0"><div id="cap-002-in" class="tv-cap-pill">KỸ THUẬT VIÊN <span class="tv-kw">CHUYÊN NGHIỆP</span></div></div>
+    <div id="cap-003" class="clip tv-cap-host" data-start="9.40" data-duration="1.13" data-track-index="0"><div id="cap-003-in" class="tv-cap-pill">THU ĐƯỢC SỰ HÀI LÒNG</div></div>
+    <div id="cap-004" class="clip tv-cap-host" data-start="10.53" data-duration="2.03" data-track-index="0"><div id="cap-004-in" class="tv-cap-pill">TỪ VÔ SỐ KHÁCH HÀNG ĐỊA PHƯƠNG LẪN NƯỚC NGOÀI</div></div>
+    <div id="cap-005" class="clip tv-cap-host" data-start="12.57" data-duration="1.17" data-track-index="0"><div id="cap-005-in" class="tv-cap-pill"><span class="tv-kw">KOC</span></div></div>
+    <div id="cap-006" class="clip tv-cap-host" data-start="13.73" data-duration="1.93" data-track-index="0"><div id="cap-006-in" class="tv-cap-pill"><span class="tv-kw">KOL</span></div></div>
+    <div id="cap-007" class="clip tv-cap-host" data-start="15.67" data-duration="2.13" data-track-index="0"><div id="cap-007-in" class="tv-cap-pill">BƯỚC QUA CÁNH CỬA KÍNH LÀ ĐẾN NGAY TẦNG MỘT</div></div>
+    <div id="cap-008" class="clip tv-cap-host" data-start="18.50" data-duration="1.93" data-track-index="0"><div id="cap-008-in" class="tv-cap-pill">CÁC BẠN NHÂN VIÊN CHÀO ĐÓN NIỀM NỞ</div></div>
+    <div id="cap-009" class="clip tv-cap-host" data-start="20.43" data-duration="1.83" data-track-index="0"><div id="cap-009-in" class="tv-cap-pill">DẪN ANH EM VÀO TẬN NƠI</div></div>
+    <div id="cap-010" class="clip tv-cap-host" data-start="22.27" data-duration="1.63" data-track-index="0"><div id="cap-010-in" class="tv-cap-pill">KHU TIẾP KHÁCH GỖ SANG</div></div>
+    <div id="cap-011" class="clip tv-cap-host" data-start="23.90" data-duration="0.67" data-track-index="0"><div id="cap-011-in" class="tv-cap-pill">GHẾ ÊM</div></div>
+    <div id="cap-012" class="clip tv-cap-host" data-start="24.57" data-duration="2.13" data-track-index="0"><div id="cap-012-in" class="tv-cap-pill">NGỒI LÀ THẤY THOẢI MÁI</div></div>
+    <div id="cap-013" class="clip tv-cap-host" data-start="26.70" data-duration="1.27" data-track-index="0"><div id="cap-013-in" class="tv-cap-pill">XEM MENU</div></div>
+    <div id="cap-014" class="clip tv-cap-host" data-start="27.97" data-duration="1.20" data-track-index="0"><div id="cap-014-in" class="tv-cap-pill">NGHE TƯ VẤN RÕ RÀNG</div></div>
+    <div id="cap-015" class="clip tv-cap-host" data-start="29.30" data-duration="1.93" data-track-index="0"><div id="cap-015-in" class="tv-cap-pill">THÍCH COMBO NÀO CHỐT COMBO ĐÓ</div></div>
+    <div id="cap-016" class="clip tv-cap-host" data-start="31.47" data-duration="1.83" data-track-index="0"><div id="cap-016-in" class="tv-cap-pill">MỌI DỊCH VỤ ĐỀU ĐƯỢC TƯ VẤN RÕ RÀNG</div></div>
+    <div id="cap-017" class="clip tv-cap-host" data-start="33.60" data-duration="1.77" data-track-index="0"><div id="cap-017-in" class="tv-cap-pill">ĐỂ ANH EM DỄ DÀNG LỰA CHỌN</div></div>
+    <div id="cap-018" class="clip tv-cap-host" data-start="35.60" data-duration="1.83" data-track-index="0"><div id="cap-018-in" class="tv-cap-pill">KHU <span class="tv-kw">GỘI ĐẦU</span> CHIA HẲN 2 KHU</div></div>
+    <div id="cap-019" class="clip tv-cap-host" data-start="37.43" data-duration="1.73" data-track-index="0"><div id="cap-019-in" class="tv-cap-pill">RỘNG RÃI THOÁNG MÁT</div></div>
+    <div id="cap-020" class="clip tv-cap-host" data-start="39.17" data-duration="0.70" data-track-index="0"><div id="cap-020-in" class="tv-cap-pill">GIƯỜNG ÊM</div></div>
+    <div id="cap-021" class="clip tv-cap-host" data-start="39.87" data-duration="0.77" data-track-index="0"><div id="cap-021-in" class="tv-cap-pill">BỒN SẠCH</div></div>
+    <div id="cap-022" class="clip tv-cap-host" data-start="40.63" data-duration="1.97" data-track-index="0"><div id="cap-022-in" class="tv-cap-pill">ĐÔNG KHÁCH CỠ NÀO CŨNG KHÔNG PHẢI CHEN</div></div>
+    <div id="cap-023" class="clip tv-cap-host" data-start="42.90" data-duration="1.37" data-track-index="0"><div id="cap-023-in" class="tv-cap-pill">CÒN ĐÂY LÀ KHU CẮT TÓC</div></div>
+    <div id="cap-024" class="clip tv-cap-host" data-start="44.27" data-duration="1.80" data-track-index="0"><div id="cap-024-in" class="tv-cap-pill">NƠI TẠO NÊN PHONG ĐỘ CHO ANH EM</div></div>
+    <div id="cap-025" class="clip tv-cap-host" data-start="46.10" data-duration="1.43" data-track-index="0"><div id="cap-025-in" class="tv-cap-pill">GƯƠNG SÁNG GHẾ XỊN</div></div>
+    <div id="cap-026" class="clip tv-cap-host" data-start="47.53" data-duration="1.00" data-track-index="0"><div id="cap-026-in" class="tv-cap-pill">ĐỒ NGHỀ ĐẦY ĐỦ</div></div>
+    <div id="cap-027" class="clip tv-cap-host" data-start="48.87" data-duration="1.30" data-track-index="0"><div id="cap-027-in" class="tv-cap-pill">NGỒI VÀO LÀ YÊN TÂM</div></div>
+    <div id="cap-028" class="clip tv-cap-host" data-start="50.17" data-duration="1.43" data-track-index="0"><div id="cap-028-in" class="tv-cap-pill">ĐỨNG DẬY LÀ BẢNH</div></div>
+    <div id="cap-029" class="clip tv-cap-host" data-start="51.60" data-duration="1.53" data-track-index="0"><div id="cap-029-in" class="tv-cap-pill">MUỐN TẬN HƯỞNG TRỌN VẸN HƠN</div></div>
+    <div id="cap-030" class="clip tv-cap-host" data-start="53.13" data-duration="2.73" data-track-index="0"><div id="cap-030-in" class="tv-cap-pill">MỜI ANH EM LÊN <span class="tv-kw">TẦNG 2 <span class="tv-kw">KHU VIP</span></span></div></div>
+    <div id="cap-031" class="clip tv-cap-host" data-start="55.90" data-duration="0.67" data-track-index="0"><div id="cap-031-in" class="tv-cap-pill">YÊN TĨNH</div></div>
+    <div id="cap-032" class="clip tv-cap-host" data-start="56.57" data-duration="0.83" data-track-index="0"><div id="cap-032-in" class="tv-cap-pill">KÍN ĐÁO</div></div>
+    <div id="cap-033" class="clip tv-cap-host" data-start="57.40" data-duration="1.13" data-track-index="0"><div id="cap-033-in" class="tv-cap-pill">ÁNH ĐÈN DỊU</div></div>
+    <div id="cap-034" class="clip tv-cap-host" data-start="59.67" data-duration="1.57" data-track-index="0"><div id="cap-034-in" class="tv-cap-pill">CÓ LUÔN GHẾ <span class="tv-kw">MASSAGE</span> <span class="tv-kw">KINGSPORT</span></div></div>
+    <div id="cap-035" class="clip tv-cap-host" data-start="61.23" data-duration="1.53" data-track-index="0"><div id="cap-035-in" class="tv-cap-pill">NGÃ LƯNG LÀ ĐÃ</div></div>
+    <div id="cap-036" class="clip tv-cap-host" data-start="62.97" data-duration="2.97" data-track-index="0"><div id="cap-036-in" class="tv-cap-pill">MÀ ĐÃ LÊN VIP LÀ ĐƯỢC MỜI NƯỚC <span class="tv-kw">MIỄN PHÍ</span></div></div>
+    <div id="cap-037" class="clip tv-cap-host" data-start="65.93" data-duration="1.60" data-track-index="0"><div id="cap-037-in" class="tv-cap-pill">NƯỚC CAM - TRÀ CHANH - CÀ PHÊ</div></div>
+    <div id="cap-038" class="clip tv-cap-host" data-start="67.67" data-duration="2.43" data-track-index="0"><div id="cap-038-in" class="tv-cap-pill">ĐÚNG LÀ CHỜ MÀ SƯỚNG NHƯ ĐI NGHỈ DƯỠNG</div></div>
+    <div id="cap-039" class="clip tv-cap-host" data-start="70.50" data-duration="1.73" data-track-index="0"><div id="cap-039-in" class="tv-cap-pill"><span class="tv-kw">WINHAIR</span> LUÔN CÓ NHIỀU PHÒNG RIÊNG</div></div>
+    <div id="cap-040" class="clip tv-cap-host" data-start="72.23" data-duration="1.33" data-track-index="0"><div id="cap-040-in" class="tv-cap-pill">ĐỂ SẴN SÀNG PHỤC VỤ</div></div>
+    <div id="cap-041" class="clip tv-cap-host" data-start="73.63" data-duration="2.57" data-track-index="0"><div id="cap-041-in" class="tv-cap-pill">KÉO RÈM LẠI LÀ KHÔNG GIAN CỦA RIÊNG ANH EM</div></div>
+    <div id="cap-042" class="clip tv-cap-host" data-start="76.43" data-duration="1.30" data-track-index="0"><div id="cap-042-in" class="tv-cap-pill">DỊCH VỤ PHỤC VỤ RIÊNG <span class="tv-kw">1 : 1</span></div></div>
+    <div id="cap-043" class="clip tv-cap-host" data-start="77.73" data-duration="0.50" data-track-index="0"><div id="cap-043-in" class="tv-cap-pill">KHÔNG ỒN</div></div>
+    <div id="cap-044" class="clip tv-cap-host" data-start="78.23" data-duration="0.67" data-track-index="0"><div id="cap-044-in" class="tv-cap-pill">KHÔNG PHIỀN</div></div>
+    <div id="cap-045" class="clip tv-cap-host" data-start="78.90" data-duration="1.30" data-track-index="0"><div id="cap-045-in" class="tv-cap-pill">CHỈ CÓ THƯ GIÃN</div></div>
+    <div id="cap-046" class="clip tv-cap-host" data-start="80.33" data-duration="2.03" data-track-index="0"><div id="cap-046-in" class="tv-cap-pill">TỪ <span class="tv-kw">GỘI ĐẦU</span> - <span class="tv-kw">MASSAGE</span> - <span class="tv-kw">RÁY TAI</span></div></div>
+    <div id="cap-047" class="clip tv-cap-host" data-start="82.37" data-duration="0.80" data-track-index="0"><div id="cap-047-in" class="tv-cap-pill">HAY LÀ <span class="tv-kw">ĐẮP MẶT</span></div></div>
+    <div id="cap-048" class="clip tv-cap-host" data-start="83.17" data-duration="0.93" data-track-index="0"><div id="cap-048-in" class="tv-cap-pill"><span class="tv-kw">LỘT MỤN</span></div></div>
+    <div id="cap-049" class="clip tv-cap-host" data-start="84.10" data-duration="1.60" data-track-index="0"><div id="cap-049-in" class="tv-cap-pill">VÀO ĐÂY ANH EM CHỈ CẦN NẰM MỘT CHỖ</div></div>
+    <div id="cap-050" class="clip tv-cap-host" data-start="85.70" data-duration="1.77" data-track-index="0"><div id="cap-050-in" class="tv-cap-pill">LÀ ĐÃ TẬN HƯỞNG ĐỦ MỌI THỨ</div></div>
+    <div id="cap-051" class="clip tv-cap-host" data-start="87.67" data-duration="1.03" data-track-index="0"><div id="cap-051-in" class="tv-cap-pill">GIỜ ĐẾN DỊCH VỤ</div></div>
+    <div id="cap-052" class="clip tv-cap-host" data-start="88.87" data-duration="2.00" data-track-index="0"><div id="cap-052-in" class="tv-cap-pill">TRƯỚC HẾT LÀ VIỆC QUEN THUỘC CỦA ĐÀN ÔNG</div></div>
+    <div id="cap-053" class="clip tv-cap-host" data-start="91.57" data-duration="1.10" data-track-index="0"><div id="cap-053-in" class="tv-cap-pill">TƯ VẤN KIỂU KỸ CÀNG</div></div>
+    <div id="cap-054" class="clip tv-cap-host" data-start="93.17" data-duration="0.80" data-track-index="0"><div id="cap-054-in" class="tv-cap-pill">TỪNG ĐƯỜNG KÉO</div></div>
+    <div id="cap-055" class="clip tv-cap-host" data-start="93.97" data-duration="2.47" data-track-index="0"><div id="cap-055-in" class="tv-cap-pill">TỪNG ĐƯỜNG <span class="tv-kw">FADE</span> ĐƯỢC LÀM GỌN GÀNG</div></div>
+    <div id="cap-056" class="clip tv-cap-host" data-start="96.43" data-duration="1.10" data-track-index="0"><div id="cap-056-in" class="tv-cap-pill">TẠO KIỂU VÀO FORM</div></div>
+    <div id="cap-057" class="clip tv-cap-host" data-start="97.53" data-duration="2.67" data-track-index="0"><div id="cap-057-in" class="tv-cap-pill">NHÌN VÀO GƯƠNG LÀ THẤY KHÁC LIỀN</div></div>
+    <div id="cap-058" class="clip tv-cap-host" data-start="100.23" data-duration="1.03" data-track-index="0"><div id="cap-058-in" class="tv-cap-pill"><span class="tv-kw">CẠO MẶT</span> SẠCH SẼ</div></div>
+    <div id="cap-059" class="clip tv-cap-host" data-start="101.27" data-duration="0.83" data-track-index="0"><div id="cap-059-in" class="tv-cap-pill">MỊN MÀNG</div></div>
+    <div id="cap-060" class="clip tv-cap-host" data-start="102.10" data-duration="1.33" data-track-index="0"><div id="cap-060-in" class="tv-cap-pill">LƯỠI DAO ÊM TAY</div></div>
+    <div id="cap-061" class="clip tv-cap-host" data-start="103.43" data-duration="1.53" data-track-index="0"><div id="cap-061-in" class="tv-cap-pill">CẠO XONG NHÌN PHONG ĐỘ HẲN</div></div>
+    <div id="cap-062" class="clip tv-cap-host" data-start="104.97" data-duration="2.27" data-track-index="0"><div id="cap-062-in" class="tv-cap-pill"><span class="tv-kw">RÁY TAI</span> NHẸ NHÀNG DƯỚI ÁNH ĐÈN SOI RÕ</div></div>
+    <div id="cap-063" class="clip tv-cap-host" data-start="107.23" data-duration="0.67" data-track-index="0"><div id="cap-063-in" class="tv-cap-pill">CÓ MẶT NẠ MẮT</div></div>
+    <div id="cap-064" class="clip tv-cap-host" data-start="107.90" data-duration="1.67" data-track-index="0"><div id="cap-064-in" class="tv-cap-pill">VỪA THƯ GIÃN VỪA CHE SÁNG</div></div>
+    <div id="cap-065" class="clip tv-cap-host" data-start="109.57" data-duration="2.00" data-track-index="0"><div id="cap-065-in" class="tv-cap-pill">TAY NGHỀ KHÉO LÉO KHÔNG VỘI VÀNG</div></div>
+    <div id="cap-066" class="clip tv-cap-host" data-start="111.73" data-duration="2.33" data-track-index="0"><div id="cap-066-in" class="tv-cap-pill">NẰM MỘT LÁT THÔI LÀ CẢ NGƯỜI ĐÃ THẢ LỎNG</div></div>
+    <div id="cap-067" class="clip tv-cap-host" data-start="114.27" data-duration="1.77" data-track-index="0"><div id="cap-067-in" class="tv-cap-pill"><span class="tv-kw">GỘI ĐẦU</span>, <span class="tv-kw">XÔNG HƠI</span>, <span class="tv-kw"><span class="tv-kw">MASSAGE</span> MẶT</span></div></div>
+    <div id="cap-068" class="clip tv-cap-host" data-start="116.03" data-duration="1.87" data-track-index="0"><div id="cap-068-in" class="tv-cap-pill">BAO NHIÊU CĂNG THẲNG XẢ SẠCH</div></div>
+    <div id="cap-069" class="clip tv-cap-host" data-start="117.90" data-duration="1.63" data-track-index="0"><div id="cap-069-in" class="tv-cap-pill"><span class="tv-kw"><span class="tv-kw">MASSAGE</span> TAY</span> HẾT MỎI</div></div>
+    <div id="cap-070" class="clip tv-cap-host" data-start="119.67" data-duration="1.37" data-track-index="0"><div id="cap-070-in" class="tv-cap-pill"><span class="tv-kw"><span class="tv-kw">MASSAGE</span> CHÂN</span> HẾT NẶNG</div></div>
+    <div id="cap-071" class="clip tv-cap-host" data-start="121.03" data-duration="1.53" data-track-index="0"><div id="cap-071-in" class="tv-cap-pill"><span class="tv-kw"><span class="tv-kw">MASSAGE</span> BODY</span> HẾT UỂ OẢI</div></div>
+    <div id="cap-072" class="clip tv-cap-host" data-start="122.93" data-duration="1.23" data-track-index="0"><div id="cap-072-in" class="tv-cap-pill">KỸ THUẬT VIÊN LỰC TAY CHẮC</div></div>
+    <div id="cap-073" class="clip tv-cap-host" data-start="124.17" data-duration="1.13" data-track-index="0"><div id="cap-073-in" class="tv-cap-pill">BẤM ĐÚNG CHỖ</div></div>
+    <div id="cap-074" class="clip tv-cap-host" data-start="125.63" data-duration="1.37" data-track-index="0"><div id="cap-074-in" class="tv-cap-pill">LÀM XONG LÀ KHỎE RE</div></div>
+    <div id="cap-075" class="clip tv-cap-host" data-start="127.27" data-duration="1.17" data-track-index="0"><div id="cap-075-in" class="tv-cap-pill">MÀ ĐÃ ĐẾN ĐÂY RỒI</div></div>
+    <div id="cap-076" class="clip tv-cap-host" data-start="128.43" data-duration="1.30" data-track-index="0"><div id="cap-076-in" class="tv-cap-pill">THÌ ĐÔI TAY ĐÔI CHÂN CỦA ANH EM</div></div>
+    <div id="cap-077" class="clip tv-cap-host" data-start="129.73" data-duration="1.20" data-track-index="0"><div id="cap-077-in" class="tv-cap-pill">CŨNG SẼ ĐƯỢC CHĂM CHÚT</div></div>
+    <div id="cap-078" class="clip tv-cap-host" data-start="131.10" data-duration="0.77" data-track-index="0"><div id="cap-078-in" class="tv-cap-pill"><span class="tv-kw">BẤM MÓNG TAY</span></div></div>
+    <div id="cap-079" class="clip tv-cap-host" data-start="131.87" data-duration="1.03" data-track-index="0"><div id="cap-079-in" class="tv-cap-pill"><span class="tv-kw">CẮT MÓNG CHÂN</span></div></div>
+    <div id="cap-080" class="clip tv-cap-host" data-start="133.17" data-duration="1.20" data-track-index="0"><div id="cap-080-in" class="tv-cap-pill">SẠCH SẼ GỌN GÀNG</div></div>
+    <div id="cap-081" class="clip tv-cap-host" data-start="134.70" data-duration="2.00" data-track-index="0"><div id="cap-081-in" class="tv-cap-pill">NHẸ NHÀNG THƯ GIÃN</div></div>
+    <div id="cap-082" class="clip tv-cap-host" data-start="136.70" data-duration="2.13" data-track-index="0"><div id="cap-082-in" class="tv-cap-pill">THỢ <span class="tv-kw">WINHAIR</span> KHÔNG CHỈ KHÉO TAY</div></div>
+    <div id="cap-083" class="clip tv-cap-host" data-start="138.83" data-duration="1.23" data-track-index="0"><div id="cap-083-in" class="tv-cap-pill">MÀ CÒN <span class="tv-kw">CHUYÊN NGHIỆP</span></div></div>
+    <div id="cap-084" class="clip tv-cap-host" data-start="140.17" data-duration="1.20" data-track-index="0"><div id="cap-084-in" class="tv-cap-pill">TRANG PHỤC LUÔN CHỈNH TỀ</div></div>
+    <div id="cap-085" class="clip tv-cap-host" data-start="141.73" data-duration="0.97" data-track-index="0"><div id="cap-085-in" class="tv-cap-pill">KHÔNG CẮT CHO NHANH</div></div>
+    <div id="cap-086" class="clip tv-cap-host" data-start="142.70" data-duration="1.30" data-track-index="0"><div id="cap-086-in" class="tv-cap-pill">MÀ CẮT CHO CHUẨN</div></div>
+    <div id="cap-087" class="clip tv-cap-host" data-start="144.33" data-duration="2.13" data-track-index="0"><div id="cap-087-in" class="tv-cap-pill">ĐẢM BẢO ANH EM RA VỀ LÀ HÀI LÒNG</div></div>
+    <div id="cap-088" class="clip tv-cap-host" data-start="146.77" data-duration="1.80" data-track-index="0"><div id="cap-088-in" class="tv-cap-pill">ĐẶC BIỆT LÀ TỪ LÚC VÀO ĐẾN LÚC VỀ</div></div>
+    <div id="cap-089" class="clip tv-cap-host" data-start="148.57" data-duration="1.17" data-track-index="0"><div id="cap-089-in" class="tv-cap-pill">NHÂN VIÊN LUÔN NHIỆT TÌNH</div></div>
+    <div id="cap-090" class="clip tv-cap-host" data-start="149.97" data-duration="2.60" data-track-index="0"><div id="cap-090-in" class="tv-cap-pill">ĐÓ LÀ LÝ DO MÀ KHÁCH HÀNG LUÔN ƯU ÁI <span class="tv-kw">WINHAIR</span></div></div>
+    <div id="cap-091" class="clip tv-cap-host" data-start="152.63" data-duration="2.17" data-track-index="0"><div id="cap-091-in" class="tv-cap-pill">NGOÀI CÁI KHÔNG GIAN RẤT LÀ SANG TRỌNG VÀ LỊCH SỰ</div></div>
+    <div id="cap-092" class="clip tv-cap-host" data-start="154.80" data-duration="0.60" data-track-index="0"><div id="cap-092-in" class="tv-cap-pill">VÀ SẠCH SẼ NỮA</div></div>
+    <div id="cap-093" class="clip tv-cap-host" data-start="155.40" data-duration="1.57" data-track-index="0"><div id="cap-093-in" class="tv-cap-pill">THÌ CÁI BẠN NHÂN VIÊN LÀM CHO CHỊ Á</div></div>
+    <div id="cap-094" class="clip tv-cap-host" data-start="156.97" data-duration="0.70" data-track-index="0"><div id="cap-094-in" class="tv-cap-pill">RẤT LÀ NHIỆT TÌNH</div></div>
+    <div id="cap-095" class="clip tv-cap-host" data-start="157.73" data-duration="1.23" data-track-index="0"><div id="cap-095-in" class="tv-cap-pill">TAY NGHỀ CŨNG RẤT LÀ TỐT</div></div>
+    <div id="cap-096" class="clip tv-cap-host" data-start="159.00" data-duration="2.10" data-track-index="0"><div id="cap-096-in" class="tv-cap-pill">DỊCH VỤ Ở ĐÂY RẤT LÀ TUYỆT VỜI <span class="tv-kw">CHUYÊN NGHIỆP</span> <span class="tv-kw">10 ĐIỂM</span></div></div>
+    <div id="cap-097" class="clip tv-cap-host" data-start="161.10" data-duration="0.53" data-track-index="0"><div id="cap-097-in" class="tv-cap-pill">CHỊ NGHĨ LÀ</div></div>
+    <div id="cap-098" class="clip tv-cap-host" data-start="161.63" data-duration="2.63" data-track-index="0"><div id="cap-098-in" class="tv-cap-pill"><span class="tv-kw">WINHAIR</span> SẼ KHÔNG CHỈ LÀ MỘT SALON DÀNH CHO NAM</div></div>
+    <div id="cap-099" class="clip tv-cap-host" data-start="164.27" data-duration="1.50" data-track-index="0"><div id="cap-099-in" class="tv-cap-pill">NÓ CÓ THỂ DÀNH CHO CẢ MỘT GIA ĐÌNH LUÔN</div></div>
+    <div id="cap-100" class="clip tv-cap-host" data-start="165.90" data-duration="1.93" data-track-index="0"><div id="cap-100-in" class="tv-cap-pill">CHỊ CŨNG CÓ THỂ ĐẾN ĐỂ <span class="tv-kw">RÁY TAI</span> <span class="tv-kw">GỘI ĐẦU</span></div></div>
+    <div id="cap-101" class="clip tv-cap-host" data-start="168.10" data-duration="1.90" data-track-index="0"><div id="cap-101-in" class="tv-cap-pill">TẤT CẢ MỌI NGƯỜI TRONG GIA ĐÌNH ĐỀU NÊN ĐẾN TRẢI NGHIỆM</div></div>
+    <div id="cap-102" class="clip tv-cap-host" data-start="170.50" data-duration="1.43" data-track-index="0"><div id="cap-102-in" class="tv-cap-pill">CHILL</div></div>
+    <div id="cap-103" class="clip tv-cap-host" data-start="171.97" data-duration="1.60" data-track-index="0"><div id="cap-103-in" class="tv-cap-pill">KHI MÌNH ĐẾN <span class="tv-kw">WINHAIR</span> MÌNH GIỐNG NHƯ LÀ MÌNH ĐƯỢC</div></div>
+    <div id="cap-104" class="clip tv-cap-host" data-start="173.70" data-duration="1.03" data-track-index="0"><div id="cap-104-in" class="tv-cap-pill">PHỤC VỤ GIỐNG NHƯ <span class="tv-kw">THƯỢNG ĐẾ</span></div></div>
+    <div id="cap-105" class="clip tv-cap-host" data-start="174.87" data-duration="1.60" data-track-index="0"><div id="cap-105-in" class="tv-cap-pill">THỨ NHẤT LÀ CẢM THẤY RẤT THOẢI MÁI</div></div>
+    <div id="cap-106" class="clip tv-cap-host" data-start="176.47" data-duration="1.37" data-track-index="0"><div id="cap-106-in" class="tv-cap-pill">CÁI THỨ 2 LÀ CẢM CŨNG RẤT ƯNG</div></div>
+    <div id="cap-107" class="clip tv-cap-host" data-start="177.83" data-duration="1.13" data-track-index="0"><div id="cap-107-in" class="tv-cap-pill">SAU KHI MÀ MÌNH CẮT TÓC XONG</div></div>
+    <div id="cap-108" class="clip tv-cap-host" data-start="178.97" data-duration="0.83" data-track-index="0"><div id="cap-108-in" class="tv-cap-pill">CẢM THẤY RẤT HÀI LÒNG</div></div>
+    <div id="cap-109" class="clip tv-cap-host" data-start="179.80" data-duration="1.27" data-track-index="0"><div id="cap-109-in" class="tv-cap-pill">À NẾU NHƯ MÀ BẠN NÀO</div></div>
+    <div id="cap-110" class="clip tv-cap-host" data-start="181.07" data-duration="0.43" data-track-index="0"><div id="cap-110-in" class="tv-cap-pill">CHƯA TỪNG</div></div>
+    <div id="cap-111" class="clip tv-cap-host" data-start="181.50" data-duration="1.17" data-track-index="0"><div id="cap-111-in" class="tv-cap-pill">TRẢI NGHIỆM MỘT CÁI DỊCH VỤ CẮT TÓC</div></div>
+    <div id="cap-112" class="clip tv-cap-host" data-start="182.67" data-duration="1.33" data-track-index="0"><div id="cap-112-in" class="tv-cap-pill">CHÚNG TA ĐƯỢC CHĂM SÓC GIỐNG NHƯ LÀ MỘT</div></div>
+    <div id="cap-113" class="clip tv-cap-host" data-start="184.00" data-duration="0.60" data-track-index="0"><div id="cap-113-in" class="tv-cap-pill"><span class="tv-kw">THƯỢNG ĐẾ</span></div></div>
+    <div id="cap-114" class="clip tv-cap-host" data-start="184.60" data-duration="2.67" data-track-index="0"><div id="cap-114-in" class="tv-cap-pill">THÌ CÁC BẠN HÃY GHÉ QUA <span class="tv-kw">WINHAIR</span> ĐỂ TRẢI NGHIỆM THỬ</div></div>
+    <div id="cap-115" class="clip tv-cap-host" data-start="187.30" data-duration="0.67" data-track-index="0"><div id="cap-115-in" class="tv-cap-pill">Ờ MÌNH CHẤM</div></div>
+    <div id="cap-116" class="clip tv-cap-host" data-start="188.07" data-duration="0.67" data-track-index="0"><div id="cap-116-in" class="tv-cap-pill"><span class="tv-kw">10 / 10</span></div></div>
+    <div id="cap-117" class="clip tv-cap-host" data-start="188.73" data-duration="1.80" data-track-index="0"><div id="cap-117-in" class="tv-cap-pill">NGÀY HÔM NAY CỦA NAM THÌ RẤT LÀ TUYỆT VỜI</div></div>
+    <div id="cap-118" class="clip tv-cap-host" data-start="190.53" data-duration="1.70" data-track-index="0"><div id="cap-118-in" class="tv-cap-pill">MỘT THỜI GIAN TRẢI NGHIỆM</div></div>
+    <div id="cap-119" class="clip tv-cap-host" data-start="192.23" data-duration="1.97" data-track-index="0"><div id="cap-119-in" class="tv-cap-pill">ĐỦ ĐỂ CHO MÌNH CẢM THẤY LÀ</div></div>
+    <div id="cap-120" class="clip tv-cap-host" data-start="194.37" data-duration="1.30" data-track-index="0"><div id="cap-120-in" class="tv-cap-pill">RESET LẠI BẢN THÂN MÌNH CŨNG NHƯ LÀ</div></div>
+    <div id="cap-121" class="clip tv-cap-host" data-start="195.77" data-duration="1.50" data-track-index="0"><div id="cap-121-in" class="tv-cap-pill">TÚT LẠI CÁI VẺ ĐẸP TRAI VÀ PHONG ĐỘ CỦA MÌNH</div></div>
+    <div id="cap-122" class="clip tv-cap-host" data-start="197.30" data-duration="1.67" data-track-index="0"><div id="cap-122-in" class="tv-cap-pill">NẾU NHƯ QUÝ ANH CHỊ ĐANG TÌM MỘT NƠI</div></div>
+    <div id="cap-123" class="clip tv-cap-host" data-start="199.53" data-duration="0.77" data-track-index="0"><div id="cap-123-in" class="tv-cap-pill">DÀNH CHO NAM GIỚI</div></div>
+    <div id="cap-124" class="clip tv-cap-host" data-start="200.30" data-duration="1.57" data-track-index="0"><div id="cap-124-in" class="tv-cap-pill">MÀ CÓ THỂ LÀ CẮT TÓC ĐẸP NÀY</div></div>
+    <div id="cap-125" class="clip tv-cap-host" data-start="201.87" data-duration="1.47" data-track-index="0"><div id="cap-125-in" class="tv-cap-pill">HAY LÀ THƯ GIÃN SẢNG KHOÁI</div></div>
+    <div id="cap-126" class="clip tv-cap-host" data-start="203.77" data-duration="1.20" data-track-index="0"><div id="cap-126-in" class="tv-cap-pill">VÀ NÂNG CẤP LẠI CÁI BẢN THÂN MÌNH</div></div>
+    <div id="cap-127" class="clip tv-cap-host" data-start="204.97" data-duration="1.17" data-track-index="0"><div id="cap-127-in" class="tv-cap-pill">SAU NHỮNG PHÚT GIÂY MỆT NHỌC</div></div>
+    <div id="cap-128" class="clip tv-cap-host" data-start="206.13" data-duration="0.53" data-track-index="0"><div id="cap-128-in" class="tv-cap-pill">THÌ <span class="tv-kw">WINHAIR</span></div></div>
+    <div id="cap-129" class="clip tv-cap-host" data-start="206.77" data-duration="1.00" data-track-index="0"><div id="cap-129-in" class="tv-cap-pill">LÀ MỘT TRONG NHỮNG LỰA CHỌN</div></div>
+    <div id="cap-130" class="clip tv-cap-host" data-start="207.77" data-duration="1.17" data-track-index="0"><div id="cap-130-in" class="tv-cap-pill">MÀ QUÝ ANH CHỊ ĐÁNG ĐỂ CÂN NHẮC</div></div>
+    <div id="cap-131" class="clip tv-cap-host" data-start="209.03" data-duration="0.83" data-track-index="0"><div id="cap-131-in" class="tv-cap-pill">QUAN ĐIỂM CÁ NHÂN NAM</div></div>
+    <div id="cap-132" class="clip tv-cap-host" data-start="209.87" data-duration="2.03" data-track-index="0"><div id="cap-132-in" class="tv-cap-pill">THÌ NAM SẼ CHO <span class="tv-kw">10 ĐIỂM</span> CHO NGÀY HÔM NAY NHÁ CẢ NHÀ</div></div>
+    <div id="cap-133" class="clip tv-cap-host" data-start="212.20" data-duration="2.27" data-track-index="0"><div id="cap-133-in" class="tv-cap-pill">RẤT LÀ VUI NGÀY HÔM NAY CÓ ANH HƯNG</div></div>
+    <div id="cap-134" class="clip tv-cap-host" data-start="214.47" data-duration="2.10" data-track-index="0"><div id="cap-134-in" class="tv-cap-pill">VÀ ANH HUY QUA TRẢI NGHIỆM SALON BÊN EM</div></div>
+    <div id="cap-135" class="clip tv-cap-host" data-start="216.57" data-duration="1.00" data-track-index="0"><div id="cap-135-in" class="tv-cap-pill">NGÀY HÔM NAY ANH TRẢI NGHIỆM</div></div>
+    <div id="cap-136" class="clip tv-cap-host" data-start="217.57" data-duration="0.90" data-track-index="0"><div id="cap-136-in" class="tv-cap-pill">ANH CẢM THẤY NHƯ THẾ NÀO</div></div>
+    <div id="cap-137" class="clip tv-cap-host" data-start="218.73" data-duration="3.00" data-track-index="0"><div id="cap-137-in" class="tv-cap-pill">THỨC KHUYA CHO NÊN LÀ ĐẦU ÓC VÀ ĐẾN VAI CỔ Á</div></div>
+    <div id="cap-138" class="clip tv-cap-host" data-start="221.73" data-duration="1.77" data-track-index="0"><div id="cap-138-in" class="tv-cap-pill">THÌ LÚC MÀ BẠN GIỚI THIỆU TƯ VẤN CHO MÌNH Á</div></div>
+    <div id="cap-139" class="clip tv-cap-host" data-start="223.50" data-duration="1.63" data-track-index="0"><div id="cap-139-in" class="tv-cap-pill">LÀ ANH CÓ THỂ DÙNG VỪA <span class="tv-kw">GỘI ĐẦU</span></div></div>
+    <div id="cap-140" class="clip tv-cap-host" data-start="225.50" data-duration="2.37" data-track-index="0"><div id="cap-140-in" class="tv-cap-pill"><span class="tv-kw"><span class="tv-kw">MASSAGE</span> MẶT</span> VÀ KIÊM LUÔN <span class="tv-kw"><span class="tv-kw">MASSAGE</span> CỔ VAI GÁY</span></div></div>
+    <div id="cap-141" class="clip tv-cap-host" data-start="227.87" data-duration="1.03" data-track-index="0"><div id="cap-141-in" class="tv-cap-pill">LÀ MÌNH Ô KÊ LIỀN</div></div>
+    <div id="cap-142" class="clip tv-cap-host" data-start="228.93" data-duration="2.00" data-track-index="0"><div id="cap-142-in" class="tv-cap-pill">BÂY GIỜ LÀM XONG TỚI GIỜ LÀ GẦN 2 GIỜ</div></div>
+    <div id="cap-143" class="clip tv-cap-host" data-start="231.90" data-duration="1.73" data-track-index="0"><div id="cap-143-in" class="tv-cap-pill">NÊN LÀ XUỐNG NGƯỜI NÓ NHẸ HẲN LUÔN</div></div>
+    <div id="cap-144" class="clip tv-cap-host" data-start="233.63" data-duration="1.17" data-track-index="0"><div id="cap-144-in" class="tv-cap-pill">RẤT LÀ Ô KÊ RẤT LÀ WOW</div></div>
+    <div id="cap-145" class="clip tv-cap-host" data-start="234.93" data-duration="1.60" data-track-index="0"><div id="cap-145-in" class="tv-cap-pill">CHÍNH XÁC LÀ MÌNH KHÔNG CÓ CHỊU ĐAU ĐƯỢC</div></div>
+    <div id="cap-146" class="clip tv-cap-host" data-start="236.53" data-duration="0.77" data-track-index="0"><div id="cap-146-in" class="tv-cap-pill">KHI LẤY <span class="tv-kw">RÁY TAI</span></div></div>
+    <div id="cap-147" class="clip tv-cap-host" data-start="237.30" data-duration="1.00" data-track-index="0"><div id="cap-147-in" class="tv-cap-pill">NHƯNG MÀ HỒI NÃY LÀ</div></div>
+    <div id="cap-148" class="clip tv-cap-host" data-start="238.30" data-duration="0.83" data-track-index="0"><div id="cap-148-in" class="tv-cap-pill">CÓ NGỦ THIẾP ĐI</div></div>
+    <div id="cap-149" class="clip tv-cap-host" data-start="239.13" data-duration="1.00" data-track-index="0"><div id="cap-149-in" class="tv-cap-pill">VÌ NÓ NHẸ QUÁ</div></div>
+    <div id="cap-150" class="clip tv-cap-host" data-start="240.13" data-duration="1.47" data-track-index="0"><div id="cap-150-in" class="tv-cap-pill">NÓ HÔNG CÓ VẤN ĐỀ GÌ HẾT</div></div>
+    <div id="cap-151" class="clip tv-cap-host" data-start="241.60" data-duration="1.47" data-track-index="0"><div id="cap-151-in" class="tv-cap-pill">VÀ LÚC NGOÁY TAI THÌ RẤT LÀ NHẸ NHÀNG</div></div>
+    <div id="cap-152" class="clip tv-cap-host" data-start="243.07" data-duration="0.87" data-track-index="0"><div id="cap-152-in" class="tv-cap-pill">VÀ ĐẶC BIỆT LÀ BẠN ẤY</div></div>
+    <div id="cap-153" class="clip tv-cap-host" data-start="243.93" data-duration="0.70" data-track-index="0"><div id="cap-153-in" class="tv-cap-pill">RẤT LÀ QUAN TÂM</div></div>
+    <div id="cap-154" class="clip tv-cap-host" data-start="244.63" data-duration="1.03" data-track-index="0"><div id="cap-154-in" class="tv-cap-pill">LIÊN TỤC HỎI</div></div>
+    <div id="cap-155" class="clip tv-cap-host" data-start="245.67" data-duration="1.70" data-track-index="0"><div id="cap-155-in" class="tv-cap-pill">NẾU MÀ ANH CÓ THẤY ĐAU Á THÌ ANH NÓI</div></div>
+    <div id="cap-156" class="clip tv-cap-host" data-start="247.50" data-duration="1.10" data-track-index="0"><div id="cap-156-in" class="tv-cap-pill">ĐÁNH GIÁ CAO CÁI VIỆC MÀ MẤY BẠN</div></div>
+    <div id="cap-157" class="clip tv-cap-host" data-start="248.60" data-duration="0.93" data-track-index="0"><div id="cap-157-in" class="tv-cap-pill">CHĂM SÓC RẤT LÀ NHIỆT TÌNH</div></div>
+    <div id="cap-158" class="clip tv-cap-host" data-start="249.57" data-duration="0.83" data-track-index="0"><div id="cap-158-in" class="tv-cap-pill">ANH THẤY RẤT LÀ Ô KÊ</div></div>
+    <div id="cap-159" class="clip tv-cap-host" data-start="250.53" data-duration="2.50" data-track-index="0"><div id="cap-159-in" class="tv-cap-pill">THÌ TAY NGHỀ MÌNH THẤY RẤT LÀ TỐT</div></div>
+    <div id="cap-160" class="clip tv-cap-host" data-start="253.03" data-duration="1.40" data-track-index="0"><div id="cap-160-in" class="tv-cap-pill">CÁI ĐẶC BIỆT MÀ ANH THẤY Ở <span class="tv-kw">WINHAIR</span> Á</div></div>
+    <div id="cap-161" class="clip tv-cap-host" data-start="254.47" data-duration="1.30" data-track-index="0"><div id="cap-161-in" class="tv-cap-pill">LÀ NÓ CÓ RẤT LÀ NHIỀU CÁI TRẢI NGHIỆM</div></div>
+    <div id="cap-162" class="clip tv-cap-host" data-start="255.77" data-duration="1.00" data-track-index="0"><div id="cap-162-in" class="tv-cap-pill">THÌ RẤT LÀ THÍCH CÁI COMBO</div></div>
+    <div id="cap-163" class="clip tv-cap-host" data-start="256.80" data-duration="1.87" data-track-index="0"><div id="cap-163-in" class="tv-cap-pill">Ở ĐÂY LÀ MÌNH VÔ LÀ MÌNH CẮT TÓC LUÔN</div></div>
+    <div id="cap-164" class="clip tv-cap-host" data-start="258.97" data-duration="1.17" data-track-index="0"><div id="cap-164-in" class="tv-cap-pill">CẮT TÓC XONG MÌNH <span class="tv-kw">GỘI ĐẦU</span> LUÔN</div></div>
+    <div id="cap-165" class="clip tv-cap-host" data-start="260.13" data-duration="0.87" data-track-index="0"><div id="cap-165-in" class="tv-cap-pill">XONG MÌNH RỬA MẶT LUÔN</div></div>
+    <div id="cap-166" class="clip tv-cap-host" data-start="261.10" data-duration="1.73" data-track-index="0"><div id="cap-166-in" class="tv-cap-pill">XONG RỒI MÌNH CẮT MÓNG TAY MÓNG CHÂN LUÔN</div></div>
+    <div id="cap-167" class="clip tv-cap-host" data-start="262.83" data-duration="0.93" data-track-index="0"><div id="cap-167-in" class="tv-cap-pill">XONG RỒI NGOÁY TAI NỮA</div></div>
+    <div id="cap-168" class="clip tv-cap-host" data-start="264.17" data-duration="2.33" data-track-index="0"><div id="cap-168-in" class="tv-cap-pill">ĐÓ XONG RỒI MÌNH CÒN ĐƯỢC <span class="tv-kw"><span class="tv-kw">MASSAGE</span> CỔ VAI GÁY</span> NỮA</div></div>
+    <div id="cap-169" class="clip tv-cap-host" data-start="266.50" data-duration="1.27" data-track-index="0"><div id="cap-169-in" class="tv-cap-pill">VÀ VỚI CÁI TRẢI NGHIỆM LẦN ĐẦU NHƯ NÀY</div></div>
+    <div id="cap-170" class="clip tv-cap-host" data-start="267.77" data-duration="1.17" data-track-index="0"><div id="cap-170-in" class="tv-cap-pill">THÌ ANH THẤY CŨNG RẤT LÀ TUYỆT VỜI</div></div>
+    <div id="cap-171" class="clip tv-cap-host" data-start="268.93" data-duration="1.80" data-track-index="0"><div id="cap-171-in" class="tv-cap-pill">THÌ ƯU ÁI HƠN MỘT XÍU LÀ CHO <span class="tv-kw">10 ĐIỂM</span></div></div>
+    <div id="cap-172" class="clip tv-cap-host" data-start="270.83" data-duration="1.30" data-track-index="0"><div id="cap-172-in" class="tv-cap-pill">LÀ MÌNH SẼ CHO <span class="tv-kw">CHÍN ĐIỂM</span></div></div>
+    <div id="cap-173" class="clip tv-cap-host" data-start="272.13" data-duration="1.77" data-track-index="0"><div id="cap-173-in" class="tv-cap-pill">ĐỂ CHO <span class="tv-kw">WINHAIR</span> LUÔN LUÔN CỐ GẮNG</div></div>
+    <div id="cap-174" class="clip tv-cap-host" data-start="273.90" data-duration="1.30" data-track-index="0"><div id="cap-174-in" class="tv-cap-pill">LUÔN LUÔN TÌM RA NHỮNG CÁI MỚI MẺ</div></div>
+    <div id="cap-175" class="clip tv-cap-host" data-start="275.23" data-duration="1.97" data-track-index="0"><div id="cap-175-in" class="tv-cap-pill"><span class="tv-kw">CHÍN ĐIỂM</span> LÀ ĐIỂM GẦN NHƯ TUYỆT ĐỐI Á</div></div>
+    <div id="cap-176" class="clip tv-cap-host" data-start="280.73" data-duration="1.30" data-track-index="0"><div id="cap-176-in" class="tv-cap-pill">THỨ 2 ĐẾN THỨ 6</div></div>
+    <div id="cap-177" class="clip tv-cap-host" data-start="282.03" data-duration="1.53" data-track-index="0"><div id="cap-177-in" class="tv-cap-pill"><span class="tv-kw">GIẢM NGAY 20%</span></div></div>
+    <div id="cap-178" class="clip tv-cap-host" data-start="283.63" data-duration="1.00" data-track-index="0"><div id="cap-178-in" class="tv-cap-pill">ĐI SỚM GIÁ NGON</div></div>
+    <div id="cap-179" class="clip tv-cap-host" data-start="293.83" data-duration="2.00" data-track-index="0"><div id="cap-179-in" class="tv-cap-pill">THÌ CÓ <span class="tv-kw">COMBO NGỦ TRƯA</span></div></div>
+    <div id="cap-180" class="clip tv-cap-host" data-start="295.83" data-duration="3.70" data-track-index="0"><div id="cap-180-in" class="tv-cap-pill"><span class="tv-kw">GỘI ĐẦU</span> <span class="tv-kw"><span class="tv-kw">MASSAGE</span> MẶT</span> 30 PHÚT CHỈ <span class="tv-kw">79.000</span></div></div>
+    <div id="cap-181" class="clip tv-cap-host" data-start="299.53" data-duration="2.40" data-track-index="0"><div id="cap-181-in" class="tv-cap-pill">CHỢP MẮT XONG CHIỀU LÀM VIỆC TỈNH NHƯ SÁO</div></div>
+    <div id="cap-182" class="clip tv-cap-host" data-start="302.23" data-duration="2.73" data-track-index="0"><div id="cap-182-in" class="tv-cap-pill"><span class="tv-kw">WIN HAIR</span> CƠ SỞ 1 - <span class="tv-kw">41 LÝ TỰ TRỌNG</span></div></div>
+    <div id="cap-183" class="clip tv-cap-host" data-start="305.37" data-duration="2.20" data-track-index="0"><div id="cap-183-in" class="tv-cap-pill">CƠ SỞ 2 - <span class="tv-kw">59 THÍCH QUẢNG ĐỨC</span></div></div>
+    <div id="cap-184" class="clip tv-cap-host" data-start="307.57" data-duration="1.77" data-track-index="0"><div id="cap-184-in" class="tv-cap-pill">ĐẾN <span class="tv-kw">WIN HAIR</span> NGAY NHA ANH EM ƠI!!!</div></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#cap-000-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 5.00);
+    tl.fromTo("#cap-001-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 6.63);
+    tl.fromTo("#cap-002-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 7.50);
+    tl.fromTo("#cap-003-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 9.40);
+    tl.fromTo("#cap-004-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 10.53);
+    tl.fromTo("#cap-005-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 12.57);
+    tl.fromTo("#cap-006-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 13.73);
+    tl.fromTo("#cap-007-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 15.67);
+    tl.fromTo("#cap-008-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 18.50);
+    tl.fromTo("#cap-009-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 20.43);
+    tl.fromTo("#cap-010-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 22.27);
+    tl.fromTo("#cap-011-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 23.90);
+    tl.fromTo("#cap-012-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 24.57);
+    tl.fromTo("#cap-013-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 26.70);
+    tl.fromTo("#cap-014-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 27.97);
+    tl.fromTo("#cap-015-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 29.30);
+    tl.fromTo("#cap-016-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 31.47);
+    tl.fromTo("#cap-017-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 33.60);
+    tl.fromTo("#cap-018-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 35.60);
+    tl.fromTo("#cap-019-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 37.43);
+    tl.fromTo("#cap-020-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 39.17);
+    tl.fromTo("#cap-021-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 39.87);
+    tl.fromTo("#cap-022-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 40.63);
+    tl.fromTo("#cap-023-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 42.90);
+    tl.fromTo("#cap-024-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 44.27);
+    tl.fromTo("#cap-025-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 46.10);
+    tl.fromTo("#cap-026-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 47.53);
+    tl.fromTo("#cap-027-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 48.87);
+    tl.fromTo("#cap-028-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 50.17);
+    tl.fromTo("#cap-029-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 51.60);
+    tl.fromTo("#cap-030-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 53.13);
+    tl.fromTo("#cap-031-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 55.90);
+    tl.fromTo("#cap-032-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 56.57);
+    tl.fromTo("#cap-033-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 57.40);
+    tl.fromTo("#cap-034-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 59.67);
+    tl.fromTo("#cap-035-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 61.23);
+    tl.fromTo("#cap-036-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 62.97);
+    tl.fromTo("#cap-037-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 65.93);
+    tl.fromTo("#cap-038-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 67.67);
+    tl.fromTo("#cap-039-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 70.50);
+    tl.fromTo("#cap-040-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 72.23);
+    tl.fromTo("#cap-041-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 73.63);
+    tl.fromTo("#cap-042-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 76.43);
+    tl.fromTo("#cap-043-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.12, ease: "power2.out" }, 77.73);
+    tl.fromTo("#cap-044-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 78.23);
+    tl.fromTo("#cap-045-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 78.90);
+    tl.fromTo("#cap-046-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 80.33);
+    tl.fromTo("#cap-047-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 82.37);
+    tl.fromTo("#cap-048-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 83.17);
+    tl.fromTo("#cap-049-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 84.10);
+    tl.fromTo("#cap-050-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 85.70);
+    tl.fromTo("#cap-051-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 87.67);
+    tl.fromTo("#cap-052-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 88.87);
+    tl.fromTo("#cap-053-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 91.57);
+    tl.fromTo("#cap-054-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 93.17);
+    tl.fromTo("#cap-055-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 93.97);
+    tl.fromTo("#cap-056-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 96.43);
+    tl.fromTo("#cap-057-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 97.53);
+    tl.fromTo("#cap-058-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 100.23);
+    tl.fromTo("#cap-059-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 101.27);
+    tl.fromTo("#cap-060-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 102.10);
+    tl.fromTo("#cap-061-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 103.43);
+    tl.fromTo("#cap-062-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 104.97);
+    tl.fromTo("#cap-063-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 107.23);
+    tl.fromTo("#cap-064-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 107.90);
+    tl.fromTo("#cap-065-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 109.57);
+    tl.fromTo("#cap-066-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 111.73);
+    tl.fromTo("#cap-067-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 114.27);
+    tl.fromTo("#cap-068-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 116.03);
+    tl.fromTo("#cap-069-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 117.90);
+    tl.fromTo("#cap-070-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 119.67);
+    tl.fromTo("#cap-071-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 121.03);
+    tl.fromTo("#cap-072-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 122.93);
+    tl.fromTo("#cap-073-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 124.17);
+    tl.fromTo("#cap-074-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 125.63);
+    tl.fromTo("#cap-075-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 127.27);
+    tl.fromTo("#cap-076-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 128.43);
+    tl.fromTo("#cap-077-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 129.73);
+    tl.fromTo("#cap-078-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 131.10);
+    tl.fromTo("#cap-079-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 131.87);
+    tl.fromTo("#cap-080-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 133.17);
+    tl.fromTo("#cap-081-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 134.70);
+    tl.fromTo("#cap-082-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 136.70);
+    tl.fromTo("#cap-083-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 138.83);
+    tl.fromTo("#cap-084-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 140.17);
+    tl.fromTo("#cap-085-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 141.73);
+    tl.fromTo("#cap-086-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 142.70);
+    tl.fromTo("#cap-087-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 144.33);
+    tl.fromTo("#cap-088-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 146.77);
+    tl.fromTo("#cap-089-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 148.57);
+    tl.fromTo("#cap-090-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 149.97);
+    tl.fromTo("#cap-091-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 152.63);
+    tl.fromTo("#cap-092-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 154.80);
+    tl.fromTo("#cap-093-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 155.40);
+    tl.fromTo("#cap-094-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 156.97);
+    tl.fromTo("#cap-095-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 157.73);
+    tl.fromTo("#cap-096-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 159.00);
+    tl.fromTo("#cap-097-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.13, ease: "power2.out" }, 161.10);
+    tl.fromTo("#cap-098-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 161.63);
+    tl.fromTo("#cap-099-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 164.27);
+    tl.fromTo("#cap-100-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 165.90);
+    tl.fromTo("#cap-101-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 168.10);
+    tl.fromTo("#cap-102-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 170.50);
+    tl.fromTo("#cap-103-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 171.97);
+    tl.fromTo("#cap-104-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 173.70);
+    tl.fromTo("#cap-105-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 174.87);
+    tl.fromTo("#cap-106-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 176.47);
+    tl.fromTo("#cap-107-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 177.83);
+    tl.fromTo("#cap-108-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 178.97);
+    tl.fromTo("#cap-109-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 179.80);
+    tl.fromTo("#cap-110-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.11, ease: "power2.out" }, 181.07);
+    tl.fromTo("#cap-111-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 181.50);
+    tl.fromTo("#cap-112-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 182.67);
+    tl.fromTo("#cap-113-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 184.00);
+    tl.fromTo("#cap-114-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 184.60);
+    tl.fromTo("#cap-115-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 187.30);
+    tl.fromTo("#cap-116-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 188.07);
+    tl.fromTo("#cap-117-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 188.73);
+    tl.fromTo("#cap-118-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 190.53);
+    tl.fromTo("#cap-119-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 192.23);
+    tl.fromTo("#cap-120-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 194.37);
+    tl.fromTo("#cap-121-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 195.77);
+    tl.fromTo("#cap-122-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 197.30);
+    tl.fromTo("#cap-123-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 199.53);
+    tl.fromTo("#cap-124-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 200.30);
+    tl.fromTo("#cap-125-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 201.87);
+    tl.fromTo("#cap-126-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 203.77);
+    tl.fromTo("#cap-127-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 204.97);
+    tl.fromTo("#cap-128-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.13, ease: "power2.out" }, 206.13);
+    tl.fromTo("#cap-129-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 206.77);
+    tl.fromTo("#cap-130-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 207.77);
+    tl.fromTo("#cap-131-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 209.03);
+    tl.fromTo("#cap-132-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 209.87);
+    tl.fromTo("#cap-133-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 212.20);
+    tl.fromTo("#cap-134-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 214.47);
+    tl.fromTo("#cap-135-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 216.57);
+    tl.fromTo("#cap-136-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 217.57);
+    tl.fromTo("#cap-137-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 218.73);
+    tl.fromTo("#cap-138-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 221.73);
+    tl.fromTo("#cap-139-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 223.50);
+    tl.fromTo("#cap-140-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 225.50);
+    tl.fromTo("#cap-141-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 227.87);
+    tl.fromTo("#cap-142-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 228.93);
+    tl.fromTo("#cap-143-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 231.90);
+    tl.fromTo("#cap-144-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 233.63);
+    tl.fromTo("#cap-145-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 234.93);
+    tl.fromTo("#cap-146-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 236.53);
+    tl.fromTo("#cap-147-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 237.30);
+    tl.fromTo("#cap-148-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 238.30);
+    tl.fromTo("#cap-149-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 239.13);
+    tl.fromTo("#cap-150-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 240.13);
+    tl.fromTo("#cap-151-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 241.60);
+    tl.fromTo("#cap-152-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 243.07);
+    tl.fromTo("#cap-153-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 243.93);
+    tl.fromTo("#cap-154-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 244.63);
+    tl.fromTo("#cap-155-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 245.67);
+    tl.fromTo("#cap-156-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 247.50);
+    tl.fromTo("#cap-157-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 248.60);
+    tl.fromTo("#cap-158-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 249.57);
+    tl.fromTo("#cap-159-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 250.53);
+    tl.fromTo("#cap-160-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 253.03);
+    tl.fromTo("#cap-161-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 254.47);
+    tl.fromTo("#cap-162-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 255.77);
+    tl.fromTo("#cap-163-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 256.80);
+    tl.fromTo("#cap-164-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 258.97);
+    tl.fromTo("#cap-165-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 260.13);
+    tl.fromTo("#cap-166-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 261.10);
+    tl.fromTo("#cap-167-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 262.83);
+    tl.fromTo("#cap-168-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 264.17);
+    tl.fromTo("#cap-169-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 266.50);
+    tl.fromTo("#cap-170-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 267.77);
+    tl.fromTo("#cap-171-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 268.93);
+    tl.fromTo("#cap-172-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 270.83);
+    tl.fromTo("#cap-173-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 272.13);
+    tl.fromTo("#cap-174-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 273.90);
+    tl.fromTo("#cap-175-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 275.23);
+    tl.fromTo("#cap-176-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 280.73);
+    tl.fromTo("#cap-177-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 282.03);
+    tl.fromTo("#cap-178-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 283.63);
+    tl.fromTo("#cap-179-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 293.83);
+    tl.fromTo("#cap-180-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 295.83);
+    tl.fromTo("#cap-181-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 299.53);
+    tl.fromTo("#cap-182-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 302.23);
+    tl.fromTo("#cap-183-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 305.37);
+    tl.fromTo("#cap-184-in", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, 307.57);
+    window.__timelines["captions-tv"] = tl;
+  </script>
+</template>

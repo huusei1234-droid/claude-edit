@@ -1,0 +1,2266 @@
+{
+  "lang": "vi",
+  "duration": 91.092,
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 2.18,
+      "text": "Đừng đợi đến khi viêm mới chăm sóc!",
+      "words": [
+        {
+          "start": 0.0,
+          "end": 0.52,
+          "word": "Đừng",
+          "p": 0.56
+        },
+        {
+          "start": 0.52,
+          "end": 0.9,
+          "word": "đợi",
+          "p": 0.96
+        },
+        {
+          "start": 0.9,
+          "end": 1.12,
+          "word": "đến",
+          "p": 0.99
+        },
+        {
+          "start": 1.12,
+          "end": 1.3,
+          "word": "khi",
+          "p": 1.0
+        },
+        {
+          "start": 1.3,
+          "end": 1.56,
+          "word": "viêm",
+          "p": 0.99
+        },
+        {
+          "start": 1.56,
+          "end": 1.72,
+          "word": "mới",
+          "p": 0.96
+        },
+        {
+          "start": 1.72,
+          "end": 1.92,
+          "word": "chăm",
+          "p": 1.0
+        },
+        {
+          "start": 1.92,
+          "end": 2.18,
+          "word": "sóc!",
+          "p": 1.0
+        }
+      ]
+    },
+    {
+      "start": 2.18,
+      "end": 5.24,
+      "text": "Giống như làn da, vùng kín cần được chăm sóc mỗi ngày.",
+      "words": [
+        {
+          "start": 2.18,
+          "end": 2.72,
+          "word": "Giống",
+          "p": 0.79
+        },
+        {
+          "start": 2.72,
+          "end": 2.86,
+          "word": "như",
+          "p": 1.0
+        },
+        {
+          "start": 2.86,
+          "end": 3.1,
+          "word": "làn",
+          "p": 0.95
+        },
+        {
+          "start": 3.1,
+          "end": 3.28,
+          "word": "da,",
+          "p": 0.99
+        },
+        {
+          "start": 3.56,
+          "end": 3.74,
+          "word": "vùng",
+          "p": 0.98
+        },
+        {
+          "start": 3.74,
+          "end": 3.98,
+          "word": "kín",
+          "p": 0.98
+        },
+        {
+          "start": 3.98,
+          "end": 4.2,
+          "word": "cần",
+          "p": 0.98
+        },
+        {
+          "start": 4.2,
+          "end": 4.36,
+          "word": "được",
+          "p": 1.0
+        },
+        {
+          "start": 4.36,
+          "end": 4.64,
+          "word": "chăm",
+          "p": 1.0
+        },
+        {
+          "start": 4.64,
+          "end": 4.82,
+          "word": "sóc",
+          "p": 1.0
+        },
+        {
+          "start": 4.82,
+          "end": 5.0,
+          "word": "mỗi",
+          "p": 1.0
+        },
+        {
+          "start": 5.0,
+          "end": 5.24,
+          "word": "ngày.",
+          "p": 1.0
+        }
+      ]
+    },
+    {
+      "start": 5.24,
+      "end": 10.04,
+      "text": "Rất nhiều chị em chỉ bắt đầu tìm giải pháp khi đã ngứa, có mùi hoặc khí hư bất thường.",
+      "words": [
+        {
+          "start": 5.24,
+          "end": 5.74,
+          "word": "Rất",
+          "p": 0.98
+        },
+        {
+          "start": 5.74,
+          "end": 5.96,
+          "word": "nhiều",
+          "p": 1.0
+        },
+        {
+          "start": 5.96,
+          "end": 6.14,
+          "word": "chị",
+          "p": 1.0
+        },
+        {
+          "start": 6.14,
+          "end": 6.4,
+          "word": "em",
+          "p": 1.0
+        },
+        {
+          "start": 6.4,
+          "end": 6.56,
+          "word": "chỉ",
+          "p": 0.99
+        },
+        {
+          "start": 6.56,
+          "end": 6.68,
+          "word": "bắt",
+          "p": 1.0
+        },
+        {
+          "start": 6.68,
+          "end": 6.86,
+          "word": "đầu",
+          "p": 1.0
+        },
+        {
+          "start": 6.86,
+          "end": 7.14,
+          "word": "tìm",
+          "p": 0.88
+        },
+        {
+          "start": 7.14,
+          "end": 7.4,
+          "word": "giải",
+          "p": 0.99
+        },
+        {
+          "start": 7.4,
+          "end": 7.66,
+          "word": "pháp",
+          "p": 0.93
+        },
+        {
+          "start": 7.66,
+          "end": 7.86,
+          "word": "khi",
+          "p": 0.76
+        },
+        {
+          "start": 7.86,
+          "end": 7.98,
+          "word": "đã",
+          "p": 0.98
+        },
+        {
+          "start": 7.98,
+          "end": 8.28,
+          "word": "ngứa,",
+          "p": 0.89
+        },
+        {
+          "start": 8.38,
+          "end": 8.86,
+          "word": "có",
+          "p": 1.0
+        },
+        {
+          "start": 8.86,
+          "end": 9.18,
+          "word": "mùi",
+          "p": 0.97
+        },
+        {
+          "start": 9.18,
+          "end": 9.38,
+          "word": "hoặc",
+          "p": 0.99
+        },
+        {
+          "start": 9.38,
+          "end": 9.5,
+          "word": "khí",
+          "p": 0.74
+        },
+        {
+          "start": 9.5,
+          "end": 9.58,
+          "word": "hư",
+          "p": 0.91
+        },
+        {
+          "start": 9.58,
+          "end": 9.76,
+          "word": "bất",
+          "p": 0.95
+        },
+        {
+          "start": 9.76,
+          "end": 10.04,
+          "word": "thường.",
+          "p": 0.88
+        }
+      ]
+    },
+    {
+      "start": 10.04,
+      "end": 15.12,
+      "text": "Nhưng lúc đó môi trường vùng kín đã mất cân bằng, khiến vi khuẩn và nấm dễ phát triển hơn.",
+      "words": [
+        {
+          "start": 10.04,
+          "end": 10.86,
+          "word": "Nhưng",
+          "p": 1.0
+        },
+        {
+          "start": 10.86,
+          "end": 11.04,
+          "word": "lúc",
+          "p": 1.0
+        },
+        {
+          "start": 11.04,
+          "end": 11.28,
+          "word": "đó",
+          "p": 1.0
+        },
+        {
+          "start": 11.28,
+          "end": 11.62,
+          "word": "môi",
+          "p": 0.93
+        },
+        {
+          "start": 11.62,
+          "end": 11.84,
+          "word": "trường",
+          "p": 1.0
+        },
+        {
+          "start": 11.84,
+          "end": 12.08,
+          "word": "vùng",
+          "p": 1.0
+        },
+        {
+          "start": 12.08,
+          "end": 12.36,
+          "word": "kín",
+          "p": 1.0
+        },
+        {
+          "start": 12.36,
+          "end": 12.54,
+          "word": "đã",
+          "p": 1.0
+        },
+        {
+          "start": 12.54,
+          "end": 12.7,
+          "word": "mất",
+          "p": 0.88
+        },
+        {
+          "start": 12.7,
+          "end": 12.98,
+          "word": "cân",
+          "p": 1.0
+        },
+        {
+          "start": 12.98,
+          "end": 13.24,
+          "word": "bằng,",
+          "p": 1.0
+        },
+        {
+          "start": 13.24,
+          "end": 13.58,
+          "word": "khiến",
+          "p": 0.88
+        },
+        {
+          "start": 13.58,
+          "end": 13.72,
+          "word": "vi",
+          "p": 0.81
+        },
+        {
+          "start": 13.72,
+          "end": 14.02,
+          "word": "khuẩn",
+          "p": 0.99
+        },
+        {
+          "start": 14.02,
+          "end": 14.14,
+          "word": "và",
+          "p": 0.89
+        },
+        {
+          "start": 14.14,
+          "end": 14.34,
+          "word": "nấm",
+          "p": 0.71
+        },
+        {
+          "start": 14.34,
+          "end": 14.48,
+          "word": "dễ",
+          "p": 0.93
+        },
+        {
+          "start": 14.48,
+          "end": 14.66,
+          "word": "phát",
+          "p": 0.98
+        },
+        {
+          "start": 14.66,
+          "end": 14.86,
+          "word": "triển",
+          "p": 1.0
+        },
+        {
+          "start": 14.86,
+          "end": 15.12,
+          "word": "hơn.",
+          "p": 1.0
+        }
+      ]
+    },
+    {
+      "start": 15.12,
+      "end": 17.72,
+      "text": "Và việc điều trị cũng mất nhiều thời gian hơn.",
+      "words": [
+        {
+          "start": 15.12,
+          "end": 15.66,
+          "word": "Và",
+          "p": 0.96
+        },
+        {
+          "start": 15.66,
+          "end": 15.84,
+          "word": "việc",
+          "p": 1.0
+        },
+        {
+          "start": 15.84,
+          "end": 16.0,
+          "word": "điều",
+          "p": 1.0
+        },
+        {
+          "start": 16.0,
+          "end": 16.28,
+          "word": "trị",
+          "p": 0.79
+        },
+        {
+          "start": 16.28,
+          "end": 16.5,
+          "word": "cũng",
+          "p": 1.0
+        },
+        {
+          "start": 16.5,
+          "end": 16.76,
+          "word": "mất",
+          "p": 1.0
+        },
+        {
+          "start": 16.76,
+          "end": 17.04,
+          "word": "nhiều",
+          "p": 1.0
+        },
+        {
+          "start": 17.04,
+          "end": 17.22,
+          "word": "thời",
+          "p": 1.0
+        },
+        {
+          "start": 17.22,
+          "end": 17.44,
+          "word": "gian",
+          "p": 1.0
+        },
+        {
+          "start": 17.44,
+          "end": 17.72,
+          "word": "hơn.",
+          "p": 1.0
+        }
+      ]
+    },
+    {
+      "start": 17.72,
+      "end": 20.94,
+      "text": "Hằng luôn quan niệm rằng: phòng ngừa thì luôn dễ hơn điều trị.",
+      "words": [
+        {
+          "start": 17.72,
+          "end": 18.24,
+          "word": "Hằng",
+          "p": 0.54
+        },
+        {
+          "start": 18.24,
+          "end": 18.38,
+          "word": "luôn",
+          "p": 0.99
+        },
+        {
+          "start": 18.38,
+          "end": 18.54,
+          "word": "quan",
+          "p": 1.0
+        },
+        {
+          "start": 18.54,
+          "end": 18.74,
+          "word": "niệm",
+          "p": 0.84
+        },
+        {
+          "start": 18.74,
+          "end": 19.0,
+          "word": "rằng:",
+          "p": 1.0
+        },
+        {
+          "start": 19.0,
+          "end": 19.44,
+          "word": "phòng",
+          "p": 0.32
+        },
+        {
+          "start": 19.44,
+          "end": 19.76,
+          "word": "ngừa",
+          "p": 1.0
+        },
+        {
+          "start": 19.76,
+          "end": 19.96,
+          "word": "thì",
+          "p": 0.99
+        },
+        {
+          "start": 19.96,
+          "end": 20.12,
+          "word": "luôn",
+          "p": 0.98
+        },
+        {
+          "start": 20.12,
+          "end": 20.36,
+          "word": "dễ",
+          "p": 1.0
+        },
+        {
+          "start": 20.36,
+          "end": 20.52,
+          "word": "hơn",
+          "p": 1.0
+        },
+        {
+          "start": 20.52,
+          "end": 20.66,
+          "word": "điều",
+          "p": 1.0
+        },
+        {
+          "start": 20.66,
+          "end": 20.94,
+          "word": "trị.",
+          "p": 0.99
+        }
+      ]
+    },
+    {
+      "start": 20.94,
+      "end": 26.96,
+      "text": "Vì vậy, việc chăm sóc hằng ngày và chăm sóc khi vùng kín có dấu hiệu mất cân bằng là 2 việc hoàn toàn khác nhau.",
+      "words": [
+        {
+          "start": 20.94,
+          "end": 21.56,
+          "word": "Vì",
+          "p": 1.0
+        },
+        {
+          "start": 21.56,
+          "end": 21.74,
+          "word": "vậy,",
+          "p": 1.0
+        },
+        {
+          "start": 21.74,
+          "end": 22.02,
+          "word": "việc",
+          "p": 0.88
+        },
+        {
+          "start": 22.02,
+          "end": 22.28,
+          "word": "chăm",
+          "p": 1.0
+        },
+        {
+          "start": 22.28,
+          "end": 22.44,
+          "word": "sóc",
+          "p": 1.0
+        },
+        {
+          "start": 22.44,
+          "end": 22.64,
+          "word": "hằng",
+          "p": 0.9
+        },
+        {
+          "start": 22.64,
+          "end": 22.94,
+          "word": "ngày",
+          "p": 1.0
+        },
+        {
+          "start": 22.94,
+          "end": 23.16,
+          "word": "và",
+          "p": 1.0
+        },
+        {
+          "start": 23.16,
+          "end": 23.42,
+          "word": "chăm",
+          "p": 1.0
+        },
+        {
+          "start": 23.42,
+          "end": 23.6,
+          "word": "sóc",
+          "p": 1.0
+        },
+        {
+          "start": 23.6,
+          "end": 23.72,
+          "word": "khi",
+          "p": 1.0
+        },
+        {
+          "start": 23.72,
+          "end": 23.9,
+          "word": "vùng",
+          "p": 1.0
+        },
+        {
+          "start": 23.9,
+          "end": 24.08,
+          "word": "kín",
+          "p": 1.0
+        },
+        {
+          "start": 24.08,
+          "end": 24.24,
+          "word": "có",
+          "p": 0.94
+        },
+        {
+          "start": 24.24,
+          "end": 24.42,
+          "word": "dấu",
+          "p": 0.92
+        },
+        {
+          "start": 24.42,
+          "end": 24.62,
+          "word": "hiệu",
+          "p": 0.84
+        },
+        {
+          "start": 24.62,
+          "end": 24.8,
+          "word": "mất",
+          "p": 0.98
+        },
+        {
+          "start": 24.8,
+          "end": 24.96,
+          "word": "cân",
+          "p": 1.0
+        },
+        {
+          "start": 24.96,
+          "end": 25.22,
+          "word": "bằng",
+          "p": 0.99
+        },
+        {
+          "start": 25.22,
+          "end": 25.72,
+          "word": "là",
+          "p": 0.78
+        },
+        {
+          "start": 25.72,
+          "end": 25.86,
+          "word": "2",
+          "p": 0.84
+        },
+        {
+          "start": 25.86,
+          "end": 26.04,
+          "word": "việc",
+          "p": 0.99
+        },
+        {
+          "start": 26.04,
+          "end": 26.3,
+          "word": "hoàn",
+          "p": 1.0
+        },
+        {
+          "start": 26.3,
+          "end": 26.48,
+          "word": "toàn",
+          "p": 1.0
+        },
+        {
+          "start": 26.48,
+          "end": 26.62,
+          "word": "khác",
+          "p": 0.99
+        },
+        {
+          "start": 26.62,
+          "end": 26.96,
+          "word": "nhau.",
+          "p": 1.0
+        }
+      ]
+    },
+    {
+      "start": 26.96,
+      "end": 31.6,
+      "text": "Với việc chăm sóc hằng ngày thì Hằng ưu tiên dùng dung dịch vệ sinh dịu nhẹ như Romance VIP.",
+      "words": [
+        {
+          "start": 26.96,
+          "end": 27.58,
+          "word": "Với",
+          "p": 0.9
+        },
+        {
+          "start": 27.58,
+          "end": 27.78,
+          "word": "việc",
+          "p": 1.0
+        },
+        {
+          "start": 27.78,
+          "end": 27.98,
+          "word": "chăm",
+          "p": 1.0
+        },
+        {
+          "start": 27.98,
+          "end": 28.12,
+          "word": "sóc",
+          "p": 1.0
+        },
+        {
+          "start": 28.12,
+          "end": 28.26,
+          "word": "hằng",
+          "p": 0.74
+        },
+        {
+          "start": 28.26,
+          "end": 28.58,
+          "word": "ngày",
+          "p": 1.0
+        },
+        {
+          "start": 28.58,
+          "end": 28.94,
+          "word": "thì",
+          "p": 0.67
+        },
+        {
+          "start": 28.94,
+          "end": 29.12,
+          "word": "Hằng",
+          "p": 0.6
+        },
+        {
+          "start": 29.12,
+          "end": 29.36,
+          "word": "ưu",
+          "p": 0.99
+        },
+        {
+          "start": 29.36,
+          "end": 29.56,
+          "word": "tiên",
+          "p": 1.0
+        },
+        {
+          "start": 29.56,
+          "end": 29.78,
+          "word": "dùng",
+          "p": 1.0
+        },
+        {
+          "start": 29.78,
+          "end": 29.94,
+          "word": "dung",
+          "p": 0.87
+        },
+        {
+          "start": 29.94,
+          "end": 30.1,
+          "word": "dịch",
+          "p": 0.98
+        },
+        {
+          "start": 30.1,
+          "end": 30.26,
+          "word": "vệ",
+          "p": 0.99
+        },
+        {
+          "start": 30.26,
+          "end": 30.48,
+          "word": "sinh",
+          "p": 1.0
+        },
+        {
+          "start": 30.48,
+          "end": 30.68,
+          "word": "dịu",
+          "p": 0.66
+        },
+        {
+          "start": 30.68,
+          "end": 30.9,
+          "word": "nhẹ",
+          "p": 0.93
+        },
+        {
+          "start": 30.9,
+          "end": 31.06,
+          "word": "như",
+          "p": 1.0
+        },
+        {
+          "start": 31.06,
+          "end": 31.33,
+          "word": "Romance",
+          "p": 0.99
+        },
+        {
+          "start": 31.33,
+          "end": 31.6,
+          "word": "VIP.",
+          "p": 0.99
+        }
+      ]
+    },
+    {
+      "start": 31.6,
+      "end": 36.06,
+      "text": "Với các thành phần như tinh chất hoa hồng, trà xanh, lô hội, Vitamin E,",
+      "words": [
+        {
+          "start": 31.6,
+          "end": 32.08,
+          "word": "Với",
+          "p": 0.61
+        },
+        {
+          "start": 32.08,
+          "end": 32.2,
+          "word": "các",
+          "p": 0.98
+        },
+        {
+          "start": 32.2,
+          "end": 32.38,
+          "word": "thành",
+          "p": 0.99
+        },
+        {
+          "start": 32.38,
+          "end": 32.64,
+          "word": "phần",
+          "p": 1.0
+        },
+        {
+          "start": 32.64,
+          "end": 32.84,
+          "word": "như",
+          "p": 1.0
+        },
+        {
+          "start": 32.84,
+          "end": 33.04,
+          "word": "tinh",
+          "p": 0.99
+        },
+        {
+          "start": 33.04,
+          "end": 33.2,
+          "word": "chất",
+          "p": 1.0
+        },
+        {
+          "start": 33.2,
+          "end": 33.38,
+          "word": "hoa",
+          "p": 0.87
+        },
+        {
+          "start": 33.38,
+          "end": 33.62,
+          "word": "hồng,",
+          "p": 1.0
+        },
+        {
+          "start": 33.96,
+          "end": 34.14,
+          "word": "trà",
+          "p": 1.0
+        },
+        {
+          "start": 34.14,
+          "end": 34.46,
+          "word": "xanh,",
+          "p": 1.0
+        },
+        {
+          "start": 34.78,
+          "end": 35.0,
+          "word": "lô",
+          "p": 1.0
+        },
+        {
+          "start": 35.0,
+          "end": 35.28,
+          "word": "hội,",
+          "p": 0.99
+        },
+        {
+          "start": 35.46,
+          "end": 35.76,
+          "word": "Vitamin",
+          "p": 1.0
+        },
+        {
+          "start": 35.76,
+          "end": 36.06,
+          "word": "E,",
+          "p": 0.96
+        }
+      ]
+    },
+    {
+      "start": 36.06,
+      "end": 40.16,
+      "text": "kết hợp với Collagen thực vật, sản phẩm giúp làm sạch dịu nhẹ,",
+      "words": [
+        {
+          "start": 36.06,
+          "end": 36.56,
+          "word": "kết",
+          "p": 0.68
+        },
+        {
+          "start": 36.56,
+          "end": 36.8,
+          "word": "hợp",
+          "p": 1.0
+        },
+        {
+          "start": 36.8,
+          "end": 36.96,
+          "word": "với",
+          "p": 1.0
+        },
+        {
+          "start": 36.96,
+          "end": 37.38,
+          "word": "Collagen",
+          "p": 1.0
+        },
+        {
+          "start": 37.38,
+          "end": 37.66,
+          "word": "thực",
+          "p": 0.95
+        },
+        {
+          "start": 37.66,
+          "end": 37.92,
+          "word": "vật,",
+          "p": 0.96
+        },
+        {
+          "start": 38.22,
+          "end": 38.58,
+          "word": "sản",
+          "p": 1.0
+        },
+        {
+          "start": 38.58,
+          "end": 38.86,
+          "word": "phẩm",
+          "p": 1.0
+        },
+        {
+          "start": 38.86,
+          "end": 39.06,
+          "word": "giúp",
+          "p": 1.0
+        },
+        {
+          "start": 39.06,
+          "end": 39.22,
+          "word": "làm",
+          "p": 0.99
+        },
+        {
+          "start": 39.22,
+          "end": 39.48,
+          "word": "sạch",
+          "p": 1.0
+        },
+        {
+          "start": 39.48,
+          "end": 39.82,
+          "word": "dịu",
+          "p": 1.0
+        },
+        {
+          "start": 39.82,
+          "end": 40.16,
+          "word": "nhẹ,",
+          "p": 1.0
+        }
+      ]
+    },
+    {
+      "start": 40.16,
+      "end": 45.64,
+      "text": "hỗ trợ duy trì độ pH sinh lý, khử mùi và mang lại cảm giác khô thoáng, dễ chịu.",
+      "words": [
+        {
+          "start": 40.16,
+          "end": 40.66,
+          "word": "hỗ",
+          "p": 0.84
+        },
+        {
+          "start": 40.66,
+          "end": 40.86,
+          "word": "trợ",
+          "p": 1.0
+        },
+        {
+          "start": 40.86,
+          "end": 41.02,
+          "word": "duy",
+          "p": 0.99
+        },
+        {
+          "start": 41.02,
+          "end": 41.22,
+          "word": "trì",
+          "p": 1.0
+        },
+        {
+          "start": 41.22,
+          "end": 41.4,
+          "word": "độ",
+          "p": 0.99
+        },
+        {
+          "start": 41.4,
+          "end": 41.64,
+          "word": "pH",
+          "p": 0.99
+        },
+        {
+          "start": 41.64,
+          "end": 41.92,
+          "word": "sinh",
+          "p": 0.98
+        },
+        {
+          "start": 41.92,
+          "end": 42.14,
+          "word": "lý,",
+          "p": 0.99
+        },
+        {
+          "start": 42.54,
+          "end": 42.72,
+          "word": "khử",
+          "p": 1.0
+        },
+        {
+          "start": 42.72,
+          "end": 43.1,
+          "word": "mùi",
+          "p": 0.99
+        },
+        {
+          "start": 43.1,
+          "end": 43.4,
+          "word": "và",
+          "p": 0.82
+        },
+        {
+          "start": 43.4,
+          "end": 43.6,
+          "word": "mang",
+          "p": 1.0
+        },
+        {
+          "start": 43.6,
+          "end": 43.82,
+          "word": "lại",
+          "p": 1.0
+        },
+        {
+          "start": 43.82,
+          "end": 44.08,
+          "word": "cảm",
+          "p": 1.0
+        },
+        {
+          "start": 44.08,
+          "end": 44.32,
+          "word": "giác",
+          "p": 1.0
+        },
+        {
+          "start": 44.32,
+          "end": 44.62,
+          "word": "khô",
+          "p": 0.88
+        },
+        {
+          "start": 44.62,
+          "end": 44.96,
+          "word": "thoáng,",
+          "p": 0.77
+        },
+        {
+          "start": 44.96,
+          "end": 45.32,
+          "word": "dễ",
+          "p": 0.8
+        },
+        {
+          "start": 45.32,
+          "end": 45.64,
+          "word": "chịu.",
+          "p": 0.76
+        }
+      ]
+    },
+    {
+      "start": 45.64,
+      "end": 50.28,
+      "text": "Còn khi vùng kín xuất hiện những dấu hiệu như ngứa, khí hư bất thường hay mùi khó chịu,",
+      "words": [
+        {
+          "start": 45.64,
+          "end": 46.14,
+          "word": "Còn",
+          "p": 0.99
+        },
+        {
+          "start": 46.14,
+          "end": 46.34,
+          "word": "khi",
+          "p": 1.0
+        },
+        {
+          "start": 46.34,
+          "end": 46.54,
+          "word": "vùng",
+          "p": 0.94
+        },
+        {
+          "start": 46.54,
+          "end": 46.74,
+          "word": "kín",
+          "p": 0.95
+        },
+        {
+          "start": 46.74,
+          "end": 46.9,
+          "word": "xuất",
+          "p": 1.0
+        },
+        {
+          "start": 46.9,
+          "end": 47.04,
+          "word": "hiện",
+          "p": 1.0
+        },
+        {
+          "start": 47.04,
+          "end": 47.22,
+          "word": "những",
+          "p": 0.98
+        },
+        {
+          "start": 47.22,
+          "end": 47.4,
+          "word": "dấu",
+          "p": 0.97
+        },
+        {
+          "start": 47.4,
+          "end": 47.58,
+          "word": "hiệu",
+          "p": 0.94
+        },
+        {
+          "start": 47.58,
+          "end": 47.74,
+          "word": "như",
+          "p": 0.72
+        },
+        {
+          "start": 47.74,
+          "end": 48.16,
+          "word": "ngứa,",
+          "p": 0.97
+        },
+        {
+          "start": 48.36,
+          "end": 48.44,
+          "word": "khí",
+          "p": 0.84
+        },
+        {
+          "start": 48.44,
+          "end": 48.62,
+          "word": "hư",
+          "p": 1.0
+        },
+        {
+          "start": 48.62,
+          "end": 48.78,
+          "word": "bất",
+          "p": 0.98
+        },
+        {
+          "start": 48.78,
+          "end": 49.12,
+          "word": "thường",
+          "p": 0.98
+        },
+        {
+          "start": 49.12,
+          "end": 49.54,
+          "word": "hay",
+          "p": 0.98
+        },
+        {
+          "start": 49.54,
+          "end": 49.76,
+          "word": "mùi",
+          "p": 1.0
+        },
+        {
+          "start": 49.76,
+          "end": 49.92,
+          "word": "khó",
+          "p": 0.99
+        },
+        {
+          "start": 49.92,
+          "end": 50.28,
+          "word": "chịu,",
+          "p": 0.96
+        }
+      ]
+    },
+    {
+      "start": 50.28,
+      "end": 53.58,
+      "text": "thì Hằng sẽ ưu tiên kết hợp thêm Viên đặt phụ khoa Hằng Thu này nha.",
+      "words": [
+        {
+          "start": 50.28,
+          "end": 50.66,
+          "word": "thì",
+          "p": 0.94
+        },
+        {
+          "start": 50.66,
+          "end": 50.82,
+          "word": "Hằng",
+          "p": 1.0
+        },
+        {
+          "start": 50.82,
+          "end": 50.94,
+          "word": "sẽ",
+          "p": 0.9
+        },
+        {
+          "start": 50.94,
+          "end": 51.2,
+          "word": "ưu",
+          "p": 1.0
+        },
+        {
+          "start": 51.2,
+          "end": 51.38,
+          "word": "tiên",
+          "p": 1.0
+        },
+        {
+          "start": 51.38,
+          "end": 51.58,
+          "word": "kết",
+          "p": 1.0
+        },
+        {
+          "start": 51.58,
+          "end": 51.82,
+          "word": "hợp",
+          "p": 1.0
+        },
+        {
+          "start": 51.82,
+          "end": 52.02,
+          "word": "thêm",
+          "p": 1.0
+        },
+        {
+          "start": 52.02,
+          "end": 52.18,
+          "word": "Viên",
+          "p": 0.79
+        },
+        {
+          "start": 52.18,
+          "end": 52.34,
+          "word": "đặt",
+          "p": 0.86
+        },
+        {
+          "start": 52.34,
+          "end": 52.54,
+          "word": "phụ",
+          "p": 0.92
+        },
+        {
+          "start": 52.54,
+          "end": 52.76,
+          "word": "khoa",
+          "p": 0.73
+        },
+        {
+          "start": 52.76,
+          "end": 52.88,
+          "word": "Hằng",
+          "p": 0.87
+        },
+        {
+          "start": 52.88,
+          "end": 53.04,
+          "word": "Thu",
+          "p": 0.8
+        },
+        {
+          "start": 53.04,
+          "end": 53.28,
+          "word": "này",
+          "p": 1.0
+        },
+        {
+          "start": 53.28,
+          "end": 53.58,
+          "word": "nha.",
+          "p": 0.88
+        }
+      ]
+    },
+    {
+      "start": 53.58,
+      "end": 60.4,
+      "text": "Trong sản phẩm thì có Acid Lactic, có trinh nữ hoàng cung, có chiết xuất cam thảo và có rất nhiều thành phần khác,",
+      "words": [
+        {
+          "start": 53.58,
+          "end": 54.1,
+          "word": "Trong",
+          "p": 0.84
+        },
+        {
+          "start": 54.1,
+          "end": 54.36,
+          "word": "sản",
+          "p": 0.97
+        },
+        {
+          "start": 54.36,
+          "end": 54.62,
+          "word": "phẩm",
+          "p": 1.0
+        },
+        {
+          "start": 54.62,
+          "end": 54.78,
+          "word": "thì",
+          "p": 0.79
+        },
+        {
+          "start": 54.78,
+          "end": 55.1,
+          "word": "có",
+          "p": 1.0
+        },
+        {
+          "start": 55.1,
+          "end": 55.54,
+          "word": "Acid",
+          "p": 0.36
+        },
+        {
+          "start": 55.54,
+          "end": 55.92,
+          "word": "Lactic,",
+          "p": 0.74
+        },
+        {
+          "start": 56.62,
+          "end": 56.72,
+          "word": "có",
+          "p": 0.83
+        },
+        {
+          "start": 56.72,
+          "end": 57.02,
+          "word": "trinh",
+          "p": 0.88
+        },
+        {
+          "start": 57.02,
+          "end": 57.1,
+          "word": "nữ",
+          "p": 0.68
+        },
+        {
+          "start": 57.1,
+          "end": 57.38,
+          "word": "hoàng",
+          "p": 0.86
+        },
+        {
+          "start": 57.38,
+          "end": 57.68,
+          "word": "cung,",
+          "p": 0.99
+        },
+        {
+          "start": 57.92,
+          "end": 58.0,
+          "word": "có",
+          "p": 1.0
+        },
+        {
+          "start": 58.0,
+          "end": 58.16,
+          "word": "chiết",
+          "p": 0.61
+        },
+        {
+          "start": 58.16,
+          "end": 58.36,
+          "word": "xuất",
+          "p": 0.81
+        },
+        {
+          "start": 58.36,
+          "end": 58.58,
+          "word": "cam",
+          "p": 0.93
+        },
+        {
+          "start": 58.58,
+          "end": 58.98,
+          "word": "thảo",
+          "p": 0.99
+        },
+        {
+          "start": 58.98,
+          "end": 59.18,
+          "word": "và",
+          "p": 0.81
+        },
+        {
+          "start": 59.18,
+          "end": 59.34,
+          "word": "có",
+          "p": 1.0
+        },
+        {
+          "start": 59.34,
+          "end": 59.52,
+          "word": "rất",
+          "p": 1.0
+        },
+        {
+          "start": 59.52,
+          "end": 59.78,
+          "word": "nhiều",
+          "p": 1.0
+        },
+        {
+          "start": 59.78,
+          "end": 59.94,
+          "word": "thành",
+          "p": 0.84
+        },
+        {
+          "start": 59.94,
+          "end": 60.16,
+          "word": "phần",
+          "p": 1.0
+        },
+        {
+          "start": 60.16,
+          "end": 60.4,
+          "word": "khác,",
+          "p": 1.0
+        }
+      ]
+    },
+    {
+      "start": 60.4,
+      "end": 65.54,
+      "text": "thì giúp hỗ trợ cân bằng độ pH kết hợp với Niacinamide và Glycerin,",
+      "words": [
+        {
+          "start": 60.4,
+          "end": 60.82,
+          "word": "thì",
+          "p": 0.4
+        },
+        {
+          "start": 60.82,
+          "end": 61.0,
+          "word": "giúp",
+          "p": 1.0
+        },
+        {
+          "start": 61.0,
+          "end": 61.24,
+          "word": "hỗ",
+          "p": 1.0
+        },
+        {
+          "start": 61.24,
+          "end": 61.62,
+          "word": "trợ",
+          "p": 1.0
+        },
+        {
+          "start": 61.62,
+          "end": 61.96,
+          "word": "cân",
+          "p": 0.99
+        },
+        {
+          "start": 61.96,
+          "end": 62.18,
+          "word": "bằng",
+          "p": 1.0
+        },
+        {
+          "start": 62.18,
+          "end": 62.34,
+          "word": "độ",
+          "p": 0.99
+        },
+        {
+          "start": 62.34,
+          "end": 62.68,
+          "word": "pH",
+          "p": 0.99
+        },
+        {
+          "start": 62.68,
+          "end": 63.12,
+          "word": "kết",
+          "p": 0.84
+        },
+        {
+          "start": 63.12,
+          "end": 63.4,
+          "word": "hợp",
+          "p": 1.0
+        },
+        {
+          "start": 63.4,
+          "end": 63.8,
+          "word": "với",
+          "p": 1.0
+        },
+        {
+          "start": 63.8,
+          "end": 64.82,
+          "word": "Niacinamide",
+          "p": 0.89
+        },
+        {
+          "start": 64.82,
+          "end": 64.96,
+          "word": "và",
+          "p": 1.0
+        },
+        {
+          "start": 64.96,
+          "end": 65.54,
+          "word": "Glycerin,",
+          "p": 0.98
+        }
+      ]
+    },
+    {
+      "start": 65.54,
+      "end": 68.7,
+      "text": "giúp làm dịu, dưỡng ẩm và hỗ trợ chăm sóc niêm mạc vùng kín.",
+      "words": [
+        {
+          "start": 65.54,
+          "end": 65.86,
+          "word": "giúp",
+          "p": 0.92
+        },
+        {
+          "start": 65.86,
+          "end": 66.06,
+          "word": "làm",
+          "p": 1.0
+        },
+        {
+          "start": 66.06,
+          "end": 66.4,
+          "word": "dịu,",
+          "p": 0.82
+        },
+        {
+          "start": 66.4,
+          "end": 66.7,
+          "word": "dưỡng",
+          "p": 0.93
+        },
+        {
+          "start": 66.7,
+          "end": 66.92,
+          "word": "ẩm",
+          "p": 0.99
+        },
+        {
+          "start": 66.92,
+          "end": 67.1,
+          "word": "và",
+          "p": 1.0
+        },
+        {
+          "start": 67.1,
+          "end": 67.32,
+          "word": "hỗ",
+          "p": 1.0
+        },
+        {
+          "start": 67.32,
+          "end": 67.48,
+          "word": "trợ",
+          "p": 1.0
+        },
+        {
+          "start": 67.48,
+          "end": 67.7,
+          "word": "chăm",
+          "p": 1.0
+        },
+        {
+          "start": 67.7,
+          "end": 67.88,
+          "word": "sóc",
+          "p": 1.0
+        },
+        {
+          "start": 67.88,
+          "end": 68.12,
+          "word": "niêm",
+          "p": 0.9
+        },
+        {
+          "start": 68.12,
+          "end": 68.3,
+          "word": "mạc",
+          "p": 0.93
+        },
+        {
+          "start": 68.3,
+          "end": 68.46,
+          "word": "vùng",
+          "p": 0.99
+        },
+        {
+          "start": 68.46,
+          "end": 68.7,
+          "word": "kín.",
+          "p": 0.95
+        }
+      ]
+    },
+    {
+      "start": 68.7,
+      "end": 72.8,
+      "text": "Đối với Hằng, đây là bộ đôi hỗ trợ chăm sóc vùng kín toàn diện.",
+      "words": [
+        {
+          "start": 68.7,
+          "end": 69.36,
+          "word": "Đối",
+          "p": 0.8
+        },
+        {
+          "start": 69.36,
+          "end": 69.52,
+          "word": "với",
+          "p": 0.99
+        },
+        {
+          "start": 69.52,
+          "end": 69.74,
+          "word": "Hằng,",
+          "p": 0.47
+        },
+        {
+          "start": 69.96,
+          "end": 70.06,
+          "word": "đây",
+          "p": 0.99
+        },
+        {
+          "start": 70.06,
+          "end": 70.22,
+          "word": "là",
+          "p": 1.0
+        },
+        {
+          "start": 70.22,
+          "end": 70.5,
+          "word": "bộ",
+          "p": 0.76
+        },
+        {
+          "start": 70.5,
+          "end": 70.74,
+          "word": "đôi",
+          "p": 1.0
+        },
+        {
+          "start": 70.74,
+          "end": 71.0,
+          "word": "hỗ",
+          "p": 1.0
+        },
+        {
+          "start": 71.0,
+          "end": 71.22,
+          "word": "trợ",
+          "p": 1.0
+        },
+        {
+          "start": 71.22,
+          "end": 71.52,
+          "word": "chăm",
+          "p": 1.0
+        },
+        {
+          "start": 71.52,
+          "end": 71.72,
+          "word": "sóc",
+          "p": 1.0
+        },
+        {
+          "start": 71.72,
+          "end": 72.06,
+          "word": "vùng",
+          "p": 1.0
+        },
+        {
+          "start": 72.06,
+          "end": 72.28,
+          "word": "kín",
+          "p": 1.0
+        },
+        {
+          "start": 72.28,
+          "end": 72.54,
+          "word": "toàn",
+          "p": 0.99
+        },
+        {
+          "start": 72.54,
+          "end": 72.8,
+          "word": "diện.",
+          "p": 0.98
+        }
+      ]
+    },
+    {
+      "start": 72.8,
+      "end": 75.44,
+      "text": "Một sản phẩm giúp làm sạch và bảo vệ mỗi ngày.",
+      "words": [
+        {
+          "start": 72.8,
+          "end": 73.34,
+          "word": "Một",
+          "p": 0.72
+        },
+        {
+          "start": 73.34,
+          "end": 73.58,
+          "word": "sản",
+          "p": 1.0
+        },
+        {
+          "start": 73.58,
+          "end": 73.86,
+          "word": "phẩm",
+          "p": 1.0
+        },
+        {
+          "start": 73.86,
+          "end": 74.1,
+          "word": "giúp",
+          "p": 1.0
+        },
+        {
+          "start": 74.1,
+          "end": 74.26,
+          "word": "làm",
+          "p": 1.0
+        },
+        {
+          "start": 74.26,
+          "end": 74.54,
+          "word": "sạch",
+          "p": 1.0
+        },
+        {
+          "start": 74.54,
+          "end": 74.7,
+          "word": "và",
+          "p": 1.0
+        },
+        {
+          "start": 74.7,
+          "end": 74.86,
+          "word": "bảo",
+          "p": 1.0
+        },
+        {
+          "start": 74.86,
+          "end": 75.02,
+          "word": "vệ",
+          "p": 1.0
+        },
+        {
+          "start": 75.02,
+          "end": 75.22,
+          "word": "mỗi",
+          "p": 1.0
+        },
+        {
+          "start": 75.22,
+          "end": 75.44,
+          "word": "ngày.",
+          "p": 1.0
+        }
+      ]
+    },
+    {
+      "start": 75.44,
+      "end": 79.7,
+      "text": "Một sản phẩm thì hỗ trợ chăm sóc chuyên sâu khi vùng kín cần được phục hồi.",
+      "words": [
+        {
+          "start": 75.44,
+          "end": 75.92,
+          "word": "Một",
+          "p": 0.95
+        },
+        {
+          "start": 75.92,
+          "end": 76.12,
+          "word": "sản",
+          "p": 1.0
+        },
+        {
+          "start": 76.12,
+          "end": 76.3,
+          "word": "phẩm",
+          "p": 1.0
+        },
+        {
+          "start": 76.3,
+          "end": 76.42,
+          "word": "thì",
+          "p": 0.62
+        },
+        {
+          "start": 76.42,
+          "end": 76.62,
+          "word": "hỗ",
+          "p": 1.0
+        },
+        {
+          "start": 76.62,
+          "end": 76.98,
+          "word": "trợ",
+          "p": 1.0
+        },
+        {
+          "start": 76.98,
+          "end": 77.28,
+          "word": "chăm",
+          "p": 1.0
+        },
+        {
+          "start": 77.28,
+          "end": 77.48,
+          "word": "sóc",
+          "p": 1.0
+        },
+        {
+          "start": 77.48,
+          "end": 77.78,
+          "word": "chuyên",
+          "p": 1.0
+        },
+        {
+          "start": 77.78,
+          "end": 78.1,
+          "word": "sâu",
+          "p": 0.99
+        },
+        {
+          "start": 78.1,
+          "end": 78.5,
+          "word": "khi",
+          "p": 0.99
+        },
+        {
+          "start": 78.5,
+          "end": 78.74,
+          "word": "vùng",
+          "p": 1.0
+        },
+        {
+          "start": 78.74,
+          "end": 78.94,
+          "word": "kín",
+          "p": 1.0
+        },
+        {
+          "start": 78.94,
+          "end": 79.12,
+          "word": "cần",
+          "p": 0.99
+        },
+        {
+          "start": 79.12,
+          "end": 79.26,
+          "word": "được",
+          "p": 1.0
+        },
+        {
+          "start": 79.26,
+          "end": 79.42,
+          "word": "phục",
+          "p": 1.0
+        },
+        {
+          "start": 79.42,
+          "end": 79.7,
+          "word": "hồi.",
+          "p": 1.0
+        }
+      ]
+    },
+    {
+      "start": 79.7,
+      "end": 83.86,
+      "text": "Và phụ nữ mình ơi, hãy yêu thương cơ thể từ những điều nhỏ nhất.",
+      "words": [
+        {
+          "start": 79.7,
+          "end": 80.3,
+          "word": "Và",
+          "p": 0.69
+        },
+        {
+          "start": 80.3,
+          "end": 80.72,
+          "word": "phụ",
+          "p": 0.99
+        },
+        {
+          "start": 80.72,
+          "end": 80.88,
+          "word": "nữ",
+          "p": 1.0
+        },
+        {
+          "start": 80.88,
+          "end": 81.0,
+          "word": "mình",
+          "p": 0.84
+        },
+        {
+          "start": 81.0,
+          "end": 81.22,
+          "word": "ơi,",
+          "p": 1.0
+        },
+        {
+          "start": 81.46,
+          "end": 81.64,
+          "word": "hãy",
+          "p": 1.0
+        },
+        {
+          "start": 81.64,
+          "end": 81.8,
+          "word": "yêu",
+          "p": 1.0
+        },
+        {
+          "start": 81.8,
+          "end": 82.02,
+          "word": "thương",
+          "p": 1.0
+        },
+        {
+          "start": 82.02,
+          "end": 82.26,
+          "word": "cơ",
+          "p": 0.99
+        },
+        {
+          "start": 82.26,
+          "end": 82.58,
+          "word": "thể",
+          "p": 1.0
+        },
+        {
+          "start": 82.58,
+          "end": 82.94,
+          "word": "từ",
+          "p": 0.61
+        },
+        {
+          "start": 82.94,
+          "end": 83.14,
+          "word": "những",
+          "p": 1.0
+        },
+        {
+          "start": 83.14,
+          "end": 83.38,
+          "word": "điều",
+          "p": 1.0
+        },
+        {
+          "start": 83.38,
+          "end": 83.66,
+          "word": "nhỏ",
+          "p": 1.0
+        },
+        {
+          "start": 83.66,
+          "end": 83.86,
+          "word": "nhất.",
+          "p": 1.0
+        }
+      ]
+    },
+    {
+      "start": 83.86,
+      "end": 87.96,
+      "text": "Bởi một vùng kín khỏe mạnh không chỉ giúp chị em tự tin hơn trong cuộc sống,",
+      "words": [
+        {
+          "start": 83.86,
+          "end": 84.5,
+          "word": "Bởi",
+          "p": 0.91
+        },
+        {
+          "start": 84.5,
+          "end": 84.66,
+          "word": "một",
+          "p": 0.97
+        },
+        {
+          "start": 84.66,
+          "end": 84.82,
+          "word": "vùng",
+          "p": 0.63
+        },
+        {
+          "start": 84.82,
+          "end": 85.0,
+          "word": "kín",
+          "p": 0.9
+        },
+        {
+          "start": 85.0,
+          "end": 85.34,
+          "word": "khỏe",
+          "p": 1.0
+        },
+        {
+          "start": 85.34,
+          "end": 85.64,
+          "word": "mạnh",
+          "p": 0.98
+        },
+        {
+          "start": 85.64,
+          "end": 85.96,
+          "word": "không",
+          "p": 0.9
+        },
+        {
+          "start": 85.96,
+          "end": 86.2,
+          "word": "chỉ",
+          "p": 1.0
+        },
+        {
+          "start": 86.2,
+          "end": 86.42,
+          "word": "giúp",
+          "p": 1.0
+        },
+        {
+          "start": 86.42,
+          "end": 86.52,
+          "word": "chị",
+          "p": 0.99
+        },
+        {
+          "start": 86.52,
+          "end": 86.72,
+          "word": "em",
+          "p": 1.0
+        },
+        {
+          "start": 86.72,
+          "end": 86.98,
+          "word": "tự",
+          "p": 0.92
+        },
+        {
+          "start": 86.98,
+          "end": 87.16,
+          "word": "tin",
+          "p": 1.0
+        },
+        {
+          "start": 87.16,
+          "end": 87.36,
+          "word": "hơn",
+          "p": 1.0
+        },
+        {
+          "start": 87.36,
+          "end": 87.52,
+          "word": "trong",
+          "p": 0.99
+        },
+        {
+          "start": 87.52,
+          "end": 87.68,
+          "word": "cuộc",
+          "p": 1.0
+        },
+        {
+          "start": 87.68,
+          "end": 87.96,
+          "word": "sống,",
+          "p": 1.0
+        }
+      ]
+    },
+    {
+      "start": 87.96,
+      "end": 90.8,
+      "text": "mà còn là nền tảng cho sức khỏe và hạnh phúc lâu dài.",
+      "words": [
+        {
+          "start": 87.96,
+          "end": 88.4,
+          "word": "mà",
+          "p": 0.95
+        },
+        {
+          "start": 88.4,
+          "end": 88.62,
+          "word": "còn",
+          "p": 0.99
+        },
+        {
+          "start": 88.62,
+          "end": 88.78,
+          "word": "là",
+          "p": 1.0
+        },
+        {
+          "start": 88.78,
+          "end": 88.94,
+          "word": "nền",
+          "p": 0.99
+        },
+        {
+          "start": 88.94,
+          "end": 89.2,
+          "word": "tảng",
+          "p": 1.0
+        },
+        {
+          "start": 89.2,
+          "end": 89.38,
+          "word": "cho",
+          "p": 1.0
+        },
+        {
+          "start": 89.38,
+          "end": 89.54,
+          "word": "sức",
+          "p": 1.0
+        },
+        {
+          "start": 89.54,
+          "end": 89.86,
+          "word": "khỏe",
+          "p": 1.0
+        },
+        {
+          "start": 89.86,
+          "end": 90.0,
+          "word": "và",
+          "p": 1.0
+        },
+        {
+          "start": 90.0,
+          "end": 90.16,
+          "word": "hạnh",
+          "p": 0.99
+        },
+        {
+          "start": 90.16,
+          "end": 90.32,
+          "word": "phúc",
+          "p": 1.0
+        },
+        {
+          "start": 90.32,
+          "end": 90.54,
+          "word": "lâu",
+          "p": 1.0
+        },
+        {
+          "start": 90.54,
+          "end": 90.8,
+          "word": "dài.",
+          "p": 1.0
+        }
+      ]
+    }
+  ]
+}

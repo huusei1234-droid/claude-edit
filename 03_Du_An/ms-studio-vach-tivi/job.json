@@ -1,0 +1,226 @@
+{
+  "slug": "ms-studio-vach-tivi",
+  "brief": {
+    "chu_de": "Timelapse thi công cải tạo vách Tivi phòng khách từ cũ sang mới chuẩn kỹ thuật thực tế",
+    "san_pham_hoac_noi_dung": "Thi công trọn gói vách Tivi tấm ốp than tre vân đá đối xứng + lam sóng gỗ óc chó + than tre tráng gương đen + đèn LED hắt khe + kệ Tivi hiện đại + đèn chùm & khe gió trần bởi đội ngũ MS Studio (2 nam, 1 nữ)",
+    "thong_diep_chinh": "Thi công chuẩn chỉnh từng công đoạn thực tế: khảo sát tháo dỡ, lót sàn, dựng giàn giáo, bắn cốt laser xanh, đi điện âm & đóng khung xương chống ẩm, đo cắt máy, bơm keo chuyên dụng ốp than tre/lam sóng, đấu LED & hoàn thiện bàn giao",
+    "doi_tuong": "Chủ nhà căn hộ / nhà phố muốn cải tạo nội thất phòng khách sang trọng, bền chuẩn kỹ thuật",
+    "nen_tang": "reels | tiktok | youtube | facebook",
+    "thoi_luong_giay": 28,
+    "ty_le": "16:9",
+    "ngon_ngu": "vi",
+    "ghi_chu_nguoi_dung": "3 bạn mặc áo MS Studio (2 nam 1 nữ). Tất cả công đoạn phải chính xác thực tế, không tạo cảnh bị láo (ốp than tre phải đo cắt, bắn laser, bôi keo, đi xương, có giàn giáo, đồ nghề đầy đủ). Chế độ timelapse nhanh rút ngắn thời lượng. Tạo thêm hình để đủ Start Frame -> End Frame đảm bảo 1 video suông từ đầu đến cuối, không lặp, không lỗi quá trình."
+  },
+  "the_loai": "timelapse-thi-cong-start-end-frame",
+  "kit": "edit + capcut-pro-editor (dựng hậu kỳ Timelapse FFmpeg/CapCut từ chuỗi clip Start-End Frame)",
+  "trang_thai": "cho-nguoi-dung-xem",
+  "giong": {
+    "co_loi_doc": false,
+    "ma_giong": "",
+    "ghi_chu": "Mặc định dùng nhạc nền Timelapse kiến trúc hiện đại (có thể thêm thuyết minh nếu người dùng yêu cầu khi duyệt).",
+    "file": "",
+    "da_nghe_bang_tai": false
+  },
+  "nhac": {
+    "bai": "01_Truyền Cảm Hứng - Quảng Cáo TVC (chọn bài nhịp 115-124 BPM hiện đại cho Timelapse)",
+    "nguon": "Z:\\Máy tính khác\\My Computer\\Document HT Media\\TLH\\Edit\\01_Nhạc Nền (BGM)",
+    "ghi_chu": "Chờ người dùng chốt có cần nhạc / chữ phụ đề công đoạn hay không."
+  },
+  "kich_ban": {
+    "hook": "0.0s - 1.5s: Khung hình tĩnh hiện trạng vách Tivi cũ ố mốc chân tường (F0_hien_trang_cu.jpg) trước khi đội ngũ 3 kỹ thuật viên MS Studio bước vào cải tạo toàn diện.",
+    "loi_doc_day_du": "",
+    "cta": "24.5s - 28.0s: Toàn cảnh vách Tivi hoàn thiện sáng đèn sang trọng (F7_hoan_thien_moi.jpg) - MS Studio Thiết Kế & Thi Công Trọn Gói.",
+    "cau_khang_dinh_suc_khoe": [],
+    "dong_phap_ly": "",
+    "hook_phuong_an": [],
+    "hook_da_chon": ""
+  },
+  "keyframe_images": [
+    {
+      "id": "F0",
+      "nguon": "anh-goc-nguoi-dung",
+      "file": "output/ms-studio-vach-tivi/ref/F0_hien_trang_cu.jpg",
+      "mo_ta": "Hiện trạng phòng khách cũ: tường sơn kem ố mốc chân tường, đồng hồ gỗ tròn, Tivi treo tường, kệ gỗ cánh gián cũ, rèm xanh hoa văn cổ điển."
+    },
+    {
+      "id": "F1",
+      "nguon": "tao-anh-ai",
+      "file": "output/ms-studio-vach-tivi/frames/F1_thao_do_lot_san_gian_giao.png",
+      "mo_ta": "Đã tháo Tivi, đồng hồ, rèm cũ và dời kệ gỗ cũ đi; mặt sàn lót kín bìa carton bảo vệ; giàn giáo khung nhôm trong nhà + thang chữ A + máy cắt trượt + chân máy laser + kiện tấm than tre & lam sóng tập kết gọn; 3 kỹ thuật viên mặc áo đồng phục MS Studio (2 nam, 1 nữ) cầm thước cuộn và bản vẽ khảo sát tường trống."
+    },
+    {
+      "id": "F2",
+      "nguon": "tao-anh-ai",
+      "file": "output/ms-studio-vach-tivi/frames/F2_ban_laser_di_xuong_dien_am.png",
+      "mo_ta": "Máy cân bằng laser tia xanh chiếu lưới trục đứng chính tâm & đường ngang trên tường; trần thạch cao đã khoét lắp 2 miệng gió điều hòa khe dài màu đen + dây chờ đèn chùm giữa trần; toàn bộ bức tường đã đóng hệ khung xương đà phẳng & tấm cốt nền chống ẩm chia đúng 5 khoang với ống gen dây điện âm chờ cho Tivi và 2 khe LED dọc; 2 kỹ thuật viên nam MS Studio trên giàn giáo bắn vít khung xương, kỹ thuật viên nữ kiểm tra cốt laser."
+    },
+    {
+      "id": "F3",
+      "nguon": "tao-anh-ai",
+      "file": "output/ms-studio-vach-tivi/frames/F3_op_than_tre_van_da_trung_tam.png",
+      "mo_ta": "Mảng trung tâm đã gắn 2 thanh nhôm profile LED dọc hai biên và ốp hoàn chỉnh tấm than tre vân đá cẩm thạch xanh-vàng đối xứng (Bookmatched Marble Charcoal Panel, đã khoét lỗ dây Tivi ở tâm, đèn chưa bật); hai bên sườn trái/phải vẫn đang lộ hệ khung xương cốt nền; dưới sàn carton có bàn cắt, súng bơm keo chuyên dụng và tấm lam sóng chuẩn bị ốp; 3 kỹ thuật viên MS Studio đang miết phẳng mép tấm đá và đo tấm tiếp theo."
+    },
+    {
+      "id": "F4",
+      "nguon": "tao-anh-ai",
+      "file": "output/ms-studio-vach-tivi/frames/F4_op_lam_song_va_guong_den_hai_ben.png",
+      "mo_ta": "Hai dải ngoài cùng trái/phải đã ốp kín kịch trần bằng lam sóng gỗ óc chó (khoét lỗ âm lắp lại chuẩn xác mặt công tắc trắng bên trái và cụm điều khiển điều hòa + công tắc bên phải); hai khoang chuyển tiếp sát vách đá đã ốp tấm than tre tráng gương đen bóng kèm 3 thanh đố gỗ đứng thẳng tắp mỗi bên; giàn giáo đã hạ gọn sang một bên, 3 kỹ thuật viên MS Studio đang kiểm tra đường ghép nối."
+    },
+    {
+      "id": "F5",
+      "nguon": "tao-anh-ai",
+      "file": "output/ms-studio-vach-tivi/frames/F5_lap_den_chum_ke_tivi_moi_di_led.png",
+      "mo_ta": "Giàn giáo đã dọn ra ngoài; giữa trần đã lắp xong bộ đèn chùm pha lê khung tròn mạ vàng; 2 rãnh dọc vách đá đã luồn dây LED & đóng nắp mica tán sáng (đèn chưa bật); dưới sàn đã đặt chuẩn tâm hệ kệ Tivi gỗ óc chó bo cong 2 đầu, mặt đá đen tia vàng, chân viền inox mạ vàng (đầu thu đã lắp vào khoang giữa); 2 nam MS Studio đang đấu dây nguồn dưới kệ, nữ kỹ thuật viên cầm thang chữ A chuẩn bị lắp thiết bị."
+    },
+    {
+      "id": "F6",
+      "nguon": "tao-anh-ai",
+      "file": "output/ms-studio-vach-tivi/frames/F6_treo_tivi_dong_ho_rem_moi.png",
+      "mo_ta": "Chiếc Tivi màn hình phẳng đã được treo lại chính tâm vách đá cùng loa Soundbar đặt trên mặt kệ; phía trên Tivi đã treo đồng hồ kim loại mạ vàng hình vòng tròn & nhành lá vàng; bên phải đã treo xong bộ rèm vải xanh xám hiện đại một màu vén gọn; dưới sàn góc trái còn tấm bìa carton lót cùng vài mẩu gỗ cắt thừa, cuộn băng keo và tuýp keo trắng xanh; 3 kỹ thuật viên MS Studio đang lau sạch mặt vách & chuẩn bị bày decor (hệ đèn LED vách và đèn chùm vẫn đang tắt)."
+    },
+    {
+      "id": "F7",
+      "nguon": "anh-goc-nguoi-dung",
+      "file": "output/ms-studio-vach-tivi/ref/F7_hoan_thien_moi.jpg",
+      "mo_ta": "Ảnh hoàn thiện thực tế của người dùng: toàn bộ đèn chùm pha lê, 2 dải LED hắt khe vách đá và LED gầm kệ bật sáng vàng ấm sang trọng; bình hoa trắng kem, hươu vàng, sách, lọ khuếch tán tinh dầu & vòng decor vàng đã đặt trên kệ; đội ngũ đã bước ra ngoài khung hình, góc trái sàn còn tấm carton + băng keo + tuýp keo thực tế."
+    }
+  ],
+  "scenes": [
+    {
+      "id": "c01",
+      "bat_dau_giay": 0.0,
+      "ket_thuc_giay": 4.2,
+      "noi_dung": "Hiện trạng cũ (1.0s tĩnh) -> Đội ngũ 3 bạn MS Studio (2 nam, 1 nữ) vào khảo sát, tháo Tivi & đồng hồ cũ, tháo rèm cũ, khiêng kệ gỗ cũ ra ngoài, trải bìa carton bảo vệ sàn gỗ và dựng giàn giáo nhôm + tập kết máy cắt, máy laser, vật tư (F0 -> F1).",
+      "loi_doc": "",
+      "chu_tren_man_hinh": "01. KHẢO SÁT • THÁO DỠ & BẢO VỆ MẶT BẰNG",
+      "nguon_asset": "flow",
+      "prompt_ai": "Locked-off wide tripod architectural construction timelapse. Three skilled interior technicians in matching dark polo uniforms with gold MS STUDIO logo carefully lift down the wall-mounted TV and round clock, carry out the old wooden cabinet and patterned blue curtain, lay protective cardboard sheets across the walnut floor, and wheel in an indoor aluminum scaffold, miter saw, laser level tripod, and stacked wall panels. Realistic construction workflow, forward progression only, no camera movement, no speech, mouth closed, no text overlays, no captions.",
+      "model": "flow::flow-omni-1.2-flash",
+      "anh_tham_chieu": ["F0", "F1"],
+      "thoi_luong_clip_giay": 8,
+      "speed_hau_ky": 2.5,
+      "asset": { "file": "", "do_dai_giay": null, "kiem": "chua", "ghi_chu": "Chế độ Khung hình (Start=F0, End=F1)" },
+      "so_lan_tao": 0
+    },
+    {
+      "id": "c02",
+      "bat_dau_giay": 4.2,
+      "ket_thuc_giay": 7.8,
+      "noi_dung": "Bật máy cân bằng laser tia xanh lấy tim trục đối xứng; 1 nam đứng trên giàn giáo khoét trần thạch cao lắp 2 cửa gió điều hòa khe dài & dây chờ đèn chùm; 1 nam khoan đóng hệ khung xương phẳng + tấm cốt chống ẩm lên tường ố cũ & đi ống gen dây điện âm cho LED; bạn nữ đo kiểm cốt ổ điện hai bên (F1 -> F2).",
+      "loi_doc": "",
+      "chu_tren_man_hinh": "02. BẮN CỐT LASER • ĐI ĐIỆN ÂM & ĐÓNG KHUNG XƯƠNG",
+      "nguon_asset": "flow",
+      "prompt_ai": "Locked-off wide tripod construction timelapse. Green cross-line laser level beams project vertical center and horizontal lines onto the wall. Using the indoor aluminum scaffold, the three MS Studio technicians install two linear ceiling AC slot vents, route concealed LED electrical conduits, and drill moisture-resistant backing battens and flat substrate boards across the wall following the green laser lines while checking measurements with a tape measure. Realistic tool usage, forward progression, static camera, no speech, mouth closed, no text overlays, no captions.",
+      "model": "flow::flow-omni-1.2-flash",
+      "anh_tham_chieu": ["F1", "F2"],
+      "thoi_luong_clip_giay": 8,
+      "speed_hau_ky": 2.2,
+      "asset": { "file": "", "do_dai_giay": null, "kiem": "chua", "ghi_chu": "Chế độ Khung hình (Start=F1, End=F2)" },
+      "so_lan_tao": 0
+    },
+    {
+      "id": "c03",
+      "bat_dau_giay": 7.8,
+      "ket_thuc_giay": 11.4,
+      "noi_dung": "Đo và dùng máy cắt cắt chuẩn tấm than tre vân đá đối xứng (khoét lỗ dây Tivi ở tâm), bơm keo chuyên dụng hình ziczac mặt sau tấm bằng súng bắn keo, gắn 2 thanh nhôm profile LED dọc hai biên rồi 2 nam đứng trên giàn giáo nâng ốp khít mảng đá trung tâm theo tia laser (F2 -> F3).",
+      "loi_doc": "",
+      "chu_tren_man_hinh": "03. ĐO CẮT • BƠM KEO & ỐP VÁCH THAN TRE VÂN ĐÁ ĐỐI XỨNG",
+      "nguon_asset": "flow",
+      "prompt_ai": "Locked-off wide tripod construction timelapse. On the cardboard-covered floor, the three MS Studio technicians measure and cut large bookmatched blue-gold marble bamboo charcoal panels with a track saw, apply zigzag construction adhesive from a caulking gun onto the panel backs, mount two vertical recessed aluminum LED channels, and lift the bookmatched panels onto the center wall frame from the scaffold, pressing firmly and fastening hidden clips along the laser line. Static camera, forward construction progression, no speech, mouth closed, no text overlays, no captions.",
+      "model": "flow::flow-omni-1.2-flash",
+      "anh_tham_chieu": ["F2", "F3"],
+      "thoi_luong_clip_giay": 8,
+      "speed_hau_ky": 2.2,
+      "asset": { "file": "", "do_dai_giay": null, "kiem": "chua", "ghi_chu": "Chế độ Khung hình (Start=F2, End=F3)" },
+      "so_lan_tao": 0
+    },
+    {
+      "id": "c04",
+      "bat_dau_giay": 11.4,
+      "ket_thuc_giay": 15.0,
+      "noi_dung": "Đo khoét lỗ ổ công tắc hai bên bằng máy cắt rung, cắt chiều dài lam sóng gỗ óc chó trên máy cắt bàn, bơm keo mặt sau và ốp kín 2 biên lam sóng (gắn lại mặt công tắc điện) + ốp tấm than tre tráng gương đen bóng và 3 thanh đố gỗ đứng mỗi bên (F3 -> F4).",
+      "loi_doc": "",
+      "chu_tren_man_hinh": "04. ỐP LAM SÓNG GỖ ÓC CHÓ & VÁCH TRÁNG GƯƠNG ĐEN",
+      "nguon_asset": "flow",
+      "prompt_ai": "Locked-off wide tripod construction timelapse. The three MS Studio technicians cut walnut fluted wall slats to ceiling height on the miter saw, cut precise rectangular cutouts for the left and right wall switches, apply adhesive to the backs, and install the outer walnut fluted panels, refitting the white switch plates flush, then bond glossy black mirror panels and vertical walnut trim battens symmetrically on both sides of the center marble wall using the scaffold. Static camera, forward progression, no speech, mouth closed, no text overlays, no captions.",
+      "model": "flow::flow-omni-1.2-flash",
+      "anh_tham_chieu": ["F3", "F4"],
+      "thoi_luong_clip_giay": 8,
+      "speed_hau_ky": 2.2,
+      "asset": { "file": "", "do_dai_giay": null, "kiem": "chua", "ghi_chu": "Chế độ Khung hình (Start=F3, End=F4)" },
+      "so_lan_tao": 0
+    },
+    {
+      "id": "c05",
+      "bat_dau_giay": 15.0,
+      "ket_thuc_giay": 18.4,
+      "noi_dung": "Luồn dây LED + đóng nắp chụp tán sáng vào 2 khe dọc vách đá, lắp đèn chùm pha lê mạ vàng lên tâm trần, dọn giàn giáo ra ngoài và 3 bạn cùng khiêng hệ kệ Tivi gỗ óc chó bo cong mặt đá đen chân viền vàng vào đấu nối nguồn điện (F4 -> F5).",
+      "loi_doc": "",
+      "chu_tren_man_hinh": "05. LẮP ĐÈN CHÙM • ĐI LED KHE & LẮP KỆ TIVI MỚI",
+      "nguon_asset": "flow",
+      "prompt_ai": "Locked-off wide tripod construction timelapse. One MS Studio technician on a ladder mounts the round gold crystal chandelier onto the center tray ceiling while another presses LED strips and diffuser covers into the two vertical wall channels; they wheel the scaffold out of the room and together carry in the curved walnut and black-marble TV console with gold base trim, positioning it centered against the wall and connecting the wiring. Static camera, forward progression, no speech, mouth closed, no text overlays, no captions.",
+      "model": "flow::flow-omni-1.2-flash",
+      "anh_tham_chieu": ["F4", "F5"],
+      "thoi_luong_clip_giay": 8,
+      "speed_hau_ky": 2.4,
+      "asset": { "file": "", "do_dai_giay": null, "kiem": "chua", "ghi_chu": "Chế độ Khung hình (Start=F4, End=F5)" },
+      "so_lan_tao": 0
+    },
+    {
+      "id": "c06",
+      "bat_dau_giay": 18.4,
+      "ket_thuc_giay": 21.8,
+      "noi_dung": "Khoan bắt giá treo và nâng Tivi treo lại chính tâm vách đá + đặt loa Soundbar; lắp đồng hồ kim loại mạ vàng hình vòng tròn nhành lá phía trên Tivi; bạn nữ đứng trên thang chữ A bên phải treo bộ rèm vải xanh xám hiện đại một màu (F5 -> F6).",
+      "loi_doc": "",
+      "chu_tren_man_hinh": "06. TREO TIVI • ĐỒNG HỒ NGHỆ THUẬT & RÈM CỬA MỚI",
+      "nguon_asset": "flow",
+      "prompt_ai": "Locked-off wide tripod construction timelapse. Two MS Studio technicians bolt the wall bracket onto the center marble wall, lift and mount the flat-screen TV level in the center, place the soundbar on the console, and hang the gold ring-and-leaf decorative wall clock above the TV, while the third technician on a stepladder hangs the new solid slate-blue pleated curtain on the right window track and ties the strap neatly, then removes the ladder. Static camera, forward progression, no speech, mouth closed, no text overlays, no captions.",
+      "model": "flow::flow-omni-1.2-flash",
+      "anh_tham_chieu": ["F5", "F6"],
+      "thoi_luong_clip_giay": 8,
+      "speed_hau_ky": 2.4,
+      "asset": { "file": "", "do_dai_giay": null, "kiem": "chua", "ghi_chu": "Chế độ Khung hình (Start=F5, End=F6)" },
+      "so_lan_tao": 0
+    },
+    {
+      "id": "c07",
+      "bat_dau_giay": 21.8,
+      "ket_thuc_giay": 28.0,
+      "noi_dung": "Lau bóng toàn bộ mặt gương & vách đá bằng khăn microfiber, bày bình hoa trắng kem + hươu vàng + sách + vòng decor vàng lên mặt kệ, thu dọn đồ nghề lớn ra ngoài, bấm công tắc bật sáng đồng loạt Đèn Chùm + 2 dải LED hắt vách đá + LED gầm kệ vàng ấm và bước ra ngoài để lộ toàn cảnh hoàn thiện 100% khớp ảnh thực tế (F6 -> F7 + giữ tĩnh 3.0s kết).",
+      "loi_doc": "",
+      "chu_tren_man_hinh": "07. VỆ SINH • LÊN ĐÈN NGHIỆM THU HOÀN THIỆN | MS STUDIO",
+      "nguon_asset": "flow",
+      "prompt_ai": "Locked-off wide tripod construction timelapse. The three MS Studio technicians wipe clean the glossy mirror panels, marble wall, and TV screen with microfiber cloths, arrange the cream flower vase, stacked books with gold deer figurine, reed diffuser, and gold ring sculpture onto the console, carry their toolboxes out through the left glass door, switch on the warm gold vertical LED strips, under-cabinet LED glow, and crystal chandelier, and step out of frame revealing the finished luxury living room wall. Static camera, forward progression, no speech, mouth closed, no text overlays, no captions.",
+      "model": "flow::flow-omni-1.2-flash",
+      "anh_tham_chieu": ["F6", "F7"],
+      "thoi_luong_clip_giay": 8,
+      "speed_hau_ky": 2.5,
+      "asset": { "file": "", "do_dai_giay": null, "kiem": "chua", "ghi_chu": "Chế độ Khung hình (Start=F6, End=F7)" },
+      "so_lan_tao": 0
+    }
+  ],
+  "credit": {
+    "so_clip_ai_duoc_duyet": 7,
+    "so_clip_ai_da_tao": 0,
+    "so_anh_ai_duoc_duyet": 7,
+    "so_anh_ai_da_tao": 0,
+    "so_lan_tao_lai": 0
+  },
+  "loi": [],
+  "dau_ra": {
+    "video": "Z:/Drive của tôi/AI_Full_Studio/04_Videos_Final/ms-studio-vach-tivi-timelapse.mp4",
+    "bao_cao": "output/ms-studio-vach-tivi/report.md"
+  },
+  "nhat_ky": [
+    {
+      "luc": "2026-11-18T15:39:00+07:00",
+      "agent": "content",
+      "viec": "Phân tích kỹ thuật đối chiếu 2 ảnh gốc (F0_hien_trang_cu.jpg & F7_hoan_thien_moi.jpg), lập chuỗi 8 ảnh mốc (F0->F7) và 7 chặng thi công thực tế không nhảy cóc, lưu job.json ở trạng thái cho-duyet-kich-ban."
+    },
+    {
+      "luc": "2026-11-18T15:46:30+07:00",
+      "agent": "coordinator",
+      "viec": "Người dùng đã duyệt: tự tạo áo đồng phục MS Studio + 3 nhân vật (2 nam 1 nữ), video sạch 100% không chữ chỉ nhạc nền Timelapse, thực hiện qua Canvas. Chuyển trạng thái sang da-duyet-kich-ban."
+    }
+  ]
+}

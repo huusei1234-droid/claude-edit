@@ -1,0 +1,2197 @@
+{
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "total_frames": 4017,
+  "total_dur": 133.9,
+  "shots": [
+    {
+      "t0": 0.0,
+      "t1": 1.3,
+      "src": "d:\\AI\\full studio\\output\\f20-set-qua-2011\\v3_pro\\brolls_v3\\intro_01_gimbal_sets.mp4",
+      "ss": 0.0,
+      "zoom": "(1.0, 1.05)",
+      "sfx_in": "magic_reveal",
+      "pip": null
+    },
+    {
+      "t0": 1.3,
+      "t1": 2.6,
+      "src": "d:\\AI\\full studio\\output\\f20-set-qua-2011\\v3_pro\\brolls_v3\\intro_02_rows_sets.mp4",
+      "ss": 0.0,
+      "zoom": "(1.04, 1.0)",
+      "sfx_in": "whoosh_tvc",
+      "pip": null
+    },
+    {
+      "t0": 2.6,
+      "t1": 3.9,
+      "src": "d:\\AI\\full studio\\output\\f20-set-qua-2011\\v3_pro\\brolls_v3\\intro_03_shelf_sets.mp4",
+      "ss": 0.0,
+      "zoom": "(1.0, 1.05)",
+      "sfx_in": "whoosh_tvc",
+      "pip": null
+    },
+    {
+      "t0": 3.9,
+      "t1": 13.1333,
+      "src": "d:\\AI\\full studio\\output\\f20-set-qua-2011\\v3_pro\\aroll_v3\\s01_open_live.mp4",
+      "ss": 0.0,
+      "zoom": "aroll_s01",
+      "sfx_in": "swoosh_soft",
+      "pip": null
+    },
+    {
+      "t0": 13.1333,
+      "t1": 16.25,
+      "src": "d:\\AI\\full studio\\output\\f20-set-qua-2011\\v3_pro\\brolls_v3\\real_anh_hau_handover.mp4",
+      "ss": 0.2,
+      "zoom": "(1.0, 1.05)",
+      "sfx_in": "whoosh_tvc",
+      "pip": null
+    },
+    {
+      "t0": 16.25,
+      "t1": 19.55,
+      "src": "d:\\AI\\full studio\\output\\f20-set-qua-2011\\v3_pro\\videos_v3\\V3_vid15_anh_hau.mp4",
+      "ss": 0.0,
+      "zoom": "(1.0, 1.04)",
+      "sfx_in": "shutter",
+      "pip": null
+    },
+    {
+      "t0": 19.55,
+      "t1": 22.5667,
+      "src": "d:\\AI\\full studio\\output\\f20-set-qua-2011\\v3_pro\\brolls_v3\\real_13sets_team.mp4",
+      "ss": 0.2,
+      "zoom": "(1.0, 1.05)",
+      "sfx_in": "whoosh_tvc",
+      "pip": null
+    },
+    {
+      "t0": 22.5667,
+      "t1": 25.85,
+      "src": "d:\\AI\\full studio\\output\\f20-set-qua-2011\\v3_pro\\brolls_v3\\real_hanoi_carton.mp4",
+      "ss": 0.2,
+      "zoom": "(1.0, 1.05)",
+      "sfx_in": "whoosh_tvc",
+      "pip": null
+    },
+    {
+      "t0": 25.85,
+      "t1": 29.15,
+      "src": "d:\\AI\\full studio\\output\\f20-set-qua-2011\\v3_pro\\brolls_v3\\real_hcmc_suv.mp4",
+      "ss": 0.2,
+      "zoom": "(1.04, 1.0)",
+      "sfx_in": "whoosh_tvc",
+      "pip": null
+    },
+    {
+      "t0": 29.15,
+      "t1": 33.3667,
+      "src": "d:\\AI\\full studio\\output\\f20-set-qua-2011\\v3_pro\\brolls_v3\\pov_gimbal_104_sets.mp4",
+      "ss": 0.0,
+      "zoom": "(1.0, 1.05)",
+      "sfx_in": "riser_open",
+      "pip": null
+    },
+    {
+      "t0": 33.3667,
+      "t1": 39.3,
+      "src": "d:\\AI\\full studio\\output\\f20-set-qua-2011\\v3_pro\\brolls_v3\\pov_long_104_sets.mp4",
+      "ss": 0.2,
+      "zoom": "(1.0, 1.04)",
+      "sfx_in": "magic_reveal",
+      "pip": null
+    },
+    {
+      "t0": 39.3,
+      "t1": 44.1667,
+      "src": "d:\\AI\\full studio\\output\\f20-set-qua-2011\\v3_pro\\aroll_v3\\s05_intro_live.mp4",
+      "ss": 0.0,
+      "zoom": "(1.0, 1.05)",
+      "sfx_in": "swoosh_soft",
+      "pip": null
+    },
+    {
+      "t0": 44.1667,
+      "t1": 46.3,
+      "src": "d:\\AI\\full studio\\output\\f20-set-qua-2011\\v3_pro\\videos_v3\\V3_vid01_set_qua_hero.mp4",
+      "ss": 0.0,
+      "zoom": "(1.0, 1.04)",
+      "sfx_in": "magic_reveal",
+      "pip": null
+    },
+    {
+      "t0": 46.3,
+      "t1": 49.55,
+      "src": "d:\\AI\\full studio\\output\\f20-set-qua-2011\\v3_pro\\videos_v3\\V3_vid02_skanest_box.mp4",
+      "ss": 0.0,
+      "zoom": "(1.0, 1.05)",
+      "sfx_in": "whoosh_tvc",
+      "pip": null
+    },
+    {
+      "t0": 49.55,
+      "t1": 53.95,
+      "src": "d:\\AI\\full studio\\output\\f20-set-qua-2011\\v3_pro\\videos_v3\\V3_vid03_to_yen_pure.mp4",
+      "ss": 0.0,
+      "zoom": "(1.0, 1.05)",
+      "sfx_in": "shine_accent",
+      "pip": null
+    },
+    {
+      "t0": 53.95,
+      "t1": 56.15,
+      "src": "d:\\AI\\full studio\\output\\f20-set-qua-2011\\v3_pro\\videos_v3\\V3_vid04_tao_do_dtht.mp4",
+      "ss": 0.0,
+      "zoom": "(1.0, 1.04)",
+      "sfx_in": "bubble_in",
+      "pip": null
+    },
+    {
+      "t0": 56.15,
+      "t1": 58.1333,
+      "src": "d:\\AI\\full studio\\output\\f20-set-qua-2011\\v3_pro\\videos_v3\\V3_vid05_ky_tu_duong_phen.mp4",
+      "ss": 0.0,
+      "zoom": "(1.0, 1.04)",
+      "sfx_in": "bubble_in",
+      "pip": null
+    },
+    {
+      "t0": 58.1333,
+      "t1": 61.15,
+      "src": "DUAL_SEAWEED_JARS",
+      "ss": 0.0,
+      "zoom": "(1.0, 1.0)",
+      "sfx_in": "whoosh_pip",
+      "pip": null
+    },
+    {
+      "t0": 61.15,
+      "t1": 63.8,
+      "src": "d:\\AI\\full studio\\output\\f20-set-qua-2011\\v3_pro\\videos_v3\\V3_vid06_hu_say_gion.mp4",
+      "ss": 0.3,
+      "zoom": "(1.0, 1.05)",
+      "sfx_in": "pop_tvc",
+      "pip": null
+    },
+    {
+      "t0": 63.8,
+      "t1": 66.6,
+      "src": "d:\\AI\\full studio\\output\\f20-set-qua-2011\\v3_pro\\videos_v3\\V3_vid07_hu_say_me.mp4",
+      "ss": 0.3,
+      "zoom": "(1.0, 1.05)",
+      "sfx_in": "pop_tvc",
+      "pip": null
+    },
+    {
+      "t0": 66.6,
+      "t1": 72.0,
+      "src": "d:\\AI\\full studio\\output\\f20-set-qua-2011\\v3_pro\\videos_v3\\V3_vid08_banh_thuyen.mp4",
+      "ss": 0.0,
+      "zoom": "(1.0, 1.05)",
+      "sfx_in": "whoosh_tvc",
+      "pip": null
+    },
+    {
+      "t0": 72.0,
+      "t1": 75.75,
+      "src": "d:\\AI\\full studio\\output\\f20-set-qua-2011\\v3_pro\\videos_v3\\V3_vid09_kep_hat.mp4",
+      "ss": 0.0,
+      "zoom": "(1.0, 1.04)",
+      "sfx_in": "whoosh_tvc",
+      "pip": null
+    },
+    {
+      "t0": 75.75,
+      "t1": 80.3,
+      "src": "d:\\AI\\full studio\\output\\f20-set-qua-2011\\v3_pro\\videos_v3\\V3_vid12_kep_hat_bars.mp4",
+      "ss": 0.0,
+      "zoom": "(1.0, 1.05)",
+      "sfx_in": "pop_tvc",
+      "pip": null
+    },
+    {
+      "t0": 80.3,
+      "t1": 85.05,
+      "src": "FRAMED_YEN_HERO",
+      "ss": 0.0,
+      "zoom": "(1.0, 1.0)",
+      "sfx_in": "shine_accent",
+      "pip": null
+    },
+    {
+      "t0": 85.05,
+      "t1": 88.7,
+      "src": "d:\\AI\\full studio\\output\\f20-set-qua-2011\\v3_pro\\brolls_v3\\cam_nang_hold_clean.mp4",
+      "ss": 1.0,
+      "zoom": "(1.0, 1.05)",
+      "sfx_in": "whoosh_tvc",
+      "pip": null
+    },
+    {
+      "t0": 88.7,
+      "t1": 92.2333,
+      "src": "d:\\AI\\full studio\\output\\f20-set-qua-2011\\v3_pro\\videos_v3\\V3_vid10_chung_yen.mp4",
+      "ss": 0.0,
+      "zoom": "(1.0, 1.05)",
+      "sfx_in": "magic_reveal",
+      "pip": null
+    },
+    {
+      "t0": 92.2333,
+      "t1": 97.6333,
+      "src": "d:\\AI\\full studio\\output\\f20-set-qua-2011\\v3_pro\\videos_v3\\V3_vid13_gio_mica_real.mp4",
+      "ss": 0.0,
+      "zoom": "(1.0, 1.04)",
+      "sfx_in": "whoosh_tvc",
+      "pip": null
+    },
+    {
+      "t0": 97.6333,
+      "t1": 102.8667,
+      "src": "d:\\AI\\full studio\\output\\f20-set-qua-2011\\v3_pro\\aroll_v3\\s13_quai_live.mp4",
+      "ss": 0.0,
+      "zoom": "(1.0, 1.04)",
+      "sfx_in": "swoosh_soft",
+      "pip": "HANDLE_ZOOM_PIP"
+    },
+    {
+      "t0": 102.8667,
+      "t1": 105.75,
+      "src": "d:\\AI\\full studio\\output\\f20-set-qua-2011\\v3_pro\\videos_v3\\V3_vid13_gio_mica_real.mp4",
+      "ss": 1.2,
+      "zoom": "(1.08, 1.15)",
+      "sfx_in": "pop_tvc",
+      "pip": null
+    },
+    {
+      "t0": 105.75,
+      "t1": 108.7,
+      "src": "d:\\AI\\full studio\\output\\f20-set-qua-2011\\v3_pro\\videos_v3\\V3_vid14_quai_no_macro.mp4",
+      "ss": 0.0,
+      "zoom": "(1.0, 1.07)",
+      "sfx_in": "shine_accent",
+      "pip": null
+    },
+    {
+      "t0": 108.7,
+      "t1": 113.75,
+      "src": "d:\\AI\\full studio\\output\\f20-set-qua-2011\\v3_pro\\aroll_v3\\s15_sx_live.mp4",
+      "ss": 0.0,
+      "zoom": "(1.0, 1.05)",
+      "sfx_in": "swoosh_soft",
+      "pip": null
+    },
+    {
+      "t0": 113.75,
+      "t1": 115.8,
+      "src": "d:\\AI\\full studio\\output\\f20-set-qua-2011\\v3_pro\\brolls_v3\\real_factory_pack1.mp4",
+      "ss": 0.3,
+      "zoom": "(1.0, 1.05)",
+      "sfx_in": "whoosh_tvc",
+      "pip": null
+    },
+    {
+      "t0": 115.8,
+      "t1": 117.7333,
+      "src": "d:\\AI\\full studio\\output\\f20-set-qua-2011\\v3_pro\\brolls_v3\\real_factory_pack2.mp4",
+      "ss": 0.3,
+      "zoom": "(1.04, 1.0)",
+      "sfx_in": "whoosh_tvc",
+      "pip": null
+    },
+    {
+      "t0": 117.7333,
+      "t1": 130.6,
+      "src": "d:\\AI\\full studio\\output\\f20-set-qua-2011\\v3_pro\\aroll_v3\\s16_cta_live.mp4",
+      "ss": 0.0,
+      "zoom": "aroll_s16",
+      "sfx_in": "swoosh_soft",
+      "pip": "CTA_GIFT_PIP"
+    },
+    {
+      "t0": 130.6,
+      "t1": 133.9,
+      "src": "OFFICIAL_F20_ENDCARD",
+      "ss": 0.0,
+      "zoom": "(1.0, 1.0)",
+      "sfx_in": "magic_reveal",
+      "pip": null
+    }
+  ],
+  "top_tags": [
+    {
+      "t0": 3.95,
+      "t1": 12.9,
+      "title": "TRI ÂN NGÀY NHÀ GIÁO 20/11",
+      "sub": "Chuẩn Bị 104 Set Quà Sáng Nay"
+    },
+    {
+      "t0": 13.2,
+      "t1": 22.4,
+      "title": "KHÁCH ĐẶT TẠI NHA TRANG",
+      "sub": "Đăng Khoa Edu (77 Set) • Phụ Huynh (13 Set)"
+    },
+    {
+      "t0": 22.65,
+      "t1": 33.2,
+      "title": "GIAO ĐI HÀ NỘI & TP.HCM",
+      "sub": "Hà Nội (10 Set) • TP.HCM (04 Set)"
+    },
+    {
+      "t0": 33.45,
+      "t1": 39.1,
+      "title": "TOÀN CẢNH 104 SET QUÀ F20",
+      "sub": "Hoàn Thiện Chỉn Chu • Đúng Hẹn"
+    },
+    {
+      "t0": 44.25,
+      "t1": 58.0,
+      "title": "MÓN 01/04 • YẾN SÀO SKA NEST",
+      "sub": "Tổ Yến Sợi Dài & 04 Nguyên Liệu Chưng"
+    },
+    {
+      "t0": 58.2,
+      "t1": 66.45,
+      "title": "MÓN 02/04 • 02 HỘP RONG BIỂN F20",
+      "sub": "01 Sấy Giòn Cay Nhẹ • 01 Sấy Mè Không Cay"
+    },
+    {
+      "t0": 66.7,
+      "t1": 71.85,
+      "title": "MÓN 03/04 • BÁNH THUYỀN MIX HẠT",
+      "sub": "Gói 250g • Giòn Rụm Giàu Dưỡng Chất"
+    },
+    {
+      "t0": 72.1,
+      "t1": 80.15,
+      "title": "MÓN 04/04 • RONG BIỂN KẸP HẠT",
+      "sub": "Gói Lớn 500g • 22 – 24 Thanh Hạt"
+    },
+    {
+      "t0": 80.4,
+      "t1": 92.05,
+      "title": "TẶNG KÈM CẨM NANG YẾN SÀO",
+      "sub": "Công Dụng & Hướng Dẫn Chưng Đúng Cách"
+    },
+    {
+      "t0": 92.35,
+      "t1": 108.5,
+      "title": "GIỎ QUÀ MICA SANG TRỌNG",
+      "sub": "Quai Da Đỏ Đô • Hoa Điểm Nhấn & Nơ Màu Be"
+    },
+    {
+      "t0": 108.85,
+      "t1": 117.55,
+      "title": "THỰC PHẨM F20 TRỰC TIẾP SẢN XUẤT",
+      "sub": "An Tâm Chất Lượng • Giá Tận Xưởng"
+    }
+  ],
+  "product_badges": [
+    {
+      "t0": 46.4,
+      "t1": 49.45,
+      "title": "SET YẾN SÀO CAO CẤP SKA NEST",
+      "sub": "Nha Trang – Khánh Hòa"
+    },
+    {
+      "t0": 49.65,
+      "t1": 53.85,
+      "title": "01 TỔ YẾN SÀO TINH CHẾ",
+      "sub": "Dòng Tiêu Chuẩn • Nguyên Tổ Sợi Dài"
+    },
+    {
+      "t0": 54.0,
+      "t1": 56.08,
+      "title": "TÁO ĐỎ & ĐÔNG TRÙNG HẠ THẢO",
+      "sub": "Nguyên Liệu Chưng Đi Kèm"
+    },
+    {
+      "t0": 56.2,
+      "t1": 58.05,
+      "title": "KỶ TỬ & 01 HỘP ĐƯỜNG PHÈN",
+      "sub": "Trọn Vị Thanh Ngọt Bổ Dưỡng"
+    },
+    {
+      "t0": 61.22,
+      "t1": 63.72,
+      "title": "01 HỘP RONG BIỂN SẤY GIÒN",
+      "sub": "Tuệ Tâm F20 • Vị Cay Nhẹ Thơm Ngon"
+    },
+    {
+      "t0": 63.88,
+      "t1": 66.5,
+      "title": "01 HỘP RONG BIỂN SẤY MÈ",
+      "sub": "Tuệ Tâm F20 • Vị Không Cay Dễ Ăn"
+    },
+    {
+      "t0": 66.75,
+      "t1": 71.88,
+      "title": "BÁNH THUYỀN MIX HẠT • 250G",
+      "sub": "Hạnh Nhân • Hạt Điều • Bí Xanh • Mật Ong"
+    },
+    {
+      "t0": 72.12,
+      "t1": 75.65,
+      "title": "RONG BIỂN KẸP HẠT • GÓI 500G",
+      "sub": "Thực Phẩm F20 • Nhẹ Calo Giàu Dưỡng Chất"
+    },
+    {
+      "t0": 75.85,
+      "t1": 80.18,
+      "title": "GỒM 22 – 24 THANH HẠT",
+      "sub": "Giòn Rụm • Đóng Gói Từng Thanh Tiện Lợi"
+    },
+    {
+      "t0": 88.8,
+      "t1": 92.1,
+      "title": "CHƯNG YẾN ĐÚNG CÁCH",
+      "sub": "Giữ Trọn Vi Chất & Sợi Yến Dai Ngon"
+    }
+  ],
+  "subtitles": [
+    {
+      "t0": 3.92,
+      "t1": 7.15,
+      "plain_lines": [
+        "Hôm nay bên Oanh chuẩn bị",
+        "104 SET QUÀ cho khách đặt"
+      ],
+      "lines": [
+        [
+          [
+            "Hôm nay bên Oanh chuẩn bị",
+            "reg"
+          ]
+        ],
+        [
+          [
+            "104 SET QUÀ",
+            "gold"
+          ],
+          [
+            "cho khách đặt",
+            "reg"
+          ]
+        ]
+      ]
+    },
+    {
+      "t0": 7.2,
+      "t1": 10.75,
+      "plain_lines": [
+        "làm quà biếu tặng thầy cô giáo"
+      ],
+      "lines": [
+        [
+          [
+            "làm",
+            "reg"
+          ],
+          [
+            "quà biếu tặng",
+            "gold"
+          ],
+          [
+            "thầy cô giáo",
+            "reg"
+          ]
+        ]
+      ]
+    },
+    {
+      "t0": 10.8,
+      "t1": 13.08,
+      "plain_lines": [
+        "nhân dịp tri ân ngày 20 THÁNG 11"
+      ],
+      "lines": [
+        [
+          [
+            "nhân dịp tri ân ngày",
+            "reg"
+          ],
+          [
+            "20 THÁNG 11",
+            "gold"
+          ]
+        ]
+      ]
+    },
+    {
+      "t0": 13.18,
+      "t1": 15.05,
+      "plain_lines": [
+        "Ở Nha Trang có 02 khách hàng:"
+      ],
+      "lines": [
+        [
+          [
+            "Ở",
+            "reg"
+          ],
+          [
+            "Nha Trang",
+            "green"
+          ],
+          [
+            "có 02 khách hàng:",
+            "reg"
+          ]
+        ]
+      ]
+    },
+    {
+      "t0": 15.1,
+      "t1": 19.35,
+      "plain_lines": [
+        "1 là ANH HẬU tại Trung tâm",
+        "Luyện thi ĐĂNG KHOA EDU đặt 77 SET"
+      ],
+      "lines": [
+        [
+          [
+            "1 là",
+            "reg"
+          ],
+          [
+            "ANH HẬU",
+            "gold"
+          ],
+          [
+            "tại Trung tâm",
+            "reg"
+          ]
+        ],
+        [
+          [
+            "Luyện thi",
+            "reg"
+          ],
+          [
+            "ĐĂNG KHOA EDU",
+            "gold"
+          ],
+          [
+            "đặt",
+            "reg"
+          ],
+          [
+            "77 SET",
+            "green"
+          ]
+        ]
+      ]
+    },
+    {
+      "t0": 19.5,
+      "t1": 22.48,
+      "plain_lines": [
+        "2 là nhóm HỘI PHỤ HUYNH",
+        "đặt 13 SET QUÀ"
+      ],
+      "lines": [
+        [
+          [
+            "2 là nhóm",
+            "reg"
+          ],
+          [
+            "HỘI PHỤ HUYNH",
+            "gold"
+          ]
+        ],
+        [
+          [
+            "đặt",
+            "reg"
+          ],
+          [
+            "13 SET QUÀ",
+            "green"
+          ]
+        ]
+      ]
+    },
+    {
+      "t0": 22.58,
+      "t1": 25.78,
+      "plain_lines": [
+        "Khách thứ 3 là giáo viên ở HÀ NỘI",
+        "đặt 10 SET QUÀ"
+      ],
+      "lines": [
+        [
+          [
+            "Khách thứ 3 là giáo viên ở",
+            "reg"
+          ],
+          [
+            "HÀ NỘI",
+            "gold"
+          ]
+        ],
+        [
+          [
+            "đặt",
+            "reg"
+          ],
+          [
+            "10 SET QUÀ",
+            "green"
+          ]
+        ]
+      ]
+    },
+    {
+      "t0": 25.85,
+      "t1": 29.05,
+      "plain_lines": [
+        "và một bạn ở TP. HỒ CHÍ MINH",
+        "đặt 04 SET QUÀ"
+      ],
+      "lines": [
+        [
+          [
+            "và một bạn ở",
+            "reg"
+          ],
+          [
+            "TP. HỒ CHÍ MINH",
+            "gold"
+          ]
+        ],
+        [
+          [
+            "đặt",
+            "reg"
+          ],
+          [
+            "04 SET QUÀ",
+            "green"
+          ]
+        ]
+      ]
+    },
+    {
+      "t0": 29.18,
+      "t1": 33.25,
+      "plain_lines": [
+        "Tổng sáng nay bên Oanh chuẩn bị đủ",
+        "104 SET QUÀ nha mọi người!"
+      ],
+      "lines": [
+        [
+          [
+            "Tổng sáng nay bên Oanh chuẩn bị đủ",
+            "reg"
+          ]
+        ],
+        [
+          [
+            "104 SET QUÀ",
+            "gold"
+          ],
+          [
+            "nha mọi người!",
+            "reg"
+          ]
+        ]
+      ]
+    },
+    {
+      "t0": 33.4,
+      "t1": 39.15,
+      "plain_lines": [
+        "Đây là toàn bộ SET QUÀ bên Oanh",
+        "đã hoàn thiện chỉn chu sáng nay ạ!"
+      ],
+      "lines": [
+        [
+          [
+            "Đây là toàn bộ",
+            "reg"
+          ],
+          [
+            "SET QUÀ",
+            "gold"
+          ],
+          [
+            "bên Oanh",
+            "reg"
+          ]
+        ],
+        [
+          [
+            "đã",
+            "reg"
+          ],
+          [
+            "hoàn thiện chỉn chu",
+            "green"
+          ],
+          [
+            "sáng nay ạ!",
+            "reg"
+          ]
+        ]
+      ]
+    },
+    {
+      "t0": 39.38,
+      "t1": 44.08,
+      "plain_lines": [
+        "Bây giờ Oanh sẽ giới thiệu 01 SET QUÀ",
+        "của bên Oanh cho mọi người xem nhé!"
+      ],
+      "lines": [
+        [
+          [
+            "Bây giờ Oanh sẽ giới thiệu",
+            "reg"
+          ],
+          [
+            "01 SET QUÀ",
+            "gold"
+          ]
+        ],
+        [
+          [
+            "của bên Oanh cho mọi người xem nhé!",
+            "reg"
+          ]
+        ]
+      ]
+    },
+    {
+      "t0": 44.18,
+      "t1": 46.22,
+      "plain_lines": [
+        "Một set quà tặng sang trọng như thế này"
+      ],
+      "lines": [
+        [
+          [
+            "Một",
+            "reg"
+          ],
+          [
+            "set quà tặng sang trọng",
+            "gold"
+          ],
+          [
+            "như thế này",
+            "reg"
+          ]
+        ]
+      ]
+    },
+    {
+      "t0": 46.28,
+      "t1": 49.48,
+      "plain_lines": [
+        "đầu tiên gồm 01 SET YẾN SÀO CAO CẤP"
+      ],
+      "lines": [
+        [
+          [
+            "đầu tiên gồm",
+            "reg"
+          ],
+          [
+            "01 SET YẾN SÀO CAO CẤP",
+            "gold"
+          ]
+        ]
+      ]
+    },
+    {
+      "t0": 49.55,
+      "t1": 52.35,
+      "plain_lines": [
+        "có 01 TỔ YẾN SÀO TINH CHẾ",
+        "sợi dài • dòng TIÊU CHUẨN"
+      ],
+      "lines": [
+        [
+          [
+            "có",
+            "reg"
+          ],
+          [
+            "01 TỔ YẾN SÀO TINH CHẾ",
+            "gold"
+          ]
+        ],
+        [
+          [
+            "sợi dài • dòng",
+            "reg"
+          ],
+          [
+            "TIÊU CHUẨN",
+            "green"
+          ]
+        ]
+      ]
+    },
+    {
+      "t0": 52.45,
+      "t1": 56.08,
+      "plain_lines": [
+        "Kèm nguyên liệu chưng: TÁO ĐỎ",
+        "và ĐÔNG TRÙNG HẠ THẢO"
+      ],
+      "lines": [
+        [
+          [
+            "Kèm nguyên liệu chưng:",
+            "reg"
+          ],
+          [
+            "TÁO ĐỎ",
+            "gold"
+          ]
+        ],
+        [
+          [
+            "và",
+            "reg"
+          ],
+          [
+            "ĐÔNG TRÙNG HẠ THẢO",
+            "gold"
+          ]
+        ]
+      ]
+    },
+    {
+      "t0": 56.14,
+      "t1": 58.08,
+      "plain_lines": [
+        "cùng KỶ TỬ và 01 HỘP ĐƯỜNG PHÈN"
+      ],
+      "lines": [
+        [
+          [
+            "cùng",
+            "reg"
+          ],
+          [
+            "KỶ TỬ",
+            "gold"
+          ],
+          [
+            "và",
+            "reg"
+          ],
+          [
+            "01 HỘP ĐƯỜNG PHÈN",
+            "green"
+          ]
+        ]
+      ]
+    },
+    {
+      "t0": 58.18,
+      "t1": 61.1,
+      "plain_lines": [
+        "Thứ 2 là 02 HỘP RONG BIỂN",
+        "sấy giòn TUỆ TÂM F20"
+      ],
+      "lines": [
+        [
+          [
+            "Thứ 2 là",
+            "reg"
+          ],
+          [
+            "02 HỘP RONG BIỂN",
+            "gold"
+          ]
+        ],
+        [
+          [
+            "sấy giòn",
+            "reg"
+          ],
+          [
+            "TUỆ TÂM F20",
+            "green"
+          ]
+        ]
+      ]
+    },
+    {
+      "t0": 61.18,
+      "t1": 63.74,
+      "plain_lines": [
+        "01 hộp RONG BIỂN SẤY GIÒN",
+        "vị cay nhẹ thơm ngon"
+      ],
+      "lines": [
+        [
+          [
+            "01 hộp",
+            "reg"
+          ],
+          [
+            "RONG BIỂN SẤY GIÒN",
+            "gold"
+          ]
+        ],
+        [
+          [
+            "vị cay nhẹ",
+            "green"
+          ],
+          [
+            "thơm ngon",
+            "reg"
+          ]
+        ]
+      ]
+    },
+    {
+      "t0": 63.82,
+      "t1": 66.52,
+      "plain_lines": [
+        "và 01 hộp RONG BIỂN SẤY MÈ",
+        "vị không cay rất dễ ăn!"
+      ],
+      "lines": [
+        [
+          [
+            "và 01 hộp",
+            "reg"
+          ],
+          [
+            "RONG BIỂN SẤY MÈ",
+            "gold"
+          ]
+        ],
+        [
+          [
+            "vị không cay",
+            "green"
+          ],
+          [
+            "rất dễ ăn!",
+            "reg"
+          ]
+        ]
+      ]
+    },
+    {
+      "t0": 66.65,
+      "t1": 69.85,
+      "plain_lines": [
+        "Thứ 3 là 01 gói BÁNH THUYỀN MIX HẠT"
+      ],
+      "lines": [
+        [
+          [
+            "Thứ 3 là 01 gói",
+            "reg"
+          ],
+          [
+            "BÁNH THUYỀN MIX HẠT",
+            "gold"
+          ]
+        ]
+      ]
+    },
+    {
+      "t0": 69.9,
+      "t1": 71.92,
+      "plain_lines": [
+        "dinh dưỡng 250G • giòn rụm bổ dưỡng"
+      ],
+      "lines": [
+        [
+          [
+            "dinh dưỡng",
+            "reg"
+          ],
+          [
+            "250G",
+            "gold"
+          ],
+          [
+            "•",
+            "reg"
+          ],
+          [
+            "giòn rụm bổ dưỡng",
+            "green"
+          ]
+        ]
+      ]
+    },
+    {
+      "t0": 72.06,
+      "t1": 75.65,
+      "plain_lines": [
+        "Thứ 4 là gói lớn RONG BIỂN KẸP HẠT",
+        "trọng lượng 500G"
+      ],
+      "lines": [
+        [
+          [
+            "Thứ 4 là gói lớn",
+            "reg"
+          ],
+          [
+            "RONG BIỂN KẸP HẠT",
+            "gold"
+          ]
+        ],
+        [
+          [
+            "trọng lượng",
+            "reg"
+          ],
+          [
+            "500G",
+            "green"
+          ]
+        ]
+      ]
+    },
+    {
+      "t0": 75.75,
+      "t1": 80.18,
+      "plain_lines": [
+        "bên trong gồm từ 22 ĐẾN 24 THANH",
+        "bánh hạt dinh dưỡng nha mọi người!"
+      ],
+      "lines": [
+        [
+          [
+            "bên trong gồm từ",
+            "reg"
+          ],
+          [
+            "22 ĐẾN 24 THANH",
+            "gold"
+          ]
+        ],
+        [
+          [
+            "bánh hạt dinh dưỡng",
+            "green"
+          ],
+          [
+            "nha mọi người!",
+            "reg"
+          ]
+        ]
+      ]
+    },
+    {
+      "t0": 80.32,
+      "t1": 85.0,
+      "plain_lines": [
+        "Giá trị nhất là TỔ YẾN TINH CHẾ",
+        "dòng tiêu chuẩn SỢI DÀI"
+      ],
+      "lines": [
+        [
+          [
+            "Giá trị nhất là",
+            "reg"
+          ],
+          [
+            "TỔ YẾN TINH CHẾ",
+            "gold"
+          ]
+        ],
+        [
+          [
+            "dòng tiêu chuẩn",
+            "reg"
+          ],
+          [
+            "SỢI DÀI",
+            "green"
+          ]
+        ]
+      ]
+    },
+    {
+      "t0": 85.08,
+      "t1": 88.65,
+      "plain_lines": [
+        "được kèm theo 01 TỜ CẨM NANG",
+        "nêu rõ công dụng của yến sào"
+      ],
+      "lines": [
+        [
+          [
+            "được kèm theo",
+            "reg"
+          ],
+          [
+            "01 TỜ CẨM NANG",
+            "gold"
+          ]
+        ],
+        [
+          [
+            "nêu rõ",
+            "reg"
+          ],
+          [
+            "công dụng của yến sào",
+            "green"
+          ]
+        ]
+      ]
+    },
+    {
+      "t0": 88.72,
+      "t1": 92.15,
+      "plain_lines": [
+        "và hướng dẫn CHƯNG YẾN ĐÚNG CÁCH",
+        "cho mọi người nhé!"
+      ],
+      "lines": [
+        [
+          [
+            "và hướng dẫn",
+            "reg"
+          ],
+          [
+            "CHƯNG YẾN ĐÚNG CÁCH",
+            "gold"
+          ]
+        ],
+        [
+          [
+            "cho mọi người nhé!",
+            "reg"
+          ]
+        ]
+      ]
+    },
+    {
+      "t0": 92.26,
+      "t1": 97.52,
+      "plain_lines": [
+        "Tất cả xếp khéo léo trong GIỎ QUÀ MICA",
+        "trong suốt rất đẹp mắt!"
+      ],
+      "lines": [
+        [
+          [
+            "Tất cả xếp khéo léo trong",
+            "reg"
+          ],
+          [
+            "GIỎ QUÀ MICA",
+            "gold"
+          ]
+        ],
+        [
+          [
+            "trong suốt",
+            "green"
+          ],
+          [
+            "rất đẹp mắt!",
+            "reg"
+          ]
+        ]
+      ]
+    },
+    {
+      "t0": 97.68,
+      "t1": 102.78,
+      "plain_lines": [
+        "Bên trên có QUAI XÁCH BẰNG DA",
+        "màu đỏ đô rất là sang trọng!"
+      ],
+      "lines": [
+        [
+          [
+            "Bên trên có",
+            "reg"
+          ],
+          [
+            "QUAI XÁCH BẰNG DA",
+            "gold"
+          ]
+        ],
+        [
+          [
+            "màu đỏ đô",
+            "gold"
+          ],
+          [
+            "rất là sang trọng!",
+            "reg"
+          ]
+        ]
+      ]
+    },
+    {
+      "t0": 102.88,
+      "t1": 105.7,
+      "plain_lines": [
+        "Thiết kế thêm vài BÔNG HOA ĐIỂM NHẤN"
+      ],
+      "lines": [
+        [
+          [
+            "Thiết kế thêm vài",
+            "reg"
+          ],
+          [
+            "BÔNG HOA ĐIỂM NHẤN",
+            "gold"
+          ]
+        ]
+      ]
+    },
+    {
+      "t0": 105.76,
+      "t1": 108.6,
+      "plain_lines": [
+        "và một CHIẾC NƠ MÀU BE",
+        "rất xinh xắn như thế này!"
+      ],
+      "lines": [
+        [
+          [
+            "và một",
+            "reg"
+          ],
+          [
+            "CHIẾC NƠ MÀU BE",
+            "gold"
+          ]
+        ],
+        [
+          [
+            "rất xinh xắn như thế này!",
+            "reg"
+          ]
+        ]
+      ]
+    },
+    {
+      "t0": 108.85,
+      "t1": 113.7,
+      "plain_lines": [
+        "Đặc biệt sản phẩm đều do BÊN OANH",
+        "TRỰC TIẾP SẢN XUẤT"
+      ],
+      "lines": [
+        [
+          [
+            "Đặc biệt sản phẩm đều do",
+            "reg"
+          ],
+          [
+            "BÊN OANH",
+            "green"
+          ]
+        ],
+        [
+          [
+            "TRỰC TIẾP SẢN XUẤT",
+            "gold"
+          ]
+        ]
+      ]
+    },
+    {
+      "t0": 113.8,
+      "t1": 117.65,
+      "plain_lines": [
+        "nên mọi người yên tâm về",
+        "CHẤT LƯỢNG và GIÁ CẢ nhé!"
+      ],
+      "lines": [
+        [
+          [
+            "nên mọi người yên tâm về",
+            "reg"
+          ]
+        ],
+        [
+          [
+            "CHẤT LƯỢNG",
+            "green"
+          ],
+          [
+            "và",
+            "reg"
+          ],
+          [
+            "GIÁ CẢ",
+            "gold"
+          ],
+          [
+            "nhé!",
+            "reg"
+          ]
+        ]
+      ]
+    },
+    {
+      "t0": 117.8,
+      "t1": 123.05,
+      "plain_lines": [
+        "Cảm ơn quý anh chị đã tin tưởng",
+        "lựa chọn THỰC PHẨM F20"
+      ],
+      "lines": [
+        [
+          [
+            "Cảm ơn quý anh chị đã tin tưởng",
+            "reg"
+          ]
+        ],
+        [
+          [
+            "lựa chọn",
+            "reg"
+          ],
+          [
+            "THỰC PHẨM F20",
+            "green"
+          ]
+        ]
+      ]
+    },
+    {
+      "t0": 123.18,
+      "t1": 127.85,
+      "plain_lines": [
+        "Anh chị có nhu cầu đặt SET QUÀ TẶNG"
+      ],
+      "lines": [
+        [
+          [
+            "Anh chị có nhu cầu đặt",
+            "reg"
+          ],
+          [
+            "SET QUÀ TẶNG",
+            "gold"
+          ]
+        ]
+      ]
+    },
+    {
+      "t0": 127.9,
+      "t1": 130.55,
+      "plain_lines": [
+        "dịp lễ 20 THÁNG 11 hãy INBOX NGAY nhé!"
+      ],
+      "lines": [
+        [
+          [
+            "dịp lễ",
+            "reg"
+          ],
+          [
+            "20 THÁNG 11",
+            "gold"
+          ],
+          [
+            "hãy",
+            "reg"
+          ],
+          [
+            "INBOX NGAY",
+            "green"
+          ],
+          [
+            "nhé!",
+            "reg"
+          ]
+        ]
+      ]
+    }
+  ],
+  "sfx_events": [
+    {
+      "t": 0.0,
+      "sfx": "magic_reveal",
+      "vol": 0.42,
+      "role": "scene_in"
+    },
+    {
+      "t": 1.3,
+      "sfx": "whoosh_tvc",
+      "vol": 0.42,
+      "role": "scene_in"
+    },
+    {
+      "t": 2.6,
+      "sfx": "whoosh_tvc",
+      "vol": 0.42,
+      "role": "scene_in"
+    },
+    {
+      "t": 3.9,
+      "sfx": "swoosh_soft",
+      "vol": 0.42,
+      "role": "scene_in"
+    },
+    {
+      "t": 3.92,
+      "sfx": "ting_quick",
+      "vol": 0.28,
+      "role": "text_in"
+    },
+    {
+      "t": 7.05,
+      "sfx": "swoosh_soft",
+      "vol": 0.2,
+      "role": "text_out"
+    },
+    {
+      "t": 7.2,
+      "sfx": "pop_telop",
+      "vol": 0.28,
+      "role": "text_in"
+    },
+    {
+      "t": 10.65,
+      "sfx": "swoosh_soft",
+      "vol": 0.2,
+      "role": "text_out"
+    },
+    {
+      "t": 10.8,
+      "sfx": "pop_telop",
+      "vol": 0.28,
+      "role": "text_in"
+    },
+    {
+      "t": 12.98,
+      "sfx": "swoosh_soft",
+      "vol": 0.2,
+      "role": "text_out"
+    },
+    {
+      "t": 13.133,
+      "sfx": "whoosh_tvc",
+      "vol": 0.42,
+      "role": "scene_in"
+    },
+    {
+      "t": 13.18,
+      "sfx": "ting_quick",
+      "vol": 0.28,
+      "role": "text_in"
+    },
+    {
+      "t": 14.95,
+      "sfx": "swoosh_soft",
+      "vol": 0.2,
+      "role": "text_out"
+    },
+    {
+      "t": 15.1,
+      "sfx": "pop_telop",
+      "vol": 0.28,
+      "role": "text_in"
+    },
+    {
+      "t": 16.25,
+      "sfx": "shutter",
+      "vol": 0.42,
+      "role": "scene_in"
+    },
+    {
+      "t": 19.25,
+      "sfx": "swoosh_soft",
+      "vol": 0.2,
+      "role": "text_out"
+    },
+    {
+      "t": 19.5,
+      "sfx": "pop_telop",
+      "vol": 0.28,
+      "role": "text_in"
+    },
+    {
+      "t": 19.55,
+      "sfx": "whoosh_tvc",
+      "vol": 0.42,
+      "role": "scene_in"
+    },
+    {
+      "t": 22.38,
+      "sfx": "swoosh_soft",
+      "vol": 0.2,
+      "role": "text_out"
+    },
+    {
+      "t": 22.567,
+      "sfx": "whoosh_tvc",
+      "vol": 0.42,
+      "role": "scene_in"
+    },
+    {
+      "t": 22.58,
+      "sfx": "ting_quick",
+      "vol": 0.28,
+      "role": "text_in"
+    },
+    {
+      "t": 25.68,
+      "sfx": "swoosh_soft",
+      "vol": 0.2,
+      "role": "text_out"
+    },
+    {
+      "t": 25.85,
+      "sfx": "whoosh_tvc",
+      "vol": 0.42,
+      "role": "scene_in"
+    },
+    {
+      "t": 25.85,
+      "sfx": "pop_telop",
+      "vol": 0.28,
+      "role": "text_in"
+    },
+    {
+      "t": 28.95,
+      "sfx": "swoosh_soft",
+      "vol": 0.2,
+      "role": "text_out"
+    },
+    {
+      "t": 29.15,
+      "sfx": "riser_open",
+      "vol": 0.42,
+      "role": "scene_in"
+    },
+    {
+      "t": 29.18,
+      "sfx": "pop_telop",
+      "vol": 0.28,
+      "role": "text_in"
+    },
+    {
+      "t": 33.15,
+      "sfx": "swoosh_soft",
+      "vol": 0.2,
+      "role": "text_out"
+    },
+    {
+      "t": 33.367,
+      "sfx": "magic_reveal",
+      "vol": 0.42,
+      "role": "scene_in"
+    },
+    {
+      "t": 33.4,
+      "sfx": "ting_quick",
+      "vol": 0.28,
+      "role": "text_in"
+    },
+    {
+      "t": 39.05,
+      "sfx": "swoosh_soft",
+      "vol": 0.2,
+      "role": "text_out"
+    },
+    {
+      "t": 39.3,
+      "sfx": "swoosh_soft",
+      "vol": 0.42,
+      "role": "scene_in"
+    },
+    {
+      "t": 39.38,
+      "sfx": "pop_telop",
+      "vol": 0.28,
+      "role": "text_in"
+    },
+    {
+      "t": 43.98,
+      "sfx": "swoosh_soft",
+      "vol": 0.2,
+      "role": "text_out"
+    },
+    {
+      "t": 44.167,
+      "sfx": "magic_reveal",
+      "vol": 0.42,
+      "role": "scene_in"
+    },
+    {
+      "t": 44.18,
+      "sfx": "pop_telop",
+      "vol": 0.28,
+      "role": "text_in"
+    },
+    {
+      "t": 46.12,
+      "sfx": "swoosh_soft",
+      "vol": 0.2,
+      "role": "text_out"
+    },
+    {
+      "t": 46.28,
+      "sfx": "ting_quick",
+      "vol": 0.28,
+      "role": "text_in"
+    },
+    {
+      "t": 46.3,
+      "sfx": "whoosh_tvc",
+      "vol": 0.42,
+      "role": "scene_in"
+    },
+    {
+      "t": 46.4,
+      "sfx": "pop_soft",
+      "vol": 0.34,
+      "role": "badge_in"
+    },
+    {
+      "t": 49.33,
+      "sfx": "swoosh_out",
+      "vol": 0.24,
+      "role": "badge_out"
+    },
+    {
+      "t": 49.38,
+      "sfx": "swoosh_soft",
+      "vol": 0.2,
+      "role": "text_out"
+    },
+    {
+      "t": 49.55,
+      "sfx": "shine_accent",
+      "vol": 0.42,
+      "role": "scene_in"
+    },
+    {
+      "t": 49.55,
+      "sfx": "pop_telop",
+      "vol": 0.28,
+      "role": "text_in"
+    },
+    {
+      "t": 49.65,
+      "sfx": "pop_soft",
+      "vol": 0.34,
+      "role": "badge_in"
+    },
+    {
+      "t": 52.25,
+      "sfx": "swoosh_soft",
+      "vol": 0.2,
+      "role": "text_out"
+    },
+    {
+      "t": 52.45,
+      "sfx": "pop_telop",
+      "vol": 0.28,
+      "role": "text_in"
+    },
+    {
+      "t": 53.73,
+      "sfx": "swoosh_out",
+      "vol": 0.24,
+      "role": "badge_out"
+    },
+    {
+      "t": 53.95,
+      "sfx": "bubble_in",
+      "vol": 0.42,
+      "role": "scene_in"
+    },
+    {
+      "t": 54.0,
+      "sfx": "pop_soft",
+      "vol": 0.34,
+      "role": "badge_in"
+    },
+    {
+      "t": 55.96,
+      "sfx": "swoosh_out",
+      "vol": 0.24,
+      "role": "badge_out"
+    },
+    {
+      "t": 55.98,
+      "sfx": "swoosh_soft",
+      "vol": 0.2,
+      "role": "text_out"
+    },
+    {
+      "t": 56.14,
+      "sfx": "ting_quick",
+      "vol": 0.28,
+      "role": "text_in"
+    },
+    {
+      "t": 56.15,
+      "sfx": "bubble_in",
+      "vol": 0.42,
+      "role": "scene_in"
+    },
+    {
+      "t": 56.2,
+      "sfx": "pop_soft",
+      "vol": 0.34,
+      "role": "badge_in"
+    },
+    {
+      "t": 57.93,
+      "sfx": "swoosh_out",
+      "vol": 0.24,
+      "role": "badge_out"
+    },
+    {
+      "t": 57.98,
+      "sfx": "swoosh_soft",
+      "vol": 0.2,
+      "role": "text_out"
+    },
+    {
+      "t": 58.133,
+      "sfx": "whoosh_pip",
+      "vol": 0.42,
+      "role": "scene_in"
+    },
+    {
+      "t": 58.18,
+      "sfx": "pop_telop",
+      "vol": 0.28,
+      "role": "text_in"
+    },
+    {
+      "t": 61.0,
+      "sfx": "swoosh_soft",
+      "vol": 0.2,
+      "role": "text_out"
+    },
+    {
+      "t": 61.15,
+      "sfx": "pop_tvc",
+      "vol": 0.42,
+      "role": "scene_in"
+    },
+    {
+      "t": 61.18,
+      "sfx": "pop_telop",
+      "vol": 0.28,
+      "role": "text_in"
+    },
+    {
+      "t": 61.22,
+      "sfx": "pop_soft",
+      "vol": 0.34,
+      "role": "badge_in"
+    },
+    {
+      "t": 63.6,
+      "sfx": "swoosh_out",
+      "vol": 0.24,
+      "role": "badge_out"
+    },
+    {
+      "t": 63.64,
+      "sfx": "swoosh_soft",
+      "vol": 0.2,
+      "role": "text_out"
+    },
+    {
+      "t": 63.8,
+      "sfx": "pop_tvc",
+      "vol": 0.42,
+      "role": "scene_in"
+    },
+    {
+      "t": 63.82,
+      "sfx": "ting_quick",
+      "vol": 0.28,
+      "role": "text_in"
+    },
+    {
+      "t": 63.88,
+      "sfx": "pop_soft",
+      "vol": 0.34,
+      "role": "badge_in"
+    },
+    {
+      "t": 66.38,
+      "sfx": "swoosh_out",
+      "vol": 0.24,
+      "role": "badge_out"
+    },
+    {
+      "t": 66.42,
+      "sfx": "swoosh_soft",
+      "vol": 0.2,
+      "role": "text_out"
+    },
+    {
+      "t": 66.6,
+      "sfx": "whoosh_tvc",
+      "vol": 0.42,
+      "role": "scene_in"
+    },
+    {
+      "t": 66.65,
+      "sfx": "pop_telop",
+      "vol": 0.28,
+      "role": "text_in"
+    },
+    {
+      "t": 66.75,
+      "sfx": "pop_soft",
+      "vol": 0.34,
+      "role": "badge_in"
+    },
+    {
+      "t": 69.75,
+      "sfx": "swoosh_soft",
+      "vol": 0.2,
+      "role": "text_out"
+    },
+    {
+      "t": 69.9,
+      "sfx": "pop_telop",
+      "vol": 0.28,
+      "role": "text_in"
+    },
+    {
+      "t": 71.76,
+      "sfx": "swoosh_out",
+      "vol": 0.24,
+      "role": "badge_out"
+    },
+    {
+      "t": 71.82,
+      "sfx": "swoosh_soft",
+      "vol": 0.2,
+      "role": "text_out"
+    },
+    {
+      "t": 72.0,
+      "sfx": "whoosh_tvc",
+      "vol": 0.42,
+      "role": "scene_in"
+    },
+    {
+      "t": 72.06,
+      "sfx": "ting_quick",
+      "vol": 0.28,
+      "role": "text_in"
+    },
+    {
+      "t": 72.12,
+      "sfx": "pop_soft",
+      "vol": 0.34,
+      "role": "badge_in"
+    },
+    {
+      "t": 75.53,
+      "sfx": "swoosh_out",
+      "vol": 0.24,
+      "role": "badge_out"
+    },
+    {
+      "t": 75.55,
+      "sfx": "swoosh_soft",
+      "vol": 0.2,
+      "role": "text_out"
+    },
+    {
+      "t": 75.75,
+      "sfx": "pop_tvc",
+      "vol": 0.42,
+      "role": "scene_in"
+    },
+    {
+      "t": 75.75,
+      "sfx": "pop_telop",
+      "vol": 0.28,
+      "role": "text_in"
+    },
+    {
+      "t": 75.85,
+      "sfx": "pop_soft",
+      "vol": 0.34,
+      "role": "badge_in"
+    },
+    {
+      "t": 80.06,
+      "sfx": "swoosh_out",
+      "vol": 0.24,
+      "role": "badge_out"
+    },
+    {
+      "t": 80.08,
+      "sfx": "swoosh_soft",
+      "vol": 0.2,
+      "role": "text_out"
+    },
+    {
+      "t": 80.3,
+      "sfx": "shine_accent",
+      "vol": 0.42,
+      "role": "scene_in"
+    },
+    {
+      "t": 80.32,
+      "sfx": "pop_telop",
+      "vol": 0.28,
+      "role": "text_in"
+    },
+    {
+      "t": 84.9,
+      "sfx": "swoosh_soft",
+      "vol": 0.2,
+      "role": "text_out"
+    },
+    {
+      "t": 85.05,
+      "sfx": "whoosh_tvc",
+      "vol": 0.42,
+      "role": "scene_in"
+    },
+    {
+      "t": 85.08,
+      "sfx": "ting_quick",
+      "vol": 0.28,
+      "role": "text_in"
+    },
+    {
+      "t": 88.55,
+      "sfx": "swoosh_soft",
+      "vol": 0.2,
+      "role": "text_out"
+    },
+    {
+      "t": 88.7,
+      "sfx": "magic_reveal",
+      "vol": 0.42,
+      "role": "scene_in"
+    },
+    {
+      "t": 88.72,
+      "sfx": "pop_telop",
+      "vol": 0.28,
+      "role": "text_in"
+    },
+    {
+      "t": 88.8,
+      "sfx": "pop_soft",
+      "vol": 0.34,
+      "role": "badge_in"
+    },
+    {
+      "t": 91.98,
+      "sfx": "swoosh_out",
+      "vol": 0.24,
+      "role": "badge_out"
+    },
+    {
+      "t": 92.05,
+      "sfx": "swoosh_soft",
+      "vol": 0.2,
+      "role": "text_out"
+    },
+    {
+      "t": 92.233,
+      "sfx": "whoosh_tvc",
+      "vol": 0.42,
+      "role": "scene_in"
+    },
+    {
+      "t": 92.26,
+      "sfx": "pop_telop",
+      "vol": 0.28,
+      "role": "text_in"
+    },
+    {
+      "t": 97.42,
+      "sfx": "swoosh_soft",
+      "vol": 0.2,
+      "role": "text_out"
+    },
+    {
+      "t": 97.633,
+      "sfx": "swoosh_soft",
+      "vol": 0.42,
+      "role": "scene_in"
+    },
+    {
+      "t": 97.68,
+      "sfx": "ting_quick",
+      "vol": 0.28,
+      "role": "text_in"
+    },
+    {
+      "t": 98.55,
+      "sfx": "whoosh_pip",
+      "vol": 0.38,
+      "role": "pip_in"
+    },
+    {
+      "t": 102.6,
+      "sfx": "swoosh_out",
+      "vol": 0.26,
+      "role": "pip_out"
+    },
+    {
+      "t": 102.68,
+      "sfx": "swoosh_soft",
+      "vol": 0.2,
+      "role": "text_out"
+    },
+    {
+      "t": 102.867,
+      "sfx": "pop_tvc",
+      "vol": 0.42,
+      "role": "scene_in"
+    },
+    {
+      "t": 102.88,
+      "sfx": "pop_telop",
+      "vol": 0.28,
+      "role": "text_in"
+    },
+    {
+      "t": 105.6,
+      "sfx": "swoosh_soft",
+      "vol": 0.2,
+      "role": "text_out"
+    },
+    {
+      "t": 105.75,
+      "sfx": "shine_accent",
+      "vol": 0.42,
+      "role": "scene_in"
+    },
+    {
+      "t": 105.76,
+      "sfx": "pop_telop",
+      "vol": 0.28,
+      "role": "text_in"
+    },
+    {
+      "t": 108.5,
+      "sfx": "swoosh_soft",
+      "vol": 0.2,
+      "role": "text_out"
+    },
+    {
+      "t": 108.7,
+      "sfx": "swoosh_soft",
+      "vol": 0.42,
+      "role": "scene_in"
+    },
+    {
+      "t": 108.85,
+      "sfx": "ting_quick",
+      "vol": 0.28,
+      "role": "text_in"
+    },
+    {
+      "t": 113.6,
+      "sfx": "swoosh_soft",
+      "vol": 0.2,
+      "role": "text_out"
+    },
+    {
+      "t": 113.75,
+      "sfx": "whoosh_tvc",
+      "vol": 0.42,
+      "role": "scene_in"
+    },
+    {
+      "t": 113.8,
+      "sfx": "pop_telop",
+      "vol": 0.28,
+      "role": "text_in"
+    },
+    {
+      "t": 115.8,
+      "sfx": "whoosh_tvc",
+      "vol": 0.42,
+      "role": "scene_in"
+    },
+    {
+      "t": 117.55,
+      "sfx": "swoosh_soft",
+      "vol": 0.2,
+      "role": "text_out"
+    },
+    {
+      "t": 117.733,
+      "sfx": "swoosh_soft",
+      "vol": 0.42,
+      "role": "scene_in"
+    },
+    {
+      "t": 117.8,
+      "sfx": "pop_telop",
+      "vol": 0.28,
+      "role": "text_in"
+    },
+    {
+      "t": 122.95,
+      "sfx": "swoosh_soft",
+      "vol": 0.2,
+      "role": "text_out"
+    },
+    {
+      "t": 123.18,
+      "sfx": "ting_quick",
+      "vol": 0.28,
+      "role": "text_in"
+    },
+    {
+      "t": 123.3,
+      "sfx": "whoosh_pip",
+      "vol": 0.36,
+      "role": "pip_in"
+    },
+    {
+      "t": 127.75,
+      "sfx": "swoosh_soft",
+      "vol": 0.2,
+      "role": "text_out"
+    },
+    {
+      "t": 127.9,
+      "sfx": "pop_telop",
+      "vol": 0.28,
+      "role": "text_in"
+    },
+    {
+      "t": 130.2,
+      "sfx": "swoosh_out",
+      "vol": 0.25,
+      "role": "pip_out"
+    },
+    {
+      "t": 130.45,
+      "sfx": "swoosh_soft",
+      "vol": 0.2,
+      "role": "text_out"
+    },
+    {
+      "t": 130.6,
+      "sfx": "magic_reveal",
+      "vol": 0.42,
+      "role": "scene_in"
+    }
+  ]
+}

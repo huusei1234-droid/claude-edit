@@ -1,0 +1,10 @@
+﻿PtrSize: 8
+Gigabyte.Engine.EnvironmentControl.CoolingDevice.Fan.SmartGuardianFanControlModule => IsSupported=
+  Temps count=0, Rpms count=0
+Gigabyte.Engine.EnvironmentControl.CoolingDevice.Fan.SmartGuardianFanControlModuleEx => IsSupported=False
+  Temps count=0, Rpms count=0
+Gigabyte.Engine.EnvironmentControl.CoolingDevice.Fan.SmartGuardianFanControlCoordinateSystemModule => IsSupported=
+  Temps count=0, Rpms count=0
+Gigabyte.EnvironmentControl.CoolingDevice.Fan.SmartGuardianFanControlCoordinateSystem => IsSupported=False
+  Temps count=0, Rpms count=0
+Gigabyte.EnvironmentControl.CoolingDevice.Fan.SmartGuardianFanControlCoordinateSystem ERROR: Method invocation failed because [Gigabyte.EnvironmentControl.CoolingDevice.Fan.SmartGuardianFanControlCoordinateSystem] does not contain a method named 'Dispose'.

@@ -1,0 +1,11 @@
+[00 |   0.00 -   3.18] Muốn con cao lớn, mẹ đã quan tâm đến bữa ăn hàng ngày hay chưa?
+[01 |   3.46 -   9.70] Con ăn thất thường, ít lựa chọn thực phẩm, lịch học kín mít khiến giờ sinh hoạt thiếu đều đặn
+[02 |   9.70 -  15.36] Những điều ấy khiến bố mẹ dễ băn khoăn, liệu con đã được chăm sóc dinh dưỡng đầy đủ hay chưa?
+[03 |  15.98 -  18.30] Mong con phát triển khỏe mạnh là điều rất tự nhiên
+[04 |  18.30 -  24.94] Nhưng lựa chọn sản phẩm bổ sung cần bắt đầu từ việc xem xét chế độ ăn, độ tuổi và nhu cầu của con
+[05 |  24.94 -  29.32] Canxi và Vitamin D là những dưỡng chất quan trọng đối với xương
+[06 |  29.32 -  36.94] Tuy nhiên, bổ sung canxi không đồng nghĩa với việc là sẽ đảm bảo con sẽ cao hơn với Bojomi An Vượng.
+[07 |  37.18 -  44.04] Điểm đáng chú ý của công thức này đó là canxi từ tảo biển phối hợp với D3, K2 và collagen.
+[08 |  44.62 -  57.38] Mỗi gói như vậy sẽ có 418mg canxi từ tảo biển, 779 IU D3 và 170mcg K2 MK7.
+[09 |  57.38 -  62.62] Chỉ cần mỗi ngày bổ sung một gói là con của các bạn đã đủ dinh dưỡng cho xương
+[10 |  62.62 -  69.72] Nhớ nhắn dinh dưỡng cho con để nhận bảng thành phần và đối chiếu thông tin sản phẩm trước khi quyết định bạn nhé.

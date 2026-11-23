@@ -1,0 +1,693 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>HTPM Da Xuống Cấp &amp; Legend White Skin — Final Cut Pro &amp; After Effects Overlays</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      @font-face {
+        font-family: "Plus Jakarta Sans";
+        src: url("assets/fonts/PlusJakartaSans-SemiBold.ttf") format("truetype");
+        font-weight: 600;
+        font-display: block;
+      }
+      @font-face {
+        font-family: "Plus Jakarta Sans";
+        src: url("assets/fonts/PlusJakartaSans-Bold.ttf") format("truetype");
+        font-weight: 700;
+        font-display: block;
+      }
+      @font-face {
+        font-family: "Plus Jakarta Sans";
+        src: url("assets/fonts/PlusJakartaSans-ExtraBold.ttf") format("truetype");
+        font-weight: 800;
+        font-display: block;
+      }
+      @font-face {
+        font-family: "Montserrat";
+        src: url("assets/fonts/Montserrat-Bold.ttf") format("truetype");
+        font-weight: 700;
+        font-display: block;
+      }
+      @font-face {
+        font-family: "Montserrat";
+        src: url("assets/fonts/Montserrat-ExtraBold.ttf") format("truetype");
+        font-weight: 800;
+        font-display: block;
+      }
+      @font-face {
+        font-family: "Montserrat";
+        src: url("assets/fonts/Montserrat-Black.ttf") format("truetype");
+        font-weight: 900;
+        font-display: block;
+      }
+      @font-face {
+        font-family: "Playfair Display";
+        src: url("assets/fonts/PlayfairDisplay-BoldItalic.ttf") format("truetype");
+        font-weight: 700;
+        font-style: italic;
+        font-display: block;
+      }
+
+      *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body {
+        width: 1080px;
+        height: 1920px;
+        overflow: hidden;
+        background: transparent;
+        font-family: "Plus Jakarta Sans", sans-serif;
+      }
+      #root {
+        position: relative;
+        width: 1080px;
+        height: 1920px;
+        overflow: hidden;
+        background: transparent;
+      }
+
+      /* 5-Stop Gradient + Specular Shimmer Sweep */
+      .grad-text {
+        display: inline-block;
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        background-size: 240% 100%, 100% 100%;
+        background-position: -130% 0, 0 0;
+        filter: drop-shadow(0 3px 10px rgba(10, 12, 24, 0.85)) drop-shadow(0 1px 2px rgba(8, 10, 18, 0.92));
+      }
+      .grad-rose {
+        background-image:
+          linear-gradient(115deg, rgba(255,255,255,0) 35%, rgba(255,255,255,0.96) 50%, rgba(255,255,255,0) 65%),
+          linear-gradient(180deg, #FFEAF5 0%, #FF82C2 26%, #E82E86 52%, #FFB4DA 78%, #AC145E 100%);
+      }
+      .grad-gold {
+        background-image:
+          linear-gradient(115deg, rgba(255,255,255,0) 35%, rgba(255,255,255,0.96) 50%, rgba(255,255,255,0) 65%),
+          linear-gradient(180deg, #FFFDF2 0%, #FFE486 26%, #E29E2A 52%, #FFF0B2 78%, #B06E12 100%);
+      }
+      .grad-emerald {
+        background-image:
+          linear-gradient(115deg, rgba(255,255,255,0) 35%, rgba(255,255,255,0.95) 50%, rgba(255,255,255,0) 65%),
+          linear-gradient(180deg, #EEFFF9 0%, #76F2C6 26%, #1AB882 52%, #B2FCE2 78%, #0E7A54 100%);
+      }
+      .grad-sapphire {
+        background-image:
+          linear-gradient(115deg, rgba(255,255,255,0) 35%, rgba(255,255,255,0.96) 50%, rgba(255,255,255,0) 65%),
+          linear-gradient(180deg, #EFFBFF 0%, #84E0FF 26%, #2692F8 52%, #BAEEFF 78%, #125CBA 100%);
+      }
+      .grad-coral {
+        background-image:
+          linear-gradient(115deg, rgba(255,255,255,0) 35%, rgba(255,255,255,0.95) 50%, rgba(255,255,255,0) 65%),
+          linear-gradient(180deg, #FFF6EC 0%, #FFAE70 26%, #F45834 52%, #FFD0AA 78%, #B22A12 100%);
+      }
+
+      /* 1. HOOK STAGE */
+      #hook-stage {
+        position: absolute;
+        left: 0; right: 0; top: 215px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+      }
+      .fcp-mask-wrap {
+        position: relative;
+        overflow: hidden;
+        padding: 8px 30px;
+        border-radius: 999px;
+        background: rgba(14, 16, 28, 0.86);
+        border: 1.5px solid rgba(255, 228, 134, 0.68);
+        box-shadow: 0 10px 26px rgba(0, 0, 0, 0.44);
+      }
+      .fcp-mask-text {
+        font-family: "Playfair Display", serif;
+        font-style: italic;
+        font-weight: 700;
+        font-size: 34px;
+        color: #fffaf4;
+        white-space: nowrap;
+      }
+      .fcp-sweep-bar {
+        position: absolute;
+        top: 0; bottom: 0; left: 0;
+        width: 12px;
+        background: linear-gradient(180deg, #fffdf2, #ffd23f);
+        box-shadow: 0 0 20px #ffd23f;
+      }
+      .prism-bow {
+        position: relative;
+        padding: 14px 34px;
+        border-radius: 26px;
+        background: rgba(15, 14, 28, 0.90);
+        border: 2px solid rgba(255, 130, 194, 0.78);
+        box-shadow: 0 18px 42px rgba(10, 8, 20, 0.56);
+      }
+      .prism-line {
+        position: relative;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 900;
+        font-size: 56px;
+        letter-spacing: -0.015em;
+        line-height: 1.08;
+        white-space: nowrap;
+      }
+      .prism-copy {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+      }
+      .prism-copy.r { color: #ff2a6d; mix-blend-mode: screen; }
+      .prism-copy.b { color: #2ad4ff; mix-blend-mode: screen; }
+
+      /* TOP CALLOUT STAGE */
+      .top-callout-stage {
+        position: absolute;
+        left: 0; right: 0; top: 38px;
+        display: flex;
+        justify-content: center;
+      }
+      .mid-callout-stage {
+        position: absolute;
+        left: 0; right: 0; top: 235px;
+        display: flex;
+        justify-content: center;
+      }
+      .lt-bar-box {
+        position: relative;
+        overflow: hidden;
+        padding: 13px 34px 13px 44px;
+        border-radius: 20px;
+        background: rgba(14, 18, 32, 0.92);
+        border: 2px solid rgba(255, 228, 134, 0.78);
+        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.50);
+      }
+      .lt-bar-box.sapphire { border-color: rgba(132, 224, 255, 0.82); }
+      .lt-bar-box.emerald  { border-color: rgba(118, 242, 198, 0.82); }
+      .lt-bar-box.coral    { border-color: rgba(255, 174, 112, 0.84); }
+      .lt-bar-box.rose     { border-color: rgba(255, 138, 198, 0.82); }
+      .lt-bar-accent {
+        position: absolute;
+        left: 0; top: 0; bottom: 0;
+        width: 11px;
+        background: linear-gradient(180deg, #ffe486, #e29e2a);
+      }
+      .lt-bar-accent.sapphire { background: linear-gradient(180deg, #84e0ff, #2692f8); }
+      .lt-bar-accent.emerald  { background: linear-gradient(180deg, #76f2c6, #1ab882); }
+      .lt-bar-accent.coral    { background: linear-gradient(180deg, #ffae70, #f45834); }
+      .lt-bar-accent.rose     { background: linear-gradient(180deg, #ff8ac6, #e82e86); }
+
+      /* NEON + MARKER WARNING */
+      .neon-warn-stage {
+        position: absolute;
+        left: 60px; top: 34px;
+        width: 960px; height: 104px;
+      }
+      .neon-mid-stage {
+        position: absolute;
+        left: 56px; top: 215px;
+        width: 968px; height: 112px;
+      }
+      .neon-svg {
+        position: absolute;
+        inset: 0;
+        overflow: visible;
+      }
+      .warn-inner {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 800;
+        font-size: 29px;
+        color: #ffffff;
+      }
+      .mh-em {
+        position: relative;
+        display: inline-block;
+      }
+      .mh-svg {
+        position: absolute;
+        left: -3%; bottom: -9px;
+        width: 106%; height: 18px;
+        overflow: visible;
+      }
+
+      /* HERO THESIS CARD */
+      #thesis-stage {
+        position: absolute;
+        left: 64px; top: 185px;
+        width: 952px; height: 292px;
+      }
+      .expert-content {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 20px 36px;
+      }
+      .word-mask {
+        display: inline-block;
+        overflow: hidden;
+        vertical-align: bottom;
+        padding: 2px 4px;
+      }
+      .word-inner {
+        display: inline-block;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 900;
+        font-size: 42px;
+        line-height: 1.12;
+      }
+      .gold-rule {
+        width: 480px;
+        height: 2.5px;
+        background: linear-gradient(90deg, transparent, #ffe486, transparent);
+        margin: 4px 0;
+      }
+
+      /* PRODUCT SHOWCASE BAR */
+      #prod-stage {
+        position: absolute;
+        left: 56px; top: 82px;
+        width: 968px;
+        border-radius: 30px;
+        background: rgba(12, 20, 36, 0.92);
+        border: 2.5px solid rgba(132, 224, 255, 0.85);
+        box-shadow: 0 18px 42px rgba(0, 0, 0, 0.55);
+        padding: 20px 34px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 9px;
+        overflow: hidden;
+      }
+      .chip-row {
+        display: flex;
+        gap: 12px;
+        margin-top: 4px;
+      }
+      .ing-chip {
+        padding: 6px 18px;
+        border-radius: 999px;
+        background: rgba(38, 146, 248, 0.24);
+        border: 1.5px solid rgba(132, 224, 255, 0.80);
+        font-weight: 700;
+        font-size: 18px;
+        color: #f2fbff;
+      }
+
+      /* FINALE 3 PILLARS + CTA */
+      #finale-stage {
+        position: absolute;
+        left: 96px; top: 180px;
+        width: 888px;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+      .check-card {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        height: 78px;
+        padding: 0 28px 0 18px;
+        border-radius: 39px;
+        background: rgba(14, 20, 34, 0.92);
+        border: 2px solid rgba(132, 224, 255, 0.82);
+        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.48);
+      }
+      .check-label {
+        font-family: "Plus Jakarta Sans", sans-serif;
+        font-weight: 800;
+        font-size: 26px;
+        letter-spacing: -0.01em;
+        white-space: nowrap;
+      }
+      #cta-stage {
+        position: absolute;
+        left: 60px; top: 1794px;
+        width: 960px; height: 62px;
+        border-radius: 31px;
+        background: rgba(14, 18, 32, 0.93);
+        border: 2px solid rgba(255, 228, 134, 0.88);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.55);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 14px;
+        overflow: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="76.44" data-width="1080" data-height="1920" data-fps="30">
+      <svg width="0" height="0" style="position:absolute">
+        <defs>
+          <filter id="neon-glow" x="-40%" y="-40%" width="180%" height="180%">
+            <feGaussianBlur stdDeviation="6" result="blur1" />
+            <feGaussianBlur stdDeviation="14" result="blur2" />
+            <feMerge>
+              <feMergeNode in="blur2" />
+              <feMergeNode in="blur1" />
+              <feMergeNode in="SourceGraphic" />
+            </feMerge>
+          </filter>
+        </defs>
+      </svg>
+
+      <!-- 1. HOOK (0.05 - 2.84s) -->
+      <div id="clip-hook" class="clip" data-start="0.05" data-duration="2.79" data-track-index="1" data-layout-allow-overlap data-layout-allow-safe-zone>
+        <div id="hook-stage">
+          <div id="hk-kicker-box" class="fcp-mask-wrap">
+            <div class="fcp-mask-text">Góc nhìn chuyên gia Hằng Thu...</div>
+            <div id="hk-sweep" class="fcp-sweep-bar"></div>
+          </div>
+          <div id="hk-prism-bow" class="prism-bow">
+            <div class="prism-line" data-layout-allow-overlap>
+              <span id="hk-pr-r" class="prism-copy r">DA NGÀY CÀNG XUỐNG CẤP?</span>
+              <span id="hk-pr-b" class="prism-copy b">DA NGÀY CÀNG XUỐNG CẤP?</span>
+              <span id="hk-pr-main" class="grad-text grad-rose">DA NGÀY CÀNG XUỐNG CẤP?</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2A. SKINCARE STEPS CALLOUT (2.92 - 8.92s) -->
+      <div id="clip-s1a" class="clip" data-start="2.92" data-duration="6.00" data-track-index="1" data-layout-allow-safe-zone>
+        <div class="top-callout-stage">
+          <div id="s1a-box" class="lt-bar-box sapphire">
+            <div class="lt-bar-accent sapphire"></div>
+            <span id="s1a-txt" class="grad-text grad-sapphire" style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:24px;">ĐẦU TƯ ĐỦ BƯỚC CHĂM SÓC DA MỖI NGÀY</span>
+            <div id="s1a-sweep" class="fcp-sweep-bar"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2B. CHANGING MANY PRODUCTS (8.98 - 13.84s) -->
+      <div id="clip-s1b" class="clip" data-start="8.98" data-duration="4.86" data-track-index="1" data-layout-allow-safe-zone>
+        <div class="top-callout-stage">
+          <div id="s1b-box" class="lt-bar-box coral">
+            <div class="lt-bar-accent coral"></div>
+            <span id="s1b-txt" class="grad-text grad-coral" style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:24px;">ĐỔI NHIỀU MỸ PHẨM NHƯNG DA VẪN KÉM SẮC</span>
+            <div id="s1b-sweep" class="fcp-sweep-bar"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3A. 4 SYMPTOMS CALLOUT (14.02 - 17.46s) -->
+      <div id="clip-s2a" class="clip" data-start="14.02" data-duration="3.44" data-track-index="1" data-layout-allow-safe-zone>
+        <div class="top-callout-stage">
+          <div id="s2a-box" class="lt-bar-box rose">
+            <div class="lt-bar-accent rose"></div>
+            <span id="s2a-txt" class="grad-text grad-rose" style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:24px;">MỤN • KHÔ RÁP • XỈN MÀU TÁI ĐI TÁI LẠI</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3B. LATE NIGHT WARNING (17.50 - 21.02s): lt-neon-border + AE marker-highlight -->
+      <div id="clip-s2b" class="clip" data-start="17.50" data-duration="3.52" data-track-index="1" data-layout-allow-overlap data-layout-allow-safe-zone>
+        <div id="s2b-stage" class="neon-warn-stage">
+          <svg class="neon-svg" width="960" height="104" viewBox="0 0 960 104">
+            <rect x="4" y="4" width="952" height="96" rx="26" fill="rgba(20, 14, 26, 0.92)" stroke="rgba(255, 140, 100, 0.38)" stroke-width="2" />
+            <rect id="s2b-neon" x="4" y="4" width="952" height="96" rx="26" fill="none" stroke="#ff7a52" stroke-width="4.5" stroke-linecap="round" stroke-dasharray="360 1760" filter="url(#neon-glow)" />
+          </svg>
+          <div class="warn-inner">
+            <span style="color:#ffd8cc;">THỨC KHUYA VÀI HÔM •</span>
+            <span class="mh-em" data-layout-allow-overlap>
+              <span id="s2b-word" class="grad-text grad-coral">DA XUỐNG CẤP RÕ!</span>
+              <svg class="mh-svg" viewBox="0 0 310 20" preserveAspectRatio="none">
+                <path id="s2b-marker" d="M 4 13 Q 155 5 306 12" fill="none" stroke="#ffd23f" stroke-width="6" stroke-linecap="round" />
+              </svg>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4A. COSMETICS ARE ONLY A SMALL PART (25.35 - 30.25s) -->
+      <div id="clip-s3a" class="clip" data-start="25.35" data-duration="4.90" data-track-index="1" data-layout-allow-safe-zone>
+        <div class="mid-callout-stage">
+          <div id="s3a-box" class="lt-bar-box">
+            <div class="lt-bar-accent"></div>
+            <span id="s3a-txt" class="grad-text grad-gold" style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:26px;">MỸ PHẨM BÊN NGOÀI CHỈ LÀ MỘT PHẦN NHỎ</span>
+            <div id="s3a-sweep" class="fcp-sweep-bar"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4B. CORE THESIS HERO (30.30 - 36.68s): lt-neon-border + bottom-up-letters + shimmer -->
+      <div id="clip-thesis" class="clip" data-start="30.30" data-duration="6.38" data-track-index="1" data-layout-allow-overlap data-layout-allow-safe-zone>
+        <div id="thesis-stage">
+          <svg class="neon-svg" width="952" height="292" viewBox="0 0 952 292">
+            <rect x="4" y="4" width="944" height="284" rx="40" fill="rgba(16, 18, 34, 0.92)" stroke="rgba(246, 207, 101, 0.42)" stroke-width="2" />
+            <rect id="th-neon-a" x="4" y="4" width="944" height="284" rx="40" fill="none" stroke="#ffe486" stroke-width="4.5" stroke-linecap="round" stroke-dasharray="420 2040" filter="url(#neon-glow)" />
+            <rect id="th-neon-b" x="4" y="4" width="944" height="284" rx="40" fill="none" stroke="#76f2c6" stroke-width="4" stroke-linecap="round" stroke-dasharray="320 2140" stroke-dashoffset="-1220" filter="url(#neon-glow)" />
+          </svg>
+          <div class="expert-content">
+            <div id="th-kicker" style="font-weight:700;font-size:20px;color:#ffe486;letter-spacing:0.14em;">NGUYÊN TẮC CỐT LÕI CHĂM SÓC DA</div>
+            <div style="display:flex;gap:12px;justify-content:center;">
+              <span class="word-mask"><span class="word-inner th-w grad-text grad-rose">LÀN</span></span>
+              <span class="word-mask"><span class="word-inner th-w grad-text grad-rose">DA</span></span>
+              <span class="word-mask"><span class="word-inner th-w grad-text grad-rose">ĐẸP</span></span>
+              <span class="word-mask"><span class="word-inner th-w grad-text grad-gold">TRƯỚC</span></span>
+              <span class="word-mask"><span class="word-inner th-w grad-text grad-gold">HẾT</span></span>
+            </div>
+            <div style="display:flex;gap:12px;justify-content:center;">
+              <span class="word-mask"><span class="word-inner th-w grad-text grad-emerald">PHẢI</span></span>
+              <span class="word-mask"><span class="word-inner th-w grad-text grad-emerald">LÀ</span></span>
+              <span class="word-mask"><span class="word-inner th-w grad-text grad-emerald">LÀN</span></span>
+              <span class="word-mask"><span class="word-inner th-w grad-text grad-emerald">DA</span></span>
+              <span class="word-mask"><span class="word-inner th-w grad-text grad-emerald">KHỎE!</span></span>
+            </div>
+            <div id="th-rule" class="gold-rule"></div>
+            <div id="th-sub" style="font-weight:600;font-size:20px;color:#eef2ff;letter-spacing:0.03em;">VỮNG VÀNG TRƯỚC TÁC ĐỘNG BÊN TRONG &amp; BÊN NGOÀI</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. HOLISTIC FACTORS CALLOUT (36.82 - 46.04s) -->
+      <div id="clip-factors" class="clip" data-start="36.82" data-duration="9.22" data-track-index="1" data-layout-allow-safe-zone>
+        <div class="top-callout-stage">
+          <div id="fc-box" class="lt-bar-box emerald">
+            <div class="lt-bar-accent emerald"></div>
+            <span id="fc-txt" class="grad-text grad-emerald" style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:24px;">NỘI TIẾT TỐ • DINH DƯỠNG • GIẤC NGỦ • TIA UV</span>
+            <div id="fc-sweep" class="fcp-sweep-bar"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6A. SUSTAINABLE SKIN WARNING (46.15 - 52.22s) -->
+      <div id="clip-s5a" class="clip" data-start="46.15" data-duration="6.07" data-track-index="1" data-layout-allow-overlap data-layout-allow-safe-zone>
+        <div id="s5a-stage" class="neon-mid-stage">
+          <svg class="neon-svg" width="968" height="112" viewBox="0 0 968 112">
+            <rect x="4" y="4" width="960" height="104" rx="28" fill="rgba(20, 14, 26, 0.92)" stroke="rgba(255, 174, 112, 0.42)" stroke-width="2" />
+            <rect id="s5a-neon" x="4" y="4" width="960" height="104" rx="28" fill="none" stroke="#ffae70" stroke-width="4.5" stroke-linecap="round" stroke-dasharray="380 1780" filter="url(#neon-glow)" />
+          </svg>
+          <div class="warn-inner">
+            <span style="color:#fff2e8;">CHỈ ĐỔI MỸ PHẨM •</span>
+            <span class="mh-em" data-layout-allow-overlap>
+              <span id="s5a-word" class="grad-text grad-coral">KHÓ ĐẸP BỀN VỮNG!</span>
+              <svg class="mh-svg" viewBox="0 0 340 20" preserveAspectRatio="none">
+                <path id="s5a-marker" d="M 4 13 Q 170 5 336 12" fill="none" stroke="#ffd23f" stroke-width="6" stroke-linecap="round" />
+              </svg>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6B. SKIN MIRRORS HEALTH (52.30 - 56.08s) -->
+      <div id="clip-s5b" class="clip" data-start="52.30" data-duration="3.78" data-track-index="1" data-layout-allow-safe-zone>
+        <div class="mid-callout-stage">
+          <div id="s5b-box" class="lt-bar-box sapphire">
+            <div class="lt-bar-accent sapphire"></div>
+            <span id="s5b-txt" class="grad-text grad-sapphire" style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:26px;">LÀN DA PHẢN CHIẾU SỨC KHỎE BÊN TRONG</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 7A. LIFESTYLE IMBALANCE CALLOUT (56.18 - 60.42s) -->
+      <div id="clip-s6a" class="clip" data-start="56.18" data-duration="4.24" data-track-index="1" data-layout-allow-safe-zone>
+        <div class="top-callout-stage">
+          <div id="s6a-box" class="lt-bar-box coral">
+            <div class="lt-bar-accent coral"></div>
+            <span id="s6a-txt" class="grad-text grad-coral" style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:23px;">THIẾU NGỦ • CĂNG THẲNG • ĂN UỐNG MẤT CÂN BẰNG</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 7B. FIRST TO REFLECT (60.48 - 63.52s) -->
+      <div id="clip-s6b" class="clip" data-start="60.48" data-duration="3.04" data-track-index="1" data-layout-allow-safe-zone>
+        <div class="mid-callout-stage">
+          <div id="s6b-box" class="lt-bar-box rose">
+            <div class="lt-bar-accent rose"></div>
+            <span id="s6b-txt" class="grad-text grad-rose" style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:27px;">LÀN DA LÀ NƠI PHẢN ÁNH ĐẦU TIÊN!</span>
+            <div id="s6b-sweep" class="fcp-sweep-bar"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 8. PRODUCT SHOWCASE BAR (63.62 - 68.82s): Apple FCP lt-clean-bar -->
+      <div id="clip-prod" class="clip" data-start="63.62" data-duration="5.20" data-track-index="1" data-layout-allow-safe-zone>
+        <div id="prod-stage">
+          <div style="font-weight:700;font-size:19px;color:#ffe486;letter-spacing:0.12em;">GIẢI PHÁP NUÔI DƯỠNG &amp; ĐIỀU HÒA TỪ GỐC • HẰNG THU</div>
+          <div id="pr-title" class="grad-text grad-sapphire" style="font-family:'Montserrat',sans-serif;font-weight:900;font-size:40px;">VIÊN UỐNG LEGEND WHITE SKIN</div>
+          <div class="chip-row">
+            <span class="ing-chip pr-chip">NMN</span>
+            <span class="ing-chip pr-chip">L-GLUTATHIONE</span>
+            <span class="ing-chip pr-chip">PEPTIDE GF</span>
+            <span class="ing-chip pr-chip">VITAMIN E</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 8B. ROOT CAUSE DUAL BENTO CALLOUT (68.90 - 71.88s) -->
+      <div id="clip-s7b" class="clip" data-start="68.90" data-duration="2.98" data-track-index="1" data-layout-allow-safe-zone>
+        <div class="top-callout-stage">
+          <div id="s7b-box" class="lt-bar-box sapphire">
+            <div class="lt-bar-accent sapphire"></div>
+            <span id="s7b-txt" class="grad-text grad-sapphire" style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:24px;">THẤU HIỂU TÌNH TRẠNG DA &amp; NGUYÊN NHÂN TỪ GỐC</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 9. FINALE 3 PILLARS + CTA (71.92 - 76.40s) -->
+      <div id="clip-finale" class="clip" data-start="71.92" data-duration="4.48" data-track-index="1" data-layout-allow-safe-zone>
+        <div id="finale-stage">
+          <div id="chk-row-1" class="check-card">
+            <svg width="50" height="50" viewBox="0 0 50 50">
+              <circle id="chk-ring-1" cx="25" cy="25" r="22" fill="#125cba" stroke="#84e0ff" stroke-width="2.5" />
+              <path id="chk-path-1" d="M 14 26 L 22 34 L 37 17" fill="none" stroke="#ffffff" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="40" stroke-dashoffset="40" />
+            </svg>
+            <span class="check-label" style="color:#ffffff;">HIỂU ĐÚNG TÌNH TRẠNG DA HIỆN TẠI</span>
+          </div>
+          <div id="chk-row-2" class="check-card">
+            <svg width="50" height="50" viewBox="0 0 50 50">
+              <circle id="chk-ring-2" cx="25" cy="25" r="22" fill="#125cba" stroke="#ffe486" stroke-width="2.5" />
+              <path id="chk-path-2" d="M 14 26 L 22 34 L 37 17" fill="none" stroke="#ffffff" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="40" stroke-dashoffset="40" />
+            </svg>
+            <span class="check-label grad-text grad-gold">GIẢI QUYẾT ĐÚNG NGUYÊN NHÂN TỪ GỐC</span>
+          </div>
+          <div id="chk-row-3" class="check-card">
+            <svg width="50" height="50" viewBox="0 0 50 50">
+              <circle id="chk-ring-3" cx="25" cy="25" r="22" fill="#0e8a60" stroke="#76f2c6" stroke-width="2.5" />
+              <path id="chk-path-3" d="M 14 26 L 22 34 L 37 17" fill="none" stroke="#ffffff" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="40" stroke-dashoffset="40" />
+            </svg>
+            <span class="check-label grad-text grad-emerald">CHĂM SÓC KHOA HỌC • DA ĐẸP BỀN VỮNG</span>
+          </div>
+        </div>
+        <div id="cta-stage">
+          <span style="width:12px;height:12px;border-radius:50%;background:#84e0ff;box-shadow:0 0 10px #84e0ff;"></span>
+          <span id="cta-txt" class="grad-text grad-gold" style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:22px;">LEGEND WHITE SKIN HẰNG THU  •  KHỎE BÊN TRONG, ĐẸP BỀN VỮNG</span>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      (function () {
+        window.__timelines = window.__timelines || {};
+        var tl = gsap.timeline({ paused: true });
+
+        function fcpMaskBar(boxSel, sweepSel, txtSel, tStart, tEnd, sweepDist) {
+          tl.fromTo(boxSel, { clipPath: "inset(0 100% 0 0)", y: -10 }, { clipPath: "inset(0 0% 0 0)", y: 0, duration: 0.44, ease: "power3.out" }, tStart);
+          if (sweepSel) {
+            tl.fromTo(sweepSel, { x: 0, opacity: 1 }, { x: sweepDist || 740, opacity: 0, duration: 0.50, ease: "power2.inOut" }, tStart);
+          }
+          if (txtSel) {
+            tl.fromTo(txtSel, { backgroundPosition: "-130% 0, 0 0" }, { backgroundPosition: "220% 0, 0 0", duration: 0.95, ease: "power2.inOut" }, tStart + 0.35);
+          }
+          tl.to(boxSel, { clipPath: "inset(0 0 0 100%)", opacity: 0, duration: 0.30, ease: "power2.in" }, tEnd - 0.32);
+        }
+
+        function fcpCenterBar(boxSel, txtSel, tStart, tEnd) {
+          tl.fromTo(boxSel, { clipPath: "inset(0 50% 0 50%)", opacity: 0 }, { clipPath: "inset(0 0% 0 0%)", opacity: 1, duration: 0.44, ease: "power4.out" }, tStart);
+          if (txtSel) {
+            tl.fromTo(txtSel, { backgroundPosition: "-130% 0, 0 0" }, { backgroundPosition: "220% 0, 0 0", duration: 0.95, ease: "power2.inOut" }, tStart + 0.38);
+          }
+          tl.to(boxSel, { clipPath: "inset(0 50% 0 50%)", opacity: 0, duration: 0.30, ease: "power2.in" }, tEnd - 0.32);
+        }
+
+        /* 1. HOOK */
+        tl.fromTo("#hk-kicker-box", { clipPath: "inset(0 100% 0 0)", opacity: 0 }, { clipPath: "inset(0 0% 0 0)", opacity: 1, duration: 0.42, ease: "power3.inOut" }, 0.06);
+        tl.fromTo("#hk-sweep", { x: 0, opacity: 1 }, { x: 560, opacity: 0, duration: 0.48, ease: "power2.inOut" }, 0.06);
+        tl.fromTo("#hk-prism-bow",
+          { opacity: 0, scale: 0.88, y: 28, rotationX: 22, transformPerspective: 950, filter: "blur(16px)" },
+          { opacity: 1, scale: 1.0, y: 0, rotationX: 0, filter: "blur(0px)", duration: 0.50, ease: "power4.out" },
+          0.36
+        );
+        tl.fromTo("#hk-pr-r", { x: -28, opacity: 0.88 }, { x: 0, opacity: 0, duration: 0.55, ease: "power3.out" }, 0.36);
+        tl.fromTo("#hk-pr-b", { x: 28, opacity: 0.88 }, { x: 0, opacity: 0, duration: 0.55, ease: "power3.out" }, 0.36);
+        tl.fromTo("#hk-pr-main", { backgroundPosition: "-130% 0, 0 0" }, { backgroundPosition: "220% 0, 0 0", duration: 0.90, ease: "power2.inOut" }, 0.68);
+        tl.to("#hook-stage", { opacity: 0, y: -20, filter: "blur(10px)", duration: 0.28, ease: "power2.in" }, 2.52);
+
+        /* 2A, 2B, 3A */
+        fcpMaskBar("#s1a-box", "#s1a-sweep", "#s1a-txt", 2.94, 8.90, 740);
+        fcpMaskBar("#s1b-box", "#s1b-sweep", "#s1b-txt", 9.00, 13.82, 780);
+        fcpCenterBar("#s2a-box", "#s2a-txt", 14.04, 17.44);
+
+        /* 3B. LATE NIGHT NEON + MARKER */
+        tl.fromTo("#s2b-stage", { opacity: 0, scale: 0.92, y: -18, filter: "blur(10px)" }, { opacity: 1, scale: 1, y: 0, filter: "blur(0px)", duration: 0.36, ease: "back.out(1.3)" }, 17.52);
+        tl.fromTo("#s2b-neon", { strokeDashoffset: 0 }, { strokeDashoffset: -2120, duration: 3.45, ease: "none" }, 17.52);
+        tl.fromTo("#s2b-marker", { strokeDasharray: 320, strokeDashoffset: 320 }, { strokeDashoffset: 0, duration: 0.46, ease: "power3.out" }, 17.85);
+        tl.fromTo("#s2b-word", { scale: 1.0 }, { scale: 1.07, duration: 0.18, yoyo: true, repeat: 1, ease: "power2.out" }, 17.88);
+        tl.to("#s2b-stage", { opacity: 0, y: -16, filter: "blur(8px)", duration: 0.28, ease: "power2.in" }, 20.70);
+
+        /* 4A & 4B THESIS HERO */
+        fcpMaskBar("#s3a-box", "#s3a-sweep", "#s3a-txt", 25.38, 30.22, 760);
+
+        tl.fromTo("#thesis-stage", { opacity: 0, scale: 0.94, filter: "blur(12px)" }, { opacity: 1, scale: 1.0, filter: "blur(0px)", duration: 0.42, ease: "power3.out" }, 30.32);
+        tl.fromTo("#th-neon-a", { strokeDashoffset: 0 }, { strokeDashoffset: -2460, duration: 6.28, ease: "none" }, 30.32);
+        tl.fromTo("#th-neon-b", { strokeDashoffset: -1220 }, { strokeDashoffset: -3680, duration: 6.28, ease: "none" }, 30.32);
+        tl.fromTo("#th-kicker", { opacity: 0, scale: 1.05, y: -10 }, { opacity: 1, scale: 1.0, y: 0, duration: 0.44, ease: "power3.out" }, 30.38);
+        tl.fromTo(".th-w", { yPercent: 120, opacity: 0 }, { yPercent: 0, opacity: 1, duration: 0.45, stagger: 0.05, ease: "power4.out" }, 30.46);
+        tl.fromTo(".th-w", { backgroundPosition: "-130% 0, 0 0" }, { backgroundPosition: "220% 0, 0 0", duration: 0.95, stagger: 0.04, ease: "power2.inOut" }, 31.15);
+        tl.fromTo("#th-rule", { scaleX: 0, opacity: 0 }, { scaleX: 1, opacity: 1, duration: 0.48, ease: "power3.out" }, 30.92);
+        tl.fromTo("#th-sub", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.40, ease: "power2.out" }, 31.05);
+        tl.to("#thesis-stage", { opacity: 0, y: -20, filter: "blur(10px)", duration: 0.34, ease: "power2.in" }, 36.30);
+
+        /* 5. HOLISTIC FACTORS */
+        fcpMaskBar("#fc-box", "#fc-sweep", "#fc-txt", 36.84, 46.02, 780);
+
+        /* 6A & 6B */
+        tl.fromTo("#s5a-stage", { opacity: 0, scale: 0.92, y: -18, filter: "blur(10px)" }, { opacity: 1, scale: 1, y: 0, filter: "blur(0px)", duration: 0.38, ease: "back.out(1.3)" }, 46.18);
+        tl.fromTo("#s5a-neon", { strokeDashoffset: 0 }, { strokeDashoffset: -2160, duration: 5.95, ease: "none" }, 46.18);
+        tl.fromTo("#s5a-marker", { strokeDasharray: 350, strokeDashoffset: 350 }, { strokeDashoffset: 0, duration: 0.48, ease: "power3.out" }, 46.60);
+        tl.fromTo("#s5a-word", { scale: 1.0 }, { scale: 1.07, duration: 0.18, yoyo: true, repeat: 1, ease: "power2.out" }, 46.62);
+        tl.to("#s5a-stage", { opacity: 0, y: -16, filter: "blur(8px)", duration: 0.30, ease: "power2.in" }, 51.88);
+
+        fcpCenterBar("#s5b-box", "#s5b-txt", 52.32, 56.06);
+
+        /* 7A & 7B */
+        fcpCenterBar("#s6a-box", "#s6a-txt", 56.20, 60.40);
+        fcpMaskBar("#s6b-box", "#s6b-sweep", "#s6b-txt", 60.50, 63.50, 740);
+
+        /* 8. PRODUCT SHOWCASE + 8B */
+        tl.fromTo("#prod-stage", { clipPath: "inset(0 100% 0 0)", opacity: 0 }, { clipPath: "inset(0 0% 0 0)", opacity: 1, duration: 0.46, ease: "power4.out" }, 63.64);
+        tl.fromTo("#pr-title", { backgroundPosition: "-130% 0, 0 0" }, { backgroundPosition: "220% 0, 0 0", duration: 0.95, ease: "power2.inOut" }, 64.10);
+        tl.fromTo(".pr-chip", { opacity: 0, y: 14, scale: 0.88 }, { opacity: 1, y: 0, scale: 1.0, duration: 0.34, stagger: 0.07, ease: "back.out(1.4)" }, 63.92);
+        tl.to("#prod-stage", { opacity: 0, y: -18, filter: "blur(8px)", duration: 0.30, ease: "power2.in" }, 68.48);
+
+        fcpCenterBar("#s7b-box", "#s7b-txt", 68.92, 71.86);
+
+        /* 9. FINALE 3 PILLARS + CTA */
+        var chkTimes = [72.00, 73.10, 74.25];
+        chkTimes.forEach(function (tCue, i) {
+          var id = i + 1;
+          tl.fromTo("#chk-row-" + id, { opacity: 0, x: 70, filter: "blur(8px)" }, { opacity: 1, x: 0, filter: "blur(0px)", duration: 0.42, ease: "power4.out" }, tCue);
+          tl.fromTo("#chk-ring-" + id, { scale: 0, transformOrigin: "25px 25px" }, { scale: 1, duration: 0.36, ease: "back.out(1.7)" }, tCue + 0.06);
+          tl.fromTo("#chk-path-" + id, { strokeDashoffset: 40 }, { strokeDashoffset: 0, duration: 0.34, ease: "power3.out" }, tCue + 0.16);
+        });
+        tl.fromTo("#cta-stage", { clipPath: "inset(0 50% 0 50%)", opacity: 0 }, { clipPath: "inset(0 0% 0 0%)", opacity: 1, duration: 0.48, ease: "power4.out" }, 72.30);
+        tl.fromTo("#cta-txt", { backgroundPosition: "-130% 0, 0 0" }, { backgroundPosition: "220% 0, 0 0", duration: 1.10, ease: "power2.inOut" }, 72.85);
+        tl.to(["#finale-stage", "#cta-stage"], { opacity: 0, duration: 0.28, ease: "power2.in" }, 76.08);
+
+        window.__timelines["main"] = tl;
+      })();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,1409 @@
+{
+  "lang": "vi",
+  "duration": 59.838,
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 11.4,
+      "text": "Kỳ kinh đang nói gì với chị em? Mỗi tháng chị em chỉ đánh dấu một ngày trên lịch, À, hôm nay có kinh, nếu chỉ biết vậy thì chị em đang bỏ lỡ rất nhiều thông tin về chính cơ thể mình.",
+      "words": [
+        {
+          "start": 0.0,
+          "end": 0.26,
+          "word": "Kỳ",
+          "p": 0.82
+        },
+        {
+          "start": 0.26,
+          "end": 0.54,
+          "word": "kinh",
+          "p": 0.86
+        },
+        {
+          "start": 0.54,
+          "end": 0.76,
+          "word": "đang",
+          "p": 0.95
+        },
+        {
+          "start": 0.76,
+          "end": 0.98,
+          "word": "nói",
+          "p": 1.0
+        },
+        {
+          "start": 0.98,
+          "end": 1.16,
+          "word": "gì",
+          "p": 0.99
+        },
+        {
+          "start": 1.16,
+          "end": 1.3,
+          "word": "với",
+          "p": 0.93
+        },
+        {
+          "start": 1.3,
+          "end": 1.46,
+          "word": "chị",
+          "p": 0.98
+        },
+        {
+          "start": 1.46,
+          "end": 1.68,
+          "word": "em?",
+          "p": 0.99
+        },
+        {
+          "start": 1.86,
+          "end": 2.34,
+          "word": "Mỗi",
+          "p": 0.97
+        },
+        {
+          "start": 2.34,
+          "end": 2.64,
+          "word": "tháng",
+          "p": 1.0
+        },
+        {
+          "start": 2.64,
+          "end": 2.84,
+          "word": "chị",
+          "p": 0.71
+        },
+        {
+          "start": 2.84,
+          "end": 3.02,
+          "word": "em",
+          "p": 1.0
+        },
+        {
+          "start": 3.02,
+          "end": 3.18,
+          "word": "chỉ",
+          "p": 1.0
+        },
+        {
+          "start": 3.18,
+          "end": 3.42,
+          "word": "đánh",
+          "p": 0.78
+        },
+        {
+          "start": 3.42,
+          "end": 3.64,
+          "word": "dấu",
+          "p": 0.77
+        },
+        {
+          "start": 3.64,
+          "end": 3.84,
+          "word": "một",
+          "p": 0.71
+        },
+        {
+          "start": 3.84,
+          "end": 4.18,
+          "word": "ngày",
+          "p": 0.99
+        },
+        {
+          "start": 4.18,
+          "end": 4.54,
+          "word": "trên",
+          "p": 0.69
+        },
+        {
+          "start": 4.54,
+          "end": 4.78,
+          "word": "lịch,",
+          "p": 0.99
+        },
+        {
+          "start": 5.04,
+          "end": 5.22,
+          "word": "À,",
+          "p": 0.69
+        },
+        {
+          "start": 5.22,
+          "end": 5.72,
+          "word": "hôm",
+          "p": 0.87
+        },
+        {
+          "start": 5.72,
+          "end": 5.88,
+          "word": "nay",
+          "p": 0.99
+        },
+        {
+          "start": 5.88,
+          "end": 6.1,
+          "word": "có",
+          "p": 0.99
+        },
+        {
+          "start": 6.1,
+          "end": 6.34,
+          "word": "kinh,",
+          "p": 0.99
+        },
+        {
+          "start": 6.7,
+          "end": 7.06,
+          "word": "nếu",
+          "p": 0.98
+        },
+        {
+          "start": 7.06,
+          "end": 7.22,
+          "word": "chỉ",
+          "p": 0.85
+        },
+        {
+          "start": 7.22,
+          "end": 7.42,
+          "word": "biết",
+          "p": 0.99
+        },
+        {
+          "start": 7.42,
+          "end": 7.7,
+          "word": "vậy",
+          "p": 0.81
+        },
+        {
+          "start": 7.7,
+          "end": 7.98,
+          "word": "thì",
+          "p": 0.93
+        },
+        {
+          "start": 7.98,
+          "end": 8.12,
+          "word": "chị",
+          "p": 0.99
+        },
+        {
+          "start": 8.12,
+          "end": 8.34,
+          "word": "em",
+          "p": 1.0
+        },
+        {
+          "start": 8.34,
+          "end": 8.5,
+          "word": "đang",
+          "p": 0.99
+        },
+        {
+          "start": 8.5,
+          "end": 8.9,
+          "word": "bỏ",
+          "p": 0.99
+        },
+        {
+          "start": 8.9,
+          "end": 9.16,
+          "word": "lỡ",
+          "p": 1.0
+        },
+        {
+          "start": 9.16,
+          "end": 9.4,
+          "word": "rất",
+          "p": 0.97
+        },
+        {
+          "start": 9.4,
+          "end": 9.64,
+          "word": "nhiều",
+          "p": 1.0
+        },
+        {
+          "start": 9.64,
+          "end": 9.94,
+          "word": "thông",
+          "p": 1.0
+        },
+        {
+          "start": 9.94,
+          "end": 10.16,
+          "word": "tin",
+          "p": 1.0
+        },
+        {
+          "start": 10.16,
+          "end": 10.48,
+          "word": "về",
+          "p": 0.99
+        },
+        {
+          "start": 10.48,
+          "end": 10.68,
+          "word": "chính",
+          "p": 0.88
+        },
+        {
+          "start": 10.68,
+          "end": 11.0,
+          "word": "cơ",
+          "p": 0.99
+        },
+        {
+          "start": 11.0,
+          "end": 11.14,
+          "word": "thể",
+          "p": 1.0
+        },
+        {
+          "start": 11.14,
+          "end": 11.4,
+          "word": "mình.",
+          "p": 0.98
+        }
+      ]
+    },
+    {
+      "start": 11.4,
+      "end": 18.62,
+      "text": "Kỳ kinh không chỉ là chuyện đến hay chưa đến, mà chị em phải quan sát xem: chu kỳ thường bao nhiêu ngày, có đều không?",
+      "words": [
+        {
+          "start": 11.4,
+          "end": 11.88,
+          "word": "Kỳ",
+          "p": 0.68
+        },
+        {
+          "start": 11.88,
+          "end": 12.12,
+          "word": "kinh",
+          "p": 0.99
+        },
+        {
+          "start": 12.12,
+          "end": 12.3,
+          "word": "không",
+          "p": 0.99
+        },
+        {
+          "start": 12.3,
+          "end": 12.46,
+          "word": "chỉ",
+          "p": 1.0
+        },
+        {
+          "start": 12.46,
+          "end": 12.64,
+          "word": "là",
+          "p": 0.96
+        },
+        {
+          "start": 12.64,
+          "end": 13.0,
+          "word": "chuyện",
+          "p": 0.86
+        },
+        {
+          "start": 13.0,
+          "end": 13.34,
+          "word": "đến",
+          "p": 0.97
+        },
+        {
+          "start": 13.34,
+          "end": 13.7,
+          "word": "hay",
+          "p": 0.98
+        },
+        {
+          "start": 13.7,
+          "end": 13.96,
+          "word": "chưa",
+          "p": 1.0
+        },
+        {
+          "start": 13.96,
+          "end": 14.24,
+          "word": "đến,",
+          "p": 0.99
+        },
+        {
+          "start": 14.8,
+          "end": 14.86,
+          "word": "mà",
+          "p": 0.97
+        },
+        {
+          "start": 14.86,
+          "end": 15.02,
+          "word": "chị",
+          "p": 0.97
+        },
+        {
+          "start": 15.02,
+          "end": 15.18,
+          "word": "em",
+          "p": 1.0
+        },
+        {
+          "start": 15.18,
+          "end": 15.32,
+          "word": "phải",
+          "p": 0.99
+        },
+        {
+          "start": 15.32,
+          "end": 15.54,
+          "word": "quan",
+          "p": 0.98
+        },
+        {
+          "start": 15.54,
+          "end": 15.8,
+          "word": "sát",
+          "p": 1.0
+        },
+        {
+          "start": 15.8,
+          "end": 16.04,
+          "word": "xem:",
+          "p": 0.97
+        },
+        {
+          "start": 16.04,
+          "end": 16.2,
+          "word": "chu",
+          "p": 0.6
+        },
+        {
+          "start": 16.2,
+          "end": 16.4,
+          "word": "kỳ",
+          "p": 0.96
+        },
+        {
+          "start": 16.4,
+          "end": 16.82,
+          "word": "thường",
+          "p": 0.98
+        },
+        {
+          "start": 16.82,
+          "end": 17.04,
+          "word": "bao",
+          "p": 0.99
+        },
+        {
+          "start": 17.04,
+          "end": 17.22,
+          "word": "nhiêu",
+          "p": 0.99
+        },
+        {
+          "start": 17.22,
+          "end": 17.5,
+          "word": "ngày,",
+          "p": 0.99
+        },
+        {
+          "start": 17.96,
+          "end": 18.04,
+          "word": "có",
+          "p": 0.98
+        },
+        {
+          "start": 18.04,
+          "end": 18.32,
+          "word": "đều",
+          "p": 0.95
+        },
+        {
+          "start": 18.32,
+          "end": 18.62,
+          "word": "không?",
+          "p": 0.99
+        }
+      ]
+    },
+    {
+      "start": 18.82,
+      "end": 26.32,
+      "text": "Lượng kinh có thay đổi đáng kể không? Có đau dữ dội không? Có những thay đổi nào lặp đi lặp lại trong nhiều chu kỳ không?",
+      "words": [
+        {
+          "start": 18.82,
+          "end": 19.28,
+          "word": "Lượng",
+          "p": 0.86
+        },
+        {
+          "start": 19.28,
+          "end": 19.56,
+          "word": "kinh",
+          "p": 0.98
+        },
+        {
+          "start": 19.56,
+          "end": 19.74,
+          "word": "có",
+          "p": 0.99
+        },
+        {
+          "start": 19.74,
+          "end": 19.96,
+          "word": "thay",
+          "p": 1.0
+        },
+        {
+          "start": 19.96,
+          "end": 20.16,
+          "word": "đổi",
+          "p": 1.0
+        },
+        {
+          "start": 20.16,
+          "end": 20.42,
+          "word": "đáng",
+          "p": 0.92
+        },
+        {
+          "start": 20.42,
+          "end": 20.72,
+          "word": "kể",
+          "p": 1.0
+        },
+        {
+          "start": 20.72,
+          "end": 20.98,
+          "word": "không?",
+          "p": 1.0
+        },
+        {
+          "start": 21.34,
+          "end": 21.56,
+          "word": "Có",
+          "p": 0.88
+        },
+        {
+          "start": 21.56,
+          "end": 21.82,
+          "word": "đau",
+          "p": 1.0
+        },
+        {
+          "start": 21.82,
+          "end": 22.04,
+          "word": "dữ",
+          "p": 0.78
+        },
+        {
+          "start": 22.04,
+          "end": 22.28,
+          "word": "dội",
+          "p": 0.91
+        },
+        {
+          "start": 22.28,
+          "end": 22.58,
+          "word": "không?",
+          "p": 1.0
+        },
+        {
+          "start": 22.76,
+          "end": 23.22,
+          "word": "Có",
+          "p": 0.99
+        },
+        {
+          "start": 23.22,
+          "end": 23.38,
+          "word": "những",
+          "p": 0.99
+        },
+        {
+          "start": 23.38,
+          "end": 23.64,
+          "word": "thay",
+          "p": 1.0
+        },
+        {
+          "start": 23.64,
+          "end": 23.88,
+          "word": "đổi",
+          "p": 1.0
+        },
+        {
+          "start": 23.88,
+          "end": 24.12,
+          "word": "nào",
+          "p": 0.98
+        },
+        {
+          "start": 24.12,
+          "end": 24.46,
+          "word": "lặp",
+          "p": 0.73
+        },
+        {
+          "start": 24.46,
+          "end": 24.64,
+          "word": "đi",
+          "p": 0.99
+        },
+        {
+          "start": 24.64,
+          "end": 24.88,
+          "word": "lặp",
+          "p": 1.0
+        },
+        {
+          "start": 24.88,
+          "end": 25.08,
+          "word": "lại",
+          "p": 1.0
+        },
+        {
+          "start": 25.08,
+          "end": 25.3,
+          "word": "trong",
+          "p": 0.99
+        },
+        {
+          "start": 25.3,
+          "end": 25.58,
+          "word": "nhiều",
+          "p": 0.99
+        },
+        {
+          "start": 25.58,
+          "end": 25.82,
+          "word": "chu",
+          "p": 0.98
+        },
+        {
+          "start": 25.82,
+          "end": 26.04,
+          "word": "kỳ",
+          "p": 0.99
+        },
+        {
+          "start": 26.04,
+          "end": 26.32,
+          "word": "không?",
+          "p": 1.0
+        }
+      ]
+    },
+    {
+      "start": 26.32,
+      "end": 29.46,
+      "text": "Một lần thay đổi chưa chắc nói lên điều gì,",
+      "words": [
+        {
+          "start": 26.32,
+          "end": 27.12,
+          "word": "Một",
+          "p": 0.81
+        },
+        {
+          "start": 27.12,
+          "end": 27.3,
+          "word": "lần",
+          "p": 1.0
+        },
+        {
+          "start": 27.3,
+          "end": 27.52,
+          "word": "thay",
+          "p": 1.0
+        },
+        {
+          "start": 27.52,
+          "end": 27.78,
+          "word": "đổi",
+          "p": 1.0
+        },
+        {
+          "start": 27.78,
+          "end": 28.1,
+          "word": "chưa",
+          "p": 0.78
+        },
+        {
+          "start": 28.1,
+          "end": 28.42,
+          "word": "chắc",
+          "p": 1.0
+        },
+        {
+          "start": 28.42,
+          "end": 28.82,
+          "word": "nói",
+          "p": 0.95
+        },
+        {
+          "start": 28.82,
+          "end": 29.0,
+          "word": "lên",
+          "p": 1.0
+        },
+        {
+          "start": 29.0,
+          "end": 29.18,
+          "word": "điều",
+          "p": 1.0
+        },
+        {
+          "start": 29.18,
+          "end": 29.46,
+          "word": "gì,",
+          "p": 1.0
+        }
+      ]
+    },
+    {
+      "start": 29.46,
+      "end": 31.98,
+      "text": "nhưng nếu những bất thường cứ lặp đi lặp lại,",
+      "words": [
+        {
+          "start": 29.46,
+          "end": 30.06,
+          "word": "nhưng",
+          "p": 0.77
+        },
+        {
+          "start": 30.06,
+          "end": 30.32,
+          "word": "nếu",
+          "p": 1.0
+        },
+        {
+          "start": 30.32,
+          "end": 30.52,
+          "word": "những",
+          "p": 0.99
+        },
+        {
+          "start": 30.52,
+          "end": 30.74,
+          "word": "bất",
+          "p": 1.0
+        },
+        {
+          "start": 30.74,
+          "end": 31.0,
+          "word": "thường",
+          "p": 0.86
+        },
+        {
+          "start": 31.0,
+          "end": 31.16,
+          "word": "cứ",
+          "p": 0.87
+        },
+        {
+          "start": 31.16,
+          "end": 31.32,
+          "word": "lặp",
+          "p": 0.98
+        },
+        {
+          "start": 31.32,
+          "end": 31.48,
+          "word": "đi",
+          "p": 1.0
+        },
+        {
+          "start": 31.48,
+          "end": 31.68,
+          "word": "lặp",
+          "p": 1.0
+        },
+        {
+          "start": 31.68,
+          "end": 31.98,
+          "word": "lại,",
+          "p": 1.0
+        }
+      ]
+    },
+    {
+      "start": 31.98,
+      "end": 34.0,
+      "text": "đó là lúc chị em phải quan tâm!",
+      "words": [
+        {
+          "start": 31.98,
+          "end": 32.68,
+          "word": "đó",
+          "p": 0.93
+        },
+        {
+          "start": 32.68,
+          "end": 32.82,
+          "word": "là",
+          "p": 1.0
+        },
+        {
+          "start": 32.82,
+          "end": 33.0,
+          "word": "lúc",
+          "p": 1.0
+        },
+        {
+          "start": 33.0,
+          "end": 33.16,
+          "word": "chị",
+          "p": 0.99
+        },
+        {
+          "start": 33.16,
+          "end": 33.32,
+          "word": "em",
+          "p": 1.0
+        },
+        {
+          "start": 33.32,
+          "end": 33.44,
+          "word": "phải",
+          "p": 1.0
+        },
+        {
+          "start": 33.44,
+          "end": 33.7,
+          "word": "quan",
+          "p": 1.0
+        },
+        {
+          "start": 33.7,
+          "end": 34.0,
+          "word": "tâm!",
+          "p": 1.0
+        }
+      ]
+    },
+    {
+      "start": 34.0,
+      "end": 36.34,
+      "text": "Đặc biệt nếu chị em đang mong con,",
+      "words": [
+        {
+          "start": 34.0,
+          "end": 34.6,
+          "word": "Đặc",
+          "p": 0.98
+        },
+        {
+          "start": 34.6,
+          "end": 34.84,
+          "word": "biệt",
+          "p": 1.0
+        },
+        {
+          "start": 34.84,
+          "end": 35.32,
+          "word": "nếu",
+          "p": 0.97
+        },
+        {
+          "start": 35.32,
+          "end": 35.48,
+          "word": "chị",
+          "p": 1.0
+        },
+        {
+          "start": 35.48,
+          "end": 35.66,
+          "word": "em",
+          "p": 1.0
+        },
+        {
+          "start": 35.66,
+          "end": 35.82,
+          "word": "đang",
+          "p": 1.0
+        },
+        {
+          "start": 35.82,
+          "end": 36.04,
+          "word": "mong",
+          "p": 1.0
+        },
+        {
+          "start": 36.04,
+          "end": 36.34,
+          "word": "con,",
+          "p": 0.94
+        }
+      ]
+    },
+    {
+      "start": 36.34,
+      "end": 39.9,
+      "text": "việc theo dõi chu kỳ và sức khỏe sinh sản càng được chú ý.",
+      "words": [
+        {
+          "start": 36.34,
+          "end": 37.04,
+          "word": "việc",
+          "p": 0.99
+        },
+        {
+          "start": 37.04,
+          "end": 37.24,
+          "word": "theo",
+          "p": 1.0
+        },
+        {
+          "start": 37.24,
+          "end": 37.5,
+          "word": "dõi",
+          "p": 1.0
+        },
+        {
+          "start": 37.5,
+          "end": 37.64,
+          "word": "chu",
+          "p": 0.65
+        },
+        {
+          "start": 37.64,
+          "end": 37.94,
+          "word": "kỳ",
+          "p": 0.98
+        },
+        {
+          "start": 37.94,
+          "end": 38.1,
+          "word": "và",
+          "p": 0.94
+        },
+        {
+          "start": 38.1,
+          "end": 38.28,
+          "word": "sức",
+          "p": 1.0
+        },
+        {
+          "start": 38.28,
+          "end": 38.48,
+          "word": "khỏe",
+          "p": 1.0
+        },
+        {
+          "start": 38.48,
+          "end": 38.7,
+          "word": "sinh",
+          "p": 0.99
+        },
+        {
+          "start": 38.7,
+          "end": 38.94,
+          "word": "sản",
+          "p": 1.0
+        },
+        {
+          "start": 38.94,
+          "end": 39.34,
+          "word": "càng",
+          "p": 0.86
+        },
+        {
+          "start": 39.34,
+          "end": 39.5,
+          "word": "được",
+          "p": 1.0
+        },
+        {
+          "start": 39.5,
+          "end": 39.76,
+          "word": "chú",
+          "p": 0.72
+        },
+        {
+          "start": 39.76,
+          "end": 39.9,
+          "word": "ý.",
+          "p": 0.98
+        }
+      ]
+    },
+    {
+      "start": 39.9,
+      "end": 41.62,
+      "text": "Và Hằng nhắc chị em một điều:",
+      "words": [
+        {
+          "start": 39.9,
+          "end": 40.48,
+          "word": "Và",
+          "p": 1.0
+        },
+        {
+          "start": 40.48,
+          "end": 40.66,
+          "word": "Hằng",
+          "p": 0.75
+        },
+        {
+          "start": 40.66,
+          "end": 40.84,
+          "word": "nhắc",
+          "p": 1.0
+        },
+        {
+          "start": 40.84,
+          "end": 41.0,
+          "word": "chị",
+          "p": 1.0
+        },
+        {
+          "start": 41.0,
+          "end": 41.18,
+          "word": "em",
+          "p": 1.0
+        },
+        {
+          "start": 41.18,
+          "end": 41.32,
+          "word": "một",
+          "p": 0.97
+        },
+        {
+          "start": 41.32,
+          "end": 41.62,
+          "word": "điều:",
+          "p": 1.0
+        }
+      ]
+    },
+    {
+      "start": 41.62,
+      "end": 44.82,
+      "text": "đừng tự chẩn đoán mình chỉ bằng cách xem video.",
+      "words": [
+        {
+          "start": 41.62,
+          "end": 42.42,
+          "word": "đừng",
+          "p": 1.0
+        },
+        {
+          "start": 42.42,
+          "end": 42.7,
+          "word": "tự",
+          "p": 0.99
+        },
+        {
+          "start": 42.7,
+          "end": 43.08,
+          "word": "chẩn",
+          "p": 0.78
+        },
+        {
+          "start": 43.08,
+          "end": 43.3,
+          "word": "đoán",
+          "p": 0.94
+        },
+        {
+          "start": 43.3,
+          "end": 43.58,
+          "word": "mình",
+          "p": 1.0
+        },
+        {
+          "start": 43.58,
+          "end": 43.8,
+          "word": "chỉ",
+          "p": 0.81
+        },
+        {
+          "start": 43.8,
+          "end": 44.0,
+          "word": "bằng",
+          "p": 1.0
+        },
+        {
+          "start": 44.0,
+          "end": 44.18,
+          "word": "cách",
+          "p": 1.0
+        },
+        {
+          "start": 44.18,
+          "end": 44.44,
+          "word": "xem",
+          "p": 1.0
+        },
+        {
+          "start": 44.44,
+          "end": 44.82,
+          "word": "video.",
+          "p": 1.0
+        }
+      ]
+    },
+    {
+      "start": 44.82,
+      "end": 46.62,
+      "text": "Internet cho mình kiến thức,",
+      "words": [
+        {
+          "start": 44.82,
+          "end": 45.68,
+          "word": "Internet",
+          "p": 0.9
+        },
+        {
+          "start": 45.68,
+          "end": 46.0,
+          "word": "cho",
+          "p": 1.0
+        },
+        {
+          "start": 46.0,
+          "end": 46.14,
+          "word": "mình",
+          "p": 1.0
+        },
+        {
+          "start": 46.14,
+          "end": 46.42,
+          "word": "kiến",
+          "p": 0.99
+        },
+        {
+          "start": 46.42,
+          "end": 46.62,
+          "word": "thức,",
+          "p": 1.0
+        }
+      ]
+    },
+    {
+      "start": 46.62,
+      "end": 48.82,
+      "text": "nhưng khi cơ thể thực sự có vấn đề,",
+      "words": [
+        {
+          "start": 46.62,
+          "end": 47.14,
+          "word": "nhưng",
+          "p": 1.0
+        },
+        {
+          "start": 47.14,
+          "end": 47.28,
+          "word": "khi",
+          "p": 1.0
+        },
+        {
+          "start": 47.28,
+          "end": 47.52,
+          "word": "cơ",
+          "p": 0.99
+        },
+        {
+          "start": 47.52,
+          "end": 47.76,
+          "word": "thể",
+          "p": 1.0
+        },
+        {
+          "start": 47.76,
+          "end": 47.96,
+          "word": "thực",
+          "p": 0.97
+        },
+        {
+          "start": 47.96,
+          "end": 48.18,
+          "word": "sự",
+          "p": 1.0
+        },
+        {
+          "start": 48.18,
+          "end": 48.36,
+          "word": "có",
+          "p": 1.0
+        },
+        {
+          "start": 48.36,
+          "end": 48.56,
+          "word": "vấn",
+          "p": 1.0
+        },
+        {
+          "start": 48.56,
+          "end": 48.82,
+          "word": "đề,",
+          "p": 1.0
+        }
+      ]
+    },
+    {
+      "start": 48.82,
+      "end": 51.82,
+      "text": "bác sĩ mới có thể là người đánh giá phù hợp.",
+      "words": [
+        {
+          "start": 48.82,
+          "end": 49.42,
+          "word": "bác",
+          "p": 0.99
+        },
+        {
+          "start": 49.42,
+          "end": 49.7,
+          "word": "sĩ",
+          "p": 1.0
+        },
+        {
+          "start": 49.7,
+          "end": 50.08,
+          "word": "mới",
+          "p": 0.96
+        },
+        {
+          "start": 50.08,
+          "end": 50.24,
+          "word": "có",
+          "p": 1.0
+        },
+        {
+          "start": 50.24,
+          "end": 50.38,
+          "word": "thể",
+          "p": 1.0
+        },
+        {
+          "start": 50.38,
+          "end": 50.54,
+          "word": "là",
+          "p": 1.0
+        },
+        {
+          "start": 50.54,
+          "end": 50.72,
+          "word": "người",
+          "p": 1.0
+        },
+        {
+          "start": 50.72,
+          "end": 51.08,
+          "word": "đánh",
+          "p": 0.97
+        },
+        {
+          "start": 51.08,
+          "end": 51.34,
+          "word": "giá",
+          "p": 1.0
+        },
+        {
+          "start": 51.34,
+          "end": 51.58,
+          "word": "phù",
+          "p": 1.0
+        },
+        {
+          "start": 51.58,
+          "end": 51.82,
+          "word": "hợp.",
+          "p": 1.0
+        }
+      ]
+    },
+    {
+      "start": 51.82,
+      "end": 53.88,
+      "text": "Từ hôm nay, thay vì chỉ ghi:",
+      "words": [
+        {
+          "start": 51.82,
+          "end": 52.36,
+          "word": "Từ",
+          "p": 1.0
+        },
+        {
+          "start": 52.36,
+          "end": 52.52,
+          "word": "hôm",
+          "p": 1.0
+        },
+        {
+          "start": 52.52,
+          "end": 52.78,
+          "word": "nay,",
+          "p": 1.0
+        },
+        {
+          "start": 53.08,
+          "end": 53.22,
+          "word": "thay",
+          "p": 1.0
+        },
+        {
+          "start": 53.22,
+          "end": 53.34,
+          "word": "vì",
+          "p": 0.98
+        },
+        {
+          "start": 53.34,
+          "end": 53.54,
+          "word": "chỉ",
+          "p": 0.54
+        },
+        {
+          "start": 53.54,
+          "end": 53.88,
+          "word": "ghi:",
+          "p": 0.99
+        }
+      ]
+    },
+    {
+      "start": 53.88,
+      "end": 55.46,
+      "text": "\"Ngày hôm nay có kinh\",",
+      "words": [
+        {
+          "start": 53.88,
+          "end": 54.46,
+          "word": "\"Ngày",
+          "p": 0.92
+        },
+        {
+          "start": 54.46,
+          "end": 54.7,
+          "word": "hôm",
+          "p": 1.0
+        },
+        {
+          "start": 54.7,
+          "end": 54.88,
+          "word": "nay",
+          "p": 1.0
+        },
+        {
+          "start": 54.88,
+          "end": 55.18,
+          "word": "có",
+          "p": 1.0
+        },
+        {
+          "start": 55.18,
+          "end": 55.46,
+          "word": "kinh\",",
+          "p": 0.98
+        }
+      ]
+    },
+    {
+      "start": 55.46,
+      "end": 58.04,
+      "text": "hãy bắt đầu ghi những thay đổi của cơ thể mình,",
+      "words": [
+        {
+          "start": 55.46,
+          "end": 56.06,
+          "word": "hãy",
+          "p": 0.97
+        },
+        {
+          "start": 56.06,
+          "end": 56.2,
+          "word": "bắt",
+          "p": 0.99
+        },
+        {
+          "start": 56.2,
+          "end": 56.4,
+          "word": "đầu",
+          "p": 1.0
+        },
+        {
+          "start": 56.4,
+          "end": 56.6,
+          "word": "ghi",
+          "p": 1.0
+        },
+        {
+          "start": 56.6,
+          "end": 56.74,
+          "word": "những",
+          "p": 1.0
+        },
+        {
+          "start": 56.74,
+          "end": 57.0,
+          "word": "thay",
+          "p": 1.0
+        },
+        {
+          "start": 57.0,
+          "end": 57.24,
+          "word": "đổi",
+          "p": 1.0
+        },
+        {
+          "start": 57.24,
+          "end": 57.38,
+          "word": "của",
+          "p": 0.97
+        },
+        {
+          "start": 57.38,
+          "end": 57.62,
+          "word": "cơ",
+          "p": 1.0
+        },
+        {
+          "start": 57.62,
+          "end": 57.78,
+          "word": "thể",
+          "p": 1.0
+        },
+        {
+          "start": 57.78,
+          "end": 58.04,
+          "word": "mình,",
+          "p": 1.0
+        }
+      ]
+    },
+    {
+      "start": 58.04,
+      "end": 58.86,
+      "text": "chị em nhá!",
+      "words": [
+        {
+          "start": 58.04,
+          "end": 58.46,
+          "word": "chị",
+          "p": 0.34
+        },
+        {
+          "start": 58.46,
+          "end": 58.58,
+          "word": "em",
+          "p": 0.89
+        },
+        {
+          "start": 58.58,
+          "end": 58.86,
+          "word": "nhá!",
+          "p": 0.84
+        }
+      ]
+    }
+  ]
+}

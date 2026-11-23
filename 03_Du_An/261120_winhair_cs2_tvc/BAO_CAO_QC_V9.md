@@ -1,0 +1,10 @@
+# Báo Cáo Kiểm Định Chất Lượng (QC) — TVC Win Hair Salon CS2 (V10 Final: Zero Boundary Bleed @ 01:03 + Final Cut Pro Counter-Slide Banner)
+
+- **Tệp xuất Final**: `261120 WinHair TVC cơ sở 2 final.mp4` (`1920×1080 @ 30fps`, `316.40s` / `9,492` frames chính xác, chuẩn màu `SDR bt709`)
+- **Công nghệ dựng**: HyperFrames (`HTML + CSS + GSAP + GPU Hardware Render`) kết hợp 100% màu chỉnh & làm mịn/sáng da gốc từ bản xuất CapCut của Editor.
+- **Các hạng mục hoàn thiện V8 – V10 đã kiểm định 100%**:
+  1. **Xử Lý Triệt Để 100% Lỗi Chồng/Nháy Frame Tại Mốc `01:03` (`Slide 02C`) & Toàn Bộ `84` Clip**: Tách độc lập `slide-02c-a.html` (`f=1790..1883`) và `slide-02c-b.html` (`f=1928..2103`) với nền tối đặc `100%` không mờ xuyên thấu, đồng thời cắt sạch toàn bộ frame biên chuyển cảnh trên `14` clip trực tiếp (`max_frame_diff < 17.3`), triệt tiêu hoàn toàn hiện tượng lộ lớp nền dưới tại `01:02.60–01:04.45`.
+  2. **Nâng Cấp Hiệu Ứng Bảng Tiêu Đề Góc Trên Kiểu Final Cut Pro (`overlays-hud.html`)**: Thiết kế chuyển động đối hướng sống động — lớp nền đen quét mượt từ phải sang trái (`xPercent: 103 -> 0`), thanh & dải ánh vàng kim chạy ngược từ trái sang phải (`xPercent: -115 -> 245` + đường kẻ vàng `scaleX: 0 -> 1`), kết hợp 3 dòng chữ trượt mở từ mặt nạ (`overflow: hidden` mask slide) chuẩn phong cách Final Cut Pro.
+  3. **Sửa Dứt Điểm Chữ Tiêu Đề Bị Cắt Dấu & Khung `CƠ SỞ 1` (`Slide 10` Beat 4)**: Mở rộng vùng đệm `.wh-bullion-face` (`padding-top: 48px`, `line-height: 1.32`) giữ nguyên vẹn dấu tiếng Việt (`HAI ĐIỂM ĐẾN · MỘT CHUẨN MỰC 5 SAO`); dựng lại mặt tiền `C0057.MP4` phủ kín 100% khung `842×668`.
+  4. **Khôi Phục Nhạc Nền Cao Trào Khúc Đầu Khi Cả Đội Đồng Thanh Hô Vang (`0.40s – 52.00s`)**: Đưa đoạn điệp khúc `nhac_nen.mp3` kèm `Riser + Sub Hit` bùng nổ đúng nhịp tập thể hô vang (`3.83s – 5.00s`) và nối mượt vào mạch nhạc chính.
+  5. **Bộ `23` Màu Âm `Whoosh / Deep Woosh / Swish / Wish` Đa Dạng (`134` điểm nhấn)**: Phối xoay vòng phong phú, âm lượng tổng đạt chuẩn `-14.0 dB` (`True Peak -1.2 dB`).

@@ -1,0 +1,517 @@
+<template>
+  <style>
+@font-face {
+  font-family: "Anton";
+  src: url("assets/fonts/Anton-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: "Asap Condensed";
+  src: url("assets/fonts/AsapCondensed-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: "Asap Condensed";
+  src: url("assets/fonts/AsapCondensed-ExtraBold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: "Asap Condensed";
+  src: url("assets/fonts/AsapCondensed-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("assets/fonts/Montserrat-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("assets/fonts/Montserrat-ExtraBold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("assets/fonts/Montserrat-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: "Be Vietnam Pro";
+  src: url("assets/fonts/BeVietnamPro-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: "Be Vietnam Pro";
+  src: url("assets/fonts/BeVietnamPro-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: "Be Vietnam Pro";
+  src: url("assets/fonts/BeVietnamPro-ExtraBold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: block;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+#root {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  font-family: "Montserrat", sans-serif;
+  color: #ffffff;
+}
+.wh-stage {
+  position: absolute;
+  inset: 0;
+  perspective: 1300px;
+  transform-style: preserve-3d;
+}
+.wh-bg-obsidian {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 50% 15%, #3D1114 0%, #1C0B09 48%, #080606 100%);
+}
+.wh-bg-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(245, 197, 66, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(245, 197, 66, 0.055) 1px, transparent 1px);
+  background-size: 64px 64px;
+  pointer-events: none;
+}
+.wh-bokeh-vid {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1920px;
+  height: 1080px;
+  object-fit: cover;
+  mix-blend-mode: screen;
+  opacity: 0.42;
+  pointer-events: none;
+}
+/* 2-Layer Metallic Gradient Typography (Generous top padding prevents Vietnamese diacritic clipping) */
+.wh-grad-wrap {
+  position: relative;
+  display: inline-block;
+  padding: 16px 12px 6px 12px;
+  margin: -12px -12px -4px -12px;
+}
+.wh-grad-back {
+  display: block;
+  padding: 0;
+  user-select: none;
+  paint-order: stroke fill;
+  -webkit-text-stroke: 7px #140806;
+  color: #140806;
+  filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.85));
+}
+.wh-grad-front {
+  position: absolute;
+  inset: 0;
+  padding: 16px 12px 6px 12px;
+  display: block;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  background-size: 240% 100%, 100% 100%;
+  background-position: -130% 0, 0 0;
+}
+.wh-gold-fill {
+  background-image:
+    linear-gradient(115deg, rgba(255,255,255,0) 35%, rgba(255,255,255,0.96) 50%, rgba(255,255,255,0) 65%),
+    linear-gradient(180deg, #FFFDF2 0%, #FFE27D 26%, #D69324 54%, #FFEDA8 78%, #9B600C 100%);
+}
+.wh-ruby-fill {
+  background-image:
+    linear-gradient(115deg, rgba(255,255,255,0) 35%, rgba(255,255,255,0.94) 50%, rgba(255,255,255,0) 65%),
+    linear-gradient(180deg, #FFEBEB 0%, #FF5960 26%, #D6121B 55%, #FF8F94 78%, #7E060C 100%);
+}
+/* Header block */
+.wh-header {
+  position: absolute;
+  left: 96px;
+  right: 96px;
+  top: 44px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  z-index: 12;
+}
+.wh-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 22px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(190, 20, 28, 0.92), rgba(115, 8, 14, 0.92));
+  border: 1.5px solid rgba(255, 222, 130, 0.78);
+  box-shadow: 0 6px 20px rgba(214, 18, 27, 0.45);
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+  font-size: 17px;
+  letter-spacing: 0.12em;
+  color: #FFF6D6;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.wh-title-lg {
+  font-family: "Asap Condensed", sans-serif;
+  font-weight: 900;
+  font-size: 60px;
+  line-height: 1.22;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+.wh-flare-bar {
+  width: 560px;
+  height: 3px;
+  margin-top: 8px;
+  background: linear-gradient(90deg, transparent 0%, #FFD666 32%, #FFFFFF 50%, #FFD666 68%, transparent 100%);
+  box-shadow: 0 0 22px 3px rgba(255, 208, 92, 0.82);
+  border-radius: 999px;
+}
+/* Beveled Luxury Media Card */
+.wh-card {
+  position: absolute;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #120D0B;
+  border: 2px solid rgba(250, 210, 110, 0.78);
+  box-shadow:
+    0 22px 52px rgba(0, 0, 0, 0.78),
+    0 0 26px rgba(245, 190, 66, 0.18),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.18);
+}
+.wh-vid-fill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.wh-card-shade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.06) 0%, rgba(0,0,0,0.12) 52%, rgba(8,5,4,0.92) 100%);
+  pointer-events: none;
+}
+.wh-card-sheen {
+  position: absolute;
+  inset: -20%;
+  background: linear-gradient(115deg, transparent 38%, rgba(255, 246, 205, 0.48) 50%, transparent 62%);
+  pointer-events: none;
+  opacity: 0;
+}
+.wh-card-caption {
+  position: absolute;
+  left: 18px;
+  right: 18px;
+  bottom: 16px;
+  z-index: 4;
+}
+.wh-badge-num {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #FFE484, #C88418);
+  color: #160A04;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
+  font-size: 15px;
+  letter-spacing: 0.06em;
+  margin-bottom: 6px;
+}
+.wh-card-h3 {
+  font-family: "Asap Condensed", sans-serif;
+  font-weight: 900;
+  font-size: 32px;
+  line-height: 1.1;
+  color: #FFF6D6;
+  text-transform: uppercase;
+  text-shadow: 0 3px 12px rgba(0,0,0,0.9);
+}
+.wh-card-p {
+  margin-top: 3px;
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  color: #E8DFD5;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.9);
+}
+/* Feature Pill Row */
+.wh-pill-row {
+  position: absolute;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
+  z-index: 14;
+}
+.wh-lux-pill {
+  padding: 12px 24px;
+  border-radius: 14px;
+  background: rgba(18, 12, 10, 0.88);
+  border: 1.5px solid rgba(248, 205, 98, 0.72);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.65);
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+  font-size: 20px;
+  color: #FFE999;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+    .wh-mega-num {
+      font-family: "Asap Condensed", sans-serif;
+      font-weight: 900;
+      font-size: 144px;
+      line-height: 1.18;
+      letter-spacing: 0.02em;
+    }
+    .wh-center-badge {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 780px;
+      margin-left: -390px;
+      margin-top: -175px;
+      padding: 26px 38px;
+      border-radius: 28px;
+      background: radial-gradient(circle at 50% 25%, rgba(44, 14, 12, 0.97), rgba(12, 7, 6, 0.98));
+      border: 3px solid #F8CE6A;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.92), 0 0 55px rgba(245, 192, 66, 0.45);
+      text-align: center;
+      z-index: 25;
+    }
+  </style>
+  <div id="root" data-composition-id="slide-10" data-width="1920" data-height="1080">
+    <div id="s10-stage" class="wh-stage">
+      <div class="wh-bg-obsidian"></div>
+      <div class="wh-bg-grid" data-layout-ignore></div>
+      <video id="s10-bk1" class="clip wh-bokeh-vid" src="assets/overlays/golden_dust_16x9.mp4" data-start="0" data-duration="12.0" data-track-index="0" muted playsinline data-layout-ignore></video>
+      <video id="s10-bk2" class="clip wh-bokeh-vid" src="assets/overlays/golden_dust_16x9.mp4" data-start="12.0" data-hf-media-start-basis="local" data-duration="12.0" data-track-index="11" muted playsinline data-layout-ignore></video>
+      <video id="s10-bk3" class="clip wh-bokeh-vid" src="assets/overlays/golden_dust_16x9.mp4" data-start="24.0" data-hf-media-start-basis="local" data-duration="3.77" data-track-index="12" muted playsinline data-layout-ignore></video>
+
+      <!-- ================= BEAT 1 (0.00s - 4.70s): GIẢM NGAY 20% ================= -->
+      <div id="s10-b1" style="position: absolute; inset: 0;">
+        <div class="wh-header">
+          <div class="wh-kicker">★ ĐẠI TIỆC ƯU ĐÃI KHUNG GIỜ VÀNG ★</div>
+          <span class="wh-grad-wrap wh-title-lg" data-layout-allow-overlap>
+      <span class="wh-grad-back" aria-hidden="true" data-layout-ignore>THỨ 2 ĐẾN THỨ 6 · ĐI SỚM GIÁ NGON</span>
+      <span id="s10-b1-ttl-sheen" class="wh-grad-front wh-gold-fill" data-layout-allow-overlap>THỨ 2 ĐẾN THỨ 6 · ĐI SỚM GIÁ NGON</span>
+    </span>
+          <div class="wh-flare-bar" data-layout-ignore></div>
+        </div>
+
+        <div id="s10-b1-vidwrap" class="wh-card" style="left: 112px; top: 210px; width: 960px; height: 676px;">
+          <video id="s10-b1-v" class="clip wh-vid-fill" src="assets/slides/h_promo_salon.mp4" data-start="0" data-duration="4.70" data-track-index="1" muted playsinline></video>
+          <div class="wh-card-shade"></div>
+          <div class="wh-card-caption">
+            <span class="wh-badge-num">ƯU ĐÃI TUẦN</span>
+            <div class="wh-card-h3">ÁP DỤNG KHUNG GIỜ VÀNG THỨ 2 – THỨ 6</div>
+            <div class="wh-card-p">Trải nghiệm dịch vụ 5 sao với chi phí siêu tiết kiệm</div>
+          </div>
+        </div>
+
+        <div id="s10-b1-offer" class="wh-card" style="left: 1108px; top: 210px; width: 700px; height: 676px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 36px; background: radial-gradient(circle at 50% 30%, #590B10 0%, #1C0708 100%);">
+          <div class="wh-kicker" style="margin-bottom: 18px;">ƯU ĐÃI ĐẶC BIỆT</div>
+          <div style="font-family: 'Asap Condensed', sans-serif; font-weight: 900; font-size: 46px; color: #FFF4D2; margin-bottom: 6px;">GIẢM NGAY</div>
+          <span class="wh-grad-wrap wh-mega-num" data-layout-allow-overlap>
+      <span class="wh-grad-back" aria-hidden="true" data-layout-ignore>-20%</span>
+      <span id="s10-20pct-sheen" class="wh-grad-front wh-gold-fill" data-layout-allow-overlap>-20%</span>
+    </span>
+          <div class="wh-flare-bar" style="width: 380px; margin: 18px 0;" data-layout-ignore></div>
+          <div style="font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 26px; color: #FFE38E;">THỨ 2 – THỨ 6 HÀNG TUẦN</div>
+          <div style="margin-top: 10px; font-family: 'Be Vietnam Pro', sans-serif; font-weight: 700; font-size: 20px; color: #FFFFFF;">Đi sớm thảnh thơi · Giá cực hời!</div>
+        </div>
+      </div>
+
+      <!-- ================= BEAT 2 (4.70s - 11.33s): SIÊU COMBO 129K ================= -->
+      <div id="s10-b2" style="position: absolute; inset: 0; opacity: 0;">
+        <!-- 2x2 Bento Grid covering full safe zone -->
+        <div id="s10-q1" class="wh-card" style="left: 96px; top: 68px; width: 848px; height: 420px;">
+          <video id="s10-qv1" class="clip wh-vid-fill" src="assets/slides/v_cut_barber.mp4" data-start="4.70" data-hf-media-start-basis="local" data-duration="6.63" data-track-index="2" muted playsinline></video>
+          <div class="wh-card-shade"></div>
+          <div class="wh-card-caption"><span class="wh-badge-num">BƯỚC 01</span><div class="wh-card-h3">CẮT TÓC CHUẨN FORM</div></div>
+        </div>
+
+        <div id="s10-q2" class="wh-card" style="left: 976px; top: 68px; width: 848px; height: 420px;">
+          <video id="s10-qv2" class="clip wh-vid-fill" src="assets/slides/v_shave_macro.mp4" data-start="4.70" data-hf-media-start-basis="local" data-duration="6.63" data-track-index="3" muted playsinline></video>
+          <div class="wh-card-shade"></div>
+          <div class="wh-card-caption" style="text-align: right;"><span class="wh-badge-num">BƯỚC 02</span><div class="wh-card-h3">CẠO MẶT SÁNG MỊN</div></div>
+        </div>
+
+        <div id="s10-q3" class="wh-card" style="left: 96px; top: 512px; width: 848px; height: 420px;">
+          <video id="s10-qv3" class="clip wh-vid-fill" src="assets/slides/v_ear_light.mp4" data-start="4.70" data-hf-media-start-basis="local" data-duration="6.63" data-track-index="4" muted playsinline></video>
+          <div class="wh-card-shade"></div>
+          <div class="wh-card-caption"><span class="wh-badge-num">BƯỚC 03</span><div class="wh-card-h3">RÁY TAI ÊM DỊU</div></div>
+        </div>
+
+        <div id="s10-q4" class="wh-card" style="left: 976px; top: 512px; width: 848px; height: 420px;">
+          <video id="s10-qv4" class="clip wh-vid-fill" src="assets/slides/v_wash_halo.mp4" data-start="4.70" data-hf-media-start-basis="local" data-duration="6.63" data-track-index="5" muted playsinline></video>
+          <div class="wh-card-shade"></div>
+          <div class="wh-card-caption" style="text-align: right;"><span class="wh-badge-num">BƯỚC 04</span><div class="wh-card-h3">XẢ TÓC THƯ GIÃN</div></div>
+        </div>
+
+        <!-- Center Explosive Hero Medallion -->
+        <div id="s10-129-card" class="wh-center-badge">
+          <div class="wh-kicker" style="font-size: 18px; margin-bottom: 10px;">★ SIÊU COMBO CHUẨN PHONG ĐỘ ★</div>
+          <div style="font-family: 'Asap Condensed', sans-serif; font-weight: 900; font-size: 38px; color: #FFFFFF; letter-spacing: 0.06em; margin-bottom: 10px;">
+            CẮT · CẠO · RÁY · XẢ
+          </div>
+          <span class="wh-grad-wrap wh-mega-num" data-layout-allow-overlap>
+      <span class="wh-grad-back" aria-hidden="true" data-layout-ignore>CHỈ 129K</span>
+      <span id="s10-129-num-sheen" class="wh-grad-front wh-gold-fill" data-layout-allow-overlap>CHỈ 129K</span>
+    </span>
+          <div style="margin-top: 8px; font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 24px; color: #FF5C62; letter-spacing: 0.08em;">
+            TRỌN GÓI 4 BƯỚC — QUÁ HỜI!
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= BEAT 3 (11.33s - 22.40s): COMBO NGỦ TRƯA 79K ================= -->
+      <div id="s10-b3" style="position: absolute; inset: 0; opacity: 0;">
+        <div class="wh-header">
+          <div class="wh-kicker">★ GIẢI PHÁP NẠP NĂNG LƯỢNG GIỜ NGHỈ TRƯA ★</div>
+          <span class="wh-grad-wrap wh-title-lg" data-layout-allow-overlap>
+      <span class="wh-grad-back" aria-hidden="true" data-layout-ignore>COMBO NGỦ TRƯA 30 PHÚT · TỈNH TÁO CẢ BUỔI CHIỀU</span>
+      <span id="s10-b3-ttl-sheen" class="wh-grad-front wh-gold-fill" data-layout-allow-overlap>COMBO NGỦ TRƯA 30 PHÚT · TỈNH TÁO CẢ BUỔI CHIỀU</span>
+    </span>
+          <div class="wh-flare-bar" data-layout-ignore></div>
+        </div>
+
+        <div id="s10-b3-left" class="wh-card" style="left: 108px; top: 206px; width: 790px; height: 684px;">
+          <video id="s10-b3-vh" class="clip wh-vid-fill" src="assets/slides/h_lunch_nap.mp4" data-start="11.33" data-hf-media-start-basis="local" data-duration="11.07" data-track-index="6" muted playsinline></video>
+          <div class="wh-card-shade"></div>
+          <div class="wh-card-caption">
+            <span class="wh-badge-num">30 PHÚT THƯ THÁI</span>
+            <div class="wh-card-h3">CHỢP MẮT ÊM ÁI TRONG PHÒNG MÁT</div>
+            <div class="wh-card-p">Chiều quay lại làm việc tỉnh táo sảng khoái ngay</div>
+          </div>
+        </div>
+
+        <div id="s10-b3-mid" class="wh-card" style="left: 924px; top: 206px; width: 380px; height: 684px;">
+          <video id="s10-b3-vv" class="clip wh-vid-fill" src="assets/slides/v_wash_foam.mp4" data-start="11.33" data-hf-media-start-basis="local" data-duration="11.07" data-track-index="7" muted playsinline></video>
+          <div class="wh-card-shade"></div>
+          <div class="wh-card-caption">
+            <span class="wh-badge-num">BAO GỒM</span>
+            <div class="wh-card-h3">GỘI ĐẦU + MASSAGE MẶT</div>
+          </div>
+        </div>
+
+        <div id="s10-b3-price" class="wh-card" style="left: 1330px; top: 206px; width: 482px; height: 684px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 28px; background: radial-gradient(circle at 50% 30%, #4E0A10 0%, #160708 100%);">
+          <div class="wh-kicker" style="margin-bottom: 14px;">COMBO NGỦ TRƯA</div>
+          <div style="font-family: 'Asap Condensed', sans-serif; font-weight: 900; font-size: 36px; color: #FFF2CC;">TRỌN GÓI 30 PHÚT</div>
+          <div style="margin: 12px 0;">
+            <span class="wh-grad-wrap wh-mega-num" data-layout-allow-overlap>
+      <span class="wh-grad-back" aria-hidden="true" data-layout-ignore>79K</span>
+      <span id="s10-79k-sheen" class="wh-grad-front wh-gold-fill" data-layout-allow-overlap>79K</span>
+    </span>
+          </div>
+          <div class="wh-flare-bar" style="width: 300px; margin: 12px 0;" data-layout-ignore></div>
+          <div style="font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 21px; color: #FFE38E; line-height: 1.35;">
+            GỘI ĐẦU MÁT LẠNH<br/>+ MASSAGE MẶT CHILL
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= BEAT 4 (22.40s - 27.77s): HỆ THỐNG 2 CƠ SỞ ================= -->
+      <div id="s10-b4" style="position: absolute; inset: 0; opacity: 0;">
+        <div class="wh-header">
+          <div class="wh-kicker">★ HỆ THỐNG WIN HAIR SALON TẠI TP. NHA TRANG ★</div>
+          <span class="wh-grad-wrap wh-title-lg" data-layout-allow-overlap>
+      <span class="wh-grad-back" aria-hidden="true" data-layout-ignore>2 CƠ SỞ ĐẲNG CẤP SẴN SÀNG PHỤC VỤ ANH EM</span>
+      <span id="s10-b4-ttl-sheen" class="wh-grad-front wh-gold-fill" data-layout-allow-overlap>2 CƠ SỞ ĐẲNG CẤP SẴN SÀNG PHỤC VỤ ANH EM</span>
+    </span>
+          <div class="wh-flare-bar" data-layout-ignore></div>
+        </div>
+
+        <!-- CS1 Card -->
+        <div id="s10-cs1" class="wh-card" style="left: 112px; top: 206px; width: 824px; height: 684px;">
+          <video id="s10-cs1-v" class="clip wh-vid-fill" src="assets/slides/v_cs1_front.mp4" data-start="22.40" data-hf-media-start-basis="local" data-duration="5.37" data-track-index="8" muted playsinline></video>
+          <div class="wh-card-shade"></div>
+          <div class="wh-card-caption">
+            <span class="wh-badge-num">📍 CƠ SỞ 01</span>
+            <div class="wh-card-h3" style="font-size: 40px;">41 LÝ TỰ TRỌNG — NHA TRANG</div>
+            <div class="wh-card-p" style="font-size: 19px;">Trung tâm thành phố · Thuận tiện di chuyển</div>
+          </div>
+        </div>
+
+        <!-- CS2 Card (Vertical + Flycam swap) -->
+        <div id="s10-cs2" class="wh-card" style="left: 984px; top: 206px; width: 824px; height: 684px;">
+          <video id="s10-cs2-v1" class="clip wh-vid-fill" src="assets/slides/v_cs2_front.mp4" data-start="22.40" data-hf-media-start-basis="local" data-duration="2.60" data-track-index="9" muted playsinline></video>
+          <video id="s10-cs2-v2" class="clip wh-vid-fill" src="assets/slides/h_cs2_flycam.mp4" data-start="25.00" data-hf-media-start-basis="local" data-duration="2.77" data-track-index="10" muted playsinline></video>
+          <div class="wh-card-shade"></div>
+          <div class="wh-card-caption">
+            <span class="wh-badge-num">📍 CƠ SỞ 02</span>
+            <div class="wh-card-h3" style="font-size: 40px;">59 THÍCH QUẢNG ĐỨC — NHA TRANG</div>
+            <div class="wh-card-p" style="font-size: 19px;">Không gian lớn 2 tầng VIP · Đón tiếp chu đáo</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    gsap.set(["#s10-b2", "#s10-b3", "#s10-b4"], { opacity: 0 });
+
+    // Beat 1: 0.00 - 4.70s (279.80 - 284.50s)
+    tl.fromTo("#s10-b1-vidwrap", { opacity: 0, x: -70, scale: 0.94 }, { opacity: 1, x: 0, scale: 1, duration: 0.42, ease: "power3.out" }, 0.08);
+    tl.fromTo("#s10-b1-offer", { opacity: 0, x: 70, scale: 0.90 }, { opacity: 1, x: 0, scale: 1, duration: 0.45, ease: "back.out(1.25)" }, 0.25);
+    tl.fromTo("#s10-20pct-sheen", { backgroundPosition: "-130% 0, 0 0" }, { backgroundPosition: "210% 0, 0 0", duration: 0.95, ease: "power2.inOut" }, 2.15);
+    tl.fromTo("#s10-b1", { opacity: 1 }, { opacity: 0, duration: 0.20 }, 4.50);
+
+    // Beat 2: 4.70 - 11.33s (284.50 - 291.13s)
+    // VO hits: Cắt 285.33 (rel 5.53) | Cạo 285.67 (rel 5.87) | Ráy 286.20 (rel 6.40) | Xả 286.53 (rel 6.73) | Chuẩn phong độ 287.10 (rel 7.30) | 129K 288.70 (rel 8.90)
+    tl.fromTo("#s10-b2", { opacity: 0 }, { opacity: 1, duration: 0.15 }, 4.70);
+    tl.fromTo("#s10-q1", { opacity: 0, scale: 0.85, x: -50 }, { opacity: 1, scale: 1, x: 0, duration: 0.30, ease: "back.out(1.3)" }, 5.45);
+    tl.fromTo("#s10-q2", { opacity: 0, scale: 0.85, x: 50 }, { opacity: 1, scale: 1, x: 0, duration: 0.30, ease: "back.out(1.3)" }, 5.82);
+    tl.fromTo("#s10-q3", { opacity: 0, scale: 0.85, x: -50 }, { opacity: 1, scale: 1, x: 0, duration: 0.30, ease: "back.out(1.3)" }, 6.35);
+    tl.fromTo("#s10-q4", { opacity: 0, scale: 0.85, x: 50 }, { opacity: 1, scale: 1, x: 0, duration: 0.30, ease: "back.out(1.3)" }, 6.68);
+
+    tl.fromTo("#s10-129-card", { opacity: 0, scale: 0.65, y: 30 }, { opacity: 1, scale: 1, y: 0, duration: 0.45, ease: "back.out(1.45)" }, 7.25);
+    tl.fromTo("#s10-129-num-sheen", { backgroundPosition: "-130% 0, 0 0" }, { backgroundPosition: "210% 0, 0 0", duration: 0.90, ease: "power2.inOut" }, 8.85);
+    tl.fromTo("#s10-b2", { opacity: 1 }, { opacity: 0, duration: 0.22, immediateRender: false }, 11.11);
+
+    // Beat 3: 11.33 - 22.40s (291.13 - 302.20s)
+    tl.fromTo("#s10-b3", { opacity: 0 }, { opacity: 1, duration: 0.20 }, 11.33);
+    tl.fromTo("#s10-b3-left", { opacity: 0, x: -65, scale: 0.94 }, { opacity: 1, x: 0, scale: 1, duration: 0.45, ease: "power3.out" }, 11.42);
+    tl.fromTo("#s10-b3-mid", { opacity: 0, y: 65, scale: 0.92 }, { opacity: 1, y: 0, scale: 1, duration: 0.45, ease: "back.out(1.2)" }, 12.60);
+    tl.fromTo("#s10-b3-price", { opacity: 0, scale: 0.84, x: 60 }, { opacity: 1, scale: 1, x: 0, duration: 0.48, ease: "back.out(1.3)" }, 15.80);
+    tl.fromTo("#s10-79k-sheen", { backgroundPosition: "-130% 0, 0 0" }, { backgroundPosition: "210% 0, 0 0", duration: 0.95, ease: "power2.inOut" }, 17.40);
+    tl.fromTo("#s10-b3", { opacity: 1 }, { opacity: 0, duration: 0.22, immediateRender: false }, 22.18);
+
+    // Beat 4: 22.40 - 27.77s (302.20 - 307.57s)
+    tl.fromTo("#s10-b4", { opacity: 0 }, { opacity: 1, duration: 0.20 }, 22.40);
+    tl.fromTo("#s10-cs1", { opacity: 0, x: -80, scale: 0.92 }, { opacity: 1, x: 0, scale: 1, duration: 0.45, ease: "back.out(1.2)" }, 22.48);
+    tl.fromTo("#s10-cs2", { opacity: 0, x: 80, scale: 0.92 }, { opacity: 1, x: 0, scale: 1, duration: 0.45, ease: "back.out(1.2)" }, 24.95);
+    tl.fromTo("#s10-b4-ttl-sheen", { backgroundPosition: "-130% 0, 0 0" }, { backgroundPosition: "210% 0, 0 0", duration: 0.95, ease: "power2.inOut" }, 23.00);
+    tl.fromTo("#s10-stage", { opacity: 1 }, { opacity: 0, duration: 0.22, ease: "power2.in" }, 27.53);
+
+    window.__timelines["slide-10"] = tl;
+  </script>
+</template>

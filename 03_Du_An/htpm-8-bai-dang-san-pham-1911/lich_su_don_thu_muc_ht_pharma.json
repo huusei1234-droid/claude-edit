@@ -1,0 +1,1615 @@
+{
+  "total_ops": 322,
+  "ops": [
+    {
+      "op": "remove_exact_duplicate",
+      "removed": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\Bản sao của DSC07151 - Sao chép.jpg",
+      "kept": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\Bản sao của DSC07151.jpg"
+    },
+    {
+      "op": "remove_exact_duplicate",
+      "removed": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04124 - Sao chép.jpg",
+      "kept": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04124.jpg"
+    },
+    {
+      "op": "remove_exact_duplicate",
+      "removed": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04761 - Sao chép.png",
+      "kept": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04761.png"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\Bộ 8 Hình & Bài Đăng Quảng Cáo Mới (19-11)",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\01_Poster_Va_Bai_Dang_Quang_Cao\\2026-11-19_Bo_8_Poster_Va_Bai_Dang_Moi"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\Ảnh gửi sỉ",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\01_Anh_Gui_Si_Theo_San_Pham"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\01_Anh_Gui_Si_Theo_San_Pham\\Điều Kinh Hằng Thu",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\01_Anh_Gui_Si_Theo_San_Pham\\01_Dieu_Kinh_Bo_Trung_Hang_Thu"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\01_Anh_Gui_Si_Theo_San_Pham\\Dạ dày Hằng Thu",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\01_Anh_Gui_Si_Theo_San_Pham\\03_Da_Day_Hang_Thu"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\01_Anh_Gui_Si_Theo_San_Pham\\Dung Dịch Vệ Sinh Romance Vip Hằng Thu",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\01_Anh_Gui_Si_Theo_San_Pham\\04_Dung_Dich_Ve_Sinh_Romance_VIP"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\01_Anh_Gui_Si_Theo_San_Pham\\Viên đặt phụ khoa Hằng Thu",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\01_Anh_Gui_Si_Theo_San_Pham\\05_Vien_Dat_Phu_Khoa_Hang_Thu"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\01_Anh_Gui_Si_Theo_San_Pham\\Viên đặt bôi trơn ROMANCE LOVE",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\01_Anh_Gui_Si_Theo_San_Pham\\06_Vien_Duong_Romance_Love"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\01_Anh_Gui_Si_Theo_San_Pham\\Ngọc Long Hoàn Hằng Thu",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\01_Anh_Gui_Si_Theo_San_Pham\\07_Ngoc_Long_Hoan_Hang_Thu"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\01_Anh_Gui_Si_Theo_San_Pham\\Viên uống trắng da, điều hòa nội tiết_ White skin",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\01_Anh_Gui_Si_Theo_San_Pham\\08_Vien_Uong_Legend_White_Skin"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\01_Anh_Gui_Si_Theo_San_Pham\\Gel Phụ Khang Hằng Thu",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\01_Anh_Gui_Si_Theo_San_Pham\\09_Gel_Phu_Khang_Hang_Thu"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\01_Anh_Gui_Si_Theo_San_Pham\\Giấy tờ sp",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\01_Anh_Gui_Si_Theo_San_Pham\\10_Giay_To_Cong_Bo_SP"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\Bộ ảnh gốc phụ khoa",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\03_Bo_Anh_Goc_Tong_Hop"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\250606 Ảnh sản phẩm chụp ở resort Ana marina",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\04_Anh_Chup_Ngoai_Canh_Ana_Marina_250606"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\SP cũ",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\05_Luu_Tru_Bao_Bi_SP_Cu"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\260620 ảnh kho",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\04_Anh_Su_Kien_Nha_May_Va_Hoat_Dong\\02_Anh_Kho_Hang_260620"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\250930 Ảnh nhận giải tại SG",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\04_Anh_Su_Kien_Nha_May_Va_Hoat_Dong\\03_Anh_Nhan_Giai_SG_250930"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\260727 ĐÀ LẠT",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\04_Anh_Su_Kien_Nha_May_Va_Hoat_Dong\\04_Anh_Su_Kien_Da_Lat_260727"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\AV biển đã chỉnh",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\04_Anh_Su_Kien_Nha_May_Va_Hoat_Dong\\05_Anh_AV_Bien_Da_Chinh"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\AV biển ch chỉnh",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\04_Anh_Su_Kien_Nha_May_Va_Hoat_Dong\\06_Anh_AV_Bien_Goc_Chua_Chinh"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\1.png",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\02_Vien_Dat_LT_Plus_Hang_Thu\\1.png"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\2.png",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\02_Vien_Dat_LT_Plus_Hang_Thu\\2.png"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\3.png",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\02_Vien_Dat_LT_Plus_Hang_Thu\\3.png"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\4.png",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\02_Vien_Dat_LT_Plus_Hang_Thu\\4.png"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\5.png",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\02_Vien_Dat_LT_Plus_Hang_Thu\\5.png"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\6.png",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\02_Vien_Dat_LT_Plus_Hang_Thu\\6.png"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\A1_08794.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\08_Legend_White_Skin\\A1_08794.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\A1_08797.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\08_Legend_White_Skin\\A1_08797.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\A1_08800.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\08_Legend_White_Skin\\A1_08800.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\Bản sao của DSC07022.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\06_Vien_Duong_Romance_Love\\Bản sao của DSC07022.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\Bản sao của DSC07023.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\06_Vien_Duong_Romance_Love\\Bản sao của DSC07023.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\Bản sao của DSC07025.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\06_Vien_Duong_Romance_Love\\Bản sao của DSC07025.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\Bản sao của DSC07033.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\03_Da_Day_HT\\Bản sao của DSC07033.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\Bản sao của DSC07034.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\03_Da_Day_HT\\Bản sao của DSC07034.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\Bản sao của DSC07035.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\03_Da_Day_HT\\Bản sao của DSC07035.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\Bản sao của DSC07036.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\03_Da_Day_HT\\Bản sao của DSC07036.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\Bản sao của DSC07038.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\01_Dieu_Kinh_Bo_Trung_HT\\Bản sao của DSC07038.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\Bản sao của DSC07039.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\01_Dieu_Kinh_Bo_Trung_HT\\Bản sao của DSC07039.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\Bản sao của DSC07040.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\01_Dieu_Kinh_Bo_Trung_HT\\Bản sao của DSC07040.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\Bản sao của DSC07043.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\01_Dieu_Kinh_Bo_Trung_HT\\Bản sao của DSC07043.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\Bản sao của DSC07047.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\07_Ngoc_Long_Hoan_Hang_Thu\\Bản sao của DSC07047.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\Bản sao của DSC07104.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\09_Gel_Phu_Khang_Hang_Thu\\Bản sao của DSC07104.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\Bản sao của DSC07105.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\09_Gel_Phu_Khang_Hang_Thu\\Bản sao của DSC07105.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\Bản sao của DSC07108.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\09_Gel_Phu_Khang_Hang_Thu\\Bản sao của DSC07108.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\Bản sao của DSC07110.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\09_Gel_Phu_Khang_Hang_Thu\\Bản sao của DSC07110.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\Bản sao của DSC07112.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\09_Gel_Phu_Khang_Hang_Thu\\Bản sao của DSC07112.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\Bản sao của DSC07143.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\04_Dung_Dich_Romance_VIP\\Bản sao của DSC07143.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\Bản sao của DSC07144.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\04_Dung_Dich_Romance_VIP\\Bản sao của DSC07144.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\Bản sao của DSC07147.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\04_Dung_Dich_Romance_VIP\\Bản sao của DSC07147.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\Bản sao của DSC07148.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\04_Dung_Dich_Romance_VIP\\Bản sao của DSC07148.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\Bản sao của DSC07151.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\04_Dung_Dich_Romance_VIP\\Bản sao của DSC07151.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\CONG DUNG VA THANH PHAN EVA.docx",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\03_Tai_Lieu_San_Pham_Va_Giay_To\\CONG DUNG VA THANH PHAN EVA.docx"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\CONG DUNG VA THANH PHAN VIEN DAT COLAGEN.docx",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\03_Tai_Lieu_San_Pham_Va_Giay_To\\CONG DUNG VA THANH PHAN VIEN DAT COLAGEN.docx"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC00265.JPG",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\02_Vien_Dat_LT_Plus_Hang_Thu\\DSC00265.JPG"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC00267.JPG",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\02_Vien_Dat_LT_Plus_Hang_Thu\\DSC00267.JPG"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC00268.JPG",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\02_Vien_Dat_LT_Plus_Hang_Thu\\DSC00268.JPG"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC00269.JPG",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\02_Vien_Dat_LT_Plus_Hang_Thu\\DSC00269.JPG"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC00270.JPG",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\02_Vien_Dat_LT_Plus_Hang_Thu\\DSC00270.JPG"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC00271.JPG",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\02_Vien_Dat_LT_Plus_Hang_Thu\\DSC00271.JPG"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC00272.JPG",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\02_Vien_Dat_LT_Plus_Hang_Thu\\DSC00272.JPG"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC00273.JPG",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\02_Vien_Dat_LT_Plus_Hang_Thu\\DSC00273.JPG"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC00274.JPG",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\02_Vien_Dat_LT_Plus_Hang_Thu\\DSC00274.JPG"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC00275.JPG",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\02_Vien_Dat_LT_Plus_Hang_Thu\\DSC00275.JPG"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC00276.JPG",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\02_Vien_Dat_LT_Plus_Hang_Thu\\DSC00276.JPG"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC00277.JPG",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\02_Vien_Dat_LT_Plus_Hang_Thu\\DSC00277.JPG"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04044.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\02_Vien_Dat_LT_Plus_Hang_Thu\\DSC04044.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04045.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\02_Vien_Dat_LT_Plus_Hang_Thu\\DSC04045.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04046.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\02_Vien_Dat_LT_Plus_Hang_Thu\\DSC04046.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04047.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\02_Vien_Dat_LT_Plus_Hang_Thu\\DSC04047.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04051.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\03_Da_Day_HT\\DSC04051.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04052.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\03_Da_Day_HT\\DSC04052.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04054.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\03_Da_Day_HT\\DSC04054.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04057.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\03_Da_Day_HT\\DSC04057.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04061.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\03_Da_Day_HT\\DSC04061.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04062.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\03_Da_Day_HT\\DSC04062.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04070.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\07_Ngoc_Long_Hoan_Hang_Thu\\DSC04070.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04072.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\07_Ngoc_Long_Hoan_Hang_Thu\\DSC04072.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04073.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\07_Ngoc_Long_Hoan_Hang_Thu\\DSC04073.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04074.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\07_Ngoc_Long_Hoan_Hang_Thu\\DSC04074.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04075.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\07_Ngoc_Long_Hoan_Hang_Thu\\DSC04075.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04076.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\07_Ngoc_Long_Hoan_Hang_Thu\\DSC04076.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04080.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\07_Ngoc_Long_Hoan_Hang_Thu\\DSC04080.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04081.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\05_Vien_Dat_Phu_Khoa_Hang_Thu\\DSC04081.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04082.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\05_Vien_Dat_Phu_Khoa_Hang_Thu\\DSC04082.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04083.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\05_Vien_Dat_Phu_Khoa_Hang_Thu\\DSC04083.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04087.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\05_Vien_Dat_Phu_Khoa_Hang_Thu\\DSC04087.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04088.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\05_Vien_Dat_Phu_Khoa_Hang_Thu\\DSC04088.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04098.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\01_Dieu_Kinh_Bo_Trung_HT\\DSC04098.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04099.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\01_Dieu_Kinh_Bo_Trung_HT\\DSC04099.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04101.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\01_Dieu_Kinh_Bo_Trung_HT\\DSC04101.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04102.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\01_Dieu_Kinh_Bo_Trung_HT\\DSC04102.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04104.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\06_Vien_Duong_Romance_Love\\DSC04104.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04105.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\06_Vien_Duong_Romance_Love\\DSC04105.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04110.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\09_Gel_Phu_Khang_Hang_Thu\\DSC04110.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04111.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\09_Gel_Phu_Khang_Hang_Thu\\DSC04111.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04112.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\04_Dung_Dich_Romance_VIP\\DSC04112.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04113.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\04_Dung_Dich_Romance_VIP\\DSC04113.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04115.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\04_Dung_Dich_Romance_VIP\\DSC04115.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04120.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\04_Dung_Dich_Romance_VIP\\DSC04120.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04122.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\04_Dung_Dich_Romance_VIP\\DSC04122.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04124.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\05_Vien_Dat_Phu_Khoa_Hang_Thu\\DSC04124.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04125.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\02_Vien_Dat_LT_Plus_Hang_Thu\\DSC04125.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04128.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\06_Vien_Duong_Romance_Love\\DSC04128.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04132bình.JPG",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\02_Vien_Dat_LT_Plus_Hang_Thu\\DSC04132bình.JPG"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04135bình.JPG",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\02_Vien_Dat_LT_Plus_Hang_Thu\\DSC04135bình.JPG"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04137bình.JPG",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\02_Vien_Dat_LT_Plus_Hang_Thu\\DSC04137bình.JPG"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04139bình.JPG",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\02_Vien_Dat_LT_Plus_Hang_Thu\\DSC04139bình.JPG"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04142bình.JPG",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\09_Gel_Phu_Khang_Hang_Thu\\DSC04142bình.JPG"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04145bình.JPG",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\09_Gel_Phu_Khang_Hang_Thu\\DSC04145bình.JPG"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04154bình.JPG",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\01_Dieu_Kinh_Bo_Trung_HT\\DSC04154bình.JPG"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04156bình.JPG",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\06_Vien_Duong_Romance_Love\\DSC04156bình.JPG"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04158bình.JPG",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\01_Dieu_Kinh_Bo_Trung_HT\\DSC04158bình.JPG"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04159bình.JPG",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\03_Da_Day_HT\\DSC04159bình.JPG"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04161bình.JPG",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\05_Vien_Dat_Phu_Khoa_Hang_Thu\\DSC04161bình.JPG"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04162bình.JPG",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\05_Vien_Dat_Phu_Khoa_Hang_Thu\\DSC04162bình.JPG"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04164bình.JPG",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\07_Ngoc_Long_Hoan_Hang_Thu\\DSC04164bình.JPG"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04165bình.JPG",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\07_Ngoc_Long_Hoan_Hang_Thu\\DSC04165bình.JPG"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04167bình.JPG",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\05_Vien_Dat_Phu_Khoa_Hang_Thu\\DSC04167bình.JPG"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04168bình.JPG",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\06_Vien_Duong_Romance_Love\\DSC04168bình.JPG"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04169bình.JPG",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\05_Vien_Dat_Phu_Khoa_Hang_Thu\\DSC04169bình.JPG"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04540.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\09_Gel_Phu_Khang_Hang_Thu\\DSC04540.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04541.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\09_Gel_Phu_Khang_Hang_Thu\\DSC04541.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04542.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\09_Gel_Phu_Khang_Hang_Thu\\DSC04542.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04543.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\09_Gel_Phu_Khang_Hang_Thu\\DSC04543.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04544.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\09_Gel_Phu_Khang_Hang_Thu\\DSC04544.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04545.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\09_Gel_Phu_Khang_Hang_Thu\\DSC04545.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04546.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\09_Gel_Phu_Khang_Hang_Thu\\DSC04546.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04547.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\09_Gel_Phu_Khang_Hang_Thu\\DSC04547.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04550-1.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\09_Gel_Phu_Khang_Hang_Thu\\DSC04550-1.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04552.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\09_Gel_Phu_Khang_Hang_Thu\\DSC04552.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04553.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\09_Gel_Phu_Khang_Hang_Thu\\DSC04553.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04554-1.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\09_Gel_Phu_Khang_Hang_Thu\\DSC04554-1.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04596.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\02_Vien_Dat_LT_Plus_Hang_Thu\\DSC04596.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04599.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\02_Vien_Dat_LT_Plus_Hang_Thu\\DSC04599.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04601.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\02_Vien_Dat_LT_Plus_Hang_Thu\\DSC04601.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04603.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\02_Vien_Dat_LT_Plus_Hang_Thu\\DSC04603.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04606.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\02_Vien_Dat_LT_Plus_Hang_Thu\\DSC04606.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04612.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\02_Vien_Dat_LT_Plus_Hang_Thu\\DSC04612.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04614.png",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\02_Vien_Dat_LT_Plus_Hang_Thu\\DSC04614.png"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04615.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\02_Vien_Dat_LT_Plus_Hang_Thu\\DSC04615.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04617.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\02_Vien_Dat_LT_Plus_Hang_Thu\\DSC04617.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04622.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\02_Vien_Dat_LT_Plus_Hang_Thu\\DSC04622.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04626.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\02_Vien_Dat_LT_Plus_Hang_Thu\\DSC04626.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04627.png",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\02_Vien_Dat_LT_Plus_Hang_Thu\\DSC04627.png"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04629.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\02_Vien_Dat_LT_Plus_Hang_Thu\\DSC04629.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04632.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\02_Vien_Dat_LT_Plus_Hang_Thu\\DSC04632.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04638.png",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\02_Vien_Dat_LT_Plus_Hang_Thu\\DSC04638.png"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04642.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\02_Vien_Dat_LT_Plus_Hang_Thu\\DSC04642.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04645.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\02_Vien_Dat_LT_Plus_Hang_Thu\\DSC04645.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04648.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\02_Vien_Dat_LT_Plus_Hang_Thu\\DSC04648.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04649.png",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\02_Vien_Dat_LT_Plus_Hang_Thu\\DSC04649.png"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04653.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\03_Da_Day_HT\\DSC04653.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04655.png",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\03_Da_Day_HT\\DSC04655.png"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04656.png",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\03_Da_Day_HT\\DSC04656.png"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04657.png",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\03_Da_Day_HT\\DSC04657.png"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04658.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\03_Da_Day_HT\\DSC04658.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04660.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\03_Da_Day_HT\\DSC04660.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04663.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\03_Da_Day_HT\\DSC04663.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04666.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\03_Da_Day_HT\\DSC04666.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04668.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\03_Da_Day_HT\\DSC04668.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04670.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\09_Gel_Phu_Khang_Hang_Thu\\DSC04670.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04671.png",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\09_Gel_Phu_Khang_Hang_Thu\\DSC04671.png"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04674.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\09_Gel_Phu_Khang_Hang_Thu\\DSC04674.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04674.png",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\09_Gel_Phu_Khang_Hang_Thu\\DSC04674.png"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04677.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\09_Gel_Phu_Khang_Hang_Thu\\DSC04677.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04680.png",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\09_Gel_Phu_Khang_Hang_Thu\\DSC04680.png"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04686.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\09_Gel_Phu_Khang_Hang_Thu\\DSC04686.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04688.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\09_Gel_Phu_Khang_Hang_Thu\\DSC04688.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04688.png",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\09_Gel_Phu_Khang_Hang_Thu\\DSC04688.png"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04690.png",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\09_Gel_Phu_Khang_Hang_Thu\\DSC04690.png"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04693.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\09_Gel_Phu_Khang_Hang_Thu\\DSC04693.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04694.png",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\04_Dung_Dich_Romance_VIP\\DSC04694.png"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04697.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\04_Dung_Dich_Romance_VIP\\DSC04697.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04698.png",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\04_Dung_Dich_Romance_VIP\\DSC04698.png"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04700.png",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\04_Dung_Dich_Romance_VIP\\DSC04700.png"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04704.png",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\04_Dung_Dich_Romance_VIP\\DSC04704.png"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04706.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\04_Dung_Dich_Romance_VIP\\DSC04706.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04707.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\04_Dung_Dich_Romance_VIP\\DSC04707.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04708.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\04_Dung_Dich_Romance_VIP\\DSC04708.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04709.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\04_Dung_Dich_Romance_VIP\\DSC04709.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04711.png",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\04_Dung_Dich_Romance_VIP\\DSC04711.png"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04713.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\04_Dung_Dich_Romance_VIP\\DSC04713.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04716.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\04_Dung_Dich_Romance_VIP\\DSC04716.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04718.png",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\05_Vien_Dat_Phu_Khoa_Hang_Thu\\DSC04718.png"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04720.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\05_Vien_Dat_Phu_Khoa_Hang_Thu\\DSC04720.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04722.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\05_Vien_Dat_Phu_Khoa_Hang_Thu\\DSC04722.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04723.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\05_Vien_Dat_Phu_Khoa_Hang_Thu\\DSC04723.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04729.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\05_Vien_Dat_Phu_Khoa_Hang_Thu\\DSC04729.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04730.png",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\05_Vien_Dat_Phu_Khoa_Hang_Thu\\DSC04730.png"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04731.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\05_Vien_Dat_Phu_Khoa_Hang_Thu\\DSC04731.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04733.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\05_Vien_Dat_Phu_Khoa_Hang_Thu\\DSC04733.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04735.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\05_Vien_Dat_Phu_Khoa_Hang_Thu\\DSC04735.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04737.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\05_Vien_Dat_Phu_Khoa_Hang_Thu\\DSC04737.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04738.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\05_Vien_Dat_Phu_Khoa_Hang_Thu\\DSC04738.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04741.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\05_Vien_Dat_Phu_Khoa_Hang_Thu\\DSC04741.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04743.png",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\05_Vien_Dat_Phu_Khoa_Hang_Thu\\DSC04743.png"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04746.png",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\05_Vien_Dat_Phu_Khoa_Hang_Thu\\DSC04746.png"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04748.png",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\05_Vien_Dat_Phu_Khoa_Hang_Thu\\DSC04748.png"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04750.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\05_Vien_Dat_Phu_Khoa_Hang_Thu\\DSC04750.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04752.png",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\05_Vien_Dat_Phu_Khoa_Hang_Thu\\DSC04752.png"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04754.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\05_Vien_Dat_Phu_Khoa_Hang_Thu\\DSC04754.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04756.png",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\01_Dieu_Kinh_Bo_Trung_HT\\DSC04756.png"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04758.png",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\01_Dieu_Kinh_Bo_Trung_HT\\DSC04758.png"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04760.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\01_Dieu_Kinh_Bo_Trung_HT\\DSC04760.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04761.png",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\01_Dieu_Kinh_Bo_Trung_HT\\DSC04761.png"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04762.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\01_Dieu_Kinh_Bo_Trung_HT\\DSC04762.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04764.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\01_Dieu_Kinh_Bo_Trung_HT\\DSC04764.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04765.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\01_Dieu_Kinh_Bo_Trung_HT\\DSC04765.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04768.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\01_Dieu_Kinh_Bo_Trung_HT\\DSC04768.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04769.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\01_Dieu_Kinh_Bo_Trung_HT\\DSC04769.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04772.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\01_Dieu_Kinh_Bo_Trung_HT\\DSC04772.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04773.png",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\06_Vien_Duong_Romance_Love\\DSC04773.png"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04775.png",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\06_Vien_Duong_Romance_Love\\DSC04775.png"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04777.png",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\06_Vien_Duong_Romance_Love\\DSC04777.png"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04780.png",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\06_Vien_Duong_Romance_Love\\DSC04780.png"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04781.png",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\06_Vien_Duong_Romance_Love\\DSC04781.png"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04784.png",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\06_Vien_Duong_Romance_Love\\DSC04784.png"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04786.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\06_Vien_Duong_Romance_Love\\DSC04786.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04788.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\06_Vien_Duong_Romance_Love\\DSC04788.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04789.png",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\06_Vien_Duong_Romance_Love\\DSC04789.png"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04790.png",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\06_Vien_Duong_Romance_Love\\DSC04790.png"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04792.png",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\06_Vien_Duong_Romance_Love\\DSC04792.png"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC04794.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\06_Vien_Duong_Romance_Love\\DSC04794.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC07726.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\04_Anh_Su_Kien_Nha_May_Va_Hoat_Dong\\01_Anh_Nha_May_GMP_Dong_Goi\\DSC07726.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC07730.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\04_Anh_Su_Kien_Nha_May_Va_Hoat_Dong\\01_Anh_Nha_May_GMP_Dong_Goi\\DSC07730.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC07732.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\04_Anh_Su_Kien_Nha_May_Va_Hoat_Dong\\01_Anh_Nha_May_GMP_Dong_Goi\\DSC07732.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC07733.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\04_Anh_Su_Kien_Nha_May_Va_Hoat_Dong\\01_Anh_Nha_May_GMP_Dong_Goi\\DSC07733.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC07734.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\04_Anh_Su_Kien_Nha_May_Va_Hoat_Dong\\01_Anh_Nha_May_GMP_Dong_Goi\\DSC07734.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC07736.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\04_Anh_Su_Kien_Nha_May_Va_Hoat_Dong\\01_Anh_Nha_May_GMP_Dong_Goi\\DSC07736.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC07738.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\04_Anh_Su_Kien_Nha_May_Va_Hoat_Dong\\01_Anh_Nha_May_GMP_Dong_Goi\\DSC07738.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC07739.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\04_Anh_Su_Kien_Nha_May_Va_Hoat_Dong\\01_Anh_Nha_May_GMP_Dong_Goi\\DSC07739.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC07740.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\04_Anh_Su_Kien_Nha_May_Va_Hoat_Dong\\01_Anh_Nha_May_GMP_Dong_Goi\\DSC07740.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC07742.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\04_Anh_Su_Kien_Nha_May_Va_Hoat_Dong\\01_Anh_Nha_May_GMP_Dong_Goi\\DSC07742.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC07744.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\04_Anh_Su_Kien_Nha_May_Va_Hoat_Dong\\01_Anh_Nha_May_GMP_Dong_Goi\\DSC07744.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC07745.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\04_Anh_Su_Kien_Nha_May_Va_Hoat_Dong\\01_Anh_Nha_May_GMP_Dong_Goi\\DSC07745.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC07748.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\04_Anh_Su_Kien_Nha_May_Va_Hoat_Dong\\01_Anh_Nha_May_GMP_Dong_Goi\\DSC07748.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC07749.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\04_Anh_Su_Kien_Nha_May_Va_Hoat_Dong\\01_Anh_Nha_May_GMP_Dong_Goi\\DSC07749.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC07750.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\04_Anh_Su_Kien_Nha_May_Va_Hoat_Dong\\01_Anh_Nha_May_GMP_Dong_Goi\\DSC07750.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC07752.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\04_Anh_Su_Kien_Nha_May_Va_Hoat_Dong\\01_Anh_Nha_May_GMP_Dong_Goi\\DSC07752.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC07754.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\04_Anh_Su_Kien_Nha_May_Va_Hoat_Dong\\01_Anh_Nha_May_GMP_Dong_Goi\\DSC07754.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC07755.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\04_Anh_Su_Kien_Nha_May_Va_Hoat_Dong\\01_Anh_Nha_May_GMP_Dong_Goi\\DSC07755.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC07757.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\04_Anh_Su_Kien_Nha_May_Va_Hoat_Dong\\01_Anh_Nha_May_GMP_Dong_Goi\\DSC07757.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC07759.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\04_Anh_Su_Kien_Nha_May_Va_Hoat_Dong\\01_Anh_Nha_May_GMP_Dong_Goi\\DSC07759.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC07761.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\04_Anh_Su_Kien_Nha_May_Va_Hoat_Dong\\01_Anh_Nha_May_GMP_Dong_Goi\\DSC07761.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC07763.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\04_Anh_Su_Kien_Nha_May_Va_Hoat_Dong\\01_Anh_Nha_May_GMP_Dong_Goi\\DSC07763.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC07766.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\04_Anh_Su_Kien_Nha_May_Va_Hoat_Dong\\01_Anh_Nha_May_GMP_Dong_Goi\\DSC07766.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC07767.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\04_Anh_Su_Kien_Nha_May_Va_Hoat_Dong\\01_Anh_Nha_May_GMP_Dong_Goi\\DSC07767.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC08801.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\08_Legend_White_Skin\\DSC08801.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC08803.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\08_Legend_White_Skin\\DSC08803.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC08805.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\08_Legend_White_Skin\\DSC08805.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC08807.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\08_Legend_White_Skin\\DSC08807.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC08811.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\08_Legend_White_Skin\\DSC08811.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC08812.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\08_Legend_White_Skin\\DSC08812.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC08814.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\08_Legend_White_Skin\\DSC08814.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC08816.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\08_Legend_White_Skin\\DSC08816.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC08820.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\08_Legend_White_Skin\\DSC08820.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC08822.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\08_Legend_White_Skin\\DSC08822.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC08824.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\08_Legend_White_Skin\\DSC08824.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC08826.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\08_Legend_White_Skin\\DSC08826.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC08830.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\08_Legend_White_Skin\\DSC08830.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC08834.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\08_Legend_White_Skin\\DSC08834.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC08836.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\08_Legend_White_Skin\\DSC08836.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC08838.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\08_Legend_White_Skin\\DSC08838.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC08841.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\08_Legend_White_Skin\\DSC08841.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC08844.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\07_Ngoc_Long_Hoan_Hang_Thu\\DSC08844.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC08846.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\07_Ngoc_Long_Hoan_Hang_Thu\\DSC08846.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC08848.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\07_Ngoc_Long_Hoan_Hang_Thu\\DSC08848.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC08850.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\07_Ngoc_Long_Hoan_Hang_Thu\\DSC08850.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC08854.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\07_Ngoc_Long_Hoan_Hang_Thu\\DSC08854.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC08856.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\07_Ngoc_Long_Hoan_Hang_Thu\\DSC08856.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC08861.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\07_Ngoc_Long_Hoan_Hang_Thu\\DSC08861.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC08867.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\07_Ngoc_Long_Hoan_Hang_Thu\\DSC08867.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC08869.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\07_Ngoc_Long_Hoan_Hang_Thu\\DSC08869.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\DSC08873.jpg",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\02_Anh_San_Pham_Chinh_Hang\\02_Anh_Studio_Va_PNG_Tach_Nen\\07_Ngoc_Long_Hoan_Hang_Thu\\DSC08873.jpg"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\NGỌC LONG HOÀN SHOPEE.docx",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\03_Tai_Lieu_San_Pham_Va_Giay_To\\NGỌC LONG HOÀN SHOPEE.docx"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\Tài liệu không có tiêu đề.docx",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\03_Tai_Lieu_San_Pham_Va_Giay_To\\Tài liệu không có tiêu đề.docx"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\VIÊM LỘ TUYẾN SHOPEE.docx",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\03_Tai_Lieu_San_Pham_Va_Giay_To\\VIÊM LỘ TUYẾN SHOPEE.docx"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\VIÊN UỐNG EVA TÀI LIỆU SHOPEE.docx",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\03_Tai_Lieu_San_Pham_Va_Giay_To\\VIÊN UỐNG EVA TÀI LIỆU SHOPEE.docx"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\final chi tiết ht pharma.xlsx",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\03_Tai_Lieu_San_Pham_Va_Giay_To\\final chi tiết ht pharma.xlsx"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Ảnh\\ĐIỀU KINH SHOPEE.docx",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\03_Tai_Lieu_San_Pham_Va_Giay_To\\ĐIỀU KINH SHOPEE.docx"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\Video Hoàn thiện",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\05_Video_Hoan_Thien_Cac_Kenh"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\05_Video_Hoan_Thien_Cac_Kenh\\k1 HT Daily",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\05_Video_Hoan_Thien_Cac_Kenh\\01_K1_HT_Daily"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\05_Video_Hoan_Thien_Cac_Kenh\\k2 Hôn nhân gia đình",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\05_Video_Hoan_Thien_Cac_Kenh\\02_K2_Hon_Nhan_Gia_Dinh"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\05_Video_Hoan_Thien_Cac_Kenh\\K3 HT Sức Khỏe Của Nàng",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\05_Video_Hoan_Thien_Cac_Kenh\\03_K3_HT_Suc_Khoe_Cua_Nang"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\05_Video_Hoan_Thien_Cac_Kenh\\K4 mẹ ck nàng dâu",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\05_Video_Hoan_Thien_Cac_Kenh\\04_K4_Me_Chong_Nang_Dau"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\05_Video_Hoan_Thien_Cac_Kenh\\k5 AVPM",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\05_Video_Hoan_Thien_Cac_Kenh\\05_K5_AVPM"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\05_Video_Hoan_Thien_Cac_Kenh\\K6 Video Facebook chị",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\05_Video_Hoan_Thien_Cac_Kenh\\06_K6_Video_Facebook_Chi_Hang"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\05_Video_Hoan_Thien_Cac_Kenh\\Final video C.Hằng",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\05_Video_Hoan_Thien_Cac_Kenh\\07_Final_Video_Chi_Hang"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\05_Video_Hoan_Thien_Cac_Kenh\\HT Showcase t3",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\05_Video_Hoan_Thien_Cac_Kenh\\08_HT_Showcase_Thang_3"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\05_Video_Hoan_Thien_Cac_Kenh\\đã đăng 1705 - 1006",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\05_Video_Hoan_Thien_Cac_Kenh\\09_Video_Da_Dang_1705_1006"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\05_Video_Hoan_Thien_Cac_Kenh\\Foogtage",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\05_Video_Hoan_Thien_Cac_Kenh\\10_Footage_Dung_San"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\05_Video_Hoan_Thien_Cac_Kenh\\Ngưng",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\05_Video_Hoan_Thien_Cac_Kenh\\11_Luu_Tru_Tam_Ngung"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\file video gốc",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\06_Kho_Video_Quay_Goc"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\06_Kho_Video_Quay_Goc\\260620 kho hàng",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\06_Kho_Video_Quay_Goc\\01_Quay_San_Pham_Va_Kho_Hang\\260620_Quay_Kho_Hang"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\06_Kho_Video_Quay_Goc\\260803 quay tay sản phẩm",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\06_Kho_Video_Quay_Goc\\01_Quay_San_Pham_Va_Kho_Hang\\260803_Quay_Tay_San_Pham"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\06_Kho_Video_Quay_Goc\\260805 quay sản phẩm romance vip",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\06_Kho_Video_Quay_Goc\\01_Quay_San_Pham_Va_Kho_Hang\\260805_Quay_San_Pham_Romance_VIP"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\06_Kho_Video_Quay_Goc\\AV 261112",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\06_Kho_Video_Quay_Goc\\01_Quay_San_Pham_Va_Kho_Hang\\261112_Quay_AV"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\06_Kho_Video_Quay_Goc\\TVC mai hậu",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\06_Kho_Video_Quay_Goc\\01_Quay_San_Pham_Va_Kho_Hang\\TVC_Mai_Hau"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\06_Kho_Video_Quay_Goc\\Foogtage quay tay",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\06_Kho_Video_Quay_Goc\\03_Kho_Footage_Quay_Tay\\Footage_Quay_Tay_56_Muc"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\06_Kho_Video_Quay_Goc\\260411 chị H tạo dropii",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\06_Kho_Video_Quay_Goc\\02_Quay_Chi_Hang_Va_Su_Kien\\260411_Chi_Hang_Tao_Droppii"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\06_Kho_Video_Quay_Goc\\260427 xây dựng droppii",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\06_Kho_Video_Quay_Goc\\02_Quay_Chi_Hang_Va_Su_Kien\\260427_Xay_Dung_Droppii"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\06_Kho_Video_Quay_Goc\\260429 cbi khai trương droppii",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\06_Kho_Video_Quay_Goc\\02_Quay_Chi_Hang_Va_Su_Kien\\260429_Chuan_Bi_Khai_Truong_Droppii"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\06_Kho_Video_Quay_Goc\\260502 khai truond droppii",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\06_Kho_Video_Quay_Goc\\02_Quay_Chi_Hang_Va_Su_Kien\\260502_Khai_Truong_Droppii"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\06_Kho_Video_Quay_Goc\\20260615",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\06_Kho_Video_Quay_Goc\\02_Quay_Chi_Hang_Va_Su_Kien\\260615_Quay_Goc"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\06_Kho_Video_Quay_Goc\\260704 droppii họp",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\06_Kho_Video_Quay_Goc\\02_Quay_Chi_Hang_Va_Su_Kien\\260704_Hop_Droppii"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\06_Kho_Video_Quay_Goc\\260707",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\06_Kho_Video_Quay_Goc\\02_Quay_Chi_Hang_Va_Su_Kien\\260707_Quay_Chi_Hang"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\06_Kho_Video_Quay_Goc\\260709 chị hằng",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\06_Kho_Video_Quay_Goc\\02_Quay_Chi_Hang_Va_Su_Kien\\260709_Quay_Chi_Hang"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\06_Kho_Video_Quay_Goc\\260716",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\06_Kho_Video_Quay_Goc\\02_Quay_Chi_Hang_Va_Su_Kien\\260716_Quay_Goc"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\06_Kho_Video_Quay_Goc\\260727 Đà lạt",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\06_Kho_Video_Quay_Goc\\02_Quay_Chi_Hang_Va_Su_Kien\\260727_Su_Kien_Da_Lat"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\06_Kho_Video_Quay_Goc\\SHOWCASE CT tháng 8",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\06_Kho_Video_Quay_Goc\\02_Quay_Chi_Hang_Va_Su_Kien\\260800_Showcase_Chu_Tich_Thang_8"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\06_Kho_Video_Quay_Goc\\260904 chị H Biệt thư",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\06_Kho_Video_Quay_Goc\\02_Quay_Chi_Hang_Va_Su_Kien\\260904_Chi_Hang_Biet_Thu"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\06_Kho_Video_Quay_Goc\\261116",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\06_Kho_Video_Quay_Goc\\02_Quay_Chi_Hang_Va_Su_Kien\\261116_Quay_Moi"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\06_Kho_Video_Quay_Goc\\Villa HT",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\06_Kho_Video_Quay_Goc\\02_Quay_Chi_Hang_Va_Su_Kien\\Villa_HT"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\File C.Hằng",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\07_Ho_So_Rieng_Chi_Hang"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\07_Ho_So_Rieng_Chi_Hang\\BNI Chủ tịch + Showcase",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\07_Ho_So_Rieng_Chi_Hang\\01_BNI_Chu_Tich_Va_Showcase"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\07_Ho_So_Rieng_Chi_Hang\\Khóa học AI",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\07_Ho_So_Rieng_Chi_Hang\\02_Khoa_Hoc_AI"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\07_Ho_So_Rieng_Chi_Hang\\học live",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\07_Ho_So_Rieng_Chi_Hang\\03_Hoc_Livestream"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\07_Ho_So_Rieng_Chi_Hang\\Trầm Hương",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\07_Ho_So_Rieng_Chi_Hang\\04_Tram_Huong"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\07_Ho_So_Rieng_Chi_Hang\\Ảnh cưới ac Hằng - Hải",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\07_Ho_So_Rieng_Chi_Hang\\05_Anh_Cuoi_Anh_Chi_Hang_Hai"
+    },
+    {
+      "op": "move",
+      "src": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\07_Ho_So_Rieng_Chi_Hang\\HT cũ SC",
+      "dst": "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\07_Ho_So_Rieng_Chi_Hang\\06_Luu_Tru_HT_Showcase_Cu"
+    }
+  ]
+}

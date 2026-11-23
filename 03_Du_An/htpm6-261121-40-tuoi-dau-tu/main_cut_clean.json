@@ -1,0 +1,1471 @@
+{
+  "lang": "vi",
+  "duration": 68.801,
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 26.5,
+      "text": "40 tuổi đầu tư gì lời nhất? Nếu hôm nay cho Hằng 100 triệu để đầu tư khi bước sang tuổi 40, Hằng sẽ không mua túi hiệu. Không phải túi hiệu không đẹp mà bởi vì càng trưởng thành, Hằng càng hiểu có những thứ rất đắt tiền nhưng không mua được sức khỏe. Một chiếc túi đẹp không cho mình một giấc ngủ ngon, một bộ quần áo đẹp không thay thế được một cơ thể khỏe mạnh, một lớp trang điểm đẹp cũng không thể che được sự mệt mỏi bên trong.",
+      "words": [
+        {
+          "start": 0.0,
+          "end": 0.32,
+          "word": "40",
+          "p": 0.88
+        },
+        {
+          "start": 0.32,
+          "end": 0.82,
+          "word": "tuổi",
+          "p": 0.99
+        },
+        {
+          "start": 0.82,
+          "end": 1.2,
+          "word": "đầu",
+          "p": 0.55
+        },
+        {
+          "start": 1.2,
+          "end": 1.58,
+          "word": "tư",
+          "p": 1.0
+        },
+        {
+          "start": 1.58,
+          "end": 1.92,
+          "word": "gì",
+          "p": 0.98
+        },
+        {
+          "start": 1.92,
+          "end": 2.54,
+          "word": "lời",
+          "p": 0.89
+        },
+        {
+          "start": 2.54,
+          "end": 2.76,
+          "word": "nhất?",
+          "p": 1.0
+        },
+        {
+          "start": 2.98,
+          "end": 3.46,
+          "word": "Nếu",
+          "p": 1.0
+        },
+        {
+          "start": 3.46,
+          "end": 3.62,
+          "word": "hôm",
+          "p": 1.0
+        },
+        {
+          "start": 3.62,
+          "end": 3.76,
+          "word": "nay",
+          "p": 1.0
+        },
+        {
+          "start": 3.76,
+          "end": 3.94,
+          "word": "cho",
+          "p": 1.0
+        },
+        {
+          "start": 3.94,
+          "end": 4.04,
+          "word": "Hằng",
+          "p": 0.8
+        },
+        {
+          "start": 4.04,
+          "end": 4.44,
+          "word": "100",
+          "p": 0.97
+        },
+        {
+          "start": 4.44,
+          "end": 4.84,
+          "word": "triệu",
+          "p": 0.98
+        },
+        {
+          "start": 4.84,
+          "end": 4.96,
+          "word": "để",
+          "p": 0.99
+        },
+        {
+          "start": 4.96,
+          "end": 5.14,
+          "word": "đầu",
+          "p": 1.0
+        },
+        {
+          "start": 5.14,
+          "end": 5.38,
+          "word": "tư",
+          "p": 1.0
+        },
+        {
+          "start": 5.38,
+          "end": 5.62,
+          "word": "khi",
+          "p": 0.68
+        },
+        {
+          "start": 5.62,
+          "end": 5.8,
+          "word": "bước",
+          "p": 0.99
+        },
+        {
+          "start": 5.8,
+          "end": 6.0,
+          "word": "sang",
+          "p": 1.0
+        },
+        {
+          "start": 6.0,
+          "end": 6.3,
+          "word": "tuổi",
+          "p": 1.0
+        },
+        {
+          "start": 6.3,
+          "end": 6.64,
+          "word": "40,",
+          "p": 1.0
+        },
+        {
+          "start": 7.2,
+          "end": 7.46,
+          "word": "Hằng",
+          "p": 1.0
+        },
+        {
+          "start": 7.46,
+          "end": 7.66,
+          "word": "sẽ",
+          "p": 1.0
+        },
+        {
+          "start": 7.66,
+          "end": 7.8,
+          "word": " không",
+          "p": 0.84
+        },
+        {
+          "start": 7.8,
+          "end": 8.02,
+          "word": "mua",
+          "p": 0.92
+        },
+        {
+          "start": 8.02,
+          "end": 8.18,
+          "word": " túi",
+          "p": 0.91
+        },
+        {
+          "start": 8.18,
+          "end": 8.46,
+          "word": "hiệu.",
+          "p": 0.84
+        },
+        {
+          "start": 8.68,
+          "end": 9.04,
+          "word": "Không",
+          "p": 1.0
+        },
+        {
+          "start": 9.04,
+          "end": 9.24,
+          "word": "phải",
+          "p": 1.0
+        },
+        {
+          "start": 9.24,
+          "end": 9.44,
+          "word": " túi",
+          "p": 1.0
+        },
+        {
+          "start": 9.44,
+          "end": 9.6,
+          "word": "hiệu",
+          "p": 1.0
+        },
+        {
+          "start": 9.6,
+          "end": 9.78,
+          "word": "không",
+          "p": 1.0
+        },
+        {
+          "start": 9.78,
+          "end": 10.12,
+          "word": "đẹp",
+          "p": 1.0
+        },
+        {
+          "start": 10.12,
+          "end": 10.44,
+          "word": "mà",
+          "p": 0.71
+        },
+        {
+          "start": 10.44,
+          "end": 10.68,
+          "word": "bởi",
+          "p": 0.99
+        },
+        {
+          "start": 10.68,
+          "end": 10.86,
+          "word": "vì",
+          "p": 1.0
+        },
+        {
+          "start": 10.86,
+          "end": 11.12,
+          "word": "càng",
+          "p": 1.0
+        },
+        {
+          "start": 11.12,
+          "end": 11.36,
+          "word": "trưởng",
+          "p": 0.99
+        },
+        {
+          "start": 11.36,
+          "end": 11.72,
+          "word": " thành,",
+          "p": 0.85
+        },
+        {
+          "start": 11.92,
+          "end": 12.12,
+          "word": "Hằng",
+          "p": 0.99
+        },
+        {
+          "start": 12.12,
+          "end": 12.24,
+          "word": "càng",
+          "p": 1.0
+        },
+        {
+          "start": 12.24,
+          "end": 12.58,
+          "word": "hiểu",
+          "p": 0.98
+        },
+        {
+          "start": 12.58,
+          "end": 13.12,
+          "word": "có",
+          "p": 0.82
+        },
+        {
+          "start": 13.12,
+          "end": 13.32,
+          "word": "những",
+          "p": 1.0
+        },
+        {
+          "start": 13.32,
+          "end": 13.6,
+          "word": "thứ",
+          "p": 1.0
+        },
+        {
+          "start": 13.6,
+          "end": 13.96,
+          "word": "rất",
+          "p": 1.0
+        },
+        {
+          "start": 13.96,
+          "end": 14.18,
+          "word": "đắt",
+          "p": 0.88
+        },
+        {
+          "start": 14.18,
+          "end": 14.54,
+          "word": "tiền",
+          "p": 0.98
+        },
+        {
+          "start": 14.54,
+          "end": 15.04,
+          "word": "nhưng",
+          "p": 0.98
+        },
+        {
+          "start": 15.04,
+          "end": 15.3,
+          "word": "không",
+          "p": 1.0
+        },
+        {
+          "start": 15.3,
+          "end": 15.48,
+          "word": "mua",
+          "p": 1.0
+        },
+        {
+          "start": 15.48,
+          "end": 15.58,
+          "word": "được",
+          "p": 1.0
+        },
+        {
+          "start": 15.58,
+          "end": 15.76,
+          "word": "sức",
+          "p": 1.0
+        },
+        {
+          "start": 15.76,
+          "end": 16.08,
+          "word": "khỏe.",
+          "p": 1.0
+        },
+        {
+          "start": 16.4,
+          "end": 16.66,
+          "word": "Một",
+          "p": 1.0
+        },
+        {
+          "start": 16.66,
+          "end": 16.84,
+          "word": " chiếc",
+          "p": 0.87
+        },
+        {
+          "start": 16.84,
+          "end": 17.0,
+          "word": " túi",
+          "p": 1.0
+        },
+        {
+          "start": 17.0,
+          "end": 17.34,
+          "word": "đẹp",
+          "p": 1.0
+        },
+        {
+          "start": 17.34,
+          "end": 17.64,
+          "word": "không",
+          "p": 1.0
+        },
+        {
+          "start": 17.64,
+          "end": 17.8,
+          "word": "cho",
+          "p": 1.0
+        },
+        {
+          "start": 17.8,
+          "end": 18.0,
+          "word": "mình",
+          "p": 1.0
+        },
+        {
+          "start": 18.0,
+          "end": 18.14,
+          "word": "một",
+          "p": 0.99
+        },
+        {
+          "start": 18.14,
+          "end": 18.34,
+          "word": "giấc",
+          "p": 0.87
+        },
+        {
+          "start": 18.34,
+          "end": 18.6,
+          "word": "ngủ",
+          "p": 1.0
+        },
+        {
+          "start": 18.6,
+          "end": 18.92,
+          "word": "ngon,",
+          "p": 1.0
+        },
+        {
+          "start": 19.22,
+          "end": 19.46,
+          "word": "một",
+          "p": 0.99
+        },
+        {
+          "start": 19.46,
+          "end": 19.7,
+          "word": " bộ",
+          "p": 0.97
+        },
+        {
+          "start": 19.7,
+          "end": 19.9,
+          "word": " quần",
+          "p": 0.89
+        },
+        {
+          "start": 19.9,
+          "end": 20.12,
+          "word": "áo",
+          "p": 0.78
+        },
+        {
+          "start": 20.12,
+          "end": 20.36,
+          "word": "đẹp",
+          "p": 1.0
+        },
+        {
+          "start": 20.36,
+          "end": 20.64,
+          "word": "không",
+          "p": 1.0
+        },
+        {
+          "start": 20.64,
+          "end": 20.88,
+          "word": "thay",
+          "p": 0.88
+        },
+        {
+          "start": 20.88,
+          "end": 21.04,
+          "word": "thế",
+          "p": 0.49
+        },
+        {
+          "start": 21.04,
+          "end": 21.2,
+          "word": "được",
+          "p": 0.99
+        },
+        {
+          "start": 21.2,
+          "end": 21.34,
+          "word": "một",
+          "p": 0.99
+        },
+        {
+          "start": 21.34,
+          "end": 21.54,
+          "word": "cơ",
+          "p": 1.0
+        },
+        {
+          "start": 21.54,
+          "end": 21.74,
+          "word": "thể",
+          "p": 1.0
+        },
+        {
+          "start": 21.74,
+          "end": 22.16,
+          "word": "khỏe",
+          "p": 1.0
+        },
+        {
+          "start": 22.16,
+          "end": 22.5,
+          "word": "mạnh,",
+          "p": 0.98
+        },
+        {
+          "start": 22.74,
+          "end": 22.94,
+          "word": "một",
+          "p": 1.0
+        },
+        {
+          "start": 22.94,
+          "end": 23.1,
+          "word": " lớp",
+          "p": 0.88
+        },
+        {
+          "start": 23.1,
+          "end": 23.3,
+          "word": "trang",
+          "p": 1.0
+        },
+        {
+          "start": 23.3,
+          "end": 23.52,
+          "word": "điểm",
+          "p": 1.0
+        },
+        {
+          "start": 23.52,
+          "end": 23.78,
+          "word": "đẹp",
+          "p": 1.0
+        },
+        {
+          "start": 23.78,
+          "end": 23.98,
+          "word": "cũng",
+          "p": 0.99
+        },
+        {
+          "start": 23.98,
+          "end": 24.12,
+          "word": "không",
+          "p": 1.0
+        },
+        {
+          "start": 24.12,
+          "end": 24.32,
+          "word": "thể",
+          "p": 1.0
+        },
+        {
+          "start": 24.32,
+          "end": 24.52,
+          "word": "che",
+          "p": 0.93
+        },
+        {
+          "start": 24.52,
+          "end": 24.78,
+          "word": "được",
+          "p": 1.0
+        },
+        {
+          "start": 24.78,
+          "end": 25.24,
+          "word": "sự",
+          "p": 0.99
+        },
+        {
+          "start": 25.24,
+          "end": 25.68,
+          "word": "mệt",
+          "p": 0.99
+        },
+        {
+          "start": 25.68,
+          "end": 26.04,
+          "word": "mỏi",
+          "p": 1.0
+        },
+        {
+          "start": 26.04,
+          "end": 26.24,
+          "word": "bên",
+          "p": 1.0
+        },
+        {
+          "start": 26.24,
+          "end": 26.5,
+          "word": "trong.",
+          "p": 1.0
+        }
+      ]
+    },
+    {
+      "start": 26.5,
+      "end": 35.64,
+      "text": "Phụ nữ càng trưởng thành, càng nên đầu tư vào sức khỏe, giấc ngủ, dinh dưỡng, vóc dáng, sức khỏe phụ khoa, kiến thức.",
+      "words": [
+        {
+          "start": 26.5,
+          "end": 27.2,
+          "word": "Phụ",
+          "p": 0.94
+        },
+        {
+          "start": 27.2,
+          "end": 27.36,
+          "word": "nữ",
+          "p": 1.0
+        },
+        {
+          "start": 27.36,
+          "end": 27.6,
+          "word": "càng",
+          "p": 1.0
+        },
+        {
+          "start": 27.6,
+          "end": 27.86,
+          "word": "trưởng",
+          "p": 0.98
+        },
+        {
+          "start": 27.86,
+          "end": 28.16,
+          "word": "thành,",
+          "p": 0.77
+        },
+        {
+          "start": 28.38,
+          "end": 28.64,
+          "word": "càng",
+          "p": 1.0
+        },
+        {
+          "start": 28.64,
+          "end": 28.78,
+          "word": "nên",
+          "p": 1.0
+        },
+        {
+          "start": 28.78,
+          "end": 28.96,
+          "word": "đầu",
+          "p": 1.0
+        },
+        {
+          "start": 28.96,
+          "end": 29.16,
+          "word": "tư",
+          "p": 1.0
+        },
+        {
+          "start": 29.16,
+          "end": 29.5,
+          "word": "vào",
+          "p": 1.0
+        },
+        {
+          "start": 29.5,
+          "end": 30.1,
+          "word": "sức",
+          "p": 0.97
+        },
+        {
+          "start": 30.1,
+          "end": 30.56,
+          "word": "khỏe,",
+          "p": 1.0
+        },
+        {
+          "start": 30.88,
+          "end": 31.08,
+          "word": "giấc",
+          "p": 0.82
+        },
+        {
+          "start": 31.08,
+          "end": 31.38,
+          "word": "ngủ,",
+          "p": 1.0
+        },
+        {
+          "start": 31.86,
+          "end": 32.1,
+          "word": "dinh",
+          "p": 0.99
+        },
+        {
+          "start": 32.1,
+          "end": 32.44,
+          "word": "dưỡng,",
+          "p": 1.0
+        },
+        {
+          "start": 32.8,
+          "end": 33.04,
+          "word": "vóc",
+          "p": 0.98
+        },
+        {
+          "start": 33.04,
+          "end": 33.4,
+          "word": "dáng,",
+          "p": 0.76
+        },
+        {
+          "start": 33.78,
+          "end": 33.98,
+          "word": "sức",
+          "p": 1.0
+        },
+        {
+          "start": 33.98,
+          "end": 34.18,
+          "word": "khỏe",
+          "p": 1.0
+        },
+        {
+          "start": 34.18,
+          "end": 34.38,
+          "word": " phụ",
+          "p": 0.92
+        },
+        {
+          "start": 34.38,
+          "end": 34.8,
+          "word": "khoa,",
+          "p": 0.98
+        },
+        {
+          "start": 35.16,
+          "end": 35.38,
+          "word": "kiến",
+          "p": 1.0
+        },
+        {
+          "start": 35.38,
+          "end": 35.64,
+          "word": " thức.",
+          "p": 1.0
+        }
+      ]
+    },
+    {
+      "start": 35.64,
+      "end": 38.96,
+      "text": "Bởi vì khi mình khỏe, mình có năng lượng cho gia đình.",
+      "words": [
+        {
+          "start": 35.64,
+          "end": 36.34,
+          "word": "Bởi",
+          "p": 0.68
+        },
+        {
+          "start": 36.34,
+          "end": 36.52,
+          "word": "vì",
+          "p": 1.0
+        },
+        {
+          "start": 36.52,
+          "end": 36.7,
+          "word": "khi",
+          "p": 1.0
+        },
+        {
+          "start": 36.7,
+          "end": 36.9,
+          "word": "mình",
+          "p": 1.0
+        },
+        {
+          "start": 36.9,
+          "end": 37.36,
+          "word": "khỏe,",
+          "p": 1.0
+        },
+        {
+          "start": 37.54,
+          "end": 37.7,
+          "word": "mình",
+          "p": 1.0
+        },
+        {
+          "start": 37.7,
+          "end": 37.86,
+          "word": "có",
+          "p": 1.0
+        },
+        {
+          "start": 37.86,
+          "end": 38.1,
+          "word": "năng",
+          "p": 1.0
+        },
+        {
+          "start": 38.1,
+          "end": 38.36,
+          "word": "lượng",
+          "p": 0.97
+        },
+        {
+          "start": 38.36,
+          "end": 38.54,
+          "word": "cho",
+          "p": 1.0
+        },
+        {
+          "start": 38.54,
+          "end": 38.7,
+          "word": "gia",
+          "p": 1.0
+        },
+        {
+          "start": 38.7,
+          "end": 38.96,
+          "word": " đình.",
+          "p": 1.0
+        }
+      ]
+    },
+    {
+      "start": 38.96,
+      "end": 41.58,
+      "text": "Khi mình tự tin, mình làm việc tốt hơn.",
+      "words": [
+        {
+          "start": 38.96,
+          "end": 39.46,
+          "word": "Khi",
+          "p": 0.68
+        },
+        {
+          "start": 39.46,
+          "end": 39.58,
+          "word": "mình",
+          "p": 1.0
+        },
+        {
+          "start": 39.58,
+          "end": 39.8,
+          "word": "tự",
+          "p": 0.99
+        },
+        {
+          "start": 39.8,
+          "end": 40.12,
+          "word": "tin,",
+          "p": 1.0
+        },
+        {
+          "start": 40.4,
+          "end": 40.6,
+          "word": "mình",
+          "p": 1.0
+        },
+        {
+          "start": 40.6,
+          "end": 40.78,
+          "word": "làm",
+          "p": 1.0
+        },
+        {
+          "start": 40.78,
+          "end": 40.92,
+          "word": "việc",
+          "p": 1.0
+        },
+        {
+          "start": 40.92,
+          "end": 41.22,
+          "word": "tốt",
+          "p": 0.93
+        },
+        {
+          "start": 41.22,
+          "end": 41.58,
+          "word": " hơn.",
+          "p": 1.0
+        }
+      ]
+    },
+    {
+      "start": 41.58,
+      "end": 45.62,
+      "text": "Khi mình hiểu cơ thể mình không dễ bị những lời quảng cáo trên mạng dẫn dắt.",
+      "words": [
+        {
+          "start": 41.58,
+          "end": 42.14,
+          "word": "Khi",
+          "p": 0.99
+        },
+        {
+          "start": 42.14,
+          "end": 42.24,
+          "word": "mình",
+          "p": 1.0
+        },
+        {
+          "start": 42.24,
+          "end": 42.5,
+          "word": "hiểu",
+          "p": 1.0
+        },
+        {
+          "start": 42.5,
+          "end": 42.7,
+          "word": "cơ",
+          "p": 0.99
+        },
+        {
+          "start": 42.7,
+          "end": 42.86,
+          "word": "thể",
+          "p": 1.0
+        },
+        {
+          "start": 42.86,
+          "end": 43.06,
+          "word": "mình",
+          "p": 0.65
+        },
+        {
+          "start": 43.06,
+          "end": 43.32,
+          "word": "không",
+          "p": 1.0
+        },
+        {
+          "start": 43.32,
+          "end": 43.68,
+          "word": "dễ",
+          "p": 1.0
+        },
+        {
+          "start": 43.68,
+          "end": 43.84,
+          "word": "bị",
+          "p": 0.96
+        },
+        {
+          "start": 43.84,
+          "end": 44.02,
+          "word": "những",
+          "p": 1.0
+        },
+        {
+          "start": 44.02,
+          "end": 44.2,
+          "word": "lời",
+          "p": 1.0
+        },
+        {
+          "start": 44.2,
+          "end": 44.44,
+          "word": "quảng",
+          "p": 1.0
+        },
+        {
+          "start": 44.44,
+          "end": 44.74,
+          "word": "cáo",
+          "p": 0.77
+        },
+        {
+          "start": 44.74,
+          "end": 44.88,
+          "word": "trên",
+          "p": 1.0
+        },
+        {
+          "start": 44.88,
+          "end": 45.16,
+          "word": "mạng",
+          "p": 0.89
+        },
+        {
+          "start": 45.16,
+          "end": 45.36,
+          "word": " dẫn",
+          "p": 0.65
+        },
+        {
+          "start": 45.36,
+          "end": 45.62,
+          "word": " dắt.",
+          "p": 0.75
+        }
+      ]
+    },
+    {
+      "start": 45.62,
+      "end": 50.56,
+      "text": "Và quan trọng nhất, đừng đợi cơ thể có vấn đề rồi mới bắt đầu yêu thương nó.",
+      "words": [
+        {
+          "start": 45.62,
+          "end": 46.14,
+          "word": "Và",
+          "p": 1.0
+        },
+        {
+          "start": 46.14,
+          "end": 46.42,
+          "word": "quan",
+          "p": 1.0
+        },
+        {
+          "start": 46.42,
+          "end": 46.7,
+          "word": "trọng",
+          "p": 1.0
+        },
+        {
+          "start": 46.7,
+          "end": 46.9,
+          "word": "nhất,",
+          "p": 1.0
+        },
+        {
+          "start": 47.36,
+          "end": 47.6,
+          "word": "đừng",
+          "p": 1.0
+        },
+        {
+          "start": 47.6,
+          "end": 47.92,
+          "word": "đợi",
+          "p": 0.95
+        },
+        {
+          "start": 47.92,
+          "end": 48.1,
+          "word": "cơ",
+          "p": 1.0
+        },
+        {
+          "start": 48.1,
+          "end": 48.24,
+          "word": "thể",
+          "p": 1.0
+        },
+        {
+          "start": 48.24,
+          "end": 48.38,
+          "word": "có",
+          "p": 1.0
+        },
+        {
+          "start": 48.38,
+          "end": 48.58,
+          "word": "vấn",
+          "p": 1.0
+        },
+        {
+          "start": 48.58,
+          "end": 48.86,
+          "word": "đề",
+          "p": 1.0
+        },
+        {
+          "start": 48.86,
+          "end": 49.24,
+          "word": "rồi",
+          "p": 0.69
+        },
+        {
+          "start": 49.24,
+          "end": 49.38,
+          "word": "mới",
+          "p": 0.99
+        },
+        {
+          "start": 49.38,
+          "end": 49.54,
+          "word": "bắt",
+          "p": 1.0
+        },
+        {
+          "start": 49.54,
+          "end": 49.76,
+          "word": "đầu",
+          "p": 1.0
+        },
+        {
+          "start": 49.76,
+          "end": 50.06,
+          "word": "yêu",
+          "p": 1.0
+        },
+        {
+          "start": 50.06,
+          "end": 50.34,
+          "word": "thương",
+          "p": 1.0
+        },
+        {
+          "start": 50.34,
+          "end": 50.56,
+          "word": " nó.",
+          "p": 0.87
+        }
+      ]
+    },
+    {
+      "start": 50.56,
+      "end": 56.42,
+      "text": "Phụ nữ không cần trẻ mãi, nhưng nhất định phải khỏe, đẹp và tự tin ở từng độ tuổi",
+      "words": [
+        {
+          "start": 50.56,
+          "end": 51.34,
+          "word": "Phụ",
+          "p": 1.0
+        },
+        {
+          "start": 51.34,
+          "end": 51.54,
+          "word": "nữ",
+          "p": 1.0
+        },
+        {
+          "start": 51.54,
+          "end": 51.84,
+          "word": "không",
+          "p": 1.0
+        },
+        {
+          "start": 51.84,
+          "end": 52.02,
+          "word": "cần",
+          "p": 1.0
+        },
+        {
+          "start": 52.02,
+          "end": 52.24,
+          "word": "trẻ",
+          "p": 1.0
+        },
+        {
+          "start": 52.24,
+          "end": 52.64,
+          "word": "mãi,",
+          "p": 0.94
+        },
+        {
+          "start": 52.86,
+          "end": 53.0,
+          "word": "nhưng",
+          "p": 0.95
+        },
+        {
+          "start": 53.0,
+          "end": 53.16,
+          "word": "nhất",
+          "p": 1.0
+        },
+        {
+          "start": 53.16,
+          "end": 53.34,
+          "word": "định",
+          "p": 1.0
+        },
+        {
+          "start": 53.34,
+          "end": 53.52,
+          "word": "phải",
+          "p": 1.0
+        },
+        {
+          "start": 53.52,
+          "end": 53.96,
+          "word": "khỏe,",
+          "p": 1.0
+        },
+        {
+          "start": 54.22,
+          "end": 54.5,
+          "word": "đẹp",
+          "p": 1.0
+        },
+        {
+          "start": 54.5,
+          "end": 54.92,
+          "word": "và",
+          "p": 0.98
+        },
+        {
+          "start": 54.92,
+          "end": 55.12,
+          "word": "tự",
+          "p": 1.0
+        },
+        {
+          "start": 55.12,
+          "end": 55.38,
+          "word": "tin",
+          "p": 1.0
+        },
+        {
+          "start": 55.38,
+          "end": 55.58,
+          "word": "ở",
+          "p": 1.0
+        },
+        {
+          "start": 55.58,
+          "end": 55.92,
+          "word": "từng",
+          "p": 1.0
+        },
+        {
+          "start": 55.92,
+          "end": 56.12,
+          "word": " độ",
+          "p": 0.74
+        },
+        {
+          "start": 56.12,
+          "end": 56.42,
+          "word": "tuổi",
+          "p": 1.0
+        }
+      ]
+    },
+    {
+      "start": 56.42,
+      "end": 58.5,
+      "text": "của mình. Nếu chị em đang ở độ tuổi",
+      "words": [
+        {
+          "start": 56.42,
+          "end": 56.56,
+          "word": "của",
+          "p": 0.72
+        },
+        {
+          "start": 56.56,
+          "end": 56.8,
+          "word": "mình.",
+          "p": 0.99
+        },
+        {
+          "start": 57.14,
+          "end": 57.62,
+          "word": "Nếu",
+          "p": 1.0
+        },
+        {
+          "start": 57.62,
+          "end": 57.78,
+          "word": "chị",
+          "p": 1.0
+        },
+        {
+          "start": 57.78,
+          "end": 57.92,
+          "word": "em",
+          "p": 1.0
+        },
+        {
+          "start": 57.92,
+          "end": 58.08,
+          "word": " đang ở",
+          "p": 0.88
+        },
+        {
+          "start": 58.08,
+          "end": 58.24,
+          "word": " độ",
+          "p": 0.57
+        },
+        {
+          "start": 58.24,
+          "end": 58.5,
+          "word": "tuổi",
+          "p": 1.0
+        }
+      ]
+    },
+    {
+      "start": 58.5,
+      "end": 60.32,
+      "text": "30 -40+ hãy",
+      "words": [
+        {
+          "start": 58.5,
+          "end": 58.88,
+          "word": "30",
+          "p": 0.95
+        },
+        {
+          "start": 58.88,
+          "end": 59.46,
+          "word": "-40+",
+          "p": 0.74
+        },
+        {
+          "start": 60.1,
+          "end": 60.32,
+          "word": "hãy",
+          "p": 1.0
+        }
+      ]
+    },
+    {
+      "start": 60.32,
+      "end": 62.6,
+      "text": "follow Hằng vì từ tuổi này trở đi",
+      "words": [
+        {
+          "start": 60.32,
+          "end": 60.56,
+          "word": "follow",
+          "p": 0.95
+        },
+        {
+          "start": 60.56,
+          "end": 60.94,
+          "word": "Hằng",
+          "p": 0.66
+        },
+        {
+          "start": 60.94,
+          "end": 61.4,
+          "word": "vì",
+          "p": 0.51
+        },
+        {
+          "start": 61.4,
+          "end": 61.56,
+          "word": "từ",
+          "p": 0.89
+        },
+        {
+          "start": 61.56,
+          "end": 61.98,
+          "word": "tuổi",
+          "p": 1.0
+        },
+        {
+          "start": 61.98,
+          "end": 62.14,
+          "word": "này",
+          "p": 0.92
+        },
+        {
+          "start": 62.14,
+          "end": 62.4,
+          "word": "trở",
+          "p": 1.0
+        },
+        {
+          "start": 62.4,
+          "end": 62.6,
+          "word": "đi",
+          "p": 0.99
+        }
+      ]
+    },
+    {
+      "start": 62.6,
+      "end": 64.42,
+      "text": "có những",
+      "words": [
+        {
+          "start": 63.94,
+          "end": 64.26,
+          "word": "có",
+          "p": 1.0
+        },
+        {
+          "start": 64.26,
+          "end": 64.42,
+          "word": "những",
+          "p": 1.0
+        }
+      ]
+    },
+    {
+      "start": 64.42,
+      "end": 66.04,
+      "text": "điều phụ nữ càng biết sớm",
+      "words": [
+        {
+          "start": 64.42,
+          "end": 64.66,
+          "word": "điều",
+          "p": 0.98
+        },
+        {
+          "start": 64.66,
+          "end": 64.92,
+          "word": "phụ",
+          "p": 1.0
+        },
+        {
+          "start": 64.92,
+          "end": 65.1,
+          "word": "nữ",
+          "p": 1.0
+        },
+        {
+          "start": 65.1,
+          "end": 65.42,
+          "word": "càng",
+          "p": 1.0
+        },
+        {
+          "start": 65.42,
+          "end": 65.6,
+          "word": "biết",
+          "p": 0.97
+        },
+        {
+          "start": 65.6,
+          "end": 66.04,
+          "word": "sớm",
+          "p": 1.0
+        }
+      ]
+    },
+    {
+      "start": 66.04,
+      "end": 67.88,
+      "text": "càng có lời cho chị em mình đấy!",
+      "words": [
+        {
+          "start": 66.04,
+          "end": 66.42,
+          "word": "càng",
+          "p": 0.74
+        },
+        {
+          "start": 66.42,
+          "end": 66.62,
+          "word": "có",
+          "p": 1.0
+        },
+        {
+          "start": 66.62,
+          "end": 66.96,
+          "word": "lời",
+          "p": 1.0
+        },
+        {
+          "start": 66.96,
+          "end": 67.2,
+          "word": "cho",
+          "p": 1.0
+        },
+        {
+          "start": 67.2,
+          "end": 67.38,
+          "word": "chị",
+          "p": 1.0
+        },
+        {
+          "start": 67.38,
+          "end": 67.58,
+          "word": "em",
+          "p": 1.0
+        },
+        {
+          "start": 67.58,
+          "end": 67.7,
+          "word": "mình",
+          "p": 1.0
+        },
+        {
+          "start": 67.7,
+          "end": 67.88,
+          "word": " đấy!",
+          "p": 1.0
+        }
+      ]
+    }
+  ]
+}

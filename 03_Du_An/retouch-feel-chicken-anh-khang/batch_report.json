@@ -1,0 +1,249 @@
+{
+  "IMG_1335": {
+    "time_s": 53.66,
+    "spots_healed": 279,
+    "sticker": true,
+    "mic": true,
+    "plate_spots": 0,
+    "face_bbox": [
+      1437,
+      915,
+      2075,
+      1676
+    ]
+  },
+  "IMG_1336": {
+    "time_s": 36.92,
+    "spots_healed": 315,
+    "sticker": true,
+    "mic": true,
+    "plate_spots": 0,
+    "face_bbox": [
+      1602,
+      681,
+      2252,
+      1511
+    ]
+  },
+  "IMG_1337": {
+    "time_s": 32.28,
+    "spots_healed": 293,
+    "sticker": false,
+    "mic": true,
+    "plate_spots": 0,
+    "face_bbox": [
+      1672,
+      1064,
+      2315,
+      1827
+    ]
+  },
+  "IMG_1338": {
+    "time_s": 32.91,
+    "spots_healed": 295,
+    "sticker": false,
+    "mic": true,
+    "plate_spots": 0,
+    "face_bbox": [
+      1666,
+      1142,
+      2310,
+      1906
+    ]
+  },
+  "IMG_1339": {
+    "time_s": 35.49,
+    "spots_healed": 330,
+    "sticker": false,
+    "mic": true,
+    "plate_spots": 0,
+    "face_bbox": [
+      1648,
+      687,
+      2348,
+      1532
+    ]
+  },
+  "IMG_1340": {
+    "time_s": 31.81,
+    "spots_healed": 305,
+    "sticker": false,
+    "mic": true,
+    "plate_spots": 0,
+    "face_bbox": [
+      1653,
+      1101,
+      2334,
+      1896
+    ]
+  },
+  "IMG_1341": {
+    "time_s": 29.37,
+    "spots_healed": 324,
+    "sticker": false,
+    "mic": true,
+    "plate_spots": 0,
+    "face_bbox": [
+      1672,
+      921,
+      2373,
+      1752
+    ]
+  },
+  "IMG_1342": {
+    "time_s": 71.6,
+    "spots_healed": 149,
+    "sticker": false,
+    "mic": true,
+    "plate_spots": 561,
+    "face_bbox": [
+      1926,
+      803,
+      2792,
+      2008
+    ]
+  },
+  "IMG_1343": {
+    "time_s": 64.86,
+    "spots_healed": 398,
+    "sticker": false,
+    "mic": true,
+    "plate_spots": 0,
+    "face_bbox": [
+      1728,
+      1182,
+      2841,
+      2578
+    ]
+  },
+  "IMG_1344": {
+    "time_s": 65.54,
+    "spots_healed": 374,
+    "sticker": false,
+    "mic": true,
+    "plate_spots": 0,
+    "face_bbox": [
+      1788,
+      1011,
+      2988,
+      2509
+    ]
+  },
+  "IMG_1345": {
+    "time_s": 56.16,
+    "spots_healed": 151,
+    "sticker": false,
+    "mic": true,
+    "plate_spots": 174,
+    "face_bbox": [
+      1767,
+      1250,
+      2841,
+      2706
+    ]
+  },
+  "IMG_1346": {
+    "time_s": 77.29,
+    "spots_healed": 126,
+    "sticker": false,
+    "mic": true,
+    "plate_spots": 162,
+    "face_bbox": [
+      1781,
+      1307,
+      2853,
+      2754
+    ]
+  },
+  "IMG_1347": {
+    "time_s": 93.54,
+    "spots_healed": 116,
+    "sticker": false,
+    "mic": true,
+    "plate_spots": 182,
+    "face_bbox": [
+      1691,
+      1104,
+      2780,
+      2588
+    ]
+  },
+  "IMG_1348": {
+    "time_s": 69.17,
+    "spots_healed": 122,
+    "sticker": false,
+    "mic": true,
+    "plate_spots": 237,
+    "face_bbox": [
+      1731,
+      1085,
+      2809,
+      2559
+    ]
+  },
+  "IMG_1349": {
+    "time_s": 83.71,
+    "spots_healed": 105,
+    "sticker": false,
+    "mic": true,
+    "plate_spots": 211,
+    "face_bbox": [
+      1619,
+      1029,
+      2742,
+      2574
+    ]
+  },
+  "IMG_1350": {
+    "time_s": 69.23,
+    "spots_healed": 99,
+    "sticker": false,
+    "mic": true,
+    "plate_spots": 141,
+    "face_bbox": [
+      1539,
+      731,
+      2754,
+      2387
+    ]
+  },
+  "IMG_1351": {
+    "time_s": 59.14,
+    "spots_healed": 738,
+    "sticker": false,
+    "mic": true,
+    "plate_spots": 263,
+    "face_bbox": [
+      1455,
+      797,
+      2275,
+      1826
+    ]
+  },
+  "IMG_1352": {
+    "time_s": 45.49,
+    "spots_healed": 755,
+    "sticker": false,
+    "mic": true,
+    "plate_spots": 231,
+    "face_bbox": [
+      1457,
+      818,
+      2270,
+      1825
+    ]
+  },
+  "IMG_1353": {
+    "time_s": 79.81,
+    "spots_healed": 357,
+    "sticker": false,
+    "mic": true,
+    "plate_spots": 310,
+    "face_bbox": [
+      2147,
+      1025,
+      3434,
+      2620
+    ]
+  }
+}

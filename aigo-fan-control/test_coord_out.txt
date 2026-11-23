@@ -1,0 +1,24 @@
+﻿METHOD: Boolean get_IsSupported()
+METHOD: EnvironmentControllerInfo get_HardwareInfo()
+METHOD: Void Get(System.Int32 fanControlIndex, Gigabyte.EnvironmentControl.Common.CoolingDevice.Fan.CoordinateSystem.SmartFanDataPointSet& pCurrentSmartFanControlConfig)
+METHOD: Void Set(System.Int32 fanControlIndex, Gigabyte.EnvironmentControl.Common.CoolingDevice.Fan.CoordinateSystem.SmartFanDataPointSet newSmartFanControlConfig)
+METHOD: Void GetTemperatureInputSelection(System.Int32 fanControlIndex, System.Int32& pCurrentTemperatureInputSelection)
+METHOD: Boolean SetTemperatureInputSelection(System.Int32 fanControlIndex, System.Int32 newTemperatureInputSelection)
+METHOD: Void SetCalibrationPwm(System.Int32 fanControlIndex, System.Int32 pwmPercentage)
+METHOD: Void ResetCalibrationPwm()
+METHOD: Void GetSensorTitle(Gigabyte.EnvironmentControl.Common.HardwareMonitor.SensorTypes sensorType, System.Int32 sensorIndex, System.String& pTitle)
+METHOD: Void GetHardwareMonitorDatas(System.Collections.Generic.List`1[[System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]& pTemperatureDatas, System.Collections.Generic.List`1[[System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]& pFanSpeedDatas)
+HW Info: FanCtrlCount=4, TachCount=, TempCount=
+  HWProp GroupNumber = 2416182791
+  HWProp PlatformNumber = 9
+  HWProp SpecialCaseNumber = 0
+  HWProp FanControlCount = 4
+  HWProp TemperatureInputCount = 6
+  HWProp FanTachometerInputCount = 4
+  HWProp VoltageInputCount = 7
+=== LIVE TEMPS (0) ===
+=== LIVE RPMS (0) ===
+FAN[0] Title='CPU' Mode= Speed= Points: (C -> /255)
+FAN[1] Title='System 1' Mode= Speed= Points: (C -> /255)
+FAN[2] Title='System 2' Mode= Speed= Points: (C -> /255)
+FAN[3] Title='System 3' Mode= Speed= Points: (C -> /255)

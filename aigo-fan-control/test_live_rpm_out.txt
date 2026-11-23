@@ -1,0 +1,17 @@
+﻿=== 6 TEMPERATURE SENSORS ===
+  Temp[0] 'System 1' = 35 C
+  Temp[1] 'PCH' = 40 C
+  Temp[2] 'CPU' = 45 C
+  Temp[3] 'PCIEX16' = 37 C
+  Temp[4] 'VRM MOS' = 38 C
+  Temp[5] 'System 2' = 36 C
+=== 4 FAN TACHOMETERS (RPM) ===
+  Fan[0] 'CPU' = 0 RPM
+  Fan[1] 'System 1' = 0 RPM
+  Fan[2] 'System 2' = 0 RPM
+  Fan[3] 'System 3' = 0 RPM
+=== CURRENT FAN CURVES ===
+  FanCtrl[0] TempSrc=2 Mode=SmartFanMode DeltaT=3 Points: (0C -> 26%), (20C -> 26%), (30C -> 34%), (40C -> 42%), (50C -> 51%), (60C -> 67%), (70C -> 84%), (75C -> 100%)
+  FanCtrl[1] TempSrc=0 Mode=SmartFanMode DeltaT=1 Points: (0C -> 25%), (20C -> 25%), (30C -> 44%), (40C -> 62%), (45C -> 72%), (50C -> 81%), (55C -> 91%), (60C -> 100%)
+  FanCtrl[2] TempSrc=0 Mode=SmartFanMode DeltaT=1 Points: (0C -> 25%), (20C -> 25%), (30C -> 44%), (40C -> 62%), (45C -> 72%), (50C -> 81%), (55C -> 91%), (60C -> 100%)
+  FanCtrl[3] TempSrc=0 Mode=SmartFanMode DeltaT=1 Points: (0C -> 25%), (20C -> 25%), (30C -> 44%), (40C -> 62%), (45C -> 72%), (50C -> 81%), (55C -> 91%), (60C -> 100%)

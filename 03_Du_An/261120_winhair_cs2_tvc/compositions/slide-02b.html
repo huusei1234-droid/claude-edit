@@ -1,0 +1,367 @@
+<template>
+  <style>
+@font-face {
+  font-family: "Anton";
+  src: url("assets/fonts/Anton-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: "Asap Condensed";
+  src: url("assets/fonts/AsapCondensed-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: "Asap Condensed";
+  src: url("assets/fonts/AsapCondensed-ExtraBold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: "Asap Condensed";
+  src: url("assets/fonts/AsapCondensed-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("assets/fonts/Montserrat-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("assets/fonts/Montserrat-ExtraBold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("assets/fonts/Montserrat-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: "Be Vietnam Pro";
+  src: url("assets/fonts/BeVietnamPro-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: "Be Vietnam Pro";
+  src: url("assets/fonts/BeVietnamPro-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: "Be Vietnam Pro";
+  src: url("assets/fonts/BeVietnamPro-ExtraBold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: block;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+#root {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  font-family: "Montserrat", sans-serif;
+  color: #ffffff;
+}
+.wh-stage {
+  position: absolute;
+  inset: 0;
+  perspective: 1300px;
+  transform-style: preserve-3d;
+}
+.wh-bg-obsidian {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 50% 15%, #3D1114 0%, #1C0B09 48%, #080606 100%);
+}
+.wh-bg-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(245, 197, 66, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(245, 197, 66, 0.055) 1px, transparent 1px);
+  background-size: 64px 64px;
+  pointer-events: none;
+}
+.wh-bokeh-vid {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1920px;
+  height: 1080px;
+  object-fit: cover;
+  mix-blend-mode: screen;
+  opacity: 0.42;
+  pointer-events: none;
+}
+/* 2-Layer Metallic Gradient Typography (Generous top padding prevents Vietnamese diacritic clipping) */
+.wh-grad-wrap {
+  position: relative;
+  display: inline-block;
+  padding: 16px 12px 6px 12px;
+  margin: -12px -12px -4px -12px;
+}
+.wh-grad-back {
+  display: block;
+  padding: 0;
+  user-select: none;
+  paint-order: stroke fill;
+  -webkit-text-stroke: 7px #140806;
+  color: #140806;
+  filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.85));
+}
+.wh-grad-front {
+  position: absolute;
+  inset: 0;
+  padding: 16px 12px 6px 12px;
+  display: block;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  background-size: 240% 100%, 100% 100%;
+  background-position: -130% 0, 0 0;
+}
+.wh-gold-fill {
+  background-image:
+    linear-gradient(115deg, rgba(255,255,255,0) 35%, rgba(255,255,255,0.96) 50%, rgba(255,255,255,0) 65%),
+    linear-gradient(180deg, #FFFDF2 0%, #FFE27D 26%, #D69324 54%, #FFEDA8 78%, #9B600C 100%);
+}
+.wh-ruby-fill {
+  background-image:
+    linear-gradient(115deg, rgba(255,255,255,0) 35%, rgba(255,255,255,0.94) 50%, rgba(255,255,255,0) 65%),
+    linear-gradient(180deg, #FFEBEB 0%, #FF5960 26%, #D6121B 55%, #FF8F94 78%, #7E060C 100%);
+}
+/* Header block */
+.wh-header {
+  position: absolute;
+  left: 96px;
+  right: 96px;
+  top: 44px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  z-index: 12;
+}
+.wh-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 22px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(190, 20, 28, 0.92), rgba(115, 8, 14, 0.92));
+  border: 1.5px solid rgba(255, 222, 130, 0.78);
+  box-shadow: 0 6px 20px rgba(214, 18, 27, 0.45);
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+  font-size: 17px;
+  letter-spacing: 0.12em;
+  color: #FFF6D6;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.wh-title-lg {
+  font-family: "Asap Condensed", sans-serif;
+  font-weight: 900;
+  font-size: 60px;
+  line-height: 1.22;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+.wh-flare-bar {
+  width: 560px;
+  height: 3px;
+  margin-top: 8px;
+  background: linear-gradient(90deg, transparent 0%, #FFD666 32%, #FFFFFF 50%, #FFD666 68%, transparent 100%);
+  box-shadow: 0 0 22px 3px rgba(255, 208, 92, 0.82);
+  border-radius: 999px;
+}
+/* Beveled Luxury Media Card */
+.wh-card {
+  position: absolute;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #120D0B;
+  border: 2px solid rgba(250, 210, 110, 0.78);
+  box-shadow:
+    0 22px 52px rgba(0, 0, 0, 0.78),
+    0 0 26px rgba(245, 190, 66, 0.18),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.18);
+}
+.wh-vid-fill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.wh-card-shade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.06) 0%, rgba(0,0,0,0.12) 52%, rgba(8,5,4,0.92) 100%);
+  pointer-events: none;
+}
+.wh-card-sheen {
+  position: absolute;
+  inset: -20%;
+  background: linear-gradient(115deg, transparent 38%, rgba(255, 246, 205, 0.48) 50%, transparent 62%);
+  pointer-events: none;
+  opacity: 0;
+}
+.wh-card-caption {
+  position: absolute;
+  left: 18px;
+  right: 18px;
+  bottom: 16px;
+  z-index: 4;
+}
+.wh-badge-num {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #FFE484, #C88418);
+  color: #160A04;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
+  font-size: 15px;
+  letter-spacing: 0.06em;
+  margin-bottom: 6px;
+}
+.wh-card-h3 {
+  font-family: "Asap Condensed", sans-serif;
+  font-weight: 900;
+  font-size: 32px;
+  line-height: 1.1;
+  color: #FFF6D6;
+  text-transform: uppercase;
+  text-shadow: 0 3px 12px rgba(0,0,0,0.9);
+}
+.wh-card-p {
+  margin-top: 3px;
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  color: #E8DFD5;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.9);
+}
+/* Feature Pill Row */
+.wh-pill-row {
+  position: absolute;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
+  z-index: 14;
+}
+.wh-lux-pill {
+  padding: 12px 24px;
+  border-radius: 14px;
+  background: rgba(18, 12, 10, 0.88);
+  border: 1.5px solid rgba(248, 205, 98, 0.72);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.65);
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+  font-size: 20px;
+  color: #FFE999;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+</style>
+  <div id="root" data-composition-id="slide-02b" data-width="1920" data-height="1080">
+    <div id="s2b-stage" class="wh-stage">
+      <div class="wh-bg-obsidian"></div>
+      <div class="wh-bg-grid" data-layout-ignore></div>
+      <video id="s2b-bokeh" class="clip wh-bokeh-vid" src="assets/overlays/golden_dust_16x9.mp4" data-start="0" data-duration="6.54" data-track-index="0" muted playsinline data-layout-ignore></video>
+
+      <div id="s2b-hdr" class="wh-header" style="left: 220px; right: 260px;">
+        <div class="wh-kicker">👑 ĐẶC QUYỀN TẦNG 02 · KHÔNG GIAN THƯ GIÃN THƯỢNG HẠNG 👑</div>
+        <span class="wh-grad-wrap wh-title-lg" data-layout-allow-overlap>
+      <span class="wh-grad-back" aria-hidden="true" data-layout-ignore>TẦNG 2 KHU VIP · TRẢI NGHIỆM NGHỈ DƯỠNG</span>
+      <span id="s2b-ttl-sheen" class="wh-grad-front wh-gold-fill" data-layout-allow-overlap>TẦNG 2 KHU VIP · TRẢI NGHIỆM NGHỈ DƯỠNG</span>
+    </span>
+        <div id="s2b-flare" class="wh-flare-bar" data-layout-ignore></div>
+      </div>
+
+      <!-- 3 Vertical 9:16 Luxury VIP Cards -->
+      <div id="s2b-c1" class="wh-card" style="left: 120px; top: 206px; width: 520px; height: 586px;">
+        <video id="s2b-v1" class="clip wh-vid-fill" src="assets/slides/v_vip_welcome.mp4" data-start="0" data-duration="6.54" data-track-index="1" muted playsinline></video>
+        <div class="wh-card-shade"></div>
+        <div id="s2b-sh1" class="wh-card-sheen" data-layout-ignore></div>
+        <div class="wh-card-caption">
+          <span class="wh-badge-num">ĐẶC QUYỀN 01</span>
+          <div class="wh-card-h3">KHÔNG GIAN YÊN TĨNH</div>
+          <div class="wh-card-p">Tách biệt hoàn toàn khỏi sự ồn ào phố thị</div>
+        </div>
+      </div>
+
+      <div id="s2b-c2" class="wh-card" style="left: 700px; top: 206px; width: 520px; height: 586px;">
+        <video id="s2b-v2" class="clip wh-vid-fill" src="assets/slides/v_vip_room.mp4" data-start="0" data-duration="6.54" data-track-index="2" muted playsinline></video>
+        <div class="wh-card-shade"></div>
+        <div id="s2b-sh2" class="wh-card-sheen" data-layout-ignore></div>
+        <div class="wh-card-caption">
+          <span class="wh-badge-num">ĐẶC QUYỀN 02</span>
+          <div class="wh-card-h3">RIÊNG TƯ &amp; KÍN ĐÁO</div>
+          <div class="wh-card-p">Phòng VIP chuyên biệt · Thoải mái thả lỏng</div>
+        </div>
+      </div>
+
+      <div id="s2b-c3" class="wh-card" style="left: 1280px; top: 206px; width: 520px; height: 586px;">
+        <video id="s2b-v3" class="clip wh-vid-fill" src="assets/slides/v_vip_drink.mp4" data-start="0" data-duration="6.54" data-track-index="3" muted playsinline></video>
+        <div class="wh-card-shade"></div>
+        <div id="s2b-sh3" class="wh-card-sheen" data-layout-ignore></div>
+        <div class="wh-card-caption">
+          <span class="wh-badge-num">ĐẶC QUYỀN 03</span>
+          <div class="wh-card-h3">ÁNH ĐÈN DỊU ÊM ÁI</div>
+          <div class="wh-card-p">Ánh sáng ấm áp nâng niu giấc nghỉ thư thái</div>
+        </div>
+      </div>
+
+      <div class="wh-pill-row" style="left: 120px; right: 120px; top: 818px;">
+        <div id="s2b-p1" class="wh-lux-pill">✦ YÊN TĨNH TUYỆT ĐỐI</div>
+        <div id="s2b-p2" class="wh-lux-pill">✦ KÍN ĐÁO RIÊNG TƯ</div>
+        <div id="s2b-p3" class="wh-lux-pill">✦ ÁNH ĐÈN DỊU THƯ THÁI</div>
+      </div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#s2b-hdr", { opacity: 0, y: -24, filter: "blur(10px)" }, { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.30, ease: "power3.out" }, 0.0);
+    tl.fromTo("#s2b-flare", { scaleX: 0 }, { scaleX: 1, duration: 0.45, ease: "expo.out" }, 0.12);
+    tl.fromTo("#s2b-ttl-sheen", { backgroundPosition: "-130% 0, 0 0" }, { backgroundPosition: "210% 0, 0 0", duration: 0.95, ease: "power2.inOut" }, 0.22);
+
+    tl.fromTo("#s2b-c1", { opacity: 0, y: 75, scale: 0.92 }, { opacity: 1, y: 0, scale: 1, duration: 0.44, ease: "back.out(1.22)" }, 0.10);
+    tl.fromTo("#s2b-c2", { opacity: 0, y: 75, scale: 0.92 }, { opacity: 1, y: 0, scale: 1, duration: 0.44, ease: "back.out(1.22)" }, 0.32);
+    tl.fromTo("#s2b-c3", { opacity: 0, y: 75, scale: 0.92 }, { opacity: 1, y: 0, scale: 1, duration: 0.44, ease: "back.out(1.22)" }, 0.54);
+
+    // Sync sheens + luxury pills to VO hits: Yên tĩnh (2.75s) | Kín đáo (3.44s) | Ánh đèn dịu (4.27s)
+    tl.fromTo("#s2b-sh1", { xPercent: -120, opacity: 0.95 }, { xPercent: 140, opacity: 0, duration: 0.65, ease: "power2.out" }, 2.75);
+    tl.fromTo("#s2b-p1", { opacity: 0, y: 18, filter: "blur(8px)" }, { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.26, ease: "power3.out" }, 2.75);
+
+    tl.fromTo("#s2b-sh2", { xPercent: -120, opacity: 0.95 }, { xPercent: 140, opacity: 0, duration: 0.65, ease: "power2.out" }, 3.44);
+    tl.fromTo("#s2b-p2", { opacity: 0, y: 18, filter: "blur(8px)" }, { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.26, ease: "power3.out" }, 3.44);
+
+    tl.fromTo("#s2b-sh3", { xPercent: -120, opacity: 0.95 }, { xPercent: 140, opacity: 0, duration: 0.65, ease: "power2.out" }, 4.27);
+    tl.fromTo("#s2b-p3", { opacity: 0, y: 18, filter: "blur(8px)" }, { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.26, ease: "power3.out" }, 4.27);
+
+    tl.fromTo("#s2b-stage", { opacity: 1 }, { opacity: 0, duration: 0.22, ease: "power2.in" }, 6.30);
+    window.__timelines["slide-02b"] = tl;
+  </script>
+</template>

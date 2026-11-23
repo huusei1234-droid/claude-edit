@@ -1,0 +1,6 @@
+﻿=== HWM FAN SENSORS BEFORE BOOST ===
+=== AFTER 95% PWM BOOST ===
+  Fan[0] = 0 RPM
+  Fan[1] = 0 RPM
+  Fan[2] = 0 RPM
+  Fan[3] = 0 RPM

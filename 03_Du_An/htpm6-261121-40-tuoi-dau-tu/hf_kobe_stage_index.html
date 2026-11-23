@@ -1,0 +1,769 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>HTPM 261121 — 40 Tuổi Đầu Tư Gì Lời Nhất (Multi-Cam × Living Motion × Zero-Clip SVG)</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      @font-face {
+        font-family: "Be Vietnam Pro";
+        src: url("assets/fonts/BeVietnamPro-Bold.ttf") format("truetype");
+        font-weight: 700;
+        font-display: block;
+      }
+      @font-face {
+        font-family: "Be Vietnam Pro";
+        src: url("assets/fonts/BeVietnamPro-ExtraBold.ttf") format("truetype");
+        font-weight: 800;
+        font-display: block;
+      }
+      @font-face {
+        font-family: "Asap Condensed";
+        src: url("assets/fonts/AsapCondensed-Bold.ttf") format("truetype");
+        font-weight: 700;
+        font-display: block;
+      }
+      @font-face {
+        font-family: "Asap Condensed";
+        src: url("assets/fonts/AsapCondensed-ExtraBold.ttf") format("truetype");
+        font-weight: 800;
+        font-display: block;
+      }
+      @font-face {
+        font-family: "Asap Condensed";
+        src: url("assets/fonts/AsapCondensed-Black.ttf") format("truetype");
+        font-weight: 900;
+        font-display: block;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html,
+      body {
+        width: 1080px;
+        height: 1920px;
+        overflow: hidden;
+        background: transparent;
+        font-family: "Asap Condensed", sans-serif;
+      }
+      #root {
+        position: relative;
+        width: 1080px;
+        height: 1920px;
+        overflow: hidden;
+        background: transparent;
+      }
+      .clip {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+      }
+
+      /* 1. ZERO-CLIP SVG BEHIND-HEAD ZONE (y=205..395 — tucks behind hair crown y=340..420 on Cam A & Cam B!) */
+      .behind-head-zone {
+        position: absolute;
+        left: 32px;
+        right: 32px;
+        top: 205px;
+        height: 215px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 4px;
+        overflow: visible;
+      }
+      .svg-headline {
+        width: 1016px;
+        height: 124px;
+        overflow: visible;
+        filter: drop-shadow(0 10px 22px rgba(12, 18, 38, 0.46));
+      }
+      .svg-headline text {
+        font-family: "Asap Condensed", sans-serif;
+        font-weight: 900;
+        paint-order: stroke fill;
+        stroke: #121628;
+        stroke-width: 12px;
+        stroke-linejoin: round;
+        stroke-linecap: round;
+        letter-spacing: 0.5px;
+      }
+
+      /* 2. KOBE LOWER INTERACTIVE STAGE (y=1096..1568 — leaves y=1598..1670 clean for raised Be Vietnam Pro Subtitles!) */
+      .kobe-lower-stage {
+        position: absolute;
+        left: 24px;
+        top: 1096px;
+        width: 1032px;
+        height: 472px;
+        border-radius: 40px;
+        background: radial-gradient(circle at 18% 18%, #ced8fa 0%, #f4f6fc 58%, #e4ecfe 100%);
+        border: 5px solid #ffffff;
+        box-shadow: 0 22px 48px rgba(14, 22, 54, 0.30), inset 0 0 0 2px rgba(143, 162, 247, 0.35);
+        overflow: hidden;
+      }
+      .kobe-right-stage {
+        position: absolute;
+        left: 652px;
+        top: 1101px;
+        width: 404px;
+        height: 462px;
+        border-radius: 36px;
+        background: radial-gradient(circle at 20% 20%, #d5defc 0%, #f5f7fe 60%, #e7edff 100%);
+        border: 5px solid #ffffff;
+        box-shadow: 0 20px 44px rgba(14, 22, 54, 0.28), inset 0 0 0 2px rgba(143, 162, 247, 0.35);
+        overflow: hidden;
+      }
+      .kobe-lower-stage::before,
+      .kobe-right-stage::before,
+      .kobe-full-stage::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: radial-gradient(#c2ccec 2.4px, transparent 2.4px);
+        background-size: 32px 32px;
+        opacity: 0.85;
+        pointer-events: none;
+      }
+      .kobe-full-stage {
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(circle at 20% 15%, #ced8fa 0%, #f4f6fc 52%, #dce4fc 100%);
+        overflow: hidden;
+      }
+
+      .sheen-bar {
+        position: absolute;
+        top: -40%;
+        left: 0;
+        width: 260px;
+        height: 180%;
+        background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.58) 50%, rgba(255,255,255,0) 100%);
+        transform: translateX(-380px) rotate(22deg);
+        pointer-events: none;
+        z-index: 9;
+      }
+
+      .highway-track {
+        position: absolute;
+        left: -20px;
+        right: -20px;
+        height: 28px;
+        background: #bcc7f8;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        box-shadow: inset 0 2px 5px rgba(54, 86, 251, 0.14);
+      }
+      .highway-dashes {
+        width: 1520px;
+        height: 4px;
+        background: repeating-linear-gradient(90deg, #ffffff 0 20px, transparent 20px 38px);
+      }
+
+      .kobe-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px 32px;
+        border-radius: 999px;
+        background: #ffffff;
+        border: 3px solid rgba(255, 255, 255, 0.98);
+        box-shadow: 0 14px 30px rgba(14, 22, 58, 0.24), 0 3px 8px rgba(20, 20, 28, 0.08);
+        font-weight: 900;
+        font-size: 38px;
+        letter-spacing: 0.01em;
+        line-height: 1.08;
+        color: #141418;
+        white-space: nowrap;
+      }
+      .kobe-pill.sm {
+        font-size: 30px;
+        padding: 8px 26px;
+      }
+
+      .c-cobalt { color: #3656fb; }
+      .c-rose { color: #c91860; }
+      .c-emerald { color: #0b8a5c; }
+      .c-coral { color: #e5483b; }
+      .c-gold { color: #d97706; }
+
+      .saas-window {
+        position: relative;
+        background: #ffffff;
+        border-radius: 30px;
+        box-shadow: 0 16px 38px rgba(34, 50, 128, 0.14);
+        border: 3px solid #ffffff;
+        padding: 22px 26px;
+        overflow: hidden;
+      }
+      .step-card {
+        position: relative;
+        background: #ffffff;
+        border-radius: 28px;
+        box-shadow: 0 16px 34px rgba(34, 50, 128, 0.14);
+        border: 3px solid #ffffff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 18px 12px;
+        text-align: center;
+      }
+      .num-badge {
+        position: absolute;
+        left: -10px;
+        top: -12px;
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        background: #141418;
+        color: #ffffff;
+        font-weight: 900;
+        font-size: 23px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 3px solid #ffffff;
+        box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+      }
+      .ripple-ring {
+        position: absolute;
+        width: 148px;
+        height: 34px;
+        border-radius: 50%;
+        border: 3px solid #3656fb;
+        opacity: 0;
+        pointer-events: none;
+      }
+      .chain-pill {
+        width: 46px;
+        height: 28px;
+        border-radius: 999px;
+        background: #3656fb;
+        color: #ffffff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 16px;
+        font-weight: 900;
+        box-shadow: 0 6px 14px rgba(54, 86, 251, 0.36);
+        z-index: 5;
+      }
+      .red-cross {
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        background: #fee2e2;
+        color: #dc2626;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 900;
+        font-size: 20px;
+        flex-shrink: 0;
+      }
+      .blue-tick {
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        background: #3656fb;
+        color: #ffffff;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 900;
+        font-size: 20px;
+        flex-shrink: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-width="1080" data-height="1920" data-fps="30" data-duration="68.80">
+      <svg width="0" height="0" style="position:absolute;">
+        <defs>
+          <linearGradient id="grad-gold" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#ffffff" />
+            <stop offset="28%" stop-color="#fff4c2" />
+            <stop offset="60%" stop-color="#ffd154" />
+            <stop offset="100%" stop-color="#e07b08" />
+          </linearGradient>
+          <linearGradient id="grad-rose" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#ffffff" />
+            <stop offset="30%" stop-color="#ffe4ef" />
+            <stop offset="65%" stop-color="#ff74ae" />
+            <stop offset="100%" stop-color="#d61868" />
+          </linearGradient>
+          <linearGradient id="grad-emerald" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#ffffff" />
+            <stop offset="30%" stop-color="#dcfff1" />
+            <stop offset="65%" stop-color="#4ade9e" />
+            <stop offset="100%" stop-color="#059669" />
+          </linearGradient>
+        </defs>
+      </svg>
+
+      <!-- =====================================================================
+           1. HOOK (0.06 - 8.48s): 40 Tuổi Đầu Tư Gì Lời Nhất? + 100M Not Luxury Bag
+           ===================================================================== -->
+      <div id="clip-hook" class="clip" data-start="0.06" data-duration="8.42" data-track-index="1" data-layout-allow-overlap data-layout-allow-safe-zone>
+        <div id="hk-top" class="behind-head-zone float-gentle">
+          <div id="hk-pill" class="kobe-pill sm">
+            <span>GÓC NHÌN TUỔI 40</span><span class="c-rose">• HẰNG THU PHARMA</span>
+          </div>
+          <svg id="hk-title" class="svg-headline" viewBox="0 0 1016 124">
+            <text x="508" y="94" text-anchor="middle" font-size="84" fill="url(#grad-gold)">40 TUỔI ĐẦU TƯ GÌ LỜI NHẤT?</text>
+          </svg>
+        </div>
+
+        <div id="hk-stage" class="kobe-lower-stage">
+          <div class="sheen-bar"></div>
+          <div class="highway-track" style="top: 412px;"><div class="highway-dashes"></div></div>
+          <div style="position:absolute;inset:22px 32px 54px;display:flex;flex-direction:column;justify-content:space-between;">
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+              <span style="padding:6px 20px;border-radius:999px;background:#fef3c7;color:#b45309;font-weight:900;font-size:24px;">💰 BÀI TOÁN 100 TRIỆU TUỔI 40</span>
+              <span style="padding:6px 20px;border-radius:999px;background:#eef2ff;color:#3656fb;font-weight:900;font-size:23px;">LỰA CHỌN THÔNG MINH</span>
+            </div>
+
+            <div style="display:flex;gap:20px;justify-content:space-between;">
+              <div id="hk-c1" class="saas-window float-card" style="flex:1;background:#fff8eb;border-color:#fde68a;display:flex;flex-direction:column;gap:8px;">
+                <span style="font-weight:900;font-size:23px;color:#d97706;">NẾU CÓ NGAY TRONG TAY</span>
+                <div style="font-weight:900;font-size:46px;color:#141418;line-height:1.05;">100.000.000Đ</div>
+                <span style="font-weight:800;font-size:24px;color:#475569;">Đầu tư khi bước sang tuổi 40</span>
+              </div>
+
+              <div id="hk-c2" class="saas-window float-card-alt pulse-alert" style="flex:1;background:#fff5f7;border-color:#fbcfe8;display:flex;flex-direction:column;gap:8px;">
+                <div style="display:flex;align-items:center;gap:10px;">
+                  <span class="red-cross">✕</span>
+                  <span style="font-weight:900;font-size:24px;color:#dc2626;">QUYẾT ĐỊNH CỦA HẰNG</span>
+                </div>
+                <div style="font-weight:900;font-size:34px;color:#141418;line-height:1.12;">KHÔNG MUA<br/><span class="c-rose">TÚI HÀNG HIỆU!</span></div>
+              </div>
+            </div>
+
+            <div style="padding:11px 24px;border-radius:20px;background:#141418;color:#ffffff;text-align:center;font-weight:900;font-size:27px;">
+              ★ Khoản đầu tư nào sinh lời bền vững nhất cho phụ nữ tuổi 40?
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- =====================================================================
+           2. POST-RISER TRUTH (8.58 - 16.08s): Expensive Things Cannot Buy Health
+           ===================================================================== -->
+      <div id="clip-truth" class="clip" data-start="8.58" data-duration="7.50" data-track-index="1" data-layout-allow-overlap data-layout-allow-safe-zone>
+        <div id="tr-top" class="behind-head-zone float-gentle">
+          <div id="tr-pill" class="kobe-pill sm">
+            <span>NHẬN RA KHI TRƯỞNG THÀNH</span><span class="c-rose">• GIÁ TRỊ THẬT</span>
+          </div>
+          <svg id="tr-title" class="svg-headline" viewBox="0 0 1016 124">
+            <text x="508" y="94" text-anchor="middle" font-size="84" fill="url(#grad-rose)">ĐẮT TIỀN ≠ MUA ĐƯỢC SỨC KHỎE</text>
+          </svg>
+        </div>
+
+        <div id="tr-stage" class="kobe-lower-stage">
+          <div class="sheen-bar"></div>
+          <div class="highway-track" style="top: 412px;"><div class="highway-dashes"></div></div>
+          <div style="position:absolute;inset:24px 34px 54px;display:flex;flex-direction:column;justify-content:space-between;">
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+              <span style="font-weight:900;font-size:29px;color:#141418;">CÀNG TRƯỞNG THÀNH • PHỤ NỮ CÀNG THẤU HIỂU</span>
+              <span style="padding:6px 20px;border-radius:999px;background:#ffeef5;color:#c91860;font-weight:900;font-size:22px;">SỰ THẬT</span>
+            </div>
+
+            <div style="display:flex;align-items:center;justify-content:space-between;gap:18px;">
+              <div id="tr-c1" class="saas-window float-card" style="flex:1;background:#f8fafc;border-color:#cbd5e1;text-align:center;">
+                <div class="icon-bob" style="font-size:44px;margin-bottom:4px;">👜</div>
+                <div style="font-weight:900;font-size:30px;color:#141418;">MÓN ĐỒ XA XỈ</div>
+                <div style="font-weight:800;font-size:24px;color:#64748b;margin-top:4px;">Đẹp bên ngoài • Rất đắt tiền</div>
+              </div>
+
+              <div style="width:84px;height:84px;border-radius:50%;background:#dc2626;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:44px;flex-shrink:0;box-shadow:0 10px 24px rgba(220,38,38,0.34);">≠</div>
+
+              <div id="tr-c2" class="saas-window float-card-alt" style="flex:1;background:#edfcf6;border-color:#6ee7b7;text-align:center;">
+                <div class="icon-bob" style="font-size:44px;margin-bottom:4px;">💚</div>
+                <div style="font-weight:900;font-size:30px;color:#0b8a5c;">SỨC KHỎE TỪ GỐC</div>
+                <div style="font-weight:800;font-size:24px;color:#065f46;margin-top:4px;">Tài sản vô giá không tiền nào mua được</div>
+              </div>
+            </div>
+
+            <div style="padding:11px 24px;border-radius:20px;background:#eef2ff;color:#1e3a8a;text-align:center;font-weight:900;font-size:26px;">
+              💡 Túi hiệu rất đẹp — nhưng sức khỏe mới là thứ giữ trọn vẻ rạng rỡ của bạn!
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- =====================================================================
+           3. FULL KOBE 9:16 STAGE #1 (16.12 - 26.36s): 3 Luxury Illusions + 3 AI Clips + PiP
+           ===================================================================== -->
+      <div id="clip-full1" class="clip" data-start="16.12" data-duration="10.24" data-track-index="1" data-layout-allow-overlap data-layout-allow-safe-zone>
+        <div id="f1-stage" class="kobe-full-stage">
+          <div class="highway-track" style="top: 1172px;"><div class="highway-dashes"></div></div>
+
+          <div style="position:absolute;left:0;right:0;top:54px;display:flex;justify-content:center;">
+            <div id="f1-pill" class="kobe-pill float-gentle">
+              <span>01 • BA THỨ BÊN NGOÀI</span><span class="c-rose">KHÔNG THỂ THAY THẾ SỨC KHỎE</span>
+            </div>
+          </div>
+
+          <!-- y=184..592 reserved for 3 Reference-Locked AI Clips (inv_01a -> inv_01b -> inv_01c)! -->
+
+          <div id="f1-win" class="saas-window" style="position:absolute;left:36px;right:36px;top:618px;height:520px;display:flex;flex-direction:column;justify-content:space-between;padding:24px 26px;">
+            <div class="sheen-bar"></div>
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+              <span style="font-weight:900;font-size:31px;color:#141418;">VẺ HÀO NHOÁNG BÊN NGOÀI ≠ NỘI LỰC BÊN TRONG</span>
+              <span style="padding:6px 20px;border-radius:999px;background:#ffeef5;color:#c91860;font-weight:900;font-size:22px;">3 ĐỐI CHIẾU THỰC TẾ</span>
+            </div>
+
+            <div style="position:relative;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 0;">
+              <div style="position:relative;flex:1;">
+                <div id="f1-c-1" class="step-card float-card" style="height:266px;background:#fff8fa;border-color:#fbcfe8;">
+                  <div class="num-badge" style="background:#c91860;">1</div>
+                  <div class="icon-bob" style="font-size:46px;margin-bottom:6px;">👜</div>
+                  <div style="font-weight:900;font-size:27px;color:#141418;line-height:1.12;">TÚI HIỆU ĐẸP</div>
+                  <div style="margin-top:8px;padding:6px 12px;border-radius:14px;background:#ffe4ef;color:#c91860;font-weight:900;font-size:21px;">✕ Không cho giấc ngủ ngon</div>
+                </div>
+                <div id="f1-rip-1" class="ripple-ring" style="left:calc(50% - 74px);bottom:-17px;border-color:#c91860;"></div>
+              </div>
+
+              <div class="chain-pill f1-chain">•</div>
+
+              <div style="position:relative;flex:1;">
+                <div id="f1-c-2" class="step-card float-card-alt" style="height:266px;background:#f5f8ff;border-color:#c7d7fe;">
+                  <div class="num-badge" style="background:#3656fb;">2</div>
+                  <div class="icon-bob" style="font-size:46px;margin-bottom:6px;">👗</div>
+                  <div style="font-weight:900;font-size:27px;color:#141418;line-height:1.12;">QUẦN ÁO ĐẸP</div>
+                  <div style="margin-top:8px;padding:6px 12px;border-radius:14px;background:#e0e7ff;color:#3656fb;font-weight:900;font-size:21px;">✕ Không thay cơ thể khỏe</div>
+                </div>
+                <div id="f1-rip-2" class="ripple-ring" style="left:calc(50% - 74px);bottom:-17px;"></div>
+              </div>
+
+              <div class="chain-pill f1-chain">•</div>
+
+              <div style="position:relative;flex:1;">
+                <div id="f1-c-3" class="step-card float-card" style="height:266px;background:#fff7f5;border-color:#fecaca;">
+                  <div class="num-badge" style="background:#dc2626;">3</div>
+                  <div class="icon-bob" style="font-size:46px;margin-bottom:6px;">💄</div>
+                  <div style="font-weight:900;font-size:27px;color:#141418;line-height:1.12;">TRANG ĐIỂM ĐẸP</div>
+                  <div style="margin-top:8px;padding:6px 12px;border-radius:14px;background:#fee2e2;color:#dc2626;font-weight:900;font-size:21px;">✕ Không che nổi mệt mỏi</div>
+                </div>
+                <div id="f1-rip-3" class="ripple-ring" style="left:calc(50% - 74px);bottom:-17px;border-color:#dc2626;"></div>
+              </div>
+            </div>
+
+            <div style="padding:12px 22px;border-radius:20px;background:#141418;color:#ffffff;text-align:center;font-weight:900;font-size:25px;">
+              ⚡ Sự rạng rỡ thật sự luôn bắt nguồn từ giấc ngủ ngon &amp; cơ thể khỏe bên trong!
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- =====================================================================
+           4. SIX CORE INVESTMENTS (26.40 - 35.58s): Left 3 AI Clips + Right 6-Pillar Checklist
+           ===================================================================== -->
+      <div id="clip-six" class="clip" data-start="26.40" data-duration="9.18" data-track-index="1" data-layout-allow-overlap data-layout-allow-safe-zone>
+        <div id="sx-top" class="behind-head-zone float-gentle">
+          <div id="sx-pill" class="kobe-pill sm">
+            <span>DANH MỤC ĐẦU TƯ VÀNG</span><span class="c-emerald">• PHỤ NỮ TRƯỞNG THÀNH</span>
+          </div>
+          <svg id="sx-title" class="svg-headline" viewBox="0 0 1016 124">
+            <text x="508" y="94" text-anchor="middle" font-size="84" fill="url(#grad-emerald)">6 KHOẢN ĐẦU TƯ LỜI NHẤT!</text>
+          </svg>
+        </div>
+
+        <div id="sx-right" class="kobe-right-stage">
+          <div class="sheen-bar"></div>
+          <div style="position:relative;padding:18px 18px 16px;height:100%;display:flex;flex-direction:column;justify-content:space-between;">
+            <div style="display:flex;flex-direction:column;gap:2px;">
+              <span style="font-weight:900;font-size:20px;color:#0b8a5c;">6 TRỤ CỘT CẦN ƯU TIÊN</span>
+              <span style="font-weight:900;font-size:28px;color:#141418;line-height:1.08;">ĐẦU TƯ CHO <span class="c-emerald">CHÍNH MÌNH</span></span>
+            </div>
+
+            <div style="display:flex;flex-direction:column;gap:8px;">
+              <div class="sx-item" style="height:46px;border-radius:14px;background:#edfcf6;padding:0 12px;display:flex;align-items:center;justify-content:space-between;font-weight:900;font-size:22px;color:#065f46;">
+                <span>1 • Sức khỏe tổng thể</span><span>✓</span>
+              </div>
+              <div class="sx-item" style="height:46px;border-radius:14px;background:#eef2ff;padding:0 12px;display:flex;align-items:center;justify-content:space-between;font-weight:900;font-size:22px;color:#1e40af;">
+                <span>2 • Giấc ngủ sâu ngon</span><span>✓</span>
+              </div>
+              <div class="sx-item" style="height:46px;border-radius:14px;background:#fef3c7;padding:0 12px;display:flex;align-items:center;justify-content:space-between;font-weight:900;font-size:22px;color:#92400e;">
+                <span>3 • Dinh dưỡng lành mạnh</span><span>✓</span>
+              </div>
+              <div class="sx-item" style="height:46px;border-radius:14px;background:#f3e8ff;padding:0 12px;display:flex;align-items:center;justify-content:space-between;font-weight:900;font-size:22px;color:#6b21a8;">
+                <span>4 • Vóc dáng dẻo dai</span><span>✓</span>
+              </div>
+              <div class="sx-item pulse-alert" style="height:48px;border-radius:14px;background:#ffe4ef;border:2px solid #f472b6;padding:0 12px;display:flex;align-items:center;justify-content:space-between;font-weight:900;font-size:22px;color:#be185d;">
+                <span>5 • Sức khỏe phụ khoa</span><span>★</span>
+              </div>
+              <div class="sx-item" style="height:46px;border-radius:14px;background:#141418;padding:0 12px;display:flex;align-items:center;justify-content:space-between;font-weight:900;font-size:22px;color:#ffd154;">
+                <span>6 • Kiến thức hiểu cơ thể</span><span>★</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- =====================================================================
+           5. THREE COMPOUNDING BENEFITS (35.60 - 45.54s): Energy, Work, Smart Choices
+           ===================================================================== -->
+      <div id="clip-why" class="clip" data-start="35.60" data-duration="9.94" data-track-index="1" data-layout-allow-overlap data-layout-allow-safe-zone>
+        <div id="wh-top" class="behind-head-zone float-gentle">
+          <div id="wh-pill" class="kobe-pill sm">
+            <span>LÃI KÉP CHO PHỤ NỮ</span><span class="c-cobalt">• 3 GIÁ TRỊ CỐT LÕI</span>
+          </div>
+          <svg id="wh-title" class="svg-headline" viewBox="0 0 1016 124">
+            <text x="508" y="94" text-anchor="middle" font-size="82" fill="url(#grad-gold)">KHỎE MẠNH • TỰ TIN • TỈNH TÁO</text>
+          </svg>
+        </div>
+
+        <div id="wh-stage" class="kobe-lower-stage">
+          <div class="sheen-bar"></div>
+          <div class="highway-track" style="top: 412px;"><div class="highway-dashes"></div></div>
+          <div style="position:absolute;inset:20px 28px 52px;display:flex;flex-direction:column;justify-content:space-between;">
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+              <span style="font-weight:900;font-size:28px;color:#141418;">KHI ĐẦU TƯ ĐÚNG VÀO SỨC KHỎE &amp; KIẾN THỨC</span>
+              <span style="padding:5px 18px;border-radius:999px;background:#3656fb;color:#fff;font-weight:900;font-size:22px;">3 LỢI ÍCH LỚN</span>
+            </div>
+
+            <div style="display:flex;gap:14px;justify-content:space-between;">
+              <div id="wh-c1" class="step-card float-card" style="flex:1;height:236px;background:#edfcf6;border-color:#a7f3d0;">
+                <div class="icon-bob" style="font-size:42px;margin-bottom:4px;">🏡</div>
+                <div style="font-weight:900;font-size:26px;color:#0b8a5c;">KHI MÌNH KHỎE</div>
+                <div style="font-weight:800;font-size:23px;color:#141418;margin-top:6px;line-height:1.15;">Tràn đầy năng lượng<br/>cho gia đình</div>
+              </div>
+
+              <div id="wh-c2" class="step-card float-card-alt" style="flex:1;height:236px;background:#eef2ff;border-color:#c7d2fe;">
+                <div class="icon-bob" style="font-size:42px;margin-bottom:4px;">💼</div>
+                <div style="font-weight:900;font-size:26px;color:#3656fb;">KHI MÌNH TỰ TIN</div>
+                <div style="font-weight:800;font-size:23px;color:#141418;margin-top:6px;line-height:1.15;">Làm việc hiệu quả<br/>&amp; tỏa sáng hơn</div>
+              </div>
+
+              <div id="wh-c3" class="step-card float-card" style="flex:1;height:236px;background:#fff5f8;border-color:#fbcfe8;">
+                <div class="icon-bob" style="font-size:42px;margin-bottom:4px;">🛡️</div>
+                <div style="font-weight:900;font-size:26px;color:#c91860;">KHI HIỂU CƠ THỂ</div>
+                <div style="font-weight:800;font-size:23px;color:#141418;margin-top:6px;line-height:1.15;">Không bị quảng cáo<br/>trên mạng dẫn dắt</div>
+              </div>
+            </div>
+
+            <div style="padding:10px 22px;border-radius:18px;background:#141418;color:#ffffff;text-align:center;font-weight:900;font-size:25px;">
+              ★ Hiểu đúng cơ thể giúp chị em chăm sóc chủ động &amp; an toàn từ gốc!
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- =====================================================================
+           6. FULL KOBE 9:16 STAGE #2 (45.58 - 56.68s): Love Your Body Early + 3 AI Clips + PiP
+           ===================================================================== -->
+      <div id="clip-full2" class="clip" data-start="45.58" data-duration="11.10" data-track-index="1" data-layout-allow-overlap data-layout-allow-safe-zone>
+        <div id="f2-stage" class="kobe-full-stage">
+          <div class="highway-track" style="top: 1172px;"><div class="highway-dashes"></div></div>
+
+          <div style="position:absolute;left:0;right:0;top:54px;display:flex;justify-content:center;">
+            <div id="f2-pill" class="kobe-pill float-gentle">
+              <span>02 • NGUYÊN TẮC VÀNG</span><span class="c-emerald">YÊU THƯƠNG CƠ THỂ TỪ SỚM</span>
+            </div>
+          </div>
+
+          <!-- y=184..592 reserved for 3 Reference-Locked AI Clips (inv_03a -> inv_03b -> inv_03c)! -->
+
+          <div id="f2-win" class="saas-window" style="position:absolute;left:40px;right:40px;top:618px;height:518px;display:flex;flex-direction:column;justify-content:space-between;padding:26px 30px;">
+            <div class="sheen-bar"></div>
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+              <span style="font-weight:900;font-size:31px;color:#141418;">THÔNG ĐIỆP QUAN TRỌNG NHẤT CHO PHÁI ĐẸP</span>
+              <span style="padding:7px 22px;border-radius:999px;background:#0b8a5c;color:#fff;font-weight:900;font-size:23px;">CHỦ ĐỘNG NGAY</span>
+            </div>
+
+            <div id="f2-r1" class="float-card" style="padding:20px 24px;border-radius:24px;background:#fff5f5;border:2px solid #fecaca;display:flex;align-items:center;gap:16px;font-weight:900;font-size:29px;color:#141418;">
+              <span class="red-cross">✕</span>
+              <span>Đừng đợi cơ thể <span class="c-coral">CÓ VẤN ĐỀ</span> rồi mới bắt đầu yêu thương nó!</span>
+            </div>
+
+            <div id="f2-r2" class="float-card-alt pulse-alert" style="padding:22px 24px;border-radius:24px;background:#edfcf6;border:3px solid #34d399;display:flex;align-items:center;gap:16px;font-weight:900;font-size:30px;color:#141418;">
+              <span class="blue-tick" style="background:#0b8a5c;">★</span>
+              <span>Không cần trẻ mãi — nhưng nhất định phải <span class="c-emerald">KHỎE, ĐẸP &amp; TỰ TIN</span> ở từng độ tuổi!</span>
+            </div>
+
+            <div style="padding:12px 24px;border-radius:20px;background:#141418;color:#ffd154;text-align:center;font-weight:900;font-size:26px;">
+              ♥ HẰNG THU PHARMA • ĐỒNG HÀNH CHĂM SÓC SỨC KHỎE &amp; NỘI TIẾT PHÁI ĐẸP
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- =====================================================================
+           7. FINALE CTA (56.72 - 68.76s): Age 30-40+ Follow CTA + Left 3 AI Clips
+           ===================================================================== -->
+      <div id="clip-finale" class="clip" data-start="56.72" data-duration="12.04" data-track-index="1" data-layout-allow-overlap data-layout-allow-safe-zone>
+        <div id="fn-top" class="behind-head-zone float-gentle">
+          <div id="fn-pill" class="kobe-pill sm">
+            <span>DÀNH CHO CHỊ EM 30 - 40+</span><span class="c-emerald">• BIẾT SỚM CÀNG LỜI</span>
+          </div>
+          <svg id="fn-title" class="svg-headline" viewBox="0 0 1016 124">
+            <text x="508" y="94" text-anchor="middle" font-size="84" fill="url(#grad-gold)">BIẾT SỚM • CÀNG CÓ LỜI!</text>
+          </svg>
+        </div>
+
+        <div id="fn-right" class="kobe-right-stage">
+          <div class="sheen-bar"></div>
+          <div style="position:relative;padding:20px 20px 18px;height:100%;display:flex;flex-direction:column;justify-content:space-between;">
+            <div style="display:flex;flex-direction:column;gap:4px;">
+              <span style="font-weight:900;font-size:21px;color:#c91860;">ĐỘ TUỔI BƯỚC NGOẶT</span>
+              <span style="font-weight:900;font-size:32px;color:#141418;line-height:1.08;">CHỊ EM <span class="c-rose">30 - 40+</span></span>
+            </div>
+
+            <div style="display:flex;flex-direction:column;gap:12px;">
+              <div id="fn-c1" class="float-card" style="padding:14px 16px;border-radius:18px;background:#fff5f8;border:2px solid #fbcfe8;font-weight:900;font-size:24px;color:#141418;">
+                🌸 Từ tuổi 30 - 40+ nội tiết &amp; cơ thể bắt đầu thay đổi rõ rệt
+              </div>
+              <div id="fn-c2" class="float-card-alt" style="padding:14px 16px;border-radius:18px;background:#edfcf6;border:2px solid #6ee7b7;font-weight:900;font-size:24px;color:#065f46;">
+                ✓ Càng hiểu và chăm sóc sớm → Càng có lời cho chính mình!
+              </div>
+            </div>
+
+            <div class="pulse-alert" style="padding:14px 16px;border-radius:20px;background:#c91860;color:#ffffff;text-align:center;font-weight:900;font-size:26px;box-shadow:0 10px 24px rgba(201,24,96,0.35);">
+              ➕ FOLLOW HẰNG NGAY NHÉ!
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <script>
+      (function () {
+        gsap.ticker.lagSmoothing(0);
+        var tl = gsap.timeline({ paused: true });
+
+        /* Continuous Living Motion Loops across full 68.80s */
+        tl.to(".highway-dashes", { x: -420, duration: 68.80, ease: "none" }, 0);
+
+        gsap.utils.toArray(".float-gentle").forEach(function (el, i) {
+          tl.to(el, { y: -6, duration: 1.45, repeat: 48, yoyo: true, ease: "sine.inOut" }, i * 0.2);
+        });
+        gsap.utils.toArray(".float-card").forEach(function (el, i) {
+          tl.to(el, { y: -6, rotation: 0.35, duration: 1.35, repeat: 52, yoyo: true, ease: "sine.inOut" }, i * 0.18);
+        });
+        gsap.utils.toArray(".float-card-alt").forEach(function (el, i) {
+          tl.to(el, { y: 6, rotation: -0.35, duration: 1.40, repeat: 50, yoyo: true, ease: "sine.inOut" }, 0.35 + i * 0.18);
+        });
+        gsap.utils.toArray(".icon-bob").forEach(function (el, i) {
+          tl.to(el, { scale: 1.12, y: -4, duration: 0.85, repeat: 80, yoyo: true, ease: "sine.inOut" }, i * 0.15);
+        });
+        gsap.utils.toArray(".pulse-alert").forEach(function (el) {
+          tl.to(el, { scale: 1.032, duration: 0.68, repeat: 100, yoyo: true, ease: "sine.inOut" }, 0.1);
+        });
+
+        /* Specular Sheen Sweep every 2.8s (sub-pixel GPU transform x!) */
+        gsap.utils.toArray(".sheen-bar").forEach(function (el, i) {
+          for (var tS = 0.7 + (i % 3) * 0.55; tS < 68.5; tS += 2.8) {
+            tl.fromTo(el, { x: -380, rotation: 22 }, { x: 1350, rotation: 22, duration: 1.15, ease: "power2.inOut" }, tS);
+          }
+        });
+
+        function blurIn(sel, t, dur) {
+          tl.fromTo(sel,
+            { opacity: 0, scale: 0.90, filter: "blur(16px)" },
+            { opacity: 1, scale: 1.0, filter: "blur(0px)", duration: dur || 0.28, ease: "back.out(1.35)" },
+            t
+          );
+        }
+        function blurOut(sel, t, dur) {
+          tl.to(sel,
+            { opacity: 0, scale: 0.95, filter: "blur(14px)", duration: dur || 0.22, ease: "power2.in" },
+            t
+          );
+        }
+        function dropCardWithRipple(cardSel, ripSel, t) {
+          tl.fromTo(cardSel,
+            { opacity: 0, y: -115, scale: 0.90 },
+            { opacity: 1, y: 0, scale: 1.0, duration: 0.32, ease: "back.out(1.5)" },
+            t
+          );
+          if (ripSel) {
+            tl.fromTo(ripSel,
+              { opacity: 0.90, scaleX: 0.25, scaleY: 0.25 },
+              { opacity: 0, scaleX: 1.42, scaleY: 0.72, duration: 0.30, ease: "power2.out" },
+              t + 0.22
+            );
+          }
+        }
+
+        /* 1. HOOK (0.06 - 8.48s) */
+        blurIn("#hk-pill", 0.08, 0.26);
+        tl.fromTo("#hk-title", { opacity: 0, y: 20, scale: 0.92, filter: "blur(12px)" }, { opacity: 1, y: 0, scale: 1.0, filter: "blur(0px)", duration: 0.32, ease: "back.out(1.5)" }, 0.18);
+        blurIn("#hk-stage", 2.90, 0.28);
+        tl.fromTo("#hk-c1", { opacity: 0, x: -32 }, { opacity: 1, x: 0, duration: 0.30, ease: "power3.out" }, 3.80);
+        tl.fromTo("#hk-c2", { opacity: 0, x: 32, scale: 0.92 }, { opacity: 1, x: 0, scale: 1.0, duration: 0.34, ease: "back.out(1.6)" }, 7.20);
+        blurOut("#hk-stage", 8.24, 0.22);
+        blurOut("#hk-top", 8.24, 0.22);
+
+        /* 2. POST-RISER TRUTH (8.58 - 16.08s) */
+        blurIn("#tr-pill", 8.62, 0.26);
+        tl.fromTo("#tr-title", { opacity: 0, y: 20, filter: "blur(12px)" }, { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.32, ease: "back.out(1.4)" }, 8.72);
+        blurIn("#tr-stage", 8.76, 0.28);
+        tl.fromTo("#tr-c1", { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.30, ease: "power3.out" }, 9.10);
+        tl.fromTo("#tr-c2", { opacity: 0, x: 30, scale: 0.94 }, { opacity: 1, x: 0, scale: 1.0, duration: 0.34, ease: "back.out(1.5)" }, 13.80);
+        blurOut("#tr-stage", 15.84, 0.22);
+        blurOut("#tr-top", 15.84, 0.22);
+
+        /* 3. FULL KOBE 9:16 STAGE #1 (16.12 - 26.36s) */
+        blurIn("#f1-stage", 16.12, 0.24);
+        blurIn("#f1-pill", 16.22, 0.26);
+        blurIn("#f1-win", 16.30, 0.28);
+        dropCardWithRipple("#f1-c-1", "#f1-rip-1", 16.45);
+        dropCardWithRipple("#f1-c-2", "#f1-rip-2", 19.25);
+        dropCardWithRipple("#f1-c-3", "#f1-rip-3", 22.75);
+        tl.fromTo(".f1-chain", { opacity: 0, scale: 0 }, { opacity: 1, scale: 1, duration: 0.26, stagger: 1.5, ease: "back.out(2.0)" }, 18.80);
+        blurOut("#f1-stage", 26.12, 0.22);
+
+        /* 4. SIX INVESTMENTS (26.40 - 35.58s) */
+        blurIn("#sx-pill", 26.46, 0.26);
+        tl.fromTo("#sx-title", { opacity: 0, y: 20, filter: "blur(12px)" }, { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.32, ease: "back.out(1.4)" }, 26.56);
+        blurIn("#sx-right", 26.60, 0.28);
+        var sxItems = gsap.utils.toArray("#clip-six .sx-item");
+        [29.45, 30.85, 31.82, 32.78, 33.75, 35.05].forEach(function (bt, k) {
+          if (sxItems[k]) {
+            tl.fromTo(sxItems[k], { opacity: 0, x: 26, scale: 0.94 }, { opacity: 1, x: 0, scale: 1.0, duration: 0.26, ease: "back.out(1.5)" }, bt);
+          }
+        });
+        blurOut("#sx-right", 35.34, 0.22);
+        blurOut("#sx-top", 35.34, 0.22);
+
+        /* 5. THREE COMPOUNDING BENEFITS (35.60 - 45.54s) */
+        blurIn("#wh-pill", 35.66, 0.26);
+        tl.fromTo("#wh-title", { opacity: 0, y: 20, filter: "blur(12px)" }, { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.32, ease: "back.out(1.4)" }, 35.76);
+        blurIn("#wh-stage", 35.80, 0.28);
+        dropCardWithRipple("#wh-c1", null, 36.25);
+        dropCardWithRipple("#wh-c2", null, 39.20);
+        dropCardWithRipple("#wh-c3", null, 41.90);
+        blurOut("#wh-stage", 45.30, 0.22);
+        blurOut("#wh-top", 45.30, 0.22);
+
+        /* 6. FULL KOBE 9:16 STAGE #2 (45.58 - 56.68s) */
+        blurIn("#f2-stage", 45.58, 0.24);
+        blurIn("#f2-pill", 45.68, 0.26);
+        blurIn("#f2-win", 45.76, 0.28);
+        tl.fromTo("#f2-r1", { opacity: 0, x: -34 }, { opacity: 1, x: 0, duration: 0.30, ease: "back.out(1.4)" }, 46.80);
+        tl.fromTo("#f2-r2", { opacity: 0, x: -34, scale: 0.94 }, { opacity: 1, x: 0, scale: 1.0, duration: 0.34, ease: "back.out(1.6)" }, 51.20);
+        blurOut("#f2-stage", 56.44, 0.22);
+
+        /* 7. FINALE CTA (56.72 - 68.76s) */
+        blurIn("#fn-pill", 56.78, 0.26);
+        tl.fromTo("#fn-title", { opacity: 0, y: 20, filter: "blur(12px)" }, { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.32, ease: "back.out(1.5)" }, 56.88);
+        blurIn("#fn-right", 56.92, 0.28);
+        tl.fromTo("#fn-c1", { opacity: 0, x: 28 }, { opacity: 1, x: 0, duration: 0.28, ease: "power3.out" }, 57.60);
+        tl.fromTo("#fn-c2", { opacity: 0, x: 28, scale: 0.94 }, { opacity: 1, x: 0, scale: 1.0, duration: 0.34, ease: "back.out(1.6)" }, 63.80);
+        blurOut("#fn-right", 68.40, 0.34);
+        blurOut("#fn-top", 68.40, 0.34);
+
+        window.__timelines = { main: tl };
+      })();
+    </script>
+  </body>
+</html>

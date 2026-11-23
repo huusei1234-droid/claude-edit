@@ -1,0 +1,57 @@
+{
+ "fps": 30.0,
+ "src_duration": 73.5,
+ "out_duration": 70.1,
+ "keep": [
+  {
+   "src_start": 0.0,
+   "src_end": 3.466667,
+   "out_start": 0.0
+  },
+  {
+   "src_start": 3.7,
+   "src_end": 10.2,
+   "out_start": 3.466667
+  },
+  {
+   "src_start": 10.4,
+   "src_end": 25.633333,
+   "out_start": 9.966667
+  },
+  {
+   "src_start": 25.9,
+   "src_end": 30.3,
+   "out_start": 25.2
+  },
+  {
+   "src_start": 30.466667,
+   "src_end": 35.6,
+   "out_start": 29.6
+  },
+  {
+   "src_start": 35.766667,
+   "src_end": 38.233333,
+   "out_start": 34.733333
+  },
+  {
+   "src_start": 38.4,
+   "src_end": 58.833333,
+   "out_start": 37.199999
+  },
+  {
+   "src_start": 59.166667,
+   "src_end": 64.433333,
+   "out_start": 57.633332
+  },
+  {
+   "src_start": 64.8,
+   "src_end": 65.533333,
+   "out_start": 62.899998
+  },
+  {
+   "src_start": 67.033333,
+   "src_end": 73.5,
+   "out_start": 63.633331
+  }
+ ]
+}

@@ -1,0 +1,51 @@
+{
+  "company_legal_name": "CÔNG TY TNHH THỰC PHẨM F20",
+  "fanpages": {
+    "yen_chung_tuoi_skanest": {
+      "name": "Yến Chưng Tươi Khánh Hoà (Yến Sào SKANEST)",
+      "share_url": "https://www.facebook.com/share/19kbJtuo3a/?mibextid=wwXIfr",
+      "profile_url": "https://www.facebook.com/profile.php?id=61579667041752",
+      "slogan": "Uy Tín Tạo Niềm Tin • Trao Sức Khỏe - Gửi Yêu Thương"
+    },
+    "thuc_pham_f20": {
+      "name": "THỰC PHẨM F20",
+      "share_url": "https://www.facebook.com/share/1HkGAz1qEH/?mibextid=wwXIfr",
+      "profile_url": "https://www.facebook.com/profile.php?id=61573091510351",
+      "slogan": "Hàng Chất Lượng - Giá Tận Xưởng - Không Qua Trung Gian"
+    }
+  },
+  "sub_brands": [
+    "Yến Sào SKANEST",
+    "Tiệm Yến Chưng Tươi Khánh Hòa",
+    "Tuệ Tâm",
+    "SEMORRO"
+  ],
+  "contacts": {
+    "showroom_cs1": "149 Trần Nhật Duật, P. Nha Trang, Khánh Hòa",
+    "factory_cs2": "17/3 Điện Biên Phủ, P. Vĩnh Hòa, TP. Nha Trang, Khánh Hòa",
+    "hotlines": [
+      "0706.001.626",
+      "0979.512.289"
+    ],
+    "emails": [
+      "thucphamf20@gmail.com",
+      "yenchungtuoikhanhhoa@gmail.com"
+    ],
+    "website": "thucphamf20.com"
+  },
+  "palettes": {
+    "skanest_luxury_2011": {
+      "cream_bg": "#FBF4E4",
+      "burgundy_primary": "#5E0B15",
+      "crimson_emblem": "#A8131E",
+      "antique_gold": "#9A6D14",
+      "champagne_gold": "#E8BA54"
+    },
+    "f20_herbal_food": {
+      "emerald_primary": "#009E49",
+      "forest_dark": "#0D3822",
+      "royal_blue_20": "#2563EB",
+      "clean_white": "#FFFFFF"
+    }
+  }
+}

@@ -1,0 +1,209 @@
+[
+  {
+    "index": 1,
+    "id": "S01_oil_hook",
+    "start": 0.0,
+    "end": 1.35,
+    "src": "ma_C1367_oil_sizzle.MP4",
+    "path": "d:\\AI\\full studio\\output\\feelchicken-food-cinematic\\shots_graded\\01_S01_oil_hook.mp4",
+    "frames": 40
+  },
+  {
+    "index": 2,
+    "id": "S02_cheddar_rib",
+    "start": 1.35,
+    "end": 2.55,
+    "src": "ma_C1377_crispy_pile.MP4",
+    "path": "d:\\AI\\full studio\\output\\feelchicken-food-cinematic\\shots_graded\\02_S02_cheddar_rib.mp4",
+    "frames": 36
+  },
+  {
+    "index": 3,
+    "id": "S03_cs1_sign",
+    "start": 2.55,
+    "end": 4.18,
+    "src": "dji_0288_sign_red.MP4",
+    "path": "d:\\AI\\full studio\\output\\feelchicken-food-cinematic\\shots_graded\\03_S03_cs1_sign.mp4",
+    "frames": 49
+  },
+  {
+    "index": 4,
+    "id": "S04_cs1_neon",
+    "start": 4.18,
+    "end": 6.58,
+    "src": "dji_0291_neon_wall.MP4",
+    "path": "d:\\AI\\full studio\\output\\feelchicken-food-cinematic\\shots_graded\\04_S04_cs1_neon.mp4",
+    "frames": 72
+  },
+  {
+    "index": 5,
+    "id": "S05_flour_knead",
+    "start": 6.58,
+    "end": 7.8,
+    "src": "dji_0320_flour_coat.MP4",
+    "path": "d:\\AI\\full studio\\output\\feelchicken-food-cinematic\\shots_graded\\05_S05_flour_knead.mp4",
+    "frames": 37
+  },
+  {
+    "index": 6,
+    "id": "S06_flour_toss",
+    "start": 7.8,
+    "end": 8.95,
+    "src": "dji_0320_flour_coat.MP4",
+    "path": "d:\\AI\\full studio\\output\\feelchicken-food-cinematic\\shots_graded\\06_S06_flour_toss.mp4",
+    "frames": 34
+  },
+  {
+    "index": 7,
+    "id": "S07_fry_drop",
+    "start": 8.95,
+    "end": 10.46,
+    "src": "ma_C1367_oil_sizzle.MP4",
+    "path": "d:\\AI\\full studio\\output\\feelchicken-food-cinematic\\shots_graded\\07_S07_fry_drop.mp4",
+    "frames": 46
+  },
+  {
+    "index": 8,
+    "id": "S08_fry_vigorous",
+    "start": 10.46,
+    "end": 11.98,
+    "src": "ma_C1367_oil_sizzle.MP4",
+    "path": "d:\\AI\\full studio\\output\\feelchicken-food-cinematic\\shots_graded\\08_S08_fry_vigorous.mp4",
+    "frames": 45
+  },
+  {
+    "index": 9,
+    "id": "S09_fries_lift",
+    "start": 11.98,
+    "end": 13.78,
+    "src": "ma_C1368_oil_golden.MP4",
+    "path": "d:\\AI\\full studio\\output\\feelchicken-food-cinematic\\shots_graded\\09_S09_fries_lift.mp4",
+    "frames": 54
+  },
+  {
+    "index": 10,
+    "id": "S10_fries_pour",
+    "start": 13.78,
+    "end": 15.26,
+    "src": "ma_C1370_fries_shake.MP4",
+    "path": "d:\\AI\\full studio\\output\\feelchicken-food-cinematic\\shots_graded\\10_S10_fries_pour.mp4",
+    "frames": 45
+  },
+  {
+    "index": 11,
+    "id": "S11_gold_pile",
+    "start": 15.26,
+    "end": 16.85,
+    "src": "ma_C1377_crispy_pile.MP4",
+    "path": "d:\\AI\\full studio\\output\\feelchicken-food-cinematic\\shots_graded\\11_S11_gold_pile.mp4",
+    "frames": 48
+  },
+  {
+    "index": 12,
+    "id": "S12_cheese_white",
+    "start": 16.85,
+    "end": 18.72,
+    "src": "ma_C1377_crispy_pile.MP4",
+    "path": "d:\\AI\\full studio\\output\\feelchicken-food-cinematic\\shots_graded\\12_S12_cheese_white.mp4",
+    "frames": 56
+  },
+  {
+    "index": 13,
+    "id": "S13_sauces_plate",
+    "start": 18.72,
+    "end": 20.09,
+    "src": "dji_0332_five_sauces.MP4",
+    "path": "d:\\AI\\full studio\\output\\feelchicken-food-cinematic\\shots_graded\\13_S13_sauces_plate.mp4",
+    "frames": 41
+  },
+  {
+    "index": 14,
+    "id": "S14_sauces_spin",
+    "start": 20.09,
+    "end": 21.88,
+    "src": "ma_C1373_sauces_spin.MP4",
+    "path": "d:\\AI\\full studio\\output\\feelchicken-food-cinematic\\shots_graded\\14_S14_sauces_spin.mp4",
+    "frames": 53
+  },
+  {
+    "index": 15,
+    "id": "S15_glaze_pour",
+    "start": 21.88,
+    "end": 23.59,
+    "src": "dji_0327_sauce_coat.MP4",
+    "path": "d:\\AI\\full studio\\output\\feelchicken-food-cinematic\\shots_graded\\15_S15_glaze_pour.mp4",
+    "frames": 52
+  },
+  {
+    "index": 16,
+    "id": "S16_tokbokki",
+    "start": 23.59,
+    "end": 25.08,
+    "src": "ma_C1385_tokbokki.MP4",
+    "path": "d:\\AI\\full studio\\output\\feelchicken-food-cinematic\\shots_graded\\16_S16_tokbokki.mp4",
+    "frames": 44
+  },
+  {
+    "index": 17,
+    "id": "S17_jajang_lift",
+    "start": 25.08,
+    "end": 26.61,
+    "src": "ma_C1412_jajang_lift.MP4",
+    "path": "d:\\AI\\full studio\\output\\feelchicken-food-cinematic\\shots_graded\\17_S17_jajang_lift.mp4",
+    "frames": 46
+  },
+  {
+    "index": 18,
+    "id": "S18_tender_pull",
+    "start": 26.61,
+    "end": 27.85,
+    "src": "dji_0326_glaze_plate.MP4",
+    "path": "d:\\AI\\full studio\\output\\feelchicken-food-cinematic\\shots_graded\\18_S18_tender_pull.mp4",
+    "frames": 38
+  },
+  {
+    "index": 19,
+    "id": "S19_crispy_bite",
+    "start": 27.85,
+    "end": 29.07,
+    "src": "c260927_6495_bite.MOV",
+    "path": "d:\\AI\\full studio\\output\\feelchicken-food-cinematic\\shots_graded\\19_S19_crispy_bite.mp4",
+    "frames": 36
+  },
+  {
+    "index": 20,
+    "id": "S20_hero_8ga",
+    "start": 29.07,
+    "end": 30.48,
+    "src": "ma_C1381_hero_8ga.MP4",
+    "path": "d:\\AI\\full studio\\output\\feelchicken-food-cinematic\\shots_graded\\20_S20_hero_8ga.mp4",
+    "frames": 42
+  },
+  {
+    "index": 21,
+    "id": "S21_full_feast",
+    "start": 30.48,
+    "end": 32.38,
+    "src": "ma_C1395_full_feast.MP4",
+    "path": "d:\\AI\\full studio\\output\\feelchicken-food-cinematic\\shots_graded\\21_S21_full_feast.mp4",
+    "frames": 57
+  },
+  {
+    "index": 22,
+    "id": "S22_chopsticks",
+    "start": 32.38,
+    "end": 34.49,
+    "src": "dji_0339_chopsticks.MP4",
+    "path": "d:\\AI\\full studio\\output\\feelchicken-food-cinematic\\shots_graded\\22_S22_chopsticks.mp4",
+    "frames": 64
+  },
+  {
+    "index": 23,
+    "id": "S23_storefront",
+    "start": 34.49,
+    "end": 38.5,
+    "src": "dji_0284_storefront.MP4",
+    "path": "d:\\AI\\full studio\\output\\feelchicken-food-cinematic\\shots_graded\\23_S23_storefront.mp4",
+    "frames": 120
+  }
+]

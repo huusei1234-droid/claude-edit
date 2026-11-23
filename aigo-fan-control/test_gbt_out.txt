@@ -1,0 +1,3 @@
+﻿Direct SmartGuardianFanControl: IsSupported=False, FanCtrlCount=0, TachCount=0, TempCount=0
+=== TEMPERATURES ===
+=== FAN SPEEDS (RPM) ===

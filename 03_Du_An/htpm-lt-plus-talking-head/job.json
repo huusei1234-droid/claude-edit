@@ -1,0 +1,22 @@
+{
+  "slug": "htpm-lt-plus-talking-head",
+  "version": "3.0-muse-master",
+  "title": "HTPM LT PLUS Hằng Thu — V3 Muse Master Talking Head",
+  "source_video": "C:/Users/Hang thu/Downloads/HTPM LT PLUS .mp4",
+  "resolution": [1080, 1920],
+  "fps": 30,
+  "duration_sec": 59.167,
+  "visual_upgrades": {
+    "chatgpt_project": "Auto-routed into ChatGPT Project HTPM via chatgpt-page-driver.js with flawless smooth radiant porcelain skin",
+    "muse_video_engine": "100% Real AI Video Overlays (9 Muse videos from real LT PLUS product refs & smooth-skin speaker refs + 2 Flow medical/lab videos; 0% static image overlays)",
+    "speaker_skin_beauty": "Edge-preserving porcelain skin smoothing applied to real A-roll speaker (eyes/lips/brows crisp)",
+    "subtitles_and_text_motion": "25 sentence-aligned 2-line phrases held 1.34s-3.24s (median 2.22s) + mandatory Quintic C2 Entrance & Exit animations on 100% of text elements",
+    "herb_bubbles": "6 Shimmering Iridescent Crystal-Pearl Bubbles rising from glossy white probiotic cream Muse video",
+    "brand_typography": "Exact 1:1 Times New Roman Bold (timesbd.ttf) + Crimson-Scarlet RGB(242,6,16) + Blossom Pink #F9CADF matching physical box",
+    "audio": "TLH BGM (Soft Piano Inspiration01 + Corporate Medicine) + 100% Curated TLH Commercial TVC & Water-Bubble SFX (-14.0 LUFS)"
+  },
+  "deliverables": {
+    "local_export": "D:/XUẤT CAPCUT/HTPM_LT_PLUS_TALKING_HEAD_FINAL.mp4",
+    "drive_final": "Z:/Drive của tôi/AI_Full_Studio/04_Videos_Final/HTPM_LT_PLUS_TALKING_HEAD_FINAL.mp4"
+  }
+}

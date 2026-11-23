@@ -1,0 +1,146 @@
+[
+  {
+    "index": 1,
+    "id": "S01_stove_ignite",
+    "start": 0.0,
+    "end": 1.2,
+    "src": "m01_stove_knob.MP4",
+    "path": "d:\\AI\\full studio\\output\\feelchicken-food-cinematic\\shots_v5_ungraded\\01_S01_stove_ignite.mp4",
+    "frames": 36
+  },
+  {
+    "index": 2,
+    "id": "S02_flour_bowl_flow",
+    "start": 1.2,
+    "end": 2.75,
+    "src": "SC01_flour_bowl_FLOW.mp4",
+    "path": "d:\\AI\\full studio\\output\\feelchicken-food-cinematic\\shots_v5_ungraded\\02_S02_flour_bowl_flow.mp4",
+    "frames": 46
+  },
+  {
+    "index": 3,
+    "id": "S03_steel_whisk",
+    "start": 2.75,
+    "end": 3.9,
+    "src": "m03b_whisk_top.MP4",
+    "path": "d:\\AI\\full studio\\output\\feelchicken-food-cinematic\\shots_v5_ungraded\\03_S03_steel_whisk.mp4",
+    "frames": 35
+  },
+  {
+    "index": 4,
+    "id": "S04_clean_fryer_flow",
+    "start": 3.9,
+    "end": 5.45,
+    "src": "SC02_clean_fryer_FLOW.mp4",
+    "path": "d:\\AI\\full studio\\output\\feelchicken-food-cinematic\\shots_v5_ungraded\\04_S04_clean_fryer_flow.mp4",
+    "frames": 47
+  },
+  {
+    "index": 5,
+    "id": "S05_crispy_lift_flow",
+    "start": 5.45,
+    "end": 7.35,
+    "src": "SC03_crispy_lift_FLOW.mp4",
+    "path": "d:\\AI\\full studio\\output\\feelchicken-food-cinematic\\shots_v5_ungraded\\05_S05_crispy_lift_flow.mp4",
+    "frames": 56
+  },
+  {
+    "index": 6,
+    "id": "S06_red_sauce_simmer",
+    "start": 7.35,
+    "end": 8.65,
+    "src": "m11_pan_red_simmer.MP4",
+    "path": "d:\\AI\\full studio\\output\\feelchicken-food-cinematic\\shots_v5_ungraded\\06_S06_red_sauce_simmer.mp4",
+    "frames": 40
+  },
+  {
+    "index": 7,
+    "id": "S07_cheese_velvet_pan",
+    "start": 8.65,
+    "end": 10.1,
+    "src": "m12_pan_cheese_vel.MP4",
+    "path": "d:\\AI\\full studio\\output\\feelchicken-food-cinematic\\shots_v5_ungraded\\07_S07_cheese_velvet_pan.mp4",
+    "frames": 43
+  },
+  {
+    "index": 8,
+    "id": "S08_ruby_pour_flow",
+    "start": 10.1,
+    "end": 12.35,
+    "src": "SC04_ruby_pour_FLOW.mp4",
+    "path": "d:\\AI\\full studio\\output\\feelchicken-food-cinematic\\shots_v5_ungraded\\08_S08_ruby_pour_flow.mp4",
+    "frames": 67
+  },
+  {
+    "index": 9,
+    "id": "S09_cheddar_pour_muse",
+    "start": 12.35,
+    "end": 14.6,
+    "src": "SC05_cheddar_pour_MUSE.mp4",
+    "path": "d:\\AI\\full studio\\output\\feelchicken-food-cinematic\\shots_v5_ungraded\\09_S09_cheddar_pour_muse.mp4",
+    "frames": 68
+  },
+  {
+    "index": 10,
+    "id": "S10_real_sesame_glaze",
+    "start": 14.6,
+    "end": 16.0,
+    "src": "m19_sesame_plate.MP4",
+    "path": "d:\\AI\\full studio\\output\\feelchicken-food-cinematic\\shots_v5_ungraded\\10_S10_real_sesame_glaze.mp4",
+    "frames": 42
+  },
+  {
+    "index": 11,
+    "id": "S11_clear_tear_muse",
+    "start": 16.0,
+    "end": 18.45,
+    "src": "SC06_clear_tear_MUSE.mp4",
+    "path": "d:\\AI\\full studio\\output\\feelchicken-food-cinematic\\shots_v5_ungraded\\11_S11_clear_tear_muse.mp4",
+    "frames": 74
+  },
+  {
+    "index": 12,
+    "id": "S12_real_jajang_lift",
+    "start": 18.45,
+    "end": 20.15,
+    "src": "m25_jajang_lift.MP4",
+    "path": "d:\\AI\\full studio\\output\\feelchicken-food-cinematic\\shots_v5_ungraded\\12_S12_real_jajang_lift.mp4",
+    "frames": 50
+  },
+  {
+    "index": 13,
+    "id": "S13_real_tokbokki",
+    "start": 20.15,
+    "end": 21.6,
+    "src": "m23_tokbokki_lift.MP4",
+    "path": "d:\\AI\\full studio\\output\\feelchicken-food-cinematic\\shots_v5_ungraded\\13_S13_real_tokbokki.mp4",
+    "frames": 44
+  },
+  {
+    "index": 14,
+    "id": "S14_nguvi_orbit_muse",
+    "start": 21.6,
+    "end": 23.25,
+    "src": "SC07_nguvi_orbit_MUSE.mp4",
+    "path": "d:\\AI\\full studio\\output\\feelchicken-food-cinematic\\shots_v5_ungraded\\14_S14_nguvi_orbit_muse.mp4",
+    "frames": 50
+  },
+  {
+    "index": 15,
+    "id": "S15_real_hero_glide",
+    "start": 23.25,
+    "end": 24.6,
+    "src": "m27_hero_macro1.MOV",
+    "path": "d:\\AI\\full studio\\output\\feelchicken-food-cinematic\\shots_v5_ungraded\\15_S15_real_hero_glide.mp4",
+    "frames": 40
+  },
+  {
+    "index": 16,
+    "id": "S16_cs1_walkin",
+    "start": 24.6,
+    "end": 27.6,
+    "src": "DJI_20251201150558_0312_D.MP4",
+    "path": "d:\\AI\\full studio\\output\\feelchicken-food-cinematic\\shots_v5_ungraded\\16_S16_cs1_walkin.mp4",
+    "frames": 90
+  }
+]

@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Hữu Seiz • 4K Live Wallpaper & iOS 18 Studio Suite</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background: #0d0a10;
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Rounded', 'Segoe UI Variable Display', 'Segoe UI', system-ui, sans-serif;
+    user-select: none;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .bg-stage {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+  }
+  .bg-layer {
+    position: absolute;
+    inset: -1.6%;
+    width: 103.2%;
+    height: 103.2%;
+    object-fit: cover;
+    object-position: center 22%;
+    opacity: 0;
+    transition: opacity 1.8s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform, opacity;
+  }
+  .bg-layer.active { opacity: 1; }
+
+  /* Top & bottom subtle scrims for crisp legibility on bright sunlit portraits */
+  #topScrim {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    height: 38vh;
+    pointer-events: none;
+    background: linear-gradient(180deg, rgba(10,8,16,0.46) 0%, rgba(10,8,16,0.22) 50%, rgba(10,8,16,0) 100%);
+    z-index: 3;
+  }
+  #softGlow {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(circle at 50% 42%, rgba(255,255,255,0) 62%, rgba(20,12,18,0.24) 100%);
+    z-index: 2;
+  }
+  #fxCanvas {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 4;
+  }
+
+  /* ===== Shared Apple Liquid Glass Surface ===== */
+  .glass {
+    background: rgba(16, 14, 24, 0.44);
+    backdrop-filter: blur(20px) saturate(170%);
+    -webkit-backdrop-filter: blur(20px) saturate(170%);
+    border: 1.5px solid rgba(255, 255, 255, 0.24);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.22);
+    color: rgba(255, 255, 255, 0.96);
+  }
+
+  /* ===== TOP CENTER: iOS 18 iPhone Lock Screen HUD ===== */
+  #hud {
+    position: fixed;
+    top: clamp(22px, 3.2vh, 54px);
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    pointer-events: none;
+    z-index: 12;
+    width: min(94vw, 960px);
+    transition: opacity 0.45s ease;
+  }
+
+  #brandTag {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 4px 16px;
+    margin-bottom: 5px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.14);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    font-size: clamp(12px, 1.05vw, 17px);
+    font-weight: 700;
+    letter-spacing: 0.20em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.98);
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.48);
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.22);
+  }
+
+  #dateLine {
+    font-size: clamp(18px, 1.55vw, 26px);
+    font-weight: 600;
+    letter-spacing: 0.015em;
+    color: rgba(255, 255, 255, 0.97);
+    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.54), 0 1px 4px rgba(0, 0, 0, 0.50);
+    margin-bottom: -4px;
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+  .date-sep { opacity: 0.55; }
+  #weatherInline {
+    color: #ffeab3;
+    font-weight: 600;
+  }
+
+  #clock {
+    font-size: clamp(92px, 8.2vw, 146px);
+    font-weight: 700;
+    letter-spacing: -0.035em;
+    font-variant-numeric: tabular-nums;
+    line-height: 0.96;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.99) 0%, rgba(242, 246, 255, 0.88) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    filter: drop-shadow(0 8px 24px rgba(8, 6, 16, 0.46)) drop-shadow(0 2px 6px rgba(8, 6, 16, 0.55));
+  }
+
+  /* ===== Compact Clickable Task Manager Rings ===== */
+  #widgetsRow {
+    pointer-events: auto;
+    margin-top: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    transition: opacity 0.35s ease, transform 0.35s ease;
+  }
+  .widgets-hidden {
+    opacity: 0 !important;
+    transform: translateY(8px) !important;
+    pointer-events: none !important;
+  }
+
+  .ios-ring {
+    position: relative;
+    width: 66px;
+    height: 66px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.2s cubic-bezier(0.22, 1, 0.36, 1), background 0.2s ease, border-color 0.2s ease;
+  }
+  .ios-ring:hover {
+    transform: scale(1.07);
+    background: rgba(24, 20, 38, 0.60);
+    border-color: rgba(255, 255, 255, 0.55);
+  }
+  .ios-ring:active { transform: scale(0.95); }
+  .ios-ring svg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    transform: rotate(-90deg);
+  }
+  .ring-track { fill: none; stroke: rgba(255, 255, 255, 0.16); stroke-width: 5.2; }
+  .ring-fill {
+    fill: none; stroke: #fff; stroke-width: 5.2; stroke-linecap: round;
+    stroke-dasharray: 219.91; stroke-dashoffset: 219.91;
+    transition: stroke-dashoffset 0.7s cubic-bezier(0.22, 1, 0.36, 1), stroke 0.4s ease;
+  }
+  .ring-val { font-size: 16px; font-weight: 700; font-variant-numeric: tabular-nums; line-height: 1.04; text-shadow: 0 1px 6px rgba(0,0,0,0.55); }
+  .ring-lbl { font-size: 9px; font-weight: 700; letter-spacing: 0.08em; color: rgba(255,255,255,0.84); text-transform: uppercase; margin-top: 1px; }
+  .ring-sub { font-size: 8.5px; font-weight: 600; color: rgba(255,255,255,0.82); font-variant-numeric: tabular-nums; line-height: 1.05; margin-top: 1px; }
+
+  .ios-pill-card {
+    height: 66px;
+    padding: 8px 15px;
+    border-radius: 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    min-width: 184px;
+    text-align: left;
+    cursor: pointer;
+    transition: transform 0.2s cubic-bezier(0.22, 1, 0.36, 1), background 0.2s ease, border-color 0.2s ease;
+  }
+  .ios-pill-card:hover { transform: scale(1.04); background: rgba(24,20,38,0.60); border-color: rgba(255,255,255,0.55); }
+  .ios-pill-card:active { transform: scale(0.97); }
+  .pill-row { display: flex; align-items: center; justify-content: space-between; gap: 10px; font-size: 12.5px; font-weight: 600; font-variant-numeric: tabular-nums; white-space: nowrap; text-shadow: 0 1px 4px rgba(0,0,0,0.48); }
+  .pill-tag { font-size: 9.5px; font-weight: 700; letter-spacing: 0.08em; color: rgba(255,255,255,0.72); text-transform: uppercase; }
+  .pill-accent { color: #9ef0ff; }
+  .pill-warm { color: #ffe3a8; }
+
+  /* ===== Expandable Task Manager Glass Drawer ===== */
+  #tmPanel {
+    pointer-events: auto;
+    margin-top: 12px;
+    width: min(90vw, 520px);
+    padding: 15px 18px;
+    border-radius: 24px;
+    background: rgba(14, 12, 22, 0.78);
+    backdrop-filter: blur(26px) saturate(180%);
+    -webkit-backdrop-filter: blur(26px) saturate(180%);
+    border: 1.5px solid rgba(255, 255, 255, 0.26);
+    box-shadow: 0 18px 46px rgba(0, 0, 0, 0.50);
+    color: #fff;
+    text-align: left;
+    display: none;
+  }
+  #tmPanel.open { display: block; animation: popIn 0.2s cubic-bezier(0.22,1,0.36,1); }
+  @keyframes popIn { from { opacity:0; transform: translateY(-6px) scale(0.97); } to { opacity:1; transform: translateY(0) scale(1); } }
+  .tm-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; padding-bottom: 7px; border-bottom: 1px solid rgba(255,255,255,0.14); }
+  .tm-title { font-size: 12.5px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #ffe5ec; }
+  .tm-close { border: none; background: rgba(255,255,255,0.14); color: #fff; width: 24px; height: 24px; border-radius: 50%; cursor: pointer; font-size: 12px; font-weight: 700; }
+  .tm-close:hover { background: rgba(255,255,255,0.28); }
+  .tm-meta { font-size: 12px; color: rgba(255,255,255,0.88); margin-bottom: 9px; font-variant-numeric: tabular-nums; line-height: 1.4; }
+  .tm-list { display: flex; flex-direction: column; gap: 5px; margin-bottom: 11px; }
+  .tm-item { display: flex; justify-content: space-between; font-size: 12.5px; padding: 5px 10px; border-radius: 10px; background: rgba(255,255,255,0.07); font-variant-numeric: tabular-nums; }
+  .tm-item-val { color: #9ef0ff; font-weight: 700; }
+  .tm-actions { display: flex; flex-wrap: wrap; gap: 7px; }
+  .tm-btn {
+    flex: 1 1 auto; border: 1px solid rgba(255,255,255,0.24); background: rgba(255,255,255,0.14);
+    color: #fff; font-size: 11.5px; font-weight: 600; padding: 7px 11px; border-radius: 13px;
+    cursor: pointer; transition: background 0.18s ease, transform 0.15s ease; white-space: nowrap;
+  }
+  .tm-btn:hover { background: rgba(255,255,255,0.26); transform: translateY(-1px); }
+  .tm-btn.primary { background: linear-gradient(135deg, #ffe5ec, #ffd6a5); color: #20121a; border-color: transparent; }
+
+  #sceneBadge {
+    margin-top: 10px;
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 16px;
+    border-radius: 999px;
+    background: rgba(16, 14, 24, 0.34);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    font-size: clamp(10.5px, 0.8vw, 13px);
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.94);
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.55);
+  }
+
+  /* ===== BOTTOM-RIGHT CORNER: Studio Quick Launch & RAM/Drive Actions ===== */
+  #rightWidgets {
+    position: fixed;
+    right: 20px;
+    bottom: 58px;
+    z-index: 12;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px;
+    pointer-events: auto;
+    transition: opacity 0.35s ease, transform 0.35s ease;
+  }
+  .launch-grid {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 7px;
+    padding: 9px 10px;
+    border-radius: 22px;
+  }
+  .lbtn {
+    border: 1px solid rgba(255,255,255,0.20);
+    background: rgba(255,255,255,0.10);
+    color: rgba(255,255,255,0.96);
+    padding: 7px 11px;
+    border-radius: 14px;
+    font-size: 11.5px;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    white-space: nowrap;
+    transition: background 0.18s ease, transform 0.15s ease, border-color 0.18s ease;
+  }
+  .lbtn:hover { background: rgba(255,255,255,0.24); border-color: rgba(255,255,255,0.45); transform: translateY(-1px); }
+  .lbtn:active { transform: scale(0.95); }
+  .lbtn.accent { background: rgba(158, 240, 255, 0.18); border-color: rgba(158, 240, 255, 0.36); color: #d8faff; }
+
+  #toast {
+    position: fixed;
+    bottom: 110px;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    padding: 7px 16px;
+    border-radius: 999px;
+    background: rgba(16, 14, 24, 0.84);
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    color: #ffe5ec;
+    font-size: 12px;
+    font-weight: 600;
+    z-index: 30;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+  }
+  #toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+  /* Portrait (1440x2560 & 1080x1920) — Balanced iOS Lock Screen: Big crisp text, sleek compact widgets */
+  @media (orientation: portrait) {
+    #hud { top: clamp(42px, 4.4vh, 96px); width: 94vw; }
+    #brandTag { font-size: clamp(14px, 1.55vw, 20px); padding: 5px 18px; margin-bottom: 8px; }
+    #dateLine { font-size: clamp(22px, 2.35vw, 32px); margin-bottom: -6px; }
+    #clock { font-size: clamp(128px, 15.8vw, 218px); }
+    #widgetsRow { margin-top: 16px; gap: 11px; }
+    .ios-ring { width: 74px; height: 74px; }
+    .ring-val { font-size: 18px; }
+    .ring-lbl { font-size: 9.5px; }
+    .ring-sub { font-size: 9px; }
+    .ios-pill-card { height: 74px; min-width: 204px; padding: 9px 16px; border-radius: 24px; gap: 5px; }
+    .pill-row { font-size: 13.5px; }
+    .pill-tag { font-size: 10px; }
+    #sceneBadge { margin-top: 12px; font-size: clamp(11px, 1.05vw, 14px); padding: 5px 18px; }
+    #rightWidgets { bottom: 64px; right: 22px; }
+  }
+
+  /* Always-Visible Sleek Glass Scene Switcher Dock (above Windows taskbar) */
+  #hoverZone {
+    position: fixed;
+    left: 50%;
+    bottom: 58px;
+    transform: translateX(-50%);
+    z-index: 15;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+  }
+  #dock {
+    pointer-events: auto;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 6px 12px;
+    border-radius: 999px;
+    background: rgba(16, 14, 24, 0.52);
+    backdrop-filter: blur(20px) saturate(170%);
+    -webkit-backdrop-filter: blur(20px) saturate(170%);
+    border: 1.5px solid rgba(255, 255, 255, 0.24);
+    box-shadow: 0 8px 26px rgba(0, 0, 0, 0.34), inset 0 1px 0 rgba(255, 255, 255, 0.20);
+    opacity: 0.86;
+    transition: opacity 0.22s ease, transform 0.22s ease, background 0.22s ease;
+  }
+  #dock:hover {
+    opacity: 1;
+    background: rgba(18, 14, 28, 0.78);
+    transform: translateY(-2px);
+  }
+  .dbtn {
+    border: none; background: transparent; color: rgba(255,255,255,0.90);
+    font-size: 12px; font-weight: 600; padding: 6px 12px; border-radius: 999px;
+    cursor: pointer; transition: all 0.2s ease; white-space: nowrap;
+  }
+  .dbtn:hover { color: #fff; background: rgba(255,255,255,0.16); }
+  .dbtn.active { color: #20121a; background: linear-gradient(135deg, #ffe5ec, #ffd6a5); }
+</style>
+</head>
+<body>
+
+<div class="bg-stage" id="bgStage">
+  <img id="imgA" class="bg-layer active" alt="" />
+  <img id="imgB" class="bg-layer" alt="" />
+  <video id="vidA" class="bg-layer" autoplay muted loop playsinline preload="auto"></video>
+  <video id="vidB" class="bg-layer" autoplay muted loop playsinline preload="auto"></video>
+</div>
+<div id="softGlow"></div>
+<div id="topScrim"></div>
+<canvas id="fxCanvas"></canvas>
+
+<!-- ===== TOP CENTER: iOS 18 Lock Screen (Hữu Seiz + Solar/Lunar Date + Weather + Clock + Task Manager Rings) ===== -->
+<div id="hud">
+  <div id="brandTag">✦ Hữu Seiz ✦</div>
+  <div id="dateLine">
+    <span id="solarLunar">Thứ Bảy, 21 tháng 11</span>
+    <span class="date-sep">•</span>
+    <span id="weatherInline">🌤️ --°C</span>
+  </div>
+  <div id="clock">00:00</div>
+
+  <div id="widgetsRow">
+    <div class="ios-ring glass" data-action="panel" data-dbl="taskmgr" title="Click xem chi tiết · Double-click mở Task Manager">
+      <svg viewBox="0 0 86 86"><circle class="ring-track" cx="43" cy="43" r="35"></circle><circle class="ring-fill" id="ringCpu" cx="43" cy="43" r="35"></circle></svg>
+      <div class="ring-val" id="valCpu">--%</div>
+      <div class="ring-lbl">CPU</div>
+    </div>
+
+    <div class="ios-ring glass" data-action="panel" data-dbl="taskmgr" title="Click xem Top RAM · Double-click mở Task Manager">
+      <svg viewBox="0 0 86 86"><circle class="ring-track" cx="43" cy="43" r="35"></circle><circle class="ring-fill" id="ringRam" cx="43" cy="43" r="35"></circle></svg>
+      <div class="ring-val" id="valRam">--%</div>
+      <div class="ring-sub" id="subRam">RAM</div>
+    </div>
+
+    <div class="ios-ring glass" data-action="panel" data-dbl="taskmgr" title="RTX 3060 · Click xem chi tiết">
+      <svg viewBox="0 0 86 86"><circle class="ring-track" cx="43" cy="43" r="35"></circle><circle class="ring-fill" id="ringGpu" cx="43" cy="43" r="35"></circle></svg>
+      <div class="ring-val" id="valGpu">--%</div>
+      <div class="ring-sub" id="subGpu">GPU</div>
+    </div>
+
+    <div class="ios-ring glass" data-action="panel" data-dbl="taskmgr" title="RTX 3060 VRAM">
+      <svg viewBox="0 0 86 86"><circle class="ring-track" cx="43" cy="43" r="35"></circle><circle class="ring-fill" id="ringVram" cx="43" cy="43" r="35"></circle></svg>
+      <div class="ring-val" id="valVram">--G</div>
+      <div class="ring-lbl">VRAM</div>
+    </div>
+
+    <div class="ios-pill-card glass" data-action="panel" data-dbl="disk_d" title="Click xem chi tiết · Double-click mở ổ D:">
+      <div class="pill-row"><span class="pill-tag">MẠNG</span><span class="pill-accent" id="valNet">↓ 0.0 · ↑ 0.0</span></div>
+      <div class="pill-row"><span class="pill-tag">Ổ ĐĨA</span><span class="pill-warm" id="valDisk">D: -- · Z: --</span></div>
+    </div>
+  </div>
+
+  <!-- Expandable Task Manager Glass Panel -->
+  <div id="tmPanel">
+    <div class="tm-head">
+      <span class="tm-title">⚡ Trình Quản Lý Tác Vụ • Hữu Seiz</span>
+      <button class="tm-close" id="tmClose" title="Đóng">✕</button>
+    </div>
+    <div class="tm-meta" id="tmMeta">Đang tải thông số hệ thống...</div>
+    <div class="tm-list" id="tmList"></div>
+    <div class="tm-actions">
+      <button class="tm-btn primary" data-open="taskmgr">⚡ Task Manager</button>
+      <button class="tm-btn" data-open="resmon">📈 Resource Mon</button>
+      <button class="tm-btn" data-cmd="trim_ram">🧹 Dọn RAM</button>
+      <button class="tm-btn" data-open="disk_d">💾 Ổ D:</button>
+      <button class="tm-btn" data-open="disk_z">☁️ Drive Z:</button>
+    </div>
+  </div>
+
+  <div id="sceneBadge">MẪU ĐƠN HỒNG NẮNG SỚM • HỮU SEIZ</div>
+</div>
+
+<!-- ===== BOTTOM-RIGHT: Studio Quick Launch + Drive & RAM Clean ===== -->
+<div id="rightWidgets">
+  <div class="launch-grid glass">
+    <button class="lbtn" data-open="capcut" title="Mở CapCut">🎬 CapCut</button>
+    <button class="lbtn" data-open="photoshop" title="Mở Photoshop 2026">🎨 Photoshop</button>
+    <button class="lbtn" data-open="htpm" title="Mở thư mục Video HTPM">📁 HTPM</button>
+    <button class="lbtn" data-open="finals" title="Mở thư mục 04_Videos_Final">☁️ Videos Final</button>
+    <button class="lbtn" data-open="disk_d" title="Mở ổ D:">💾 Ổ D:</button>
+    <button class="lbtn accent" data-cmd="trim_ram" title="Giải phóng RAM nhàn rỗi">🧹 Dọn RAM</button>
+  </div>
+</div>
+
+<div id="toast"></div>
+
+<div id="hoverZone">
+  <div id="dock">
+    <button class="dbtn" id="prevBtn" title="Cảnh trước">⏮</button>
+    <button class="dbtn active" id="autoBtn" title="Tự động đổi mỗi 1 giờ">⏱ Đổi Mỗi 1 Giờ</button>
+    <button class="dbtn" id="nextBtn" title="Cảnh tiếp theo">⏭</button>
+    <button class="dbtn active" id="widgetBtn" title="Bật/tắt toàn bộ tiện ích">📊 Tiện Ích</button>
+    <button class="dbtn active" id="fxBtn" title="Bật/tắt cánh hoa & ánh nắng">🌸 Hoa & Nắng</button>
+  </div>
+</div>
+
+<script>
+(() => {
+  const SCENES = [
+    { id: 0, title: 'VÁY REN HOA ANH ĐÀO • HỮU SEIZ', base: 'pin17', fx: 'sakura' },
+    { id: 1, title: 'HOA TÍM XANH NGƯỢC NẮNG • HỮU SEIZ', base: 'pin18', fx: 'sunmote' },
+    { id: 2, title: 'CỎ XANH BONG BÓNG NẮNG MAI • HỮU SEIZ', base: 'pin19', fx: 'sunmote' },
+    { id: 3, title: 'ĐỌC SÁCH VƯỜN HỒNG NẮNG SỚM • HỮU SEIZ', base: 'pin20', fx: 'sakura' },
+    { id: 4, title: 'Ô REN CỔ ĐIỂN NẮNG VÀNG • HỮU SEIZ', base: 'pin21', fx: 'sunmote' },
+    { id: 5, title: 'HOA TRẮNG TRONG VEO • HỮU SEIZ', base: 'pin22', fx: 'sunmote' },
+    { id: 6, title: 'TÓC BAY NGƯỢC NẮNG TINH KHÔI • HỮU SEIZ', base: 'pin23', fx: 'sunmote' },
+    { id: 7, title: 'VÁY HOA NHÍ THẢM CỎ VÀNG • HỮU SEIZ', base: 'pin24', fx: 'sunmote' },
+    { id: 8, title: 'XOAY VÁY DƯỚI TÁN CÂY NẮNG • HỮU SEIZ', base: 'pin25', fx: 'sunmote' },
+    { id: 9, title: 'Ô REN DẠO VƯỜN XANH • HỮU SEIZ', base: 'pin26', fx: 'sunmote' },
+    { id: 10, title: 'TỰA GỐC CÂY ĐỌC SÁCH • HỮU SEIZ', base: 'pin27', fx: 'sunmote' },
+    { id: 11, title: 'VÁY TẦNG TRẮNG BÓ HOA THANH TAO • HỮU SEIZ', base: 'pin28', fx: 'sunmote' },
+    { id: 12, title: 'ĐÓN GIÓ ĐỒNG LÚA XANH • HỮU SEIZ', base: 'pin29', fx: 'sunmote' },
+    { id: 13, title: 'NƠ VOAN TRẮNG BONG BÓNG • HỮU SEIZ', base: 'pin30', fx: 'sakura' },
+    { id: 14, title: 'HOA BÁCH HỢP THẢM CỎ XANH • HỮU SEIZ', base: 'pin31', fx: 'sakura' },
+    { id: 15, title: 'KẸP BƯỚM TRẮNG VƯỜN HỒNG • HỮU SEIZ', base: 'pin32', fx: 'sakura' },
+    { id: 16, title: 'XÍCH ĐU HOA TRẮNG NẮNG SỚM • HỮU SEIZ', base: 'pin33', fx: 'sunmote' },
+    { id: 17, title: 'KHĂN REN THƯỞNG HƯƠNG HOA • HỮU SEIZ', base: 'pin34', fx: 'sunmote' },
+    { id: 18, title: 'VÒM HOA LI TI ĐỌC SÁCH • HỮU SEIZ', base: 'pin35', fx: 'sunmote' },
+    { id: 19, title: 'LỐI MÒN NẮNG SỚM HOA HỒNG • HỮU SEIZ', base: 'pin36', fx: 'sunmote' },
+    { id: 20, title: 'MẪU ĐƠN HỒNG NẮNG SỚM • HỮU SEIZ', base: 'pin7', fx: 'sakura' },
+    { id: 21, title: 'MÚA HÁN PHỤC MƯA HOA ĐÀO • HỮU SEIZ', base: 'pin8', fx: 'sakura' },
+    { id: 22, title: 'TÓC TẾT HÁN PHỤC HỒNG • HỮU SEIZ', base: 'pin9', fx: 'sakura' },
+    { id: 23, title: 'GÓC NGHIÊNG LAN CAN GỖ • HỮU SEIZ', base: 'pin10', fx: 'sunmote' },
+    { id: 24, title: 'HÁN PHỤC XANH NGỌC RỪNG XANH • HỮU SEIZ', base: 'pin11', fx: 'sunmote' },
+    { id: 25, title: 'THƯỞNG HOA TRÀ TRẮNG • HỮU SEIZ', base: 'pin12', fx: 'sakura' },
+    { id: 26, title: 'GIẤC MƠ VÁY REN MẪU ĐƠN • HỮU SEIZ', base: 'pin13', fx: 'sakura' },
+    { id: 27, title: 'CÁNH HỒNG XUYÊN NẮNG • HỮU SEIZ', base: 'pin14', fx: 'sunmote' },
+    { id: 28, title: 'VÒM HOA TRẮNG ĐỌC SÁCH • HỮU SEIZ', base: 'pin15', fx: 'sunmote' },
+    { id: 29, title: 'BẠCH NGUYỆT QUANG HOA TUYẾT • HỮU SEIZ', base: 'pin16', fx: 'sunmote' },
+    { id: 30, title: 'HOA XANH NGƯỢC NẮNG • HỮU SEIZ', base: 'pin1', fx: 'sunmote' },
+    { id: 31, title: 'TIÊN NỮ HOA TỬ ĐẰNG • HỮU SEIZ', base: 'pin2', fx: 'sakura' },
+    { id: 32, title: 'VÁY VÀNG HOA TRẮNG • HỮU SEIZ', base: 'pin3', fx: 'sunmote' },
+    { id: 33, title: 'HOÀNG HÔN BƯỚM HỒNG • HỮU SEIZ', base: 'pin4', fx: 'sakura' },
+    { id: 34, title: 'MỐI TÌNH ĐẦU NẮNG SỚM • HỮU SEIZ', base: 'pin5', fx: 'sunmote' },
+    { id: 35, title: 'NÀNG THƠ HOA XANH NGƯỢC NẮNG • HỮU SEIZ', base: 'girl1', fx: 'sunmote' },
+    { id: 36, title: 'TIÊN NỮ HÁN PHỤC HOA ANH ĐÀO • HỮU SEIZ', base: 'girl2', fx: 'sakura' },
+    { id: 37, title: 'NẮNG SỚM VƯỜN HOA VÀNG • HỮU SEIZ', base: 'girl3', fx: 'sunmote' },
+    { id: 38, title: 'NÀNG TIÊN CÁNH BƯỚM NẮNG MAI • HỮU SEIZ', base: 'girl5', fx: 'sunmote' },
+    { id: 39, title: 'HOÀNG HÔN MẶT HỒ LẤP LÁNH • HỮU SEIZ', base: 'girl6', fx: 'sunmote' }
+  ];
+
+  const VI_DAYS = ['Chủ Nhật', 'Thứ Hai', 'Thứ Ba', 'Thứ Tư', 'Thứ Năm', 'Thứ Sáu', 'Thứ Bảy'];
+
+  let autoHourly = true;
+  let manualOffset = Number(localStorage.getItem('agy_muses_offset') || 0);
+  let lockedIdx = 0;
+  let fxEnabled = true;
+  let widgetsEnabled = localStorage.getItem('agy_muses_widgets') !== '0';
+
+  const imgA = document.getElementById('imgA');
+  const imgB = document.getElementById('imgB');
+  const vidA = document.getElementById('vidA');
+  const vidB = document.getElementById('vidB');
+  let slotA = true;
+  let shownIdx = -1;
+  let shownOrient = '';
+  let loadSeq = 0;
+
+  const solarLunarEl = document.getElementById('solarLunar');
+  const weatherInlineEl = document.getElementById('weatherInline');
+  const clockEl = document.getElementById('clock');
+  const badgeEl = document.getElementById('sceneBadge');
+  const hudEl = document.getElementById('hud');
+  const widgetsRow = document.getElementById('widgetsRow');
+  const rightWidgets = document.getElementById('rightWidgets');
+  const tmPanel = document.getElementById('tmPanel');
+  const tmMeta = document.getElementById('tmMeta');
+  const tmList = document.getElementById('tmList');
+  const dockEl = document.getElementById('dock');
+  const toastEl = document.getElementById('toast');
+
+  const ringCpu = document.getElementById('ringCpu');
+  const ringRam = document.getElementById('ringRam');
+  const ringGpu = document.getElementById('ringGpu');
+  const ringVram = document.getElementById('ringVram');
+  const valCpu = document.getElementById('valCpu');
+  const valRam = document.getElementById('valRam');
+  const subRam = document.getElementById('subRam');
+  const valGpu = document.getElementById('valGpu');
+  const subGpu = document.getElementById('subGpu');
+  const valVram = document.getElementById('valVram');
+  const valNet = document.getElementById('valNet');
+  const valDisk = document.getElementById('valDisk');
+
+  let toastTimer = null;
+  function showToast(msg) {
+    toastEl.textContent = msg;
+    toastEl.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => toastEl.classList.remove('show'), 2200);
+  }
+
+  // ===== Vietnamese Lunar Date via native Intl =====
+  function getLunarStr(date) {
+    try {
+      const parts = new Intl.DateTimeFormat('vi-VN-u-ca-chinese', { day: 'numeric', month: 'numeric' }).formatToParts(date);
+      const d = (parts.find(p => p.type === 'day') || {}).value;
+      const m = (parts.find(p => p.type === 'month') || {}).value;
+      if (d && m) return `${d}/${m} ÂL`;
+    } catch {}
+    return '';
+  }
+
+  const CIRC = 2 * Math.PI * 35;
+  function setRing(el, pct, defaultColor) {
+    const p = Math.max(0, Math.min(100, Number(pct) || 0));
+    el.style.strokeDashoffset = (CIRC * (1 - p / 100)).toFixed(2);
+    if (p >= 88) el.style.stroke = '#ff7b8a';
+    else if (p >= 70) el.style.stroke = '#ffd27d';
+    else el.style.stroke = defaultColor;
+  }
+
+  function fmtNet(mbps) {
+    if (mbps >= 100) return `${mbps.toFixed(0)}M`;
+    if (mbps >= 1) return `${mbps.toFixed(1)}M`;
+    const kbps = mbps * 1000;
+    if (kbps >= 10) return `${kbps.toFixed(0)}K`;
+    return `${mbps.toFixed(1)}M`;
+  }
+
+  function fmtGb(gb) {
+    if (gb >= 1024) return `${(gb / 1024).toFixed(1)}T`;
+    return `${Math.round(gb)}G`;
+  }
+
+  function applyStats(d) {
+    if (!d) return;
+    const cpu = Math.round(d.cpu || 0);
+    setRing(ringCpu, cpu, '#8ce8ff');
+    valCpu.textContent = `${cpu}%`;
+
+    const ramPct = Math.round(d.ram_pct || 0);
+    setRing(ringRam, ramPct, '#b8f7c4');
+    valRam.textContent = `${ramPct}%`;
+    if (d.ram_total_gb) subRam.textContent = `${Math.round(d.ram_used_gb)}/${d.ram_total_gb}G`;
+
+    const gpu = Math.round(d.gpu || 0);
+    setRing(ringGpu, gpu, '#ffd1ec');
+    valGpu.textContent = `${gpu}%`;
+    subGpu.textContent = d.gpu_temp ? `${d.gpu_temp}°C` : 'GPU';
+
+    const vramPct = Number(d.vram_pct || 0);
+    setRing(ringVram, vramPct, '#d6b8ff');
+    valVram.textContent = d.vram_total_gb ? `${Number(d.vram_used_gb || 0).toFixed(1)}G` : `${Math.round(vramPct)}%`;
+
+    valNet.textContent = `↓ ${fmtNet(Number(d.net_down_mbps || 0))} · ↑ ${fmtNet(Number(d.net_up_mbps || 0))}`;
+    if (d.disk_d_free_gb || d.disk_z_free_gb) {
+      const zStr = d.disk_z_free_gb ? `Z: ${fmtGb(d.disk_z_free_gb)}` : `C: ${fmtGb(d.disk_c_free_gb || 0)}`;
+      valDisk.textContent = `D: ${fmtGb(d.disk_d_free_gb || 0)} · ${zStr}`;
+    }
+
+    // Weather
+    if (d.weather && d.weather.temp !== null && d.weather.temp !== undefined) {
+      const hum = d.weather.humidity ? ` (${d.weather.humidity}%)` : '';
+      weatherInlineEl.textContent = `${d.weather.icon || '🌤️'} ${d.weather.temp}°C${hum}`;
+    }
+
+    // Task Manager Drawer
+    const pwr = d.gpu_power ? ` • ${d.gpu_power}W` : '';
+    const zInfo = d.disk_z_free_gb ? ` • Drive Z: ${fmtGb(d.disk_z_free_gb)}` : '';
+    tmMeta.textContent = `Tiến trình: ${d.procs || '--'} • RTX 3060: ${gpu}% (${d.gpu_temp || '--'}°C${pwr}) • RAM: ${d.ram_used_gb || '--'}/${d.ram_total_gb || 64} GB${zInfo}`;
+    if (Array.isArray(d.top_ram) && d.top_ram.length) {
+      tmList.innerHTML = d.top_ram.map(item =>
+        `<div class="tm-item"><span>${item.name}</span><span class="tm-item-val">${Number(item.gb).toFixed(2)} GB</span></div>`
+      ).join('');
+    }
+  }
+
+  function loadStatsViaScriptFallback() {
+    const old = document.getElementById('agyStatsScript');
+    if (old) old.remove();
+    const s = document.createElement('script');
+    s.id = 'agyStatsScript';
+    s.src = `./live_stats.js?t=${Date.now()}`;
+    s.onload = () => { if (window.__AGY_STATS) applyStats(window.__AGY_STATS); };
+    document.head.appendChild(s);
+  }
+
+  async function pollTelemetry() {
+    let ok = false;
+    try {
+      const r = await fetch(`http://127.0.0.1:18625/stats.json?t=${Date.now()}`, { cache: 'no-store' });
+      if (r.ok) { applyStats(await r.json()); ok = true; }
+    } catch {}
+    if (!ok) loadStatsViaScriptFallback();
+  }
+
+  function callLocalEndpoint(path) {
+    const url = `http://127.0.0.1:18625${path}&t=${Date.now()}`;
+    try { fetch(url, { mode: 'no-cors', cache: 'no-store' }).catch(() => {}); } catch {}
+    const img = new Image();
+    img.src = url;
+  }
+
+  function openSystemTarget(target) {
+    callLocalEndpoint(`/open?target=${encodeURIComponent(target)}`);
+    const labels = {
+      taskmgr: '⚡ Đang mở Task Manager...',
+      resmon: '📈 Đang mở Resource Monitor...',
+      capcut: '🎬 Đang mở CapCut...',
+      photoshop: '🎨 Đang mở Photoshop 2026...',
+      htpm: '📁 Đang mở thư mục HTPM...',
+      finals: '☁️ Đang mở 04_Videos_Final...',
+      disk_d: '💾 Đang mở ổ D:\\...',
+      disk_z: '☁️ Đang mở Google Drive Z:\\...',
+      network: '🌐 Đang mở Cài đặt Mạng...'
+    };
+    showToast(labels[target] || 'Đang mở...');
+  }
+
+  function runSystemCmd(cmd) {
+    callLocalEndpoint(`/action?cmd=${encodeURIComponent(cmd)}`);
+    if (cmd === 'trim_ram') {
+      showToast('🧹 Đã giải phóng RAM nhàn rỗi!');
+      setTimeout(pollTelemetry, 1200);
+    } else if (cmd === 'media_play') showToast('⏯ Phát / Tạm dừng');
+    else if (cmd === 'media_next') showToast('⏭ Bài tiếp theo');
+    else if (cmd === 'media_prev') showToast('⏮ Bài trước');
+  }
+
+  // Bind clickable widgets & buttons
+  widgetsRow.querySelectorAll('[data-action]').forEach(el => {
+    el.addEventListener('click', (e) => { e.stopPropagation(); tmPanel.classList.toggle('open'); pollTelemetry(); });
+    el.addEventListener('dblclick', (e) => { e.stopPropagation(); openSystemTarget(el.getAttribute('data-dbl') || 'taskmgr'); });
+  });
+  document.getElementById('tmClose').addEventListener('click', (e) => { e.stopPropagation(); tmPanel.classList.remove('open'); });
+  document.querySelectorAll('[data-open]').forEach(btn => {
+    btn.addEventListener('click', (e) => { e.stopPropagation(); openSystemTarget(btn.getAttribute('data-open')); });
+  });
+  document.querySelectorAll('[data-cmd]').forEach(btn => {
+    btn.addEventListener('click', (e) => { e.stopPropagation(); runSystemCmd(btn.getAttribute('data-cmd')); });
+  });
+
+  // ===== Scenes & Clock (with strict orientation auto-correction on WebView2 resize) =====
+  function getCurrentOrient() {
+    return window.innerHeight > window.innerWidth ? 'v' : 'h';
+  }
+
+  function getTargetIdx() {
+    const n = SCENES.length;
+    if (!autoHourly) return ((lockedIdx % n) + n) % n;
+    return (((Math.floor(Date.now() / 3600000) + manualOffset) % n) + n) % n;
+  }
+
+  function showScene(idx, force = false) {
+    const orient = getCurrentOrient();
+    if (!force && idx === shownIdx && orient === shownOrient) return;
+    const orientChanged = shownOrient !== '' && orient !== shownOrient;
+    shownIdx = idx;
+    shownOrient = orient;
+    const mySeq = ++loadSeq;
+    const sc = SCENES[idx];
+    const jpgPath = `${sc.base}_${orient}.jpg`;
+    const mp4Path = `${sc.base}_${orient}.mp4`;
+
+    const nextImg = slotA ? imgA : imgB;
+    const prevImg = slotA ? imgB : imgA;
+    const nextVid = slotA ? vidA : vidB;
+    const prevVid = slotA ? vidB : vidA;
+    slotA = !slotA;
+
+    // Cancel any stale in-flight video callbacks to prevent portrait/landscape race condition
+    prevVid.oncanplay = null;
+    prevVid.onerror = null;
+    if (orientChanged || force) {
+      prevVid.classList.remove('active');
+      try { prevVid.pause(); prevVid.removeAttribute('src'); prevVid.load(); } catch {}
+    }
+
+    nextImg.src = jpgPath;
+    nextImg.classList.add('active');
+    prevImg.classList.remove('active');
+
+    nextVid.classList.remove('active');
+    nextVid.muted = true;
+    nextVid.loop = true;
+    nextVid.autoplay = true;
+    const tryStartVid = () => {
+      if (mySeq !== loadSeq) return;
+      const curO = getCurrentOrient();
+      if (nextVid.videoWidth > 0 && nextVid.videoHeight > 0 &&
+          ((curO === 'h' && nextVid.videoHeight > nextVid.videoWidth) ||
+           (curO === 'v' && nextVid.videoWidth > nextVid.videoHeight))) {
+        showScene(idx, true);
+        return;
+      }
+      const p = nextVid.play();
+      if (p && p.then) {
+        p.then(() => {
+          if (mySeq !== loadSeq) return;
+          nextVid.classList.add('active');
+          prevVid.classList.remove('active');
+          setTimeout(() => { if (mySeq === loadSeq) { try { prevVid.pause(); } catch {} } }, 1900);
+        }).catch(() => {});
+      } else {
+        nextVid.classList.add('active');
+        prevVid.classList.remove('active');
+      }
+    };
+    nextVid.onloadeddata = tryStartVid;
+    nextVid.oncanplay = tryStartVid;
+    nextVid.onerror = () => {
+      if (mySeq !== loadSeq) return;
+      nextVid.classList.remove('active');
+      prevVid.classList.remove('active');
+    };
+    nextVid.src = mp4Path;
+    nextVid.load();
+
+    updateHud();
+  }
+
+  // Self-healing playback watchdog (keeps Muse video moving smoothly after Lively pause/resume)
+  function ensureActiveVideoPlaying() {
+    const activeVid = slotA ? vidB : vidA;
+    if (activeVid && activeVid.getAttribute('src')) {
+      if (activeVid.paused && activeVid.readyState >= 2) {
+        activeVid.muted = true;
+        activeVid.play().then(() => activeVid.classList.add('active')).catch(() => {});
+      } else if (!activeVid.paused && !activeVid.classList.contains('active')) {
+        activeVid.classList.add('active');
+      }
+    }
+  }
+  setInterval(ensureActiveVideoPlaying, 2000);
+  document.addEventListener('visibilitychange', () => { if (!document.hidden) ensureActiveVideoPlaying(); });
+
+  function updateHud() {
+    const now = new Date();
+    const lunar = getLunarStr(now);
+    solarLunarEl.textContent = lunar
+      ? `${VI_DAYS[now.getDay()]}, ${now.getDate()}/${now.getMonth() + 1} • ${lunar}`
+      : `${VI_DAYS[now.getDay()]}, ${now.getDate()} tháng ${now.getMonth() + 1}`;
+    clockEl.textContent = `${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}`;
+    const tIdx = getTargetIdx();
+    if (tIdx !== shownIdx || getCurrentOrient() !== shownOrient) { showScene(tIdx); return; }
+    const sc = SCENES[shownIdx < 0 ? 0 : shownIdx];
+    badgeEl.textContent = autoHourly ? `${sc.title} • ĐỔI SAU ${60 - now.getMinutes()}P` : sc.title;
+  }
+
+  function syncWidgetsVisibility() {
+    widgetsRow.classList.toggle('widgets-hidden', !widgetsEnabled);
+    rightWidgets.classList.toggle('widgets-hidden', !widgetsEnabled);
+    if (!widgetsEnabled) tmPanel.classList.remove('open');
+  }
+
+  syncWidgetsVisibility();
+  showScene(getTargetIdx());
+  setTimeout(() => { if (getCurrentOrient() !== shownOrient) showScene(getTargetIdx(), true); }, 350);
+  setTimeout(() => { if (getCurrentOrient() !== shownOrient) showScene(getTargetIdx(), true); }, 1200);
+  updateHud();
+  pollTelemetry();
+  setInterval(updateHud, 2000);
+  setInterval(pollTelemetry, 2000);
+
+  // Floating Petals & Sunlit Motes
+  const canvas = document.getElementById('fxCanvas');
+  const ctx = canvas.getContext('2d');
+  let W = window.innerWidth, H = window.innerHeight;
+  let DPR = Math.min(window.devicePixelRatio || 1, 2.0);
+  function resize() {
+    W = window.innerWidth; H = window.innerHeight;
+    DPR = Math.min(window.devicePixelRatio || 1, 2.0);
+    canvas.width = Math.round(W * DPR);
+    canvas.height = Math.round(H * DPR);
+    ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+    if (shownIdx >= 0 && getCurrentOrient() !== shownOrient) {
+      showScene(shownIdx, true);
+    }
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  const motes = Array.from({ length: 26 }, () => ({
+    x: Math.random() * W, y: Math.random() * H,
+    vx: 0.35 + Math.random() * 0.75, vy: 0.20 + Math.random() * 0.55,
+    r: 2.5 + Math.random() * 4.5, rot: Math.random() * 6.28,
+    rotSpd: (Math.random() - 0.5) * 0.03, phase: Math.random() * 6.28,
+    a: 0.30 + Math.random() * 0.45
+  }));
+  const bursts = [];
+  let mx = 0.5, my = 0.5, smx = 0.5, smy = 0.5;
+
+  window.addEventListener('mousemove', (e) => {
+    mx = e.clientX / W; my = e.clientY / H;
+    dockEl.classList.toggle('visible', e.clientY > H - 84);
+    if (fxEnabled && Math.random() < 0.35 && bursts.length < 70) {
+      bursts.push({
+        x: e.clientX + (Math.random()-0.5)*14, y: e.clientY + (Math.random()-0.5)*14,
+        vx: (Math.random()-0.5)*1.2, vy: -0.4 - Math.random()*0.9,
+        r: 1.4 + Math.random()*2.2, life: 0.9, decay: 0.025,
+        col: Math.random() < 0.5 ? '#ffe3ec' : '#fff3c4'
+      });
+    }
+  });
+
+  window.addEventListener('mousedown', (e) => {
+    if (e.target && e.target.closest && (
+      e.target.closest('#dock') || e.target.closest('#widgetsRow') ||
+      e.target.closest('#tmPanel') || e.target.closest('#leftWidgets') || e.target.closest('#rightWidgets')
+    )) return;
+    tmPanel.classList.remove('open');
+    if (!fxEnabled) return;
+    for (let i = 0; i < 18; i++) {
+      const a = Math.random() * 6.28, sp = 1.5 + Math.random() * 4.5;
+      bursts.push({
+        x: e.clientX, y: e.clientY,
+        vx: Math.cos(a) * sp, vy: Math.sin(a) * sp - 0.8,
+        r: 2.2 + Math.random() * 3.0, life: 1.0, decay: 0.02,
+        col: i % 2 ? '#ffd1e3' : '#fff0b8'
+      });
+    }
+  });
+
+  const autoBtn = document.getElementById('autoBtn');
+  const widgetBtn = document.getElementById('widgetBtn');
+  const fxBtn = document.getElementById('fxBtn');
+  widgetBtn.classList.toggle('active', widgetsEnabled);
+
+  document.getElementById('prevBtn').addEventListener('click', (e) => {
+    e.stopPropagation();
+    const n = SCENES.length;
+    if (autoHourly) { manualOffset = (manualOffset + n - 1) % n; localStorage.setItem('agy_muses_offset', String(manualOffset)); showScene(getTargetIdx()); }
+    else { lockedIdx = (lockedIdx + n - 1) % n; showScene(lockedIdx); }
+  });
+  document.getElementById('nextBtn').addEventListener('click', (e) => {
+    e.stopPropagation();
+    const n = SCENES.length;
+    if (autoHourly) { manualOffset = (manualOffset + 1) % n; localStorage.setItem('agy_muses_offset', String(manualOffset)); showScene(getTargetIdx()); }
+    else { lockedIdx = (lockedIdx + 1) % n; showScene(lockedIdx); }
+  });
+  autoBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    autoHourly = !autoHourly;
+    if (!autoHourly) lockedIdx = shownIdx;
+    autoBtn.classList.toggle('active', autoHourly);
+    updateHud();
+  });
+  widgetBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    widgetsEnabled = !widgetsEnabled;
+    localStorage.setItem('agy_muses_widgets', widgetsEnabled ? '1' : '0');
+    syncWidgetsVisibility();
+    widgetBtn.classList.toggle('active', widgetsEnabled);
+    if (widgetsEnabled) pollTelemetry();
+  });
+  fxBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    fxEnabled = !fxEnabled;
+    fxBtn.classList.toggle('active', fxEnabled);
+  });
+
+  window.livelyPropertyListener = (name, val) => {
+    if (name === 'sceneMode') {
+      const v = Number(val);
+      if (v === 0) { autoHourly = true; showScene(getTargetIdx()); }
+      else { autoHourly = false; lockedIdx = (v - 1) % SCENES.length; showScene(lockedIdx); }
+      autoBtn.classList.toggle('active', autoHourly);
+    } else if (name === 'showClock') {
+      hudEl.style.opacity = val ? '1' : '0';
+    }
+  };
+
+  const bgStage = document.getElementById('bgStage');
+  const t0 = performance.now();
+  function tick(now) {
+    const t = (now - t0) * 0.001;
+    smx += (mx - smx) * 0.05;
+    smy += (my - smy) * 0.05;
+    bgStage.style.transform = `translate3d(${((0.5 - smx) * 14).toFixed(1)}px, ${((0.5 - smy) * 10).toFixed(1)}px, 0)`;
+
+    ctx.clearRect(0, 0, W, H);
+    if (fxEnabled) {
+      const fxType = SCENES[shownIdx < 0 ? 0 : shownIdx].fx;
+      for (const m of motes) {
+        m.x += m.vx + Math.sin(t + m.phase) * 0.35;
+        m.y += (fxType === 'bokeh' ? -m.vy * 0.6 : m.vy);
+        m.rot += m.rotSpd;
+        if (m.x > W + 25) m.x = -25;
+        if (m.y > H + 25) { m.y = -25; m.x = Math.random() * W; }
+        if (m.y < -25) { m.y = H + 25; m.x = Math.random() * W; }
+
+        ctx.save();
+        ctx.translate(m.x, m.y);
+        if (fxType === 'sakura') {
+          ctx.rotate(m.rot);
+          ctx.globalAlpha = m.a;
+          ctx.fillStyle = '#ffd6e5';
+          ctx.beginPath();
+          ctx.moveTo(0, -m.r);
+          ctx.quadraticCurveTo(m.r * 0.8, 0, 0, m.r);
+          ctx.quadraticCurveTo(-m.r * 0.8, 0, 0, -m.r);
+          ctx.fill();
+        } else {
+          ctx.globalCompositeOperation = 'lighter';
+          const g = ctx.createRadialGradient(0, 0, 0, 0, 0, m.r * (fxType === 'bokeh' ? 3.2 : 1.9));
+          g.addColorStop(0, `rgba(255, 244, 214, ${m.a * (0.6 + 0.4 * Math.sin(t * 2 + m.phase))})`);
+          g.addColorStop(1, 'rgba(255, 220, 180, 0)');
+          ctx.fillStyle = g;
+          ctx.beginPath();
+          ctx.arc(0, 0, m.r * (fxType === 'bokeh' ? 3.2 : 1.9), 0, 6.28);
+          ctx.fill();
+        }
+        ctx.restore();
+      }
+
+      ctx.save();
+      ctx.globalCompositeOperation = 'lighter';
+      for (let i = bursts.length - 1; i >= 0; i--) {
+        const b = bursts[i];
+        b.x += b.vx; b.y += b.vy; b.life -= b.decay;
+        if (b.life <= 0) { bursts.splice(i, 1); continue; }
+        ctx.globalAlpha = b.life;
+        ctx.fillStyle = b.col;
+        ctx.beginPath(); ctx.arc(b.x, b.y, b.r * b.life, 0, 6.28); ctx.fill();
+      }
+      ctx.restore();
+    }
+    requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+})();
+</script>
+</body>
+</html>

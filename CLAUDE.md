@@ -2,6 +2,10 @@
 
 **Việc đầu tiên, với mọi yêu cầu: đọc `HUONG-DAN-AI.md`** (mục tiêu dự án, luồng subagent, chọn kit, dịch vụ và cổng, việc phải hỏi người dùng). Sau đó mới đọc kit theo loại video bên dưới.
 
+## Memory của từng phong cách (đọc trước, ghi sau)
+Mỗi phong cách có folder `memory/` (cạnh `PHONG-CACH.md`/`AGENTS.md`): `README.md`, `y-nguoi-dung.md`, `loi-da-gap.md`, `cach-lam-tot.md`, `nhat-ky-video.md`.
+**Đọc `memory/README.md` rồi các file trong đó TRƯỚC khi làm video thuộc phong cách đó; ghi lại bài học SAU khi làm xong** (một dòng nhật ký, bẫy mới, lời khen/chê của người dùng). Phong cách mới tạo từ video mẫu cũng phải có `memory/` (sao từ một phong cách có sẵn).
+
 ## Làm một video (luồng điều phối bằng subagent)
 Khi người dùng đưa chủ đề / brief và muốn ra video: theo **mục 2 của `HUONG-DAN-AI.md`**. Gọi lần lượt subagent
 `content` (viết kịch bản, **dừng chờ người dùng duyệt**), `tao-asset` (giọng + clip AI, chỉ sau khi duyệt), `edit` (dựng bằng kit
@@ -39,6 +43,7 @@ Làm hook: đọc thêm `knowledge/11` (ví dụ tiếng Việt) và `knowledge/
 Khi người dùng muốn video người mẫu AI nói + khoe sản phẩm, một cú máy, camera cố định, không chữ (clip Omni + giọng AI):
 đọc `phong-cach/ugc-ai-thoi-trang/PHONG-CACH.md` rồi `ref-notes.md`. Kit rút từ **một** video mẫu, đã chạy thật 1 lần (bài học ở mục 6b của `PHONG-CACH.md`).
 
+<<<<<<< HEAD
 ## Video Talking Head × Motion Graphics Kiểu Kobe (`Dark 16:9 Stage` & `Light SaaS UI` + `Circle PiP`) & Chiến Dịch 10 Kịch Bản Liên Hoàn
 Khi người dùng yêu cầu làm video **chia sẻ chuyên môn / bán khóa học / giới thiệu công cụ / tư vấn dịch vụ** theo phong cách **Motion Graphics trực quan + Người nói khung tròn (`Circle PiP`), không rải phụ đề karaoke**, hoặc muốn viết **1 Super-Prompt ra trọn bộ 10 kịch bản (3 Hook) + Ads + Bài giảng + Landing Page**:
 1. Đọc `phong-cach/kobe-ai-motion-talking-head/PHONG-CACH.md`, `phong-cach/kobe-ai-motion-talking-head/KIEN-THUC-TRUYEN-TAI-TU-2-VIDEO.md` và `.agents/skills/kobe-motion-talking-head/SKILL.md`.
@@ -57,5 +62,12 @@ Khi người dùng yêu cầu dựng **TVC quảng cáo sản phẩm (Dược m�
 - **Chỉnh màu 3D LUTs (`12` `.cube`), Video Overlays (`10` `.mp4` Screen), `Brand Kits` & Tách nền sản phẩm PNG (`IS-Net`)**: `BO_KIEN_THUC_TVC_AI_PORTABLE/03_TAI_NGUYEN_DUNG_CHUNG/luts_chinh_mau/` (`apply_lut.py`), `video_overlays_4k/`, `brand_kits/` và `05_SCRIPTS_TU_DONG_HOA/cutout_product_png.py`.
 - **Talking Head Dược sĩ / Chuyên gia (`talking-head-v3`)**: Đọc thêm `.agents/skills/talking-head-v3/SKILL.md`.
 - **Quy chuẩn Đặt Tên & Thư Mục Xuất Video Final Bắt Buộc Toàn Hệ Thống (`edit/canvas-tools/final_delivery.py`)**: Mọi video Final bắt buộc đặt tên **`<YYMMDD> <Thương hiệu> <tên tiếng Việt có dấu> final.mp4`** (ví dụ: `261119 HTPM 5 sản phẩm tuổi 25 final.mp4`) và lưu thẳng vào đúng thư mục hoàn thiện của từng nhãn hàng (`HTPM` → `Z:\Máy tính khác\My Computer\hằng thu pharma\05. Video Hoàn Thiện\K6 - Hằng Thu Pharma\`, `F20` → `Z:\Máy tính khác\My Computer\F20\Final\`, `Feel Chicken` → `Z:\Máy tính khác\My Computer\feel chicken\FINAL FEEL CHICKEN\`, `MS Nội Thất` → `Z:\Drive của tôi\dự án ngoài\MS Nội Thất\`, `Việt Hàn` → `...\VIỆT HÀN\File Hoàn Thiện Việt Hàn\`), đồng bộ kèm bản sao tại `Z:\Drive của tôi\AI_Full_Studio\04_Videos_Final\` và `D:\XUẤT CAPCUT\`.
+=======
+## Tool Edit (phần mềm dựng video của dự án)
+Tool Edit là phần mềm dựng kiểu CapCut chạy bằng GPU, có MCP `tool-edit` cho AI (đã có mã, bản chạy ở `tool-edit/release/ToolEdit/ToolEdit.exe`).
+- **Dùng Tool Edit để EDIT video** (người dùng bảo dựng/sửa video bằng Tool Edit): **đọc `tool-edit/HUONG-DAN-SU-DUNG-AI.md` trước** (chuẩn bị, AI tự áp dụng không cần duyệt, quy trình, danh sách tool, luật dựng, hạn chế).
+- **Sửa/xây thêm chức năng cho phần mềm**: đọc `tool-edit/HUONG-DAN-AI.md`, rồi `KE-HOACH.md`, `CHUC-NANG.md`, `NHAT-KY.md`.
+- **Làm xong chức năng nào phải cập nhật CẢ BA**: `CHUC-NANG.md`, `NHAT-KY.md` và `tool-edit/HUONG-DAN-SU-DUNG-AI.md` (mục tool/luật/hạn chế + dòng "Cập nhật gần nhất"). Đừng nhầm với việc dựng video bằng After Effects.
+>>>>>>> origin/main
 
 Trả lời bằng tiếng Việt.

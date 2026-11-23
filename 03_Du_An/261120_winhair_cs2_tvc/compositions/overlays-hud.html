@@ -1,0 +1,689 @@
+<template>
+  <style>
+@font-face {
+  font-family: "Anton";
+  src: url("assets/fonts/Anton-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: "Asap Condensed";
+  src: url("assets/fonts/AsapCondensed-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: "Asap Condensed";
+  src: url("assets/fonts/AsapCondensed-ExtraBold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: "Asap Condensed";
+  src: url("assets/fonts/AsapCondensed-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("assets/fonts/Montserrat-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("assets/fonts/Montserrat-ExtraBold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("assets/fonts/Montserrat-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: "Be Vietnam Pro";
+  src: url("assets/fonts/BeVietnamPro-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: "Be Vietnam Pro";
+  src: url("assets/fonts/BeVietnamPro-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: "Be Vietnam Pro";
+  src: url("assets/fonts/BeVietnamPro-ExtraBold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: block;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+#root {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  font-family: "Montserrat", sans-serif;
+  color: #ffffff;
+}
+.wh-stage {
+  position: absolute;
+  inset: 0;
+  perspective: 1300px;
+  transform-style: preserve-3d;
+}
+.wh-bg-obsidian {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 50% 15%, #3D1114 0%, #1C0B09 48%, #080606 100%);
+}
+.wh-bg-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(245, 197, 66, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(245, 197, 66, 0.055) 1px, transparent 1px);
+  background-size: 64px 64px;
+  pointer-events: none;
+}
+.wh-bokeh-vid {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1920px;
+  height: 1080px;
+  object-fit: cover;
+  mix-blend-mode: screen;
+  opacity: 0.42;
+  pointer-events: none;
+}
+/* 2-Layer Metallic Gradient Typography (Generous top padding prevents Vietnamese diacritic clipping) */
+.wh-grad-wrap {
+  position: relative;
+  display: inline-block;
+  padding: 16px 12px 6px 12px;
+  margin: -12px -12px -4px -12px;
+}
+.wh-grad-back {
+  display: block;
+  padding: 0;
+  user-select: none;
+  paint-order: stroke fill;
+  -webkit-text-stroke: 7px #140806;
+  color: #140806;
+  filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.85));
+}
+.wh-grad-front {
+  position: absolute;
+  inset: 0;
+  padding: 16px 12px 6px 12px;
+  display: block;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  background-size: 240% 100%, 100% 100%;
+  background-position: -130% 0, 0 0;
+}
+.wh-gold-fill {
+  background-image:
+    linear-gradient(115deg, rgba(255,255,255,0) 35%, rgba(255,255,255,0.96) 50%, rgba(255,255,255,0) 65%),
+    linear-gradient(180deg, #FFFDF2 0%, #FFE27D 26%, #D69324 54%, #FFEDA8 78%, #9B600C 100%);
+}
+.wh-ruby-fill {
+  background-image:
+    linear-gradient(115deg, rgba(255,255,255,0) 35%, rgba(255,255,255,0.94) 50%, rgba(255,255,255,0) 65%),
+    linear-gradient(180deg, #FFEBEB 0%, #FF5960 26%, #D6121B 55%, #FF8F94 78%, #7E060C 100%);
+}
+/* Header block */
+.wh-header {
+  position: absolute;
+  left: 96px;
+  right: 96px;
+  top: 44px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  z-index: 12;
+}
+.wh-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 22px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(190, 20, 28, 0.92), rgba(115, 8, 14, 0.92));
+  border: 1.5px solid rgba(255, 222, 130, 0.78);
+  box-shadow: 0 6px 20px rgba(214, 18, 27, 0.45);
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+  font-size: 17px;
+  letter-spacing: 0.12em;
+  color: #FFF6D6;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.wh-title-lg {
+  font-family: "Asap Condensed", sans-serif;
+  font-weight: 900;
+  font-size: 60px;
+  line-height: 1.22;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+.wh-flare-bar {
+  width: 560px;
+  height: 3px;
+  margin-top: 8px;
+  background: linear-gradient(90deg, transparent 0%, #FFD666 32%, #FFFFFF 50%, #FFD666 68%, transparent 100%);
+  box-shadow: 0 0 22px 3px rgba(255, 208, 92, 0.82);
+  border-radius: 999px;
+}
+/* Beveled Luxury Media Card */
+.wh-card {
+  position: absolute;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #120D0B;
+  border: 2px solid rgba(250, 210, 110, 0.78);
+  box-shadow:
+    0 22px 52px rgba(0, 0, 0, 0.78),
+    0 0 26px rgba(245, 190, 66, 0.18),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.18);
+}
+.wh-vid-fill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.wh-card-shade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.06) 0%, rgba(0,0,0,0.12) 52%, rgba(8,5,4,0.92) 100%);
+  pointer-events: none;
+}
+.wh-card-sheen {
+  position: absolute;
+  inset: -20%;
+  background: linear-gradient(115deg, transparent 38%, rgba(255, 246, 205, 0.48) 50%, transparent 62%);
+  pointer-events: none;
+  opacity: 0;
+}
+.wh-card-caption {
+  position: absolute;
+  left: 18px;
+  right: 18px;
+  bottom: 16px;
+  z-index: 4;
+}
+.wh-badge-num {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #FFE484, #C88418);
+  color: #160A04;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
+  font-size: 15px;
+  letter-spacing: 0.06em;
+  margin-bottom: 6px;
+}
+.wh-card-h3 {
+  font-family: "Asap Condensed", sans-serif;
+  font-weight: 900;
+  font-size: 32px;
+  line-height: 1.1;
+  color: #FFF6D6;
+  text-transform: uppercase;
+  text-shadow: 0 3px 12px rgba(0,0,0,0.9);
+}
+.wh-card-p {
+  margin-top: 3px;
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  color: #E8DFD5;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.9);
+}
+/* Feature Pill Row */
+.wh-pill-row {
+  position: absolute;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
+  z-index: 14;
+}
+.wh-lux-pill {
+  padding: 12px 24px;
+  border-radius: 14px;
+  background: rgba(18, 12, 10, 0.88);
+  border: 1.5px solid rgba(248, 205, 98, 0.72);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.65);
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+  font-size: 20px;
+  color: #FFE999;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+    /* Corner Brand Watermark */
+    .wh-corner-host {
+      position: absolute;
+      right: 58px;
+      top: 42px;
+      z-index: 22;
+    }
+    .wh-corner-pill {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 18px;
+      border-radius: 999px;
+      background: rgba(12, 8, 7, 0.72);
+      border: 1.5px solid rgba(248, 206, 102, 0.62);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+    }
+    .wh-monogram {
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+      background: linear-gradient(135deg, #FFE484, #B87914);
+      color: #160A04;
+      font-family: "Montserrat", sans-serif;
+      font-weight: 900;
+      font-size: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .wh-corner-txt {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 800;
+      font-size: 15px;
+      letter-spacing: 0.08em;
+      color: #FFE799;
+    }
+
+    /* Grand Intro Hero Lockup (0.00 - 4.95s) */
+    .wh-intro-host {
+      position: absolute;
+      inset: 0;
+      z-index: 25;
+      pointer-events: none;
+    }
+    .wh-intro- vignette {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0.10) 0%, rgba(0,0,0,0.15) 52%, rgba(8,4,4,0.88) 100%);
+    }
+    .wh-intro-stack {
+      position: absolute;
+      left: 120px;
+      right: 120px;
+      bottom: 64px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    .wh-intro-main {
+      font-family: "Anton", sans-serif;
+      font-size: 112px;
+      line-height: 1.02;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .wh-intro-sub {
+      margin-top: 10px;
+      padding: 10px 34px;
+      border-radius: 14px;
+      background: linear-gradient(90deg, rgba(16, 10, 8, 0.92), rgba(48, 12, 12, 0.92), rgba(16, 10, 8, 0.92));
+      border: 2px solid rgba(252, 212, 108, 0.85);
+      box-shadow: 0 14px 36px rgba(0,0,0,0.8);
+      font-family: "Asap Condensed", sans-serif;
+      font-weight: 900;
+      font-size: 40px;
+      letter-spacing: 0.06em;
+      color: #FFF4CC;
+      text-transform: uppercase;
+    }
+
+    /* FCP Architectural Lower-Third / Upper-Left HUD Card */
+    .wh-fcp-host {
+      position: absolute;
+      left: 64px;
+      top: 46px;
+      z-index: 24;
+      pointer-events: none;
+    }
+    .wh-fcp-card {
+      display: flex;
+      align-items: stretch;
+      background: linear-gradient(135deg, rgba(14, 10, 9, 0.90), rgba(32, 12, 12, 0.86));
+      border: 1.5px solid rgba(248, 205, 98, 0.65);
+      border-radius: 16px;
+      box-shadow: 0 16px 38px rgba(0, 0, 0, 0.68);
+      overflow: hidden;
+      max-width: 720px;
+    }
+    .wh-fcp-bar {
+      width: 7px;
+      background: linear-gradient(180deg, #FFE896, #D91822);
+      transform-origin: 50% 0%;
+    }
+    .wh-fcp-body {
+      padding: 14px 24px;
+    }
+    .wh-fcp-kicker {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 800;
+      font-size: 14px;
+      letter-spacing: 0.10em;
+      color: #FFD966;
+      text-transform: uppercase;
+    }
+    .wh-fcp-title {
+      margin-top: 3px;
+      font-family: "Asap Condensed", sans-serif;
+      font-weight: 900;
+      font-size: 31px;
+      line-height: 1.1;
+      color: #FFFFFF;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+    }
+    .wh-fcp-sub {
+      margin-top: 4px;
+      font-family: "Be Vietnam Pro", sans-serif;
+      font-weight: 600;
+      font-size: 16px;
+      color: #E8DDD2;
+    }
+
+    /* End-Card Lockup (307.80 - 316.40s) */
+    .wh-end-host {
+      position: absolute;
+      inset: 0;
+      z-index: 26;
+      pointer-events: none;
+    }
+    .wh-end-top {
+      position: absolute;
+      left: 120px;
+      right: 120px;
+      top: 56px;
+      text-align: center;
+    }
+    .wh-end-bot {
+      position: absolute;
+      left: 96px;
+      right: 96px;
+      bottom: 54px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+    }
+    .wh-end-pill {
+      padding: 14px 26px;
+      border-radius: 14px;
+      background: rgba(14, 10, 8, 0.90);
+      border: 1.8px solid rgba(250, 208, 102, 0.80);
+      box-shadow: 0 14px 34px rgba(0,0,0,0.8);
+      font-family: "Montserrat", sans-serif;
+      font-weight: 800;
+      font-size: 20px;
+      color: #FFF3CC;
+    }
+    .wh-end-hotline {
+      padding: 15px 32px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #D91822, #85080F);
+      border: 2px solid #FFE484;
+      box-shadow: 0 14px 36px rgba(217, 24, 34, 0.55);
+      font-family: "Montserrat", sans-serif;
+      font-weight: 900;
+      font-size: 22px;
+      color: #FFFFFF;
+      letter-spacing: 0.04em;
+    }
+  </style>
+
+  <div id="root" data-composition-id="overlays-hud" data-width="1920" data-height="1080">
+    <!-- 1. GRAND INTRO HERO LOCKUP (0.05s - 4.95s) -->
+    <div id="intro-hero" class="clip wh-intro-host" data-start="0.05" data-duration="4.90" data-track-index="1" data-layout-allow-caption-zone>
+      <div id="intro-stack" class="wh-intro-stack">
+        <div id="intro-kicker" class="wh-kicker" style="font-size: 19px; margin-bottom: 10px;">
+          ★ THẾ GIỚI TÓC NAM & RELAX 5 SAO ★
+        </div>
+        <div id="intro-wordmark">
+          <span class="wh-grad-wrap wh-intro-main" data-layout-allow-overlap>
+      <span class="wh-grad-back" aria-hidden="true" data-layout-ignore>WIN HAIR SALON</span>
+      <span id="intro-wm-sheen" class="wh-grad-front wh-gold-fill" data-layout-allow-overlap>WIN HAIR SALON</span>
+    </span>
+        </div>
+        <div id="intro-flare" class="wh-flare-bar" style="width: 720px; margin-top: 6px;" data-layout-ignore></div>
+        <div id="intro-tagline" class="wh-intro-sub" data-var-text="brand_tagline">
+          ĐẲNG CẤP TÓC NAM SỐ 1 NHA TRANG
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. PERSISTENT CORNER BRAND WATERMARK (5.00s - 307.40s) -->
+    <div id="corner-bug" class="clip wh-corner-host" data-start="5.00" data-duration="302.40" data-track-index="0">
+      <div id="corner-pill" class="wh-corner-pill">
+        <div class="wh-monogram">WH</div>
+        <div class="wh-corner-txt" data-var-text="brand_name">WIN HAIR SALON</div>
+      </div>
+    </div>
+
+    <!-- 3. FCP SECTION & TESTIMONIAL LOWER-THIRDS -->
+    
+    <div id="hud-koc" class="clip wh-fcp-host" data-start="12.57" data-duration="3.18" data-track-index="2">
+      <div id="hud-koc-box" class="wh-fcp-card">
+        <div id="hud-koc-bar" class="wh-fcp-bar" data-layout-ignore></div>
+        <div class="wh-fcp-body">
+          <div class="wh-fcp-kicker">★ UY TÍN THƯƠNG HIỆU</div>
+          <div class="wh-fcp-title">ĐÔNG ĐẢO KOC · KOL TIN CHỌN</div>
+          <div class="wh-fcp-sub">Hài lòng khách địa phương lẫn du khách quốc tế</div>
+        </div>
+      </div>
+    </div>
+    <div id="hud-f1" class="clip wh-fcp-host" data-start="15.88" data-duration="10.65" data-track-index="2">
+      <div id="hud-f1-box" class="wh-fcp-card">
+        <div id="hud-f1-bar" class="wh-fcp-bar" data-layout-ignore></div>
+        <div class="wh-fcp-body">
+          <div class="wh-fcp-kicker">📍 KHÔNG GIAN TẦNG 01</div>
+          <div class="wh-fcp-title">SẢNH ĐÓN TIẾP SANG TRỌNG</div>
+          <div class="wh-fcp-sub">Nhân viên chào đón niềm nở · Ghế chờ gỗ êm ái</div>
+        </div>
+      </div>
+    </div>
+    <div id="hud-menu" class="clip wh-fcp-host" data-start="26.75" data-duration="8.45" data-track-index="2">
+      <div id="hud-menu-box" class="wh-fcp-card">
+        <div id="hud-menu-bar" class="wh-fcp-bar" data-layout-ignore></div>
+        <div class="wh-fcp-body">
+          <div class="wh-fcp-kicker">✦ DỊCH VỤ MINH BẠCH</div>
+          <div class="wh-fcp-title">BẢNG GIÁ RÕ RÀNG · TƯ VẤN TẬN TÂM</div>
+          <div class="wh-fcp-sub">Đa dạng gói Combo dễ dàng lựa chọn theo nhu cầu</div>
+        </div>
+      </div>
+    </div>
+    <div id="hud-cutzone" class="clip wh-fcp-host" data-start="42.75" data-duration="10.20" data-track-index="2">
+      <div id="hud-cutzone-box" class="wh-fcp-card">
+        <div id="hud-cutzone-bar" class="wh-fcp-bar" data-layout-ignore></div>
+        <div class="wh-fcp-body">
+          <div class="wh-fcp-kicker">✂ KHU VỰC TẠO KIỂU</div>
+          <div class="wh-fcp-title">KHU CẮT TÓC CHUẨN PHONG ĐỘ</div>
+          <div class="wh-fcp-sub">Gương sáng · Ghế xịn · Ngồi vào yên tâm, đứng dậy là bảnh!</div>
+        </div>
+      </div>
+    </div>
+    <div id="hud-king" class="clip wh-fcp-host" data-start="59.75" data-duration="10.20" data-track-index="2">
+      <div id="hud-king-box" class="wh-fcp-card">
+        <div id="hud-king-bar" class="wh-fcp-bar" data-layout-ignore></div>
+        <div class="wh-fcp-body">
+          <div class="wh-fcp-kicker">★ TIỆN ÍCH VIP MIỄN PHÍ</div>
+          <div class="wh-fcp-title">GHẾ MASSAGE KINGSPORT &amp; ĐỒ UỐNG</div>
+          <div class="wh-fcp-sub">Mời miễn phí Nước Cam · Trà Chanh · Cà Phê như đi nghỉ dưỡng</div>
+        </div>
+      </div>
+    </div>
+    <div id="hud-priv" class="clip wh-fcp-host" data-start="70.35" data-duration="9.75" data-track-index="2">
+      <div id="hud-priv-box" class="wh-fcp-card">
+        <div id="hud-priv-bar" class="wh-fcp-bar" data-layout-ignore></div>
+        <div class="wh-fcp-body">
+          <div class="wh-fcp-kicker">🔒 KHÔNG GIAN RIÊNG TƯ</div>
+          <div class="wh-fcp-title">HỆ THỐNG PHÒNG RIÊNG PHỤC VỤ 1 : 1</div>
+          <div class="wh-fcp-sub">Kéo rèm riêng biệt · Không ồn · Không phiền · Chỉ có thư giãn</div>
+        </div>
+      </div>
+    </div>
+    <div id="hud-staff" class="clip wh-fcp-host" data-start="136.85" data-duration="15.55" data-track-index="2">
+      <div id="hud-staff-box" class="wh-fcp-card">
+        <div id="hud-staff-bar" class="wh-fcp-bar" data-layout-ignore></div>
+        <div class="wh-fcp-body">
+          <div class="wh-fcp-kicker">★ ĐỘI NGŨ KỸ THUẬT VIÊN</div>
+          <div class="wh-fcp-title">TAY NGHỀ CHUẨN · TÁC PHONG CHỈNH TỀ</div>
+          <div class="wh-fcp-sub">Không cắt cho nhanh mà cắt cho chuẩn · Tận tâm từ lúc vào đến lúc về</div>
+        </div>
+      </div>
+    </div>
+    <div id="hud-rev1" class="clip wh-fcp-host" data-start="152.80" data-duration="18.90" data-track-index="2">
+      <div id="hud-rev1-box" class="wh-fcp-card">
+        <div id="hud-rev1-bar" class="wh-fcp-bar" data-layout-ignore></div>
+        <div class="wh-fcp-body">
+          <div class="wh-fcp-kicker">★★★★★ ĐÁNH GIÁ 10 / 10</div>
+          <div class="wh-fcp-title">KHÁCH HÀNG TRẢI NGHIỆM THỰC TẾ</div>
+          <div class="wh-fcp-sub">“Không gian sang trọng sạch sẽ · Cả gia đình đều mê!”</div>
+        </div>
+      </div>
+    </div>
+    <div id="hud-rev2" class="clip wh-fcp-host" data-start="172.10" data-duration="16.45" data-track-index="2">
+      <div id="hud-rev2-box" class="wh-fcp-card">
+        <div id="hud-rev2-bar" class="wh-fcp-bar" data-layout-ignore></div>
+        <div class="wh-fcp-body">
+          <div class="wh-fcp-kicker">★★★★★ ĐÁNH GIÁ 10 / 10</div>
+          <div class="wh-fcp-title">KHÁCH HÀNG TRẢI NGHIỆM DỊCH VỤ</div>
+          <div class="wh-fcp-sub">“Được chăm sóc tận tình chuẩn Thượng Đế!”</div>
+        </div>
+      </div>
+    </div>
+    <div id="hud-rev3" class="clip wh-fcp-host" data-start="188.90" data-duration="22.85" data-track-index="2">
+      <div id="hud-rev3-box" class="wh-fcp-card">
+        <div id="hud-rev3-bar" class="wh-fcp-bar" data-layout-ignore></div>
+        <div class="wh-fcp-body">
+          <div class="wh-fcp-kicker">★★★★★ ANH NAM CHẤM 10 / 10</div>
+          <div class="wh-fcp-title">KHÁCH HÀNG NAM THÂN THIẾT</div>
+          <div class="wh-fcp-sub">“Reset lại bản thân · Tút lại vẻ đẹp trai &amp; phong độ!”</div>
+        </div>
+      </div>
+    </div>
+    <div id="hud-rev4" class="clip wh-fcp-host" data-start="212.15" data-duration="43.35" data-track-index="2">
+      <div id="hud-rev4-box" class="wh-fcp-card">
+        <div id="hud-rev4-bar" class="wh-fcp-bar" data-layout-ignore></div>
+        <div class="wh-fcp-body">
+          <div class="wh-fcp-kicker">★★★★★ ANH HƯNG &amp; ANH HUY</div>
+          <div class="wh-fcp-title">TRẢI NGHIỆM COMBO VIP GỘI · RÁY TAI · MASSAGE</div>
+          <div class="wh-fcp-sub">“Ráy tai nhẹ quá ngủ thiếp đi luôn · Làm xong người nhẹ hẳn!”</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. GRAND END-CARD LOCKUP OVER GOLD LOGO REVEAL (307.80s - 316.40s) -->
+    <div id="end-lockup" class="clip wh-end-host" data-start="307.80" data-duration="8.60" data-track-index="3" data-layout-allow-caption-zone>
+      <div id="end-top" class="wh-end-top">
+        <div class="wh-kicker" style="font-size: 18px;">★ HỆ THỐNG SALON TÓC NAM HÀNG ĐẦU KHÁNH HÒA ★</div>
+        <div style="margin-top: 6px;">
+          <span class="wh-grad-wrap wh-title-lg" data-layout-allow-overlap>
+      <span class="wh-grad-back" aria-hidden="true" data-layout-ignore>ĐẲNG CẤP TÓC NAM SỐ 1 NHA TRANG</span>
+      <span id="end-ttl-sheen" class="wh-grad-front wh-gold-fill" data-layout-allow-overlap>ĐẲNG CẤP TÓC NAM SỐ 1 NHA TRANG</span>
+    </span>
+        </div>
+      </div>
+
+      <div id="end-bot" class="wh-end-bot">
+        <div class="wh-end-pill" data-var-text="branch_1">📍 CS1: 41 LÝ TỰ TRỌNG</div>
+        <div class="wh-end-hotline" data-var-text="hotline">☎ HOTLINE: 0352 956 779</div>
+        <div class="wh-end-pill" data-var-text="branch_2">📍 CS2: 59 THÍCH QUẢNG ĐỨC</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const tl = gsap.timeline({ paused: true });
+
+    // Intro Hero Animation
+    tl.fromTo("#intro-kicker", { opacity: 0, y: -20, filter: "blur(8px)" }, { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.28, ease: "power3.out" }, 0.08);
+    tl.fromTo("#intro-wordmark", { opacity: 0, scale: 1.24, filter: "blur(14px)" }, { opacity: 1, scale: 1.0, filter: "blur(0px)", duration: 0.38, ease: "back.out(1.35)" }, 0.14);
+    tl.fromTo("#intro-flare", { scaleX: 0, opacity: 0 }, { scaleX: 1, opacity: 1, duration: 0.50, ease: "expo.out" }, 0.28);
+    tl.fromTo("#intro-wm-sheen", { backgroundPosition: "-130% 0, 0 0" }, { backgroundPosition: "210% 0, 0 0", duration: 1.15, ease: "power2.inOut" }, 0.45);
+    tl.fromTo("#intro-tagline", { opacity: 0, y: 28, scale: 0.94 }, { opacity: 1, y: 0, scale: 1.0, duration: 0.38, ease: "back.out(1.25)" }, 1.48);
+    tl.fromTo("#intro-stack", { opacity: 1, y: 0 }, { opacity: 0, y: 24, duration: 0.24, ease: "power2.in" }, 4.68);
+
+    // Corner Bug
+    tl.fromTo("#corner-pill", { opacity: 0, y: -16 }, { opacity: 1, y: 0, duration: 0.40, ease: "power2.out" }, 5.05);
+
+    // Section & Review HUDs
+    
+    tl.fromTo("#hud-koc-box", { opacity: 0, x: -55, filter: "blur(10px)" }, { opacity: 1, x: 0, filter: "blur(0px)", duration: 0.34, ease: "power3.out" }, 12.57);
+    tl.fromTo("#hud-koc-bar", { scaleY: 0 }, { scaleY: 1, duration: 0.36, ease: "expo.out" }, 12.65);
+    tl.fromTo("#hud-koc-box", { opacity: 1, x: 0, filter: "blur(0px)" }, { opacity: 0, x: -35, filter: "blur(8px)", duration: 0.24, ease: "power2.in", immediateRender: false }, 15.49);
+    tl.fromTo("#hud-f1-box", { opacity: 0, x: -55, filter: "blur(10px)" }, { opacity: 1, x: 0, filter: "blur(0px)", duration: 0.34, ease: "power3.out" }, 15.88);
+    tl.fromTo("#hud-f1-bar", { scaleY: 0 }, { scaleY: 1, duration: 0.36, ease: "expo.out" }, 15.96);
+    tl.fromTo("#hud-f1-box", { opacity: 1, x: 0, filter: "blur(0px)" }, { opacity: 0, x: -35, filter: "blur(8px)", duration: 0.24, ease: "power2.in", immediateRender: false }, 26.27);
+    tl.fromTo("#hud-menu-box", { opacity: 0, x: -55, filter: "blur(10px)" }, { opacity: 1, x: 0, filter: "blur(0px)", duration: 0.34, ease: "power3.out" }, 26.75);
+    tl.fromTo("#hud-menu-bar", { scaleY: 0 }, { scaleY: 1, duration: 0.36, ease: "expo.out" }, 26.83);
+    tl.fromTo("#hud-menu-box", { opacity: 1, x: 0, filter: "blur(0px)" }, { opacity: 0, x: -35, filter: "blur(8px)", duration: 0.24, ease: "power2.in", immediateRender: false }, 34.94);
+    tl.fromTo("#hud-cutzone-box", { opacity: 0, x: -55, filter: "blur(10px)" }, { opacity: 1, x: 0, filter: "blur(0px)", duration: 0.34, ease: "power3.out" }, 42.75);
+    tl.fromTo("#hud-cutzone-bar", { scaleY: 0 }, { scaleY: 1, duration: 0.36, ease: "expo.out" }, 42.83);
+    tl.fromTo("#hud-cutzone-box", { opacity: 1, x: 0, filter: "blur(0px)" }, { opacity: 0, x: -35, filter: "blur(8px)", duration: 0.24, ease: "power2.in", immediateRender: false }, 52.69);
+    tl.fromTo("#hud-king-box", { opacity: 0, x: -55, filter: "blur(10px)" }, { opacity: 1, x: 0, filter: "blur(0px)", duration: 0.34, ease: "power3.out" }, 59.75);
+    tl.fromTo("#hud-king-bar", { scaleY: 0 }, { scaleY: 1, duration: 0.36, ease: "expo.out" }, 59.83);
+    tl.fromTo("#hud-king-box", { opacity: 1, x: 0, filter: "blur(0px)" }, { opacity: 0, x: -35, filter: "blur(8px)", duration: 0.24, ease: "power2.in", immediateRender: false }, 69.69);
+    tl.fromTo("#hud-priv-box", { opacity: 0, x: -55, filter: "blur(10px)" }, { opacity: 1, x: 0, filter: "blur(0px)", duration: 0.34, ease: "power3.out" }, 70.35);
+    tl.fromTo("#hud-priv-bar", { scaleY: 0 }, { scaleY: 1, duration: 0.36, ease: "expo.out" }, 70.43);
+    tl.fromTo("#hud-priv-box", { opacity: 1, x: 0, filter: "blur(0px)" }, { opacity: 0, x: -35, filter: "blur(8px)", duration: 0.24, ease: "power2.in", immediateRender: false }, 79.84);
+    tl.fromTo("#hud-staff-box", { opacity: 0, x: -55, filter: "blur(10px)" }, { opacity: 1, x: 0, filter: "blur(0px)", duration: 0.34, ease: "power3.out" }, 136.85);
+    tl.fromTo("#hud-staff-bar", { scaleY: 0 }, { scaleY: 1, duration: 0.36, ease: "expo.out" }, 136.93);
+    tl.fromTo("#hud-staff-box", { opacity: 1, x: 0, filter: "blur(0px)" }, { opacity: 0, x: -35, filter: "blur(8px)", duration: 0.24, ease: "power2.in", immediateRender: false }, 152.14);
+    tl.fromTo("#hud-rev1-box", { opacity: 0, x: -55, filter: "blur(10px)" }, { opacity: 1, x: 0, filter: "blur(0px)", duration: 0.34, ease: "power3.out" }, 152.80);
+    tl.fromTo("#hud-rev1-bar", { scaleY: 0 }, { scaleY: 1, duration: 0.36, ease: "expo.out" }, 152.88);
+    tl.fromTo("#hud-rev1-box", { opacity: 1, x: 0, filter: "blur(0px)" }, { opacity: 0, x: -35, filter: "blur(8px)", duration: 0.24, ease: "power2.in", immediateRender: false }, 171.44);
+    tl.fromTo("#hud-rev2-box", { opacity: 0, x: -55, filter: "blur(10px)" }, { opacity: 1, x: 0, filter: "blur(0px)", duration: 0.34, ease: "power3.out" }, 172.10);
+    tl.fromTo("#hud-rev2-bar", { scaleY: 0 }, { scaleY: 1, duration: 0.36, ease: "expo.out" }, 172.18);
+    tl.fromTo("#hud-rev2-box", { opacity: 1, x: 0, filter: "blur(0px)" }, { opacity: 0, x: -35, filter: "blur(8px)", duration: 0.24, ease: "power2.in", immediateRender: false }, 188.29);
+    tl.fromTo("#hud-rev3-box", { opacity: 0, x: -55, filter: "blur(10px)" }, { opacity: 1, x: 0, filter: "blur(0px)", duration: 0.34, ease: "power3.out" }, 188.90);
+    tl.fromTo("#hud-rev3-bar", { scaleY: 0 }, { scaleY: 1, duration: 0.36, ease: "expo.out" }, 188.98);
+    tl.fromTo("#hud-rev3-box", { opacity: 1, x: 0, filter: "blur(0px)" }, { opacity: 0, x: -35, filter: "blur(8px)", duration: 0.24, ease: "power2.in", immediateRender: false }, 211.49);
+    tl.fromTo("#hud-rev4-box", { opacity: 0, x: -55, filter: "blur(10px)" }, { opacity: 1, x: 0, filter: "blur(0px)", duration: 0.34, ease: "power3.out" }, 212.15);
+    tl.fromTo("#hud-rev4-bar", { scaleY: 0 }, { scaleY: 1, duration: 0.36, ease: "expo.out" }, 212.23);
+    tl.fromTo("#hud-rev4-box", { opacity: 1, x: 0, filter: "blur(0px)" }, { opacity: 0, x: -35, filter: "blur(8px)", duration: 0.24, ease: "power2.in", immediateRender: false }, 255.24);
+
+    // End-Card Lockup
+    tl.fromTo("#end-top", { opacity: 0, y: -28, filter: "blur(10px)" }, { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.48, ease: "power3.out" }, 308.10);
+    tl.fromTo("#end-ttl-sheen", { backgroundPosition: "-130% 0, 0 0" }, { backgroundPosition: "210% 0, 0 0", duration: 1.25, ease: "power2.inOut" }, 309.00);
+    tl.fromTo("#end-bot", { opacity: 0, y: 36, filter: "blur(8px)" }, { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.52, ease: "back.out(1.2)" }, 308.65);
+
+    window.__timelines["overlays-hud"] = tl;
+  </script>
+</template>

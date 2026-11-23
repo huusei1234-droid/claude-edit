@@ -1,0 +1,47 @@
+﻿FanControl Method: get_ProductName
+FanControl Method: get_BaseKey
+FanControl Method: get_Subkey
+FanControl Method: get_ProcessorVendor
+FanControl Method: get_FanControlCount
+FanControl Method: get_FanCount
+FanControl Method: get_TemperatureCount
+FanControl Method: get_MaxPwmValue
+FanControl Method: get_IsSupported
+FanControl Method: get_UsingExtendedTemperature
+FanControl Method: set_UsingExtendedTemperature
+FanControl Method: get_HealthNumber
+FanControl Method: SetProtectValue
+FanControl Method: SetProtectValue
+FanControl Method: SetProtectValue
+FanControl Method: SetProtectValue
+FanControl Method: GetProtectValue
+FanControl Method: SetProtectValue
+FanControl Method: GetProtectValue
+FanControl Method: GetSlopeIndex
+FanControl Method: SetFanSpeedFixedMode
+FanControl Method: IsFanSpeedControlModeChangeable
+FanControl Method: GetFanSpeedControlMode
+FanControl Method: SetFanSpeedControlMode
+FanControl Method: SetCalibrationPwm
+FanControl Method: ResetCalibrationPwm
+FanControl Method: ConvertPwm2Percetage
+FanControl Method: ConvertPercetage2Pwm
+FanControl Method: EnableCalibrateStatus
+FanControl Method: IsEnableCalibrateStatus
+FanControl Method: GetCpuFanSpeed
+FanControl Method: GetFanSpeed
+FanControl Method: GetFanSpeed
+FanControl Method: GetFanDisplayName
+FanControl Method: GetFanControlDisplayName
+FanControl Method: GetTemperature
+FanControl Method: GetTemperatureInputSelection
+FanControl Method: IsRequireSoftwareMonitor
+FanControl Method: IsFanStop
+FanControl Method: GetTemperatureDisplayName
+FanControl Method: GetHardwareMonitorDatas
+FanControl Count: 1
+FanControl err: Method invocation failed because [Gigabyte.EnvironmentControl.CoolingDevice.Fan.FanControl] does not contain a method named 'GetSpeed'.
+VERIFIED HW[0]: 
+VERIFIED HW[1]: 
+VERIFIED HW[2]: 
+VERIFIED HW[3]: 

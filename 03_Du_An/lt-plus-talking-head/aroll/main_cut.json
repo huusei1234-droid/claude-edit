@@ -1,0 +1,1629 @@
+{
+ "lang": "vi",
+ "duration": 70.403,
+ "segments": [
+  {
+   "start": 0.0,
+   "end": 10.54,
+   "text": "Khí hữu ra nhiều hoặc ra mạo sau quan hệ có phải là viêm lộ tuyến? Đây là câu hỏi khiến nhiều phụ nữ lo lắng, nhưng chỉ giờ vào biểu hiện bên ngoài thì chưa thể xác định nguyên nhân",
+   "words": [
+    {
+     "start": 0.0,
+     "end": 0.46,
+     "word": "Khí",
+     "p": 0.56
+    },
+    {
+     "start": 0.46,
+     "end": 0.76,
+     "word": "hữu",
+     "p": 0.78
+    },
+    {
+     "start": 0.76,
+     "end": 0.9,
+     "word": "ra",
+     "p": 0.98
+    },
+    {
+     "start": 0.9,
+     "end": 1.16,
+     "word": "nhiều",
+     "p": 0.89
+    },
+    {
+     "start": 1.16,
+     "end": 1.68,
+     "word": "hoặc",
+     "p": 1.0
+    },
+    {
+     "start": 1.68,
+     "end": 1.82,
+     "word": "ra",
+     "p": 0.98
+    },
+    {
+     "start": 1.82,
+     "end": 2.02,
+     "word": "mạo",
+     "p": 0.83
+    },
+    {
+     "start": 2.02,
+     "end": 2.2,
+     "word": "sau",
+     "p": 0.98
+    },
+    {
+     "start": 2.2,
+     "end": 2.44,
+     "word": "quan",
+     "p": 1.0
+    },
+    {
+     "start": 2.44,
+     "end": 2.72,
+     "word": "hệ",
+     "p": 0.98
+    },
+    {
+     "start": 2.72,
+     "end": 3.18,
+     "word": "có",
+     "p": 0.9
+    },
+    {
+     "start": 3.18,
+     "end": 3.54,
+     "word": "phải",
+     "p": 1.0
+    },
+    {
+     "start": 3.54,
+     "end": 3.86,
+     "word": "là",
+     "p": 1.0
+    },
+    {
+     "start": 3.86,
+     "end": 4.02,
+     "word": "viêm",
+     "p": 0.98
+    },
+    {
+     "start": 4.02,
+     "end": 4.2,
+     "word": "lộ",
+     "p": 0.55
+    },
+    {
+     "start": 4.2,
+     "end": 4.52,
+     "word": "tuyến?",
+     "p": 1.0
+    },
+    {
+     "start": 4.86,
+     "end": 5.26,
+     "word": "Đây",
+     "p": 1.0
+    },
+    {
+     "start": 5.26,
+     "end": 5.44,
+     "word": "là",
+     "p": 1.0
+    },
+    {
+     "start": 5.44,
+     "end": 5.6,
+     "word": "câu",
+     "p": 0.96
+    },
+    {
+     "start": 5.6,
+     "end": 5.8,
+     "word": "hỏi",
+     "p": 1.0
+    },
+    {
+     "start": 5.8,
+     "end": 6.06,
+     "word": "khiến",
+     "p": 1.0
+    },
+    {
+     "start": 6.06,
+     "end": 6.26,
+     "word": "nhiều",
+     "p": 1.0
+    },
+    {
+     "start": 6.26,
+     "end": 6.46,
+     "word": "phụ",
+     "p": 1.0
+    },
+    {
+     "start": 6.46,
+     "end": 6.6,
+     "word": "nữ",
+     "p": 1.0
+    },
+    {
+     "start": 6.6,
+     "end": 6.74,
+     "word": "lo",
+     "p": 1.0
+    },
+    {
+     "start": 6.74,
+     "end": 7.0,
+     "word": "lắng,",
+     "p": 0.99
+    },
+    {
+     "start": 7.14,
+     "end": 7.44,
+     "word": "nhưng",
+     "p": 1.0
+    },
+    {
+     "start": 7.44,
+     "end": 7.62,
+     "word": "chỉ",
+     "p": 1.0
+    },
+    {
+     "start": 7.62,
+     "end": 7.8,
+     "word": "giờ",
+     "p": 0.41
+    },
+    {
+     "start": 7.8,
+     "end": 7.98,
+     "word": "vào",
+     "p": 0.99
+    },
+    {
+     "start": 7.98,
+     "end": 8.18,
+     "word": "biểu",
+     "p": 1.0
+    },
+    {
+     "start": 8.18,
+     "end": 8.36,
+     "word": "hiện",
+     "p": 0.96
+    },
+    {
+     "start": 8.36,
+     "end": 8.5,
+     "word": "bên",
+     "p": 1.0
+    },
+    {
+     "start": 8.5,
+     "end": 8.9,
+     "word": "ngoài",
+     "p": 1.0
+    },
+    {
+     "start": 8.9,
+     "end": 9.42,
+     "word": "thì",
+     "p": 1.0
+    },
+    {
+     "start": 9.42,
+     "end": 9.62,
+     "word": "chưa",
+     "p": 1.0
+    },
+    {
+     "start": 9.62,
+     "end": 9.78,
+     "word": "thể",
+     "p": 1.0
+    },
+    {
+     "start": 9.78,
+     "end": 9.98,
+     "word": "xác",
+     "p": 0.99
+    },
+    {
+     "start": 9.98,
+     "end": 10.1,
+     "word": "định",
+     "p": 1.0
+    },
+    {
+     "start": 10.1,
+     "end": 10.34,
+     "word": "nguyên",
+     "p": 1.0
+    },
+    {
+     "start": 10.34,
+     "end": 10.54,
+     "word": "nhân",
+     "p": 1.0
+    }
+   ]
+  },
+  {
+   "start": 10.54,
+   "end": 21.8,
+   "text": "Lộ tuyến có thể không có triều chứng, một số người có thể tăng tiệt dịch ra mạo giữa kỳ kinh hoặc sau quan hệ, nhưng dạo hiệu này có thể xuất hiện trong các tình trạng khác nên cần được kiểm tra",
+   "words": [
+    {
+     "start": 10.54,
+     "end": 11.3,
+     "word": "Lộ",
+     "p": 0.51
+    },
+    {
+     "start": 11.3,
+     "end": 11.62,
+     "word": "tuyến",
+     "p": 1.0
+    },
+    {
+     "start": 11.62,
+     "end": 11.94,
+     "word": "có",
+     "p": 1.0
+    },
+    {
+     "start": 11.94,
+     "end": 12.08,
+     "word": "thể",
+     "p": 1.0
+    },
+    {
+     "start": 12.08,
+     "end": 12.34,
+     "word": "không",
+     "p": 1.0
+    },
+    {
+     "start": 12.34,
+     "end": 12.5,
+     "word": "có",
+     "p": 0.99
+    },
+    {
+     "start": 12.5,
+     "end": 12.7,
+     "word": "triều",
+     "p": 0.98
+    },
+    {
+     "start": 12.7,
+     "end": 12.92,
+     "word": "chứng,",
+     "p": 0.99
+    },
+    {
+     "start": 13.36,
+     "end": 13.46,
+     "word": "một",
+     "p": 1.0
+    },
+    {
+     "start": 13.46,
+     "end": 13.6,
+     "word": "số",
+     "p": 1.0
+    },
+    {
+     "start": 13.6,
+     "end": 13.84,
+     "word": "người",
+     "p": 1.0
+    },
+    {
+     "start": 13.84,
+     "end": 14.06,
+     "word": "có",
+     "p": 1.0
+    },
+    {
+     "start": 14.06,
+     "end": 14.22,
+     "word": "thể",
+     "p": 1.0
+    },
+    {
+     "start": 14.22,
+     "end": 14.46,
+     "word": "tăng",
+     "p": 0.99
+    },
+    {
+     "start": 14.46,
+     "end": 14.66,
+     "word": "tiệt",
+     "p": 0.84
+    },
+    {
+     "start": 14.66,
+     "end": 14.9,
+     "word": "dịch",
+     "p": 1.0
+    },
+    {
+     "start": 14.9,
+     "end": 15.42,
+     "word": "ra",
+     "p": 0.62
+    },
+    {
+     "start": 15.42,
+     "end": 15.66,
+     "word": "mạo",
+     "p": 1.0
+    },
+    {
+     "start": 15.66,
+     "end": 15.84,
+     "word": "giữa",
+     "p": 0.83
+    },
+    {
+     "start": 15.84,
+     "end": 16.02,
+     "word": "kỳ",
+     "p": 0.93
+    },
+    {
+     "start": 16.02,
+     "end": 16.26,
+     "word": "kinh",
+     "p": 1.0
+    },
+    {
+     "start": 16.26,
+     "end": 16.74,
+     "word": "hoặc",
+     "p": 1.0
+    },
+    {
+     "start": 16.74,
+     "end": 16.94,
+     "word": "sau",
+     "p": 0.98
+    },
+    {
+     "start": 16.94,
+     "end": 17.14,
+     "word": "quan",
+     "p": 1.0
+    },
+    {
+     "start": 17.14,
+     "end": 17.4,
+     "word": "hệ,",
+     "p": 1.0
+    },
+    {
+     "start": 17.9,
+     "end": 18.04,
+     "word": "nhưng",
+     "p": 0.97
+    },
+    {
+     "start": 18.04,
+     "end": 18.22,
+     "word": "dạo",
+     "p": 0.94
+    },
+    {
+     "start": 18.22,
+     "end": 18.32,
+     "word": "hiệu",
+     "p": 0.9
+    },
+    {
+     "start": 18.32,
+     "end": 18.62,
+     "word": "này",
+     "p": 1.0
+    },
+    {
+     "start": 18.62,
+     "end": 18.8,
+     "word": "có",
+     "p": 1.0
+    },
+    {
+     "start": 18.8,
+     "end": 18.92,
+     "word": "thể",
+     "p": 1.0
+    },
+    {
+     "start": 18.92,
+     "end": 19.12,
+     "word": "xuất",
+     "p": 1.0
+    },
+    {
+     "start": 19.12,
+     "end": 19.32,
+     "word": "hiện",
+     "p": 0.98
+    },
+    {
+     "start": 19.32,
+     "end": 19.48,
+     "word": "trong",
+     "p": 0.98
+    },
+    {
+     "start": 19.48,
+     "end": 19.62,
+     "word": "các",
+     "p": 0.99
+    },
+    {
+     "start": 19.62,
+     "end": 19.84,
+     "word": "tình",
+     "p": 0.97
+    },
+    {
+     "start": 19.84,
+     "end": 20.1,
+     "word": "trạng",
+     "p": 1.0
+    },
+    {
+     "start": 20.1,
+     "end": 20.42,
+     "word": "khác",
+     "p": 0.99
+    },
+    {
+     "start": 20.42,
+     "end": 21.02,
+     "word": "nên",
+     "p": 0.76
+    },
+    {
+     "start": 21.02,
+     "end": 21.22,
+     "word": "cần",
+     "p": 1.0
+    },
+    {
+     "start": 21.22,
+     "end": 21.36,
+     "word": "được",
+     "p": 0.99
+    },
+    {
+     "start": 21.36,
+     "end": 21.54,
+     "word": "kiểm",
+     "p": 1.0
+    },
+    {
+     "start": 21.54,
+     "end": 21.8,
+     "word": "tra",
+     "p": 1.0
+    }
+   ]
+  },
+  {
+   "start": 22.48,
+   "end": 23.94,
+   "text": "ngứa, mùi khó chịu",
+   "words": [
+    {
+     "start": 22.48,
+     "end": 22.94,
+     "word": "ngứa,",
+     "p": 0.87
+    },
+    {
+     "start": 23.22,
+     "end": 23.36,
+     "word": "mùi",
+     "p": 0.98
+    },
+    {
+     "start": 23.36,
+     "end": 23.54,
+     "word": "khó",
+     "p": 0.97
+    },
+    {
+     "start": 23.54,
+     "end": 23.94,
+     "word": "chịu",
+     "p": 0.88
+    }
+   ]
+  },
+  {
+   "start": 23.94,
+   "end": 25.2,
+   "text": "hoặc khí hư đổi màu",
+   "words": [
+    {
+     "start": 23.94,
+     "end": 24.32,
+     "word": "hoặc",
+     "p": 0.99
+    },
+    {
+     "start": 24.32,
+     "end": 24.48,
+     "word": "khí",
+     "p": 0.91
+    },
+    {
+     "start": 24.48,
+     "end": 24.66,
+     "word": "hư",
+     "p": 0.78
+    },
+    {
+     "start": 24.66,
+     "end": 24.84,
+     "word": "đổi",
+     "p": 0.89
+    },
+    {
+     "start": 24.84,
+     "end": 25.2,
+     "word": "màu",
+     "p": 0.93
+    }
+   ]
+  },
+  {
+   "start": 25.2,
+   "end": 27.96,
+   "text": "không phải là dạo hiệu riêng biệt của lột tuyến",
+   "words": [
+    {
+     "start": 25.2,
+     "end": 25.84,
+     "word": "không",
+     "p": 0.81
+    },
+    {
+     "start": 25.84,
+     "end": 26.28,
+     "word": "phải",
+     "p": 1.0
+    },
+    {
+     "start": 26.28,
+     "end": 26.5,
+     "word": "là",
+     "p": 0.99
+    },
+    {
+     "start": 26.5,
+     "end": 26.64,
+     "word": "dạo",
+     "p": 0.98
+    },
+    {
+     "start": 26.64,
+     "end": 26.86,
+     "word": "hiệu",
+     "p": 0.96
+    },
+    {
+     "start": 26.86,
+     "end": 27.16,
+     "word": "riêng",
+     "p": 1.0
+    },
+    {
+     "start": 27.16,
+     "end": 27.36,
+     "word": "biệt",
+     "p": 0.99
+    },
+    {
+     "start": 27.36,
+     "end": 27.5,
+     "word": "của",
+     "p": 1.0
+    },
+    {
+     "start": 27.5,
+     "end": 27.72,
+     "word": "lột",
+     "p": 0.68
+    },
+    {
+     "start": 27.72,
+     "end": 27.96,
+     "word": "tuyến",
+     "p": 0.99
+    }
+   ]
+  },
+  {
+   "start": 27.96,
+   "end": 29.52,
+   "text": "Đừng từ chẩn đoán",
+   "words": [
+    {
+     "start": 27.96,
+     "end": 28.78,
+     "word": "Đừng",
+     "p": 0.69
+    },
+    {
+     "start": 28.78,
+     "end": 28.98,
+     "word": "từ",
+     "p": 0.9
+    },
+    {
+     "start": 28.98,
+     "end": 29.22,
+     "word": "chẩn",
+     "p": 0.85
+    },
+    {
+     "start": 29.22,
+     "end": 29.52,
+     "word": "đoán",
+     "p": 0.99
+    }
+   ]
+  },
+  {
+   "start": 29.52,
+   "end": 31.34,
+   "text": "đối dung viết đặt theo lời truyền miệng",
+   "words": [
+    {
+     "start": 29.52,
+     "end": 29.76,
+     "word": "đối",
+     "p": 0.45
+    },
+    {
+     "start": 29.76,
+     "end": 29.9,
+     "word": "dung",
+     "p": 0.97
+    },
+    {
+     "start": 29.9,
+     "end": 30.1,
+     "word": "viết",
+     "p": 0.92
+    },
+    {
+     "start": 30.1,
+     "end": 30.32,
+     "word": "đặt",
+     "p": 0.94
+    },
+    {
+     "start": 30.32,
+     "end": 30.6,
+     "word": "theo",
+     "p": 1.0
+    },
+    {
+     "start": 30.6,
+     "end": 30.82,
+     "word": "lời",
+     "p": 1.0
+    },
+    {
+     "start": 30.82,
+     "end": 31.02,
+     "word": "truyền",
+     "p": 0.91
+    },
+    {
+     "start": 31.02,
+     "end": 31.34,
+     "word": "miệng",
+     "p": 0.8
+    }
+   ]
+  },
+  {
+   "start": 31.34,
+   "end": 33.88,
+   "text": "Điều cần là cần phải khảm phù khoa",
+   "words": [
+    {
+     "start": 31.34,
+     "end": 32.22,
+     "word": "Điều",
+     "p": 0.98
+    },
+    {
+     "start": 32.22,
+     "end": 32.42,
+     "word": "cần",
+     "p": 0.99
+    },
+    {
+     "start": 32.42,
+     "end": 32.76,
+     "word": "là",
+     "p": 1.0
+    },
+    {
+     "start": 32.76,
+     "end": 32.94,
+     "word": "cần",
+     "p": 0.98
+    },
+    {
+     "start": 32.94,
+     "end": 33.08,
+     "word": "phải",
+     "p": 0.72
+    },
+    {
+     "start": 33.08,
+     "end": 33.32,
+     "word": "khảm",
+     "p": 0.71
+    },
+    {
+     "start": 33.32,
+     "end": 33.46,
+     "word": "phù",
+     "p": 0.72
+    },
+    {
+     "start": 33.46,
+     "end": 33.88,
+     "word": "khoa",
+     "p": 0.81
+    }
+   ]
+  },
+  {
+   "start": 33.88,
+   "end": 35.4,
+   "text": "mô tả rõ triều chứng",
+   "words": [
+    {
+     "start": 33.88,
+     "end": 34.52,
+     "word": "mô",
+     "p": 0.9
+    },
+    {
+     "start": 34.52,
+     "end": 34.74,
+     "word": "tả",
+     "p": 1.0
+    },
+    {
+     "start": 34.74,
+     "end": 34.92,
+     "word": "rõ",
+     "p": 0.99
+    },
+    {
+     "start": 34.92,
+     "end": 35.14,
+     "word": "triều",
+     "p": 0.94
+    },
+    {
+     "start": 35.14,
+     "end": 35.4,
+     "word": "chứng",
+     "p": 0.99
+    }
+   ]
+  },
+  {
+   "start": 35.4,
+   "end": 37.66,
+   "text": "và thực hiện xét nghiệm theo nguồn nhìn của bác sĩ",
+   "words": [
+    {
+     "start": 35.4,
+     "end": 35.66,
+     "word": "và",
+     "p": 1.0
+    },
+    {
+     "start": 35.66,
+     "end": 35.82,
+     "word": "thực",
+     "p": 1.0
+    },
+    {
+     "start": 35.82,
+     "end": 36.04,
+     "word": "hiện",
+     "p": 1.0
+    },
+    {
+     "start": 36.04,
+     "end": 36.26,
+     "word": "xét",
+     "p": 0.82
+    },
+    {
+     "start": 36.26,
+     "end": 36.58,
+     "word": "nghiệm",
+     "p": 0.99
+    },
+    {
+     "start": 36.58,
+     "end": 36.82,
+     "word": "theo",
+     "p": 1.0
+    },
+    {
+     "start": 36.82,
+     "end": 37.0,
+     "word": "nguồn",
+     "p": 0.69
+    },
+    {
+     "start": 37.0,
+     "end": 37.1,
+     "word": "nhìn",
+     "p": 0.4
+    },
+    {
+     "start": 37.1,
+     "end": 37.24,
+     "word": "của",
+     "p": 1.0
+    },
+    {
+     "start": 37.24,
+     "end": 37.42,
+     "word": "bác",
+     "p": 1.0
+    },
+    {
+     "start": 37.42,
+     "end": 37.66,
+     "word": "sĩ",
+     "p": 1.0
+    }
+   ]
+  },
+  {
+   "start": 37.66,
+   "end": 39.9,
+   "text": "Nếu đang tìm hiểu một loài viết đặt",
+   "words": [
+    {
+     "start": 37.66,
+     "end": 38.54,
+     "word": "Nếu",
+     "p": 1.0
+    },
+    {
+     "start": 38.54,
+     "end": 38.74,
+     "word": "đang",
+     "p": 1.0
+    },
+    {
+     "start": 38.74,
+     "end": 38.94,
+     "word": "tìm",
+     "p": 1.0
+    },
+    {
+     "start": 38.94,
+     "end": 39.1,
+     "word": "hiểu",
+     "p": 1.0
+    },
+    {
+     "start": 39.1,
+     "end": 39.26,
+     "word": "một",
+     "p": 0.97
+    },
+    {
+     "start": 39.26,
+     "end": 39.44,
+     "word": "loài",
+     "p": 0.93
+    },
+    {
+     "start": 39.44,
+     "end": 39.7,
+     "word": "viết",
+     "p": 1.0
+    },
+    {
+     "start": 39.7,
+     "end": 39.9,
+     "word": "đặt",
+     "p": 1.0
+    }
+   ]
+  },
+  {
+   "start": 39.9,
+   "end": 41.52,
+   "text": "hỗ trợ điều trị viết lột tuyến",
+   "words": [
+    {
+     "start": 39.9,
+     "end": 40.14,
+     "word": "hỗ",
+     "p": 0.99
+    },
+    {
+     "start": 40.14,
+     "end": 40.44,
+     "word": "trợ",
+     "p": 1.0
+    },
+    {
+     "start": 40.44,
+     "end": 40.7,
+     "word": "điều",
+     "p": 1.0
+    },
+    {
+     "start": 40.7,
+     "end": 40.9,
+     "word": "trị",
+     "p": 0.89
+    },
+    {
+     "start": 40.9,
+     "end": 41.02,
+     "word": "viết",
+     "p": 0.87
+    },
+    {
+     "start": 41.02,
+     "end": 41.24,
+     "word": "lột",
+     "p": 0.93
+    },
+    {
+     "start": 41.24,
+     "end": 41.52,
+     "word": "tuyến",
+     "p": 1.0
+    }
+   ]
+  },
+  {
+   "start": 41.52,
+   "end": 43.74,
+   "text": "thì có thể xem xét đến sản phẩm",
+   "words": [
+    {
+     "start": 41.52,
+     "end": 41.9,
+     "word": "thì",
+     "p": 0.97
+    },
+    {
+     "start": 41.9,
+     "end": 42.08,
+     "word": "có",
+     "p": 1.0
+    },
+    {
+     "start": 42.08,
+     "end": 42.3,
+     "word": "thể",
+     "p": 1.0
+    },
+    {
+     "start": 42.3,
+     "end": 42.78,
+     "word": "xem",
+     "p": 0.83
+    },
+    {
+     "start": 42.78,
+     "end": 43.06,
+     "word": "xét",
+     "p": 1.0
+    },
+    {
+     "start": 43.06,
+     "end": 43.22,
+     "word": "đến",
+     "p": 0.99
+    },
+    {
+     "start": 43.22,
+     "end": 43.44,
+     "word": "sản",
+     "p": 1.0
+    },
+    {
+     "start": 43.44,
+     "end": 43.74,
+     "word": "phẩm",
+     "p": 1.0
+    }
+   ]
+  },
+  {
+   "start": 43.74,
+   "end": 45.96,
+   "text": "viết đặt LT và lớn của hàng thu",
+   "words": [
+    {
+     "start": 43.74,
+     "end": 44.2,
+     "word": "viết",
+     "p": 0.93
+    },
+    {
+     "start": 44.2,
+     "end": 44.48,
+     "word": "đặt",
+     "p": 1.0
+    },
+    {
+     "start": 44.48,
+     "end": 44.9,
+     "word": "LT",
+     "p": 0.57
+    },
+    {
+     "start": 44.9,
+     "end": 45.26,
+     "word": "và",
+     "p": 0.19
+    },
+    {
+     "start": 45.26,
+     "end": 45.42,
+     "word": "lớn",
+     "p": 0.77
+    },
+    {
+     "start": 45.42,
+     "end": 45.56,
+     "word": "của",
+     "p": 0.99
+    },
+    {
+     "start": 45.56,
+     "end": 45.74,
+     "word": "hàng",
+     "p": 0.81
+    },
+    {
+     "start": 45.74,
+     "end": 45.96,
+     "word": "thu",
+     "p": 0.89
+    }
+   ]
+  },
+  {
+   "start": 45.96,
+   "end": 47.4,
+   "text": "Sản phẩm có",
+   "words": [
+    {
+     "start": 45.96,
+     "end": 46.76,
+     "word": "Sản",
+     "p": 0.94
+    },
+    {
+     "start": 46.76,
+     "end": 47.0,
+     "word": "phẩm",
+     "p": 1.0
+    },
+    {
+     "start": 47.0,
+     "end": 47.4,
+     "word": "có",
+     "p": 1.0
+    }
+   ]
+  },
+  {
+   "start": 47.4,
+   "end": 50.04,
+   "text": "hoang bã, ít bấu, kim ân hoa",
+   "words": [
+    {
+     "start": 47.4,
+     "end": 47.94,
+     "word": "hoang",
+     "p": 0.92
+    },
+    {
+     "start": 47.94,
+     "end": 48.24,
+     "word": "bã,",
+     "p": 0.82
+    },
+    {
+     "start": 48.6,
+     "end": 48.78,
+     "word": "ít",
+     "p": 0.87
+    },
+    {
+     "start": 48.78,
+     "end": 49.08,
+     "word": "bấu,",
+     "p": 0.88
+    },
+    {
+     "start": 49.4,
+     "end": 49.48,
+     "word": "kim",
+     "p": 0.79
+    },
+    {
+     "start": 49.48,
+     "end": 49.68,
+     "word": "ân",
+     "p": 0.72
+    },
+    {
+     "start": 49.68,
+     "end": 50.04,
+     "word": "hoa",
+     "p": 1.0
+    }
+   ]
+  },
+  {
+   "start": 50.04,
+   "end": 51.62,
+   "text": "trà xanh, trầu không",
+   "words": [
+    {
+     "start": 50.04,
+     "end": 50.58,
+     "word": "trà",
+     "p": 0.71
+    },
+    {
+     "start": 50.58,
+     "end": 50.92,
+     "word": "xanh,",
+     "p": 1.0
+    },
+    {
+     "start": 51.2,
+     "end": 51.36,
+     "word": "trầu",
+     "p": 0.92
+    },
+    {
+     "start": 51.36,
+     "end": 51.62,
+     "word": "không",
+     "p": 1.0
+    }
+   ]
+  },
+  {
+   "start": 51.62,
+   "end": 52.56,
+   "text": "và axit latix",
+   "words": [
+    {
+     "start": 51.62,
+     "end": 51.94,
+     "word": "và",
+     "p": 0.9
+    },
+    {
+     "start": 51.94,
+     "end": 52.2,
+     "word": "axit",
+     "p": 0.55
+    },
+    {
+     "start": 52.2,
+     "end": 52.56,
+     "word": "latix",
+     "p": 0.43
+    }
+   ]
+  },
+  {
+   "start": 52.56,
+   "end": 54.74,
+   "text": "3 ngày các chị dùng 1 lần",
+   "words": [
+    {
+     "start": 52.56,
+     "end": 53.04,
+     "word": "3",
+     "p": 0.62
+    },
+    {
+     "start": 53.04,
+     "end": 53.34,
+     "word": "ngày",
+     "p": 1.0
+    },
+    {
+     "start": 53.34,
+     "end": 53.52,
+     "word": "các",
+     "p": 0.99
+    },
+    {
+     "start": 53.52,
+     "end": 53.72,
+     "word": "chị",
+     "p": 0.96
+    },
+    {
+     "start": 53.72,
+     "end": 54.22,
+     "word": "dùng",
+     "p": 1.0
+    },
+    {
+     "start": 54.22,
+     "end": 54.46,
+     "word": "1",
+     "p": 0.93
+    },
+    {
+     "start": 54.46,
+     "end": 54.74,
+     "word": "lần",
+     "p": 1.0
+    }
+   ]
+  },
+  {
+   "start": 55.96,
+   "end": 57.92,
+   "text": "1 hộp như thế này 15 viên",
+   "words": [
+    {
+     "start": 55.96,
+     "end": 56.48,
+     "word": "1",
+     "p": 0.43
+    },
+    {
+     "start": 56.48,
+     "end": 56.72,
+     "word": "hộp",
+     "p": 1.0
+    },
+    {
+     "start": 56.72,
+     "end": 56.8,
+     "word": "như",
+     "p": 1.0
+    },
+    {
+     "start": 56.8,
+     "end": 56.9,
+     "word": "thế",
+     "p": 1.0
+    },
+    {
+     "start": 56.9,
+     "end": 57.16,
+     "word": "này",
+     "p": 1.0
+    },
+    {
+     "start": 57.16,
+     "end": 57.46,
+     "word": "15",
+     "p": 0.99
+    },
+    {
+     "start": 57.46,
+     "end": 57.92,
+     "word": "viên",
+     "p": 0.99
+    }
+   ]
+  },
+  {
+   "start": 57.92,
+   "end": 59.68,
+   "text": "dùng trong vòng 30 ngày",
+   "words": [
+    {
+     "start": 57.92,
+     "end": 58.5,
+     "word": "dùng",
+     "p": 0.95
+    },
+    {
+     "start": 58.5,
+     "end": 58.64,
+     "word": "trong",
+     "p": 0.92
+    },
+    {
+     "start": 58.64,
+     "end": 58.98,
+     "word": "vòng",
+     "p": 1.0
+    },
+    {
+     "start": 58.98,
+     "end": 59.32,
+     "word": "30",
+     "p": 1.0
+    },
+    {
+     "start": 59.32,
+     "end": 59.68,
+     "word": "ngày",
+     "p": 0.85
+    }
+   ]
+  },
+  {
+   "start": 59.68,
+   "end": 60.52,
+   "text": "đến 40 ngày",
+   "words": [
+    {
+     "start": 59.68,
+     "end": 59.9,
+     "word": "đến",
+     "p": 0.91
+    },
+    {
+     "start": 59.9,
+     "end": 60.16,
+     "word": "40",
+     "p": 0.98
+    },
+    {
+     "start": 60.16,
+     "end": 60.52,
+     "word": "ngày",
+     "p": 1.0
+    }
+   ]
+  },
+  {
+   "start": 60.52,
+   "end": 62.32,
+   "text": "các chị sẽ cảm nhận sự khác biệt",
+   "words": [
+    {
+     "start": 60.52,
+     "end": 60.98,
+     "word": "các",
+     "p": 0.8
+    },
+    {
+     "start": 60.98,
+     "end": 61.18,
+     "word": "chị",
+     "p": 1.0
+    },
+    {
+     "start": 61.18,
+     "end": 61.34,
+     "word": "sẽ",
+     "p": 1.0
+    },
+    {
+     "start": 61.34,
+     "end": 61.5,
+     "word": "cảm",
+     "p": 1.0
+    },
+    {
+     "start": 61.5,
+     "end": 61.68,
+     "word": "nhận",
+     "p": 1.0
+    },
+    {
+     "start": 61.68,
+     "end": 61.86,
+     "word": "sự",
+     "p": 1.0
+    },
+    {
+     "start": 61.86,
+     "end": 62.04,
+     "word": "khác",
+     "p": 0.9
+    },
+    {
+     "start": 62.04,
+     "end": 62.32,
+     "word": "biệt",
+     "p": 1.0
+    }
+   ]
+  },
+  {
+   "start": 62.32,
+   "end": 64.28,
+   "text": "so với trước khi chưa dùng sản phẩm",
+   "words": [
+    {
+     "start": 62.32,
+     "end": 62.7,
+     "word": "so",
+     "p": 0.99
+    },
+    {
+     "start": 62.7,
+     "end": 62.88,
+     "word": "với",
+     "p": 0.98
+    },
+    {
+     "start": 62.88,
+     "end": 63.04,
+     "word": "trước",
+     "p": 0.53
+    },
+    {
+     "start": 63.04,
+     "end": 63.3,
+     "word": "khi",
+     "p": 1.0
+    },
+    {
+     "start": 63.3,
+     "end": 63.54,
+     "word": "chưa",
+     "p": 0.99
+    },
+    {
+     "start": 63.54,
+     "end": 63.7,
+     "word": "dùng",
+     "p": 1.0
+    },
+    {
+     "start": 63.7,
+     "end": 63.92,
+     "word": "sản",
+     "p": 0.98
+    },
+    {
+     "start": 63.92,
+     "end": 64.28,
+     "word": "phẩm",
+     "p": 1.0
+    }
+   ]
+  },
+  {
+   "start": 64.28,
+   "end": 66.44,
+   "text": "nhắn thành phần để nhận thông tin",
+   "words": [
+    {
+     "start": 64.28,
+     "end": 64.92,
+     "word": "nhắn",
+     "p": 0.8
+    },
+    {
+     "start": 64.92,
+     "end": 65.14,
+     "word": "thành",
+     "p": 0.99
+    },
+    {
+     "start": 65.14,
+     "end": 65.44,
+     "word": "phần",
+     "p": 1.0
+    },
+    {
+     "start": 65.44,
+     "end": 65.84,
+     "word": "để",
+     "p": 0.99
+    },
+    {
+     "start": 65.84,
+     "end": 66.02,
+     "word": "nhận",
+     "p": 1.0
+    },
+    {
+     "start": 66.02,
+     "end": 66.22,
+     "word": "thông",
+     "p": 1.0
+    },
+    {
+     "start": 66.22,
+     "end": 66.44,
+     "word": "tin",
+     "p": 1.0
+    }
+   ]
+  },
+  {
+   "start": 66.44,
+   "end": 68.2,
+   "text": "và tìm hiểu đó",
+   "words": [
+    {
+     "start": 66.44,
+     "end": 66.76,
+     "word": "và",
+     "p": 0.04
+    },
+    {
+     "start": 66.76,
+     "end": 67.76,
+     "word": "tìm",
+     "p": 1.0
+    },
+    {
+     "start": 67.76,
+     "end": 67.96,
+     "word": "hiểu",
+     "p": 1.0
+    },
+    {
+     "start": 67.96,
+     "end": 68.2,
+     "word": "đó",
+     "p": 0.62
+    }
+   ]
+  },
+  {
+   "start": 68.2,
+   "end": 69.22,
+   "text": "trước khi mua",
+   "words": [
+    {
+     "start": 68.2,
+     "end": 68.66,
+     "word": "trước",
+     "p": 0.93
+    },
+    {
+     "start": 68.66,
+     "end": 68.86,
+     "word": "khi",
+     "p": 1.0
+    },
+    {
+     "start": 68.86,
+     "end": 69.22,
+     "word": "mua",
+     "p": 1.0
+    }
+   ]
+  }
+ ]
+}

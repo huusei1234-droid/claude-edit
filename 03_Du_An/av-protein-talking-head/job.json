@@ -1,0 +1,267 @@
+{
+  "slug": "av-protein-talking-head",
+  "brief": {
+    "chu_de": "Tư vấn dinh dưỡng chiều cao & xương theo phong cách Dược sĩ — Sản phẩm BOJOMI An Vượng",
+    "san_pham_hoac_noi_dung": "Thực phẩm bổ sung BOJOMI - An Vượng Pharma (Canxi từ tảo biển, Vitamin D3, Vitamin K2 MK7, Collagen)",
+    "thong_diep_chinh": "Muốn con phát triển chiều cao khỏe mạnh cần bắt đầu từ bữa ăn hằng ngày, độ tuổi, nhu cầu thực tế và bổ sung đúng tổ hợp Canxi tảo biển + D3 + K2 MK7 + Collagen",
+    "doi_tuong": "Phụ huynh quan tâm dinh dưỡng và phát triển hệ xương / chiều cao",
+    "nen_tang": "tiktok | reels | shorts",
+    "thoi_luong_giay": 70.1,
+    "ty_le": "9:16",
+    "ngon_ngu": "vi",
+    "ghi_chu_nguoi_dung": "Đã duyệt: Đúng theo clip BOJOMI An Vượng (D:\\AI\\1\\C4026.MP4), Hook B (cắt câu nháp đầu 0-5.40s), ghi thông số theo lời đọc, tạo ảnh AI làm icon đẹp + packshot từ ảnh tham chiếu sản phẩm đã thêm vào Canvas, dựng bản nháp CapCut."
+  },
+  "the_loai": "talking-head",
+  "kit": "phong-cach/talking-head",
+  "trang_thai": "cho-nguoi-dung-xem",
+  "giong": {
+    "co_loi_doc": false,
+    "ma_giong": "giu-giong-that-aroll",
+    "ghi_chu": "Giữ 100% giọng nói thật trong clip quay D:\\AI\\1\\C4026.MP4 từ 5.40s, cắt khoảng lặng, chuẩn hoá -14 LUFS, gắn Micro-Fade 1-2 frame (33333/66666 us) cho toàn bộ 10 đoạn thoại trong CapCut.",
+    "file": "output/av-protein-talking-head/aroll/raw_trim30_lufs.mp4",
+    "da_nghe_bang_tai": false
+  },
+  "nhac": {
+    "bai": "Chưa tự thêm SFX/nhạc lạ (theo quy tắc dự án)",
+    "nguon": "Giữ sạch giọng Dược sĩ",
+    "ghi_chu": "Người dùng có thể thêm nhạc nền nhẹ trong CapCut"
+  },
+  "kich_ban": {
+    "hook": "Muốn con cao lớn, mẹ đã quan tâm đến bữa ăn hằng ngày hay chưa?",
+    "loi_doc_day_du": "Muốn con cao lớn, mẹ đã quan tâm đến bữa ăn hằng ngày hay chưa? Con ăn thất thường, ít lựa chọn thực phẩm, lịch học kín mít khiến giờ sinh hoạt thiếu đều đặn. Những điều ấy khiến bố mẹ dễ băn khoăn liệu con đã được chăm sóc dinh dưỡng đầy đủ hay chưa. Mong con phát triển khỏe mạnh là điều rất tự nhiên. Nhưng lựa chọn sản phẩm bổ sung cần bắt đầu từ việc xem xét chế độ ăn, độ tuổi và nhu cầu của con. Canxi và vitamin D là những dưỡng chất quan trọng đối với xương. Tuy nhiên, bổ sung canxi không đồng nghĩa với việc là sẽ đảm bảo con sẽ cao hơn. Với Bojomi An Vượng, điểm đáng chú ý của công thức này đó là canxi từ tảo biển, phối hợp với D3, K2 và collagen. Mỗi gói như vậy sẽ có 418mg canxi từ tảo biển, 779 IU D3 và 170mcg K2 MK7. Chỉ cần mỗi ngày bổ sung 1 gói là con của các bạn đã đủ dinh dưỡng cho xương. Nhớ nhắn dinh dưỡng cho con để nhận bảng thành phần và đối chiếu thông tin sản phẩm trước khi quyết định bạn nhé.",
+    "cta": "Nhớ nhắn 'dinh dưỡng cho con' để nhận bảng thành phần và đối chiếu thông tin sản phẩm trước khi quyết định bạn nhé.",
+    "cau_khang_dinh_suc_khoe": [
+      "Canxi và vitamin D là những dưỡng chất quan trọng đối với xương.",
+      "Tuy nhiên, bổ sung canxi không đồng nghĩa với việc là sẽ đảm bảo con sẽ cao hơn.",
+      "Với Bojomi An Vượng, điểm đáng chú ý của công thức này đó là canxi từ tảo biển, phối hợp với D3, K2 và collagen.",
+      "Mỗi gói như vậy sẽ có 418mg canxi từ tảo biển, 779 IU D3 và 170mcg K2 MK7.",
+      "Chỉ cần mỗi ngày bổ sung 1 gói là con của các bạn đã đủ dinh dưỡng cho xương."
+    ],
+    "dong_phap_ly": "Thực phẩm bổ sung • Không phải là thuốc, không thay thế thuốc chữa bệnh",
+    "hook_phuong_an": [
+      {
+        "ma": "B",
+        "loi_hua": "Cắt bỏ câu nháp đầu (0–5.40s), vào thẳng câu hỏi trực diện: 'Muốn con cao lớn, mẹ đã quan tâm đến bữa ăn hằng ngày hay chưa?'",
+        "bang_chung": "không có",
+        "hinh": [
+          {
+            "tu_khoa": "cao lớn",
+            "moc_giay": 0.30,
+            "chu_nho": "MUỐN CON PHÁT TRIỂN",
+            "chu_to": "CAO LỚN",
+            "hinh_minh_hoa": "Icon 3D Y khoa: thước đo chiều cao gỗ sáng cạnh ly sữa ấm & biểu tượng mô xương ngọc trai trên nền xanh lục bảo - kem",
+            "nguon": "flow-anh",
+            "prompt_ai": "Premium 3D medical pharmacist icon card, square 1:1 composition, soft cream and emerald green glassmorphism badge featuring a clean wooden growth ruler, a warm glass of creamy milk, and a luminous pearl-white stylized bone icon with subtle golden sparkles",
+            "asset": { "file": "output/av-protein-talking-head/media/hook_01_clean.mp4", "kiem": "ok", "ghi_chu": "Đã cắt sạch viền ngoài & gắn Rectangle Mask bo góc" }
+          },
+          {
+            "tu_khoa": "bữa ăn hằng ngày",
+            "moc_giay": 1.82,
+            "chu_nho": "ĐÃ QUAN TÂM ĐÚNG",
+            "chu_to": "BỮA ĂN HẰNG NGÀY?",
+            "hinh_minh_hoa": "Icon 3D Y khoa: khay bữa ăn cân bằng dinh dưỡng đặt cạnh dấu hỏi 3D xanh ngọc lục bảo phát sáng",
+            "nguon": "flow-anh",
+            "prompt_ai": "Premium 3D medical pharmacist icon card, square 1:1 composition, soft cream and mint-emerald glassmorphism badge featuring a neat healthy meal bowl with salmon, broccoli and eggs next to a glossy 3D emerald question mark icon",
+            "asset": { "file": "output/av-protein-talking-head/media/hook_02_clean.mp4", "kiem": "ok", "ghi_chu": "Đã kiểm, không chữ thừa, không che mặt" }
+          }
+        ]
+      }
+    ],
+    "hook_da_chon": "B"
+  },
+  "scenes": [
+    {
+      "id": "c01",
+      "bat_dau_giay": 0.0,
+      "ket_thuc_giay": 3.46,
+      "noi_dung": "Hook B mở đầu: Mặt Dược sĩ + 2 thẻ Icon 3D & chữ 2 cấp ('CAO LỚN' -> 'BỮA ĂN HẰNG NGÀY?')",
+      "loi_doc": "Muốn con cao lớn, mẹ đã quan tâm đến bữa ăn hằng ngày hay chưa?",
+      "chu_tren_man_hinh": "MUỐN CON PHÁT TRIỂN: CAO LỚN -> ĐÃ QUAN TÂM ĐÚNG: BỮA ĂN HẰNG NGÀY?",
+      "nguon_asset": "quay-that",
+      "prompt_ai": "",
+      "model": "",
+      "anh_tham_chieu": [],
+      "thoi_luong_clip_giay": 3.46,
+      "asset": { "file": "output/av-protein-talking-head/aroll/raw_trim30_lufs.mp4", "do_dai_giay": 3.43, "kiem": "ok", "ghi_chu": "Kèm hook_01_clean.mp4 & hook_02_clean.mp4" },
+      "so_lan_tao": 1
+    },
+    {
+      "id": "c02",
+      "bat_dau_giay": 3.55,
+      "ket_thuc_giay": 9.15,
+      "noi_dung": "Thực trạng: Ăn uống thất thường, lịch học kín mít, giờ sinh hoạt thiếu đều đặn — B-roll AI đè toàn khung",
+      "loi_doc": "Con ăn thất thường, ít lựa chọn thực phẩm, lịch học kín mít khiến giờ sinh hoạt thiếu đều đặn.",
+      "chu_tren_man_hinh": "THỰC TRẠNG SINH HOẠT / ĂN THẤT THƯỜNG • LỊCH KÍN",
+      "nguon_asset": "flow",
+      "prompt_ai": "Cinematic vertical 9:16 tabletop B-roll, slow gentle camera push-in across a study desk stacked with open notebooks, textbooks, a desk clock showing late evening, and an untouched meal tray pushed to the side",
+      "model": "flow::flow-omni-1.2-flash",
+      "anh_tham_chieu": [],
+      "thoi_luong_clip_giay": 5.6,
+      "asset": { "file": "output/av-protein-talking-head/media/broll_c02.mp4", "do_dai_giay": 6.0, "kiem": "ok", "ghi_chu": "Đã kiểm 4 khung, ánh sáng đẹp, không người, đã cắt viền watermark" },
+      "so_lan_tao": 1
+    },
+    {
+      "id": "c03",
+      "bat_dau_giay": 9.70,
+      "ket_thuc_giay": 18.30,
+      "noi_dung": "Đồng cảm cùng phụ huynh: Băn khoăn con đã đủ chất chưa — Mặt Dược sĩ (Micro-Zoom 1.00 <-> 1.06)",
+      "loi_doc": "Những điều ấy khiến bố mẹ dễ băn khoăn liệu con đã được chăm sóc dinh dưỡng đầy đủ hay chưa. Mong con phát triển khỏe mạnh là điều rất tự nhiên.",
+      "chu_tren_man_hinh": "BỐ MẸ BĂN KHOĂN / ĐÃ ĐỦ DINH DƯỠNG CHƯA?",
+      "nguon_asset": "quay-that",
+      "prompt_ai": "",
+      "model": "",
+      "anh_tham_chieu": [],
+      "thoi_luong_clip_giay": 8.6,
+      "asset": { "file": "output/av-protein-talking-head/aroll/raw_trim30_lufs.mp4", "do_dai_giay": 8.6, "kiem": "ok", "ghi_chu": "" },
+      "so_lan_tao": 0
+    },
+    {
+      "id": "c04",
+      "bat_dau_giay": 18.30,
+      "ket_thuc_giay": 24.94,
+      "noi_dung": "3 yếu tố cần xét: Chế độ ăn – Độ tuổi – Nhu cầu — Mặt Dược sĩ + Thẻ Icon 3D 3 tiêu chí (PIP góc trên phải)",
+      "loi_doc": "Nhưng lựa chọn sản phẩm bổ sung cần bắt đầu từ việc xem xét chế độ ăn, độ tuổi và nhu cầu của con.",
+      "chu_tren_man_hinh": "XEM XÉT 3 YẾU TỐ / CHẾ ĐỘ ĂN • ĐỘ TUỔI • NHU CẦU",
+      "nguon_asset": "flow-anh",
+      "prompt_ai": "Premium 3D pharmacist infographic icon badge, three clean glossy 3D medical icons: plate, clock, shield",
+      "model": "flow::flow-nano-banana-pro",
+      "anh_tham_chieu": [],
+      "thoi_luong_clip_giay": 4.2,
+      "asset": { "file": "output/av-protein-talking-head/media/icon_c04_clean.mp4", "do_dai_giay": 8.0, "kiem": "ok", "ghi_chu": "3 icon 3D rất sắc nét, không che mặt" },
+      "so_lan_tao": 1
+    },
+    {
+      "id": "c05",
+      "bat_dau_giay": 24.94,
+      "ket_thuc_giay": 34.48,
+      "noi_dung": "Vai trò Canxi & Vitamin D với xương (B-roll 3D mô xương sạch 24.94–29.24s) + Mặt Dược sĩ nhấn lưu ý khoa học ở nửa sau (29.32–34.48s)",
+      "loi_doc": "Canxi và Vitamin D là những dưỡng chất quan trọng đối với xương. Tuy nhiên, bổ sung canxi không đồng nghĩa với việc là sẽ đảm bảo con sẽ cao hơn.",
+      "chu_tren_man_hinh": "CANXI & VITAMIN D -> CẦN ĐÚNG CƠ CHẾ HẤP THU",
+      "nguon_asset": "flow",
+      "prompt_ai": "Clean 3D scientific medical animation, pearl-white trabecular bone matrix absorbing golden Vitamin D and white Calcium micro-spheres",
+      "model": "flow::flow-omni-1.2-flash",
+      "anh_tham_chieu": [],
+      "thoi_luong_clip_giay": 4.3,
+      "asset": { "file": "output/av-protein-talking-head/media/broll_c05.mp4", "do_dai_giay": 6.0, "kiem": "ok", "ghi_chu": "Mô hình 3D sạch chuẩn dược khoa" },
+      "so_lan_tao": 1
+    },
+    {
+      "id": "c06",
+      "bat_dau_giay": 34.48,
+      "ket_thuc_giay": 40.45,
+      "noi_dung": "Giới thiệu BOJOMI An Vượng (34.48–37.18s mặt Dược sĩ) + Canxi từ Tảo biển (37.18–40.48s B-roll AI tảo biển đỏ tự nhiên)",
+      "loi_doc": "Với Bojomi An Vượng, điểm đáng chú ý của công thức này đó là canxi từ tảo biển,",
+      "chu_tren_man_hinh": "BOJOMI AN VƯỢNG / CANXI TỪ TẢO BIỂN",
+      "nguon_asset": "flow",
+      "prompt_ai": "Crystal clear turquoise ocean water with sunbeams illuminating natural red marine algae Lithothamnion",
+      "model": "flow::flow-omni-1.2-flash",
+      "anh_tham_chieu": [],
+      "thoi_luong_clip_giay": 3.3,
+      "asset": { "file": "output/av-protein-talking-head/media/broll_c06.mp4", "do_dai_giay": 6.0, "kiem": "ok", "ghi_chu": "Hình ảnh tảo biển đỏ sắc nét" },
+      "so_lan_tao": 1
+    },
+    {
+      "id": "c07",
+      "bat_dau_giay": 40.45,
+      "ket_thuc_giay": 44.50,
+      "noi_dung": "Phối hợp D3 + K2 + Collagen — Cảnh thật Dược sĩ cầm hộp BOJOMI + Thẻ Icon 3D Bộ 3 D3-K2-Collagen",
+      "loi_doc": "phối hợp với D3, K2 và collagen.",
+      "chu_tren_man_hinh": "CÔNG THỨC HIỆP ĐỒNG / VITAMIN D3 + K2 + COLLAGEN",
+      "nguon_asset": "flow-anh",
+      "prompt_ai": "Luxury 3D pharmaceutical icon illustration, two glowing golden vitamin spheres with pearl-white collagen helix",
+      "model": "flow::flow-nano-banana-pro",
+      "anh_tham_chieu": [],
+      "thoi_luong_clip_giay": 3.9,
+      "asset": { "file": "output/av-protein-talking-head/media/icon_c07_clean.mp4", "do_dai_giay": 8.0, "kiem": "ok", "ghi_chu": "" },
+      "so_lan_tao": 1
+    },
+    {
+      "id": "c08",
+      "bat_dau_giay": 44.62,
+      "ket_thuc_giay": 57.38,
+      "noi_dung": "Định lượng mỗi gói theo lời nói (418mg Canxi tảo biển, 779 IU D3, 170mcg K2 MK7) — Cảnh thật rút gói BOJOMI + Icon Tảo biển canxi (44.8–51.0s) + Packshot 3D hộp BOJOMI chuẩn hãng (51.3–57.25s)",
+      "loi_doc": "Mỗi gói như vậy sẽ có 418mg canxi từ tảo biển, 779 IU D3 và 170mcg K2 MK7.",
+      "chu_tren_man_hinh": "418mg CANXI TẢO BIỂN • 779 IU D3 • 170mcg K2 MK7",
+      "nguon_asset": "flow-anh",
+      "prompt_ai": "Commercial pharmaceutical product studio photography + authentic packaging composite from bojomi-ref",
+      "model": "flow::flow-nano-banana-pro",
+      "anh_tham_chieu": ["image-1794815025568-spoom"],
+      "thoi_luong_clip_giay": 12.0,
+      "asset": { "file": "output/av-protein-talking-head/media/packshot_c08_clean.mp4", "do_dai_giay": 8.0, "kiem": "ok", "ghi_chu": "Bản AI sinh bị lệch chữ nhỏ ('C4', '178.4 IU'), đã ghép mặt hộp BOJOMI gốc 100% chuẩn chữ theo quy tắc mục 4.4 HE-THONG-TONG-HOP.md" },
+      "so_lan_tao": 1
+    },
+    {
+      "id": "c09",
+      "bat_dau_giay": 57.40,
+      "ket_thuc_giay": 62.55,
+      "noi_dung": "Cách dùng tiện lợi mỗi ngày 1 gói — B-roll AI rót gói bột & khuấy cốc ngũ cốc sữa vani ấm cạnh hộp BOJOMI",
+      "loi_doc": "Chỉ cần mỗi ngày bổ sung 1 gói là con của các bạn đã đủ dinh dưỡng cho xương.",
+      "chu_tren_man_hinh": "TIỆN LỢI MỖI NGÀY / 1 GÓI • ĐỦ DINH DƯỠNG XƯƠNG",
+      "nguon_asset": "flow",
+      "prompt_ai": "Warm sunlit morning kitchen counter close-up B-roll with BOJOMI box beside green ceramic cup stirred with spoon",
+      "model": "flow::flow-omni-1.2-flash",
+      "anh_tham_chieu": ["image-1794815025568-spoom"],
+      "thoi_luong_clip_giay": 5.1,
+      "asset": { "file": "output/av-protein-talking-head/media/broll_c09.mp4", "do_dai_giay": 5.65, "kiem": "ok", "ghi_chu": "Đã cắt 0.35s đầu và cắt viền ngoài, hình cốc xanh + gói + hộp rất khớp sản phẩm" },
+      "so_lan_tao": 1
+    },
+    {
+      "id": "c10",
+      "bat_dau_giay": 62.62,
+      "ket_thuc_giay": 70.10,
+      "noi_dung": "CTA cuối video: Mặt Dược sĩ mời nhắn 'Dinh dưỡng cho con' nhận bảng thành phần & đối chiếu + Dòng khuyến cáo đáy màn hình",
+      "loi_doc": "Nhớ nhắn dinh dưỡng cho con để nhận bảng thành phần và đối chiếu thông tin sản phẩm trước khi quyết định bạn nhé.",
+      "chu_tren_man_hinh": "NHẬN BẢNG THÀNH PHẦN / NHẮN: DINH DƯỠNG CHO CON",
+      "nguon_asset": "quay-that",
+      "prompt_ai": "",
+      "model": "",
+      "anh_tham_chieu": [],
+      "thoi_luong_clip_giay": 7.48,
+      "asset": { "file": "output/av-protein-talking-head/aroll/raw_trim30_lufs.mp4", "do_dai_giay": 7.48, "kiem": "ok", "ghi_chu": "" },
+      "so_lan_tao": 0
+    }
+  ],
+  "credit": {
+    "so_clip_ai_duoc_duyet": 7,
+    "so_clip_ai_da_tao": 7,
+    "so_anh_ai_duoc_duyet": 6,
+    "so_anh_ai_da_tao": 6,
+    "so_lan_tao_lai": 0
+  },
+  "loi": [
+    { "canh": "all", "moc_giay": 0.0, "mo_ta": "Người dùng yêu cầu giữ nền phòng bình thường khi có mẫu, chỉ làm tối nền mượt mà khi xuất hiện animation, dùng video cắt sẵn 1116(1).mp4 (66.43s) làm video chính, và làm mượt keyframe vào/ra.", "loai": "dung", "trang_thai": "da-sua" },
+    { "canh": "c02", "moc_giay": 3.55, "mo_ta": "Image 2 hai lớp trên/dưới bị giống nhau -> đã tạo mới broll_c02_meal.mp4 (bàn ăn dở dang) ghép cặp với broll_c02.mp4 (bàn học khuya).", "loai": "asset", "trang_thai": "da-sua" },
+    { "canh": "c05, c09", "moc_giay": 25.02, "mo_ta": "Image 3 & Image 4 hình dưới bị méo tỉ lệ -> đã khoá fit_cover 1:1 pixel và tạo mới broll_c05_vitd.mp4 + broll_c09_grains.mp4.", "loai": "asset", "trang_thai": "da-sua" }
+  ],
+  "dau_ra": {
+    "video": "output/av-protein-talking-head/bojomi_talking_head_v3_final.mp4 (+ CapCut Draft: BOJOMI_AnVuong_TalkingHead_v3_Final)",
+    "bao_cao": "output/av-protein-talking-head/report.md"
+  },
+  "nhat_ky": [
+    {
+      "luc": "2026-11-16T14:30:00+07:00",
+      "agent": "content",
+      "viec": "Lập kịch bản duyệt và 3 phương án Hook."
+    },
+    {
+      "luc": "2026-11-16T14:44:00+07:00",
+      "agent": "coordinator",
+      "viec": "Người dùng duyệt BOJOMI An Vượng, Hook B, thông số theo lời nói, tạo 6 ảnh AI + 4 clip B-roll AI trên Canvas, dựng bản nháp CapCut."
+    },
+    {
+      "luc": "2026-11-16T15:05:00+07:00",
+      "agent": "tao-asset",
+      "viec": "Sinh thành công 6/6 ảnh AI và 4/4 clip B-roll AI qua Google Flow, xuất file, kiểm khung từng file, thay nhãn hộp thật lên packshot c08."
+    },
+    {
+      "luc": "2026-11-16T15:07:30+07:00",
+      "agent": "edit",
+      "viec": "Dựng bản v1 CapCut Pro 7 track 'BOJOMI_AnVuong_TalkingHead_v1'."
+    },
+    {
+      "luc": "2026-11-16T15:50:00+07:00",
+      "agent": "edit",
+      "viec": "Phân tích D:\\AI\\1\\video mẫu.mov + toàn bộ th-lib.jsx (phong-cach/talking-head), chạy RVM matte tách người 2103 khung, nâng cấp lên v2 với đủ 10 khối hiệu ứng chuẩn Foodtage/Dược sĩ (phông Studio sâu có đèn viền, chữ từ khoá + số 1/2/3 sau lưng đầu, Hook 3 kiểu chữ + vòng cung 3 Icon Tile viền sáng chạy vòng + vòng nổ burst, phụ đề từng từ serif nghiêng phát sáng + Stroke Up ở ngực dưới không che mặt, thanh kính mờ T.logoBar, 4 cảnh B-roll thẻ 3D chia đôi T.brollCard, nền vòng tròn quay T.ringsBg sau lưng người nói, 22 điểm Studio SFX + BGM ấm chuẩn hoá 2 lượt -14.0 LUFS)."
+    }
+  ]
+}

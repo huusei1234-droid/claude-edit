@@ -1,0 +1,9 @@
+﻿PtrSize: 4
+Gigabyte.EnvironmentControl.CoolingDevice.Fan.SmartGuardianFanControl => IsSupported=False
+  Temps=0, Rpms=0
+Gigabyte.EnvironmentControl.CoolingDevice.Fan.SmartGuardianFanControlCoordinateSystem => IsSupported=True
+  Temps=0, Rpms=0
+Gigabyte.Engine.EnvironmentControl.CoolingDevice.Fan.SmartGuardianFanControlModule => IsSupported=
+  Temps=0, Rpms=0
+Gigabyte.Engine.EnvironmentControl.CoolingDevice.Fan.SmartGuardianFanControlCoordinateSystemModule => IsSupported=True
+  Temps=0, Rpms=0

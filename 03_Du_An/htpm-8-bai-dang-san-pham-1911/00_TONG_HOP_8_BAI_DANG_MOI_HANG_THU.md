@@ -1,0 +1,148 @@
+# BỘ 8 BÀI ĐĂNG NGẮN GỌN, ÍT ICON – HẰNG THU PHARMA
+
+---
+
+## Bài 01 — Viên Uống Điều Kinh Bổ Trứng Hằng Thu
+- **Hình**: `01 - Viên Uống Điều Kinh Bổ Trứng.jpg`
+
+```text
+TRỨNG LÉP, KINH THẤT THƯỜNG – NGUYÊN NHÂN KHIẾN NHIỀU CHỊ EM CHẬM CON
+
+Thả tự nhiên đã lâu chưa có tin vui, chị em đừng chủ quan nếu đang gặp tình trạng:
+- Nang trứng phát triển kém, trứng nhỏ hoặc rụng không đều.
+- Chu kỳ kinh nguyệt rối loạn, tháng sớm tháng trễ, lượng kinh ít.
+- Nội tiết kém ổn định làm giảm khả năng thụ thai tự nhiên.
+
+Muốn sớm đón bé yêu, cơ thể cần được bồi bổ khí huyết và nuôi dưỡng buồng trứng khỏe từ gốc. Viên uống Điều Kinh Bổ Trứng Hằng Thu từ thảo mộc Đương quy, Hương phụ, Hồng hoa hỗ trợ điều hòa chu kỳ, dưỡng trứng khỏe – rụng trứng đều, tăng cơ hội đón con yêu.
+
+📩 Nhắn tin cho trang để được tư vấn riêng theo thể trạng của bạn.
+```
+
+---
+
+## Bài 02 — Viên Đặt Phụ Khoa LT Plus Hằng Thu
+- **Hình**: `02 - Viên Đặt Phụ Khoa LT Plus.jpg`
+
+```text
+VIÊM LỘ TUYẾN CỔ TỬ CUNG – KHÔNG PHẢI AI CŨNG CẦN ĐỐT
+
+Viêm lộ tuyến kéo dài thường gây ra nhiều phiền toái khó nói:
+- Khí hư ra nhiều bất thường, có mùi khó chịu.
+- Ẩm ướt, ngứa rát vùng nhạy cảm.
+- Đau rát, e ngại khi gần gũi vợ chồng.
+- Tình trạng viêm tái đi tái lại nhiều lần.
+
+Thực tế, không phải trường hợp nào cũng bắt buộc can thiệp đốt. Viên đặt LT Plus Hằng Thu (Hoàng bá, Kim ngân hoa, Trầu không, Acid Lactic) hỗ trợ đào thải dịch viêm từ sâu bên trong, cân bằng pH và tái tạo làm lành niêm mạc êm dịu – phù hợp cho cả lộ tuyến độ 1, 2 và 3.
+
+📩 Inbox kín đáo để được hướng dẫn lộ trình chăm sóc tại nhà.
+```
+
+---
+
+## Bài 03 — Dạ Dày HT Hằng Thu
+- **Hình**: `03 - Dạ Dày HT Hằng Thu.jpg`
+
+```text
+TRÀO NGƯỢC DẠ DÀY – ĐỪNG CHỦ QUAN ĐỂ THÀNH MẠN TÍNH
+
+Bạn có đang gặp những dấu hiệu báo động này mỗi ngày?
+- Ợ hơi, ợ chua, nóng rát vùng thượng vị và lồng ngực.
+- Đầy bụng, chướng hơi, khó tiêu, dễ buồn nôn.
+- Đắng miệng buổi sáng, vướng nghẹn cổ họng.
+- Khó chịu tăng lên sau khi ăn no hoặc khi nằm xuống.
+
+Trào ngược kéo dài rất dễ gây tổn thương thực quản và viêm loét dạ dày. Kết hợp ăn uống đúng giờ, hạn chế đồ cay nóng cùng Dạ Dày HT Hằng Thu (chiết xuất Dạ cẩm & Nghệ) giúp hỗ trợ trung hòa acid, làm dịu cơn nóng rát và bảo vệ niêm mạc dạ dày – đại tràng êm khỏe.
+
+📩 Nhắn tin ngay tình trạng bạn đang gặp để được tư vấn chi tiết.
+```
+
+---
+
+## Bài 04 — Dung Dịch Kháng Khuẩn Romance VIP Hằng Thu
+- **Hình**: `04 - Dung Dịch Vệ Sinh Romance VIP.jpg`
+
+```text
+ROMANCE VIP HẰNG THU – SẠCH THOÁNG DỊU NHẸ, TỰ TIN SUỐT NGÀY DÀI
+
+Thời tiết nóng ẩm hay chọn nhầm sản phẩm tẩy rửa mạnh rất dễ khiến vùng nhạy cảm bí bách, có mùi và mất cân bằng độ pH.
+
+Dung dịch kháng khuẩn Romance VIP Hằng Thu đồng hành nâng niu phái đẹp mỗi ngày:
+- Làm sạch nhẹ nhàng, giữ cảm giác khô thoáng mà không gây khô rát.
+- Hỗ trợ kháng khuẩn, hạn chế mùi khó chịu suốt 24 giờ.
+- Dưỡng ẩm mềm mịn cùng hương hoa hồng tinh tế, cuốn hút.
+
+📩 Inbox cho Hằng Thu để được tư vấn chăm sóc đúng cách mỗi ngày.
+```
+
+---
+
+## Bài 05 — Viên Đặt Phụ Khoa Hằng Thu (Khít Hồng)
+- **Hình**: `05 - Viên Đặt Phụ Khoa Khít Hồng.jpg`
+
+```text
+CHĂM SÓC SAU SINH – LẤY LẠI SỰ SĂN CHẮC VÀ TỰ TIN CHO PHÁI ĐẸP
+
+Sau sinh nở, nhiều chị em âm thầm mặc cảm vì những thay đổi khó giãi bày:
+- Độ đàn hồi suy giảm, kém săn chắc hơn trước.
+- Khô rát, giảm cảm xúc khi gần gũi bạn đời.
+- Dịch tiết có mùi khó chịu, dễ viêm nhiễm phụ khoa.
+
+Viên Đặt Phụ Khoa Hằng Thu chiết xuất thảo mộc tự nhiên hỗ trợ cải thiện độ săn chắc khít hồng, làm sạch dịch viêm và nuôi dưỡng tử cung khỏe mạnh. Chị em có thể kết hợp thêm bài tập cơ sàn chậu mỗi ngày để đạt hiệu quả tối ưu.
+
+📩 Nhắn tin riêng cho trang để được tư vấn liệu trình kín đáo.
+```
+
+---
+
+## Bài 06 — Viên Dưỡng Tử Cung Romance Love Hằng Thu
+- **Hình**: `06 - Viên Dưỡng Tử Cung Romance Love.jpg`
+
+```text
+ROMANCE LOVE HẰNG THU – CẤP ẨM SÂU, GIỮ GÌN NÉT XUÂN PHÁI ĐẸP
+
+Thay đổi nội tiết sau sinh hoặc sau tuổi 30 khiến không ít chị em gặp phải:
+- Tình trạng khô hạn, thiếu hụt độ ẩm tự nhiên.
+- Đau rát, e ngại mỗi lần gần gũi vợ chồng.
+- Kém thơm tho, giảm sự tự tin vốn có.
+
+Viên dưỡng Romance Love Hằng Thu (giàu Hyaluronic Acid, Vitamin B5, Niacinamide & Vitamin E) giúp cấp ẩm chuyên sâu, hỗ trợ kháng khuẩn, giảm khô rát và dưỡng vùng nhạy cảm luôn mềm mịn, sạch thơm.
+
+📩 Inbox chữ "Romance Love" để được tư vấn chi tiết và bảo mật.
+```
+
+---
+
+## Bài 07 — Ngọc Long Hoàn Hằng Thu
+- **Hình**: `07 - Ngọc Long Hoàn Hằng Thu.jpg`
+
+```text
+NGỌC LONG HOÀN HẰNG THU – PHỤC HỒI PHONG ĐỘ, VỮNG BẢN LĨNH ĐÀN ÔNG
+
+Áp lực công việc và tuổi tác khiến nhiều anh em đối mặt với dấu hiệu suy giảm:
+- Sinh lực đi xuống, giảm sự hứng thú.
+- Khó duy trì phong độ vững vàng khi gần gũi.
+- Chưa trọn cuộc vui đã sớm hụt hơi, thiếu tự tin.
+- Cơ thể mệt mỏi, đau lưng mỏi gối, suy giảm sức bền.
+
+Hội tụ 8 vị thảo dược quý (Đông trùng hạ thảo, Nhung hươu, Ba kích tím, Sâm cau, Dâm dương hoắc...), Ngọc Long Hoàn Hằng Thu hỗ trợ bổ thận tráng dương, bồi bổ thể lực từ gốc và giúp phái mạnh duy trì phong độ bền bỉ.
+
+📩 Nhắn tin bảo mật 100% để được chuyên viên tư vấn lộ trình phù hợp.
+```
+
+---
+
+## Bài 08 — Legend White Skin Hằng Thu
+- **Hình**: `08 - Viên Uống Trắng Da White Skin.jpg`
+
+```text
+LEGEND WHITE SKIN – NUÔI DƯỠNG LÀN DA SÁNG KHỎE TỪ BÊN TRONG
+
+Chỉ thoa kem bên ngoài thường khó cải thiện triệt để khi làn da đang gặp phải:
+- Da xỉn màu, tối sầm, thiếu sức sống.
+- Nám, sạm, tàn nhang khiến da kém đều màu.
+- Da khô ráp, xuất hiện nếp nhăn và dấu hiệu lão hóa sớm.
+
+Viên uống Legend White Skin Hằng Thu bổ sung bộ 3 hoạt chất L-Glutathione, NMN và Vitamin E hỗ trợ làm mờ sạm nám, chống oxy hóa và nuôi dưỡng làn da sáng mịn, tươi trẻ từ gốc. Kết hợp chống nắng và uống đủ nước mỗi ngày để da rạng rỡ nhất.
+
+📩 Inbox cho Hằng Thu để được tư vấn liệu trình chăm da phù hợp.
+```

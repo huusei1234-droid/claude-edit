@@ -124,12 +124,15 @@ Tài liệu này lưu trữ **toàn bộ phong cách dựng phim (Editing DNA)**
 
 ---
 
-## 5. Quy Tắc Tự Động Phân Luồng Model Theo Độ Khó Tác Vụ (Smart Auto-Tier Routing — Đã Được Người Dùng Ủy Quyền)
-Người dùng đã yêu cầu hệ thống **tự động cân đối tốc độ phản hồi và chiều sâu trí tuệ theo nội dung câu hỏi**:
-- **Tầng 1 — Tác vụ nhanh / Hỏi đáp ngắn / Mở file / Chạy lệnh đơn giản**: Xử lý trực tiếp ngay lập tức tại luồng chính ở tốc độ cao nhất, trả lời ngắn gọn dứt điểm, không gọi subagent dư thừa.
-- **Tầng 2 — Tra cứu tệp hàng loạt / Quét dữ liệu / Thao tác trình duyệt / Việc lặp lại đơn giản**: Khi gọi `invoke_subagent`, chủ động truyền `Model: "flash_lite"` (cho việc vặt/số lượng lớn) hoặc `Model: "flash"` (cho tra cứu chuẩn & `browser`) để trả kết quả cực nhanh và tiết kiệm quota.
-- **Tầng 3 — Tác vụ sáng tạo & kỹ thuật chuyên sâu (Viết chuỗi kịch bản TVC/VSL đắt giá, kiến trúc Motion Graphics/Shader 3D lớn, gỡ lỗi hệ thống phức tạp)**: Khi cần suy luận sâu mà khung chat chính đang ở chế độ nhanh (`Low`/`Medium`), chủ động gọi `invoke_subagent` với `Model: "pro"` để đảm bảo chất lượng đầu ra cao nhất mà không làm chậm các câu lệnh thường ngày.
-- **Tầng 4 — Nhiệm vụ đặc biệt quan trọng / Dự án chốt khách / Chiến dịch lớn**: Người dùng đã cho phép chủ động nâng cấp lên mức **`High` hoặc `XHigh`** (`gemini-4-neon-high` / `gemini-4-neon-xhigh`, hoặc `claude-opus-5-5-high` khi làm kịch bản/thẩm mỹ đỉnh cao qua `swarm`), ưu tiên tối đa chiều sâu và độ hoàn hảo hơn tốc độ.
+## 5. Quy Tắc Tự Động Chọn & Phân Luồng Model Theo Độ Khó Tác Vụ (Auto-Select Model: Tốc Độ Tối Đa → Carbon / Neon → Extra `XHigh`)
+Người dùng đã ủy quyền cho hệ thống **tự động chọn và chuyển đổi model linh hoạt theo từng câu hỏi** (qua công cụ `swarm(action="model", ...)` cho luồng chính kết hợp `invoke_subagent` / `swarm` cho các tác vụ con) để luôn đạt **tốc độ phản hồi nhanh nhất** ở việc thường ngày nhưng **tối đa trí tuệ** ở việc quan trọng:
+- **Tầng 1 — Hỏi đáp thường / Sửa cài đặt máy / Chạy lệnh đơn giản (Ưu tiên tốc độ ra kết quả nhanh nhất)**:
+  - Xử lý trực tiếp tức thì ở chế độ điều phối nhanh (**`Orchestrator (Carbon)`** `gemini-pro-orchestrator` hoặc **`Gemini 4 Carbon (Low / Medium)`** `gemini-4-carbon-low` / `gemini-4-carbon-medium`), trả lời ngắn gọn dứt điểm, không gọi subagent dư thừa.
+  - Với việc quét tệp số lượng lớn, thao tác trình duyệt hoặc việc lặp lại đơn giản: gọi `invoke_subagent` với `Model: "flash_lite"` hoặc `Model: "flash"` để trả kết quả cực nhanh.
+- **Tầng 2 — Tác vụ Quan trọng / Kỹ thuật & Sáng tạo chuyên sâu (Ưu tiên `Gemini 4 Carbon` & `Gemini 4 Neon`)**:
+  - Khi gặp bài toán quan trọng (viết kịch bản TVC/VSL, dựng Motion Graphics/HyperFrames/Remotion, thiết kế hệ thống, gỡ lỗi phức tạp): chủ động nâng lên **`Gemini 4 Carbon (High)`** (`gemini-4-carbon-high`), **`Gemini 4 Neon (Medium / High)`** (`gemini-4-neon-medium` / `gemini-4-neon-high`) hoặc **`Orchestrator (Neon)`** (`gemini-pro-orchestrator-neon`) (hoặc `invoke_subagent` với `Model: "pro"`).
+- **Tầng 3 — Nhiệm vụ Đặc biệt Quan trọng / Dự án Lớn / Cần Độ Chính Xác Tuyệt Đối (Dùng tới mức `Extra` / `XHigh` khi cần thiết)**:
+  - Khi giải quyết kiến trúc lớn, chiến dịch chốt khách quan trọng hoặc lỗi hóc búa đòi hỏi suy luận sâu tối đa: chủ động kích hoạt lên mức **`Extra` (`XHigh`)** với **`Gemini 4 Neon (XHigh)`** (`gemini-4-neon-xhigh`) (kết hợp `gemini-4-hydrogen-xhigh` / `claude-opus-5-5-high` trong `swarm` nếu cần), ưu tiên độ hoàn hảo tuyệt đối.
 
 ---
 

@@ -1,0 +1,2894 @@
+{
+  "fps": 30,
+  "intro_dur": 3.9,
+  "voice_end": 140.3333,
+  "outro_dur": 3.0,
+  "total_dur": 143.3333,
+  "total_frames": 4300,
+  "blocks": [
+    {
+      "id": "b01_open_live",
+      "mode": "live",
+      "video_path": "d:\\AI\\full studio\\output\\f20-set-qua-2011\\v5_master\\clips_v5\\b01_open_live.mp4",
+      "wav_path": "d:\\AI\\full studio\\output\\f20-set-qua-2011\\v5_master\\voice_v5\\b01_open_live.wav",
+      "start": 3.9,
+      "end": 13.1,
+      "dur": 9.2,
+      "frames": 276
+    },
+    {
+      "id": "b02_nhatrang_real",
+      "mode": "real_vo",
+      "video_path": null,
+      "wav_path": "d:\\AI\\full studio\\output\\f20-set-qua-2011\\v5_master\\voice_v5\\b02_nhatrang_real.wav",
+      "start": 13.1,
+      "end": 23.4,
+      "dur": 10.3,
+      "frames": 309
+    },
+    {
+      "id": "b03_ship_104_clean",
+      "mode": "tts_bridge",
+      "video_path": null,
+      "wav_path": "d:\\AI\\full studio\\output\\f20-set-qua-2011\\v5_master\\voice_v5\\b03_ship_104_clean.wav",
+      "start": 23.4,
+      "end": 34.2,
+      "dur": 10.8,
+      "frames": 324
+    },
+    {
+      "id": "b04_wide_oanh_104_live",
+      "mode": "live",
+      "video_path": "d:\\AI\\full studio\\output\\f20-set-qua-2011\\v5_master\\clips_v5\\b04_wide_oanh_104_live.mp4",
+      "wav_path": "d:\\AI\\full studio\\output\\f20-set-qua-2011\\v5_master\\voice_v5\\b04_wide_oanh_104_live.wav",
+      "start": 34.2,
+      "end": 38.8667,
+      "dur": 4.6667,
+      "frames": 140
+    },
+    {
+      "id": "b05_intro_set_live",
+      "mode": "live",
+      "video_path": "d:\\AI\\full studio\\output\\f20-set-qua-2011\\v5_master\\clips_v5\\b05_intro_set_live.mp4",
+      "wav_path": "d:\\AI\\full studio\\output\\f20-set-qua-2011\\v5_master\\voice_v5\\b05_intro_set_live.wav",
+      "start": 38.8667,
+      "end": 43.9334,
+      "dur": 5.0667,
+      "frames": 152
+    },
+    {
+      "id": "b06_4items_real_tight",
+      "mode": "real_vo",
+      "video_path": null,
+      "wav_path": "d:\\AI\\full studio\\output\\f20-set-qua-2011\\v5_master\\voice_v5\\b06_4items_real_tight.wav",
+      "start": 43.9334,
+      "end": 82.2334,
+      "dur": 38.3,
+      "frames": 1149
+    },
+    {
+      "id": "b07a_yen_giatri_real",
+      "mode": "real_vo",
+      "video_path": null,
+      "wav_path": "d:\\AI\\full studio\\output\\f20-set-qua-2011\\v5_master\\voice_v5\\b07a_yen_giatri_real.wav",
+      "start": 82.2334,
+      "end": 88.9667,
+      "dur": 6.7333,
+      "frames": 202
+    },
+    {
+      "id": "b07b_camnang_live",
+      "mode": "live",
+      "video_path": "d:\\AI\\full studio\\output\\f20-set-qua-2011\\v5_master\\clips_v5\\b07b_camnang_live.mp4",
+      "wav_path": "d:\\AI\\full studio\\output\\f20-set-qua-2011\\v5_master\\voice_v5\\b07b_camnang_live.wav",
+      "start": 88.9667,
+      "end": 98.0,
+      "dur": 9.0333,
+      "frames": 271
+    },
+    {
+      "id": "b08_chungyen_clean",
+      "mode": "tts_bridge",
+      "video_path": null,
+      "wav_path": "d:\\AI\\full studio\\output\\f20-set-qua-2011\\v5_master\\voice_v5\\b08_chungyen_clean.wav",
+      "start": 98.0,
+      "end": 101.2,
+      "dur": 3.2,
+      "frames": 96
+    },
+    {
+      "id": "b09a_giomica_real",
+      "mode": "real_vo",
+      "video_path": null,
+      "wav_path": "d:\\AI\\full studio\\output\\f20-set-qua-2011\\v5_master\\voice_v5\\b09a_giomica_real.wav",
+      "start": 101.2,
+      "end": 107.4333,
+      "dur": 6.2333,
+      "frames": 187
+    },
+    {
+      "id": "b09b_quai_da_live",
+      "mode": "live",
+      "video_path": "d:\\AI\\full studio\\output\\f20-set-qua-2011\\v5_master\\clips_v5\\b09b_quai_da_live.mp4",
+      "wav_path": "d:\\AI\\full studio\\output\\f20-set-qua-2011\\v5_master\\voice_v5\\b09b_quai_da_live.wav",
+      "start": 107.4333,
+      "end": 112.8666,
+      "dur": 5.4333,
+      "frames": 163
+    },
+    {
+      "id": "b09c_hoa_no_real",
+      "mode": "real_vo",
+      "video_path": null,
+      "wav_path": "d:\\AI\\full studio\\output\\f20-set-qua-2011\\v5_master\\voice_v5\\b09c_hoa_no_real.wav",
+      "start": 112.8666,
+      "end": 118.5666,
+      "dur": 5.7,
+      "frames": 171
+    },
+    {
+      "id": "b10a_sx_live",
+      "mode": "live",
+      "video_path": "d:\\AI\\full studio\\output\\f20-set-qua-2011\\v5_master\\clips_v5\\b10a_sx_live.mp4",
+      "wav_path": "d:\\AI\\full studio\\output\\f20-set-qua-2011\\v5_master\\voice_v5\\b10a_sx_live.wav",
+      "start": 118.5666,
+      "end": 123.6999,
+      "dur": 5.1333,
+      "frames": 154
+    },
+    {
+      "id": "b10b_sx_yentam_real",
+      "mode": "real_vo",
+      "video_path": null,
+      "wav_path": "d:\\AI\\full studio\\output\\f20-set-qua-2011\\v5_master\\voice_v5\\b10b_sx_yentam_real.wav",
+      "start": 123.6999,
+      "end": 126.7666,
+      "dur": 3.0667,
+      "frames": 92
+    },
+    {
+      "id": "b11a_cta_live1",
+      "mode": "live",
+      "video_path": "d:\\AI\\full studio\\output\\f20-set-qua-2011\\v5_master\\clips_v5\\b11a_cta_live1.mp4",
+      "wav_path": "d:\\AI\\full studio\\output\\f20-set-qua-2011\\v5_master\\voice_v5\\b11a_cta_live1.wav",
+      "start": 126.7666,
+      "end": 132.4333,
+      "dur": 5.6667,
+      "frames": 170
+    },
+    {
+      "id": "b11b_cta_2011_real",
+      "mode": "real_vo",
+      "video_path": null,
+      "wav_path": "d:\\AI\\full studio\\output\\f20-set-qua-2011\\v5_master\\voice_v5\\b11b_cta_2011_real.wav",
+      "start": 132.4333,
+      "end": 138.2333,
+      "dur": 5.8,
+      "frames": 174
+    },
+    {
+      "id": "b11c_cta_inbox_live",
+      "mode": "live",
+      "video_path": "d:\\AI\\full studio\\output\\f20-set-qua-2011\\v5_master\\clips_v5\\b11c_cta_inbox_live.mp4",
+      "wav_path": "d:\\AI\\full studio\\output\\f20-set-qua-2011\\v5_master\\voice_v5\\b11c_cta_inbox_live.wav",
+      "start": 138.2333,
+      "end": 140.3333,
+      "dur": 2.1,
+      "frames": 63
+    }
+  ],
+  "whisper_segments": [
+    {
+      "start": 3.6,
+      "end": 12.96,
+      "text": "Hôm nay thì Bên Oanh đang chuẩn bị 104 sẹt quà cho các khách hàng đặt để làm quà biểu tảng thầy cô giáo nhân dịp tri ân ngày 20 tháng 11.",
+      "words": [
+        {
+          "start": 3.6,
+          "end": 4.12,
+          "word": "Hôm"
+        },
+        {
+          "start": 4.12,
+          "end": 4.34,
+          "word": "nay"
+        },
+        {
+          "start": 4.34,
+          "end": 4.5,
+          "word": "thì"
+        },
+        {
+          "start": 4.5,
+          "end": 4.8,
+          "word": "Bên"
+        },
+        {
+          "start": 4.8,
+          "end": 4.96,
+          "word": "Oanh"
+        },
+        {
+          "start": 4.96,
+          "end": 5.16,
+          "word": "đang"
+        },
+        {
+          "start": 5.16,
+          "end": 5.44,
+          "word": "chuẩn"
+        },
+        {
+          "start": 5.44,
+          "end": 5.6,
+          "word": "bị"
+        },
+        {
+          "start": 5.6,
+          "end": 6.32,
+          "word": "104"
+        },
+        {
+          "start": 6.32,
+          "end": 7.0,
+          "word": "sẹt"
+        },
+        {
+          "start": 7.0,
+          "end": 7.2,
+          "word": "quà"
+        },
+        {
+          "start": 7.2,
+          "end": 7.54,
+          "word": "cho"
+        },
+        {
+          "start": 7.54,
+          "end": 7.78,
+          "word": "các"
+        },
+        {
+          "start": 7.78,
+          "end": 8.18,
+          "word": "khách"
+        },
+        {
+          "start": 8.18,
+          "end": 8.46,
+          "word": "hàng"
+        },
+        {
+          "start": 8.46,
+          "end": 8.78,
+          "word": "đặt"
+        },
+        {
+          "start": 8.78,
+          "end": 9.08,
+          "word": "để"
+        },
+        {
+          "start": 9.08,
+          "end": 9.66,
+          "word": "làm"
+        },
+        {
+          "start": 9.66,
+          "end": 9.9,
+          "word": "quà"
+        },
+        {
+          "start": 9.9,
+          "end": 10.1,
+          "word": "biểu"
+        },
+        {
+          "start": 10.1,
+          "end": 10.3,
+          "word": "tảng"
+        },
+        {
+          "start": 10.3,
+          "end": 10.58,
+          "word": "thầy"
+        },
+        {
+          "start": 10.58,
+          "end": 10.7,
+          "word": "cô"
+        },
+        {
+          "start": 10.7,
+          "end": 10.92,
+          "word": "giáo"
+        },
+        {
+          "start": 10.92,
+          "end": 11.14,
+          "word": "nhân"
+        },
+        {
+          "start": 11.14,
+          "end": 11.46,
+          "word": "dịp"
+        },
+        {
+          "start": 11.46,
+          "end": 11.64,
+          "word": "tri"
+        },
+        {
+          "start": 11.64,
+          "end": 11.84,
+          "word": "ân"
+        },
+        {
+          "start": 11.84,
+          "end": 12.04,
+          "word": "ngày"
+        },
+        {
+          "start": 12.04,
+          "end": 12.44,
+          "word": "20"
+        },
+        {
+          "start": 12.44,
+          "end": 12.74,
+          "word": "tháng"
+        },
+        {
+          "start": 12.74,
+          "end": 12.96,
+          "word": "11."
+        }
+      ]
+    },
+    {
+      "start": 13.2,
+      "end": 19.56,
+      "text": "Ở Nha Trang thì có 2 khách hàng, 1 khách hàng là Anh Hầu tại Trung tâm Liên thi Đăng Khoa Edu đặt 77 sẹt quà,",
+      "words": [
+        {
+          "start": 13.2,
+          "end": 13.58,
+          "word": "Ở"
+        },
+        {
+          "start": 13.58,
+          "end": 13.74,
+          "word": "Nha"
+        },
+        {
+          "start": 13.74,
+          "end": 14.02,
+          "word": "Trang"
+        },
+        {
+          "start": 14.02,
+          "end": 14.22,
+          "word": "thì"
+        },
+        {
+          "start": 14.22,
+          "end": 14.44,
+          "word": "có"
+        },
+        {
+          "start": 14.44,
+          "end": 14.68,
+          "word": "2"
+        },
+        {
+          "start": 14.68,
+          "end": 14.86,
+          "word": "khách"
+        },
+        {
+          "start": 14.86,
+          "end": 15.12,
+          "word": "hàng,"
+        },
+        {
+          "start": 15.28,
+          "end": 15.34,
+          "word": "1"
+        },
+        {
+          "start": 15.34,
+          "end": 15.58,
+          "word": "khách"
+        },
+        {
+          "start": 15.58,
+          "end": 15.84,
+          "word": "hàng"
+        },
+        {
+          "start": 15.84,
+          "end": 16.04,
+          "word": "là"
+        },
+        {
+          "start": 16.04,
+          "end": 16.28,
+          "word": "Anh"
+        },
+        {
+          "start": 16.28,
+          "end": 16.54,
+          "word": "Hầu"
+        },
+        {
+          "start": 16.54,
+          "end": 16.8,
+          "word": "tại"
+        },
+        {
+          "start": 16.8,
+          "end": 17.06,
+          "word": "Trung"
+        },
+        {
+          "start": 17.06,
+          "end": 17.28,
+          "word": "tâm"
+        },
+        {
+          "start": 17.28,
+          "end": 17.46,
+          "word": "Liên"
+        },
+        {
+          "start": 17.46,
+          "end": 17.64,
+          "word": "thi"
+        },
+        {
+          "start": 17.64,
+          "end": 17.88,
+          "word": "Đăng"
+        },
+        {
+          "start": 17.88,
+          "end": 18.08,
+          "word": "Khoa"
+        },
+        {
+          "start": 18.08,
+          "end": 18.28,
+          "word": "Edu"
+        },
+        {
+          "start": 18.28,
+          "end": 18.6,
+          "word": "đặt"
+        },
+        {
+          "start": 18.6,
+          "end": 18.9,
+          "word": "77"
+        },
+        {
+          "start": 18.9,
+          "end": 19.38,
+          "word": "sẹt"
+        },
+        {
+          "start": 19.38,
+          "end": 19.56,
+          "word": "quà,"
+        }
+      ]
+    },
+    {
+      "start": 19.74,
+      "end": 26.7,
+      "text": "1 khách hàng thứ 2 là 1 nhóm hồi phù huynh đặt 13 sẹt quà, khách thứ 3 là 1 bạn giáo viên ở Hà Nội đặt 10 sẹt quà",
+      "words": [
+        {
+          "start": 19.74,
+          "end": 19.8,
+          "word": "1"
+        },
+        {
+          "start": 19.8,
+          "end": 20.02,
+          "word": "khách"
+        },
+        {
+          "start": 20.02,
+          "end": 20.26,
+          "word": "hàng"
+        },
+        {
+          "start": 20.26,
+          "end": 20.38,
+          "word": "thứ"
+        },
+        {
+          "start": 20.38,
+          "end": 20.62,
+          "word": "2"
+        },
+        {
+          "start": 20.62,
+          "end": 20.78,
+          "word": "là"
+        },
+        {
+          "start": 20.78,
+          "end": 20.96,
+          "word": "1"
+        },
+        {
+          "start": 20.96,
+          "end": 21.24,
+          "word": "nhóm"
+        },
+        {
+          "start": 21.24,
+          "end": 21.52,
+          "word": "hồi"
+        },
+        {
+          "start": 21.52,
+          "end": 21.7,
+          "word": "phù"
+        },
+        {
+          "start": 21.7,
+          "end": 21.96,
+          "word": "huynh"
+        },
+        {
+          "start": 21.96,
+          "end": 22.42,
+          "word": "đặt"
+        },
+        {
+          "start": 22.42,
+          "end": 22.78,
+          "word": "13"
+        },
+        {
+          "start": 22.78,
+          "end": 23.18,
+          "word": "sẹt"
+        },
+        {
+          "start": 23.18,
+          "end": 23.36,
+          "word": "quà,"
+        },
+        {
+          "start": 23.42,
+          "end": 23.56,
+          "word": "khách"
+        },
+        {
+          "start": 23.56,
+          "end": 23.72,
+          "word": "thứ"
+        },
+        {
+          "start": 23.72,
+          "end": 23.92,
+          "word": "3"
+        },
+        {
+          "start": 23.92,
+          "end": 24.08,
+          "word": "là"
+        },
+        {
+          "start": 24.08,
+          "end": 24.24,
+          "word": "1"
+        },
+        {
+          "start": 24.24,
+          "end": 24.44,
+          "word": "bạn"
+        },
+        {
+          "start": 24.44,
+          "end": 24.68,
+          "word": "giáo"
+        },
+        {
+          "start": 24.68,
+          "end": 24.92,
+          "word": "viên"
+        },
+        {
+          "start": 24.92,
+          "end": 25.06,
+          "word": "ở"
+        },
+        {
+          "start": 25.06,
+          "end": 25.28,
+          "word": "Hà"
+        },
+        {
+          "start": 25.28,
+          "end": 25.5,
+          "word": "Nội"
+        },
+        {
+          "start": 25.5,
+          "end": 25.82,
+          "word": "đặt"
+        },
+        {
+          "start": 25.82,
+          "end": 26.04,
+          "word": "10"
+        },
+        {
+          "start": 26.04,
+          "end": 26.42,
+          "word": "sẹt"
+        },
+        {
+          "start": 26.42,
+          "end": 26.7,
+          "word": "quà"
+        }
+      ]
+    },
+    {
+      "start": 26.7,
+      "end": 29.74,
+      "text": "và 1 bạn ở TP.HCM đặt 4 sẹt quà.",
+      "words": [
+        {
+          "start": 26.7,
+          "end": 26.94,
+          "word": "và"
+        },
+        {
+          "start": 26.94,
+          "end": 27.1,
+          "word": "1"
+        },
+        {
+          "start": 27.1,
+          "end": 27.34,
+          "word": "bạn"
+        },
+        {
+          "start": 27.34,
+          "end": 27.52,
+          "word": "ở"
+        },
+        {
+          "start": 27.52,
+          "end": 27.76,
+          "word": "TP"
+        },
+        {
+          "start": 27.76,
+          "end": 28.5,
+          "word": ".HCM"
+        },
+        {
+          "start": 28.5,
+          "end": 28.92,
+          "word": "đặt"
+        },
+        {
+          "start": 28.92,
+          "end": 29.1,
+          "word": "4"
+        },
+        {
+          "start": 29.1,
+          "end": 29.42,
+          "word": "sẹt"
+        },
+        {
+          "start": 29.42,
+          "end": 29.74,
+          "word": "quà."
+        }
+      ]
+    },
+    {
+      "start": 29.74,
+      "end": 33.82,
+      "text": "Tổng sáng nay bên Oanh chuẩn bị đủ 104 sẹt quà nha mọi người",
+      "words": [
+        {
+          "start": 29.74,
+          "end": 30.4,
+          "word": "Tổng"
+        },
+        {
+          "start": 30.4,
+          "end": 30.6,
+          "word": "sáng"
+        },
+        {
+          "start": 30.6,
+          "end": 30.8,
+          "word": "nay"
+        },
+        {
+          "start": 30.8,
+          "end": 30.98,
+          "word": "bên"
+        },
+        {
+          "start": 30.98,
+          "end": 31.18,
+          "word": "Oanh"
+        },
+        {
+          "start": 31.18,
+          "end": 31.46,
+          "word": "chuẩn"
+        },
+        {
+          "start": 31.46,
+          "end": 31.64,
+          "word": "bị"
+        },
+        {
+          "start": 31.64,
+          "end": 31.86,
+          "word": "đủ"
+        },
+        {
+          "start": 31.86,
+          "end": 32.26,
+          "word": "104"
+        },
+        {
+          "start": 32.26,
+          "end": 32.86,
+          "word": "sẹt"
+        },
+        {
+          "start": 32.86,
+          "end": 33.1,
+          "word": "quà"
+        },
+        {
+          "start": 33.1,
+          "end": 33.32,
+          "word": "nha"
+        },
+        {
+          "start": 33.32,
+          "end": 33.6,
+          "word": "mọi"
+        },
+        {
+          "start": 33.6,
+          "end": 33.82,
+          "word": "người"
+        }
+      ]
+    },
+    {
+      "start": 34.34,
+      "end": 38.58,
+      "text": "Đây là những cái sẹt quà bên Oanh đã chuẩn bị xong trong sạng ngày hôm nay",
+      "words": [
+        {
+          "start": 34.34,
+          "end": 34.82,
+          "word": "Đây"
+        },
+        {
+          "start": 34.82,
+          "end": 35.16,
+          "word": "là"
+        },
+        {
+          "start": 35.16,
+          "end": 35.42,
+          "word": "những"
+        },
+        {
+          "start": 35.42,
+          "end": 35.6,
+          "word": "cái"
+        },
+        {
+          "start": 35.6,
+          "end": 35.78,
+          "word": "sẹt"
+        },
+        {
+          "start": 35.78,
+          "end": 36.0,
+          "word": "quà"
+        },
+        {
+          "start": 36.0,
+          "end": 36.2,
+          "word": "bên"
+        },
+        {
+          "start": 36.2,
+          "end": 36.44,
+          "word": "Oanh"
+        },
+        {
+          "start": 36.44,
+          "end": 36.66,
+          "word": "đã"
+        },
+        {
+          "start": 36.66,
+          "end": 36.98,
+          "word": "chuẩn"
+        },
+        {
+          "start": 36.98,
+          "end": 37.18,
+          "word": "bị"
+        },
+        {
+          "start": 37.18,
+          "end": 37.48,
+          "word": "xong"
+        },
+        {
+          "start": 37.48,
+          "end": 37.72,
+          "word": "trong"
+        },
+        {
+          "start": 37.72,
+          "end": 37.98,
+          "word": "sạng"
+        },
+        {
+          "start": 37.98,
+          "end": 38.14,
+          "word": "ngày"
+        },
+        {
+          "start": 38.14,
+          "end": 38.36,
+          "word": "hôm"
+        },
+        {
+          "start": 38.36,
+          "end": 38.58,
+          "word": "nay"
+        }
+      ]
+    },
+    {
+      "start": 38.58,
+      "end": 43.78,
+      "text": "Đây bây giờ Oanh sẽ giới thiệu một sẹt quà của bên Oanh cho mọi người cùng xem nha",
+      "words": [
+        {
+          "start": 38.58,
+          "end": 38.94,
+          "word": "Đây"
+        },
+        {
+          "start": 38.94,
+          "end": 39.68,
+          "word": "bây"
+        },
+        {
+          "start": 39.68,
+          "end": 39.78,
+          "word": "giờ"
+        },
+        {
+          "start": 39.78,
+          "end": 40.0,
+          "word": "Oanh"
+        },
+        {
+          "start": 40.0,
+          "end": 40.32,
+          "word": "sẽ"
+        },
+        {
+          "start": 40.32,
+          "end": 40.92,
+          "word": "giới"
+        },
+        {
+          "start": 40.92,
+          "end": 41.14,
+          "word": "thiệu"
+        },
+        {
+          "start": 41.14,
+          "end": 41.38,
+          "word": "một"
+        },
+        {
+          "start": 41.38,
+          "end": 41.7,
+          "word": "sẹt"
+        },
+        {
+          "start": 41.7,
+          "end": 41.96,
+          "word": "quà"
+        },
+        {
+          "start": 41.96,
+          "end": 42.12,
+          "word": "của"
+        },
+        {
+          "start": 42.12,
+          "end": 42.3,
+          "word": "bên"
+        },
+        {
+          "start": 42.3,
+          "end": 42.5,
+          "word": "Oanh"
+        },
+        {
+          "start": 42.5,
+          "end": 42.64,
+          "word": "cho"
+        },
+        {
+          "start": 42.64,
+          "end": 42.84,
+          "word": "mọi"
+        },
+        {
+          "start": 42.84,
+          "end": 43.02,
+          "word": "người"
+        },
+        {
+          "start": 43.02,
+          "end": 43.22,
+          "word": "cùng"
+        },
+        {
+          "start": 43.22,
+          "end": 43.54,
+          "word": "xem"
+        },
+        {
+          "start": 43.54,
+          "end": 43.78,
+          "word": "nha"
+        }
+      ]
+    },
+    {
+      "start": 43.78,
+      "end": 49.9,
+      "text": "Một cái sẹt quà tẳng như thế này thì bên trong sẽ gồm có là một sẹt yện sao",
+      "words": [
+        {
+          "start": 43.78,
+          "end": 44.54,
+          "word": "Một"
+        },
+        {
+          "start": 44.54,
+          "end": 44.7,
+          "word": "cái"
+        },
+        {
+          "start": 44.7,
+          "end": 44.94,
+          "word": "sẹt"
+        },
+        {
+          "start": 44.94,
+          "end": 45.24,
+          "word": "quà"
+        },
+        {
+          "start": 45.24,
+          "end": 45.58,
+          "word": "tẳng"
+        },
+        {
+          "start": 45.58,
+          "end": 46.08,
+          "word": "như"
+        },
+        {
+          "start": 46.08,
+          "end": 46.2,
+          "word": "thế"
+        },
+        {
+          "start": 46.2,
+          "end": 46.44,
+          "word": "này"
+        },
+        {
+          "start": 46.44,
+          "end": 46.68,
+          "word": "thì"
+        },
+        {
+          "start": 46.68,
+          "end": 46.98,
+          "word": "bên"
+        },
+        {
+          "start": 46.98,
+          "end": 47.18,
+          "word": "trong"
+        },
+        {
+          "start": 47.18,
+          "end": 47.46,
+          "word": "sẽ"
+        },
+        {
+          "start": 47.46,
+          "end": 47.74,
+          "word": "gồm"
+        },
+        {
+          "start": 47.74,
+          "end": 47.98,
+          "word": "có"
+        },
+        {
+          "start": 47.98,
+          "end": 48.6,
+          "word": "là"
+        },
+        {
+          "start": 48.6,
+          "end": 48.86,
+          "word": "một"
+        },
+        {
+          "start": 48.86,
+          "end": 49.42,
+          "word": "sẹt"
+        },
+        {
+          "start": 49.42,
+          "end": 49.6,
+          "word": "yện"
+        },
+        {
+          "start": 49.6,
+          "end": 49.9,
+          "word": "sao"
+        }
+      ]
+    },
+    {
+      "start": 49.9,
+      "end": 53.82,
+      "text": "Bao gồm một tổ yện sao tinh kệ sởi dài xong tiêu chuẩn",
+      "words": [
+        {
+          "start": 49.9,
+          "end": 50.4,
+          "word": "Bao"
+        },
+        {
+          "start": 50.4,
+          "end": 50.64,
+          "word": "gồm"
+        },
+        {
+          "start": 50.64,
+          "end": 50.86,
+          "word": "một"
+        },
+        {
+          "start": 50.86,
+          "end": 51.12,
+          "word": "tổ"
+        },
+        {
+          "start": 51.12,
+          "end": 51.38,
+          "word": "yện"
+        },
+        {
+          "start": 51.38,
+          "end": 51.64,
+          "word": "sao"
+        },
+        {
+          "start": 51.64,
+          "end": 51.9,
+          "word": "tinh"
+        },
+        {
+          "start": 51.9,
+          "end": 52.2,
+          "word": "kệ"
+        },
+        {
+          "start": 52.2,
+          "end": 52.52,
+          "word": "sởi"
+        },
+        {
+          "start": 52.52,
+          "end": 52.76,
+          "word": "dài"
+        },
+        {
+          "start": 52.76,
+          "end": 53.04,
+          "word": "xong"
+        },
+        {
+          "start": 53.04,
+          "end": 53.26,
+          "word": "tiêu"
+        },
+        {
+          "start": 53.26,
+          "end": 53.82,
+          "word": "chuẩn"
+        }
+      ]
+    },
+    {
+      "start": 53.82,
+      "end": 59.9,
+      "text": "Kèm theo cho mọi người là nguyên liều chứng tàu đỏ, đông trung hà thảo, kỳ tử và một hộp đường phèn.",
+      "words": [
+        {
+          "start": 53.82,
+          "end": 54.36,
+          "word": "Kèm"
+        },
+        {
+          "start": 54.36,
+          "end": 54.6,
+          "word": "theo"
+        },
+        {
+          "start": 54.6,
+          "end": 54.76,
+          "word": "cho"
+        },
+        {
+          "start": 54.76,
+          "end": 54.98,
+          "word": "mọi"
+        },
+        {
+          "start": 54.98,
+          "end": 55.16,
+          "word": "người"
+        },
+        {
+          "start": 55.16,
+          "end": 55.34,
+          "word": "là"
+        },
+        {
+          "start": 55.34,
+          "end": 55.54,
+          "word": "nguyên"
+        },
+        {
+          "start": 55.54,
+          "end": 55.74,
+          "word": "liều"
+        },
+        {
+          "start": 55.74,
+          "end": 56.02,
+          "word": "chứng"
+        },
+        {
+          "start": 56.02,
+          "end": 56.52,
+          "word": "tàu"
+        },
+        {
+          "start": 56.52,
+          "end": 56.82,
+          "word": "đỏ,"
+        },
+        {
+          "start": 56.98,
+          "end": 57.1,
+          "word": "đông"
+        },
+        {
+          "start": 57.1,
+          "end": 57.28,
+          "word": "trung"
+        },
+        {
+          "start": 57.28,
+          "end": 57.54,
+          "word": "hà"
+        },
+        {
+          "start": 57.54,
+          "end": 57.96,
+          "word": "thảo,"
+        },
+        {
+          "start": 58.34,
+          "end": 58.48,
+          "word": "kỳ"
+        },
+        {
+          "start": 58.48,
+          "end": 58.76,
+          "word": "tử"
+        },
+        {
+          "start": 58.76,
+          "end": 59.02,
+          "word": "và"
+        },
+        {
+          "start": 59.02,
+          "end": 59.28,
+          "word": "một"
+        },
+        {
+          "start": 59.28,
+          "end": 59.5,
+          "word": "hộp"
+        },
+        {
+          "start": 59.5,
+          "end": 59.64,
+          "word": "đường"
+        },
+        {
+          "start": 59.64,
+          "end": 59.9,
+          "word": "phèn."
+        }
+      ]
+    },
+    {
+      "start": 60.34,
+      "end": 67.98,
+      "text": "Thứ 2 là sẽ có 2 hộp rong biển sậy giòn, một hộp là rong biển sậy giòn cay nhẹ và một hộp là rong biển sậy mè không cách.",
+      "words": [
+        {
+          "start": 60.34,
+          "end": 60.46,
+          "word": "Thứ"
+        },
+        {
+          "start": 60.46,
+          "end": 60.7,
+          "word": "2"
+        },
+        {
+          "start": 60.7,
+          "end": 60.9,
+          "word": "là"
+        },
+        {
+          "start": 60.9,
+          "end": 61.1,
+          "word": "sẽ"
+        },
+        {
+          "start": 61.1,
+          "end": 61.34,
+          "word": "có"
+        },
+        {
+          "start": 61.34,
+          "end": 61.7,
+          "word": "2"
+        },
+        {
+          "start": 61.7,
+          "end": 62.1,
+          "word": "hộp"
+        },
+        {
+          "start": 62.1,
+          "end": 62.36,
+          "word": "rong"
+        },
+        {
+          "start": 62.36,
+          "end": 62.68,
+          "word": "biển"
+        },
+        {
+          "start": 62.68,
+          "end": 62.92,
+          "word": "sậy"
+        },
+        {
+          "start": 62.92,
+          "end": 63.2,
+          "word": "giòn,"
+        },
+        {
+          "start": 63.52,
+          "end": 63.6,
+          "word": "một"
+        },
+        {
+          "start": 63.6,
+          "end": 63.82,
+          "word": "hộp"
+        },
+        {
+          "start": 63.82,
+          "end": 63.94,
+          "word": "là"
+        },
+        {
+          "start": 63.94,
+          "end": 64.14,
+          "word": "rong"
+        },
+        {
+          "start": 64.14,
+          "end": 64.4,
+          "word": "biển"
+        },
+        {
+          "start": 64.4,
+          "end": 64.76,
+          "word": "sậy"
+        },
+        {
+          "start": 64.76,
+          "end": 65.08,
+          "word": "giòn"
+        },
+        {
+          "start": 65.08,
+          "end": 65.52,
+          "word": "cay"
+        },
+        {
+          "start": 65.52,
+          "end": 65.78,
+          "word": "nhẹ"
+        },
+        {
+          "start": 65.78,
+          "end": 66.0,
+          "word": "và"
+        },
+        {
+          "start": 66.0,
+          "end": 66.2,
+          "word": "một"
+        },
+        {
+          "start": 66.2,
+          "end": 66.42,
+          "word": "hộp"
+        },
+        {
+          "start": 66.42,
+          "end": 66.54,
+          "word": "là"
+        },
+        {
+          "start": 66.54,
+          "end": 66.76,
+          "word": "rong"
+        },
+        {
+          "start": 66.76,
+          "end": 67.06,
+          "word": "biển"
+        },
+        {
+          "start": 67.06,
+          "end": 67.34,
+          "word": "sậy"
+        },
+        {
+          "start": 67.34,
+          "end": 67.56,
+          "word": "mè"
+        },
+        {
+          "start": 67.56,
+          "end": 67.78,
+          "word": "không"
+        },
+        {
+          "start": 67.78,
+          "end": 67.98,
+          "word": "cách."
+        }
+      ]
+    },
+    {
+      "start": 68.08,
+      "end": 72.74,
+      "text": "Và thứ 3 là sẽ có cho mình là một gọi bạch thuyền mít hạt sinh dưỡng 200g.",
+      "words": [
+        {
+          "start": 68.08,
+          "end": 68.2,
+          "word": "Và"
+        },
+        {
+          "start": 68.2,
+          "end": 68.42,
+          "word": "thứ"
+        },
+        {
+          "start": 68.42,
+          "end": 68.68,
+          "word": "3"
+        },
+        {
+          "start": 68.68,
+          "end": 68.94,
+          "word": "là"
+        },
+        {
+          "start": 68.94,
+          "end": 69.2,
+          "word": "sẽ"
+        },
+        {
+          "start": 69.2,
+          "end": 69.44,
+          "word": "có"
+        },
+        {
+          "start": 69.44,
+          "end": 69.58,
+          "word": "cho"
+        },
+        {
+          "start": 69.58,
+          "end": 69.8,
+          "word": "mình"
+        },
+        {
+          "start": 69.8,
+          "end": 69.96,
+          "word": "là"
+        },
+        {
+          "start": 69.96,
+          "end": 70.2,
+          "word": "một"
+        },
+        {
+          "start": 70.2,
+          "end": 70.48,
+          "word": "gọi"
+        },
+        {
+          "start": 70.48,
+          "end": 70.76,
+          "word": "bạch"
+        },
+        {
+          "start": 70.76,
+          "end": 71.1,
+          "word": "thuyền"
+        },
+        {
+          "start": 71.1,
+          "end": 71.42,
+          "word": "mít"
+        },
+        {
+          "start": 71.42,
+          "end": 71.66,
+          "word": "hạt"
+        },
+        {
+          "start": 71.66,
+          "end": 71.94,
+          "word": "sinh"
+        },
+        {
+          "start": 71.94,
+          "end": 72.16,
+          "word": "dưỡng"
+        },
+        {
+          "start": 72.16,
+          "end": 72.74,
+          "word": "200g."
+        }
+      ]
+    },
+    {
+      "start": 72.78,
+      "end": 77.04,
+      "text": "Và thứ 4 là sẽ có cho mình một gọi rong biển kẹp hạt 500g.",
+      "words": [
+        {
+          "start": 72.78,
+          "end": 72.92,
+          "word": "Và"
+        },
+        {
+          "start": 72.92,
+          "end": 73.14,
+          "word": "thứ"
+        },
+        {
+          "start": 73.14,
+          "end": 73.38,
+          "word": "4"
+        },
+        {
+          "start": 73.38,
+          "end": 73.88,
+          "word": "là"
+        },
+        {
+          "start": 73.88,
+          "end": 74.16,
+          "word": "sẽ"
+        },
+        {
+          "start": 74.16,
+          "end": 74.38,
+          "word": "có"
+        },
+        {
+          "start": 74.38,
+          "end": 74.56,
+          "word": "cho"
+        },
+        {
+          "start": 74.56,
+          "end": 74.76,
+          "word": "mình"
+        },
+        {
+          "start": 74.76,
+          "end": 75.08,
+          "word": "một"
+        },
+        {
+          "start": 75.08,
+          "end": 75.42,
+          "word": "gọi"
+        },
+        {
+          "start": 75.42,
+          "end": 75.62,
+          "word": "rong"
+        },
+        {
+          "start": 75.62,
+          "end": 75.84,
+          "word": "biển"
+        },
+        {
+          "start": 75.84,
+          "end": 76.1,
+          "word": "kẹp"
+        },
+        {
+          "start": 76.1,
+          "end": 76.28,
+          "word": "hạt"
+        },
+        {
+          "start": 76.28,
+          "end": 77.04,
+          "word": "500g."
+        }
+      ]
+    },
+    {
+      "start": 77.3,
+      "end": 82.18,
+      "text": "Ở trong này thì sẽ có là từ 22 cho đến 24 thanh bạch hạt sinh dưỡng nha mọi người.",
+      "words": [
+        {
+          "start": 77.3,
+          "end": 77.58,
+          "word": "Ở"
+        },
+        {
+          "start": 77.58,
+          "end": 77.76,
+          "word": "trong"
+        },
+        {
+          "start": 77.76,
+          "end": 77.98,
+          "word": "này"
+        },
+        {
+          "start": 77.98,
+          "end": 78.16,
+          "word": "thì"
+        },
+        {
+          "start": 78.16,
+          "end": 78.4,
+          "word": "sẽ"
+        },
+        {
+          "start": 78.4,
+          "end": 78.7,
+          "word": "có"
+        },
+        {
+          "start": 78.7,
+          "end": 78.82,
+          "word": "là"
+        },
+        {
+          "start": 78.82,
+          "end": 79.02,
+          "word": "từ"
+        },
+        {
+          "start": 79.02,
+          "end": 79.6,
+          "word": "22"
+        },
+        {
+          "start": 79.6,
+          "end": 79.84,
+          "word": "cho"
+        },
+        {
+          "start": 79.84,
+          "end": 79.98,
+          "word": "đến"
+        },
+        {
+          "start": 79.98,
+          "end": 80.6,
+          "word": "24"
+        },
+        {
+          "start": 80.6,
+          "end": 80.96,
+          "word": "thanh"
+        },
+        {
+          "start": 80.96,
+          "end": 81.16,
+          "word": "bạch"
+        },
+        {
+          "start": 81.16,
+          "end": 81.38,
+          "word": "hạt"
+        },
+        {
+          "start": 81.38,
+          "end": 81.62,
+          "word": "sinh"
+        },
+        {
+          "start": 81.62,
+          "end": 81.8,
+          "word": "dưỡng"
+        },
+        {
+          "start": 81.8,
+          "end": 81.92,
+          "word": "nha"
+        },
+        {
+          "start": 81.92,
+          "end": 82.08,
+          "word": "mọi"
+        },
+        {
+          "start": 82.08,
+          "end": 82.18,
+          "word": "người."
+        }
+      ]
+    },
+    {
+      "start": 82.18,
+      "end": 88.9,
+      "text": "Cái sản phẩm dạ trí nhất trong set qua ngày hôm nay đó là set một tổ yên sao tinh trị dòng tiêu chuẩn xảy ra",
+      "words": [
+        {
+          "start": 82.18,
+          "end": 82.84,
+          "word": "Cái"
+        },
+        {
+          "start": 82.84,
+          "end": 83.12,
+          "word": "sản"
+        },
+        {
+          "start": 83.12,
+          "end": 83.42,
+          "word": "phẩm"
+        },
+        {
+          "start": 83.42,
+          "end": 83.68,
+          "word": "dạ"
+        },
+        {
+          "start": 83.68,
+          "end": 83.94,
+          "word": "trí"
+        },
+        {
+          "start": 83.94,
+          "end": 84.14,
+          "word": "nhất"
+        },
+        {
+          "start": 84.14,
+          "end": 84.36,
+          "word": "trong"
+        },
+        {
+          "start": 84.36,
+          "end": 84.56,
+          "word": "set"
+        },
+        {
+          "start": 84.56,
+          "end": 84.78,
+          "word": "qua"
+        },
+        {
+          "start": 84.78,
+          "end": 84.96,
+          "word": "ngày"
+        },
+        {
+          "start": 84.96,
+          "end": 85.16,
+          "word": "hôm"
+        },
+        {
+          "start": 85.16,
+          "end": 85.36,
+          "word": "nay"
+        },
+        {
+          "start": 85.36,
+          "end": 85.54,
+          "word": "đó"
+        },
+        {
+          "start": 85.54,
+          "end": 85.78,
+          "word": "là"
+        },
+        {
+          "start": 85.78,
+          "end": 86.14,
+          "word": "set"
+        },
+        {
+          "start": 86.14,
+          "end": 86.42,
+          "word": "một"
+        },
+        {
+          "start": 86.42,
+          "end": 86.74,
+          "word": "tổ"
+        },
+        {
+          "start": 86.74,
+          "end": 87.0,
+          "word": "yên"
+        },
+        {
+          "start": 87.0,
+          "end": 87.22,
+          "word": "sao"
+        },
+        {
+          "start": 87.22,
+          "end": 87.5,
+          "word": "tinh"
+        },
+        {
+          "start": 87.5,
+          "end": 87.72,
+          "word": "trị"
+        },
+        {
+          "start": 87.72,
+          "end": 87.98,
+          "word": "dòng"
+        },
+        {
+          "start": 87.98,
+          "end": 88.22,
+          "word": "tiêu"
+        },
+        {
+          "start": 88.22,
+          "end": 88.46,
+          "word": "chuẩn"
+        },
+        {
+          "start": 88.46,
+          "end": 88.72,
+          "word": "xảy"
+        },
+        {
+          "start": 88.72,
+          "end": 88.9,
+          "word": "ra"
+        }
+      ]
+    },
+    {
+      "start": 88.9,
+      "end": 94.26,
+      "text": "Bên Oanh có chuẩn bị thêm một cái tờ cầm nang sử dụng yên sao cho mọi người",
+      "words": [
+        {
+          "start": 88.9,
+          "end": 89.1,
+          "word": "Bên"
+        },
+        {
+          "start": 89.1,
+          "end": 89.3,
+          "word": "Oanh"
+        },
+        {
+          "start": 89.3,
+          "end": 89.98,
+          "word": "có"
+        },
+        {
+          "start": 89.98,
+          "end": 90.28,
+          "word": "chuẩn"
+        },
+        {
+          "start": 90.28,
+          "end": 90.48,
+          "word": "bị"
+        },
+        {
+          "start": 90.48,
+          "end": 90.8,
+          "word": "thêm"
+        },
+        {
+          "start": 90.8,
+          "end": 91.18,
+          "word": "một"
+        },
+        {
+          "start": 91.18,
+          "end": 91.36,
+          "word": "cái"
+        },
+        {
+          "start": 91.36,
+          "end": 91.74,
+          "word": "tờ"
+        },
+        {
+          "start": 91.74,
+          "end": 92.3,
+          "word": "cầm"
+        },
+        {
+          "start": 92.3,
+          "end": 92.68,
+          "word": "nang"
+        },
+        {
+          "start": 92.68,
+          "end": 92.98,
+          "word": "sử"
+        },
+        {
+          "start": 92.98,
+          "end": 93.2,
+          "word": "dụng"
+        },
+        {
+          "start": 93.2,
+          "end": 93.44,
+          "word": "yên"
+        },
+        {
+          "start": 93.44,
+          "end": 93.72,
+          "word": "sao"
+        },
+        {
+          "start": 93.72,
+          "end": 93.88,
+          "word": "cho"
+        },
+        {
+          "start": 93.88,
+          "end": 94.08,
+          "word": "mọi"
+        },
+        {
+          "start": 94.08,
+          "end": 94.26,
+          "word": "người"
+        }
+      ]
+    },
+    {
+      "start": 94.26,
+      "end": 101.18,
+      "text": "Trong này thì nó sẽ có là công dụng của yên sao và hướng dẫn cách chưng yến đúng cách cho mọi người nhé",
+      "words": [
+        {
+          "start": 94.26,
+          "end": 94.76,
+          "word": "Trong"
+        },
+        {
+          "start": 94.76,
+          "end": 94.98,
+          "word": "này"
+        },
+        {
+          "start": 94.98,
+          "end": 95.16,
+          "word": "thì"
+        },
+        {
+          "start": 95.16,
+          "end": 95.4,
+          "word": "nó"
+        },
+        {
+          "start": 95.4,
+          "end": 95.66,
+          "word": "sẽ"
+        },
+        {
+          "start": 95.66,
+          "end": 95.9,
+          "word": "có"
+        },
+        {
+          "start": 95.9,
+          "end": 96.08,
+          "word": "là"
+        },
+        {
+          "start": 96.08,
+          "end": 96.58,
+          "word": "công"
+        },
+        {
+          "start": 96.58,
+          "end": 97.06,
+          "word": "dụng"
+        },
+        {
+          "start": 97.06,
+          "end": 97.52,
+          "word": "của"
+        },
+        {
+          "start": 97.52,
+          "end": 97.74,
+          "word": "yên"
+        },
+        {
+          "start": 97.74,
+          "end": 98.02,
+          "word": "sao"
+        },
+        {
+          "start": 98.02,
+          "end": 98.22,
+          "word": "và"
+        },
+        {
+          "start": 98.22,
+          "end": 98.52,
+          "word": "hướng"
+        },
+        {
+          "start": 98.52,
+          "end": 98.72,
+          "word": "dẫn"
+        },
+        {
+          "start": 98.72,
+          "end": 98.94,
+          "word": "cách"
+        },
+        {
+          "start": 98.94,
+          "end": 99.22,
+          "word": "chưng"
+        },
+        {
+          "start": 99.22,
+          "end": 99.5,
+          "word": "yến"
+        },
+        {
+          "start": 99.5,
+          "end": 100.06,
+          "word": "đúng"
+        },
+        {
+          "start": 100.06,
+          "end": 100.28,
+          "word": "cách"
+        },
+        {
+          "start": 100.28,
+          "end": 100.54,
+          "word": "cho"
+        },
+        {
+          "start": 100.54,
+          "end": 100.78,
+          "word": "mọi"
+        },
+        {
+          "start": 100.78,
+          "end": 100.96,
+          "word": "người"
+        },
+        {
+          "start": 100.96,
+          "end": 101.18,
+          "word": "nhé"
+        }
+      ]
+    },
+    {
+      "start": 101.18,
+      "end": 107.4,
+      "text": "Cả cái sản phẩm thì sẽ được bên Oanh set trong một cái dò đừng qua chất liều mica trong suột như thế này nha mọi người",
+      "words": [
+        {
+          "start": 101.18,
+          "end": 101.72,
+          "word": "Cả"
+        },
+        {
+          "start": 101.72,
+          "end": 101.86,
+          "word": "cái"
+        },
+        {
+          "start": 101.86,
+          "end": 102.08,
+          "word": "sản"
+        },
+        {
+          "start": 102.08,
+          "end": 102.32,
+          "word": "phẩm"
+        },
+        {
+          "start": 102.32,
+          "end": 102.48,
+          "word": "thì"
+        },
+        {
+          "start": 102.48,
+          "end": 102.68,
+          "word": "sẽ"
+        },
+        {
+          "start": 102.68,
+          "end": 102.88,
+          "word": "được"
+        },
+        {
+          "start": 102.88,
+          "end": 103.06,
+          "word": "bên"
+        },
+        {
+          "start": 103.06,
+          "end": 103.3,
+          "word": "Oanh"
+        },
+        {
+          "start": 103.3,
+          "end": 103.54,
+          "word": "set"
+        },
+        {
+          "start": 103.54,
+          "end": 103.82,
+          "word": "trong"
+        },
+        {
+          "start": 103.82,
+          "end": 104.1,
+          "word": "một"
+        },
+        {
+          "start": 104.1,
+          "end": 104.24,
+          "word": "cái"
+        },
+        {
+          "start": 104.24,
+          "end": 104.46,
+          "word": "dò"
+        },
+        {
+          "start": 104.46,
+          "end": 104.78,
+          "word": "đừng"
+        },
+        {
+          "start": 104.78,
+          "end": 105.08,
+          "word": "qua"
+        },
+        {
+          "start": 105.08,
+          "end": 105.42,
+          "word": "chất"
+        },
+        {
+          "start": 105.42,
+          "end": 105.68,
+          "word": "liều"
+        },
+        {
+          "start": 105.68,
+          "end": 106.04,
+          "word": "mica"
+        },
+        {
+          "start": 106.04,
+          "end": 106.28,
+          "word": "trong"
+        },
+        {
+          "start": 106.28,
+          "end": 106.52,
+          "word": "suột"
+        },
+        {
+          "start": 106.52,
+          "end": 106.66,
+          "word": "như"
+        },
+        {
+          "start": 106.66,
+          "end": 106.78,
+          "word": "thế"
+        },
+        {
+          "start": 106.78,
+          "end": 106.94,
+          "word": "này"
+        },
+        {
+          "start": 106.94,
+          "end": 107.04,
+          "word": "nha"
+        },
+        {
+          "start": 107.04,
+          "end": 107.24,
+          "word": "mọi"
+        },
+        {
+          "start": 107.24,
+          "end": 107.4,
+          "word": "người"
+        }
+      ]
+    },
+    {
+      "start": 107.4,
+      "end": 112.54,
+      "text": "Ở bên trên thì sẽ có cái quai sách bằng da màu đỏ đô rất là sáng trọng",
+      "words": [
+        {
+          "start": 107.4,
+          "end": 107.88,
+          "word": "Ở"
+        },
+        {
+          "start": 107.88,
+          "end": 108.04,
+          "word": "bên"
+        },
+        {
+          "start": 108.04,
+          "end": 108.28,
+          "word": "trên"
+        },
+        {
+          "start": 108.28,
+          "end": 108.44,
+          "word": "thì"
+        },
+        {
+          "start": 108.44,
+          "end": 108.72,
+          "word": "sẽ"
+        },
+        {
+          "start": 108.72,
+          "end": 109.1,
+          "word": "có"
+        },
+        {
+          "start": 109.1,
+          "end": 109.34,
+          "word": "cái"
+        },
+        {
+          "start": 109.34,
+          "end": 109.76,
+          "word": "quai"
+        },
+        {
+          "start": 109.76,
+          "end": 110.02,
+          "word": "sách"
+        },
+        {
+          "start": 110.02,
+          "end": 110.66,
+          "word": "bằng"
+        },
+        {
+          "start": 110.66,
+          "end": 110.94,
+          "word": "da"
+        },
+        {
+          "start": 110.94,
+          "end": 111.42,
+          "word": "màu"
+        },
+        {
+          "start": 111.42,
+          "end": 111.58,
+          "word": "đỏ"
+        },
+        {
+          "start": 111.58,
+          "end": 111.78,
+          "word": "đô"
+        },
+        {
+          "start": 111.78,
+          "end": 111.96,
+          "word": "rất"
+        },
+        {
+          "start": 111.96,
+          "end": 112.08,
+          "word": "là"
+        },
+        {
+          "start": 112.08,
+          "end": 112.28,
+          "word": "sáng"
+        },
+        {
+          "start": 112.28,
+          "end": 112.54,
+          "word": "trọng"
+        }
+      ]
+    },
+    {
+      "start": 112.54,
+      "end": 118.52,
+      "text": "Có thiết kệ thêm một vài bóng hoa tạo điểm nhấn và một cái nơ màu bé rất là xinh xặn như thế này",
+      "words": [
+        {
+          "start": 112.54,
+          "end": 112.9,
+          "word": "Có"
+        },
+        {
+          "start": 112.9,
+          "end": 113.18,
+          "word": "thiết"
+        },
+        {
+          "start": 113.18,
+          "end": 113.38,
+          "word": "kệ"
+        },
+        {
+          "start": 113.38,
+          "end": 113.66,
+          "word": "thêm"
+        },
+        {
+          "start": 113.66,
+          "end": 113.86,
+          "word": "một"
+        },
+        {
+          "start": 113.86,
+          "end": 114.2,
+          "word": "vài"
+        },
+        {
+          "start": 114.2,
+          "end": 114.38,
+          "word": "bóng"
+        },
+        {
+          "start": 114.38,
+          "end": 114.66,
+          "word": "hoa"
+        },
+        {
+          "start": 114.66,
+          "end": 114.94,
+          "word": "tạo"
+        },
+        {
+          "start": 114.94,
+          "end": 115.14,
+          "word": "điểm"
+        },
+        {
+          "start": 115.14,
+          "end": 115.36,
+          "word": "nhấn"
+        },
+        {
+          "start": 115.36,
+          "end": 115.68,
+          "word": "và"
+        },
+        {
+          "start": 115.68,
+          "end": 115.96,
+          "word": "một"
+        },
+        {
+          "start": 115.96,
+          "end": 116.1,
+          "word": "cái"
+        },
+        {
+          "start": 116.1,
+          "end": 116.4,
+          "word": "nơ"
+        },
+        {
+          "start": 116.4,
+          "end": 117.14,
+          "word": "màu"
+        },
+        {
+          "start": 117.14,
+          "end": 117.34,
+          "word": "bé"
+        },
+        {
+          "start": 117.34,
+          "end": 117.54,
+          "word": "rất"
+        },
+        {
+          "start": 117.54,
+          "end": 117.66,
+          "word": "là"
+        },
+        {
+          "start": 117.66,
+          "end": 117.82,
+          "word": "xinh"
+        },
+        {
+          "start": 117.82,
+          "end": 118.06,
+          "word": "xặn"
+        },
+        {
+          "start": 118.06,
+          "end": 118.2,
+          "word": "như"
+        },
+        {
+          "start": 118.2,
+          "end": 118.32,
+          "word": "thế"
+        },
+        {
+          "start": 118.32,
+          "end": 118.52,
+          "word": "này"
+        }
+      ]
+    },
+    {
+      "start": 118.52,
+      "end": 123.64,
+      "text": "Đặc biệt cả sản phẩm trong sẹt qua này đều là do bên oanh trực tiếp sản xuất",
+      "words": [
+        {
+          "start": 118.52,
+          "end": 119.12,
+          "word": "Đặc"
+        },
+        {
+          "start": 119.12,
+          "end": 119.32,
+          "word": "biệt"
+        },
+        {
+          "start": 119.32,
+          "end": 119.52,
+          "word": "cả"
+        },
+        {
+          "start": 119.52,
+          "end": 119.82,
+          "word": "sản"
+        },
+        {
+          "start": 119.82,
+          "end": 120.06,
+          "word": "phẩm"
+        },
+        {
+          "start": 120.06,
+          "end": 120.34,
+          "word": "trong"
+        },
+        {
+          "start": 120.34,
+          "end": 120.62,
+          "word": "sẹt"
+        },
+        {
+          "start": 120.62,
+          "end": 120.76,
+          "word": "qua"
+        },
+        {
+          "start": 120.76,
+          "end": 121.06,
+          "word": "này"
+        },
+        {
+          "start": 121.06,
+          "end": 121.46,
+          "word": "đều"
+        },
+        {
+          "start": 121.46,
+          "end": 121.64,
+          "word": "là"
+        },
+        {
+          "start": 121.64,
+          "end": 121.96,
+          "word": "do"
+        },
+        {
+          "start": 121.96,
+          "end": 122.56,
+          "word": "bên"
+        },
+        {
+          "start": 122.56,
+          "end": 122.76,
+          "word": "oanh"
+        },
+        {
+          "start": 122.76,
+          "end": 123.0,
+          "word": "trực"
+        },
+        {
+          "start": 123.0,
+          "end": 123.12,
+          "word": "tiếp"
+        },
+        {
+          "start": 123.12,
+          "end": 123.4,
+          "word": "sản"
+        },
+        {
+          "start": 123.4,
+          "end": 123.64,
+          "word": "xuất"
+        }
+      ]
+    },
+    {
+      "start": 123.64,
+      "end": 126.72,
+      "text": "Nên là mọi người cứ yên tâm về chất lượng và giả cả nhé",
+      "words": [
+        {
+          "start": 123.64,
+          "end": 123.84,
+          "word": "Nên"
+        },
+        {
+          "start": 123.84,
+          "end": 123.96,
+          "word": "là"
+        },
+        {
+          "start": 123.96,
+          "end": 124.22,
+          "word": "mọi"
+        },
+        {
+          "start": 124.22,
+          "end": 124.46,
+          "word": "người"
+        },
+        {
+          "start": 124.46,
+          "end": 124.66,
+          "word": "cứ"
+        },
+        {
+          "start": 124.66,
+          "end": 124.92,
+          "word": "yên"
+        },
+        {
+          "start": 124.92,
+          "end": 125.12,
+          "word": "tâm"
+        },
+        {
+          "start": 125.12,
+          "end": 125.36,
+          "word": "về"
+        },
+        {
+          "start": 125.36,
+          "end": 125.62,
+          "word": "chất"
+        },
+        {
+          "start": 125.62,
+          "end": 125.84,
+          "word": "lượng"
+        },
+        {
+          "start": 125.84,
+          "end": 126.02,
+          "word": "và"
+        },
+        {
+          "start": 126.02,
+          "end": 126.22,
+          "word": "giả"
+        },
+        {
+          "start": 126.22,
+          "end": 126.44,
+          "word": "cả"
+        },
+        {
+          "start": 126.44,
+          "end": 126.72,
+          "word": "nhé"
+        }
+      ]
+    },
+    {
+      "start": 126.72,
+      "end": 132.28,
+      "text": "Oanh xin gửi lời cảm ơn tới các quỹ anh chị đã tin tưởng và lựa chọn đặt hàng của thực phẩm F20",
+      "words": [
+        {
+          "start": 126.72,
+          "end": 127.36,
+          "word": "Oanh"
+        },
+        {
+          "start": 127.36,
+          "end": 127.58,
+          "word": "xin"
+        },
+        {
+          "start": 127.58,
+          "end": 127.78,
+          "word": "gửi"
+        },
+        {
+          "start": 127.78,
+          "end": 127.94,
+          "word": "lời"
+        },
+        {
+          "start": 127.94,
+          "end": 128.1,
+          "word": "cảm"
+        },
+        {
+          "start": 128.1,
+          "end": 128.36,
+          "word": "ơn"
+        },
+        {
+          "start": 128.36,
+          "end": 128.6,
+          "word": "tới"
+        },
+        {
+          "start": 128.6,
+          "end": 128.8,
+          "word": "các"
+        },
+        {
+          "start": 128.8,
+          "end": 129.04,
+          "word": "quỹ"
+        },
+        {
+          "start": 129.04,
+          "end": 129.18,
+          "word": "anh"
+        },
+        {
+          "start": 129.18,
+          "end": 129.38,
+          "word": "chị"
+        },
+        {
+          "start": 129.38,
+          "end": 129.66,
+          "word": "đã"
+        },
+        {
+          "start": 129.66,
+          "end": 129.92,
+          "word": "tin"
+        },
+        {
+          "start": 129.92,
+          "end": 130.16,
+          "word": "tưởng"
+        },
+        {
+          "start": 130.16,
+          "end": 130.34,
+          "word": "và"
+        },
+        {
+          "start": 130.34,
+          "end": 130.56,
+          "word": "lựa"
+        },
+        {
+          "start": 130.56,
+          "end": 130.76,
+          "word": "chọn"
+        },
+        {
+          "start": 130.76,
+          "end": 130.96,
+          "word": "đặt"
+        },
+        {
+          "start": 130.96,
+          "end": 131.2,
+          "word": "hàng"
+        },
+        {
+          "start": 131.2,
+          "end": 131.4,
+          "word": "của"
+        },
+        {
+          "start": 131.4,
+          "end": 131.58,
+          "word": "thực"
+        },
+        {
+          "start": 131.58,
+          "end": 131.8,
+          "word": "phẩm"
+        },
+        {
+          "start": 131.8,
+          "end": 132.28,
+          "word": "F20"
+        }
+      ]
+    },
+    {
+      "start": 132.28,
+      "end": 135.48,
+      "text": "Nếu mà các anh chị còn có nhu cạt xẹt qua tặng",
+      "words": [
+        {
+          "start": 132.28,
+          "end": 132.86,
+          "word": "Nếu"
+        },
+        {
+          "start": 132.86,
+          "end": 132.98,
+          "word": "mà"
+        },
+        {
+          "start": 132.98,
+          "end": 133.1,
+          "word": "các"
+        },
+        {
+          "start": 133.1,
+          "end": 133.3,
+          "word": "anh"
+        },
+        {
+          "start": 133.3,
+          "end": 133.5,
+          "word": "chị"
+        },
+        {
+          "start": 133.5,
+          "end": 133.74,
+          "word": "còn"
+        },
+        {
+          "start": 133.74,
+          "end": 133.94,
+          "word": "có"
+        },
+        {
+          "start": 133.94,
+          "end": 134.24,
+          "word": "nhu"
+        },
+        {
+          "start": 134.24,
+          "end": 134.48,
+          "word": "cạt"
+        },
+        {
+          "start": 134.48,
+          "end": 134.78,
+          "word": "xẹt"
+        },
+        {
+          "start": 134.78,
+          "end": 134.88,
+          "word": "qua"
+        },
+        {
+          "start": 134.88,
+          "end": 135.48,
+          "word": "tặng"
+        }
+      ]
+    },
+    {
+      "start": 135.48,
+      "end": 137.86,
+      "text": "Làm qua biệu tặng nhân dịp lễ 20 tháng 11",
+      "words": [
+        {
+          "start": 135.48,
+          "end": 135.8,
+          "word": "Làm"
+        },
+        {
+          "start": 135.8,
+          "end": 135.98,
+          "word": "qua"
+        },
+        {
+          "start": 135.98,
+          "end": 136.2,
+          "word": "biệu"
+        },
+        {
+          "start": 136.2,
+          "end": 136.46,
+          "word": "tặng"
+        },
+        {
+          "start": 136.46,
+          "end": 136.6,
+          "word": "nhân"
+        },
+        {
+          "start": 136.6,
+          "end": 136.86,
+          "word": "dịp"
+        },
+        {
+          "start": 136.86,
+          "end": 137.02,
+          "word": "lễ"
+        },
+        {
+          "start": 137.02,
+          "end": 137.36,
+          "word": "20"
+        },
+        {
+          "start": 137.36,
+          "end": 137.62,
+          "word": "tháng"
+        },
+        {
+          "start": 137.62,
+          "end": 137.86,
+          "word": "11"
+        }
+      ]
+    },
+    {
+      "start": 137.86,
+      "end": 139.46,
+      "text": "Thì hãy inbox ngay cho anh nhé",
+      "words": [
+        {
+          "start": 137.86,
+          "end": 138.18,
+          "word": "Thì"
+        },
+        {
+          "start": 138.18,
+          "end": 138.4,
+          "word": "hãy"
+        },
+        {
+          "start": 138.4,
+          "end": 138.64,
+          "word": "inbox"
+        },
+        {
+          "start": 138.64,
+          "end": 138.9,
+          "word": "ngay"
+        },
+        {
+          "start": 138.9,
+          "end": 139.02,
+          "word": "cho"
+        },
+        {
+          "start": 139.02,
+          "end": 139.2,
+          "word": "anh"
+        },
+        {
+          "start": 139.2,
+          "end": 139.46,
+          "word": "nhé"
+        }
+      ]
+    }
+  ]
+}

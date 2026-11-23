@@ -1,0 +1,31 @@
+{
+  "slug": "htpm-av-talking-head",
+  "ten_du_an": "AV Protein — An Vượng Pharma (Talking Head Phong Cách Kute)",
+  "trang_thai": "hoan-thanh",
+  "nguon_aroll": "C:/Users/Hang thu/Downloads/HTPM AV.mp4",
+  "thong_so": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "duration_sec": 49.71,
+    "frames": 1491,
+    "lufs_target": -14.0
+  },
+  "luat_dac_biet_nguoi_dung": [
+    "Ảnh/Icon 3D phong cách Kute (Cute 3D Claymorphism / Pastel Kawaii) tạo trực tiếp trên ChatGPT Web (chatgpt::chatgpt-image)",
+    "KHÔNG LÀM TỐI NỀN (giữ 100% độ sáng tươi tắn của phòng thật và người nói)",
+    "Dùng footage video động tươi sáng nằm SAU LƯNG nhân vật (T.behind qua RVM matte) để minh họa trực quan nội dung đang nói và che gọn chữ rối trên tường phía trên",
+    "Sound effect hợp lý, dễ thương, đúng nhịp từ kho Skill (audio_bgm_sfx) + thư mục TLH của người dùng (02_Hiệu Ứng Âm Thanh (SFX))",
+    "Xuất bản Final lên Google Drive (Z:/Drive của tôi/AI_Full_Studio/04_Videos_Final & Z:/Drive của tôi/) + CapCut Desktop đa track"
+  ],
+  "san_pham": {
+    "ten": "Thực phẩm bổ sung AV PROTEIN — An Vượng Pharma",
+    "quy_cach": "Hộp 20 gói x 15g (300g)",
+    "thanh_phan_noi_bat": [
+      "22g Đạm thực vật / khẩu phần 30g",
+      "1,63g L-Leucine",
+      "Chất xơ hòa tan Inulin",
+      "Lợi khuẩn Bifidobacterium breve B-3"
+    ]
+  }
+}

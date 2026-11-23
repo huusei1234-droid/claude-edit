@@ -1,0 +1,1155 @@
+{
+  "lang": "vi",
+  "duration": 49.714,
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 3.86,
+      "text": "Mua sản phẩm chăm sóc sức khỏe rồi để quên trong tủ, chị có từng như vậy?",
+      "words": [
+        {
+          "start": 0.0,
+          "end": 0.32,
+          "word": "Mua",
+          "p": 0.97
+        },
+        {
+          "start": 0.32,
+          "end": 0.52,
+          "word": "sản",
+          "p": 1.0
+        },
+        {
+          "start": 0.52,
+          "end": 0.74,
+          "word": "phẩm",
+          "p": 1.0
+        },
+        {
+          "start": 0.74,
+          "end": 0.96,
+          "word": "chăm",
+          "p": 1.0
+        },
+        {
+          "start": 0.96,
+          "end": 1.1,
+          "word": "sóc",
+          "p": 1.0
+        },
+        {
+          "start": 1.1,
+          "end": 1.28,
+          "word": "sức",
+          "p": 1.0
+        },
+        {
+          "start": 1.28,
+          "end": 1.62,
+          "word": "khỏe",
+          "p": 1.0
+        },
+        {
+          "start": 1.62,
+          "end": 1.82,
+          "word": "rồi",
+          "p": 0.71
+        },
+        {
+          "start": 1.82,
+          "end": 1.96,
+          "word": "để",
+          "p": 1.0
+        },
+        {
+          "start": 1.96,
+          "end": 2.2,
+          "word": "quên",
+          "p": 1.0
+        },
+        {
+          "start": 2.2,
+          "end": 2.38,
+          "word": "trong",
+          "p": 0.67
+        },
+        {
+          "start": 2.38,
+          "end": 2.64,
+          "word": "tủ,",
+          "p": 1.0
+        },
+        {
+          "start": 2.64,
+          "end": 3.02,
+          "word": "chị",
+          "p": 0.62
+        },
+        {
+          "start": 3.02,
+          "end": 3.24,
+          "word": "có",
+          "p": 1.0
+        },
+        {
+          "start": 3.24,
+          "end": 3.42,
+          "word": "từng",
+          "p": 0.98
+        },
+        {
+          "start": 3.42,
+          "end": 3.56,
+          "word": "như",
+          "p": 1.0
+        },
+        {
+          "start": 3.56,
+          "end": 3.86,
+          "word": "vậy?",
+          "p": 0.86
+        }
+      ]
+    },
+    {
+      "start": 3.86,
+      "end": 8.18,
+      "text": "Lúc mua thì rất quyết tâm, lúc bắt đầu lại thấy lịch sinh hoạt chưa phù hợp.",
+      "words": [
+        {
+          "start": 3.86,
+          "end": 4.48,
+          "word": "Lúc",
+          "p": 0.51
+        },
+        {
+          "start": 4.48,
+          "end": 4.74,
+          "word": "mua",
+          "p": 1.0
+        },
+        {
+          "start": 4.74,
+          "end": 4.86,
+          "word": "thì",
+          "p": 1.0
+        },
+        {
+          "start": 4.86,
+          "end": 5.0,
+          "word": "rất",
+          "p": 1.0
+        },
+        {
+          "start": 5.0,
+          "end": 5.2,
+          "word": "quyết",
+          "p": 0.73
+        },
+        {
+          "start": 5.2,
+          "end": 5.42,
+          "word": "tâm,",
+          "p": 1.0
+        },
+        {
+          "start": 5.72,
+          "end": 5.86,
+          "word": "lúc",
+          "p": 1.0
+        },
+        {
+          "start": 5.86,
+          "end": 6.06,
+          "word": "bắt",
+          "p": 1.0
+        },
+        {
+          "start": 6.06,
+          "end": 6.2,
+          "word": "đầu",
+          "p": 1.0
+        },
+        {
+          "start": 6.2,
+          "end": 6.34,
+          "word": "lại",
+          "p": 0.99
+        },
+        {
+          "start": 6.34,
+          "end": 6.64,
+          "word": "thấy",
+          "p": 1.0
+        },
+        {
+          "start": 6.64,
+          "end": 7.08,
+          "word": "lịch",
+          "p": 1.0
+        },
+        {
+          "start": 7.08,
+          "end": 7.38,
+          "word": "sinh",
+          "p": 1.0
+        },
+        {
+          "start": 7.38,
+          "end": 7.6,
+          "word": "hoạt",
+          "p": 1.0
+        },
+        {
+          "start": 7.6,
+          "end": 7.76,
+          "word": "chưa",
+          "p": 0.97
+        },
+        {
+          "start": 7.76,
+          "end": 7.94,
+          "word": "phù",
+          "p": 1.0
+        },
+        {
+          "start": 7.94,
+          "end": 8.18,
+          "word": "hợp.",
+          "p": 1.0
+        }
+      ]
+    },
+    {
+      "start": 8.18,
+      "end": 12.68,
+      "text": "Vài ngày sau, sản phẩm nằm yên vì mình chưa thực sự hiểu cần dùng để làm gì.",
+      "words": [
+        {
+          "start": 8.18,
+          "end": 8.8,
+          "word": "Vài",
+          "p": 0.87
+        },
+        {
+          "start": 8.8,
+          "end": 8.92,
+          "word": "ngày",
+          "p": 1.0
+        },
+        {
+          "start": 8.92,
+          "end": 9.26,
+          "word": "sau,",
+          "p": 1.0
+        },
+        {
+          "start": 9.4,
+          "end": 9.66,
+          "word": "sản",
+          "p": 1.0
+        },
+        {
+          "start": 9.66,
+          "end": 9.84,
+          "word": "phẩm",
+          "p": 1.0
+        },
+        {
+          "start": 9.84,
+          "end": 10.04,
+          "word": "nằm",
+          "p": 0.87
+        },
+        {
+          "start": 10.04,
+          "end": 10.28,
+          "word": "yên",
+          "p": 0.97
+        },
+        {
+          "start": 10.28,
+          "end": 10.5,
+          "word": "vì",
+          "p": 1.0
+        },
+        {
+          "start": 10.5,
+          "end": 10.68,
+          "word": "mình",
+          "p": 1.0
+        },
+        {
+          "start": 10.68,
+          "end": 10.9,
+          "word": "chưa",
+          "p": 1.0
+        },
+        {
+          "start": 10.9,
+          "end": 11.04,
+          "word": "thực",
+          "p": 0.98
+        },
+        {
+          "start": 11.04,
+          "end": 11.28,
+          "word": "sự",
+          "p": 1.0
+        },
+        {
+          "start": 11.28,
+          "end": 11.56,
+          "word": "hiểu",
+          "p": 1.0
+        },
+        {
+          "start": 11.56,
+          "end": 11.86,
+          "word": "cần",
+          "p": 0.91
+        },
+        {
+          "start": 11.86,
+          "end": 12.12,
+          "word": "dùng",
+          "p": 0.98
+        },
+        {
+          "start": 12.12,
+          "end": 12.26,
+          "word": "để",
+          "p": 1.0
+        },
+        {
+          "start": 12.26,
+          "end": 12.46,
+          "word": "làm",
+          "p": 1.0
+        },
+        {
+          "start": 12.46,
+          "end": 12.68,
+          "word": "gì.",
+          "p": 1.0
+        }
+      ]
+    },
+    {
+      "start": 12.68,
+      "end": 16.42,
+      "text": "Muốn xây dựng thói quen lâu dài, hãy bắt đầu từ nhu cầu thực tế.",
+      "words": [
+        {
+          "start": 12.68,
+          "end": 13.38,
+          "word": "Muốn",
+          "p": 0.97
+        },
+        {
+          "start": 13.38,
+          "end": 13.54,
+          "word": "xây",
+          "p": 1.0
+        },
+        {
+          "start": 13.54,
+          "end": 13.72,
+          "word": "dựng",
+          "p": 1.0
+        },
+        {
+          "start": 13.72,
+          "end": 13.88,
+          "word": "thói",
+          "p": 0.97
+        },
+        {
+          "start": 13.88,
+          "end": 14.06,
+          "word": "quen",
+          "p": 1.0
+        },
+        {
+          "start": 14.06,
+          "end": 14.26,
+          "word": "lâu",
+          "p": 0.74
+        },
+        {
+          "start": 14.26,
+          "end": 14.56,
+          "word": "dài,",
+          "p": 1.0
+        },
+        {
+          "start": 14.76,
+          "end": 15.14,
+          "word": "hãy",
+          "p": 1.0
+        },
+        {
+          "start": 15.14,
+          "end": 15.3,
+          "word": "bắt",
+          "p": 1.0
+        },
+        {
+          "start": 15.3,
+          "end": 15.44,
+          "word": "đầu",
+          "p": 1.0
+        },
+        {
+          "start": 15.44,
+          "end": 15.6,
+          "word": "từ",
+          "p": 1.0
+        },
+        {
+          "start": 15.6,
+          "end": 15.76,
+          "word": "nhu",
+          "p": 1.0
+        },
+        {
+          "start": 15.76,
+          "end": 15.92,
+          "word": "cầu",
+          "p": 1.0
+        },
+        {
+          "start": 15.92,
+          "end": 16.08,
+          "word": "thực",
+          "p": 1.0
+        },
+        {
+          "start": 16.08,
+          "end": 16.42,
+          "word": "tế.",
+          "p": 1.0
+        }
+      ]
+    },
+    {
+      "start": 16.42,
+      "end": 18.14,
+      "text": "Bữa ăn hiện tại ra sao?",
+      "words": [
+        {
+          "start": 16.42,
+          "end": 17.12,
+          "word": "Bữa",
+          "p": 0.99
+        },
+        {
+          "start": 17.12,
+          "end": 17.24,
+          "word": "ăn",
+          "p": 1.0
+        },
+        {
+          "start": 17.24,
+          "end": 17.38,
+          "word": "hiện",
+          "p": 1.0
+        },
+        {
+          "start": 17.38,
+          "end": 17.62,
+          "word": "tại",
+          "p": 0.98
+        },
+        {
+          "start": 17.62,
+          "end": 17.78,
+          "word": "ra",
+          "p": 0.83
+        },
+        {
+          "start": 17.78,
+          "end": 18.14,
+          "word": "sao?",
+          "p": 1.0
+        }
+      ]
+    },
+    {
+      "start": 18.34,
+      "end": 21.54,
+      "text": "Mình đang tìm cách bổ sung đạm và lựa chọn nào phù hợp với nhịp sống?",
+      "words": [
+        {
+          "start": 18.34,
+          "end": 18.6,
+          "word": "Mình",
+          "p": 1.0
+        },
+        {
+          "start": 18.6,
+          "end": 18.78,
+          "word": "đang",
+          "p": 1.0
+        },
+        {
+          "start": 18.78,
+          "end": 19.1,
+          "word": "tìm",
+          "p": 1.0
+        },
+        {
+          "start": 19.1,
+          "end": 19.28,
+          "word": "cách",
+          "p": 1.0
+        },
+        {
+          "start": 19.28,
+          "end": 19.5,
+          "word": "bổ",
+          "p": 1.0
+        },
+        {
+          "start": 19.5,
+          "end": 19.66,
+          "word": "sung",
+          "p": 0.49
+        },
+        {
+          "start": 19.66,
+          "end": 19.96,
+          "word": "đạm",
+          "p": 0.94
+        },
+        {
+          "start": 19.96,
+          "end": 20.12,
+          "word": "và",
+          "p": 0.99
+        },
+        {
+          "start": 20.12,
+          "end": 20.3,
+          "word": "lựa",
+          "p": 0.97
+        },
+        {
+          "start": 20.3,
+          "end": 20.5,
+          "word": "chọn",
+          "p": 1.0
+        },
+        {
+          "start": 20.5,
+          "end": 20.7,
+          "word": "nào",
+          "p": 1.0
+        },
+        {
+          "start": 20.7,
+          "end": 20.9,
+          "word": "phù",
+          "p": 1.0
+        },
+        {
+          "start": 20.9,
+          "end": 21.02,
+          "word": "hợp",
+          "p": 1.0
+        },
+        {
+          "start": 21.02,
+          "end": 21.14,
+          "word": "với",
+          "p": 0.99
+        },
+        {
+          "start": 21.14,
+          "end": 21.3,
+          "word": "nhịp",
+          "p": 0.83
+        },
+        {
+          "start": 21.3,
+          "end": 21.54,
+          "word": "sống?",
+          "p": 0.98
+        }
+      ]
+    },
+    {
+      "start": 21.54,
+      "end": 26.0,
+      "text": "Nếu đang quan tâm đến đạm thực vật, chị có thể tìm hiểu thêm AV Protein.",
+      "words": [
+        {
+          "start": 21.54,
+          "end": 22.28,
+          "word": "Nếu",
+          "p": 0.92
+        },
+        {
+          "start": 22.28,
+          "end": 22.42,
+          "word": "đang",
+          "p": 1.0
+        },
+        {
+          "start": 22.42,
+          "end": 22.6,
+          "word": "quan",
+          "p": 1.0
+        },
+        {
+          "start": 22.6,
+          "end": 22.78,
+          "word": "tâm",
+          "p": 1.0
+        },
+        {
+          "start": 22.78,
+          "end": 22.92,
+          "word": "đến",
+          "p": 1.0
+        },
+        {
+          "start": 22.92,
+          "end": 23.18,
+          "word": "đạm",
+          "p": 1.0
+        },
+        {
+          "start": 23.18,
+          "end": 23.28,
+          "word": "thực",
+          "p": 0.98
+        },
+        {
+          "start": 23.28,
+          "end": 23.54,
+          "word": "vật,",
+          "p": 1.0
+        },
+        {
+          "start": 23.74,
+          "end": 23.96,
+          "word": "chị",
+          "p": 0.89
+        },
+        {
+          "start": 23.96,
+          "end": 24.08,
+          "word": "có",
+          "p": 1.0
+        },
+        {
+          "start": 24.08,
+          "end": 24.2,
+          "word": "thể",
+          "p": 1.0
+        },
+        {
+          "start": 24.2,
+          "end": 24.42,
+          "word": "tìm",
+          "p": 0.96
+        },
+        {
+          "start": 24.42,
+          "end": 24.66,
+          "word": "hiểu",
+          "p": 0.86
+        },
+        {
+          "start": 24.66,
+          "end": 24.88,
+          "word": "thêm",
+          "p": 0.96
+        },
+        {
+          "start": 24.88,
+          "end": 25.28,
+          "word": "AV",
+          "p": 0.81
+        },
+        {
+          "start": 25.28,
+          "end": 26.0,
+          "word": "Protein.",
+          "p": 0.52
+        }
+      ]
+    },
+    {
+      "start": 26.0,
+      "end": 28.16,
+      "text": "Công thức phối hợp đạm thực vật,",
+      "words": [
+        {
+          "start": 26.0,
+          "end": 26.64,
+          "word": "Công",
+          "p": 0.77
+        },
+        {
+          "start": 26.64,
+          "end": 26.92,
+          "word": "thức",
+          "p": 0.98
+        },
+        {
+          "start": 26.92,
+          "end": 27.22,
+          "word": "phối",
+          "p": 0.95
+        },
+        {
+          "start": 27.22,
+          "end": 27.46,
+          "word": "hợp",
+          "p": 1.0
+        },
+        {
+          "start": 27.46,
+          "end": 27.78,
+          "word": "đạm",
+          "p": 0.83
+        },
+        {
+          "start": 27.78,
+          "end": 27.86,
+          "word": "thực",
+          "p": 0.98
+        },
+        {
+          "start": 27.86,
+          "end": 28.16,
+          "word": "vật,",
+          "p": 1.0
+        }
+      ]
+    },
+    {
+      "start": 28.16,
+      "end": 29.94,
+      "text": "L-Leucine, Inulin",
+      "words": [
+        {
+          "word": "L-Leucine,",
+          "start": 28.16,
+          "end": 29.08
+        },
+        {
+          "word": "Inulin",
+          "start": 29.3,
+          "end": 29.94
+        }
+      ]
+    },
+    {
+      "start": 29.94,
+      "end": 31.82,
+      "text": "và lợi khuẩn B-3",
+      "words": [
+        {
+          "start": 29.94,
+          "end": 30.46,
+          "word": "và",
+          "p": 0.12
+        },
+        {
+          "start": 30.46,
+          "end": 31.16,
+          "word": "lợi",
+          "p": 0.81
+        },
+        {
+          "start": 31.16,
+          "end": 31.42,
+          "word": "khuẩn",
+          "p": 0.98
+        },
+        {
+          "start": 31.42,
+          "end": 31.82,
+          "word": "B-3",
+          "p": 0.81
+        }
+      ]
+    },
+    {
+      "start": 31.82,
+      "end": 33.92,
+      "text": "tạo nên điểm đáng chú ý khi xem xét",
+      "words": [
+        {
+          "start": 31.82,
+          "end": 32.36,
+          "word": "tạo",
+          "p": 0.98
+        },
+        {
+          "start": 32.36,
+          "end": 32.48,
+          "word": "nên",
+          "p": 0.97
+        },
+        {
+          "start": 32.48,
+          "end": 32.72,
+          "word": "điểm",
+          "p": 1.0
+        },
+        {
+          "start": 32.72,
+          "end": 32.9,
+          "word": "đáng",
+          "p": 1.0
+        },
+        {
+          "start": 32.9,
+          "end": 33.08,
+          "word": "chú",
+          "p": 1.0
+        },
+        {
+          "start": 33.08,
+          "end": 33.28,
+          "word": "ý",
+          "p": 1.0
+        },
+        {
+          "start": 33.28,
+          "end": 33.54,
+          "word": "khi",
+          "p": 0.76
+        },
+        {
+          "start": 33.54,
+          "end": 33.74,
+          "word": "xem",
+          "p": 0.99
+        },
+        {
+          "start": 33.74,
+          "end": 33.92,
+          "word": "xét",
+          "p": 0.83
+        }
+      ]
+    },
+    {
+      "start": 33.92,
+      "end": 35.24,
+      "text": "thành phần sản phẩm này bạn nhé.",
+      "words": [
+        {
+          "start": 33.92,
+          "end": 34.12,
+          "word": "thành",
+          "p": 0.55
+        },
+        {
+          "start": 34.12,
+          "end": 34.32,
+          "word": "phần",
+          "p": 1.0
+        },
+        {
+          "start": 34.32,
+          "end": 34.48,
+          "word": "sản",
+          "p": 0.99
+        },
+        {
+          "start": 34.48,
+          "end": 34.64,
+          "word": "phẩm",
+          "p": 1.0
+        },
+        {
+          "start": 34.64,
+          "end": 34.84,
+          "word": "này",
+          "p": 0.99
+        },
+        {
+          "start": 34.84,
+          "end": 34.98,
+          "word": "bạn",
+          "p": 0.27
+        },
+        {
+          "start": 34.98,
+          "end": 35.24,
+          "word": "nhé.",
+          "p": 0.96
+        }
+      ]
+    },
+    {
+      "start": 35.24,
+      "end": 37.08,
+      "text": "Chăm sóc bản thân bắt đầu từ việc",
+      "words": [
+        {
+          "start": 35.24,
+          "end": 35.72,
+          "word": "Chăm",
+          "p": 0.38
+        },
+        {
+          "start": 35.72,
+          "end": 35.9,
+          "word": "sóc",
+          "p": 0.78
+        },
+        {
+          "start": 35.9,
+          "end": 36.12,
+          "word": "bản",
+          "p": 0.99
+        },
+        {
+          "start": 36.12,
+          "end": 36.3,
+          "word": "thân",
+          "p": 1.0
+        },
+        {
+          "start": 36.3,
+          "end": 36.54,
+          "word": "bắt",
+          "p": 0.99
+        },
+        {
+          "start": 36.54,
+          "end": 36.66,
+          "word": "đầu",
+          "p": 1.0
+        },
+        {
+          "start": 36.66,
+          "end": 36.8,
+          "word": "từ",
+          "p": 0.97
+        },
+        {
+          "start": 36.8,
+          "end": 37.08,
+          "word": "việc",
+          "p": 0.99
+        }
+      ]
+    },
+    {
+      "start": 37.08,
+      "end": 38.52,
+      "text": "tìm hiểu nhu cầu của mình",
+      "words": [
+        {
+          "start": 37.08,
+          "end": 37.56,
+          "word": "tìm",
+          "p": 0.85
+        },
+        {
+          "start": 37.56,
+          "end": 37.74,
+          "word": "hiểu",
+          "p": 1.0
+        },
+        {
+          "start": 37.74,
+          "end": 37.9,
+          "word": "nhu",
+          "p": 0.98
+        },
+        {
+          "start": 37.9,
+          "end": 38.12,
+          "word": "cầu",
+          "p": 0.95
+        },
+        {
+          "start": 38.12,
+          "end": 38.26,
+          "word": "của",
+          "p": 1.0
+        },
+        {
+          "start": 38.26,
+          "end": 38.52,
+          "word": "mình",
+          "p": 1.0
+        }
+      ]
+    },
+    {
+      "start": 38.52,
+      "end": 40.44,
+      "text": "và duy trì những lựa chọn phù hợp.",
+      "words": [
+        {
+          "start": 38.52,
+          "end": 38.9,
+          "word": "và",
+          "p": 0.71
+        },
+        {
+          "start": 38.9,
+          "end": 39.06,
+          "word": "duy",
+          "p": 0.95
+        },
+        {
+          "start": 39.06,
+          "end": 39.34,
+          "word": "trì",
+          "p": 1.0
+        },
+        {
+          "start": 39.34,
+          "end": 39.66,
+          "word": "những",
+          "p": 1.0
+        },
+        {
+          "start": 39.66,
+          "end": 39.84,
+          "word": "lựa",
+          "p": 1.0
+        },
+        {
+          "start": 39.84,
+          "end": 40.02,
+          "word": "chọn",
+          "p": 1.0
+        },
+        {
+          "start": 40.02,
+          "end": 40.22,
+          "word": "phù",
+          "p": 1.0
+        },
+        {
+          "start": 40.22,
+          "end": 40.44,
+          "word": "hợp.",
+          "p": 1.0
+        }
+      ]
+    },
+    {
+      "start": 40.44,
+      "end": 43.62,
+      "text": "Nhắn AV Protein để nhận thông tin đầy đủ,",
+      "words": [
+        {
+          "start": 40.44,
+          "end": 41.12,
+          "word": "Nhắn",
+          "p": 0.62
+        },
+        {
+          "start": 41.12,
+          "end": 41.52,
+          "word": "AV",
+          "p": 0.58
+        },
+        {
+          "start": 41.52,
+          "end": 42.16,
+          "word": "Protein",
+          "p": 0.71
+        },
+        {
+          "start": 42.16,
+          "end": 42.58,
+          "word": "để",
+          "p": 0.45
+        },
+        {
+          "start": 42.58,
+          "end": 42.76,
+          "word": "nhận",
+          "p": 0.99
+        },
+        {
+          "start": 42.76,
+          "end": 42.94,
+          "word": "thông",
+          "p": 1.0
+        },
+        {
+          "start": 42.94,
+          "end": 43.1,
+          "word": "tin",
+          "p": 1.0
+        },
+        {
+          "start": 43.1,
+          "end": 43.42,
+          "word": "đầy",
+          "p": 0.96
+        },
+        {
+          "start": 43.42,
+          "end": 43.62,
+          "word": "đủ,",
+          "p": 1.0
+        }
+      ]
+    },
+    {
+      "start": 43.62,
+      "end": 45.86,
+      "text": "tìm hiểu rồi quyết định bạn nhé!",
+      "words": [
+        {
+          "start": 43.62,
+          "end": 44.06,
+          "word": "tìm",
+          "p": 0.98
+        },
+        {
+          "start": 44.06,
+          "end": 44.36,
+          "word": "hiểu",
+          "p": 1.0
+        },
+        {
+          "start": 44.36,
+          "end": 44.78,
+          "word": "rồi",
+          "p": 0.97
+        },
+        {
+          "start": 44.78,
+          "end": 45.04,
+          "word": "quyết",
+          "p": 0.99
+        },
+        {
+          "start": 45.04,
+          "end": 45.28,
+          "word": "định",
+          "p": 1.0
+        },
+        {
+          "start": 45.28,
+          "end": 45.58,
+          "word": "bạn",
+          "p": 0.89
+        },
+        {
+          "start": 45.58,
+          "end": 45.86,
+          "word": "nhé!",
+          "p": 1.0
+        }
+      ]
+    }
+  ]
+}
