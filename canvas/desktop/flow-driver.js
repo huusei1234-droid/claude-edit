@@ -335,6 +335,120 @@ async function downloadVideo(page, url) {
   return { data: Buffer.from(await res.arrayBuffer()), mime: res.headers.get("content-type") || "video/mp4" };
 }
 
+// Tải ảnh độ phân giải cao (2K Upscaled hoặc 1K Original) trực tiếp từ menu "Tuỳ chọn khác -> Tải xuống" của <flow-image-tile>
+// thay vì chỉ lấy ảnh thu nhỏ =s512-rw (384x512) trên lưới!
+async function downloadImageViaUi(page, key, baseline = [], prefer2K = true, fallbackUrl = "") {
+  const dir = fs.mkdtempSync(path.join(require("node:os").tmpdir(), "flow-imgdl-"));
+  const cdp = await page.target().createCDPSession();
+  let bCdp = null;
+  await cdp.send("Page.setDownloadBehavior", { behavior: "allow", downloadPath: dir }).catch(() => {});
+  try {
+    bCdp = await page.browser().target().createCDPSession();
+    await bCdp.send("Browser.setDownloadBehavior", { behavior: "allow", downloadPath: dir, eventsEnabled: true }).catch(() => {});
+  } catch {}
+
+  const waitImgFile = async (loops) => {
+    for (let i = 0; i < loops; i++) {
+      await sleep(500);
+      const all = fs.readdirSync(dir);
+      const ready = all.filter((n) => !n.endsWith(".crdownload") && !n.endsWith(".tmp"));
+      if (ready.length && !all.some((n) => n.endsWith(".crdownload"))) {
+        await sleep(300);
+        const fpath = path.join(dir, ready[0]);
+        const ext = path.extname(ready[0]).toLowerCase();
+        const mime = ext === ".png" ? "image/png" : ext === ".webp" ? "image/webp" : "image/jpeg";
+        return { data: fs.readFileSync(fpath), mime };
+      }
+    }
+    return null;
+  };
+
+  const triggerTileDownload = async (want2K) => {
+    return await withUiFocusLock(async () => {
+      await page.bringToFront().catch(() => {});
+      await page.keyboard.press("Escape").catch(() => {});
+      await sleep(250);
+      return await page.evaluate(
+        async ({ targetKey, baseList, use2K }) => {
+          const kOf = (el) => String(el.querySelector("img")?.src || "").split("?")[0];
+          const tiles = [...document.querySelectorAll("flow-image-tile")].filter(
+            (x) => !x.closest(".cdk-overlay-container") && kOf(x)
+          );
+          const t =
+            tiles.find((x) => kOf(x) === targetKey) ||
+            tiles.find((x) => !baseList.includes(kOf(x))) ||
+            tiles[0];
+          if (!t) return null;
+          const more = [...t.querySelectorAll("button")].find((b) =>
+            /Tuỳ chọn khác|Tùy chọn khác|More options|more_vert/i.test(
+              (b.getAttribute("aria-label") || "") + " " + (b.innerText || "")
+            )
+          );
+          if (!more) return null;
+          more.click();
+          await new Promise((r) => setTimeout(r, 550));
+          const n = (x) => String(x.innerText || "").normalize("NFC");
+          const dlItem = [
+            ...document.querySelectorAll(
+              ".cdk-overlay-container flow-menu-item, .cdk-overlay-container [role=menuitem], .cdk-overlay-container button"
+            ),
+          ]
+            .filter((x) => x.getBoundingClientRect().width > 0)
+            .find((x) => /Tải xuống|Download/i.test(n(x)));
+          if (!dlItem) {
+            document.body.click();
+            return null;
+          }
+          (dlItem.querySelector("button") || dlItem).click();
+          await new Promise((r) => setTimeout(r, 650));
+          const subItems = [
+            ...document.querySelectorAll(
+              ".cdk-overlay-container flow-menu-item, .cdk-overlay-container [role=menuitem]"
+            ),
+          ].filter((x) => x.getBoundingClientRect().width > 0 && !/Tải xuống|Download/i.test(n(x)));
+          if (subItems.length) {
+            const pick = use2K
+              ? subItems.find((x) => /\b2K\b/i.test(n(x))) || subItems.find((x) => /1K|gốc|original/i.test(n(x)))
+              : subItems.find((x) => /1K|gốc|original/i.test(n(x))) || subItems[0];
+            if (pick) {
+              (pick.querySelector("button") || pick).click();
+              return n(pick).trim();
+            }
+          }
+          return "direct";
+        },
+        {
+          targetKey: key,
+          baseList: baseline.map((u) => String(u).split("?")[0]),
+          use2K: want2K,
+        }
+      ).catch(() => null);
+    });
+  };
+
+  try {
+    if (prefer2K) {
+      const picked2K = await triggerTileDownload(true);
+      if (picked2K) {
+        const got2K = await waitImgFile(/2K/i.test(picked2K) ? 70 : 20);
+        if (got2K && got2K.data.length > 60000) return got2K;
+      }
+    }
+    const picked1K = await triggerTileDownload(false);
+    if (picked1K) {
+      const got1K = await waitImgFile(24);
+      if (got1K && got1K.data.length > 50000) return got1K;
+    }
+  } finally {
+    await page.keyboard.press("Escape").catch(() => {});
+    try { await cdp.detach(); } catch {}
+    try { if (bCdp) await bCdp.detach(); } catch {}
+    try { fs.rmSync(dir, { recursive: true, force: true }); } catch {}
+  }
+  if (fallbackUrl) return await downloadVideo(page, fallbackUrl);
+  throw new Error("Không tải được ảnh gốc từ Flow.");
+}
+
 // Ảnh thu nhỏ của ô video chỉ là JPEG, không phải video. Lấy mp4 thật bằng nút "Tải xuống" của Flow (chọn 720p/kích thước gốc),
 // giữ nguyên đúng URL dự án u/0, u/1, u/3 của từng luồng Worker sau khi tải xong!
 async function downloadVideoViaUi(page, key, baseline = [], returnUrl = "") {
@@ -876,7 +990,8 @@ async function generateOnceOnSlot(job, onProgress, slotIdx, page, currentPrefix)
       const out = [];
       for (const v of st.videos.slice(0, job.count || 1)) {
         if (job.kind === "image") {
-          out.push(await downloadVideo(page, v.url));
+          const prefer2K = job.quality !== "1K";
+          out.push(await downloadImageViaUi(page, v.id, sub.baseline, prefer2K, v.url));
         } else {
           let directItem = null;
           if (v.url) {
