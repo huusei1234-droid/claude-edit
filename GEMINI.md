@@ -67,3 +67,6 @@ Tài liệu này tự động nạp khi mở thư mục gốc `full studio` tron
    - Câu hỏi ngắn / lệnh nhanh: giải quyết trực tiếp tức thì tại luồng chính.
    - Khi uỷ quyền `invoke_subagent`: tự động gán `Model: "flash_lite"` cho việc quét vặt/lặp lại lớn, `Model: "flash"` cho tra cứu & trình duyệt, và `Model: "pro"` cho tác vụ sáng tạo kịch bản TVC sâu, thiết kế kiến trúc Motion Graphics/Shader phức tạp hoặc gỡ lỗi khó.
    - Với **nhiệm vụ đặc biệt quan trọng / dự án chốt khách / chiến dịch lớn**: được phép chủ động đẩy lên mức **`High` hoặc `XHigh`** (`gemini-4-neon-high` / `gemini-4-neon-xhigh` hoặc `claude-opus-5-5-high` qua `swarm`), ưu tiên chất lượng tối đa hơn tốc độ.
+6. **Chủ Động Bật Canvas / Full Studio Khi Làm Video & Quy Tắc Thép Trên Zalo**:
+   - Khi tạo video/ảnh/voice cần bật **Canvas / Full Studio** (`full studido.exe`, Agent `:17371`, Brave `:9333`, Voice Studio `:3900`) hoặc công cụ phụ trợ nào thì **cứ chủ động bật lên ngay** để thực hiện công việc.
+   - **QUY TẮC KHÓA CỨNG ZALO**: Trên Zalo **TUYỆT ĐỐI KHÔNG ĐƯỢC nhắn bất kỳ ai hoặc nhóm nào NGOẠI TRỪ đúng 2 nơi duy nhất là `Document` và `Quản lý MS`** (luôn kiểm tra đúng tên hội thoại trước khi gửi, cấm tuyệt đối nhắn nhầm sang khách hàng/đồng nghiệp/nhóm khác).
