@@ -1,0 +1,42 @@
+{
+  "campaign": "HTPM Nha Trang Crystal-Clear Daily 10 Videos + 10 Posts",
+  "daily_quota": {
+    "videos_9x16": 10,
+    "designs_4x5": 10
+  },
+  "character_ref_hub": "d:/AI/full studio/BO_KIEN_THUC_TVC_AI_PORTABLE/03_TAI_NGUYEN_DUNG_CHUNG/brand_kits/01_HTPM_Hang_Thu_Pharma/ambassadors_models/FB_Hang_Thu_146_Nha_Trang",
+  "days": {
+    "2026-11-24": {
+      "status": "ca1_done",
+      "completed_videos": 5,
+      "completed_posts": 6,
+      "updated_at": "2026-11-25T00:32:44",
+      "ca1_videos": [
+        "261124 HTPM dung dịch vệ sinh Romance VIP dịu êm nắng biển Nha Trang final.mp4",
+        "261124 HTPM Điều Kinh HT dưỡng khí huyết rạng rỡ phố biển final.mp4",
+        "261124 HTPM viên uống WhiteSkin làn da trong trẻo nắng Nha Trang final.mp4",
+        "261124 HTPM viên dưỡng Romance Love giữ lửa yêu thương tinh tế final.mp4"
+      ],
+      "ca1_posts_dir": "Z:\\.shortcut-targets-by-id\\1qjnlz_54ZT5OlI9dKMelZ5PJauD4etj-\\hằng thu pharma\\01. Hình Đăng Bài & Bài Viết Mới\\HTPM_Daily_Content\\Ngay_01_2411_Ca1_NhaTrang"
+    },
+    "2026-11-25": {
+      "status": "done",
+      "completed_videos": 10,
+      "completed_posts": 10,
+      "updated_at": "2026-11-25T11:03:30",
+      "k6_day_dir": "Z:\\.shortcut-targets-by-id\\1qjnlz_54ZT5OlI9dKMelZ5PJauD4etj-\\hằng thu pharma\\05. Video Hoàn Thiện\\K6 - Hằng Thu Pharma\\261125 - Ngày 25.11.2026",
+      "videos": [
+        "261125 HTPM viên đặt LT Plus hiểu đúng chăm sóc chuyên sâu không khô rát final.mp4",
+        "261125 HTPM Gel Phụ Khang gói nhỏ dịu nhẹ thoáng sạch suốt ngày dài final.mp4",
+        "261125 HTPM Dạ Dày HT bỏ bữa cà phê sáng xoa dịu êm thượng vị final.mp4",
+        "261125 HTPM Điều Kinh HT đừng coi thường kỳ dâu thất thường tuổi 30 final.mp4",
+        "261125 HTPM dung dịch Romance VIP rửa đúng cách giữ ẩm mềm mịn chuẩn pH final.mp4",
+        "261125 HTPM viên uống WhiteSkin dưỡng sáng từ gốc dưới nắng biển Nha Trang final.mp4",
+        "261125 HTPM viên đặt phụ khoa Hằng Thu sạch thoáng săn chắc sau sinh final.mp4",
+        "261125 HTPM viên dưỡng Romance Love nâng niu nét xuân giữ lửa yêu thương final.mp4",
+        "261125 HTPM Ngọc Long Hoàn bồi bổ nguyên khí vững phong độ phái mạnh final.mp4",
+        "261125 HTPM CEO Nguyễn Thị Hằng kinh doanh bền vững bằng giá trị thật tại Nha Trang final.mp4"
+      ]
+    }
+  }
+}

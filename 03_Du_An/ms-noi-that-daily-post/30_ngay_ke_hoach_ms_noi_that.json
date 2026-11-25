@@ -1,0 +1,577 @@
+{
+  "brand": "Nội Thất MS – Chuyên ốp tường Nha Trang",
+  "fanpage_url": "https://www.facebook.com/profile.php?id=61570099363692",
+  "total_days": 30,
+  "days": [
+    {
+      "day_id": "D01",
+      "slug": "Vach_Tivi_Phong_Khach_Sang_Trong",
+      "title": "Vách Tivi Phòng Khách Hiện Đại – Vân Đá Trắng Khói & Lam 3 Sóng Gỗ Ấm",
+      "reference_angle": "Kosmos: Lấy PVC vân đá cẩm thạch sáng làm tâm điểm mở rộng phòng khách, hai bên chạy lam 3 sóng vân gỗ ấm tạo chiều sâu đối xứng cùng nẹp chỉ vàng.",
+      "mat_1": {
+        "code": "MSG - 3ST026",
+        "name": "Lam 3 Sóng Thấp Vân Gỗ Sồi Ấm",
+        "rel_path": "Menu Lam Sóng\\MSG - Mẫu A Hà\\MSG - 3ST026.jpg",
+        "abs_path": "Z:\\Drive của tôi\\dự án ngoài\\MS Nội Thất\\Menu Lam Sóng\\MSG - Mẫu A Hà\\MSG - 3ST026.jpg"
+      },
+      "mat_2": {
+        "code": "MSG - 8263",
+        "name": "Tấm Ốp PVC Vân Đá Cẩm Thạch Trắng Vân Mây",
+        "rel_path": "Menu Tấm Ốp PVC\\MSG - Mẫu A Hà\\MSG - 8263.jpg",
+        "abs_path": "Z:\\Drive của tôi\\dự án ngoài\\MS Nội Thất\\Menu Tấm Ốp PVC\\MSG - Mẫu A Hà\\MSG - 8263.jpg"
+      },
+      "scene_prompt": "Wide 2:1 architectural interior photography of a luxury modern Vietnamese living room TV feature wall. Center backdrop clad in glossy white Carrara marble PVC panel with delicate grey veins (matching reference image 2), flanked symmetrically on both left and right sides by warm medium-oak 3-rib fluted wood wall panels (matching reference image 1) separated by thin brushed gold aluminum T-strips and soft warm concealed LED cove lighting, floating beige low TV console, sleek black smart TV, creamy porcelain floor tiles, bright natural coastal daylight."
+    },
+    {
+      "day_id": "D02",
+      "slug": "Vach_Dau_Giuong_Master_Am_Cung",
+      "title": "Vách Đầu Giường Phòng Ngủ Master – Dịu Mắt, Ngủ Sâu Chuẩn Resort",
+      "reference_angle": "Ngân Hoa: Phối lam sóng gỗ trầm ấm với PVC vân đá kem mây nhẹ nhàng cho vách đầu giường không mùi, chống ẩm mốc tuyệt đối.",
+      "mat_1": {
+        "code": "MSG - 4ST014",
+        "name": "Lam 4 Sóng Thấp Vân Gỗ Nâu Ấm",
+        "rel_path": "Menu Lam Sóng\\MSG - Mẫu A Hà\\MSG - 4ST014.jpg",
+        "abs_path": "Z:\\Drive của tôi\\dự án ngoài\\MS Nội Thất\\Menu Lam Sóng\\MSG - Mẫu A Hà\\MSG - 4ST014.jpg"
+      },
+      "mat_2": {
+        "code": "MSG - 8010",
+        "name": "Tấm Ốp PVC Vân Đá Kem Sữa Dịu Nhãn",
+        "rel_path": "Menu Tấm Ốp PVC\\MSG - Mẫu A Hà\\MSG - 8010.jpg",
+        "abs_path": "Z:\\Drive của tôi\\dự án ngoài\\MS Nội Thất\\Menu Tấm Ốp PVC\\MSG - Mẫu A Hà\\MSG - 8010.jpg"
+      },
+      "scene_prompt": "Wide 2:1 architectural interior photography of a serene luxury master bedroom headboard feature wall. Left and right vertical wings finished in warm walnut-oak 4-rib fluted wood panels (reference image 1), center wide headboard backdrop finished in soft cream-beige marble PVC sheet (reference image 2) with warm indirect LED strip glow, plush upholstered low king bed in oatmeal linen, minimalist pendant bedside lamps, calm resort atmosphere."
+    },
+    {
+      "day_id": "D03",
+      "slug": "Cai_Tao_Tuong_Am_Moc_Phong_Khach",
+      "title": "Giải Pháp Tường Bị Thấm Ẩm Khí Hậu Biển – Lột Xác Chỉ Trong 1 Ngày",
+      "reference_angle": "Kosmos: Tường nhà phố lâu năm bong tróc sơn được xử lý khung xương chuẩn laser, ốp lam sóng xám hiện đại kết hợp PVC vân đá sáng bóng chống nước 100%.",
+      "mat_1": {
+        "code": "MSG - 4ST042",
+        "name": "Lam 4 Sóng Thấp Xám Ghi Hiện Đại",
+        "rel_path": "Menu Lam Sóng\\MSG - Mẫu A Hà\\MSG - 4ST042.jpg",
+        "abs_path": "Z:\\Drive của tôi\\dự án ngoài\\MS Nội Thất\\Menu Lam Sóng\\MSG - Mẫu A Hà\\MSG - 4ST042.jpg"
+      },
+      "mat_2": {
+        "code": "MSG - 8266",
+        "name": "Tấm Ốp PVC Vân Đá Nâu Vàng Sang Trọng",
+        "rel_path": "Menu Tấm Ốp PVC\\MSG - Mẫu A Hà\\MSG - 8266.jpg",
+        "abs_path": "Z:\\Drive của tôi\\dự án ngoài\\MS Nội Thất\\Menu Tấm Ốp PVC\\MSG - Mẫu A Hà\\MSG - 8266.jpg"
+      },
+      "scene_prompt": "Wide 2:1 interior photography of a renovated modern townhouse living room feature wall behind sofa and TV zone. Symmetrical modern grey-taupe 4-rib fluted panels on both sides (reference image 1) framing a glossy warm gold-brown veined white marble PVC center panel (reference image 2) with gold metal trim, cozy minimalist sofa corner, warm recessed ceiling spotlights."
+    },
+    {
+      "day_id": "D04",
+      "slug": "Khong_Gian_Phong_Tho_Trang_Nghiem",
+      "title": "Vách Ốp Phòng Thờ Gia Tiên – Trang Nghiêm, Ấm Cúng & Bền Đẹp Vĩnh Cửu",
+      "reference_angle": "Ngân Hoa: Ứng dụng lam sóng màu gỗ óc chó trầm kết hợp tấm PVC vân đá vàng kem giúp không gian thờ tự tôn nghiêm, chống ẩm mốc và dễ lau bụi nhang khói.",
+      "mat_1": {
+        "code": "MSG - 3ST015",
+        "name": "Lam 3 Sóng Gỗ Óc Chó Trầm",
+        "rel_path": "Menu Lam Sóng\\MSG - Mẫu A Hà\\MSG - 3ST015.jpg",
+        "abs_path": "Z:\\Drive của tôi\\dự án ngoài\\MS Nội Thất\\Menu Lam Sóng\\MSG - Mẫu A Hà\\MSG - 3ST015.jpg"
+      },
+      "mat_2": {
+        "code": "MSG - 8012",
+        "name": "Tấm Ốp PVC Vân Đá Vàng Hoàng Gia",
+        "rel_path": "Menu Tấm Ốp PVC\\MSG - Mẫu A Hà\\MSG - 8012.jpg",
+        "abs_path": "Z:\\Drive của tôi\\dự án ngoài\\MS Nội Thất\\Menu Tấm Ốp PVC\\MSG - Mẫu A Hà\\MSG - 8012.jpg"
+      },
+      "scene_prompt": "Wide 2:1 respectful dignified Vietnamese ancestral altar room feature wall interior photography. Deep walnut brown 3-rib fluted wood panels on left and right sides (reference image 1) framing a warm golden-beige marble PVC center backdrop (reference image 2), clean traditional wooden altar table with warm subtle ambient cove lighting, peaceful dignified symmetry."
+    },
+    {
+      "day_id": "D05",
+      "slug": "Quay_Le_Tan_Spa_Showroom",
+      "title": "Vách Quầy Lễ Tân Spa & Showroom – Tạo Ấn Tượng Đẳng Cấp Ngay Từ Cửa Bước Vào",
+      "reference_angle": "Kosmos: Bề mặt PVC vân đá bóng gương phản chiếu ánh sáng kết hợp lam 6 sóng nhuyễn nâng tầm hình ảnh thương hiệu với chi phí tiết kiệm.",
+      "mat_1": {
+        "code": "MSG - 6ST010A",
+        "name": "Lam 6 Sóng Nhuyễn Kem Gỗ Thanh Lịch",
+        "rel_path": "Menu Lam Sóng\\MSG - Mẫu A Hà\\MSG - 6ST010A.jpg",
+        "abs_path": "Z:\\Drive của tôi\\dự án ngoài\\MS Nội Thất\\Menu Lam Sóng\\MSG - Mẫu A Hà\\MSG - 6ST010A.jpg"
+      },
+      "mat_2": {
+        "code": "MSG - 9044",
+        "name": "Tấm Ốp PVC Vân Đá Trắng Bóng Gương",
+        "rel_path": "Menu Tấm Ốp PVC\\MSG - Mẫu A Hà\\MSG - 9044.jpg",
+        "abs_path": "Z:\\Drive của tôi\\dự án ngoài\\MS Nội Thất\\Menu Tấm Ốp PVC\\MSG - Mẫu A Hà\\MSG - 9044.jpg"
+      },
+      "scene_prompt": "Wide 2:1 commercial interior photography of a chic modern beauty spa reception backdrop wall (zero text or logo on wall). Glossy white marble PVC panels in the center (reference image 2) paired with refined warm beige 6-rib fine fluted wall panels on both sides (reference image 1), curved minimalist white reception desk, warm halo LED lighting, indoor olive tree."
+    },
+    {
+      "day_id": "D06",
+      "slug": "Vach_Sofa_Phong_Khach_Toi_Gian",
+      "title": "Biến Mảng Tường Trống Sau Sofa Thành Điểm Nhấn Nghệ Thuật Tinh Tế",
+      "reference_angle": "Ngân Hoa: Thay vì để tường sơn trắng đơn điệu dễ bám bẩn, phối lam sóng kem sáng và tấm PVC vân mây xám nhẹ tạo chiều sâu Bắc Âu.",
+      "mat_1": {
+        "code": "MSG - 3ST008A",
+        "name": "Lam 3 Sóng Kem Sáng Bắc Âu",
+        "rel_path": "Menu Lam Sóng\\MSG - Mẫu A Hà\\MSG - 3ST008A.jpg",
+        "abs_path": "Z:\\Drive của tôi\\dự án ngoài\\MS Nội Thất\\Menu Lam Sóng\\MSG - Mẫu A Hà\\MSG - 3ST008A.jpg"
+      },
+      "mat_2": {
+        "code": "MSG - 8050",
+        "name": "Tấm Ốp PVC Vân Đá Trắng Xám Nhẹ",
+        "rel_path": "Menu Tấm Ốp PVC\\MSG - Mẫu A Hà\\MSG - 8050.jpg",
+        "abs_path": "Z:\\Drive của tôi\\dự án ngoài\\MS Nội Thất\\Menu Tấm Ốp PVC\\MSG - Mẫu A Hà\\MSG - 8050.jpg"
+      },
+      "scene_prompt": "Wide 2:1 Scandinavian modern living room sofa backdrop wall photography. Soft cream 3-rib fluted panels (reference image 1) combined asymmetrically with light grey-white cloud marble PVC slabs (reference image 2) and thin champagne metal inlay strips behind a modern light beige L-shaped fabric sofa, natural morning sunlight."
+    },
+    {
+      "day_id": "D07",
+      "slug": "Vach_Tivi_Huyen_Bi_Luxury_Black",
+      "title": "Phong Cách Luxury Cá Tính Với Tấm Ốp PVC Vân Đá Đen Tia Chớp & Lam Gỗ Trầm",
+      "reference_angle": "Kosmos: Sự tương phản mạnh giữa tấm PVC vân đá đen huyền bí và lam 4 sóng nâu trầm dành cho gia chủ yêu thích vẻ đẹp sang trọng chuẩn căn hộ Penthouse.",
+      "mat_1": {
+        "code": "MSG - 4ST015",
+        "name": "Lam 4 Sóng Nâu Cà Phê Sang Trọng",
+        "rel_path": "Menu Lam Sóng\\MSG - Mẫu A Hà\\MSG - 4ST015.jpg",
+        "abs_path": "Z:\\Drive của tôi\\dự án ngoài\\MS Nội Thất\\Menu Lam Sóng\\MSG - Mẫu A Hà\\MSG - 4ST015.jpg"
+      },
+      "mat_2": {
+        "code": "MSG - 8231",
+        "name": "Tấm Ốp PVC Vân Đá Đen Tia Trắng Luxury",
+        "rel_path": "Menu Tấm Ốp PVC\\MSG - Mẫu A Hà\\MSG - 8231.jpg",
+        "abs_path": "Z:\\Drive của tôi\\dự án ngoài\\MS Nội Thất\\Menu Tấm Ốp PVC\\MSG - Mẫu A Hà\\MSG - 8231.jpg"
+      },
+      "scene_prompt": "Wide 2:1 luxury penthouse living room TV feature wall photography. Dramatic glossy black marble PVC center wall with crisp white veins (reference image 2) flanked by rich dark espresso walnut 4-rib fluted panels (reference image 1) with warm amber recessed LED strips, sleek dark low media console, sophisticated moody architectural lighting."
+    },
+    {
+      "day_id": "D08",
+      "slug": "Phong_Ngu_Can_Ho_Bien_Nha_Trang",
+      "title": "Phối Màu Sáng Mát Cho Phòng Ngủ Căn Hộ Biển Nha Trang",
+      "reference_angle": "Ngân Hoa: Tông trắng kem – vân đá sáng giúp căn hộ diện tích vừa nhìn rộng gấp đôi, chống hơi muối biển và ẩm mốc.",
+      "mat_1": {
+        "code": "MSG - 4ST001",
+        "name": "Lam 4 Sóng Trắng Sứ Tinh Khôi",
+        "rel_path": "Menu Lam Sóng\\MSG - Mẫu A Hà\\MSG - 4ST001.jpg",
+        "abs_path": "Z:\\Drive của tôi\\dự án ngoài\\MS Nội Thất\\Menu Lam Sóng\\MSG - Mẫu A Hà\\MSG - 4ST001.jpg"
+      },
+      "mat_2": {
+        "code": "MSG - 8160",
+        "name": "Tấm Ốp PVC Vân Đá Trắng Sáng Thanh Khiết",
+        "rel_path": "Menu Tấm Ốp PVC\\MSG - Mẫu A Hà\\MSG - 8160.jpg",
+        "abs_path": "Z:\\Drive của tôi\\dự án ngoài\\MS Nội Thất\\Menu Tấm Ốp PVC\\MSG - Mẫu A Hà\\MSG - 8160.jpg"
+      },
+      "scene_prompt": "Wide 2:1 bright coastal apartment bedroom headboard wall photography. Crisp white 4-rib fluted wall panels (reference image 1) paired with luminous white marble PVC center panels (reference image 2), soft warm cove light, cozy white and sand-toned beddings, airy natural light."
+    },
+    {
+      "day_id": "D09",
+      "slug": "Vach_Tivi_Go_Do_Am_Gia_Dinh_Viet",
+      "title": "Tông Gỗ Đỏ Ấm Truyền Thống Kết Hợp Đá Cẩm Thạch Sáng Cho Nhà Phố Việt",
+      "reference_angle": "Kosmos: Dung hòa gu truyền thống ấm cúng của gia đình nhiều thế hệ với nét hiện đại sáng thoáng từ tấm PVC vân đá.",
+      "mat_1": {
+        "code": "MSG - 3ST032",
+        "name": "Lam 3 Sóng Gỗ Đỏ Ấm Áp",
+        "rel_path": "Menu Lam Sóng\\MSG - Mẫu A Hà\\MSG - 3ST032.jpg",
+        "abs_path": "Z:\\Drive của tôi\\dự án ngoài\\MS Nội Thất\\Menu Lam Sóng\\MSG - Mẫu A Hà\\MSG - 3ST032.jpg"
+      },
+      "mat_2": {
+        "code": "MSG - 9045",
+        "name": "Tấm Ốp PVC Vân Đá Trắng Kem Sáng",
+        "rel_path": "Menu Tấm Ốp PVC\\MSG - Mẫu A Hà\\MSG - 9045.jpg",
+        "abs_path": "Z:\\Drive của tôi\\dự án ngoài\\MS Nội Thất\\Menu Tấm Ốp PVC\\MSG - Mẫu A Hà\\MSG - 9045.jpg"
+      },
+      "scene_prompt": "Wide 2:1 warm Vietnamese family home living room TV wall photography. Rich warm reddish-teak 3-rib fluted wood panels on both sides (reference image 1) framing a bright clean white-cream marble PVC center wall (reference image 2) with gold trim, wooden console table, inviting warm lighting."
+    },
+    {
+      "day_id": "D10",
+      "slug": "Phong_Lam_Viec_Giam_Doc_Tai_Gia",
+      "title": "Vách Hậu Cảnh Phòng Làm Việc & Họp Online Chuyên Nghiệp Tại Nhà",
+      "reference_angle": "Ngân Hoa: Bức vách phía sau bàn làm việc phối lam 6 sóng và PVC vân đá xám trung tính tạo phong thái chỉn chu, lịch lãm.",
+      "mat_1": {
+        "code": "MSG - 6ST011A",
+        "name": "Lam 6 Sóng Nâu Khói Lịch Lãm",
+        "rel_path": "Menu Lam Sóng\\MSG - Mẫu A Hà\\MSG - 6ST011A.jpg",
+        "abs_path": "Z:\\Drive của tôi\\dự án ngoài\\MS Nội Thất\\Menu Lam Sóng\\MSG - Mẫu A Hà\\MSG - 6ST011A.jpg"
+      },
+      "mat_2": {
+        "code": "MSG - 8226",
+        "name": "Tấm Ốp PVC Vân Đá Xám Đá Tự Nhiên",
+        "rel_path": "Menu Tấm Ốp PVC\\MSG - Mẫu A Hà\\MSG - 8226.jpg",
+        "abs_path": "Z:\\Drive của tôi\\dự án ngoài\\MS Nội Thất\\Menu Tấm Ốp PVC\\MSG - Mẫu A Hà\\MSG - 8226.jpg"
+      },
+      "scene_prompt": "Wide 2:1 executive home office backdrop wall interior photography. Refined smoky brown-grey 6-rib fluted panels (reference image 1) paired with natural medium grey stone-veined PVC panels (reference image 2) and warm vertical LED accent strips behind a sleek walnut executive desk and ergonomic leather chair."
+    },
+    {
+      "day_id": "D11",
+      "slug": "Vach_Tivi_Combo_Dong_Bo_CB01",
+      "title": "Combo Đồng Bộ Tông Xám Khói Hiện Đại Cho Nhà Phố Mới Xây",
+      "reference_angle": "Kosmos: Chọn tông xám trung tính đồng bộ giúp dễ phối sofa, rèm cửa và giữ vẻ mới đẹp sau nhiều năm sử dụng.",
+      "mat_1": {
+        "code": "MSH - CB01",
+        "name": "Lam Sóng Tông Xám Khói Đồng Bộ",
+        "rel_path": "Menu Lam Sóng\\MSH - HD Nhà Đẹp\\MSH - CB01.jpg",
+        "abs_path": "Z:\\Drive của tôi\\dự án ngoài\\MS Nội Thất\\Menu Lam Sóng\\MSH - HD Nhà Đẹp\\MSH - CB01.jpg"
+      },
+      "mat_2": {
+        "code": "MSH - 01",
+        "name": "Tấm Ốp PVC Vân Đá Trắng Xám Thanh Lịch",
+        "rel_path": "Menu Tấm Ốp PVC\\MSH - HD Nhà Đẹp\\MSH - 01.jpg",
+        "abs_path": "Z:\\Drive của tôi\\dự án ngoài\\MS Nội Thất\\Menu Tấm Ốp PVC\\MSH - HD Nhà Đẹp\\MSH - 01.jpg"
+      },
+      "scene_prompt": "Wide 2:1 contemporary living room TV backdrop wall with cool grey fluted panels on both sides (reference image 1) and crisp white-grey marble PVC center slab (reference image 2), minimalist floating TV cabinet, soft daylight."
+    },
+    {
+      "day_id": "D12",
+      "slug": "Vach_Phong_An_Lien_Bep_Sach_Se",
+      "title": "Ốp Tường Khu Vực Bàn Ăn Liền Bếp – Dễ Lau Chùi, Ấm Cúng Mỗi Bữa Cơm",
+      "reference_angle": "Ngân Hoa: Bề mặt phủ UV chống bám bẩn giúp tường khu bàn ăn luôn sạch bóng, chỉ cần khăn ẩm lau nhẹ là như mới.",
+      "mat_1": {
+        "code": "MSH - CB02",
+        "name": "Lam Sóng Kem Gỗ Ấm Nhẹ",
+        "rel_path": "Menu Lam Sóng\\MSH - HD Nhà Đẹp\\MSH - CB02.jpg",
+        "abs_path": "Z:\\Drive của tôi\\dự án ngoài\\MS Nội Thất\\Menu Lam Sóng\\MSH - HD Nhà Đẹp\\MSH - CB02.jpg"
+      },
+      "mat_2": {
+        "code": "MSH - 09",
+        "name": "Tấm Ốp PVC Vân Đá Kem Vàng Nhẹ",
+        "rel_path": "Menu Tấm Ốp PVC\\MSH - HD Nhà Đẹp\\MSH - 09.jpg",
+        "abs_path": "Z:\\Drive của tôi\\dự án ngoài\\MS Nội Thất\\Menu Tấm Ốp PVC\\MSH - HD Nhà Đẹp\\MSH - 09.jpg"
+      },
+      "scene_prompt": "Wide 2:1 modern dining room feature wall beside a 6-seater dining table. Warm beige-oak fluted panels (reference image 1) paired with creamy gold-veined marble PVC panels (reference image 2), warm pendant dining light, clean welcoming ambiance."
+    },
+    {
+      "day_id": "D13",
+      "slug": "Sanh_Thang_May_Khach_San_Mini",
+      "title": "Ốp Sảnh Đón & Khung Thang Máy Căn Hộ Dịch Vụ / Khách Sạn Nha Trang",
+      "reference_angle": "Kosmos: Thay thế đá hoa cương nặng nề bằng tấm PVC vân đá kết hợp lam sóng thi công cực nhanh, không gây ồn bụi ảnh hưởng khách lưu trú.",
+      "mat_1": {
+        "code": "MSH - CB04",
+        "name": "Lam Sóng Gỗ Sồi Vàng Sang Trọng",
+        "rel_path": "Menu Lam Sóng\\MSH - HD Nhà Đẹp\\MSH - CB04.jpg",
+        "abs_path": "Z:\\Drive của tôi\\dự án ngoài\\MS Nội Thất\\Menu Lam Sóng\\MSH - HD Nhà Đẹp\\MSH - CB04.jpg"
+      },
+      "mat_2": {
+        "code": "MSH - 39",
+        "name": "Tấm Ốp PVC Vân Đá Trắng Bóng Cao Cấp",
+        "rel_path": "Menu Tấm Ốp PVC\\MSH - HD Nhà Đẹp\\MSH - 39.jpg",
+        "abs_path": "Z:\\Drive của tôi\\dự án ngoài\\MS Nội Thất\\Menu Tấm Ốp PVC\\MSH - HD Nhà Đẹp\\MSH - 39.jpg"
+      },
+      "scene_prompt": "Wide 2:1 boutique hotel lobby and elevator hall wall cladding photography. Golden oak fluted panels (reference image 1) combined with high-gloss white marble PVC wall slabs (reference image 2) and brushed brass trims, bright luxury hospitality lighting."
+    },
+    {
+      "day_id": "D14",
+      "slug": "Vach_Dau_Giuong_Tan_Co_Dien_Nhe",
+      "title": "Phòng Ngủ Tân Cổ Điển Nhẹ Nhàng Với Lam Sóng Trắng Kem & Đá Vân Mây",
+      "reference_angle": "Ngân Hoa: Tông kem trắng trang nhã kết hợp ánh đèn vàng ấm mang lại không gian nghỉ ngơi thư thái mỗi tối.",
+      "mat_1": {
+        "code": "MSH - CB03",
+        "name": "Lam Sóng Kem Trắng Thanh Tao",
+        "rel_path": "Menu Lam Sóng\\MSH - HD Nhà Đẹp\\MSH - CB03.jpg",
+        "abs_path": "Z:\\Drive của tôi\\dự án ngoài\\MS Nội Thất\\Menu Lam Sóng\\MSH - HD Nhà Đẹp\\MSH - CB03.jpg"
+      },
+      "mat_2": {
+        "code": "MSH - 02",
+        "name": "Tấm Ốp PVC Vân Đá Trắng Mây Mềm Mại",
+        "rel_path": "Menu Tấm Ốp PVC\\MSH - HD Nhà Đẹp\\MSH - 02.jpg",
+        "abs_path": "Z:\\Drive của tôi\\dự án ngoài\\MS Nội Thất\\Menu Tấm Ốp PVC\\MSH - HD Nhà Đẹp\\MSH - 02.jpg"
+      },
+      "scene_prompt": "Wide 2:1 light neoclassical bedroom headboard wall photography. Soft ivory-cream fluted panels (reference image 1) flanking a delicate cloud-white marble PVC center backdrop (reference image 2) with thin gold molding, plush cream bed, warm sconce lights."
+    },
+    {
+      "day_id": "D15",
+      "slug": "Vach_Tivi_Go_Oc_Cho_Sang_Trong",
+      "title": " Sức Hút Vượt Thời Gian Của Lam Sóng Gỗ Óc Chó Phối Vân Đá Hoàng Kim",
+      "reference_angle": "Kosmos: Cặp màu nâu trầm – trắng vân vàng luôn đứng đầu danh sách được khách hàng lựa chọn khi làm mới phòng khách đón lễ Tết.",
+      "mat_1": {
+        "code": "MSH - CB05",
+        "name": "Lam Sóng Gỗ Óc Chó Đậm Chất Nghệ Thuật",
+        "rel_path": "Menu Lam Sóng\\MSH - HD Nhà Đẹp\\MSH - CB05.jpg",
+        "abs_path": "Z:\\Drive của tôi\\dự án ngoài\\MS Nội Thất\\Menu Lam Sóng\\MSH - HD Nhà Đẹp\\MSH - CB05.jpg"
+      },
+      "mat_2": {
+        "code": "MSH - 37",
+        "name": "Tấm Ốp PVC Vân Đá Kem Vàng Ấm",
+        "rel_path": "Menu Tấm Ốp PVC\\MSH - HD Nhà Đẹp\\MSH - 37.jpg",
+        "abs_path": "Z:\\Drive của tôi\\dự án ngoài\\MS Nội Thất\\Menu Tấm Ốp PVC\\MSH - HD Nhà Đẹp\\MSH - 37.jpg"
+      },
+      "scene_prompt": "Wide 2:1 upscale living room TV feature wall with deep walnut fluted wood panels (reference image 1) and warm golden-cream veined marble PVC center panel (reference image 2), concealed warm LED halo, sleek low credenza."
+    },
+    {
+      "day_id": "D16",
+      "slug": "Goc_Cau_Thang_Va_Hanh_Lang_Sang",
+      "title": "Xử Lý Tường Gầm Cầu Thang & Hành Lang Tối Thành Góc Check-in Sáng Đẹp",
+      "reference_angle": "Ngân Hoa: Ốp tấm PVC bóng gương kết hợp lam 6 sóng sáng màu giúp phản xạ ánh sáng tự nhiên hiệu quả cho nhà ống.",
+      "mat_1": {
+        "code": "MSG - 6ST008A",
+        "name": "Lam 6 Sóng Kem Sáng Tinh Tế",
+        "rel_path": "Menu Lam Sóng\\MSG - Mẫu A Hà\\MSG - 6ST008A.jpg",
+        "abs_path": "Z:\\Drive của tôi\\dự án ngoài\\MS Nội Thất\\Menu Lam Sóng\\MSG - Mẫu A Hà\\MSG - 6ST008A.jpg"
+      },
+      "mat_2": {
+        "code": "MSG - 8228",
+        "name": "Tấm Ốp PVC Vân Đá Trắng Sáng Phản Quang",
+        "rel_path": "Menu Tấm Ốp PVC\\MSG - Mẫu A Hà\\MSG - 8228.jpg",
+        "abs_path": "Z:\\Drive của tôi\\dự án ngoài\\MS Nội Thất\\Menu Tấm Ốp PVC\\MSG - Mẫu A Hà\\MSG - 8228.jpg"
+      },
+      "scene_prompt": "Wide 2:1 modern townhouse hallway and living transition wall photography. Fine cream 6-rib fluted panels (reference image 1) paired with glossy white marble PVC panels (reference image 2), potted indoor plant, warm linear ceiling light."
+    },
+    {
+      "day_id": "D17",
+      "slug": "Vach_Tivi_Nha_Chung_Cu_2PN",
+      "title": "Thiết Kế Vách Tivi Gọn Đẹp Cho Căn Hộ Chung Cư – Không Tốn Diện Tích Sàn",
+      "reference_angle": "Kosmos: Độ dày tấm ốp mỏng nhẹ ôm sát tường giúp căn hộ giữ trọn diện tích lối đi mà vẫn có điểm nhấn sang trọng.",
+      "mat_1": {
+        "code": "MSG - 4ST012",
+        "name": "Lam 4 Sóng Gỗ Sồi Tự Nhiên",
+        "rel_path": "Menu Lam Sóng\\MSG - Mẫu A Hà\\MSG - 4ST012.jpg",
+        "abs_path": "Z:\\Drive của tôi\\dự án ngoài\\MS Nội Thất\\Menu Lam Sóng\\MSG - Mẫu A Hà\\MSG - 4ST012.jpg"
+      },
+      "mat_2": {
+        "code": "MSG - 9907",
+        "name": "Tấm Ốp PVC Vân Đá Trắng Xám Hiện Đại",
+        "rel_path": "Menu Tấm Ốp PVC\\MSG - Mẫu A Hà\\MSG - 9907.jpg",
+        "abs_path": "Z:\\Drive của tôi\\dự án ngoài\\MS Nội Thất\\Menu Tấm Ốp PVC\\MSG - Mẫu A Hà\\MSG - 9907.jpg"
+      },
+      "scene_prompt": "Wide 2:1 compact modern apartment living room TV wall photography. Natural light oak 4-rib fluted panels (reference image 1) framing a clean grey-veined white marble PVC center panel (reference image 2), wall-mounted TV and slim floating shelf."
+    },
+    {
+      "day_id": "D18",
+      "slug": "Phong_Khach_Biet_Thu_Pho_Bien",
+      "title": "Nâng Tầm Không Gian Phòng Khách Rộng Với Hệ Vách Đá Đối Xứng & Lam Sóng Cao",
+      "reference_angle": "Ngân Hoa: Vách khổ rộng phối lam sóng chạy dọc kịch trần tôn chiều cao thông thoáng và vẻ bề thế cho ngôi nhà.",
+      "mat_1": {
+        "code": "MSG - 4ST026",
+        "name": "Lam 4 Sóng Gỗ Vàng Ấm Cao Cấp",
+        "rel_path": "Menu Lam Sóng\\MSG - Mẫu A Hà\\MSG - 4ST026.jpg",
+        "abs_path": "Z:\\Drive của tôi\\dự án ngoài\\MS Nội Thất\\Menu Lam Sóng\\MSG - Mẫu A Hà\\MSG - 4ST026.jpg"
+      },
+      "mat_2": {
+        "code": "MSH - 53",
+        "name": "Tấm Ốp PVC Vân Đá Sáng Vân Khói",
+        "rel_path": "Menu Tấm Ốp PVC\\MSH - HD Nhà Đẹp\\MSH - 53.jpg",
+        "abs_path": "Z:\\Drive của tôi\\dự án ngoài\\MS Nội Thất\\Menu Tấm Ốp PVC\\MSH - HD Nhà Đẹp\\MSH - 53.jpg"
+      },
+      "scene_prompt": "Wide 2:1 spacious coastal villa living room TV wall photography. Floor-to-ceiling warm honey oak 4-rib fluted panels (reference image 1) flanking a grand wide marble-look PVC center backdrop (reference image 2) with warm LED cove illumination."
+    },
+    {
+      "day_id": "D19",
+      "slug": "Vach_Trang_Tri_Shop_Thoi_Trang_My_Pham",
+      "title": "Cải Tạo Nhanh Mặt Bằng Shop Thời Trang & Mỹ Phẩm Chỉ Trong Vài Giờ",
+      "reference_angle": "Kosmos: Không cần trát vữa sơn bả chờ khô nhiều ngày, ốp trực tiếp lam sóng + PVC vân đá để kịp ngày khai trương.",
+      "mat_1": {
+        "code": "MSG - 6ST021",
+        "name": "Lam 6 Sóng Trắng Kem Hiện Đại",
+        "rel_path": "Menu Lam Sóng\\MSG - Mẫu A Hà\\MSG - 6ST021.jpg",
+        "abs_path": "Z:\\Drive của tôi\\dự án ngoài\\MS Nội Thất\\Menu Lam Sóng\\MSG - Mẫu A Hà\\MSG - 6ST021.jpg"
+      },
+      "mat_2": {
+        "code": "MSH - 41",
+        "name": "Tấm Ốp PVC Vân Đá Trắng Tinh Tế",
+        "rel_path": "Menu Tấm Ốp PVC\\MSH - HD Nhà Đẹp\\MSH - 41.jpg",
+        "abs_path": "Z:\\Drive của tôi\\dự án ngoài\\MS Nội Thất\\Menu Tấm Ốp PVC\\MSH - HD Nhà Đẹp\\MSH - 41.jpg"
+      },
+      "scene_prompt": "Wide 2:1 modern cosmetics and fashion boutique feature wall (zero text or signage). Crisp white-cream 6-rib fluted panels (reference image 1) paired with glossy white marble PVC panels (reference image 2), minimalist brass display shelves, bright studio spotlights."
+    },
+    {
+      "day_id": "D20",
+      "slug": "Vach_Dau_Giuong_Xam_bac_Hien_Dai",
+      "title": "Gam Xám Bạc Thanh Lịch Cho Phòng Ngủ Phong Cách Modern Minimalist",
+      "reference_angle": "Ngân Hoa: Phối lam sóng xám mịn cùng tấm PVC vân đá trung tính cho người trẻ yêu sự gọn gàng, tinh giản.",
+      "mat_1": {
+        "code": "MSG - 6ST005",
+        "name": "Lam 6 Sóng Xám Trung Tính",
+        "rel_path": "Menu Lam Sóng\\MSG - Mẫu A Hà\\MSG - 6ST005.jpg",
+        "abs_path": "Z:\\Drive của tôi\\dự án ngoài\\MS Nội Thất\\Menu Lam Sóng\\MSG - Mẫu A Hà\\MSG - 6ST005.jpg"
+      },
+      "mat_2": {
+        "code": "MSG - 8268",
+        "name": "Tấm Ốp PVC Vân Đá Xám Mây Tinh Tế",
+        "rel_path": "Menu Tấm Ốp PVC\\MSG - Mẫu A Hà\\MSG - 8268.jpg",
+        "abs_path": "Z:\\Drive của tôi\\dự án ngoài\\MS Nội Thất\\Menu Tấm Ốp PVC\\MSG - Mẫu A Hà\\MSG - 8268.jpg"
+      },
+      "scene_prompt": "Wide 2:1 minimalist modern bedroom headboard wall photography. Sleek neutral grey 6-rib fluted panels (reference image 1) combined with soft grey marble PVC panels (reference image 2), low platform bed in charcoal and white linen, warm bedside glow."
+    },
+    {
+      "day_id": "D21",
+      "slug": "Vach_Tivi_Phoi_Mau_Hoang_Gia_Sang_Am",
+      "title": "Phòng Khách Bừng Sáng Với Tấm PVC Vân Đá Vàng Nâu & Lam Gỗ Đậm",
+      "reference_angle": "Kosmos: Tông màu vượng khí, ấm áp giúp không gian tiếp khách luôn tràn đầy năng lượng tích cực.",
+      "mat_1": {
+        "code": "MSH - CB08",
+        "name": "Lam Sóng Nâu Vàng Ấm Cúng",
+        "rel_path": "Menu Lam Sóng\\MSH - HD Nhà Đẹp\\MSH - CB08.jpg",
+        "abs_path": "Z:\\Drive của tôi\\dự án ngoài\\MS Nội Thất\\Menu Lam Sóng\\MSH - HD Nhà Đẹp\\MSH - CB08.jpg"
+      },
+      "mat_2": {
+        "code": "MSG - 8136",
+        "name": "Tấm Ốp PVC Vân Đá Vàng Nâu Ấn Tượng",
+        "rel_path": "Menu Tấm Ốp PVC\\MSG - Mẫu A Hà\\MSG - 8136.jpg",
+        "abs_path": "Z:\\Drive của tôi\\dự án ngoài\\MS Nội Thất\\Menu Tấm Ốp PVC\\MSG - Mẫu A Hà\\MSG - 8136.jpg"
+      },
+      "scene_prompt": "Wide 2:1 warm luxury living room feature wall photography. Rich warm golden-brown fluted wood panels (reference image 1) paired with striking amber-gold veined marble PVC panels (reference image 2), warm cove lighting, cream leather sofa edge."
+    },
+    {
+      "day_id": "D22",
+      "slug": "Cai_Tao_Phong_Ngu_Nha_Pho_Cu",
+      "title": "Tạm Biệt Bức Tường Nứt Chân Chim Đầu Giường Không Cần Đục Phá Bụi Bặm",
+      "reference_angle": "Ngân Hoa: Thi công sạch gọn trong ngày, không mùi sơn, kê lại giường ngủ ngay trong buổi chiều sau khi lắp đặt.",
+      "mat_1": {
+        "code": "MSG - 3ST014",
+        "name": "Lam 3 Sóng Nâu Sồi Trầm Ấm",
+        "rel_path": "Menu Lam Sóng\\MSG - Mẫu A Hà\\MSG - 3ST014.jpg",
+        "abs_path": "Z:\\Drive của tôi\\dự án ngoài\\MS Nội Thất\\Menu Lam Sóng\\MSG - Mẫu A Hà\\MSG - 3ST014.jpg"
+      },
+      "mat_2": {
+        "code": "MSH - 59",
+        "name": "Tấm Ốp PVC Vân Đá Trắng Kem Sáng",
+        "rel_path": "Menu Tấm Ốp PVC\\MSH - HD Nhà Đẹp\\MSH - 59.jpg",
+        "abs_path": "Z:\\Drive của tôi\\dự án ngoài\\MS Nội Thất\\Menu Tấm Ốp PVC\\MSH - HD Nhà Đẹp\\MSH - 59.jpg"
+      },
+      "scene_prompt": "Wide 2:1 renovated bedroom headboard feature wall photography. Warm medium walnut-oak 3-rib fluted panels (reference image 1) flanking a clean bright cream-white marble PVC backdrop (reference image 2), cozy freshly made bed, sunlit window."
+    },
+    {
+      "day_id": "D23",
+      "slug": "Vach_Tivi_Trang_Su_Tinh_Khoi",
+      "title": "Phong Cách White-on-White Tinh Khôi Cho Phòng Khách Nhỏ Nhìn Rộng Gấp Đôi",
+      "reference_angle": "Kosmos: Kết hợp bề mặt sóng nổi 3D trắng kem và mặt đá bóng gương trắng giúp đánh lừa thị giác mở rộng không gian.",
+      "mat_1": {
+        "code": "MSH - CB06",
+        "name": "Lam Sóng Trắng Sáng Tinh Tế",
+        "rel_path": "Menu Lam Sóng\\MSH - HD Nhà Đẹp\\MSH - CB06.jpg",
+        "abs_path": "Z:\\Drive của tôi\\dự án ngoài\\MS Nội Thất\\Menu Lam Sóng\\MSH - HD Nhà Đẹp\\MSH - CB06.jpg"
+      },
+      "mat_2": {
+        "code": "MSG - 0000",
+        "name": "Tấm Ốp PVC Trắng Bóng Gương Hiện Đại",
+        "rel_path": "Menu Tấm Ốp PVC\\MSG - Mẫu A Hà\\MSG - 0000.jpg",
+        "abs_path": "Z:\\Drive của tôi\\dự án ngoài\\MS Nội Thất\\Menu Tấm Ốp PVC\\MSG - Mẫu A Hà\\MSG - 0000.jpg"
+      },
+      "scene_prompt": "Wide 2:1 bright airy small living room TV wall in white-on-white palette. Crisp white fluted panels on both sides (reference image 1) with high-gloss white PVC center backdrop (reference image 2) accented by thin gold strips and warm hidden LED light."
+    },
+    {
+      "day_id": "D24",
+      "slug": "Phong_Khach_Go_Tram_Dang_Cap",
+      "title": "Vẻ Đẹp Đầm Chắc Của Tông Gỗ Nâu Đậm Kết Hợp Vân Đá Xám Khói",
+      "reference_angle": "Ngân Hoa: Sự kết hợp bền dáng, sạch sẽ và sang trọng cho phòng khách nhà phố mặt tiền.",
+      "mat_1": {
+        "code": "MSH - CB07",
+        "name": "Lam Sóng Gỗ Nâu Đậm Cao Cấp",
+        "rel_path": "Menu Lam Sóng\\MSH - HD Nhà Đẹp\\MSH - CB07.jpg",
+        "abs_path": "Z:\\Drive của tôi\\dự án ngoài\\MS Nội Thất\\Menu Lam Sóng\\MSH - HD Nhà Đẹp\\MSH - CB07.jpg"
+      },
+      "mat_2": {
+        "code": "MSH - 8002",
+        "name": "Tấm Ốp PVC Vân Đá Trắng Vân Xám",
+        "rel_path": "Menu Tấm Ốp PVC\\MSH - HD Nhà Đẹp\\MSH - 8002.jpg",
+        "abs_path": "Z:\\Drive của tôi\\dự án ngoài\\MS Nội Thất\\Menu Tấm Ốp PVC\\MSH - HD Nhà Đẹp\\MSH - 8002.jpg"
+      },
+      "scene_prompt": "Wide 2:1 modern Vietnamese townhouse living room TV wall photography. Deep dark brown fluted wood panels (reference image 1) framing a bright grey-veined white marble PVC center wall (reference image 2), sleek low cabinet, warm spotlights."
+    },
+    {
+      "day_id": "D25",
+      "slug": "Vach_Phong_Hop_Van_Phong_Cong_Ty",
+      "title": "Ốp Vách Phòng Họp Công Ty – Chuyên Nghiệp, Cách Âm Nhẹ & Thi Công Cuối Tuần",
+      "reference_angle": "Kosmos: Rãnh sóng 3D giúp tán âm nhẹ giảm vang tiếng cho phòng họp, thi công gọn trong ngày nghỉ không gián đoạn công việc.",
+      "mat_1": {
+        "code": "MSG - 3ST042",
+        "name": "Lam 3 Sóng Xám Ghi Hiện Đại",
+        "rel_path": "Menu Lam Sóng\\MSG - Mẫu A Hà\\MSG - 3ST042.jpg",
+        "abs_path": "Z:\\Drive của tôi\\dự án ngoài\\MS Nội Thất\\Menu Lam Sóng\\MSG - Mẫu A Hà\\MSG - 3ST042.jpg"
+      },
+      "mat_2": {
+        "code": "MSH - 8005",
+        "name": "Tấm Ốp PVC Vân Đá Xám Sáng Trang Nhã",
+        "rel_path": "Menu Tấm Ốp PVC\\MSH - HD Nhà Đẹp\\MSH - 8005.jpg",
+        "abs_path": "Z:\\Drive của tôi\\dự án ngoài\\MS Nội Thất\\Menu Tấm Ốp PVC\\MSH - HD Nhà Đẹp\\MSH - 8005.jpg"
+      },
+      "scene_prompt": "Wide 2:1 modern corporate meeting room feature wall photography (zero text). Architectural grey 3-rib fluted panels (reference image 1) paired with light grey marble PVC slabs (reference image 2) behind a large presentation screen and modern conference table."
+    },
+    {
+      "day_id": "D26",
+      "slug": "Vach_Tivi_Hong_Kem_Pastel_Ngot_Ngao",
+      "title": "Điểm Nhấn Tông Kem Hồng Nhẹ Tinh Tế Cho Căn Hộ Của Gia Đình Trẻ",
+      "reference_angle": "Ngân Hoa: Gam màu pastel trang nhã kết hợp vân đá trắng tạo không gian sống trẻ trung, ấm áp.",
+      "mat_1": {
+        "code": "MSG - 4ST007",
+        "name": "Lam 4 Sóng Kem Hồng Trang Nhã",
+        "rel_path": "Menu Lam Sóng\\MSG - Mẫu A Hà\\MSG - 4ST007.jpg",
+        "abs_path": "Z:\\Drive của tôi\\dự án ngoài\\MS Nội Thất\\Menu Lam Sóng\\MSG - Mẫu A Hà\\MSG - 4ST007.jpg"
+      },
+      "mat_2": {
+        "code": "MSG - 1010",
+        "name": "Tấm Ốp PVC Vân Đá Trắng Thanh Khiết",
+        "rel_path": "Menu Tấm Ốp PVC\\MSG - Mẫu A Hà\\MSG - 1010.jpg",
+        "abs_path": "Z:\\Drive của tôi\\dự án ngoài\\MS Nội Thất\\Menu Tấm Ốp PVC\\MSG - Mẫu A Hà\\MSG - 1010.jpg"
+      },
+      "scene_prompt": "Wide 2:1 young family apartment living room feature wall photography. Soft warm blush-beige 4-rib fluted panels (reference image 1) paired with crisp white marble PVC center wall (reference image 2), light wood furniture, cheerful natural light."
+    },
+    {
+      "day_id": "D27",
+      "slug": "Vach_Tivi_Xam_Dam_Ca_Tinh",
+      "title": "Phối Tấm PVC Vân Đá Xám Đậm & Lam Sóng Sáng Cho Phòng Khách Nam Tính",
+      "reference_angle": "Kosmos: Đảo chiều tương phản với mảng đá trung tâm xám đậm mạnh mẽ và hai cánh lam sóng sáng màu cân bằng ánh sáng.",
+      "mat_1": {
+        "code": "MSG - 3ST001",
+        "name": "Lam 3 Sóng Trắng Xám Sáng",
+        "rel_path": "Menu Lam Sóng\\MSG - Mẫu A Hà\\MSG - 3ST001.jpg",
+        "abs_path": "Z:\\Drive của tôi\\dự án ngoài\\MS Nội Thất\\Menu Lam Sóng\\MSG - Mẫu A Hà\\MSG - 3ST001.jpg"
+      },
+      "mat_2": {
+        "code": "MSG - 8257",
+        "name": "Tấm Ốp PVC Vân Đá Xám Đậm Mạnh Mẽ",
+        "rel_path": "Menu Tấm Ốp PVC\\MSG - Mẫu A Hà\\MSG - 8257.jpg",
+        "abs_path": "Z:\\Drive của tôi\\dự án ngoài\\MS Nội Thất\\Menu Tấm Ốp PVC\\MSG - Mẫu A Hà\\MSG - 8257.jpg"
+      },
+      "scene_prompt": "Wide 2:1 contemporary living room TV wall with reversed contrast: bold medium-dark grey stone PVC center backdrop (reference image 2) framed by light grey-white 3-rib fluted panels on both sides (reference image 1), warm LED edge glow."
+    },
+    {
+      "day_id": "D28",
+      "slug": "Sanh_Nha_Hang_Phong_VIP",
+      "title": "Ốp Tường Phòng VIP Nhà Hàng & Café Máy Lạnh – Sạch Đẹp, Không Ám Mùi",
+      "reference_angle": "Ngân Hoa: Vật liệu nhựa nguyên sinh không thấm nước, không bám mùi thức ăn, lau vệ sinh cực nhanh giữa các ca phục vụ.",
+      "mat_1": {
+        "code": "MSG - 4ST070",
+        "name": "Lam 4 Sóng Gỗ Nâu Hổ Phách",
+        "rel_path": "Menu Lam Sóng\\MSG - Mẫu A Hà\\MSG - 4ST070.jpg",
+        "abs_path": "Z:\\Drive của tôi\\dự án ngoài\\MS Nội Thất\\Menu Lam Sóng\\MSG - Mẫu A Hà\\MSG - 4ST070.jpg"
+      },
+      "mat_2": {
+        "code": "MSH - 2503",
+        "name": "Tấm Ốp PVC Vân Đá Kem Cát Ấm",
+        "rel_path": "Menu Tấm Ốp PVC\\MSH - HD Nhà Đẹp\\MSH - 2503.jpg",
+        "abs_path": "Z:\\Drive của tôi\\dự án ngoài\\MS Nội Thất\\Menu Tấm Ốp PVC\\MSH - HD Nhà Đẹp\\MSH - 2503.jpg"
+      },
+      "scene_prompt": "Wide 2:1 upscale private dining VIP room wall interior photography. Rich amber-walnut 4-rib fluted panels (reference image 1) combined with warm sand-beige marble PVC panels (reference image 2), warm wall sconces, refined dining ambiance."
+    },
+    {
+      "day_id": "D29",
+      "slug": "Vach_Dau_Giuong_6_Song_Thanh_Manh",
+      "title": "Hiệu Ứng Sọc Dọc Thanh Mảnh Từ Lam 6 Sóng Giúp Trần Phòng Ngủ Nhìn Cao Hơn",
+      "reference_angle": "Kosmos: Với những phòng ngủ trần thấp dưới 2,8m, lam 6 sóng bản nhỏ chạy dọc kết hợp PVC sáng màu giúp kéo cao không gian rõ rệt.",
+      "mat_1": {
+        "code": "MSG - 6ST016",
+        "name": "Lam 6 Sóng Kem Trầm Nhã Nhặn",
+        "rel_path": "Menu Lam Sóng\\MSG - Mẫu A Hà\\MSG - 6ST016.jpg",
+        "abs_path": "Z:\\Drive của tôi\\dự án ngoài\\MS Nội Thất\\Menu Lam Sóng\\MSG - Mẫu A Hà\\MSG - 6ST016.jpg"
+      },
+      "mat_2": {
+        "code": "MSH - 8279",
+        "name": "Tấm Ốp PVC Vân Đá Sáng Tinh Tế",
+        "rel_path": "Menu Tấm Ốp PVC\\MSH - HD Nhà Đẹp\\MSH - 8279.jpg",
+        "abs_path": "Z:\\Drive của tôi\\dự án ngoài\\MS Nội Thất\\Menu Tấm Ốp PVC\\MSH - HD Nhà Đẹp\\MSH - 8279.jpg"
+      },
+      "scene_prompt": "Wide 2:1 cozy bedroom headboard wall with vertical fine 6-rib warm beige-taupe fluted panels (reference image 1) framing a bright white veined marble PVC center panel (reference image 2), making the ceiling look tall and airy."
+    },
+    {
+      "day_id": "D30",
+      "slug": "Tong_Ket_Xu_Huong_Vach_Tivi_Ben_Dep",
+      "title": "Combo Vách Tivi Quốc Dân: Đẹp Như Đá Thật & Gỗ Thật Nhưng Chi Phí Chỉ Bằng 1/3",
+      "reference_angle": "Kosmos & Ngân Hoa: Chống nước, chống mối mọt, thi công hoàn thiện ngay trong ngày bảo hành chu đáo tại Nha Trang.",
+      "mat_1": {
+        "code": "MSG - 4ST032",
+        "name": "Lam 4 Sóng Gỗ Đỏ Cam Sang Trọng",
+        "rel_path": "Menu Lam Sóng\\MSG - Mẫu A Hà\\MSG - 4ST032.jpg",
+        "abs_path": "Z:\\Drive của tôi\\dự án ngoài\\MS Nội Thất\\Menu Lam Sóng\\MSG - Mẫu A Hà\\MSG - 4ST032.jpg"
+      },
+      "mat_2": {
+        "code": "MSH - 8266",
+        "name": "Tấm Ốp PVC Vân Đá Vàng Mây Ấm Áp",
+        "rel_path": "Menu Tấm Ốp PVC\\MSH - HD Nhà Đẹp\\MSH - 8266.jpg",
+        "abs_path": "Z:\\Drive của tôi\\dự án ngoài\\MS Nội Thất\\Menu Tấm Ốp PVC\\MSH - HD Nhà Đẹp\\MSH - 8266.jpg"
+      },
+      "scene_prompt": "Wide 2:1 Vietnamese modern home living room TV wall showcase. Warm teak-mahogany 4-rib fluted wood panels on left and right (reference image 1) framing a luminous warm gold-veined white marble PVC center backdrop (reference image 2) with gold metal strips and warm LED cove lighting."
+    }
+  ]
+}

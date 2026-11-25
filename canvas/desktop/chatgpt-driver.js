@@ -11,7 +11,7 @@ const flow = require("./flow-driver");
 const LEGACY_PORT = 9334;
 const HOME = "https://chatgpt.com/";
 const DEFAULT_PROJECT_LABEL = process.env.CHATGPT_PROJECT || "HTPM";
-const DEFAULT_PROJECT_ID = "g-p-6afbde0b943481919c6ec31a3b4f8642";
+const DEFAULT_PROJECT_ID = "g-p-6b03c9b49b68819188e93910a01de7b1";
 
 let userData = "";
 let configPath = "";
@@ -102,6 +102,36 @@ function acquireGptSlot() {
   return new Promise((resolve) => waitingGptQueue.push(resolve));
 }
 
+async function sweepIdleChatgptTabs() {
+  if (gptSlotBusy.some(Boolean) || waitingGptQueue.length > 0) return;
+  try {
+    const alive = await debugAlive();
+    if (!alive) return;
+    const b = await ensureBrowser();
+    const pages = await b.pages();
+    const pid = targetProjectId();
+    const gptTabs = [];
+    for (const p of pages) {
+      if (!p || p.isClosed()) continue;
+      const u = p.url() || "";
+      if (!/^https:\/\/chatgpt\.com\b/i.test(u)) continue;
+      const busyDom = await p.evaluate(() => !!document.querySelector('[data-testid="stop-button"], button[aria-label*="Stop"], button[aria-label*="Dừng"]')).catch(() => false);
+      if (!busyDom) gptTabs.push(p);
+    }
+    if (gptTabs.length <= 1) return;
+    // Ưu tiên giữ lại 1 Tab đang nằm trong dự án HTPM (hoặc Tab đầu tiên), đóng gọn toàn bộ Tab phụ nhàn rỗi
+    const keeper = gptTabs.find((p) => (p.url() || "").includes(`/g/${pid}`)) || gptTabs[0];
+    gptSlotPages[0] = keeper;
+    keeper.__gptSlotIdx = 0;
+    for (let i = 1; i < MAX_CHATGPT_WORKERS; i++) gptSlotPages[i] = null;
+    for (const p of gptTabs) {
+      if (p !== keeper) {
+        try { if (!p.isClosed()) await p.close(); } catch {}
+      }
+    }
+  } catch {}
+}
+
 function releaseGptSlot(slotIdx) {
   const next = waitingGptQueue.shift();
   if (next) {
@@ -111,14 +141,20 @@ function releaseGptSlot(slotIdx) {
   gptSlotBusy[slotIdx] = false;
   if (slotIdx > 0) {
     if (gptSlotIdleTimers[slotIdx]) clearTimeout(gptSlotIdleTimers[slotIdx]);
-    gptSlotIdleTimers[slotIdx] = setTimeout(async () => {
+    const t = setTimeout(async () => {
       gptSlotIdleTimers[slotIdx] = null;
       if (!gptSlotBusy[slotIdx] && gptSlotPages[slotIdx]) {
         const p = gptSlotPages[slotIdx];
         gptSlotPages[slotIdx] = null;
         try { if (!p.isClosed()) await p.close(); } catch {}
       }
-    }, 15000);
+      await sweepIdleChatgptTabs();
+    }, 6000);
+    if (t.unref) t.unref();
+    gptSlotIdleTimers[slotIdx] = t;
+  } else if (!gptSlotBusy.some(Boolean)) {
+    const t = setTimeout(() => { sweepIdleChatgptTabs().catch(() => {}); }, 6000);
+    if (t.unref) t.unref();
   }
 }
 
@@ -135,22 +171,30 @@ async function chatgptSlotPage(slotIdx = 0, create = true) {
   await closeLegacy9334IfOpen().catch(() => {});
   const b = await ensureBrowser();
   let page = gptSlotPages[slotIdx];
-  if (page && page.isClosed()) {
-    page = null;
-    gptSlotPages[slotIdx] = null;
+  if (page) {
+    const alive = !page.isClosed() && (await page.evaluate("1").catch(() => null)) === 1;
+    if (!alive) {
+      page = null;
+      gptSlotPages[slotIdx] = null;
+    }
   }
+  const pid = targetProjectId();
   if (!page) {
     const pages = await b.pages();
-    const pid = targetProjectId();
     const taken = new Set(gptSlotPages.filter(Boolean));
-    const freeHtpm = pages.filter((p) => {
+    const freeGpt = pages.filter((p) => {
       const u = p.url() || "";
-      return /chatgpt\.com/i.test(u) &&
-        u.includes(`/g/${pid}`) &&
+      return /^https:\/\/chatgpt\.com\b/i.test(u) &&
         (p.__gptSlotIdx == null || p.__gptSlotIdx === slotIdx) &&
         !taken.has(p);
     });
-    page = freeHtpm[0] || null;
+    // Ưu tiên Tab đã mở sẵn trong dự án HTPM; nếu không có thì tái sử dụng ngay Tab trang chủ chatgpt.com (tránh đẻ thêm Tab mới sau khi xóa chat!)
+    page = freeGpt.find((p) => (p.url() || "").includes(`/g/${pid}`)) ||
+      freeGpt.find((p) => /^https:\/\/chatgpt\.com\/?(\?.*)?$/i.test(p.url() || "")) ||
+      null;
+    if (page && !(page.url() || "").includes(`/g/${pid}`)) {
+      await page.goto(targetProjectUrl(), { waitUntil: "domcontentloaded" }).catch(() => {});
+    }
   }
   if (!page && create) {
     // Mở Tab HTPM phụ ngầm 100% (background: true) để không bao giờ cướp tiêu điểm chuột của Tab Flow hay Tab ChatGPT khác!
@@ -637,4 +681,4 @@ function destroy() {
   // Dùng chung phiên trình duyệt Brave 9333 do flow-driver quản lý
 }
 
-module.exports = { setup, destroy, show, generateImages };
+module.exports = { setup, destroy, show, generateImages, sweepIdleChatgptTabs };

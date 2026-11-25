@@ -58,9 +58,8 @@ Luôn khóa cứng thứ tự phân tầng từ dưới lên trên để **khôn
      - **Bản 1 – Việt Hàn độc lập:** Tab trên xanh lá `★ KIH | PHÒNG KHÁM ĐA KHOA QUỐC TẾ VIỆT HÀN` • Đáy `36 Phan Chu Trinh, P. Nha Trang, Khánh Hòa` • Nút `0779.36.36.79`.
      - **Bản 2 – Thiện Trang độc lập:** Tab trên trắng bo tròn `★ VK | PHÒNG KHÁM ĐA KHOA THIỆN TRANG` • Đáy `85 Nguyễn Trãi, P. Nha Trang, Khánh Hòa` • Nút `0779.36.36.79` (hoặc hotline chiến dịch `079.818.8585`).
      - **Bản 3 – Liên kết đôi Việt Hàn × Thiện Trang:** Tab trên trắng ghép đôi 2 logo `★ KIH | ĐA KHOA THIỆN TRANG` • Đáy xếp 2 dòng địa chỉ `36 Phan Chu Trinh` & `85 Nguyễn Trãi` • Nút `0779.36.36.79`.
-   - **Vùng An Toàn (`Safe Zone` bắt buộc):**
-     - Mép trên (`y = 0 -> 150px` / CapCut `Y > +0.82`): Nhường cho Tab Logo đỉnh đầu.
-     - Mép dưới (`y = 1660 -> 1920px` / CapCut `Y < -0.72`): Nhường cho Dải sóng xanh thương hiệu & Nút Hotline.
+   - **Vùng An Toàn TikTok × Reels (`Safe Zone` bắt buộc — `safe_zone_9x16.py`):**
+     - **Cấm đặt bất kỳ Text, Phụ đề, Hộp giá hay Thẻ Bento nào tràn vào 5 vùng đen UI TikTok × Reels:** Đỉnh `y = 0 -> 248px` (CapCut `Y > +0.74`), Đáy `y = 1548 -> 1920px` (CapCut `Y < -0.61`), Lề trái `x = 0 -> 52px`, Lề phải trên `x = 1026 -> 1080px` (`y < 860px`), và **Cột nút tương tác Phải-Dưới `x = 886 -> 1080px` từ `y = 860 -> 1548px`** (ở nửa dưới `y >= 860px`, mọi phụ đề/hộp giá/thẻ Bento phải giữ `x <= 884px` và `y_bottom <= 1545px`).
 4. **`Track 8 – 10 (Hook Banners, CTA Yellow Bar, Subtitles & Checklist Labels)`**:
    - Tầng chữ tiêu đề hộp vàng đỉnh đầu, nhãn dưới chân từng ô Bento, thanh vàng CTA và Phụ đề thoại 2 màu.
 

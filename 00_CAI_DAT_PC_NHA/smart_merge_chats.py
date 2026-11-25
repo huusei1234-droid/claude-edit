@@ -204,6 +204,58 @@ def _enc_len_field(fnum: int, payload: bytes) -> bytes:
     return _enc_varint((fnum << 3) | 2) + _enc_varint(len(payload)) + payload
 
 
+def _pb_has_field1(data: bytes) -> bool:
+    if not data:
+        return False
+    i = 0
+    n = len(data)
+    while i < n:
+        key = 0
+        shift = 0
+        while i < n:
+            b = data[i]
+            i += 1
+            key |= (b & 0x7F) << shift
+            if not (b & 0x80):
+                break
+            shift += 7
+        fnum = key >> 3
+        wtype = key & 7
+        if fnum == 1 and wtype == 2:
+            return True
+        if wtype == 0:
+            while i < n and (data[i] & 0x80):
+                i += 1
+            i += 1
+        elif wtype == 2:
+            ln = 0
+            shift = 0
+            while i < n:
+                b = data[i]
+                i += 1
+                ln |= (b & 0x7F) << shift
+                if not (b & 0x80):
+                    break
+                shift += 7
+            i += ln
+        elif wtype == 1:
+            i += 8
+        elif wtype == 5:
+            i += 4
+        else:
+            break
+    return False
+
+
+def _inject_pb_title(raw_summary: bytes, title: str) -> bytes:
+    if not raw_summary or not title:
+        return raw_summary
+    raw = bytes(raw_summary)
+    if _pb_has_field1(raw):
+        return raw
+    return _enc_len_field(1, title.encode("utf-8")) + raw
+
+
 def rebuild_agyhub_summaries_proto(summaries_db: str, out_pb_path: str) -> int:
     """
     Tái tạo chính xác từng byte `agyhub_summaries_proto.pb` từ bảng `conversation_summaries`
@@ -270,12 +322,24 @@ def merge_conversation_summaries(local_db: str, cloud_db: str, mode: str, skip_c
     idx_mod = cols.index("last_modified_time")
     idx_ws = cols.index("workspace_uris")
     idx_status = cols.index("status") if "status" in cols else -1
+    idx_title = cols.index("title") if "title" in cols else -1
+    idx_preview = cols.index("preview") if "preview" in cols else -1
+    idx_raw = cols.index("raw_summary") if "raw_summary" in cols else -1
 
     def row_rank(row_tuple):
         return (int(row_tuple[idx_steps] or 0), str(row_tuple[idx_mod] or ""))
 
-    def normalize_row(row_tuple, for_local_pull: bool = False):
+    def normalize_row(row_tuple, fallback_row=None, for_local_pull: bool = False):
         lst = list(row_tuple)
+        if fallback_row is not None and idx_title >= 0:
+            cur_title = str(lst[idx_title] or "").strip()
+            fb_title = str(fallback_row[idx_title] or "").strip()
+            if not cur_title and fb_title:
+                lst[idx_title] = fb_title
+                if idx_preview >= 0 and not str(lst[idx_preview] or "").strip():
+                    lst[idx_preview] = str(fallback_row[idx_preview] or fb_title)
+                if idx_raw >= 0 and lst[idx_raw]:
+                    lst[idx_raw] = _inject_pb_title(lst[idx_raw], fb_title)
         if lst[idx_ws] == '["file:///d:/AI/full%20studio"]':
             # Chỉ chuẩn hóa project full studio (tránh đụng sidecar nếu khác, nhưng URI chuẩn vẫn khớp)
             pass
@@ -299,12 +363,26 @@ def merge_conversation_summaries(local_db: str, cloud_db: str, mode: str, skip_c
         else:
             if cid == skip_conv_id:
                 if row_rank(l_row) > row_rank(c_row):
-                    to_update_cloud.append(normalize_row(l_row))
+                    to_update_cloud.append(normalize_row(l_row, fallback_row=c_row))
                 continue
             if row_rank(c_row) > row_rank(l_row):
-                to_update_local.append(normalize_row(c_row, for_local_pull=True))
+                merged = normalize_row(c_row, fallback_row=l_row, for_local_pull=True)
+                to_update_local.append(merged)
+                if merged != c_row:
+                    to_update_cloud.append(normalize_row(c_row, fallback_row=l_row))
             elif row_rank(l_row) > row_rank(c_row):
-                to_update_cloud.append(normalize_row(l_row))
+                merged_for_cloud = normalize_row(l_row, fallback_row=c_row)
+                to_update_cloud.append(merged_for_cloud)
+                # Nếu local bị mất title nhưng cloud còn title, cập nhật ngược lại cho local luôn!
+                if idx_title >= 0 and not str(l_row[idx_title] or "").strip() and str(c_row[idx_title] or "").strip():
+                    to_update_local.append(merged_for_cloud)
+            elif idx_title >= 0:
+                lt = str(l_row[idx_title] or "").strip()
+                ct = str(c_row[idx_title] or "").strip()
+                if not lt and ct:
+                    to_update_local.append(normalize_row(l_row, fallback_row=c_row))
+                elif lt and not ct:
+                    to_update_cloud.append(normalize_row(c_row, fallback_row=l_row))
 
     placeholders = ",".join(["?"] * len(cols))
     col_list = ",".join([f"[{c}]" for c in cols])
@@ -395,16 +473,22 @@ def merge_annotations_two_way(local_sub: str, cloud_sub: str, mode: str) -> dict
             c_sec = _extract_view_seconds(ct)
             l_title = _extract_title(lt)
             c_title = _extract_title(ct)
+            l_pinned = bool(re.search(r"\bpinned:\s*true\b", lt))
+            c_pinned = bool(re.search(r"\bpinned:\s*true\b", ct))
 
-            # Chọn bản có last_user_view_time mới hơn làm nền; nếu bản mới mất title thì gắn lại title từ bản kia!
+            # Chọn bản có last_user_view_time mới hơn làm nền; nếu bản mới mất title hoặc pinned:true thì gắn lại!
             if l_sec >= c_sec:
                 merged = lt
                 if not l_title and c_title:
                     merged = f"{c_title} {merged}".strip()
+                if not l_pinned and c_pinned:
+                    merged = f"{merged} pinned:true".strip()
             else:
                 merged = ct
                 if not c_title and l_title:
                     merged = f"{l_title} {merged}".strip()
+                if not c_pinned and l_pinned:
+                    merged = f"{merged} pinned:true".strip()
 
             if merged != lt and mode in ("pull", "both"):
                 with open(lf, "w", encoding="utf-8") as fh:

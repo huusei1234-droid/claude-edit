@@ -212,7 +212,7 @@ def generate_ref_image_4tier(
     )
 
     last_err = "unknown"
-    prompt_sig = prompt.strip()[:56]
+    prompt_sig = prompt.strip()
     for provider_name, model_id in chain:
         cfg_title = f"CFG_{clean_tag}_{uuid.uuid4().hex[:6]}"
 
@@ -258,7 +258,7 @@ def generate_ref_image_4tier(
                 out_imgs = _outs(cur_r, cur_nodes, cfgs[0]["id"], "image")
                 if out_imgs:
                     img_node = out_imgs[0]
-            if not img_node and prompt_sig:
+            elif prompt_sig:
                 sig_imgs = [
                     n for n in cur_nodes.values()
                     if n.get("type") == "image" and prompt_sig in ((n.get("metadata") or {}).get("prompt") or "")

@@ -9,7 +9,7 @@ from mcp.types import CallToolResult, TextContent
 HERE = os.path.dirname(os.path.abspath(__file__))
 CARD_HTML_PATH = os.path.join(HERE, "card.html")
 APP_URI = "ui://explorer/card.html"
-ALLOWED_PREFIXES = ("C:\\", "D:\\", "E:\\", "F:\\", "Z:\\")
+ALLOWED_PREFIXES = ("C:\\", "D:\\", "E:\\", "F:\\", "G:\\", "Z:\\")
 
 mcp = FastMCP("open-folder")
 
@@ -20,7 +20,7 @@ def _reveal_windows_explorer(raw_path: str) -> tuple[bool, str]:
     p = os.path.normpath(raw_path.strip().strip('"'))
     if not any(p.upper().startswith(pref) for pref in ALLOWED_PREFIXES):
         return False, f"Disallowed drive: {p}"
-    is_virtual_drive = p.upper().startswith("Z:\\")
+    is_virtual_drive = p.upper().startswith(("Z:\\", "G:\\"))
     has_ext = bool(os.path.splitext(p)[1])
     if not is_virtual_drive and not os.path.exists(p):
         parent = os.path.dirname(p)

@@ -1,0 +1,65 @@
+{
+  "video_key": "n02_v1_av_protein_leucine",
+  "title": "AV Protein — 1.632mg L-Leucine Giữ Cơ Săn Chắc Sau Tập Sáng",
+  "final_name": "261125 AVPM 01 - AV Protein 1632mg Leucine Giu Co San Chac final.mp4",
+  "bgm_path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Ngay_02_2511\\02_BGM_Normalized\\n02_v1_av_protein_leucine_bgm.mp3",
+  "bgm_original": "01_Truyền Cảm Hứng - Quảng Cáo TVC - Tươi Sáng\\Achieve (2p02s).mp3",
+  "total_duration_s": 40.0,
+  "segments": [
+    {
+      "id": "vo_01",
+      "text": "Tập sáng đều đặn mà vẫn thấy nhanh mỏi, cơ khó săn chắc? Kiểm tra ngay lượng Đạm buổi sáng nhé!",
+      "path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Ngay_02_2511\\n02_v1_av_protein_leucine\\06_Audio_Voiceover\\vo_01.wav",
+      "start_s": 0.12,
+      "duration_s": 5.756,
+      "end_s": 5.876,
+      "shot_start_s": 0.0,
+      "shot_duration_s": 6.25,
+      "shot_end_s": 6.25
+    },
+    {
+      "id": "vo_02",
+      "text": "Mỗi sáng chỉ cần ba mươi giây pha hai gói AV Protein với nước mát hai mươi đến bốn mươi độ để bảo toàn lợi khuẩn B-3.",
+      "path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Ngay_02_2511\\n02_v1_av_protein_leucine\\06_Audio_Voiceover\\vo_02.wav",
+      "start_s": 6.37,
+      "duration_s": 7.622,
+      "end_s": 13.992,
+      "shot_start_s": 6.25,
+      "shot_duration_s": 8.0,
+      "shot_end_s": 14.25
+    },
+    {
+      "id": "vo_03",
+      "text": "Cung cấp hai mươi hai phẩy không năm gam đạm đậu Hà Lan và gạo cùng một nghìn sáu trăm ba mươi hai miligam L-Leucine hỗ trợ duy trì khối cơ.",
+      "path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Ngay_02_2511\\n02_v1_av_protein_leucine\\06_Audio_Voiceover\\vo_03.wav",
+      "start_s": 14.37,
+      "duration_s": 8.688,
+      "end_s": 23.058,
+      "shot_start_s": 14.25,
+      "shot_duration_s": 9.0,
+      "shot_end_s": 23.25
+    },
+    {
+      "id": "vo_04",
+      "text": "Thêm chất xơ Inulin giúp êm bụng, không đầy hơi, cực nhẹ nhàng cho người bận rộn tập sáng.",
+      "path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Ngay_02_2511\\n02_v1_av_protein_leucine\\06_Audio_Voiceover\\vo_04.wav",
+      "start_s": 23.37,
+      "duration_s": 5.6,
+      "end_s": 28.97,
+      "shot_start_s": 23.25,
+      "shot_duration_s": 6.0,
+      "shot_end_s": 29.25
+    },
+    {
+      "id": "vo_05",
+      "text": "AV Protein giá ba trăm năm mươi nghìn đồng. Đến hết ba mươi tháng mười một, mua năm hộp tặng ngay một Bojomi năm trăm hai mươi nghìn đồng. Nhắn Đạm Sạch ngay nhé!",
+      "path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Ngay_02_2511\\n02_v1_av_protein_leucine\\06_Audio_Voiceover\\vo_05.wav",
+      "start_s": 29.37,
+      "duration_s": 10.136,
+      "end_s": 39.506,
+      "shot_start_s": 29.25,
+      "shot_duration_s": 10.75,
+      "shot_end_s": 40.0
+    }
+  ]
+}

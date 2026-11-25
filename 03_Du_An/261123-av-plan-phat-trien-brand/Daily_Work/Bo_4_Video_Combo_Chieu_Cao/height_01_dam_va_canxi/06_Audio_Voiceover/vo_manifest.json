@@ -1,0 +1,87 @@
+{
+  "video_key": "height_01_dam_va_canxi",
+  "title": "Combo Chiều Cao 01 — Đạm Sạch AV Protein & Canxi Tảo Biển Bojomi",
+  "final_name": "261124 AVPM Combo Chieu Cao 01 - Dam Sach AV Protein Va Canxi Bojomi final.mp4",
+  "voice_profile_name": "THANH THANH TVC",
+  "sample_rate": 24000,
+  "total_duration_s": 65.0,
+  "segments": [
+    {
+      "id": "vo_01",
+      "text": "Muốn xây nền tảng vóc dáng cao ráo, uống mình Canxi thôi liệu đã đủ chưa?",
+      "path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Bo_4_Video_Combo_Chieu_Cao\\height_01_dam_va_canxi\\06_Audio_Voiceover\\vo_01.wav",
+      "shot_start_s": 0.0,
+      "shot_duration_s": 5.25,
+      "shot_end_s": 5.25,
+      "start_s": 0.22,
+      "duration_s": 4.519,
+      "end_s": 4.739
+    },
+    {
+      "id": "vo_02",
+      "text": "Thực tế, để khung xương và cơ thể phát triển hài hòa, bên cạnh Canxi cần có thêm Đạm sạch làm nguyên liệu xây dựng mỗi ngày.",
+      "path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Bo_4_Video_Combo_Chieu_Cao\\height_01_dam_va_canxi\\06_Audio_Voiceover\\vo_02.wav",
+      "shot_start_s": 5.25,
+      "shot_duration_s": 8.5,
+      "shot_end_s": 13.75,
+      "start_s": 5.47,
+      "duration_s": 7.753,
+      "end_s": 13.223
+    },
+    {
+      "id": "vo_03",
+      "text": "Đó là lý do bộ đôi Bojomi và AV Protein của An Vượng Pharma luôn được nhiều gia đình lựa chọn đồng hành.",
+      "path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Bo_4_Video_Combo_Chieu_Cao\\height_01_dam_va_canxi\\06_Audio_Voiceover\\vo_03.wav",
+      "shot_start_s": 13.75,
+      "shot_duration_s": 7.25,
+      "shot_end_s": 21.0,
+      "start_s": 13.97,
+      "duration_s": 6.632,
+      "end_s": 20.602
+    },
+    {
+      "id": "vo_04",
+      "text": "AV Protein cung cấp hai mươi hai phẩy không năm gam Đạm thực vật cùng một nghìn sáu trăm ba mươi hai miligam L-Leucine, kết hợp Inulin và lợi khuẩn B-3 giúp êm bụng.",
+      "path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Bo_4_Video_Combo_Chieu_Cao\\height_01_dam_va_canxi\\06_Audio_Voiceover\\vo_04.wav",
+      "shot_start_s": 21.0,
+      "shot_duration_s": 11.5,
+      "shot_end_s": 32.5,
+      "start_s": 21.22,
+      "duration_s": 10.911,
+      "end_s": 32.131
+    },
+    {
+      "id": "vo_05",
+      "text": "Còn Bojomi bổ sung bốn trăm mười bảy phẩy sáu miligam Canxi tảo biển Aquamin F cùng Vitamin D3, K2 MK-7 và hai trăm lẻ một phẩy bốn miligam Collagen.",
+      "path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Bo_4_Video_Combo_Chieu_Cao\\height_01_dam_va_canxi\\06_Audio_Voiceover\\vo_05.wav",
+      "shot_start_s": 32.5,
+      "shot_duration_s": 11.25,
+      "shot_end_s": 43.75,
+      "start_s": 32.72,
+      "duration_s": 10.581,
+      "end_s": 43.301
+    },
+    {
+      "id": "vo_06",
+      "text": "Khi kết hợp đủ dinh dưỡng, ngủ sớm trước hai mươi hai giờ và vận động thể thao đều đặn, nền tảng khung xương và vóc dáng sẽ được chăm sóc toàn diện nhất.",
+      "path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Bo_4_Video_Combo_Chieu_Cao\\height_01_dam_va_canxi\\06_Audio_Voiceover\\vo_06.wav",
+      "shot_start_s": 43.75,
+      "shot_duration_s": 10.0,
+      "shot_end_s": 53.75,
+      "start_s": 43.97,
+      "duration_s": 9.424,
+      "end_s": 53.394
+    },
+    {
+      "id": "vo_07",
+      "text": "Bộ đôi Bojomi năm trăm hai mươi nghìn và AV Protein ba trăm năm mươi nghìn, tổng tám trăm bảy mươi nghìn. Nhắn Chiều Cao để được tư vấn đúng độ tuổi nhé!",
+      "path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Bo_4_Video_Combo_Chieu_Cao\\height_01_dam_va_canxi\\06_Audio_Voiceover\\vo_07.wav",
+      "shot_start_s": 53.75,
+      "shot_duration_s": 11.25,
+      "shot_end_s": 65.0,
+      "start_s": 53.97,
+      "duration_s": 9.969,
+      "end_s": 63.939
+    }
+  ]
+}

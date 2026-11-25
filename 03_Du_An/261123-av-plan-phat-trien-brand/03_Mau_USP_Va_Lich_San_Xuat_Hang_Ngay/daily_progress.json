@@ -1,0 +1,42 @@
+{
+  "brand": "An Vượng Pharma",
+  "character_location": "TP. Nha Trang (Khánh Hòa)",
+  "gpu": "NVIDIA GeForce RTX 4070 12GB",
+  "video_ratio": "9:16",
+  "video_max_duration_s": 60,
+  "voice_profile": "THANH THANH TVC (78ef243f)",
+  "video_opening_hook": "GIANT_BIG_TEXT_SAFE_ZONE_FRAME_0",
+  "video_text_style": "EXTRA_LARGE_54PX_CALLOUT_30PX_SUB_SPECULAR_SHEEN",
+  "video_overlay_fx": "REAL_9x16_CINEMA_SCREEN_OVERLAYS_BOKEH_SUNRAYS_BLING",
+  "video_bgm_rule": "UNIQUE_BGM_PER_VIDEO_FROM_1340_LIBRARY_NORM_MINUS18LUFS",
+  "product_accuracy_rule": "MAX_1_BOX_PER_FLOW_PROMPT_REAL_ISNET_PNG_FOR_COMBOS_AND_VISUAL_RAW_QC",
+  "design_format": "JPG_1600x1600_TEXT_TO_NO_PSD",
+  "model_styling_rule": "LOCK_100PCT_FACE_ROTATE_5_DISTINCT_FULL_LOOKS_PER_DAY",
+  "daily_quota": {
+    "usp_videos": 5,
+    "designed_posts": 5,
+    "zalo_read_only_sync": 1
+  },
+  "schedule_file": "Z:\\Drive của tôi\\dự án ngoài\\An Vượng\\00_Ke_Hoach_Thang_Va_Kien_Thuc_Zalo\\KE_HOACH_THANG_AN_VUONG_5VIDEO_5BAIDANG_MOI_NGAY.md",
+  "zalo_log_file": "Z:\\Drive của tôi\\dự án ngoài\\An Vượng\\00_Ke_Hoach_Thang_Va_Kien_Thuc_Zalo\\NHAT_KY_CAP_NHAT_KIEN_THUC_ZALO.md",
+  "model_lock_file": "Z:\\Drive của tôi\\dự án ngoài\\An Vượng\\01_Mau_USP_Xuyen_Suot_Va_Brand_Kit\\MODEL_DNA_LOCK_AN_VUONG.md",
+  "brand_output_root": "Z:\\Drive của tôi\\dự án ngoài\\An Vượng\\03_San_Xuat_Hang_Ngay",
+  "cloud_output_root": "Z:\\Drive của tôi\\AI_Full_Studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Output",
+  "last_zalo_sync_date": "2026-11-24",
+  "completed_days": {
+    "2026-11-24": {
+      "day_code": "N01",
+      "zalo_synced": true,
+      "total_videos_delivered": 14,
+      "total_designs_delivered": 4,
+      "status": "done",
+      "folders": [
+        "Z:\\Drive của tôi\\dự án ngoài\\An Vượng\\03_San_Xuat_Hang_Ngay\\Ngay_01_2411 (4 Video + 4 Bài Thiết Kế Text To)",
+        "Z:\\Drive của tôi\\dự án ngoài\\An Vượng\\03_San_Xuat_Hang_Ngay\\Bo_4_Video_Bojomi_Chay_Bo_2411 (4 Video Bojomi Chạy Bộ)",
+        "Z:\\Drive của tôi\\dự án ngoài\\An Vượng\\03_San_Xuat_Hang_Ngay\\Bo_4_Video_Combo_Chieu_Cao_2411 (4 Video Combo Chiều Cao 4 BGM riêng)",
+        "Z:\\Drive của tôi\\dự án ngoài\\An Vượng\\03_San_Xuat_Hang_Ngay\\Bo_2_Video_Chieu_Cao_Be_Tu_1_Tuoi_2411 (2 Video Bé 1 Tuổi+ <1 phút + Lớp phủ + Text cực to)"
+      ]
+    }
+  },
+  "total_designs_delivered": 9
+}

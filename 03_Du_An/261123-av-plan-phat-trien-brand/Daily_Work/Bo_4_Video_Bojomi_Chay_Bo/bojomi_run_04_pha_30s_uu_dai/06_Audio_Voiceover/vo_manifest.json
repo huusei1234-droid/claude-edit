@@ -1,0 +1,87 @@
+{
+  "video_key": "bojomi_run_04_pha_30s_uu_dai",
+  "title": "Bojomi Chạy Bộ 04 — Pha 30 Giây Tiếp Năng Lượng & Quà Tặng 520K",
+  "final_name": "261124 AVPM Bojomi Chay Bo 04 - Pha 30 Giay Sau Chay Tang 520K final.mp4",
+  "voice_profile_name": "THANH THANH TVC",
+  "sample_rate": 24000,
+  "total_duration_s": 52.75,
+  "segments": [
+    {
+      "id": "vo_01",
+      "text": "Vừa hoàn thành năm ki lô mét chạy sáng, nạp gì vừa nhanh vừa đủ chất?",
+      "path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Bo_4_Video_Bojomi_Chay_Bo\\bojomi_run_04_pha_30s_uu_dai\\06_Audio_Voiceover\\vo_01.wav",
+      "shot_start_s": 0.0,
+      "shot_duration_s": 4.75,
+      "shot_end_s": 4.75,
+      "start_s": 0.22,
+      "duration_s": 4.048,
+      "end_s": 4.268
+    },
+    {
+      "id": "vo_02",
+      "text": "Sau khi chạy bộ, nhiều người hay bỏ bữa sáng hoặc uống tạm đồ ngọt khiến cơ thể nhanh đuối sức.",
+      "path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Bo_4_Video_Bojomi_Chay_Bo\\bojomi_run_04_pha_30s_uu_dai\\06_Audio_Voiceover\\vo_02.wav",
+      "shot_start_s": 4.75,
+      "shot_duration_s": 6.75,
+      "shot_end_s": 11.5,
+      "start_s": 4.97,
+      "duration_s": 5.974,
+      "end_s": 10.944
+    },
+    {
+      "id": "vo_03",
+      "text": "Bí kíp của hội yêu chạy bộ chính là một gói Bojomi nhỏ gọn hai mươi gam mang theo ngay trong túi tập.",
+      "path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Bo_4_Video_Bojomi_Chay_Bo\\bojomi_run_04_pha_30s_uu_dai\\06_Audio_Voiceover\\vo_03.wav",
+      "shot_start_s": 11.5,
+      "shot_duration_s": 7.0,
+      "shot_end_s": 18.5,
+      "start_s": 11.72,
+      "duration_s": 6.279,
+      "end_s": 17.999
+    },
+    {
+      "id": "vo_04",
+      "text": "Chỉ mất ba mươi giây pha cùng hai trăm mililit nước ấm sáu mươi độ, nạp ngay Canxi tảo biển Aquamin F, D3, K2 MK-7 và Collagen.",
+      "path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Bo_4_Video_Bojomi_Chay_Bo\\bojomi_run_04_pha_30s_uu_dai\\06_Audio_Voiceover\\vo_04.wav",
+      "shot_start_s": 18.5,
+      "shot_duration_s": 9.5,
+      "shot_end_s": 28.0,
+      "start_s": 18.72,
+      "duration_s": 8.862,
+      "end_s": 27.582
+    },
+    {
+      "id": "vo_05",
+      "text": "Vị ngũ cốc Vani thơm béo ấm bụng, tan mịn không vón cục, uống xong vừa no nhẹ vừa sảng khoái để bắt đầu ngày mới.",
+      "path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Bo_4_Video_Bojomi_Chay_Bo\\bojomi_run_04_pha_30s_uu_dai\\06_Audio_Voiceover\\vo_05.wav",
+      "shot_start_s": 28.0,
+      "shot_duration_s": 7.75,
+      "shot_end_s": 35.75,
+      "start_s": 28.22,
+      "duration_s": 7.066,
+      "end_s": 35.286
+    },
+    {
+      "id": "vo_06",
+      "text": "Cả nhóm chạy bộ hay gia đình cùng dùng mỗi sáng đều cực kỳ tiện lợi, mang đi tập hay đi giải chạy đều gọn gàng.",
+      "path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Bo_4_Video_Bojomi_Chay_Bo\\bojomi_run_04_pha_30s_uu_dai\\06_Audio_Voiceover\\vo_06.wav",
+      "shot_start_s": 35.75,
+      "shot_duration_s": 7.5,
+      "shot_end_s": 43.25,
+      "start_s": 35.97,
+      "duration_s": 6.865,
+      "end_s": 42.835
+    },
+    {
+      "id": "vo_07",
+      "text": "Ưu đãi đến hết ba mươi tháng mười một: mua ba Bojomi tặng ngay một hộp năm trăm hai mươi nghìn. Nhắn Bojomi nhận quà liền tay nhé!",
+      "path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Bo_4_Video_Bojomi_Chay_Bo\\bojomi_run_04_pha_30s_uu_dai\\06_Audio_Voiceover\\vo_07.wav",
+      "shot_start_s": 43.25,
+      "shot_duration_s": 9.5,
+      "shot_end_s": 52.75,
+      "start_s": 43.47,
+      "duration_s": 8.397,
+      "end_s": 51.867
+    }
+  ]
+}

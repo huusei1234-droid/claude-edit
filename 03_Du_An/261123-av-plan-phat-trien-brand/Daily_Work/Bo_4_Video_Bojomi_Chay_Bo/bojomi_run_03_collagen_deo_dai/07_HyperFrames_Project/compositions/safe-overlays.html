@@ -1,0 +1,123 @@
+<template>
+  <style>
+    
+@font-face { font-family: 'BeVN'; src: url('assets/fonts/BeVietnamPro-SemiBold.ttf') format('truetype'); font-weight: 600; }
+@font-face { font-family: 'BeVN'; src: url('assets/fonts/BeVietnamPro-Bold.ttf') format('truetype'); font-weight: 700; }
+@font-face { font-family: 'BeVN'; src: url('assets/fonts/BeVietnamPro-ExtraBold.ttf') format('truetype'); font-weight: 800; }
+@font-face { font-family: 'MontBlk'; src: url('assets/fonts/Montserrat-Black.ttf') format('truetype'); font-weight: 900; }
+
+    * { box-sizing: border-box; }
+    #root { position: absolute; inset: 0; width: 1080px; height: 1920px; overflow: hidden; pointer-events: none; font-family: 'BeVN', sans-serif; }
+
+    .big-hook-wrap {
+      position: absolute; bottom: 404px; left: 56px; width: 814px;
+      display: flex; flex-direction: column; align-items: center; text-align: center;
+      padding: 20px 18px 22px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.24) 0%, rgba(255,255,255,0.66) 100%);
+      backdrop-filter: blur(6px);
+      border: 3px solid rgba(255,255,255,0.85); border-radius: 30px;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.28); z-index: 20;
+    }
+    .bh-badge {
+      background: linear-gradient(135deg, #064F34, #0F7B54); color: #FFF8D6; border: 3px solid #FFE288;
+      border-radius: 999px; padding: 9px 26px; font-weight: 800; font-size: 24px;
+      letter-spacing: 0.6px; box-shadow: 0 8px 20px rgba(0,0,0,0.28); margin-bottom: 12px;
+    }
+    .bh-l1 {
+      font-family: 'BeVN', 'MontBlk', sans-serif; font-weight: 800; font-size: 74px; line-height: 1.06;
+      color: #05472F; white-space: nowrap;
+      -webkit-text-stroke: 13px #FFFFFF; paint-order: stroke fill;
+      filter: drop-shadow(0 8px 16px rgba(0,0,0,0.34));
+    }
+    .bh-l2 {
+      font-family: 'BeVN', 'MontBlk', sans-serif; font-weight: 800; font-size: 60px; line-height: 1.08;
+      margin-top: 6px; color: #C41838; white-space: nowrap;
+      -webkit-text-stroke: 14px #FFFFFF; paint-order: stroke fill;
+      filter: drop-shadow(0 10px 20px rgba(0,0,0,0.38));
+    }
+
+    .brand-chip {
+      position: absolute; top: 258px; left: 58px; opacity: 0;
+      display: flex; align-items: center; gap: 12px;
+      background: rgba(255,255,255,0.94); border: 2.5px solid #E2B448;
+      border-radius: 18px; padding: 8px 18px;
+      box-shadow: 0 8px 22px rgba(0,0,0,0.20);
+    }
+    .brand-chip img { height: 48px; width: auto; display: block; }
+    .brand-chip span { font-weight: 800; font-size: 20px; color: #064D33; letter-spacing: 0.4px; }
+
+    .safe-card {
+      position: absolute; left: 58px; bottom: 396px; width: 812px;
+      background: linear-gradient(145deg, rgba(8,48,36,0.90) 0%, rgba(15,84,60,0.86) 100%);
+      border: 2.5px solid #F0CA65; border-left: 9px solid #FCE078;
+      border-radius: 24px; padding: 20px 24px;
+      box-shadow: 0 14px 32px rgba(0,0,0,0.38); opacity: 0;
+    }
+    .sc-tag { font-weight: 800; font-size: 21px; color: #FCE186; letter-spacing: 0.8px; text-transform: uppercase; margin-bottom: 6px; }
+    .sc-big { font-family: 'BeVN', 'MontBlk', sans-serif; font-weight: 800; font-size: 42px; line-height: 1.12; color: #FFFFFF; text-shadow: 0 3px 10px rgba(0,0,0,0.38); }
+    .sc-sub { font-weight: 600; font-size: 24px; color: #EFFBF4; margin-top: 6px; line-height: 1.24; }
+  </style>
+  <div id="root" data-composition-id="safe-overlays" data-width="1080" data-height="1920" data-start="0" data-duration="52.5">
+    <div id="big-hook" class="big-hook-wrap" data-layout-ignore>
+      <div class="bh-badge">✦ DẺO DAI TỪNG BƯỚC CHẠY ✦</div>
+      <div class="bh-l1">CHẠY BỘ LÂU DÀI</div>
+      <div class="bh-l2">CẦN CANXI & COLLAGEN!</div>
+    </div>
+    <div id="top-brand" class="brand-chip" data-layout-ignore>
+      <img src="assets/images/logo_an_vuong_orig.png" alt="An Vuong" />
+      <span>BOJOMI + COLLAGEN</span>
+    </div>
+    
+      <div id="c2" class="safe-card" data-layout-ignore>
+        <div class="sc-tag">CHĂM SÓC TOÀN DIỆN</div>
+        <div class="sc-big">VẬN ĐỘNG THƯỜNG XUYÊN</div>
+        <div class="sc-sub">Cơ thể cần cả Canxi cho xương lẫn Collagen cho độ dẻo dai</div>
+      </div>
+      <div id="c3" class="safe-card" data-layout-ignore>
+        <div class="sc-tag">AN VƯỢNG PHARMA</div>
+        <div class="sc-big">CÔNG THỨC KÉP THÔNG MINH</div>
+        <div class="sc-sub">Tích hợp Canxi tảo biển + D3 + K2 + Collagen trong 1 gói</div>
+      </div>
+      <div id="c4a" class="safe-card" data-layout-ignore>
+        <div class="sc-tag">ĐẬM CHẤT / 1 GÓI 20G</div>
+        <div class="sc-big">417,6mg CANXI • 201,4mg COLLAGEN</div>
+        <div class="sc-sub">Bổ sung dưỡng chất trọn vẹn chỉ trong 1 ly ngũ cốc sáng</div>
+      </div>
+      <div id="c4b" class="safe-card" data-layout-ignore>
+        <div class="sc-tag">LINH HOẠT TỪNG SẢI CHÂN</div>
+        <div class="sc-big">CHẠY SÂN BỀN BỈ MỖI NGÀY</div>
+        <div class="sc-sub">Duy trì độ dẻo dai và phong độ ổn định dài lâu</div>
+      </div>
+      <div id="c5" class="safe-card" data-layout-ignore>
+        <div class="sc-tag">VỊ VANI DỊU NHẸ</div>
+        <div class="sc-big">PHA 200ML NƯỚC ẤM 60°C</div>
+        <div class="sc-sub">Thơm béo thanh nhẹ — Hoàn toàn không ngấy, không tanh</div>
+      </div>
+      <div id="c6" class="safe-card" data-layout-ignore>
+        <div class="sc-tag">THÓI QUEN SAU TẬP SÂN</div>
+        <div class="sc-big">1 GÓI MỖI SÁNG TRÀN SỨC SỐNG</div>
+        <div class="sc-sub">Tiện lợi cho người chạy bộ, gym, pilates & cả gia đình</div>
+      </div>
+  </div>
+  <script>
+    window.__timelines = window.__timelines || {};
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#big-hook", { scale: 0.94, y: 8 }, { scale: 1.0, y: 0, duration: 0.28, ease: "back.out(1.4)" }, 0.0)
+      .to("#big-hook", { opacity: 0, y: -18, filter: "blur(12px)", duration: 0.26, ease: "power2.in" }, 3.84);
+    tl.fromTo("#top-brand", { opacity: 0, y: -12 }, { opacity: 1, y: 0, duration: 0.30, ease: "power2.out", immediateRender: false }, 0.12)
+      .to("#top-brand", { opacity: 0, duration: 0.25 }, 43.47);
+    tl.fromTo("#c2", { opacity: 0, y: 26, scale: 0.94, filter: "blur(14px)" }, { opacity: 1, y: 0, scale: 1.0, filter: "blur(0px)", duration: 0.28, ease: "power3.out", immediateRender: false }, 4.47)
+      .to("#c2", { opacity: 0, y: -10, filter: "blur(10px)", duration: 0.22, ease: "power2.in" }, 11.7);
+    tl.fromTo("#c3", { opacity: 0, y: 26, scale: 0.94, filter: "blur(14px)" }, { opacity: 1, y: 0, scale: 1.0, filter: "blur(0px)", duration: 0.28, ease: "power3.out", immediateRender: false }, 12.47)
+      .to("#c3", { opacity: 0, y: -10, filter: "blur(10px)", duration: 0.22, ease: "power2.in" }, 19.2);
+    tl.fromTo("#c4a", { opacity: 0, y: 26, scale: 0.94, filter: "blur(14px)" }, { opacity: 1, y: 0, scale: 1.0, filter: "blur(0px)", duration: 0.28, ease: "power3.out", immediateRender: false }, 19.97)
+      .to("#c4a", { opacity: 0, y: -10, filter: "blur(10px)", duration: 0.22, ease: "power2.in" }, 24.05);
+    tl.fromTo("#c4b", { opacity: 0, y: 26, scale: 0.94, filter: "blur(14px)" }, { opacity: 1, y: 0, scale: 1.0, filter: "blur(0px)", duration: 0.28, ease: "power3.out", immediateRender: false }, 24.72)
+      .to("#c4b", { opacity: 0, y: -10, filter: "blur(10px)", duration: 0.22, ease: "power2.in" }, 28.55);
+    tl.fromTo("#c5", { opacity: 0, y: 26, scale: 0.94, filter: "blur(14px)" }, { opacity: 1, y: 0, scale: 1.0, filter: "blur(0px)", duration: 0.28, ease: "power3.out", immediateRender: false }, 29.22)
+      .to("#c5", { opacity: 0, y: -10, filter: "blur(10px)", duration: 0.22, ease: "power2.in" }, 35.95);
+    tl.fromTo("#c6", { opacity: 0, y: 26, scale: 0.94, filter: "blur(14px)" }, { opacity: 1, y: 0, scale: 1.0, filter: "blur(0px)", duration: 0.28, ease: "power3.out", immediateRender: false }, 36.72)
+      .to("#c6", { opacity: 0, y: -10, filter: "blur(10px)", duration: 0.22, ease: "power2.in" }, 43.2);
+    window.__timelines["safe-overlays"] = tl;
+  </script>
+</template>

@@ -1,0 +1,29 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; width: 1080px; height: 1920px; overflow: hidden; pointer-events: none; }
+    .ov-vid {
+      position: absolute; inset: 0; width: 1080px; height: 1920px; object-fit: cover; display: block;
+      mix-blend-mode: screen;
+    }
+    #ov-main { opacity: 0.46; }
+    #ov-bling { opacity: 0.34; }
+    .warm-sun-corner {
+      position: absolute; top: -120px; right: -120px; width: 760px; height: 760px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,244,196,0.44) 0%, rgba(255,222,128,0.18) 42%, rgba(255,255,255,0) 74%);
+      mix-blend-mode: screen;
+    }
+  </style>
+  <div id="root" data-composition-id="cinema-fx" data-width="1080" data-height="1920" data-start="0" data-duration="41.25">
+    <video id="ov-main" class="clip ov-vid" src="assets/videos/overlay_cinema.mp4" data-start="0" data-duration="41.25" data-media-start="0" data-track-index="1" muted playsinline data-layout-ignore></video>
+    <video id="ov-bling" class="clip ov-vid" src="assets/videos/overlay_bling.mp4" data-start="0" data-duration="41.25" data-media-start="0" data-track-index="2" muted playsinline data-layout-ignore></video>
+    <div id="sun-glow" class="warm-sun-corner" data-layout-ignore></div>
+  </div>
+  <script>
+    window.__timelines = window.__timelines || {};
+    const tl = gsap.timeline({ paused: true });
+    // Gentle organic breathing of corner golden sunbeam overlay
+    tl.fromTo("#sun-glow", { opacity: 0.45, scale: 0.94 }, { opacity: 0.85, scale: 1.08, duration: 20.62, ease: "sine.inOut" }, 0.0)
+      .to("#sun-glow", { opacity: 0.50, scale: 0.96, duration: 20.62, ease: "sine.inOut" }, 20.62);
+    window.__timelines["cinema-fx"] = tl;
+  </script>
+</template>

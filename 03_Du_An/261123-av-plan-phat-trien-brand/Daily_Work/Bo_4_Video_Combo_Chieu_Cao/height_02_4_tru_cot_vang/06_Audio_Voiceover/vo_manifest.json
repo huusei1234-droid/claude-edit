@@ -1,0 +1,87 @@
+{
+  "video_key": "height_02_4_tru_cot_vang",
+  "title": "Combo Chiều Cao 02 — 4 Trụ Cột Vàng Phát Triển Chiều Cao Khoa Học",
+  "final_name": "261124 AVPM Combo Chieu Cao 02 - 4 Tru Cot Vang Phat Trien Chieu Cao final.mp4",
+  "voice_profile_name": "THANH THANH TVC",
+  "sample_rate": 24000,
+  "total_duration_s": 60.0,
+  "segments": [
+    {
+      "id": "vo_01",
+      "text": "Chăm chiều cao khoa học cho cả nhà, đừng chỉ tìm một loại uống lẻ rồi trông chờ phép màu!",
+      "path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Bo_4_Video_Combo_Chieu_Cao\\height_02_4_tru_cot_vang\\06_Audio_Voiceover\\vo_01.wav",
+      "shot_start_s": 0.0,
+      "shot_duration_s": 6.25,
+      "shot_end_s": 6.25,
+      "start_s": 0.22,
+      "duration_s": 5.471,
+      "end_s": 5.691
+    },
+    {
+      "id": "vo_02",
+      "text": "Chiều cao và vóc dáng phụ thuộc vào bốn trụ cột: bữa ăn cân đối, giấc ngủ sâu trước hai mươi hai giờ, vận động đều đặn và yếu tố di truyền.",
+      "path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Bo_4_Video_Combo_Chieu_Cao\\height_02_4_tru_cot_vang\\06_Audio_Voiceover\\vo_02.wav",
+      "shot_start_s": 6.25,
+      "shot_duration_s": 9.75,
+      "shot_end_s": 16.0,
+      "start_s": 6.47,
+      "duration_s": 8.993,
+      "end_s": 15.463
+    },
+    {
+      "id": "vo_03",
+      "text": "Trong đó, dinh dưỡng mỗi ngày đóng vai trò nền tảng với bộ đôi chủ lực từ An Vượng Pharma: Bojomi và AV Protein.",
+      "path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Bo_4_Video_Combo_Chieu_Cao\\height_02_4_tru_cot_vang\\06_Audio_Voiceover\\vo_03.wav",
+      "shot_start_s": 16.0,
+      "shot_duration_s": 8.0,
+      "shot_end_s": 24.0,
+      "start_s": 16.22,
+      "duration_s": 7.267,
+      "end_s": 23.487
+    },
+    {
+      "id": "vo_04",
+      "text": "Bojomi mang đến kiềng ba chân Canxi tảo biển Aquamin F, Vitamin D3 và K2 MK-7 hỗ trợ chăm sóc hệ xương vững chắc.",
+      "path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Bo_4_Video_Combo_Chieu_Cao\\height_02_4_tru_cot_vang\\06_Audio_Voiceover\\vo_04.wav",
+      "shot_start_s": 24.0,
+      "shot_duration_s": 8.5,
+      "shot_end_s": 32.5,
+      "start_s": 24.22,
+      "duration_s": 7.926,
+      "end_s": 32.146
+    },
+    {
+      "id": "vo_05",
+      "text": "Song song đó, AV Protein bổ sung đạm đậu Hà Lan và đạm gạo lành tính, dễ tiêu hóa, giúp duy trì khối cơ khỏe khoắn cho người hay vận động.",
+      "path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Bo_4_Video_Combo_Chieu_Cao\\height_02_4_tru_cot_vang\\06_Audio_Voiceover\\vo_05.wav",
+      "shot_start_s": 32.5,
+      "shot_duration_s": 9.5,
+      "shot_end_s": 42.0,
+      "start_s": 32.72,
+      "duration_s": 8.859,
+      "end_s": 41.579
+    },
+    {
+      "id": "vo_06",
+      "text": "Gia đình luôn nhớ đọc kỹ nhãn sản phẩm và điều chỉnh khẩu phần phù hợp theo từng độ tuổi cùng chế độ ăn đa dạng hằng ngày.",
+      "path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Bo_4_Video_Combo_Chieu_Cao\\height_02_4_tru_cot_vang\\06_Audio_Voiceover\\vo_06.wav",
+      "shot_start_s": 42.0,
+      "shot_duration_s": 8.5,
+      "shot_end_s": 50.5,
+      "start_s": 42.22,
+      "duration_s": 7.707,
+      "end_s": 49.927
+    },
+    {
+      "id": "vo_07",
+      "text": "Bộ đôi Bojomi và AV Protein chính hãng có giá tám trăm bảy mươi nghìn đồng. Nhắn Chiều Cao nhận ngay bảng hướng dẫn chuẩn cho cả gia đình nhé!",
+      "path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Bo_4_Video_Combo_Chieu_Cao\\height_02_4_tru_cot_vang\\06_Audio_Voiceover\\vo_07.wav",
+      "shot_start_s": 50.5,
+      "shot_duration_s": 9.5,
+      "shot_end_s": 60.0,
+      "start_s": 50.72,
+      "duration_s": 9.048,
+      "end_s": 59.768
+    }
+  ]
+}

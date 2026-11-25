@@ -1,0 +1,96 @@
+{
+  "video_key": "video_02_combo_4sp",
+  "title": "Combo 4 Sản Phẩm An Vượng — Tặng Collamela 20 Gói 920K (Ngày 01)",
+  "final_name": "261124 AVPM Combo 4 San Pham Tang Collamela 920k final.mp4",
+  "voice_profile_name": "THANH THANH TVC",
+  "voice_profile_id": "78ef243f",
+  "sample_rate": 24000,
+  "total_duration_s": 52.5,
+  "segments": [
+    {
+      "id": "vo_01",
+      "text": "Sinh nhật Droppii tám tuổi, An Vượng Pharma tung ưu đãi hời nhất tháng mười một!",
+      "path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Ngay_01_2411\\video_02_combo_4sp\\06_Audio_Voiceover\\vo_01.wav",
+      "shot_start_s": 0.0,
+      "shot_duration_s": 5.75,
+      "shot_end_s": 5.75,
+      "recommended_flow_gen_s": 5,
+      "start_s": 0.22,
+      "duration_s": 5.165,
+      "end_s": 5.385
+    },
+    {
+      "id": "vo_02",
+      "text": "Buổi sáng nạp năng lượng cùng AV Protein đạm thực vật từ đậu Hà Lan và gạo, nhẹ bụng giữ dáng.",
+      "path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Ngay_01_2411\\video_02_combo_4sp\\06_Audio_Voiceover\\vo_02.wav",
+      "shot_start_s": 5.75,
+      "shot_duration_s": 6.75,
+      "shot_end_s": 12.5,
+      "recommended_flow_gen_s": 6,
+      "start_s": 5.97,
+      "duration_s": 6.106,
+      "end_s": 12.076
+    },
+    {
+      "id": "vo_03",
+      "text": "Chăm khung xương dẻo dai với Bojomi ngũ cốc dinh dưỡng vị Vani, bổ sung canxi tảo biển, D3 và K2 MK-7.",
+      "path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Ngay_01_2411\\video_02_combo_4sp\\06_Audio_Voiceover\\vo_03.wav",
+      "shot_start_s": 12.5,
+      "shot_duration_s": 7.75,
+      "shot_end_s": 20.25,
+      "recommended_flow_gen_s": 7,
+      "start_s": 12.72,
+      "duration_s": 7.072,
+      "end_s": 19.792
+    },
+    {
+      "id": "vo_04",
+      "text": "Bữa phụ ấm êm cùng Curcumilk Phyto công nghệ Phytosome Ý, dịu nhẹ tiêu hóa, không hăng mùi nghệ.",
+      "path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Ngay_01_2411\\video_02_combo_4sp\\06_Audio_Voiceover\\vo_04.wav",
+      "shot_start_s": 20.25,
+      "shot_duration_s": 7.0,
+      "shot_end_s": 27.25,
+      "recommended_flow_gen_s": 6,
+      "start_s": 20.47,
+      "duration_s": 6.295,
+      "end_s": 26.765
+    },
+    {
+      "id": "vo_05",
+      "text": "Buổi tối chăm da ẩm mịn với Collamela Collagen Tripeptide kết hợp HA, Vitamin C và Kẽm vị đào dễ uống.",
+      "path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Ngay_01_2411\\video_02_combo_4sp\\06_Audio_Voiceover\\vo_05.wav",
+      "shot_start_s": 27.25,
+      "shot_duration_s": 7.5,
+      "shot_end_s": 34.75,
+      "recommended_flow_gen_s": 7,
+      "start_s": 27.47,
+      "duration_s": 6.791,
+      "end_s": 34.261
+    },
+    {
+      "id": "vo_06",
+      "text": "Mua trọn Combo bốn sản phẩm hai triệu bốn trăm bốn mươi nghìn, tặng ngay một hộp Collamela hai mươi gói trị giá chín trăm hai mươi nghìn.",
+      "path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Ngay_01_2411\\video_02_combo_4sp\\06_Audio_Voiceover\\vo_06.wav",
+      "shot_start_s": 34.75,
+      "shot_duration_s": 9.75,
+      "shot_end_s": 44.5,
+      "recommended_flow_gen_s": 8,
+      "start_s": 34.97,
+      "duration_s": 9.058,
+      "end_s": 44.028
+    },
+    {
+      "id": "vo_07",
+      "text": "Ưu đãi áp dụng đến hết ngày ba mươi tháng mười một. Chọn đúng mã Combo trên App Droppii để nhận trọn quà nhé!",
+      "path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Ngay_01_2411\\video_02_combo_4sp\\06_Audio_Voiceover\\vo_07.wav",
+      "shot_start_s": 44.5,
+      "shot_duration_s": 8.0,
+      "shot_end_s": 52.5,
+      "recommended_flow_gen_s": 7,
+      "start_s": 44.72,
+      "duration_s": 6.806,
+      "end_s": 51.526
+    }
+  ],
+  "full_wav": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Ngay_01_2411\\video_02_combo_4sp\\06_Audio_Voiceover\\VIDEO_02_COMBO_4SP_FULL_VO.wav"
+}

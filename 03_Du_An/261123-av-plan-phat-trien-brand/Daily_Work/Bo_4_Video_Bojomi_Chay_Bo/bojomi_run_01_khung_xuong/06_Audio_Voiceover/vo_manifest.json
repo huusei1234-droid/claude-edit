@@ -1,0 +1,87 @@
+{
+  "video_key": "bojomi_run_01_khung_xuong",
+  "title": "Bojomi Chạy Bộ 01 — Khung Xương Vững Vàng Canxi Tảo Biển Aquamin F",
+  "final_name": "261124 AVPM Bojomi Chay Bo 01 - Khung Xuong Vung Vang Aquamin F final.mp4",
+  "voice_profile_name": "THANH THANH TVC",
+  "sample_rate": 24000,
+  "total_duration_s": 53.0,
+  "segments": [
+    {
+      "id": "vo_01",
+      "text": "Chạy bền mỗi ngày, đừng quên chăm khung xương từ bên trong!",
+      "path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Bo_4_Video_Bojomi_Chay_Bo\\bojomi_run_01_khung_xuong\\06_Audio_Voiceover\\vo_01.wav",
+      "shot_start_s": 0.0,
+      "shot_duration_s": 4.5,
+      "shot_end_s": 4.5,
+      "start_s": 0.22,
+      "duration_s": 3.692,
+      "end_s": 3.912
+    },
+    {
+      "id": "vo_02",
+      "text": "Mỗi ki lô mét chạy bộ, đôi chân và khung xương phải chịu lực liên tục nên rất cần bổ sung Canxi đúng chuẩn.",
+      "path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Bo_4_Video_Bojomi_Chay_Bo\\bojomi_run_01_khung_xuong\\06_Audio_Voiceover\\vo_02.wav",
+      "shot_start_s": 4.5,
+      "shot_duration_s": 7.5,
+      "shot_end_s": 12.0,
+      "start_s": 4.72,
+      "duration_s": 6.92,
+      "end_s": 11.64
+    },
+    {
+      "id": "vo_03",
+      "text": "Bojomi của An Vượng Pharma sử dụng nguồn Canxi hữu cơ từ tảo biển đỏ Aquamin F lành tính, dễ hấp thu.",
+      "path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Bo_4_Video_Bojomi_Chay_Bo\\bojomi_run_01_khung_xuong\\06_Audio_Voiceover\\vo_03.wav",
+      "shot_start_s": 12.0,
+      "shot_duration_s": 7.25,
+      "shot_end_s": 19.25,
+      "start_s": 12.22,
+      "duration_s": 6.5,
+      "end_s": 18.72
+    },
+    {
+      "id": "vo_04",
+      "text": "Mỗi gói hai mươi gam cung cấp bốn trăm mười bảy phẩy sáu miligam Canxi, đồng hành cùng bảy trăm bảy mươi chín phẩy bốn IU Vitamin D3 và K2 MK-7.",
+      "path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Bo_4_Video_Bojomi_Chay_Bo\\bojomi_run_01_khung_xuong\\06_Audio_Voiceover\\vo_04.wav",
+      "shot_start_s": 19.25,
+      "shot_duration_s": 10.5,
+      "shot_end_s": 29.75,
+      "start_s": 19.47,
+      "duration_s": 9.781,
+      "end_s": 29.251
+    },
+    {
+      "id": "vo_05",
+      "text": "Chỉ cần pha với hai trăm mililit nước ấm sáu mươi độ là có ngay ly ngũ cốc hương Vani thơm béo, nhẹ bụng sau buổi chạy.",
+      "path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Bo_4_Video_Bojomi_Chay_Bo\\bojomi_run_01_khung_xuong\\06_Audio_Voiceover\\vo_05.wav",
+      "shot_start_s": 29.75,
+      "shot_duration_s": 8.25,
+      "shot_end_s": 38.0,
+      "start_s": 29.97,
+      "duration_s": 7.478,
+      "end_s": 37.448
+    },
+    {
+      "id": "vo_06",
+      "text": "Duy trì đều đặn mỗi sáng giúp khung xương vững vàng, tự tin chinh phục mọi cung đường mới.",
+      "path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Bo_4_Video_Bojomi_Chay_Bo\\bojomi_run_01_khung_xuong\\06_Audio_Voiceover\\vo_06.wav",
+      "shot_start_s": 38.0,
+      "shot_duration_s": 6.0,
+      "shot_end_s": 44.0,
+      "start_s": 38.22,
+      "duration_s": 5.437,
+      "end_s": 43.657
+    },
+    {
+      "id": "vo_07",
+      "text": "Bojomi năm trăm hai mươi nghìn hộp mười bốn gói. Nhắn Bojomi nhận ngay ưu đãi mua ba tặng một đến hết ba mươi tháng mười một nhé!",
+      "path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Bo_4_Video_Bojomi_Chay_Bo\\bojomi_run_01_khung_xuong\\06_Audio_Voiceover\\vo_07.wav",
+      "shot_start_s": 44.0,
+      "shot_duration_s": 9.0,
+      "shot_end_s": 53.0,
+      "start_s": 44.22,
+      "duration_s": 7.818,
+      "end_s": 52.038
+    }
+  ]
+}

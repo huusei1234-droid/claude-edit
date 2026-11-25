@@ -1,0 +1,171 @@
+<template>
+  <style>
+    
+@font-face { font-family: 'BeVN'; src: url('assets/fonts/BeVietnamPro-SemiBold.ttf') format('truetype'); font-weight: 600; }
+@font-face { font-family: 'BeVN'; src: url('assets/fonts/BeVietnamPro-Bold.ttf') format('truetype'); font-weight: 700; }
+@font-face { font-family: 'BeVN'; src: url('assets/fonts/BeVietnamPro-ExtraBold.ttf') format('truetype'); font-weight: 800; }
+@font-face { font-family: 'MontBlk'; src: url('assets/fonts/Montserrat-Black.ttf') format('truetype'); font-weight: 900; }
+
+    * { box-sizing: border-box; }
+    #root { position: absolute; inset: 0; width: 1080px; height: 1920px; overflow: hidden; pointer-events: none; font-family: 'BeVN', sans-serif; }
+
+    /* EXTRA-LARGE OPENING BIG TEXT HOOK (Frame 0 visible! Strict border-box X=56..870px, bottom Y=1520px!) */
+    .big-hook-wrap {
+      position: absolute; bottom: 400px; left: 56px; width: 814px;
+      display: flex; flex-direction: column; align-items: center; text-align: center;
+      padding: 22px 16px 26px; overflow: hidden;
+      background: linear-gradient(180deg, rgba(255,255,255,0.42) 0%, rgba(255,255,255,0.82) 100%);
+      backdrop-filter: blur(8px);
+      border: 4px solid rgba(255,255,255,0.92); border-radius: 32px;
+      box-shadow: 0 20px 44px rgba(0,0,0,0.34); z-index: 20;
+    }
+    .bh-badge {
+      background: linear-gradient(135deg, #064F34, #108057); color: #FFF8D6; border: 3px solid #FFE288;
+      border-radius: 999px; padding: 10px 28px; font-weight: 800; font-size: 27px;
+      letter-spacing: 0.6px; box-shadow: 0 8px 20px rgba(0,0,0,0.30); margin-bottom: 14px;
+    }
+    .bh-l1 {
+      font-family: 'BeVN', 'MontBlk', sans-serif; font-weight: 800; font-size: 64px; line-height: 1.06;
+      color: #05472F; white-space: nowrap;
+      -webkit-text-stroke: 15px #FFFFFF; paint-order: stroke fill;
+      filter: drop-shadow(0 8px 16px rgba(0,0,0,0.36));
+    }
+    .bh-l2 {
+      font-family: 'BeVN', 'MontBlk', sans-serif; font-weight: 800; font-size: 64px; line-height: 1.08;
+      margin-top: 8px; color: #D91A26; white-space: nowrap;
+      -webkit-text-stroke: 15px #FFFFFF; paint-order: stroke fill;
+      filter: drop-shadow(0 10px 20px rgba(0,0,0,0.40));
+    }
+
+    /* Top-Left Brand Chip & Top-Right Age Target Pill (strictly Y=256..330px inside upper Safe Zone!) */
+    .brand-chip {
+      position: absolute; top: 256px; left: 58px; opacity: 0;
+      display: flex; align-items: center; gap: 12px;
+      background: rgba(255,255,255,0.96); border: 3px solid #E2B448;
+      border-radius: 18px; padding: 8px 18px;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.22);
+    }
+    .brand-chip img { height: 50px; width: auto; display: block; }
+    .brand-chip span { font-weight: 800; font-size: 22px; color: #064D33; letter-spacing: 0.4px; }
+
+    .age-pill {
+      position: absolute; top: 262px; right: 58px; opacity: 0;
+      background: linear-gradient(135deg, #D91A26, #A10B16); color: #FFF8DC;
+      border: 3px solid #FFE288; border-radius: 999px; padding: 10px 22px;
+      font-weight: 800; font-size: 24px; letter-spacing: 0.4px;
+      box-shadow: 0 10px 24px rgba(161,11,22,0.38);
+    }
+
+    /* 100% REAL FACTORY IS-Net FLOATING DUO BOX OVERLAY (0% AI box distortion!) strictly X=56..680px, above callout card! */
+    .duo-float {
+      position: absolute; left: 56px; bottom: 684px; width: 640px; height: 340px;
+      display: flex; align-items: flex-end; justify-content: flex-start; gap: 18px;
+      opacity: 0; z-index: 16;
+    }
+    .df-box {
+      height: 318px; width: auto;
+      filter: drop-shadow(0 18px 28px rgba(0,0,0,0.48)) drop-shadow(0 0 22px rgba(255,240,180,0.55));
+    }
+    .df-plus {
+      width: 50px; height: 50px; border-radius: 50%; margin-bottom: 120px; flex-shrink: 0;
+      background: linear-gradient(145deg, #FCE078, #D98E10); border: 3px solid #FFFFFF;
+      color: #053623; font-weight: 900; font-size: 36px;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.40);
+    }
+
+    /* EXTRA-LARGE ULTRA-READABLE CALLOUT CARDS (+45% BIGGER TEXT!) Strict border-box X=56..870px, bottom Y=1526px! */
+    .safe-card {
+      position: absolute; left: 56px; bottom: 394px; width: 814px; overflow: hidden;
+      background: linear-gradient(145deg, rgba(5,50,34,0.92) 0%, rgba(12,86,58,0.88) 100%);
+      border: 3.5px solid #F4CF68; border-left: 11px solid #FFE480;
+      border-radius: 28px; padding: 24px 28px;
+      box-shadow: 0 18px 38px rgba(0,0,0,0.44); opacity: 0;
+    }
+    .card-sheen {
+      position: absolute; top: 0; bottom: 0; width: 170px; pointer-events: none;
+      background: linear-gradient(105deg, rgba(255,255,255,0) 0%, rgba(255,250,210,0.34) 50%, rgba(255,255,255,0) 100%);
+      transform: skewX(-20deg); opacity: 0;
+    }
+    .sc-tag {
+      font-weight: 800; font-size: 26px; color: #FFE888; letter-spacing: 0.8px;
+      text-transform: uppercase; margin-bottom: 8px; text-shadow: 0 2px 8px rgba(0,0,0,0.40);
+    }
+    .sc-big {
+      font-family: 'BeVN', 'MontBlk', sans-serif; font-weight: 800; font-size: 54px; line-height: 1.12;
+      color: #FFFFFF; text-shadow: 0 4px 12px rgba(0,0,0,0.46);
+    }
+    .sc-sub {
+      font-weight: 700; font-size: 30px; color: #F2FFF8; margin-top: 10px; line-height: 1.26;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.35);
+    }
+  </style>
+  <div id="root" data-composition-id="safe-overlays" data-width="1080" data-height="1920" data-start="0" data-duration="41.25">
+    <div id="big-hook" class="big-hook-wrap" data-layout-ignore>
+      <div class="bh-badge">★ BÍ KÍP MẸ THÔNG THÁI ★</div>
+      <div class="bh-l1">PHA CHO BÉ TỪ 1 TUỔI</div>
+      <div class="bh-l2">SAO ĐỂ ÊM BỤNG NHẤT?</div>
+    </div>
+    <div id="top-brand" class="brand-chip" data-layout-ignore>
+      <img src="assets/images/logo_an_vuong_orig.png" alt="An Vuong" />
+      <span>BOJOMI × AV PROTEIN</span>
+    </div>
+    <div id="top-age" class="age-pill" data-layout-ignore>★ BÉ TỪ 1 TUỔI+ ★</div>
+    <div id="duo-real" class="duo-float" data-layout-ignore>
+      <img class="df-box" src="assets/images/box_protein.png" alt="AV Protein" />
+      <div class="df-plus">+</div>
+      <img class="df-box" src="assets/images/box_bojomi.png" alt="Bojomi" />
+    </div>
+    
+      <div id="c2" class="safe-card" data-layout-ignore>
+        <div id="sh-c2" class="card-sheen"></div>
+        <div class="sc-tag">LƯU Ý QUAN TRỌNG</div>
+        <div class="sc-big">KHÔNG PHA CHUNG 1 LY!</div>
+        <div class="sc-sub">Tránh nước sôi để giữ trọn dưỡng chất</div>
+      </div>
+      <div id="c3" class="safe-card" data-layout-ignore>
+        <div id="sh-c3" class="card-sheen"></div>
+        <div class="sc-tag">BUỔI SÁNG • AV PROTEIN</div>
+        <div class="sc-big">PHA NƯỚC MÁT 20–40°C</div>
+        <div class="sc-sub">Bảo toàn lợi khuẩn B-3 êm bụng con</div>
+      </div>
+      <div id="c4" class="safe-card" data-layout-ignore>
+        <div id="sh-c4" class="card-sheen"></div>
+        <div class="sc-tag">BỮA PHỤ CHIỀU • BOJOMI</div>
+        <div class="sc-big">PHA NƯỚC ẤM 60°C</div>
+        <div class="sc-sub">Ngũ cốc Vani giàu Canxi, D3 & K2</div>
+      </div>
+      <div id="c5" class="safe-card" data-layout-ignore>
+        <div id="sh-c5" class="card-sheen"></div>
+        <div class="sc-tag">CHUẨN NHÃN CHO BÉ 1 TUỔI+</div>
+        <div class="sc-big">CHIA LƯỢNG ĐÚNG ĐỘ TUỔI</div>
+        <div class="sc-sub">Kết hợp ngủ trước 22h & vận động đều</div>
+      </div>
+  </div>
+  <script>
+    window.__timelines = window.__timelines || {};
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#big-hook", { scale: 0.92, y: 10 }, { scale: 1.0, y: 0, duration: 0.28, ease: "back.out(1.45)" }, 0.0)
+      .to("#big-hook", { opacity: 0, y: -18, filter: "blur(12px)", duration: 0.26, ease: "power2.in" }, 4.85);
+    tl.fromTo("#top-brand", { opacity: 0, y: -12 }, { opacity: 1, y: 0, duration: 0.30, ease: "power2.out", immediateRender: false }, 0.12)
+      .to("#top-brand", { opacity: 0, duration: 0.25 }, 30.74);
+    tl.fromTo("#top-age", { opacity: 0, scale: 0.85 }, { opacity: 1, scale: 1.0, duration: 0.32, ease: "back.out(1.5)", immediateRender: false }, 0.20)
+      .to("#top-age", { opacity: 0, duration: 0.25 }, 30.74);
+    // Real Factory IS-Net Duo Boxes float cleanly on dual-product reveal segment (100% accurate packaging!)
+    tl.fromTo("#duo-real", { opacity: 0, y: 38, scale: 0.88 }, { opacity: 1, y: 0, scale: 1.0, duration: 0.38, ease: "back.out(1.35)", immediateRender: false }, 25.18)
+      .to("#duo-real", { opacity: 0, y: -16, filter: "blur(8px)", duration: 0.26, ease: "power2.in" }, 30.72);
+    tl.fromTo("#c2", { opacity: 0, y: 32, scale: 0.92, filter: "blur(14px)" }, { opacity: 1, y: 0, scale: 1.0, filter: "blur(0px)", duration: 0.30, ease: "back.out(1.25)", immediateRender: false }, 5.41)
+      .fromTo("#sh-c2", { x: -240, opacity: 0.0 }, { x: 960, opacity: 0.65, duration: 0.95, ease: "power2.inOut", immediateRender: false }, 5.76)
+      .to("#c2", { opacity: 0, y: -12, filter: "blur(10px)", duration: 0.22, ease: "power2.in" }, 10.79);
+    tl.fromTo("#c3", { opacity: 0, y: 32, scale: 0.92, filter: "blur(14px)" }, { opacity: 1, y: 0, scale: 1.0, filter: "blur(0px)", duration: 0.30, ease: "back.out(1.25)", immediateRender: false }, 11.41)
+      .fromTo("#sh-c3", { x: -240, opacity: 0.0 }, { x: 960, opacity: 0.65, duration: 0.95, ease: "power2.inOut", immediateRender: false }, 11.76)
+      .to("#c3", { opacity: 0, y: -12, filter: "blur(10px)", duration: 0.22, ease: "power2.in" }, 17.54);
+    tl.fromTo("#c4", { opacity: 0, y: 32, scale: 0.92, filter: "blur(14px)" }, { opacity: 1, y: 0, scale: 1.0, filter: "blur(0px)", duration: 0.30, ease: "back.out(1.25)", immediateRender: false }, 18.16)
+      .fromTo("#sh-c4", { x: -240, opacity: 0.0 }, { x: 960, opacity: 0.65, duration: 0.95, ease: "power2.inOut", immediateRender: false }, 18.51)
+      .to("#c4", { opacity: 0, y: -12, filter: "blur(10px)", duration: 0.22, ease: "power2.in" }, 24.54);
+    tl.fromTo("#c5", { opacity: 0, y: 32, scale: 0.92, filter: "blur(14px)" }, { opacity: 1, y: 0, scale: 1.0, filter: "blur(0px)", duration: 0.30, ease: "back.out(1.25)", immediateRender: false }, 25.16)
+      .fromTo("#sh-c5", { x: -240, opacity: 0.0 }, { x: 960, opacity: 0.65, duration: 0.95, ease: "power2.inOut", immediateRender: false }, 25.51)
+      .to("#c5", { opacity: 0, y: -12, filter: "blur(10px)", duration: 0.22, ease: "power2.in" }, 30.54);
+    window.__timelines["safe-overlays"] = tl;
+  </script>
+</template>

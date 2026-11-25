@@ -1,0 +1,87 @@
+{
+  "video_key": "bojomi_run_03_collagen_deo_dai",
+  "title": "Bojomi Chạy Bộ 03 — Bổ Sung 201,4mg Collagen Cho Bước Chạy Dẻo Dai",
+  "final_name": "261124 AVPM Bojomi Chay Bo 03 - 201mg Collagen Buoc Chay Deo Dai final.mp4",
+  "voice_profile_name": "THANH THANH TVC",
+  "sample_rate": 24000,
+  "total_duration_s": 52.5,
+  "segments": [
+    {
+      "id": "vo_01",
+      "text": "Muốn chạy bộ bền bỉ lâu dài, chỉ Canxi thôi là chưa đủ đâu!",
+      "path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Bo_4_Video_Bojomi_Chay_Bo\\bojomi_run_03_collagen_deo_dai\\06_Audio_Voiceover\\vo_01.wav",
+      "shot_start_s": 0.0,
+      "shot_duration_s": 4.25,
+      "shot_end_s": 4.25,
+      "start_s": 0.22,
+      "duration_s": 3.641,
+      "end_s": 3.861
+    },
+    {
+      "id": "vo_02",
+      "text": "Khi vận động và sải bước thường xuyên, cơ thể cần đồng thời cả Canxi cho khung xương lẫn Collagen cho độ dẻo dai.",
+      "path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Bo_4_Video_Bojomi_Chay_Bo\\bojomi_run_03_collagen_deo_dai\\06_Audio_Voiceover\\vo_02.wav",
+      "shot_start_s": 4.25,
+      "shot_duration_s": 8.0,
+      "shot_end_s": 12.25,
+      "start_s": 4.47,
+      "duration_s": 7.258,
+      "end_s": 11.728
+    },
+    {
+      "id": "vo_03",
+      "text": "Bojomi của An Vượng Pharma mang đến công thức kép thông minh ngay trong một ly ngũ cốc thơm ngon mỗi sáng.",
+      "path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Bo_4_Video_Bojomi_Chay_Bo\\bojomi_run_03_collagen_deo_dai\\06_Audio_Voiceover\\vo_03.wav",
+      "shot_start_s": 12.25,
+      "shot_duration_s": 7.5,
+      "shot_end_s": 19.75,
+      "start_s": 12.47,
+      "duration_s": 6.78,
+      "end_s": 19.25
+    },
+    {
+      "id": "vo_04",
+      "text": "Bên cạnh bốn trăm mười bảy phẩy sáu miligam Canxi tảo biển Aquamin F, mỗi gói còn bổ sung hai trăm lẻ một phẩy bốn miligam Collagen.",
+      "path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Bo_4_Video_Bojomi_Chay_Bo\\bojomi_run_03_collagen_deo_dai\\06_Audio_Voiceover\\vo_04.wav",
+      "shot_start_s": 19.75,
+      "shot_duration_s": 9.25,
+      "shot_end_s": 29.0,
+      "start_s": 19.97,
+      "duration_s": 8.526,
+      "end_s": 28.496
+    },
+    {
+      "id": "vo_05",
+      "text": "Hòa một gói hai mươi gam với hai trăm mililit nước ấm sáu mươi độ, hương Vani dịu nhẹ hoàn toàn không ngán.",
+      "path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Bo_4_Video_Bojomi_Chay_Bo\\bojomi_run_03_collagen_deo_dai\\06_Audio_Voiceover\\vo_05.wav",
+      "shot_start_s": 29.0,
+      "shot_duration_s": 7.5,
+      "shot_end_s": 36.5,
+      "start_s": 29.22,
+      "duration_s": 6.933,
+      "end_s": 36.153
+    },
+    {
+      "id": "vo_06",
+      "text": "Một thói quen nhỏ sau mỗi buổi tập sân giúp từng sải chân luôn linh hoạt, dẻo dai và tràn đầy sức sống.",
+      "path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Bo_4_Video_Bojomi_Chay_Bo\\bojomi_run_03_collagen_deo_dai\\06_Audio_Voiceover\\vo_06.wav",
+      "shot_start_s": 36.5,
+      "shot_duration_s": 7.25,
+      "shot_end_s": 43.75,
+      "start_s": 36.72,
+      "duration_s": 6.594,
+      "end_s": 43.314
+    },
+    {
+      "id": "vo_07",
+      "text": "Hộp mười bốn gói chỉ năm trăm hai mươi nghìn, đang có chương trình mua ba tặng một. Nhắn Bojomi ngay hôm nay bạn nhé!",
+      "path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Bo_4_Video_Bojomi_Chay_Bo\\bojomi_run_03_collagen_deo_dai\\06_Audio_Voiceover\\vo_07.wav",
+      "shot_start_s": 43.75,
+      "shot_duration_s": 8.75,
+      "shot_end_s": 52.5,
+      "start_s": 43.97,
+      "duration_s": 7.534,
+      "end_s": 51.504
+    }
+  ]
+}

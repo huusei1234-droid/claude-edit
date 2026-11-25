@@ -1,0 +1,65 @@
+{
+  "video_key": "n02_v2_bojomi_chay_bo_60c",
+  "title": "Bojomi Chạy Bộ Biển Nha Trang — Pha 60°C Tan Mịn Vị Vani",
+  "final_name": "261125 AVPM 02 - Bojomi Chay Bo Nha Trang Pha 60 Do Tan Min final.mp4",
+  "bgm_path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Ngay_02_2511\\02_BGM_Normalized\\n02_v2_bojomi_chay_bo_60c_bgm.mp3",
+  "bgm_original": "01_Truyền Cảm Hứng - Quảng Cáo TVC - Tươi Sáng\\Be Happy (2p23s).mp3",
+  "total_duration_s": 41.0,
+  "segments": [
+    {
+      "id": "vo_01",
+      "text": "Chạy bộ sáng đường biển xong, pha ly Canxi nào vừa tan mịn vị Vani vừa dễ hấp thu?",
+      "path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Ngay_02_2511\\n02_v2_bojomi_chay_bo_60c\\06_Audio_Voiceover\\vo_01.wav",
+      "start_s": 0.12,
+      "duration_s": 5.229,
+      "end_s": 5.349,
+      "shot_start_s": 0.0,
+      "shot_duration_s": 5.75,
+      "shot_end_s": 5.75
+    },
+    {
+      "id": "vo_02",
+      "text": "Bí kíp pha Bojomi chuẩn ngon không vón: cho một gói hai mươi gam với hai trăm mililit nước ấm sáu mươi độ rồi khuấy đều.",
+      "path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Ngay_02_2511\\n02_v2_bojomi_chay_bo_60c\\06_Audio_Voiceover\\vo_02.wav",
+      "start_s": 5.87,
+      "duration_s": 7.616,
+      "end_s": 13.486,
+      "shot_start_s": 5.75,
+      "shot_duration_s": 8.0,
+      "shot_end_s": 13.75
+    },
+    {
+      "id": "vo_03",
+      "text": "Mỗi ly bổ sung bốn trăm mười bảy phẩy sáu miligam Canxi tảo biển Aquamin F cùng Vitamin D3 và K2 MK-7 hỗ trợ hệ xương chắc khỏe.",
+      "path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Ngay_02_2511\\n02_v2_bojomi_chay_bo_60c\\06_Audio_Voiceover\\vo_03.wav",
+      "start_s": 13.87,
+      "duration_s": 9.016,
+      "end_s": 22.886,
+      "shot_start_s": 13.75,
+      "shot_duration_s": 9.5,
+      "shot_end_s": 23.25
+    },
+    {
+      "id": "vo_04",
+      "text": "Kết hợp thêm hai trăm lẻ một phẩy bốn miligam Collagen giúp khung xương khớp dẻo dai cho người chạy bộ mỗi ngày.",
+      "path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Ngay_02_2511\\n02_v2_bojomi_chay_bo_60c\\06_Audio_Voiceover\\vo_04.wav",
+      "start_s": 23.37,
+      "duration_s": 7.074,
+      "end_s": 30.444,
+      "shot_start_s": 23.25,
+      "shot_duration_s": 7.5,
+      "shot_end_s": 30.75
+    },
+    {
+      "id": "vo_05",
+      "text": "Bojomi giá năm trăm hai mươi nghìn đồng. Đến hết ba mươi tháng mười một, mua ba hộp tặng ngay một Bojomi năm trăm hai mươi nghìn đồng. Nhắn Bojomi ngay nhé!",
+      "path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Ngay_02_2511\\n02_v2_bojomi_chay_bo_60c\\06_Audio_Voiceover\\vo_05.wav",
+      "start_s": 30.87,
+      "duration_s": 9.705,
+      "end_s": 40.575,
+      "shot_start_s": 30.75,
+      "shot_duration_s": 10.25,
+      "shot_end_s": 41.0
+    }
+  ]
+}

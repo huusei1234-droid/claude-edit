@@ -259,37 +259,71 @@ async function connectCanvasAgent(notify) {
   const openPath = await win.webContents.executeJavaScript(`(async () => {
     localStorage.setItem("canvas-agent-url", ${JSON.stringify(AGENT_URL)});
     localStorage.setItem("canvas-agent-token", ${JSON.stringify(token)});
-    if (location.pathname.startsWith("/canvas/")) return location.pathname;
     try {
-      const dbs = await indexedDB.databases();
-      for (const info of dbs) {
-        if (!info.name) continue;
-        const pid = await new Promise((res) => {
-          const req = indexedDB.open(info.name);
-          req.onsuccess = () => {
-            const db = req.result;
-            if (!db.objectStoreNames.contains("keyvaluepairs")) { db.close(); return res(null); }
-            const g = db.transaction("keyvaluepairs", "readonly").objectStore("keyvaluepairs").get("infinite-canvas:canvas_store");
-            g.onsuccess = () => {
-              db.close();
-              try {
-                const parsed = typeof g.result === "string" ? JSON.parse(g.result) : g.result;
-                const projs = parsed?.state?.projects || [];
+      const pid = await new Promise((res) => {
+        const req = indexedDB.open("infinite-canvas");
+        req.onsuccess = () => {
+          const db = req.result;
+          const storeName = db.objectStoreNames.contains("app_state")
+            ? "app_state"
+            : db.objectStoreNames.contains("keyvaluepairs")
+              ? "keyvaluepairs"
+              : null;
+          if (!storeName) { db.close(); return res(null); }
+          const g = db.transaction(storeName, "readonly").objectStore(storeName).get("infinite-canvas:canvas_store");
+          g.onsuccess = () => {
+            try {
+              const parsed = typeof g.result === "string" ? JSON.parse(g.result) : g.result;
+              const projs = parsed?.state?.projects || [];
+              if (projs.length > 0) {
+                db.close();
+                // Nếu đang ở đúng 1 dự án hợp lệ thì giữ nguyên trang đó
+                const curId = location.pathname.startsWith("/canvas/") ? location.pathname.split("/")[2] : "";
+                if (curId && projs.some((p) => p.id === curId)) return res("/canvas/" + curId);
                 const withExp = projs.find((p) => (p.nodes || []).some((n) => n.type === "export:folder"));
-                res((withExp || projs[0])?.id || null);
-              } catch { res(null); }
-            };
-            g.onerror = () => { db.close(); res(null); };
+                return res("/canvas/" + (withExp || projs[0]).id);
+              }
+              // Nếu ổ C mới chưa có dự án nào -> tự khởi tạo 1 bảng Canvas mặc định để không bao giờ bị trang lỗi Not Found!
+              const newId = "studio-main-" + Date.now().toString(36);
+              const now = new Date().toISOString();
+              const initStore = JSON.stringify({
+                state: {
+                  projects: [{
+                    id: newId,
+                    title: "Full Studio Canvas",
+                    createdAt: now,
+                    updatedAt: now,
+                    nodes: [],
+                    connections: [],
+                    chatSessions: [],
+                    activeChatId: null,
+                    backgroundMode: "lines",
+                    showImageInfo: false,
+                    viewport: { x: 0, y: 0, k: 1 }
+                  }],
+                  deletedProjects: []
+                },
+                version: 0
+              });
+              const wtx = db.transaction(storeName, "readwrite");
+              wtx.objectStore(storeName).put(initStore, "infinite-canvas:canvas_store");
+              wtx.oncomplete = () => { db.close(); res("/canvas/" + newId); };
+              wtx.onerror = () => { db.close(); res("/"); };
+            } catch {
+              db.close();
+              res(null);
+            }
           };
-          req.onerror = () => res(null);
-        });
-        if (pid) return "/canvas/" + pid;
-      }
+          g.onerror = () => { db.close(); res(null); };
+        };
+        req.onerror = () => res(null);
+      });
+      if (pid) return pid;
     } catch {}
     const link = document.querySelector('a[href^="/canvas/"]');
-    return link ? link.getAttribute("href").split("?")[0] : "/canvas/Z1AUEagMhOT6sTi-6ZoS5";
+    return link ? link.getAttribute("href").split("?")[0] : "/";
   })()`);
-  await win.loadURL(`http://127.0.0.1:${WEB_PORT}${openPath}?agentUrl=${encodeURIComponent(AGENT_URL)}&agentToken=${encodeURIComponent(token)}`); // auto-open active canvas with export:folder & auto-connect agent
+  await win.loadURL(`http://127.0.0.1:${WEB_PORT}${openPath}#agentUrl=${encodeURIComponent(AGENT_URL)}&agentToken=${encodeURIComponent(token)}`); // auto-open valid canvas & connect via URL hash!
   if (notify) dialog.showMessageBox(win, { message: "Đã kết nối Canvas Agent. Mở phiên Claude Code mới để dùng." });
 }
 

@@ -1,0 +1,65 @@
+{
+  "video_key": "n02_v5_collamela_don_tet_480k",
+  "title": "Collamela — Bộ 4 Dưỡng Chất 2.530mg Collagen Tripeptide Đón Tết",
+  "final_name": "261125 AVPM 05 - Collamela 2530mg Collagen Tripeptide Don Tet final.mp4",
+  "bgm_path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Ngay_02_2511\\02_BGM_Normalized\\n02_v5_collamela_don_tet_480k_bgm.mp3",
+  "bgm_original": "06_Jazz - Lounge - Sang Trọng - Lãng Mạn\\Bossa Lounge (3p04s).mp3",
+  "total_duration_s": 41.25,
+  "segments": [
+    {
+      "id": "vo_01",
+      "text": "Còn hai tháng nữa đến Tết, muốn làn da căng mịn rạng rỡ thì chăm từ bên trong bằng gì cho kịp?",
+      "path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Ngay_02_2511\\n02_v5_collamela_don_tet_480k\\06_Audio_Voiceover\\vo_01.wav",
+      "start_s": 0.12,
+      "duration_s": 5.643,
+      "end_s": 5.763,
+      "shot_start_s": 0.0,
+      "shot_duration_s": 6.0,
+      "shot_end_s": 6.0
+    },
+    {
+      "id": "vo_02",
+      "text": "Mỗi ngày chỉ mất mười giây pha một gói Collamela với một trăm mililit nước mát, vị đào thanh ngọt hoàn toàn không tanh.",
+      "path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Ngay_02_2511\\n02_v5_collamela_don_tet_480k\\06_Audio_Voiceover\\vo_02.wav",
+      "start_s": 6.12,
+      "duration_s": 7.858,
+      "end_s": 13.978,
+      "shot_start_s": 6.0,
+      "shot_duration_s": 8.25,
+      "shot_end_s": 14.25
+    },
+    {
+      "id": "vo_03",
+      "text": "Khẩu phần hai gói cung cấp hai nghìn năm trăm ba mươi miligam Collagen Tripeptide phân tử siêu nhỏ dễ hấp thu.",
+      "path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Ngay_02_2511\\n02_v5_collamela_don_tet_480k\\06_Audio_Voiceover\\vo_03.wav",
+      "start_s": 14.37,
+      "duration_s": 6.619,
+      "end_s": 20.989,
+      "shot_start_s": 14.25,
+      "shot_duration_s": 7.0,
+      "shot_end_s": 21.25
+    },
+    {
+      "id": "vo_04",
+      "text": "Phối hợp thêm HA cấp ẩm, Vitamin C và Kẽm giúp nuôi dưỡng độ đàn hồi và sắc diện làn da tươi tắn mỗi ngày.",
+      "path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Ngay_02_2511\\n02_v5_collamela_don_tet_480k\\06_Audio_Voiceover\\vo_04.wav",
+      "start_s": 21.37,
+      "duration_s": 6.77,
+      "end_s": 28.14,
+      "shot_start_s": 21.25,
+      "shot_duration_s": 7.25,
+      "shot_end_s": 28.5
+    },
+    {
+      "id": "vo_05",
+      "text": "Collamela hai mươi gói giá chín trăm hai mươi nghìn đồng. Đến hết ba mươi tháng mười một, mua hai hộp tặng ngay một hộp mười gói bốn trăm tám mươi nghìn đồng. Chị nhắn tin Collamela để chốt ưu đãi ngay nhé!",
+      "path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Ngay_02_2511\\n02_v5_collamela_don_tet_480k\\06_Audio_Voiceover\\vo_05.wav",
+      "start_s": 28.62,
+      "duration_s": 12.118,
+      "end_s": 40.738,
+      "shot_start_s": 28.5,
+      "shot_duration_s": 12.75,
+      "shot_end_s": 41.25
+    }
+  ]
+}

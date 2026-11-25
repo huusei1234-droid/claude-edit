@@ -345,7 +345,7 @@ if __name__ == "__main__":
     out_png = sys.argv[2] if len(sys.argv) > 2 else os.path.join(HERE, "tiktok_cover_preview.png")
     raw_title = sys.argv[3] if len(sys.argv) > 3 and sys.argv[3].strip() else video_arg
 
-    frame_jpg = os.path.join(HERE, ".tmp_cover_frame.jpg")
+    frame_jpg = os.path.join(HERE, "tmp_cover_frame.jpg")
     pick_best_frame(video_arg, frame_jpg)
 
     title = clean_title(raw_title)

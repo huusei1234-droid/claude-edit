@@ -1,0 +1,76 @@
+{
+  "video_key": "kid1y_01_giai_doan_vang",
+  "title": "Combo Chiều Cao Bé Từ 1 Tuổi 01 — Giai Đoạn Vàng Đạm & Canxi",
+  "final_name": "261124 AVPM Combo Chieu Cao Be Tu 1 Tuoi 01 - Giai Doan Vang Dam Va Canxi final.mp4",
+  "voice_profile_name": "THANH THANH TVC",
+  "sample_rate": 24000,
+  "total_duration_s": 41.25,
+  "segments": [
+    {
+      "id": "vo_01",
+      "text": "Chăm chiều cao cho bé từ một tuổi, uống mình Canxi đã đủ chưa mẹ?",
+      "path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Bo_2_Video_Chieu_Cao_Be_Tu_1_Tuoi\\kid1y_01_giai_doan_vang\\06_Audio_Voiceover\\vo_01.wav",
+      "shot_start_s": 0.0,
+      "shot_duration_s": 4.25,
+      "shot_end_s": 4.25,
+      "start_s": 0.16,
+      "duration_s": 3.737,
+      "end_s": 3.897
+    },
+    {
+      "id": "vo_02",
+      "text": "Từ một tuổi trở lên là giai đoạn vàng xây khung xương, bé cần cả Đạm sạch lẫn Canxi chuẩn.",
+      "path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Bo_2_Video_Chieu_Cao_Be_Tu_1_Tuoi\\kid1y_01_giai_doan_vang\\06_Audio_Voiceover\\vo_02.wav",
+      "shot_start_s": 4.25,
+      "shot_duration_s": 6.0,
+      "shot_end_s": 10.25,
+      "start_s": 4.41,
+      "duration_s": 5.436,
+      "end_s": 9.846
+    },
+    {
+      "id": "vo_03",
+      "text": "Bộ đôi Bojomi và AV Protein của An Vượng Pharma giúp mẹ chăm dinh dưỡng gọn nhẹ mỗi ngày.",
+      "path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Bo_2_Video_Chieu_Cao_Be_Tu_1_Tuoi\\kid1y_01_giai_doan_vang\\06_Audio_Voiceover\\vo_03.wav",
+      "shot_start_s": 10.25,
+      "shot_duration_s": 5.75,
+      "shot_end_s": 16.0,
+      "start_s": 10.41,
+      "duration_s": 5.373,
+      "end_s": 15.783
+    },
+    {
+      "id": "vo_04",
+      "text": "AV Protein bổ sung đạm thực vật đậu Hà Lan, Inulin và lợi khuẩn B-3 êm bụng, dễ tiêu hóa cho bé.",
+      "path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Bo_2_Video_Chieu_Cao_Be_Tu_1_Tuoi\\kid1y_01_giai_doan_vang\\06_Audio_Voiceover\\vo_04.wav",
+      "shot_start_s": 16.0,
+      "shot_duration_s": 6.5,
+      "shot_end_s": 22.5,
+      "start_s": 16.16,
+      "duration_s": 5.917,
+      "end_s": 22.077
+    },
+    {
+      "id": "vo_05",
+      "text": "Bojomi mang Canxi tảo biển Aquamin F cùng Vitamin D3, K2 MK-7 và Collagen vị Vani thơm béo dễ uống.",
+      "path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Bo_2_Video_Chieu_Cao_Be_Tu_1_Tuoi\\kid1y_01_giai_doan_vang\\06_Audio_Voiceover\\vo_05.wav",
+      "shot_start_s": 22.5,
+      "shot_duration_s": 6.75,
+      "shot_end_s": 29.25,
+      "start_s": 22.66,
+      "duration_s": 6.335,
+      "end_s": 28.995
+    },
+    {
+      "id": "vo_06",
+      "text": "Mẹ chia khẩu phần theo độ tuổi của bé, kết hợp ngủ sớm và vận động. Bộ đôi chính hãng có giá tám trăm bảy mươi nghìn đồng. Mẹ nhắn Bé Một Tuổi nhận bảng chia khẩu phần chuẩn nhé!",
+      "path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Bo_2_Video_Chieu_Cao_Be_Tu_1_Tuoi\\kid1y_01_giai_doan_vang\\06_Audio_Voiceover\\vo_06.wav",
+      "shot_start_s": 29.25,
+      "shot_duration_s": 12.0,
+      "shot_end_s": 41.25,
+      "start_s": 29.41,
+      "duration_s": 11.359,
+      "end_s": 40.769
+    }
+  ]
+}

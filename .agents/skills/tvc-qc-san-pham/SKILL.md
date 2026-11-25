@@ -55,7 +55,7 @@ TVC sản phẩm cao cấp **cấm dùng 1 font đơn điệu từ đầu đến
 4. **Packshot Typography (Chữ trên bao bì sản phẩm)**:
    - Giữ nguyên 100% thiết kế gốc từ file PNG/WebP tách nền của nhãn hàng (quy tắc `launch.md`: không bao giờ vẽ lại logo/bao bì bằng CSS thay cho ảnh thật).
 5. **Legal Super / Regulatory Disclaimer (`*Hình ảnh chỉ mang tính chất minh hoạ`, địa chỉ nhà sản xuất)**:
-   - **Font**: `Inter` hoặc `Roboto` `400/500`, cỡ `12px – 15px` (trên chuẩn `1920×1080`), `line-height: 1.25`, `opacity: 0.82`, căn phải đặt sát mép an toàn dưới phải (`right: 3.5%; bottom: 3.2%`).
+   - **Font**: `Inter` hoặc `Roboto` `400/500`, cỡ `12px – 15px` (trên chuẩn `1920×1080`), `line-height: 1.25`, `opacity: 0.82`. Trên bản ngang `16:9` đặt sát mép an toàn dưới phải (`right: 3.5%; bottom: 3.2%`); **riêng trên bản dọc `9:16` (`1080×1920`) bắt buộc tuân thủ Vùng Trắng An Toàn TikTok × Reels (`safe_zone_9x16.py`)**: cấm chạm vùng đen đỉnh `Y < 250px`, đáy `Y > 1545px`, lề trái `X < 54px`, lề phải trên `X > 1024px`, và cột nút phải-dưới `X > 884px` (`Y >= 860px`) — đặt Legal Super ở `left: 58px; bottom: 380px; max-width: 820px`.
 
 ---
 

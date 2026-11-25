@@ -1,0 +1,1577 @@
+{
+  "lang": "vi",
+  "duration": 70.0,
+  "segments": [
+    {
+      "start": 0.02,
+      "end": 2.5,
+      "text": "Đừng để chuyện vợ chồng thành áp lực!",
+      "words": [
+        {
+          "word": "Đừng",
+          "start": 0.02,
+          "end": 0.58,
+          "p": 0.83
+        },
+        {
+          "word": "để",
+          "start": 0.58,
+          "end": 0.72,
+          "p": 1.0
+        },
+        {
+          "word": "chuyện",
+          "start": 0.72,
+          "end": 1.02,
+          "p": 0.98
+        },
+        {
+          "word": "vợ",
+          "start": 1.02,
+          "end": 1.18,
+          "p": 0.99
+        },
+        {
+          "word": "chồng",
+          "start": 1.18,
+          "end": 1.52,
+          "p": 0.99
+        },
+        {
+          "word": "thành",
+          "start": 1.52,
+          "end": 1.96,
+          "p": 0.72
+        },
+        {
+          "word": "áp",
+          "start": 1.96,
+          "end": 2.32,
+          "p": 0.9
+        },
+        {
+          "word": "lực!",
+          "start": 2.32,
+          "end": 2.5,
+          "p": 1.0
+        }
+      ]
+    },
+    {
+      "start": 2.5,
+      "end": 5.06,
+      "text": "Có những cuộc hôn nhân không có người thứ ba",
+      "words": [
+        {
+          "word": "Có",
+          "start": 2.5,
+          "end": 2.98,
+          "p": 0.73
+        },
+        {
+          "word": "những",
+          "start": 2.98,
+          "end": 3.28,
+          "p": 1.0
+        },
+        {
+          "word": "cuộc",
+          "start": 3.28,
+          "end": 3.5,
+          "p": 1.0
+        },
+        {
+          "word": "hôn",
+          "start": 3.5,
+          "end": 3.84,
+          "p": 1.0
+        },
+        {
+          "word": "nhân",
+          "start": 3.84,
+          "end": 3.96,
+          "p": 1.0
+        },
+        {
+          "word": "không",
+          "start": 3.96,
+          "end": 4.22,
+          "p": 0.72
+        },
+        {
+          "word": "có",
+          "start": 4.22,
+          "end": 4.42,
+          "p": 1.0
+        },
+        {
+          "word": "người",
+          "start": 4.42,
+          "end": 4.62,
+          "p": 1.0
+        },
+        {
+          "word": "thứ",
+          "start": 4.62,
+          "end": 4.82,
+          "p": 0.99
+        },
+        {
+          "word": "ba",
+          "start": 4.82,
+          "end": 5.06,
+          "p": 0.82
+        }
+      ]
+    },
+    {
+      "start": 5.06,
+      "end": 6.9,
+      "text": "Không cãi nhau lớn,",
+      "words": [
+        {
+          "word": "Không",
+          "start": 5.06,
+          "end": 5.76,
+          "p": 0.92
+        },
+        {
+          "word": "cãi",
+          "start": 5.76,
+          "end": 6.26,
+          "p": 0.99
+        },
+        {
+          "word": "nhau",
+          "start": 6.26,
+          "end": 6.56,
+          "p": 1.0
+        },
+        {
+          "word": "lớn,",
+          "start": 6.56,
+          "end": 6.9,
+          "p": 1.0
+        }
+      ]
+    },
+    {
+      "start": 6.9,
+      "end": 8.76,
+      "text": "Nhưng khoảng cách giữa hai vợ chồng",
+      "words": [
+        {
+          "word": "Nhưng",
+          "start": 6.9,
+          "end": 7.62,
+          "p": 0.99
+        },
+        {
+          "word": "khoảng",
+          "start": 7.62,
+          "end": 7.82,
+          "p": 1.0
+        },
+        {
+          "word": "cách",
+          "start": 7.82,
+          "end": 8.02,
+          "p": 1.0
+        },
+        {
+          "word": "giữa",
+          "start": 8.02,
+          "end": 8.18,
+          "p": 1.0
+        },
+        {
+          "word": "hai",
+          "start": 8.18,
+          "end": 8.28,
+          "p": 0.9
+        },
+        {
+          "word": "vợ",
+          "start": 8.28,
+          "end": 8.5,
+          "p": 1.0
+        },
+        {
+          "word": "chồng",
+          "start": 8.5,
+          "end": 8.76,
+          "p": 1.0
+        }
+      ]
+    },
+    {
+      "start": 8.76,
+      "end": 9.8,
+      "text": "Cứ ngày một xa,",
+      "words": [
+        {
+          "word": "Cứ",
+          "start": 8.76,
+          "end": 9.02,
+          "p": 0.8
+        },
+        {
+          "word": "ngày",
+          "start": 9.02,
+          "end": 9.14,
+          "p": 0.99
+        },
+        {
+          "word": "một",
+          "start": 9.14,
+          "end": 9.36,
+          "p": 1.0
+        },
+        {
+          "word": "xa,",
+          "start": 9.36,
+          "end": 9.8,
+          "p": 1.0
+        }
+      ]
+    },
+    {
+      "start": 9.8,
+      "end": 12.04,
+      "text": "Vì một chuyện chẳng ai dám nói.",
+      "words": [
+        {
+          "word": "Vì",
+          "start": 9.8,
+          "end": 10.48,
+          "p": 0.98
+        },
+        {
+          "word": "một",
+          "start": 10.48,
+          "end": 10.56,
+          "p": 1.0
+        },
+        {
+          "word": "chuyện",
+          "start": 10.56,
+          "end": 10.94,
+          "p": 1.0
+        },
+        {
+          "word": "chẳng",
+          "start": 10.94,
+          "end": 11.52,
+          "p": 1.0
+        },
+        {
+          "word": "ai",
+          "start": 11.52,
+          "end": 11.62,
+          "p": 1.0
+        },
+        {
+          "word": "dám",
+          "start": 11.62,
+          "end": 11.96,
+          "p": 1.0
+        },
+        {
+          "word": "nói.",
+          "start": 11.96,
+          "end": 12.04,
+          "p": 1.0
+        }
+      ]
+    },
+    {
+      "start": 12.2,
+      "end": 14.88,
+      "text": "đó có thể là những thay đổi trong đời sống",
+      "words": [
+        {
+          "word": "đó",
+          "start": 12.2,
+          "end": 12.82,
+          "p": 0.24
+        },
+        {
+          "word": "có",
+          "start": 12.82,
+          "end": 13.02,
+          "p": 0.99
+        },
+        {
+          "word": "thể",
+          "start": 13.02,
+          "end": 13.26,
+          "p": 1.0
+        },
+        {
+          "word": "là",
+          "start": 13.26,
+          "end": 13.36,
+          "p": 1.0
+        },
+        {
+          "word": "những",
+          "start": 13.36,
+          "end": 13.48,
+          "p": 1.0
+        },
+        {
+          "word": "thay",
+          "start": 13.48,
+          "end": 13.74,
+          "p": 1.0
+        },
+        {
+          "word": "đổi",
+          "start": 13.74,
+          "end": 14.02,
+          "p": 1.0
+        },
+        {
+          "word": "trong",
+          "start": 14.02,
+          "end": 14.16,
+          "p": 0.96
+        },
+        {
+          "word": "đời",
+          "start": 14.16,
+          "end": 14.5,
+          "p": 1.0
+        },
+        {
+          "word": "sống",
+          "start": 14.5,
+          "end": 14.88,
+          "p": 0.99
+        }
+      ]
+    },
+    {
+      "start": 14.88,
+      "end": 16.5,
+      "text": "tình dục, phụ nữ",
+      "words": [
+        {
+          "word": "tình",
+          "start": 14.88,
+          "end": 15.22,
+          "p": 0.91
+        },
+        {
+          "word": "dục,",
+          "start": 15.22,
+          "end": 15.52,
+          "p": 1.0
+        },
+        {
+          "word": "phụ",
+          "start": 15.54,
+          "end": 16.24,
+          "p": 0.99
+        },
+        {
+          "word": "nữ",
+          "start": 16.24,
+          "end": 16.5,
+          "p": 1.0
+        }
+      ]
+    },
+    {
+      "start": 16.5,
+      "end": 18.56,
+      "text": "có thể khô hơn, đau,",
+      "words": [
+        {
+          "word": "có",
+          "start": 16.5,
+          "end": 16.8,
+          "p": 1.0
+        },
+        {
+          "word": "thể",
+          "start": 16.8,
+          "end": 17.02,
+          "p": 1.0
+        },
+        {
+          "word": "khô",
+          "start": 17.02,
+          "end": 17.34,
+          "p": 1.0
+        },
+        {
+          "word": "hơn,",
+          "start": 17.34,
+          "end": 17.6,
+          "p": 1.0
+        },
+        {
+          "word": "đau,",
+          "start": 17.7,
+          "end": 18.56,
+          "p": 1.0
+        }
+      ]
+    },
+    {
+      "start": 18.56,
+      "end": 20.38,
+      "text": "hoặc khó chịu khi quan hệ,",
+      "words": [
+        {
+          "word": "hoặc",
+          "start": 18.56,
+          "end": 18.86,
+          "p": 1.0
+        },
+        {
+          "word": "khó",
+          "start": 18.86,
+          "end": 19.12,
+          "p": 1.0
+        },
+        {
+          "word": "chịu",
+          "start": 19.12,
+          "end": 19.5,
+          "p": 1.0
+        },
+        {
+          "word": "khi",
+          "start": 19.5,
+          "end": 19.68,
+          "p": 0.99
+        },
+        {
+          "word": "quan",
+          "start": 19.68,
+          "end": 19.98,
+          "p": 1.0
+        },
+        {
+          "word": "hệ,",
+          "start": 19.98,
+          "end": 20.38,
+          "p": 0.98
+        }
+      ]
+    },
+    {
+      "start": 20.38,
+      "end": 22.72,
+      "text": "giảm ham muốn, mệt mỏi,",
+      "words": [
+        {
+          "word": "giảm",
+          "start": 20.38,
+          "end": 21.24,
+          "p": 0.96
+        },
+        {
+          "word": "ham",
+          "start": 21.24,
+          "end": 21.4,
+          "p": 0.62
+        },
+        {
+          "word": "muốn,",
+          "start": 21.4,
+          "end": 21.52,
+          "p": 0.96
+        },
+        {
+          "word": "mệt",
+          "start": 21.78,
+          "end": 22.32,
+          "p": 1.0
+        },
+        {
+          "word": "mỏi,",
+          "start": 22.32,
+          "end": 22.72,
+          "p": 1.0
+        }
+      ]
+    },
+    {
+      "start": 22.72,
+      "end": 24.44,
+      "text": "stress, hoặc đơn giản là",
+      "words": [
+        {
+          "word": "stress,",
+          "start": 22.72,
+          "end": 23.48,
+          "p": 0.79
+        },
+        {
+          "word": "hoặc",
+          "start": 23.5,
+          "end": 23.98,
+          "p": 1.0
+        },
+        {
+          "word": "đơn",
+          "start": 23.98,
+          "end": 24.18,
+          "p": 1.0
+        },
+        {
+          "word": "giản",
+          "start": 24.18,
+          "end": 24.36,
+          "p": 1.0
+        },
+        {
+          "word": "là",
+          "start": 24.36,
+          "end": 24.44,
+          "p": 0.99
+        }
+      ]
+    },
+    {
+      "start": 24.44,
+      "end": 26.22,
+      "text": "không còn cảm thấy thoải mái như trước.",
+      "words": [
+        {
+          "word": "không",
+          "start": 24.44,
+          "end": 24.64,
+          "p": 1.0
+        },
+        {
+          "word": "còn",
+          "start": 24.64,
+          "end": 24.82,
+          "p": 1.0
+        },
+        {
+          "word": "cảm",
+          "start": 24.82,
+          "end": 25.02,
+          "p": 1.0
+        },
+        {
+          "word": "thấy",
+          "start": 25.02,
+          "end": 25.32,
+          "p": 1.0
+        },
+        {
+          "word": "thoải",
+          "start": 25.32,
+          "end": 25.62,
+          "p": 1.0
+        },
+        {
+          "word": "mái",
+          "start": 25.62,
+          "end": 25.94,
+          "p": 0.98
+        },
+        {
+          "word": "như",
+          "start": 25.94,
+          "end": 26.06,
+          "p": 1.0
+        },
+        {
+          "word": "trước.",
+          "start": 26.06,
+          "end": 26.22,
+          "p": 1.0
+        }
+      ]
+    },
+    {
+      "start": 26.61,
+      "end": 29.81,
+      "text": "Nhưng thay vì nói với nhau nhiều người lại chọn im lặng.",
+      "words": [
+        {
+          "word": "Nhưng",
+          "start": 26.61,
+          "end": 27.11,
+          "p": 0.82
+        },
+        {
+          "word": "thay",
+          "start": 27.11,
+          "end": 27.33,
+          "p": 1.0
+        },
+        {
+          "word": "vì",
+          "start": 27.33,
+          "end": 27.45,
+          "p": 1.0
+        },
+        {
+          "word": "nói",
+          "start": 27.45,
+          "end": 27.65,
+          "p": 0.97
+        },
+        {
+          "word": "với",
+          "start": 27.65,
+          "end": 27.79,
+          "p": 1.0
+        },
+        {
+          "word": "nhau",
+          "start": 27.79,
+          "end": 28.09,
+          "p": 1.0
+        },
+        {
+          "word": "nhiều",
+          "start": 28.09,
+          "end": 28.31,
+          "p": 0.42
+        },
+        {
+          "word": "người",
+          "start": 28.31,
+          "end": 28.69,
+          "p": 0.99
+        },
+        {
+          "word": "lại",
+          "start": 28.69,
+          "end": 28.97,
+          "p": 0.99
+        },
+        {
+          "word": "chọn",
+          "start": 28.97,
+          "end": 29.27,
+          "p": 0.97
+        },
+        {
+          "word": "im",
+          "start": 29.27,
+          "end": 29.41,
+          "p": 1.0
+        },
+        {
+          "word": "lặng.",
+          "start": 29.41,
+          "end": 29.81,
+          "p": 0.99
+        }
+      ]
+    },
+    {
+      "start": 29.81,
+      "end": 31.95,
+      "text": "Chồng nghĩ vợ không còn yêu mình,",
+      "words": [
+        {
+          "word": "Chồng",
+          "start": 29.81,
+          "end": 30.51,
+          "p": 0.77
+        },
+        {
+          "word": "nghĩ",
+          "start": 30.51,
+          "end": 30.75,
+          "p": 0.97
+        },
+        {
+          "word": "vợ",
+          "start": 30.75,
+          "end": 31.23,
+          "p": 0.89
+        },
+        {
+          "word": "không",
+          "start": 31.23,
+          "end": 31.31,
+          "p": 1.0
+        },
+        {
+          "word": "còn",
+          "start": 31.31,
+          "end": 31.53,
+          "p": 1.0
+        },
+        {
+          "word": "yêu",
+          "start": 31.53,
+          "end": 31.71,
+          "p": 1.0
+        },
+        {
+          "word": "mình,",
+          "start": 31.71,
+          "end": 31.95,
+          "p": 1.0
+        }
+      ]
+    },
+    {
+      "start": 31.95,
+      "end": 34.53,
+      "text": "Vợ nghĩ chồng không còn thương mình,",
+      "words": [
+        {
+          "word": "Vợ",
+          "start": 31.95,
+          "end": 32.83,
+          "p": 0.94
+        },
+        {
+          "word": "nghĩ",
+          "start": 32.83,
+          "end": 33.01,
+          "p": 1.0
+        },
+        {
+          "word": "chồng",
+          "start": 33.01,
+          "end": 33.65,
+          "p": 1.0
+        },
+        {
+          "word": "không",
+          "start": 33.65,
+          "end": 33.75,
+          "p": 1.0
+        },
+        {
+          "word": "còn",
+          "start": 33.75,
+          "end": 34.01,
+          "p": 1.0
+        },
+        {
+          "word": "thương",
+          "start": 34.01,
+          "end": 34.35,
+          "p": 1.0
+        },
+        {
+          "word": "mình,",
+          "start": 34.35,
+          "end": 34.53,
+          "p": 1.0
+        }
+      ]
+    },
+    {
+      "start": 34.53,
+      "end": 36.77,
+      "text": "Rồi cả hai cùng tổn thương.",
+      "words": [
+        {
+          "word": "Rồi",
+          "start": 34.53,
+          "end": 35.33,
+          "p": 1.0
+        },
+        {
+          "word": "cả",
+          "start": 35.33,
+          "end": 35.39,
+          "p": 1.0
+        },
+        {
+          "word": "hai",
+          "start": 35.39,
+          "end": 35.65,
+          "p": 0.93
+        },
+        {
+          "word": "cùng",
+          "start": 35.65,
+          "end": 35.93,
+          "p": 0.97
+        },
+        {
+          "word": "tổn",
+          "start": 35.93,
+          "end": 36.39,
+          "p": 1.0
+        },
+        {
+          "word": "thương.",
+          "start": 36.39,
+          "end": 36.77,
+          "p": 1.0
+        }
+      ]
+    },
+    {
+      "start": 36.85,
+      "end": 38.39,
+      "text": "Hằng muốn chị em hiểu,",
+      "words": [
+        {
+          "word": "Hằng",
+          "start": 36.85,
+          "end": 37.41,
+          "p": 0.82
+        },
+        {
+          "word": "muốn",
+          "start": 37.41,
+          "end": 37.53,
+          "p": 0.83
+        },
+        {
+          "word": "chị",
+          "start": 37.53,
+          "end": 37.87,
+          "p": 0.97
+        },
+        {
+          "word": "em",
+          "start": 37.87,
+          "end": 38.03,
+          "p": 1.0
+        },
+        {
+          "word": "hiểu,",
+          "start": 38.03,
+          "end": 38.39,
+          "p": 1.0
+        }
+      ]
+    },
+    {
+      "start": 38.39,
+      "end": 40.77,
+      "text": "Đời sống vợ chồng cũng là một phần",
+      "words": [
+        {
+          "word": "Đời",
+          "start": 38.39,
+          "end": 39.07,
+          "p": 0.81
+        },
+        {
+          "word": "sống",
+          "start": 39.07,
+          "end": 39.33,
+          "p": 1.0
+        },
+        {
+          "word": "vợ",
+          "start": 39.33,
+          "end": 39.59,
+          "p": 1.0
+        },
+        {
+          "word": "chồng",
+          "start": 39.59,
+          "end": 39.87,
+          "p": 0.79
+        },
+        {
+          "word": "cũng",
+          "start": 39.87,
+          "end": 40.15,
+          "p": 0.55
+        },
+        {
+          "word": "là",
+          "start": 40.15,
+          "end": 40.35,
+          "p": 1.0
+        },
+        {
+          "word": "một",
+          "start": 40.35,
+          "end": 40.47,
+          "p": 0.98
+        },
+        {
+          "word": "phần",
+          "start": 40.47,
+          "end": 40.77,
+          "p": 0.99
+        }
+      ]
+    },
+    {
+      "start": 40.77,
+      "end": 42.69,
+      "text": "Của sức khỏe và chất lượng cuộc sống.",
+      "words": [
+        {
+          "word": "Của",
+          "start": 40.77,
+          "end": 40.93,
+          "p": 0.76
+        },
+        {
+          "word": "sức",
+          "start": 40.93,
+          "end": 41.13,
+          "p": 1.0
+        },
+        {
+          "word": "khỏe",
+          "start": 41.13,
+          "end": 41.59,
+          "p": 1.0
+        },
+        {
+          "word": "và",
+          "start": 41.59,
+          "end": 41.71,
+          "p": 1.0
+        },
+        {
+          "word": "chất",
+          "start": 41.71,
+          "end": 41.95,
+          "p": 1.0
+        },
+        {
+          "word": "lượng",
+          "start": 41.95,
+          "end": 42.15,
+          "p": 0.91
+        },
+        {
+          "word": "cuộc",
+          "start": 42.15,
+          "end": 42.31,
+          "p": 1.0
+        },
+        {
+          "word": "sống.",
+          "start": 42.31,
+          "end": 42.69,
+          "p": 1.0
+        }
+      ]
+    },
+    {
+      "start": 42.69,
+      "end": 44.79,
+      "text": "Nếu có thay đổi kéo dài,",
+      "words": [
+        {
+          "word": "Nếu",
+          "start": 42.69,
+          "end": 43.57,
+          "p": 1.0
+        },
+        {
+          "word": "có",
+          "start": 43.57,
+          "end": 43.71,
+          "p": 1.0
+        },
+        {
+          "word": "thay",
+          "start": 43.71,
+          "end": 43.91,
+          "p": 0.99
+        },
+        {
+          "word": "đổi",
+          "start": 43.91,
+          "end": 44.11,
+          "p": 1.0
+        },
+        {
+          "word": "kéo",
+          "start": 44.11,
+          "end": 44.39,
+          "p": 0.98
+        },
+        {
+          "word": "dài,",
+          "start": 44.39,
+          "end": 44.79,
+          "p": 0.88
+        }
+      ]
+    },
+    {
+      "start": 44.79,
+      "end": 45.91,
+      "text": "Đừng xấu hổ,",
+      "words": [
+        {
+          "word": "Đừng",
+          "start": 44.79,
+          "end": 45.37,
+          "p": 1.0
+        },
+        {
+          "word": "xấu",
+          "start": 45.37,
+          "end": 45.57,
+          "p": 0.7
+        },
+        {
+          "word": "hổ,",
+          "start": 45.57,
+          "end": 45.91,
+          "p": 1.0
+        }
+      ]
+    },
+    {
+      "start": 45.91,
+      "end": 47.29,
+      "text": "Đừng tự trách mình,",
+      "words": [
+        {
+          "word": "Đừng",
+          "start": 45.91,
+          "end": 46.67,
+          "p": 0.89
+        },
+        {
+          "word": "tự",
+          "start": 46.67,
+          "end": 46.79,
+          "p": 0.7
+        },
+        {
+          "word": "trách",
+          "start": 46.79,
+          "end": 47.15,
+          "p": 1.0
+        },
+        {
+          "word": "mình,",
+          "start": 47.15,
+          "end": 47.29,
+          "p": 0.74
+        }
+      ]
+    },
+    {
+      "start": 47.36,
+      "end": 49.62,
+      "text": "Và cũng đừng vội đổ lỗi cho người kia.",
+      "words": [
+        {
+          "word": "Và",
+          "start": 47.36,
+          "end": 47.74,
+          "p": 0.59
+        },
+        {
+          "word": "cũng",
+          "start": 47.74,
+          "end": 47.86,
+          "p": 1.0
+        },
+        {
+          "word": "đừng",
+          "start": 47.86,
+          "end": 48.16,
+          "p": 1.0
+        },
+        {
+          "word": "vội",
+          "start": 48.16,
+          "end": 48.42,
+          "p": 0.99
+        },
+        {
+          "word": "đổ",
+          "start": 48.42,
+          "end": 48.58,
+          "p": 1.0
+        },
+        {
+          "word": "lỗi",
+          "start": 48.58,
+          "end": 48.88,
+          "p": 1.0
+        },
+        {
+          "word": "cho",
+          "start": 48.88,
+          "end": 49.02,
+          "p": 0.96
+        },
+        {
+          "word": "người",
+          "start": 49.02,
+          "end": 49.2,
+          "p": 1.0
+        },
+        {
+          "word": "kia.",
+          "start": 49.2,
+          "end": 49.62,
+          "p": 1.0
+        }
+      ]
+    },
+    {
+      "start": 49.62,
+      "end": 51.36,
+      "text": "Hãy nói chuyện với nhau,",
+      "words": [
+        {
+          "word": "Hãy",
+          "start": 49.62,
+          "end": 50.4,
+          "p": 0.99
+        },
+        {
+          "word": "nói",
+          "start": 50.4,
+          "end": 50.54,
+          "p": 1.0
+        },
+        {
+          "word": "chuyện",
+          "start": 50.54,
+          "end": 50.84,
+          "p": 0.98
+        },
+        {
+          "word": "với",
+          "start": 50.84,
+          "end": 50.96,
+          "p": 1.0
+        },
+        {
+          "word": "nhau,",
+          "start": 50.96,
+          "end": 51.36,
+          "p": 1.0
+        }
+      ]
+    },
+    {
+      "start": 51.36,
+      "end": 52.7,
+      "text": "Quan sát cơ thể,",
+      "words": [
+        {
+          "word": "Quan",
+          "start": 51.36,
+          "end": 51.9,
+          "p": 0.85
+        },
+        {
+          "word": "sát",
+          "start": 51.9,
+          "end": 52.3,
+          "p": 1.0
+        },
+        {
+          "word": "cơ",
+          "start": 52.3,
+          "end": 52.52,
+          "p": 1.0
+        },
+        {
+          "word": "thể,",
+          "start": 52.52,
+          "end": 52.7,
+          "p": 1.0
+        }
+      ]
+    },
+    {
+      "start": 52.7,
+      "end": 55.12,
+      "text": "Và tìm sự tư vấn phù hợp",
+      "words": [
+        {
+          "word": "Và",
+          "start": 52.7,
+          "end": 53.32,
+          "p": 0.94
+        },
+        {
+          "word": "tìm",
+          "start": 53.32,
+          "end": 53.7,
+          "p": 1.0
+        },
+        {
+          "word": "sự",
+          "start": 53.7,
+          "end": 53.86,
+          "p": 1.0
+        },
+        {
+          "word": "tư",
+          "start": 53.86,
+          "end": 54.38,
+          "p": 0.96
+        },
+        {
+          "word": "vấn",
+          "start": 54.38,
+          "end": 54.58,
+          "p": 0.91
+        },
+        {
+          "word": "phù",
+          "start": 54.58,
+          "end": 54.8,
+          "p": 1.0
+        },
+        {
+          "word": "hợp",
+          "start": 54.8,
+          "end": 55.12,
+          "p": 1.0
+        }
+      ]
+    },
+    {
+      "start": 55.12,
+      "end": 55.62,
+      "text": "Nếu cần.",
+      "words": [
+        {
+          "word": "Nếu",
+          "start": 55.12,
+          "end": 55.34,
+          "p": 0.57
+        },
+        {
+          "word": "cần.",
+          "start": 55.34,
+          "end": 55.62,
+          "p": 1.0
+        }
+      ]
+    },
+    {
+      "start": 55.62,
+      "end": 58.52,
+      "text": "Có những vấn đề chỉ khi được nói ra đúng cách",
+      "words": [
+        {
+          "word": "Có",
+          "start": 55.62,
+          "end": 56.3,
+          "p": 0.95
+        },
+        {
+          "word": "những",
+          "start": 56.3,
+          "end": 56.5,
+          "p": 1.0
+        },
+        {
+          "word": "vấn",
+          "start": 56.5,
+          "end": 56.76,
+          "p": 1.0
+        },
+        {
+          "word": "đề",
+          "start": 56.76,
+          "end": 57.0,
+          "p": 1.0
+        },
+        {
+          "word": "chỉ",
+          "start": 57.0,
+          "end": 57.2,
+          "p": 0.82
+        },
+        {
+          "word": "khi",
+          "start": 57.2,
+          "end": 57.32,
+          "p": 1.0
+        },
+        {
+          "word": "được",
+          "start": 57.32,
+          "end": 57.5,
+          "p": 1.0
+        },
+        {
+          "word": "nói",
+          "start": 57.5,
+          "end": 57.72,
+          "p": 1.0
+        },
+        {
+          "word": "ra",
+          "start": 57.72,
+          "end": 57.98,
+          "p": 1.0
+        },
+        {
+          "word": "đúng",
+          "start": 57.98,
+          "end": 58.28,
+          "p": 0.99
+        },
+        {
+          "word": "cách",
+          "start": 58.28,
+          "end": 58.52,
+          "p": 1.0
+        }
+      ]
+    },
+    {
+      "start": 58.52,
+      "end": 60.48,
+      "text": "Đã là bước đầu tiên",
+      "words": [
+        {
+          "word": "Đã",
+          "start": 58.52,
+          "end": 59.4,
+          "p": 0.94
+        },
+        {
+          "word": "là",
+          "start": 59.4,
+          "end": 59.52,
+          "p": 1.0
+        },
+        {
+          "word": "bước",
+          "start": 59.52,
+          "end": 59.74,
+          "p": 1.0
+        },
+        {
+          "word": "đầu",
+          "start": 59.74,
+          "end": 59.96,
+          "p": 1.0
+        },
+        {
+          "word": "tiên",
+          "start": 59.96,
+          "end": 60.48,
+          "p": 1.0
+        }
+      ]
+    },
+    {
+      "start": 60.48,
+      "end": 62.5,
+      "text": "Để hai người gần nhau hơn.",
+      "words": [
+        {
+          "word": "Để",
+          "start": 60.48,
+          "end": 61.1,
+          "p": 1.0
+        },
+        {
+          "word": "hai",
+          "start": 61.1,
+          "end": 61.2,
+          "p": 0.9
+        },
+        {
+          "word": "người",
+          "start": 61.2,
+          "end": 61.52,
+          "p": 1.0
+        },
+        {
+          "word": "gần",
+          "start": 61.52,
+          "end": 62.06,
+          "p": 1.0
+        },
+        {
+          "word": "nhau",
+          "start": 62.06,
+          "end": 62.38,
+          "p": 1.0
+        },
+        {
+          "word": "hơn.",
+          "start": 62.38,
+          "end": 62.5,
+          "p": 1.0
+        }
+      ]
+    },
+    {
+      "start": 62.65,
+      "end": 65.03,
+      "text": "Nếu chị em muốn Hằng làm một series riêng,",
+      "words": [
+        {
+          "word": "Nếu",
+          "start": 62.65,
+          "end": 63.17,
+          "p": 0.88
+        },
+        {
+          "word": "chị",
+          "start": 63.17,
+          "end": 63.39,
+          "p": 1.0
+        },
+        {
+          "word": "em",
+          "start": 63.39,
+          "end": 63.63,
+          "p": 1.0
+        },
+        {
+          "word": "muốn",
+          "start": 63.63,
+          "end": 63.81,
+          "p": 1.0
+        },
+        {
+          "word": "Hằng",
+          "start": 63.81,
+          "end": 64.05,
+          "p": 0.66
+        },
+        {
+          "word": "làm",
+          "start": 64.05,
+          "end": 64.19,
+          "p": 0.85
+        },
+        {
+          "word": "một",
+          "start": 64.19,
+          "end": 64.39,
+          "p": 0.73
+        },
+        {
+          "word": "series",
+          "start": 64.39,
+          "end": 64.63,
+          "p": 0.99
+        },
+        {
+          "word": "riêng,",
+          "start": 64.63,
+          "end": 65.03,
+          "p": 0.92
+        }
+      ]
+    },
+    {
+      "start": 65.03,
+      "end": 66.43,
+      "text": "Về những chuyện phụ nữ",
+      "words": [
+        {
+          "word": "Về",
+          "start": 65.03,
+          "end": 65.29,
+          "p": 0.81
+        },
+        {
+          "word": "những",
+          "start": 65.29,
+          "end": 65.43,
+          "p": 1.0
+        },
+        {
+          "word": "chuyện",
+          "start": 65.43,
+          "end": 65.85,
+          "p": 0.93
+        },
+        {
+          "word": "phụ",
+          "start": 65.85,
+          "end": 66.09,
+          "p": 1.0
+        },
+        {
+          "word": "nữ",
+          "start": 66.09,
+          "end": 66.43,
+          "p": 1.0
+        }
+      ]
+    },
+    {
+      "start": 66.43,
+      "end": 68.11,
+      "text": "ngại nói sau khi lấy chồng,",
+      "words": [
+        {
+          "word": "ngại",
+          "start": 66.43,
+          "end": 66.8,
+          "p": 0.99
+        },
+        {
+          "word": "nói",
+          "start": 66.8,
+          "end": 67.17,
+          "p": 0.99
+        },
+        {
+          "word": "sau",
+          "start": 67.17,
+          "end": 67.37,
+          "p": 1.0
+        },
+        {
+          "word": "khi",
+          "start": 67.37,
+          "end": 67.55,
+          "p": 1.0
+        },
+        {
+          "word": "lấy",
+          "start": 67.55,
+          "end": 67.79,
+          "p": 1.0
+        },
+        {
+          "word": "chồng,",
+          "start": 67.79,
+          "end": 68.11,
+          "p": 1.0
+        }
+      ]
+    },
+    {
+      "start": 68.11,
+      "end": 69.71,
+      "text": "comment \"Vợ chồng\"!",
+      "words": [
+        {
+          "word": "comment",
+          "start": 68.11,
+          "end": 69.01,
+          "p": 0.7
+        },
+        {
+          "word": "\"Vợ",
+          "start": 69.01,
+          "end": 69.41,
+          "p": 0.99
+        },
+        {
+          "word": "chồng\"!",
+          "start": 69.41,
+          "end": 69.71,
+          "p": 1.0
+        }
+      ]
+    }
+  ]
+}

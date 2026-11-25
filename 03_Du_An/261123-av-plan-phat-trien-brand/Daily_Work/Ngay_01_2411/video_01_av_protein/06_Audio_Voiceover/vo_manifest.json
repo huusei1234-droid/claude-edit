@@ -1,0 +1,96 @@
+{
+  "video_key": "video_01_av_protein",
+  "title": "AV Protein — Đạm Thực Vật 22,05g & L-Leucine (Ngày 01)",
+  "final_name": "261124 AVPM AV Protein Dam Thuc Vat 22g final.mp4",
+  "voice_profile_name": "THANH THANH TVC",
+  "voice_profile_id": "78ef243f",
+  "sample_rate": 24000,
+  "total_duration_s": 48.0,
+  "segments": [
+    {
+      "id": "vo_01",
+      "text": "Sáng nay bạn ăn sáng cho đủ no, hay ăn cho đủ đạm?",
+      "path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Ngay_01_2411\\video_01_av_protein\\06_Audio_Voiceover\\vo_01.wav",
+      "shot_start_s": 0.0,
+      "shot_duration_s": 3.75,
+      "shot_end_s": 3.75,
+      "recommended_flow_gen_s": 4,
+      "start_s": 0.22,
+      "duration_s": 2.955,
+      "end_s": 3.175
+    },
+    {
+      "id": "vo_02",
+      "text": "Nhiều người ăn sáng toàn tinh bột, mới mười giờ đã thấy uể oải, đói bụng và thiếu năng lượng.",
+      "path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Ngay_01_2411\\video_01_av_protein\\06_Audio_Voiceover\\vo_02.wav",
+      "shot_start_s": 3.75,
+      "shot_duration_s": 6.25,
+      "shot_end_s": 10.0,
+      "recommended_flow_gen_s": 6,
+      "start_s": 3.97,
+      "duration_s": 5.516,
+      "end_s": 9.486
+    },
+    {
+      "id": "vo_03",
+      "text": "Thử ngay AV Protein của An Vượng Pharma, thực phẩm bổ sung đạm thực vật từ đậu Hà Lan và gạo.",
+      "path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Ngay_01_2411\\video_01_av_protein\\06_Audio_Voiceover\\vo_03.wav",
+      "shot_start_s": 10.0,
+      "shot_duration_s": 6.5,
+      "shot_end_s": 16.5,
+      "recommended_flow_gen_s": 6,
+      "start_s": 10.22,
+      "duration_s": 5.894,
+      "end_s": 16.114
+    },
+    {
+      "id": "vo_04",
+      "text": "Mỗi hai gói cung cấp hai mươi hai phẩy không năm gam đạm cùng một nghìn sáu trăm ba mươi hai miligam L-Leucine hỗ trợ giữ cơ săn chắc.",
+      "path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Ngay_01_2411\\video_01_av_protein\\06_Audio_Voiceover\\vo_04.wav",
+      "shot_start_s": 16.5,
+      "shot_duration_s": 9.25,
+      "shot_end_s": 25.75,
+      "recommended_flow_gen_s": 8,
+      "start_s": 16.72,
+      "duration_s": 8.583,
+      "end_s": 25.303
+    },
+    {
+      "id": "vo_05",
+      "text": "Kết hợp chất xơ Inulin và lợi khuẩn B-3 êm bụng dễ tiêu, pha nước mát hai mươi đến bốn mươi độ chỉ ba mươi giây.",
+      "path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Ngay_01_2411\\video_01_av_protein\\06_Audio_Voiceover\\vo_05.wav",
+      "shot_start_s": 25.75,
+      "shot_duration_s": 7.75,
+      "shot_end_s": 33.5,
+      "recommended_flow_gen_s": 7,
+      "start_s": 25.97,
+      "duration_s": 7.118,
+      "end_s": 33.088
+    },
+    {
+      "id": "vo_06",
+      "text": "Vị thơm béo dễ uống, nhẹ bụng mỗi sáng, đồng hành cùng người tập luyện và người bận rộn.",
+      "path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Ngay_01_2411\\video_01_av_protein\\06_Audio_Voiceover\\vo_06.wav",
+      "shot_start_s": 33.5,
+      "shot_duration_s": 6.25,
+      "shot_end_s": 39.75,
+      "recommended_flow_gen_s": 6,
+      "start_s": 33.72,
+      "duration_s": 5.531,
+      "end_s": 39.251
+    },
+    {
+      "id": "vo_07",
+      "text": "AV Protein hộp hai mươi gói chỉ ba trăm năm mươi nghìn. Nhắn Đạm Sạch để nhận ưu đãi mua năm tặng một Bojomi nhé!",
+      "path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Ngay_01_2411\\video_01_av_protein\\06_Audio_Voiceover\\vo_07.wav",
+      "shot_start_s": 39.75,
+      "shot_duration_s": 8.25,
+      "shot_end_s": 48.0,
+      "recommended_flow_gen_s": 7,
+      "start_s": 39.97,
+      "duration_s": 7.168,
+      "end_s": 47.138
+    }
+  ],
+  "full_wav": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Ngay_01_2411\\video_01_av_protein\\06_Audio_Voiceover\\VIDEO_01_AV_PROTEIN_FULL_VO.wav"
+}

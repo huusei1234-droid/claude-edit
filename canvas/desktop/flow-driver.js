@@ -124,7 +124,7 @@ async function launchBrowser(visible) {
   browserAccount = acct().id;
   if (profile) fs.mkdirSync(profile, { recursive: true });
   const start = config.projectId ? `${homeOf()}project/${config.projectId}` : homeOf();
-  const gptHtpm = "https://chatgpt.com/g/g-p-6afbde0b943481919c6ec31a3b4f8642/project";
+  const gptHtpm = "https://chatgpt.com/g/g-p-6b03c9b49b68819188e93910a01de7b1/project";
 
   const buildArgs = (restoreSession) => [
     `--remote-debugging-port=${DEBUG_PORT}`,
@@ -561,6 +561,40 @@ function acquireFlowSlot() {
   return new Promise((resolve) => waitingFlowQueue.push(resolve));
 }
 
+async function sweepIdleFlowTabs() {
+  if (flowSlotBusy.some(Boolean) || waitingFlowQueue.length > 0) return;
+  try {
+    const alive = await debugAlive();
+    if (!alive) return;
+    const b = await ensureBrowser({ visible: true });
+    const pages = await b.pages();
+    const idleFlowTabs = [];
+    for (const p of pages) {
+      if (!p || p.isClosed()) continue;
+      const u = p.url() || "";
+      if (!/^https:\/\/flow\.google\.com\b/i.test(u)) continue;
+      const busyDom = await p.evaluate(() => {
+        const txt = document.body ? document.body.innerText : "";
+        return /\b(\d{1,2}%|Generating|Đang tạo|Queued|Đang xếp hàng)\b/i.test(txt) ||
+          !!document.querySelector('mat-progress-bar, mat-spinner, [role="progressbar"]');
+      }).catch(() => false);
+      if (!busyDom) idleFlowTabs.push(p);
+    }
+    if (idleFlowTabs.length <= 1) return;
+    const keeper = idleFlowTabs.find((p) => projectOf(p.url()) && (!config.projectId || projectOf(p.url()) === config.projectId)) ||
+      idleFlowTabs.find((p) => projectOf(p.url())) ||
+      idleFlowTabs[0];
+    flowSlotPages[0] = keeper;
+    keeper.__flowSlotIdx = 0;
+    for (let i = 1; i < MAX_PARALLEL_FLOW; i++) flowSlotPages[i] = null;
+    for (const p of idleFlowTabs) {
+      if (p !== keeper) {
+        try { if (!p.isClosed()) await p.close(); } catch {}
+      }
+    }
+  } catch {}
+}
+
 function releaseFlowSlot(slotIdx) {
   const next = waitingFlowQueue.shift();
   if (next) {
@@ -568,17 +602,23 @@ function releaseFlowSlot(slotIdx) {
     return;
   }
   flowSlotBusy[slotIdx] = false;
-  // Tự động đóng bớt các Tab Worker phụ (Slot 1..3) sau 20s nhàn rỗi, chỉ giữ lại 1 Tab Flow chính (Slot 0)
+  // Tự động đóng bớt các Tab Worker phụ & Tab trùng lặp sau 8s nhàn rỗi, chỉ giữ 1 Tab Flow chính (không chạm Tab đang render!)
   if (slotIdx > 0) {
     if (flowSlotIdleTimers[slotIdx]) clearTimeout(flowSlotIdleTimers[slotIdx]);
-    flowSlotIdleTimers[slotIdx] = setTimeout(async () => {
+    const t = setTimeout(async () => {
       flowSlotIdleTimers[slotIdx] = null;
       if (!flowSlotBusy[slotIdx] && flowSlotPages[slotIdx]) {
         const p = flowSlotPages[slotIdx];
         flowSlotPages[slotIdx] = null;
         try { if (!p.isClosed()) await p.close(); } catch {}
       }
-    }, 20000);
+      await sweepIdleFlowTabs();
+    }, 8000);
+    if (t.unref) t.unref();
+    flowSlotIdleTimers[slotIdx] = t;
+  } else if (!flowSlotBusy.some(Boolean)) {
+    const t = setTimeout(() => { sweepIdleFlowTabs().catch(() => {}); }, 8000);
+    if (t.unref) t.unref();
   }
 }
 
@@ -715,6 +755,110 @@ async function checkPrefixCreditsLive(prefix) {
   }
 }
 
+const PREFERRED_FLOW_EMAIL = "capcutvid274@gmail.com";
+let lastPreferredProbeAt = 0;
+
+function getPreferredPrefix(a) {
+  const want = String(a?.preferredEmail || PREFERRED_FLOW_EMAIL).trim().toLowerCase();
+  if (!want) return null;
+  const map = a?.prefixCredits || {};
+  for (const [pf, info] of Object.entries(map)) {
+    if (String(info?.email || "").trim().toLowerCase() === want) return pf;
+  }
+  const wt = (a?.workerTargets || []).find((t) => String(t?.email || "").trim().toLowerCase() === want);
+  return wt ? wt.prefix : null;
+}
+
+// Tự động dò & ghim tài khoản ưu tiên số 1 (capcutvid274@gmail.com) lên đầu danh sách workerTargets ngay khi đã đăng nhập trong Brave!
+async function ensurePreferredAccountFirst(kind = "video") {
+  const a = acct();
+  if (!a || !isMainBraveProfile(a.profile)) return null;
+  const wantEmail = String(a.preferredEmail || PREFERRED_FLOW_EMAIL).trim().toLowerCase();
+  if (!wantEmail) return null;
+
+  const existingPf = getPreferredPrefix(a);
+  if (existingPf && Array.isArray(a.workerTargets) && a.workerTargets[0]?.prefix === existingPf) {
+    return existingPf;
+  }
+  if (Date.now() - lastPreferredProbeAt < 25000) return existingPf;
+  lastPreferredProbeAt = Date.now();
+
+  const b = await ensureBrowser({ visible: true });
+  const checkedRealPrefixes = new Set();
+  for (let idx = 0; idx <= 6; idx++) {
+    const p = await createBackgroundPage(b, `https://flow.google.com/u/${idx}/`);
+    try {
+      await sleep(2400);
+      const landUrl = p.url() || "";
+      if (/accounts\.google\.com/.test(landUrl)) continue;
+      const realPrefix = userPrefixOf(landUrl) || "u/0/";
+      if (checkedRealPrefixes.has(realPrefix)) continue;
+      checkedRealPrefixes.add(realPrefix);
+
+      const ariaLabel = await p.evaluate(() => {
+        const btn = [...document.querySelectorAll("a,button")].find((x) =>
+          /^(Tài khoản Google|Google Account)/i.test(x.getAttribute("aria-label") || "")
+        );
+        return btn ? btn.getAttribute("aria-label") || "" : "";
+      }).catch(() => "");
+      const foundEmail = ((ariaLabel.match(/\(([^)\s]+@[^)\s]+)\)/) || [])[1] || "").trim().toLowerCase();
+      if (foundEmail !== wantEmail) continue;
+
+      const credInfo = await readCreditsOnPage(p).catch(() => null);
+      if (credInfo) {
+        recordPrefixHealthyCredits(realPrefix, credInfo.credits, wantEmail);
+      } else {
+        const map = getPrefixCreditsMap();
+        map[realPrefix] = { ...(map[realPrefix] || {}), email: wantEmail, updatedAt: Date.now() };
+      }
+
+      let pids = await p.evaluate(() => [
+        ...new Set(
+          [...document.querySelectorAll('a[href*="/project/"]')]
+            .map((el) => (el.href.match(/\/project\/([0-9a-f-]{36})/) || [])[1])
+            .filter(Boolean)
+        ),
+      ]).catch(() => []);
+
+      while (pids.length < 4) {
+        await p.goto(`${HOME}${realPrefix}`, { waitUntil: "domcontentloaded" }).catch(() => {});
+        await sleep(1600);
+        const clicked = await p.evaluate(() => {
+          const btn = document.querySelector("button.new-project-button") ||
+            [...document.querySelectorAll("button")].find((x) => /Dự án mới|New project/i.test(x.innerText || ""));
+          if (!btn) return false;
+          btn.click();
+          return true;
+        }).catch(() => false);
+        if (!clicked) break;
+        for (let w = 0; w < 20; w++) {
+          await sleep(450);
+          const nid = projectOf(p.url());
+          if (nid) {
+            if (!pids.includes(nid)) pids.push(nid);
+            break;
+          }
+        }
+      }
+
+      if (pids.length > 0) {
+        const prefTargets = pids.slice(0, 4).map((pid) => ({ prefix: realPrefix, projectId: pid, email: wantEmail }));
+        const others = (a.workerTargets || []).filter((t) => t && t.prefix !== realPrefix);
+        a.workerTargets = [...prefTargets, ...others];
+        a.userPrefix = realPrefix;
+        a.projectId = pids[0];
+        a.email = wantEmail;
+        saveConfig();
+        console.log(`[flow:Priority#1] Đã ghim tài khoản ưu tiên số 1 ${wantEmail} (${realPrefix}, ${pids.length} dự án) lên đầu hệ thống!`);
+        return realPrefix;
+      }
+    } finally {
+      await p.close().catch(() => {});
+    }
+  }
+  return null;
+}
+
 // Quét tự động u/0 .. u/7 trong Brave chính để tìm thêm nick Google mới đăng nhập còn điểm Flow và tự tạo dự án cho nick đó!
 async function discoverMoreGoogleNicksInBrave(kind = "video", skipPrefixes = new Set()) {
   const a = acct();
@@ -726,7 +870,7 @@ async function discoverMoreGoogleNicksInBrave(kind = "video", skipPrefixes = new
   for (let idx = 0; idx <= 7; idx++) {
     const candPrefix = `u/${idx}/`;
     if (skipPrefixes.has(candPrefix)) continue;
-    const p = await createBackgroundPage(b, `https://flow.google.com/?authuser=${idx}`);
+    const p = await createBackgroundPage(b, `https://flow.google.com/u/${idx}/`);
     try {
       await sleep(3200);
       const landUrl = p.url() || "";
@@ -892,9 +1036,12 @@ async function ensureSlotProjectPage(slotIdx, kind = "video", triedPrefixes = ne
   const targetUrl = `${HOME}${targetPrefix}project/${targetPid}`;
 
   let page = flowSlotPages[slotIdx];
-  if (page && page.isClosed()) {
-    page = null;
-    flowSlotPages[slotIdx] = null;
+  if (page) {
+    const alive = !page.isClosed() && (await page.evaluate("1").catch(() => null)) === 1;
+    if (!alive) {
+      page = null;
+      flowSlotPages[slotIdx] = null;
+    }
   }
   if (!page) {
     const pages = await b.pages();
@@ -1289,4 +1436,4 @@ function destroy() {
   // không đóng Chrome của Flow: người dùng có thể đang dùng; phiên đăng nhập nằm trong profile riêng
 }
 
-module.exports = { setup, destroy, show, ensureBrowser, debugAlive, withUiFocusLock, ensureWindowOnScreen, createBackgroundPage, generateImageFallback };
+module.exports = { setup, destroy, show, ensureBrowser, debugAlive, withUiFocusLock, ensureWindowOnScreen, createBackgroundPage, generateImageFallback, sweepIdleFlowTabs };

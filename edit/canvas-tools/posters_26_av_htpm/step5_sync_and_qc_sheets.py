@@ -9,7 +9,7 @@ from PIL import Image, ImageDraw, ImageFont
 PROJ = r"d:\AI\full studio\projects\av_htpm_26_posters_2211"
 OUT_ROOT = os.path.join(PROJ, "Final_Deliverables")
 AUDIT_DIR = os.path.join(PROJ, "audit")
-SAMPLE_REF = r"C:\Users\001\.gemini\antigravity\brain\8c410fa3-31d5-47df-8611-fc1b3fad1994\.user_uploaded\media_1795363232203_c85550ff.jpg"
+SAMPLE_REF = os.path.expanduser(r"~\.gemini\antigravity\brain\8c410fa3-31d5-47df-8611-fc1b3fad1994\.user_uploaded\media_1795363232203_c85550ff.jpg")
 FONT_BOLD = r"d:\AI\full studio\BO_KIEN_THUC_TVC_AI_PORTABLE\03_TAI_NGUYEN_DUNG_CHUNG\fonts_tvc_vi\BeVietnamPro-Bold.ttf"
 
 def make_grid(img_paths: list, cols: int, thumb_w: int, thumb_h: int, out_path: str):

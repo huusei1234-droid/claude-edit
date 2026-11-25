@@ -1,0 +1,120 @@
+/* ============================================================================
+ * BỘ PRESET CHỮ GRADIENT ĐA TẦNG CAO CẤP (CHUẨN TVC & REELS - ZERO STROKE LOSS)
+ * Nguyên tắc vàng: Luôn tách Lớp Đế Viền/3D (.grad-back) và Lớp Ruột Gradient (.grad-front)
+ * chồng khít lên nhau để viền trắng/3D KHÔNG BAO GIỜ ăn lẹm vào màu Gradient của chữ!
+ * ============================================================================ */
+
+.grad-wrap {
+  position: relative;
+  display: inline-block;
+}
+
+/* Lớp 1 (Dưới): Viền nổi sạch + Đùn khối 3D nhẹ tách nền 100% */
+.grad-back {
+  display: block;
+  user-select: none;
+  paint-order: stroke fill;
+  -webkit-text-stroke: 12px #ffffff;
+  color: #ffffff;
+  filter: drop-shadow(0 6px 14px rgba(32, 6, 22, 0.36));
+}
+
+/* Lớp 2 (Trên): Bề mặt Gradient 5 điểm dừng + Tia quét sáng ánh kim (Sheen Sweep) */
+.grad-front {
+  position: absolute;
+  inset: 0;
+  display: block;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  background-size: 240% 100%, 100% 100%;
+  background-position: -130% 0, 0 0;
+}
+
+/* 1. Vàng Kim Hoàng Gia (Luxury Champagne Gold) */
+.grad-gold {
+  background-image:
+    linear-gradient(115deg, rgba(255,255,255,0) 34%, rgba(255,255,255,0.95) 50%, rgba(255,255,255,0) 66%),
+    linear-gradient(180deg, #FFFDF2 0%, #FCE181 25%, #D69228 52%, #FFEBA8 76%, #9A5E0C 100%);
+}
+
+/* 2. Hồng Cánh Sen Lụa Satin (Lotus Rose Satin - Chuẩn Hằng Thu) */
+.grad-rose-satin {
+  background-image:
+    linear-gradient(115deg, rgba(255,255,255,0) 34%, rgba(255,255,255,0.92) 50%, rgba(255,255,255,0) 66%),
+    linear-gradient(180deg, #FFE6F3 0%, #F96AB5 24%, #C8126E 52%, #FF9ED2 76%, #7D0845 100%);
+}
+
+/* 3. Xanh Sapphire Băng Giá (Sapphire Whitening / Skincare) */
+.grad-sapphire {
+  background-image:
+    linear-gradient(115deg, rgba(255,255,255,0) 34%, rgba(255,255,255,0.94) 50%, rgba(255,255,255,0) 66%),
+    linear-gradient(180deg, #EDFAFF 0%, #68D2FF 25%, #0B63E5 52%, #A6E5FF 76%, #073482 100%);
+}
+
+/* 4. Cam Đào Rạng Rỡ (Coral Sunset Hook / Thanh Xuân) */
+.grad-coral-peach {
+  background-image:
+    linear-gradient(115deg, rgba(255,255,255,0) 34%, rgba(255,255,255,0.92) 50%, rgba(255,255,255,0) 66%),
+    linear-gradient(180deg, #FFF5E8 0%, #FF9F5A 25%, #E64422 52%, #FFC89E 76%, #8C1B08 100%);
+}
+
+/* 5. Xanh Ngọc Thảo Dược (Emerald Botanical) */
+.grad-emerald {
+  background-image:
+    linear-gradient(115deg, rgba(255,255,255,0) 34%, rgba(255,255,255,0.92) 50%, rgba(255,255,255,0) 66%),
+    linear-gradient(180deg, #EAFFF8 0%, #5CE0B5 25%, #0D9668 52%, #A2F5D8 76%, #06563C 100%);
+}
+
+/* 6. Tím Ngọc Trai Kiêu Sa (Pearl Violet Luxury) */
+.grad-pearl-violet {
+  background-image:
+    linear-gradient(115deg, rgba(255,255,255,0) 34%, rgba(255,255,255,0.94) 50%, rgba(255,255,255,0) 66%),
+    linear-gradient(180deg, #FFFFFF 0%, #DFCAFF 25%, #8446E3 52%, #EFE5FF 76%, #45188A 100%);
+}
+
+/* 7. Quầng Sáng Băng Ngọc Tâm Giữa (Podcast × BĐS Cyan-Ice Spotlight — Chuẩn @lopphovlog) */
+.grad-cyan-ice-spotlight {
+  background-image: radial-gradient(
+    ellipse 58% 92% at 50% 56%,
+    #9EFFFF 0%,
+    #35F2DF 28%,
+    #24AEE0 56%,
+    #1F42A6 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 0 24px rgba(46, 232, 228, 0.28));
+}
+
+/* Khung Chữ Kép Podcast × BĐS (Chữ lớn Spotlight + Chữ ký trắng đè chân hoặc gác vai trái) */
+.podcast-sig-lockup {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.podcast-sig-lockup .sig-main {
+  line-height: 0.92;
+  letter-spacing: -0.01em;
+}
+.podcast-sig-lockup .sig-script {
+  position: absolute;
+  color: #ffffff;
+  white-space: nowrap;
+  pointer-events: none;
+  text-shadow:
+    0 3px 10px rgba(4, 8, 22, 0.88),
+    0 0 14px rgba(255, 242, 210, 0.45);
+}
+.podcast-sig-lockup.mode-bottom-center .sig-script {
+  top: 60%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.podcast-sig-lockup.mode-top-left .sig-script {
+  top: -32%;
+  left: 2%;
+}

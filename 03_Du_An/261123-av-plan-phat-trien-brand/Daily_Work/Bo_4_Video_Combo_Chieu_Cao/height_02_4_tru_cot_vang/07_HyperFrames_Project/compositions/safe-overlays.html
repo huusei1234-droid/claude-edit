@@ -1,0 +1,116 @@
+<template>
+  <style>
+    
+@font-face { font-family: 'BeVN'; src: url('assets/fonts/BeVietnamPro-SemiBold.ttf') format('truetype'); font-weight: 600; }
+@font-face { font-family: 'BeVN'; src: url('assets/fonts/BeVietnamPro-Bold.ttf') format('truetype'); font-weight: 700; }
+@font-face { font-family: 'BeVN'; src: url('assets/fonts/BeVietnamPro-ExtraBold.ttf') format('truetype'); font-weight: 800; }
+@font-face { font-family: 'MontBlk'; src: url('assets/fonts/Montserrat-Black.ttf') format('truetype'); font-weight: 900; }
+
+    * { box-sizing: border-box; }
+    #root { position: absolute; inset: 0; width: 1080px; height: 1920px; overflow: hidden; pointer-events: none; font-family: 'BeVN', sans-serif; }
+
+    .big-hook-wrap {
+      position: absolute; bottom: 404px; left: 56px; width: 814px;
+      display: flex; flex-direction: column; align-items: center; text-align: center;
+      padding: 20px 18px 22px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.24) 0%, rgba(255,255,255,0.68) 100%);
+      backdrop-filter: blur(6px);
+      border: 3px solid rgba(255,255,255,0.85); border-radius: 30px;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.28); z-index: 20;
+    }
+    .bh-badge {
+      background: linear-gradient(135deg, #064F34, #0F7B54); color: #FFF8D6; border: 3px solid #FFE288;
+      border-radius: 999px; padding: 9px 26px; font-weight: 800; font-size: 24px;
+      letter-spacing: 0.6px; box-shadow: 0 8px 20px rgba(0,0,0,0.28); margin-bottom: 12px;
+    }
+    .bh-l1 {
+      font-family: 'BeVN', 'MontBlk', sans-serif; font-weight: 800; font-size: 58px; line-height: 1.06;
+      color: #05472F; white-space: nowrap;
+      -webkit-text-stroke: 13px #FFFFFF; paint-order: stroke fill;
+      filter: drop-shadow(0 8px 16px rgba(0,0,0,0.34));
+    }
+    .bh-l2 {
+      font-family: 'BeVN', 'MontBlk', sans-serif; font-weight: 800; font-size: 56px; line-height: 1.08;
+      margin-top: 6px; color: #D91A26; white-space: nowrap;
+      -webkit-text-stroke: 14px #FFFFFF; paint-order: stroke fill;
+      filter: drop-shadow(0 10px 20px rgba(0,0,0,0.38));
+    }
+
+    .brand-chip {
+      position: absolute; top: 258px; left: 58px; opacity: 0;
+      display: flex; align-items: center; gap: 12px;
+      background: rgba(255,255,255,0.94); border: 2.5px solid #E2B448;
+      border-radius: 18px; padding: 8px 18px;
+      box-shadow: 0 8px 22px rgba(0,0,0,0.20);
+    }
+    .brand-chip img { height: 48px; width: auto; display: block; }
+    .brand-chip span { font-weight: 800; font-size: 20px; color: #064D33; letter-spacing: 0.4px; }
+
+    .safe-card {
+      position: absolute; left: 58px; bottom: 396px; width: 812px;
+      background: linear-gradient(145deg, rgba(5,48,34,0.90) 0%, rgba(12,84,58,0.86) 100%);
+      border: 2.5px solid #F0CA65; border-left: 9px solid #FCE078;
+      border-radius: 24px; padding: 20px 24px;
+      box-shadow: 0 14px 32px rgba(0,0,0,0.38); opacity: 0;
+    }
+    .sc-tag { font-weight: 800; font-size: 21px; color: #FCE186; letter-spacing: 0.8px; text-transform: uppercase; margin-bottom: 6px; }
+    .sc-big { font-family: 'BeVN', 'MontBlk', sans-serif; font-weight: 800; font-size: 40px; line-height: 1.12; color: #FFFFFF; text-shadow: 0 3px 10px rgba(0,0,0,0.38); }
+    .sc-sub { font-weight: 600; font-size: 23px; color: #EFFBF4; margin-top: 6px; line-height: 1.24; }
+  </style>
+  <div id="root" data-composition-id="safe-overlays" data-width="1080" data-height="1920" data-start="0" data-duration="60.0">
+    <div id="big-hook" class="big-hook-wrap" data-layout-ignore>
+      <div class="bh-badge">★ 4 TRỤ CỘT VÀNG CHO GIA ĐÌNH ★</div>
+      <div class="bh-l1">CHĂM CHIỀU CAO CHUẨN</div>
+      <div class="bh-l2">ĐỪNG CHỈ UỐNG CANXI LẺ!</div>
+    </div>
+    <div id="top-brand" class="brand-chip" data-layout-ignore>
+      <img src="assets/images/logo_an_vuong_orig.png" alt="An Vuong" />
+      <span>4 TRỤ CỘT CHIỀU CAO</span>
+    </div>
+    
+      <div id="c2" class="safe-card" data-layout-ignore>
+        <div class="sc-tag">KHOA HỌC PHÁT TRIỂN</div>
+        <div class="sc-big">4 TRỤ CỘT QUYẾT ĐỊNH CHIỀU CAO</div>
+        <div class="sc-sub">Bữa ăn đủ chất • Ngủ trước 22h • Vận động • Di truyền</div>
+      </div>
+      <div id="c3" class="safe-card" data-layout-ignore>
+        <div class="sc-tag">BỘ ĐÔI CHỦ LỰC</div>
+        <div class="sc-big">BOJOMI & AV PROTEIN</div>
+        <div class="sc-sub">Bổ sung nền tảng Canxi & Đạm thực vật minh bạch chỉ số</div>
+      </div>
+      <div id="c4" class="safe-card" data-layout-ignore>
+        <div class="sc-tag">KIỀNG 3 CHÂN XƯƠNG KHỚP</div>
+        <div class="sc-big">CANXI AQUAMIN F + D3 + K2 MK-7</div>
+        <div class="sc-sub">417,6mg Canxi tảo biển hỗ trợ chăm sóc hệ xương vững chắc</div>
+      </div>
+      <div id="c5" class="safe-card" data-layout-ignore>
+        <div class="sc-tag">ĐẠM THỰC VẬT LÀNH TÍNH</div>
+        <div class="sc-big">ĐẬU HÀ LAN & GẠO + LỢI KHUẨN B-3</div>
+        <div class="sc-sub">Êm bụng, dễ tiêu hóa, hỗ trợ khối cơ khỏe mạnh</div>
+      </div>
+      <div id="c6" class="safe-card" data-layout-ignore>
+        <div class="sc-tag">AN TOÀN & CHUẨN NHÃN</div>
+        <div class="sc-big">ĐỌC KỸ NHÃN THEO ĐỘ TUỔI</div>
+        <div class="sc-sub">Kết hợp chế độ ăn đa dạng & tham vấn chuyên gia cho bé</div>
+      </div>
+  </div>
+  <script>
+    window.__timelines = window.__timelines || {};
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#big-hook", { scale: 0.94, y: 8 }, { scale: 1.0, y: 0, duration: 0.28, ease: "back.out(1.4)" }, 0.0)
+      .to("#big-hook", { opacity: 0, y: -18, filter: "blur(12px)", duration: 0.26, ease: "power2.in" }, 5.84);
+    tl.fromTo("#top-brand", { opacity: 0, y: -12 }, { opacity: 1, y: 0, duration: 0.30, ease: "power2.out", immediateRender: false }, 0.12)
+      .to("#top-brand", { opacity: 0, duration: 0.25 }, 50.22);
+    tl.fromTo("#c2", { opacity: 0, y: 26, scale: 0.94, filter: "blur(14px)" }, { opacity: 1, y: 0, scale: 1.0, filter: "blur(0px)", duration: 0.28, ease: "power3.out", immediateRender: false }, 6.47)
+      .to("#c2", { opacity: 0, y: -10, filter: "blur(10px)", duration: 0.22, ease: "power2.in" }, 15.45);
+    tl.fromTo("#c3", { opacity: 0, y: 26, scale: 0.94, filter: "blur(14px)" }, { opacity: 1, y: 0, scale: 1.0, filter: "blur(0px)", duration: 0.28, ease: "power3.out", immediateRender: false }, 16.22)
+      .to("#c3", { opacity: 0, y: -10, filter: "blur(10px)", duration: 0.22, ease: "power2.in" }, 23.45);
+    tl.fromTo("#c4", { opacity: 0, y: 26, scale: 0.94, filter: "blur(14px)" }, { opacity: 1, y: 0, scale: 1.0, filter: "blur(0px)", duration: 0.28, ease: "power3.out", immediateRender: false }, 24.22)
+      .to("#c4", { opacity: 0, y: -10, filter: "blur(10px)", duration: 0.22, ease: "power2.in" }, 31.95);
+    tl.fromTo("#c5", { opacity: 0, y: 26, scale: 0.94, filter: "blur(14px)" }, { opacity: 1, y: 0, scale: 1.0, filter: "blur(0px)", duration: 0.28, ease: "power3.out", immediateRender: false }, 32.72)
+      .to("#c5", { opacity: 0, y: -10, filter: "blur(10px)", duration: 0.22, ease: "power2.in" }, 41.45);
+    tl.fromTo("#c6", { opacity: 0, y: 26, scale: 0.94, filter: "blur(14px)" }, { opacity: 1, y: 0, scale: 1.0, filter: "blur(0px)", duration: 0.28, ease: "power3.out", immediateRender: false }, 42.22)
+      .to("#c6", { opacity: 0, y: -10, filter: "blur(10px)", duration: 0.22, ease: "power2.in" }, 49.95);
+    window.__timelines["safe-overlays"] = tl;
+  </script>
+</template>

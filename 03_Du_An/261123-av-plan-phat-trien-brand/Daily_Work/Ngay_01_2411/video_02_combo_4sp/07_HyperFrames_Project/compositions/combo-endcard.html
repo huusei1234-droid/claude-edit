@@ -1,0 +1,163 @@
+<template>
+  <style>
+    
+@font-face { font-family: 'BeVN'; src: url('assets/fonts/BeVietnamPro-SemiBold.ttf') format('truetype'); font-weight: 600; }
+@font-face { font-family: 'BeVN'; src: url('assets/fonts/BeVietnamPro-Bold.ttf') format('truetype'); font-weight: 700; }
+@font-face { font-family: 'BeVN'; src: url('assets/fonts/BeVietnamPro-ExtraBold.ttf') format('truetype'); font-weight: 800; }
+@font-face { font-family: 'MontBlk'; src: url('assets/fonts/Montserrat-Black.ttf') format('truetype'); font-weight: 900; }
+@font-face { font-family: 'PlayfairBI'; src: url('assets/fonts/PlayfairDisplay-BoldItalic.ttf') format('truetype'); font-weight: 700; font-style: italic; }
+@font-face { font-family: 'FrauncesBlk'; src: url('assets/fonts/Fraunces-Black.ttf') format('truetype'); font-weight: 900; }
+
+    * { box-sizing: border-box; }
+    #root {
+      position: absolute; inset: 0; width: 1080px; height: 1920px; overflow: hidden;
+      background: linear-gradient(170deg, #073882 0%, #0D54B5 38%, #063827 100%);
+      font-family: 'BeVN', sans-serif;
+    }
+    .stage-bg {
+      position: absolute; inset: 0; width: 1080px; height: 1920px;
+      object-fit: cover; opacity: 0.26;
+    }
+    .hdr-wrap {
+      position: absolute; top: 256px; left: 58px; right: 58px;
+      display: flex; flex-direction: column; align-items: center; text-align: center;
+    }
+    .logo-bar {
+      background: rgba(255,255,255,0.96); border: 2.5px solid #E5B442; border-radius: 20px;
+      padding: 8px 24px; display: inline-flex; align-items: center; gap: 16px;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.22);
+    }
+    .logo-bar img { height: 60px; width: auto; }
+    .logo-bar span { font-weight: 800; font-size: 32px; color: #1665F2; }
+    .ec-h1 {
+      margin-top: 16px; font-weight: 800; font-size: 54px; line-height: 1.1; color: #FFF8D4;
+      text-shadow: 0 4px 16px rgba(0,0,0,0.38);
+    }
+    .ec-sub { font-weight: 700; font-size: 25px; color: #DDF6EC; margin-top: 6px; }
+
+    /* 4 REAL IS-Net Boxes + PLUS + Gift Collamela 20 gói (strictly X=58..874 <= 884px, 0% touch right buttons!) */
+    .combo-stage {
+      position: absolute; top: 512px; left: 58px; width: 816px; height: 498px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.16) 0%, rgba(255,255,255,0.06) 100%);
+      border: 2.5px solid rgba(246,208,104,0.72); border-radius: 30px;
+      display: flex; align-items: center; justify-content: space-between; padding: 20px 22px;
+      box-shadow: 0 20px 44px rgba(0,0,0,0.28);
+    }
+    .four-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 12px 14px; align-items: end;
+    }
+    .four-grid img { height: 196px; width: auto; filter: drop-shadow(0 12px 18px rgba(0,0,0,0.38)); }
+    .plus-dot {
+      width: 56px; height: 56px; border-radius: 50%; flex-shrink: 0;
+      background: linear-gradient(145deg, #FF3B3B, #B00C18); border: 4px solid #FFFFFF;
+      color: #FFFFFF; font-weight: 800; font-size: 40px;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 10px 22px rgba(176,12,24,0.45);
+    }
+    .gift-col { display: flex; flex-direction: column; align-items: center; width: 290px; }
+    .gift-badge {
+      background: linear-gradient(135deg, #E8232E, #A60A15); color: #FFF8DC;
+      border: 3px solid #FFE288; border-radius: 999px; padding: 6px 18px;
+      font-weight: 800; font-size: 20px; margin-bottom: 8px; white-space: nowrap;
+      box-shadow: 0 8px 18px rgba(166,10,21,0.42);
+    }
+    .gift-col img { height: 274px; width: auto; filter: drop-shadow(0 16px 26px rgba(0,0,0,0.45)); }
+    .gift-val {
+      margin-top: 8px; background: #06452D; border: 2px solid #F4CC62; border-radius: 999px;
+      padding: 5px 14px; font-weight: 800; font-size: 17px; color: #FFF4C2; white-space: nowrap;
+    }
+
+    /* Lower-left Safe Deal Card (X=58..874, bottom <= 1538px!) */
+    .deal-card {
+      position: absolute; left: 58px; top: 1044px; width: 816px;
+      background: linear-gradient(155deg, rgba(255,255,255,0.97), rgba(255,248,228,0.97));
+      border: 3.5px solid #E5B442; border-radius: 28px; padding: 20px 26px;
+      box-shadow: 0 18px 38px rgba(0,0,0,0.35);
+    }
+    .price-row { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+    .p-lbl { font-weight: 800; font-size: 21px; color: #074C32; }
+    .p-num { font-weight: 800; font-size: 56px; line-height: 1.04; color: #0B40A8; }
+    .save-box {
+      background: linear-gradient(135deg, #E6222B, #A80A16); border: 2.5px solid #FFE288;
+      border-radius: 18px; padding: 12px 20px; text-align: center;
+    }
+    .s-1 { font-weight: 800; font-size: 18px; color: #FFF3B0; }
+    .s-2 { font-weight: 800; font-size: 32px; color: #FFFFFF; line-height: 1.08; }
+
+    .droppii-note {
+      margin-top: 16px; background: linear-gradient(90deg, #074F34, #0E744E);
+      border: 2.5px solid #F2CC66; border-radius: 18px; padding: 14px 20px;
+      text-align: center;
+    }
+    .dn-1 { font-weight: 800; font-size: 24px; color: #FFF5C2; }
+    .dn-2 { font-weight: 700; font-size: 20px; color: #FFFFFF; margin-top: 4px; }
+
+    .ec-legal {
+      position: absolute; left: 58px; top: 1446px; width: 816px;
+      font-weight: 600; font-size: 19px; line-height: 1.32; color: #E2F5EB;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.45);
+    }
+  </style>
+  <div id="root" data-composition-id="combo-endcard" data-width="1080" data-height="1920" data-start="0" data-duration="12.75">
+    <img class="stage-bg" src="assets/images/stage_bg.png" alt="Stage" />
+    <div id="ce-hdr" class="hdr-wrap" data-layout-ignore>
+      <div class="logo-bar">
+        <img src="assets/images/logo_an_vuong_orig.png" alt="An Vuong" />
+        <span>× droppii 8 Tuổi</span>
+      </div>
+      <div class="ec-h1">COMBO 4 SẢN PHẨM TOÀN DIỆN</div>
+      <div class="ec-sub">Chăm trọn Đạm • Xương Khớp • Tiêu Hóa • Làn Da</div>
+    </div>
+
+    <div id="ce-stage" class="combo-stage" data-layout-ignore>
+      <div class="four-grid">
+        <img id="cb1" src="assets/images/av01_protein_a.png" alt="AV Protein" />
+        <img id="cb2" src="assets/images/av02_bojomi_a.png" alt="Bojomi" />
+        <img id="cb3" src="assets/images/av04_curcumilk_a.png" alt="Curcumilk" />
+        <img id="cb4" src="assets/images/av03_collamela_a.png" alt="Collamela" />
+      </div>
+      <div id="cplus" class="plus-dot">+</div>
+      <div id="cgift" class="gift-col">
+        <div class="gift-badge">★ TẶNG NGAY</div>
+        <img src="assets/images/av03_collamela_a.png" alt="Collamela 20 Goi" />
+        <div class="gift-val">COLLAMELA 20 GÓI • 920K</div>
+      </div>
+    </div>
+
+    <div id="ce-deal" class="deal-card" data-layout-ignore>
+      <div class="price-row">
+        <div>
+          <div class="p-lbl">TỔNG COMBO 4 SẢN PHẨM</div>
+          <div class="p-num">2.440.000đ</div>
+        </div>
+        <div class="save-box">
+          <div class="s-1">TIẾT KIỆM NGAY</div>
+          <div class="s-2">920.000đ</div>
+        </div>
+      </div>
+      <div class="droppii-note">
+        <div class="dn-1">✓ CHỌN ĐÚNG MÃ COMBO TRÊN APP DROPPII</div>
+        <div class="dn-2">Áp dụng 23/11 – 30/11/2026 • Kiểm tra hiện quà 0đ trước khi chốt đơn</div>
+      </div>
+    </div>
+
+    <div id="ce-legal" class="ec-legal" data-layout-ignore>
+      Thực phẩm bổ sung. Không phải là thuốc và không có tác dụng thay thế thuốc chữa bệnh. • Hotline: 0867 399 268 • anvuongpharma.vn
+    </div>
+  </div>
+  <script>
+    window.__timelines = window.__timelines || {};
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#ce-hdr",   { opacity: 0, y: -20 }, { opacity: 1, y: 0, duration: 0.40, ease: "power3.out", immediateRender: false }, 0.08)
+      .fromTo("#ce-stage", { opacity: 0, scale: 0.94 }, { opacity: 1, scale: 1.0, duration: 0.42, ease: "power3.out", immediateRender: false }, 0.18)
+      .fromTo("#cb1", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.30, ease: "back.out(1.4)", immediateRender: false }, 0.28)
+      .fromTo("#cb2", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.30, ease: "back.out(1.4)", immediateRender: false }, 0.40)
+      .fromTo("#cb3", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.30, ease: "back.out(1.4)", immediateRender: false }, 0.52)
+      .fromTo("#cb4", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.30, ease: "back.out(1.4)", immediateRender: false }, 0.64)
+      .fromTo("#cplus", { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1.0, duration: 0.28, ease: "back.out(1.7)", immediateRender: false }, 0.78)
+      .fromTo("#cgift", { opacity: 0, y: 30, scale: 0.88 }, { opacity: 1, y: 0, scale: 1.0, duration: 0.42, ease: "back.out(1.4)", immediateRender: false }, 0.90)
+      .fromTo("#ce-deal", { opacity: 0, y: 28, filter: "blur(10px)" }, { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.40, ease: "power3.out", immediateRender: false }, 1.05)
+      .fromTo("#ce-legal", { opacity: 0 }, { opacity: 1, duration: 0.30, immediateRender: false }, 1.25);
+    window.__timelines["combo-endcard"] = tl;
+  </script>
+</template>

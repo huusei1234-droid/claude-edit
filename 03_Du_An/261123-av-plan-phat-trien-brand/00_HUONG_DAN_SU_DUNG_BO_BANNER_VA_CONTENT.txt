@@ -1,0 +1,26 @@
+HƯỚNG DẪN SỬ DỤNG NHANH — BỘ TÀI NGUYÊN AN VƯỢNG PHARMA (24/11 – 23/12/2026)
+=============================================================================
+
+1. THƯ MỤC [01_Bo_6_Banner_CTKM_23_30_11_Va_The_Len_Don]
+   - Gồm 6 Banner CTKM Mừng Sinh Nhật Droppii 8 Tuổi (23/11 – 30/11/2026):
+     100% ảnh hộp sản phẩm thật độ phân giải cao (0% lỗi chữ AI trên bao bì),
+     đầy đủ giá combo, quà tặng & dòng khuyến cáo TPBS chuẩn luật.
+   - Gồm 1 Thẻ "07 - Hướng Dẫn 3 Bước Lên Đơn Combo Droppii" (chống đặt nhầm mã lẻ,
+     kèm bảng tra cứu nhanh 6 mức combo để ghim/đăng kèm album CTKM).
+   - Thư mục con [File_PSD_Chinh_Sua_Da_Layer]: trọn bộ 7 file .PSD tách 4 layer
+     riêng biệt (Nền / Hộp SP thật / Nơ & Khung / Logo & Chữ) để chỉnh sửa bất kỳ
+     lúc nào trên Photoshop (ví dụ khi gia hạn ngày sang tháng 12 hoặc đổi giá).
+
+2. THƯ MỤC [02_Bo_Content_4_Ngay_Va_Lich_30_Ngay_Tet]
+   - 4 thư mục đóng gói sẵn theo từng ngày (theo chỉ đạo CT Hằng 22/11):
+     • Ngay_01_2411_AV_Protein/        (Đăng 08h00 sáng 24/11)
+     • Ngay_02_2511_Bojomi/            (Đăng 08h00 sáng 25/11)
+     • Ngay_03_2611_Collamela/         (Đăng 08h00 sáng 26/11)
+     • Ngay_04_2711_Curcumilk_Phyto/   (Đăng 08h00 sáng 27/11)
+     Trong mỗi thư mục đã có sẵn 2 tấm Infographic chuẩn + file .txt bài Admin đăng nhóm
+     + file .txt bài mẫu cho đại lý copy-paste + kịch bản trả lời 3 câu hỏi khó Inbox.
+   - 00_BO_4_NGAY_DANG_NHOM_CONTENT_24_27_11.md : Bản tổng hợp đủ 4 ngày.
+   - 01_LICH_CONTENT_30_NGAY_DON_TET_2027_CHUAN_LUAT.md : Lịch chi tiết 30 ngày
+     (24/11 – 23/12/2026) + 10 bài chuyển đổi chủ lực viết sẵn.
+   - 02_TU_DIEN_PHAP_LY_TPBS_VA_HUONG_DAN_DANG_BAI.md : 20 cặp câu Vùng Đỏ → Vùng Xanh
+     giúp 100% đại lý đăng bài chuẩn luật TPBS.

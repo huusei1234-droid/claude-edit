@@ -1,0 +1,128 @@
+<template>
+  <style>
+    
+@font-face { font-family: 'BeVN'; src: url('assets/fonts/BeVietnamPro-SemiBold.ttf') format('truetype'); font-weight: 600; }
+@font-face { font-family: 'BeVN'; src: url('assets/fonts/BeVietnamPro-Bold.ttf') format('truetype'); font-weight: 700; }
+@font-face { font-family: 'BeVN'; src: url('assets/fonts/BeVietnamPro-ExtraBold.ttf') format('truetype'); font-weight: 800; }
+@font-face { font-family: 'MontBlk'; src: url('assets/fonts/Montserrat-Black.ttf') format('truetype'); font-weight: 900; }
+
+    * { box-sizing: border-box; }
+    #root { position: absolute; inset: 0; width: 1080px; height: 1920px; overflow: hidden; pointer-events: none; font-family: 'BeVN', sans-serif; }
+
+    /* MASSIVE OPENING BIG TEXT HOOK (Frame 0 visible! Sits lower-chest X=56..870px, Y~1120..1512px: 100% Safe Zone & 0% covering face!) */
+    .big-hook-wrap {
+      position: absolute; bottom: 404px; left: 56px; width: 814px;
+      display: flex; flex-direction: column; align-items: center; text-align: center;
+      padding: 20px 18px 22px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.22) 0%, rgba(255,255,255,0.62) 100%);
+      backdrop-filter: blur(6px);
+      border: 3px solid rgba(255,255,255,0.82); border-radius: 30px;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.28);
+      z-index: 20;
+    }
+    .bh-badge {
+      background: linear-gradient(135deg, #A3144F, #DF2D72); color: #FFF8D6; border: 3px solid #FFE288;
+      border-radius: 999px; padding: 9px 28px; font-weight: 800; font-size: 25px;
+      letter-spacing: 0.7px; box-shadow: 0 8px 20px rgba(0,0,0,0.28); margin-bottom: 12px;
+    }
+    .bh-l1 {
+      font-family: 'BeVN', 'MontBlk', sans-serif; font-weight: 800; font-size: 60px; line-height: 1.06;
+      color: #7C0839; white-space: nowrap;
+      -webkit-text-stroke: 13px #FFFFFF; paint-order: stroke fill;
+      filter: drop-shadow(0 8px 16px rgba(0,0,0,0.34));
+    }
+    .bh-l2 {
+      font-family: 'BeVN', 'MontBlk', sans-serif; font-weight: 800; font-size: 76px; line-height: 1.08;
+      margin-top: 6px; color: #D91A42; white-space: nowrap;
+      -webkit-text-stroke: 14px #FFFFFF; paint-order: stroke fill;
+      filter: drop-shadow(0 10px 20px rgba(0,0,0,0.38));
+    }
+
+    /* Top-Left Brand Chip (appears right after Opening Hook clears at ~4.0s!) */
+    .brand-chip {
+      position: absolute; top: 258px; left: 58px; opacity: 0;
+      display: flex; align-items: center; gap: 12px;
+      background: rgba(255,255,255,0.94); border: 2.5px solid #E2B448;
+      border-radius: 18px; padding: 8px 18px;
+      box-shadow: 0 8px 22px rgba(0,0,0,0.20);
+    }
+    .brand-chip img { height: 48px; width: auto; display: block; }
+    .brand-chip span { font-weight: 800; font-size: 20px; color: #9A0F4A; letter-spacing: 0.4px; }
+
+    /* Lower-Left Safe Callout Card (strict border-box X=58..870px <= 884px, bottom Y <= 1526px <= 1548px!) */
+    .safe-card {
+      position: absolute; left: 58px; bottom: 396px; width: 812px;
+      background: linear-gradient(145deg, rgba(96,10,48,0.90) 0%, rgba(148,22,74,0.86) 100%);
+      border: 2.5px solid #F0CA65; border-left: 9px solid #FCE078;
+      border-radius: 24px; padding: 20px 24px;
+      box-shadow: 0 14px 32px rgba(0,0,0,0.38); opacity: 0;
+    }
+    .sc-tag { font-weight: 800; font-size: 21px; color: #FCE186; letter-spacing: 0.8px; text-transform: uppercase; margin-bottom: 6px; }
+    .sc-big { font-family: 'BeVN', 'MontBlk', sans-serif; font-weight: 800; font-size: 42px; line-height: 1.12; color: #FFFFFF; text-shadow: 0 3px 10px rgba(0,0,0,0.38); }
+    .sc-sub { font-weight: 600; font-size: 24px; color: #EFFBF4; margin-top: 6px; line-height: 1.24; }
+  </style>
+  <div id="root" data-composition-id="safe-overlays" data-width="1080" data-height="1920" data-start="0" data-duration="49.5">
+    <div id="big-hook" class="big-hook-wrap" data-layout-ignore>
+      <div class="bh-badge">✦ CÒN 60 NGÀY TỚI TẾT 2027 ✦</div>
+      <div class="bh-l1">SẮP TIỆC MỚI CHĂM DA</div>
+      <div class="bh-l2">LÀ ĐÃ MUỘN RỒI!</div>
+    </div>
+    <div id="top-brand" class="brand-chip" data-layout-ignore>
+      <img src="assets/images/logo_an_vuong_orig.png" alt="An Vuong" />
+      <span>COLLAMELA VỊ ĐÀO</span>
+    </div>
+    
+      <div id="c2" class="safe-card" data-layout-ignore>
+        <div class="sc-tag">60 NGÀY ĐÓN TẾT XINH</div>
+        <div class="sc-big">NUÔI DA TỪ GỐC NGAY HÔM NAY</div>
+        <div class="sc-sub">Đừng đợi 28 Tết mới vội tìm cách cấp tốc!</div>
+      </div>
+      <div id="c3" class="safe-card" data-layout-ignore>
+        <div class="sc-tag">AN VƯỢNG PHARMA</div>
+        <div class="sc-big">COLLAMELA TRIPEPTIDE</div>
+        <div class="sc-sub">Collagen phân tử nhỏ giúp cơ thể dễ dàng hấp thu</div>
+      </div>
+      <div id="c4a" class="safe-card" data-layout-ignore>
+        <div class="sc-tag">BỘ 4 DƯỠNG CHẤT / 2 GÓI</div>
+        <div class="sc-big">2.530mg COLLAGEN • 25,68mg HA</div>
+        <div class="sc-sub">Kết hợp 87mg Vitamin C & 3,9mg Kẽm</div>
+      </div>
+      <div id="c4b" class="safe-card" data-layout-ignore>
+        <div class="sc-tag">CHĂM SẮC BỀN VỮNG</div>
+        <div class="sc-big">CẤP ẨM & ĐÀN HỒI LÀN DA</div>
+        <div class="sc-sub">Giúp da luôn ẩm mịn, tươi tắn rạng rỡ</div>
+      </div>
+      <div id="c5" class="safe-card" data-layout-ignore>
+        <div class="sc-tag">VỊ ĐÀO THANH MÁT</div>
+        <div class="sc-big">PHA 100ML — KHÔNG TANH</div>
+        <div class="sc-sub">Uống ngon mỗi ngày • Dạng gói tiện mang theo</div>
+      </div>
+      <div id="c6" class="safe-card" data-layout-ignore>
+        <div class="sc-tag">LỊCH TRÌNH ĐÓN TẾT</div>
+        <div class="sc-big">NGỦ SỚM + UỐNG ĐỀU MỖI NGÀY</div>
+        <div class="sc-sub">Rạng rỡ tự tin đón mọi buổi tiệc cuối năm</div>
+      </div>
+  </div>
+  <script>
+    window.__timelines = window.__timelines || {};
+    const tl = gsap.timeline({ paused: true });
+    // Opening Giant Hook: visible immediately on Frame 0 (pop punch-in 0.94 -> 1.00), cleanly exits at 3.85s
+    tl.fromTo("#big-hook", { scale: 0.94, y: 8 }, { scale: 1.0, y: 0, duration: 0.28, ease: "back.out(1.4)" }, 0.0)
+      .to("#big-hook", { opacity: 0, y: -18, filter: "blur(12px)", duration: 0.26, ease: "power2.in" }, 3.59);
+    tl.fromTo("#top-brand", { opacity: 0, y: -12 }, { opacity: 1, y: 0, duration: 0.30, ease: "power2.out", immediateRender: false }, 3.9)
+      .to("#top-brand", { opacity: 0, duration: 0.25 }, 39.47);
+    tl.fromTo("#c2", { opacity: 0, y: 26, scale: 0.94, filter: "blur(14px)" }, { opacity: 1, y: 0, scale: 1.0, filter: "blur(0px)", duration: 0.28, ease: "power3.out", immediateRender: false }, 4.25)
+      .to("#c2", { opacity: 0, y: -10, filter: "blur(10px)", duration: 0.22, ease: "power2.in" }, 10.83);
+    tl.fromTo("#c3", { opacity: 0, y: 26, scale: 0.94, filter: "blur(14px)" }, { opacity: 1, y: 0, scale: 1.0, filter: "blur(0px)", duration: 0.28, ease: "power3.out", immediateRender: false }, 11.75)
+      .to("#c3", { opacity: 0, y: -10, filter: "blur(10px)", duration: 0.22, ease: "power2.in" }, 17.43);
+    tl.fromTo("#c4a", { opacity: 0, y: 26, scale: 0.94, filter: "blur(14px)" }, { opacity: 1, y: 0, scale: 1.0, filter: "blur(0px)", duration: 0.28, ease: "power3.out", immediateRender: false }, 18.2)
+      .to("#c4a", { opacity: 0, y: -10, filter: "blur(10px)", duration: 0.22, ease: "power2.in" }, 22.03);
+    tl.fromTo("#c4b", { opacity: 0, y: 26, scale: 0.94, filter: "blur(14px)" }, { opacity: 1, y: 0, scale: 1.0, filter: "blur(0px)", duration: 0.28, ease: "power3.out", immediateRender: false }, 22.7)
+      .to("#c4b", { opacity: 0, y: -10, filter: "blur(10px)", duration: 0.22, ease: "power2.in" }, 26.28);
+    tl.fromTo("#c5", { opacity: 0, y: 26, scale: 0.94, filter: "blur(14px)" }, { opacity: 1, y: 0, scale: 1.0, filter: "blur(0px)", duration: 0.28, ease: "power3.out", immediateRender: false }, 27.0)
+      .to("#c5", { opacity: 0, y: -10, filter: "blur(10px)", duration: 0.22, ease: "power2.in" }, 32.88);
+    tl.fromTo("#c6", { opacity: 0, y: 26, scale: 0.94, filter: "blur(14px)" }, { opacity: 1, y: 0, scale: 1.0, filter: "blur(0px)", duration: 0.28, ease: "power3.out", immediateRender: false }, 33.75)
+      .to("#c6", { opacity: 0, y: -10, filter: "blur(10px)", duration: 0.22, ease: "power2.in" }, 39.08);
+    window.__timelines["safe-overlays"] = tl;
+  </script>
+</template>

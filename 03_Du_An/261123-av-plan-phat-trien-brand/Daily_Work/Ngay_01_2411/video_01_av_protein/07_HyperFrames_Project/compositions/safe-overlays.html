@@ -1,0 +1,137 @@
+<template>
+  <style>
+    
+@font-face { font-family: 'BeVN'; src: url('assets/fonts/BeVietnamPro-SemiBold.ttf') format('truetype'); font-weight: 600; }
+@font-face { font-family: 'BeVN'; src: url('assets/fonts/BeVietnamPro-Bold.ttf') format('truetype'); font-weight: 700; }
+@font-face { font-family: 'BeVN'; src: url('assets/fonts/BeVietnamPro-ExtraBold.ttf') format('truetype'); font-weight: 800; }
+@font-face { font-family: 'MontBlk'; src: url('assets/fonts/Montserrat-Black.ttf') format('truetype'); font-weight: 900; }
+@font-face { font-family: 'PlayfairBI'; src: url('assets/fonts/PlayfairDisplay-BoldItalic.ttf') format('truetype'); font-weight: 700; font-style: italic; }
+@font-face { font-family: 'FrauncesBlk'; src: url('assets/fonts/Fraunces-Black.ttf') format('truetype'); font-weight: 900; }
+
+    * { box-sizing: border-box; }
+    #root { position: absolute; inset: 0; width: 1080px; height: 1920px; overflow: hidden; pointer-events: none; font-family: 'BeVN', sans-serif; }
+
+    /* MASSIVE OPENING BIG TEXT HOOK (Frame 0 visible! Strict border-box X=56..870px, bottom Y=1516px: 0% face cover!) */
+    .big-hook-wrap {
+      position: absolute; bottom: 404px; left: 56px; width: 814px;
+      display: flex; flex-direction: column; align-items: center; text-align: center;
+      padding: 20px 18px 22px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.22) 0%, rgba(255,255,255,0.62) 100%);
+      backdrop-filter: blur(6px);
+      border: 3px solid rgba(255,255,255,0.82); border-radius: 30px;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.28); z-index: 20;
+    }
+    .bh-badge {
+      background: linear-gradient(135deg, #064F34, #0F7B54); color: #FFF8D6; border: 3px solid #FFE288;
+      border-radius: 999px; padding: 9px 28px; font-weight: 800; font-size: 25px;
+      letter-spacing: 0.7px; box-shadow: 0 8px 20px rgba(0,0,0,0.28); margin-bottom: 12px;
+    }
+    .bh-l1 {
+      font-family: 'BeVN', 'MontBlk', sans-serif; font-weight: 800; font-size: 86px; line-height: 1.06;
+      color: #05472F; white-space: nowrap;
+      -webkit-text-stroke: 13px #FFFFFF; paint-order: stroke fill;
+      filter: drop-shadow(0 8px 16px rgba(0,0,0,0.34));
+    }
+    .bh-l2 {
+      font-family: 'BeVN', 'MontBlk', sans-serif; font-weight: 800; font-size: 82px; line-height: 1.08;
+      margin-top: 6px; color: #D91A26; white-space: nowrap;
+      -webkit-text-stroke: 14px #FFFFFF; paint-order: stroke fill;
+      filter: drop-shadow(0 10px 20px rgba(0,0,0,0.38));
+    }
+
+    /* Top-left Safe Brand Watermark (Y=258px >= 250px, X=58px >= 54px) */
+    .brand-chip {
+      position: absolute; top: 258px; left: 58px;
+      display: flex; align-items: center; gap: 12px;
+      background: rgba(255,255,255,0.92); border: 2px solid #E2B448;
+      border-radius: 18px; padding: 8px 18px;
+      box-shadow: 0 8px 22px rgba(4,42,26,0.18);
+    }
+    .brand-chip img { height: 48px; width: auto; display: block; }
+    .brand-chip span { font-weight: 800; font-size: 20px; color: #064D33; letter-spacing: 0.4px; }
+
+    /* Lower-Left Safe Zone Callout Card: strict border-box X=58..870px (<= 884px), Bottom Y <= 1524px */
+    .safe-card {
+      position: absolute; left: 58px; bottom: 396px; width: 812px;
+      background: linear-gradient(145deg, rgba(5,48,32,0.90) 0%, rgba(10,82,55,0.86) 100%);
+      border: 2.5px solid #F0CA65; border-left: 8px solid #FCE078;
+      border-radius: 24px; padding: 20px 24px;
+      box-shadow: 0 14px 32px rgba(3,28,18,0.36);
+      opacity: 0;
+    }
+    .sc-tag {
+      font-weight: 800; font-size: 21px; color: #FCE186; letter-spacing: 0.8px;
+      text-transform: uppercase; margin-bottom: 6px;
+    }
+    .sc-big {
+      font-family: 'BeVN', 'MontBlk', sans-serif; font-weight: 800; font-size: 42px; line-height: 1.12;
+      color: #FFFFFF; text-shadow: 0 3px 10px rgba(0,0,0,0.35);
+    }
+    .sc-sub {
+      font-weight: 600; font-size: 24px; color: #E4F8EE; margin-top: 6px; line-height: 1.25;
+    }
+  </style>
+  <div id="root" data-composition-id="safe-overlays" data-width="1080" data-height="1920" data-start="0" data-duration="48.0">
+    <div id="big-hook" class="big-hook-wrap" data-layout-ignore>
+      <div class="bh-badge">★ DINH DƯỠNG BUỔI SÁNG ★</div>
+      <div class="bh-l1">ĂN ĐỦ NO</div>
+      <div class="bh-l2">HAY ĐỦ ĐẠM?</div>
+    </div>
+    <div id="top-brand" class="brand-chip" data-layout-ignore>
+      <img src="assets/images/logo_an_vuong_orig.png" alt="An Vuong" />
+      <span>AV PROTEIN</span>
+    </div>
+    
+      <div id="c2" class="safe-card" data-layout-ignore>
+        <div class="sc-tag">THÓI QUEN TINH BỘT</div>
+        <div class="sc-big">10H SÁNG ĐÃ UỂ OẢI?</div>
+        <div class="sc-sub">Thiếu đạm dễ đói sớm & tụt năng lượng</div>
+      </div>
+      <div id="c3" class="safe-card" data-layout-ignore>
+        <div class="sc-tag">AN VƯỢNG PHARMA</div>
+        <div class="sc-big">AV PROTEIN THỰC VẬT</div>
+        <div class="sc-sub">Chiết xuất từ Đậu Hà Lan & Gạo lành tính</div>
+      </div>
+      <div id="c4a" class="safe-card" data-layout-ignore>
+        <div class="sc-tag">CÔNG THỨC ĐẬM ĐẶC / 2 GÓI</div>
+        <div class="sc-big">22,05g ĐẠM • 1.632mg LEUCINE</div>
+        <div class="sc-sub">Hỗ trợ giữ cơ săn chắc, bền năng lượng</div>
+      </div>
+      <div id="c4b" class="safe-card" data-layout-ignore>
+        <div class="sc-tag">ĐỒNG HÀNH TẬP LUYỆN</div>
+        <div class="sc-big">GIỮ DÁNG & SĂN CHẮC</div>
+        <div class="sc-sub">Phù hợp Pilates • Yoga • Gym • Người bận rộn</div>
+      </div>
+      <div id="c5" class="safe-card" data-layout-ignore>
+        <div class="sc-tag">ÊM BỤNG DỄ TIÊU HÓA</div>
+        <div class="sc-big">INULIN + LỢI KHUẨN B-3</div>
+        <div class="sc-sub">Pha nước mát 20–40°C chỉ 30 giây</div>
+      </div>
+      <div id="c6" class="safe-card" data-layout-ignore>
+        <div class="sc-tag">TRẢI NGHIỆM MỖI SÁNG</div>
+        <div class="sc-big">THƠM BÉO • NHẸ BỤNG</div>
+        <div class="sc-sub">Dễ uống mỗi ngày — Không đầy hơi</div>
+      </div>
+  </div>
+  <script>
+    window.__timelines = window.__timelines || {};
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#big-hook", { scale: 0.94, y: 8 }, { scale: 1.0, y: 0, duration: 0.28, ease: "back.out(1.4)" }, 0.0)
+      .to("#big-hook", { opacity: 0, y: -18, filter: "blur(12px)", duration: 0.26, ease: "power2.in" }, 3.45);
+    tl.fromTo("#top-brand", { opacity: 0, y: -12 }, { opacity: 1, y: 0, duration: 0.35, ease: "power2.out", immediateRender: false }, 0.1)
+      .to("#top-brand", { opacity: 0, duration: 0.25 }, 39.45);
+    tl.fromTo("#c2", { opacity: 0, y: 26, scale: 0.94, filter: "blur(14px)" }, { opacity: 1, y: 0, scale: 1.0, filter: "blur(0px)", duration: 0.28, ease: "power3.out", immediateRender: false }, 4.05)
+      .to("#c2", { opacity: 0, y: -10, filter: "blur(10px)", duration: 0.22, ease: "power2.in" }, 9.28);
+    tl.fromTo("#c3", { opacity: 0, y: 26, scale: 0.94, filter: "blur(14px)" }, { opacity: 1, y: 0, scale: 1.0, filter: "blur(0px)", duration: 0.28, ease: "power3.out", immediateRender: false }, 10.22)
+      .to("#c3", { opacity: 0, y: -10, filter: "blur(10px)", duration: 0.22, ease: "power2.in" }, 15.95);
+    tl.fromTo("#c4a", { opacity: 0, y: 26, scale: 0.94, filter: "blur(14px)" }, { opacity: 1, y: 0, scale: 1.0, filter: "blur(0px)", duration: 0.28, ease: "power3.out", immediateRender: false }, 16.75)
+      .to("#c4a", { opacity: 0, y: -10, filter: "blur(10px)", duration: 0.22, ease: "power2.in" }, 20.78);
+    tl.fromTo("#c4b", { opacity: 0, y: 26, scale: 0.94, filter: "blur(14px)" }, { opacity: 1, y: 0, scale: 1.0, filter: "blur(0px)", duration: 0.28, ease: "power3.out", immediateRender: false }, 21.45)
+      .to("#c4b", { opacity: 0, y: -10, filter: "blur(10px)", duration: 0.22, ease: "power2.in" }, 25.23);
+    tl.fromTo("#c5", { opacity: 0, y: 26, scale: 0.94, filter: "blur(14px)" }, { opacity: 1, y: 0, scale: 1.0, filter: "blur(0px)", duration: 0.28, ease: "power3.out", immediateRender: false }, 26.05)
+      .to("#c5", { opacity: 0, y: -10, filter: "blur(10px)", duration: 0.22, ease: "power2.in" }, 32.88);
+    tl.fromTo("#c6", { opacity: 0, y: 26, scale: 0.94, filter: "blur(14px)" }, { opacity: 1, y: 0, scale: 1.0, filter: "blur(0px)", duration: 0.28, ease: "power3.out", immediateRender: false }, 33.8)
+      .to("#c6", { opacity: 0, y: -10, filter: "blur(10px)", duration: 0.22, ease: "power2.in" }, 39.13);
+    window.__timelines["safe-overlays"] = tl;
+  </script>
+</template>

@@ -1,7 +1,7 @@
 {
   "mcpServers": {
     "explorer": {
-      "command": "d:\\AI\\full studio\\voice-studio\\.venv\\Scripts\\python.exe",
+      "command": "C:\\Users\\Hang thu\\AppData\\Roaming\\VoiceStudio\\runtime\\project\\.venv\\Scripts\\python.exe",
       "args": ["-X", "utf8", "${PLUGIN_ROOT}/bin/server.py"]
     }
   }

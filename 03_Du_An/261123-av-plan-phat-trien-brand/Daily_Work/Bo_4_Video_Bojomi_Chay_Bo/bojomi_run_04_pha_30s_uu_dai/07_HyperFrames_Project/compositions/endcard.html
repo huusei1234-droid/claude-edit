@@ -1,0 +1,118 @@
+<template>
+  <style>
+    
+@font-face { font-family: 'BeVN'; src: url('assets/fonts/BeVietnamPro-SemiBold.ttf') format('truetype'); font-weight: 600; }
+@font-face { font-family: 'BeVN'; src: url('assets/fonts/BeVietnamPro-Bold.ttf') format('truetype'); font-weight: 700; }
+@font-face { font-family: 'BeVN'; src: url('assets/fonts/BeVietnamPro-ExtraBold.ttf') format('truetype'); font-weight: 800; }
+@font-face { font-family: 'MontBlk'; src: url('assets/fonts/Montserrat-Black.ttf') format('truetype'); font-weight: 900; }
+
+    * { box-sizing: border-box; }
+    #root {
+      position: absolute; inset: 0; width: 1080px; height: 1920px; overflow: hidden;
+      background: linear-gradient(175deg, #043120 0%, #0B6141 48%, #042E1F 100%); font-family: 'BeVN', sans-serif;
+    }
+    .ec-model {
+      position: absolute; top: 256px; right: 58px; width: 410px; height: 594px;
+      border-radius: 30px; overflow: hidden; border: 3.5px solid rgba(244,204,100,0.88);
+      box-shadow: 0 20px 44px rgba(0,0,0,0.38);
+    }
+    .ec-model img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 16%; display: block; }
+    .ec-logo {
+      position: absolute; top: 262px; left: 58px;
+      background: rgba(255,255,255,0.96); border: 3px solid #E5B442; border-radius: 22px;
+      padding: 10px 22px; box-shadow: 0 10px 26px rgba(0,0,0,0.25);
+    }
+    .ec-logo img { height: 70px; width: auto; display: block; }
+    .ec-title { position: absolute; top: 378px; left: 58px; width: 520px; }
+    .ec-kicker { font-weight: 800; font-size: 22px; color: #FCE186; letter-spacing: 0.7px; }
+    .ec-brand {
+      font-family: 'BeVN', 'MontBlk', sans-serif; font-weight: 800; font-size: 62px; line-height: 1.06;
+      color: #FFFFFF; text-shadow: 0 5px 16px rgba(0,0,0,0.35); margin-top: 6px;
+    }
+    .ec-sub { font-weight: 600; font-size: 23px; color: #E8F8F0; margin-top: 10px; line-height: 1.28; }
+
+    .ec-boxes {
+      position: absolute; left: 58px; top: 694px; width: 580px; height: 410px;
+      display: flex; align-items: flex-end; gap: 22px;
+    }
+    .b-main { height: 376px; width: auto; filter: drop-shadow(0 18px 26px rgba(0,0,0,0.45)); }
+    .b-gift-w { display: flex; flex-direction: column; align-items: center; }
+    .g-pill {
+      background: linear-gradient(135deg, #E8232E, #A60A15); color: #FFF8DC;
+      border: 2.5px solid #FFE288; border-radius: 999px; padding: 6px 18px;
+      font-weight: 800; font-size: 18px; margin-bottom: 6px; white-space: nowrap;
+      box-shadow: 0 6px 14px rgba(166,10,21,0.4);
+    }
+    .b-gift { height: 262px; width: auto; filter: drop-shadow(0 16px 24px rgba(0,0,0,0.42)); }
+
+    .ec-deal {
+      position: absolute; left: 58px; top: 1122px; width: 812px;
+      background: linear-gradient(155deg, rgba(255,255,255,0.97), rgba(255,248,228,0.97));
+      border: 3.5px solid #E5B442; border-radius: 28px; padding: 20px 24px;
+      box-shadow: 0 18px 36px rgba(0,0,0,0.34);
+    }
+    .ec-prow { display: flex; align-items: center; justify-content: space-between; gap: 14px; }
+    .ep-l { font-weight: 800; font-size: 20px; color: #074C32; }
+    .ep-n { font-family: 'BeVN', 'MontBlk', sans-serif; font-weight: 800; font-size: 52px; line-height: 1.04; color: #0B40A8; }
+    .ep-pr {
+      background: linear-gradient(135deg, #E6222B, #A80A16); border: 2.5px solid #FFE288;
+      border-radius: 18px; padding: 11px 16px; text-align: center;
+      box-shadow: 0 8px 18px rgba(168,10,22,0.32);
+    }
+    .ep-1 { font-weight: 800; font-size: 17px; color: #FFF3B0; }
+    .ep-2 { font-weight: 800; font-size: 22px; color: #FFFFFF; margin-top: 2px; white-space: nowrap; }
+    .ec-cta {
+      margin-top: 15px; background: linear-gradient(90deg, #074F34, #0E744E);
+      border: 2.5px solid #F2CC66; border-radius: 18px; padding: 14px 18px;
+      text-align: center; font-weight: 800; font-size: 24px; color: #FFF8D6;
+    }
+    .ec-legal {
+      position: absolute; left: 58px; top: 1466px; width: 812px;
+      font-weight: 600; font-size: 19px; line-height: 1.32; color: #EFFBF4;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.45);
+    }
+  </style>
+  <div id="root" data-composition-id="endcard" data-width="1080" data-height="1920" data-start="0" data-duration="9.5">
+    <div id="ec-m" class="ec-model" data-layout-ignore><img src="assets/images/hero_look.png" alt="Model" /></div>
+    <div id="ec-l" class="ec-logo" data-layout-ignore><img src="assets/images/logo_an_vuong_orig.png" alt="Logo" /></div>
+    <div id="ec-t" class="ec-title" data-layout-ignore>
+      <div class="ec-kicker">CTKM SINH NHẬT DROPPII 23/11 – 30/11</div>
+      <div class="ec-brand">BOJOMI</div>
+      <div class="ec-sub">417,6mg Canxi tảo biển Aquamin F • D3 • K2 MK-7 • 201,4mg Collagen</div>
+    </div>
+    <div id="ec-b" class="ec-boxes" data-layout-ignore>
+      <img id="eb1" class="b-main" src="assets/images/box_main.png" alt="Bojomi Main" />
+      <div id="eb2" class="b-gift-w">
+        <div class="g-pill">★ TẶNG 1 BOJOMI</div>
+        <img class="b-gift" src="assets/images/box_main.png" alt="Bojomi Gift" />
+      </div>
+    </div>
+    <div id="ec-d" class="ec-deal" data-layout-ignore>
+      <div class="ec-prow">
+        <div>
+          <div class="ep-l">HỘP 14 GÓI × 20G (280G)</div>
+          <div class="ep-n">520.000đ</div>
+        </div>
+        <div class="ep-pr">
+          <div class="ep-1">CTKM 23/11 – 30/11</div>
+          <div class="ep-2">MUA 3 TẶNG 1 (520K)</div>
+        </div>
+      </div>
+      <div class="ec-cta">▸ NHẮN “BOJOMI” CHỐT DEAL MUA 3 TẶNG 1!</div>
+    </div>
+    <div id="ec-g" class="ec-legal" data-layout-ignore>Thực phẩm bổ sung. Không phải là thuốc và không có tác dụng thay thế thuốc chữa bệnh. • Hotline: 0867 399 268 • anvuongpharma.vn</div>
+  </div>
+  <script>
+    window.__timelines = window.__timelines || {};
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#ec-m", { opacity: 0, scale: 1.06, x: 24 }, { opacity: 1, scale: 1.0, x: 0, duration: 0.45, ease: "power3.out", immediateRender: false }, 0.05)
+      .fromTo("#ec-l", { opacity: 0, y: -18 }, { opacity: 1, y: 0, duration: 0.35, ease: "power3.out", immediateRender: false }, 0.12)
+      .fromTo("#ec-t", { opacity: 0, x: -24, filter: "blur(10px)" }, { opacity: 1, x: 0, filter: "blur(0px)", duration: 0.38, ease: "power3.out", immediateRender: false }, 0.22)
+      .fromTo("#eb1",  { opacity: 0, y: 36, scale: 0.90 }, { opacity: 1, y: 0, scale: 1.0, duration: 0.42, ease: "back.out(1.3)", immediateRender: false }, 0.32)
+      .fromTo("#eb2",  { opacity: 0, y: 36, scale: 0.90 }, { opacity: 1, y: 0, scale: 1.0, duration: 0.42, ease: "back.out(1.3)", immediateRender: false }, 0.48)
+      .fromTo("#ec-d", { opacity: 0, y: 30, filter: "blur(10px)" }, { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.40, ease: "power3.out", immediateRender: false }, 0.62)
+      .fromTo("#ec-g", { opacity: 0 }, { opacity: 1, duration: 0.30, immediateRender: false }, 0.85)
+      .to("#ec-m", { scale: 1.03, duration: 8.9, ease: "none" }, 0.60);
+    window.__timelines["endcard"] = tl;
+  </script>
+</template>

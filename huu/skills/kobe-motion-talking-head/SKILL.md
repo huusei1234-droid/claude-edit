@@ -27,10 +27,20 @@ Skill này kích hoạt khi người dùng muốn làm video **chia sẻ kiến 
    - Mở đầu (`0–3s`), chuyển chương lớn và chốt CTA cuối bài: Hiện **A-Roll người nói lớn** kèm **Chữ/Số khổng lồ sau lưng đầu** (tách nền RVM) hoặc **Pill Sticker nghiêng `-2°` trước ngực**.
    - Phần thân giải thích: Thu người nói vào **Circle PiP** sắc nét, nhường sân khấu cho sơ đồ chuyển động mượt trên HyperFrames (`1080×1920 @ 30fps`).
 3. **Chọn 1 trong 2 Biến Thể Giao Diện Theo Ngành Hàng**:
-   - **Biến thể A — `Dark Cyber Letterbox (16:9 đặt giữa 9:16)`**: Sân khấu `1080×608px` (`y = 656..1264`) giữa hai dải đen `#000000`, nền lưới `#17191e`, Circle PiP `246px` góc dưới phải (`cx=924, cy=1118`), viền phát sáng Cyan `#36CCC8` × Cam `#F26B21`. Hợp chủ đề **tư duy, bóc tách sai lầm, công nghệ, bất động sản/nội thất cao cấp**.
-   - **Biến thể B — `Light Pastel Dot-Grid UI (Full 9:16)`**: Phủ kín `1080×1920` nền sáng `#F4F6FC` → `#CED8FA` có chấm bi `Dot-Matrix` bước `32px`, Circle PiP lớn `416px` căn giữa bên dưới (`cx=540, cy=1465`, viền trắng `8px` + xanh `3px`), đường ray nét đứt nối các thẻ `1 → 2 → 3 → 4`, thẻ UI bo góc `32px` có `Skeleton Blur` làm mờ chữ phụ để nổi bật dòng chính + Pill Sticker nghiêng `-2°`. Hợp **hướng dẫn quy trình, demo phần mềm/AI, giáo dục, dược sĩ giải thích cơ chế**.
+   - **Biến thể A — `Dark Cyber Letterbox (16:9 đặt giữa 9:16)`**: Sân khấu `1080×608px` (`y = 656..1264`) giữa hai dải đen `#000000`, nền lưới `#17191e`, Circle PiP `220px` đặt lệch trong vùng trắng an toàn (`cx=760, cy=1118` để mép phải `870px <= 884px`, tuyệt đối không đặt `cx=924` đâm vào cột nút TikTok/Reels `X>=886px`!), viền phát sáng Cyan `#36CCC8` × Cam `#F26B21`. Hợp chủ đề **tư duy, bóc tách sai lầm, công nghệ, bất động sản/nội thất cao cấp**.
+   - **Biến thể B — `Light Pastel Dot-Grid UI (Full 9:16)`**: Phủ kín `1080×1920` nền sáng `#F4F6FC` → `#CED8FA` có chấm bi `Dot-Matrix` bước `32px`, Circle PiP `340px` đặt trong vùng trắng an toàn bên dưới (`cx=469, cy=1365` để mép dưới `1535px <= 1545px` và mép phải `639px <= 884px`, tuyệt đối không đặt `cy=1465` lọt vùng đen đáy `Y>=1548px`!), viền trắng `8px` + xanh `3px`, đường ray nét đứt nối các thẻ `1 → 2 → 3 → 4`, thẻ UI bo góc `32px` nằm gọn trong `X=[54..884]` (khi `Y>=860`) và `Y=[250..1545]`. Hợp **hướng dẫn quy trình, demo phần mềm/AI, giáo dục, dược sĩ giải thích cơ chế**.
 4. **Cá Nhân Hóa `DNA Độc Bản` Bằng Tài Nguyên Sẵn Có Của `Full Studio`**:
    - Luôn áp đúng bảng màu trong `brand_kits/`, ưu tiên **Chữ Gradient 5 điểm dừng tách viền (`fonts_tvc_vi/gradient-text-presets.css`)** cho tiêu đề lớn và dùng kho **`448` hiệu ứng 3D/Final Cut Offline (`fcp_hyperframes_pack`)** (`spring-pop`, `focus-blur-resolve`, `tracing-beam`, `stagger-cascade`, `cursor-glyph-trail`), tránh lạm dụng hiệu ứng nổ rối mắt vô nghĩa.
+5. **Luật Cấm Tuyệt Đối Chữ Nhỏ Li Ti (`Zero Micro-Text` — Đúc kết từ Reels Kobe Media)**:
+   - **Cấm mọi dòng chữ nhỏ dưới `36px`** trên khung `1080×1920` (tuyệt đối không nhét câu văn dài `14px–22px` vào thẻ UI làm người xem trên điện thoại không đọc nổi).
+   - **Giới hạn từ ngữ khắt khe (`Word-Count Cap`)**:
+     - Tiêu đề chính / Pill Sticker nổi: **`2–5 từ`**, cỡ **`54px – 72px ExtraBold`**, phối 2 màu tương phản mạnh (Đen `#0F172A` + Xanh `#2563EB` / Đỏ `#E11D48` / Cam `#F97316`).
+     - Ô Bento / Nhãn thẻ / Callout Badge: **`1–4 từ`**, cỡ **`38px – 50px ExtraBold`**, luôn đi kèm **Icon đồ họa lớn (`76px – 130px`)** hoặc **Huy hiệu số lớn (`64px – 84px`)**.
+     - Khi mô phỏng tài liệu/màn hình dày chữ: biến toàn bộ chữ phụ thành **thanh xám mờ (`Skeleton Bars`)** và đè **Pill Sticker khổng lồ nổi khối Z-space** lên góc thẻ.
+6. **Luật Lấp Đầy Sân Khấu — Triệt Tiêu Khoảng Trống Chết (`Zero Dead Whitespace / Dense Bento Stage`)**:
+   - Không bao giờ để một khung trắng lớn trống trải chỉ có vài icon nhỏ trôi lơ lửng ở giữa:
+     - **Sân khấu chính (`Motion Stage`)** phủ rộng tối đa vùng an toàn (`X = [52..1026px]` ở nửa trên `Y < 860px` và khóa mép phải `X <= 884px` ở nửa dưới `Y >= 860px`), chia thành **Bố cục Bento Đặc Khít (`Bento 2×2`, `Split 55/45 Video + 3 Thanh Pill Lớn`, hoặc `2 Thanh Impact Xếp Chồng`)** với nền tô màu nhạt phân tách (`#EEF2FF`, `#FFF1F2`, `#ECFDF5`), khe hở giữa các ô chỉ **`12px – 16px`**.
+     - Giữa Sân khấu trên và **Circle PiP lớn (`360px – 390px`)** bên dưới luôn có **đường phân cách ngang nét đứt (`Dashed Track Divider`)** và vòng hào quang đồng tâm để khóa chặt bố cục dọc, `0%` khoảng trống thừa.
 
 ---
 

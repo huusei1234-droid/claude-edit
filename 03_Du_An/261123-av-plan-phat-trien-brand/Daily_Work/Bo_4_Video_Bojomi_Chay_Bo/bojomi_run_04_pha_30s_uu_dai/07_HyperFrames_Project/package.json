@@ -1,0 +1,9 @@
+{
+  "name": "av-bojomi-run-04",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "check": "npx --yes hyperframes@0.9.38 check",
+    "render": "npx --yes hyperframes@0.9.38 render"
+  }
+}

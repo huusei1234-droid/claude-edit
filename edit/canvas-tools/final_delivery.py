@@ -23,6 +23,7 @@ BRAND_ROUTES = {
         "dir": r"Z:\.shortcut-targets-by-id\1qjnlz_54ZT5OlI9dKMelZ5PJauD4etj-\hằng thu pharma\05. Video Hoàn Thiện\K6 - Hằng Thu Pharma",
         "fallback_dir": r"Z:\Máy tính khác\My Computer\hằng thu pharma\05. Video Hoàn Thiện\K6 - Hằng Thu Pharma",
         "local_subdir": "hằng thu pharma",
+        "group_by_date_only": True,
     },
     "avpm": {
         "prefix": "AVPM",
@@ -97,12 +98,26 @@ def deliver_final_video(src_mp4: str, brand_key: str, vietnamese_title: str, dat
         is_horizontal = _is_landscape_video(src_mp4)
 
     fname = build_standard_final_name(key, vietnamese_title, date_yymmdd=date_yymmdd, ext=".mp4")
+    yymmdd = (date_yymmdd or datetime.datetime.now().strftime("%y%m%d")).strip()
+    clean_title = re.sub(r'[\\/:*?"<>|]+', "-", vietnamese_title).strip()
+    clean_title = re.sub(r"\s+final$", "", clean_title, flags=re.I).strip()
+    prefix = BRAND_ROUTES[key]["prefix"]
+    if clean_title.upper().startswith(prefix.upper() + " "):
+        clean_title = clean_title[len(prefix):].strip()
+    title_cap = clean_title[:1].upper() + clean_title[1:] if clean_title else clean_title
+
     route_cfg = BRAND_ROUTES[key]
     brand_dir = route_cfg["dir"]
     if not os.path.isdir(brand_dir) and route_cfg.get("fallback_dir") and os.path.isdir(route_cfg["fallback_dir"]):
         brand_dir = route_cfg["fallback_dir"]
     local_dir = os.path.join(LOCAL_EXPORT_DIR, route_cfg["local_subdir"]) if route_cfg.get("local_subdir") else LOCAL_EXPORT_DIR
     master_dir = MASTER_FINAL_DIR
+
+    # Phân thư mục phẳng theo Ngày (TUYỆT ĐỐI KHÔNG tạo thư mục con cho từng bài/video lẻ!)
+    if (route_cfg.get("group_by_date_only") or route_cfg.get("group_by_date_and_title")) and len(yymmdd) == 6 and yymmdd.isdigit():
+        day_folder = f"{yymmdd} - Ngày {yymmdd[4:6]}.{yymmdd[2:4]}.20{yymmdd[:2]}"
+        brand_dir = os.path.join(brand_dir, day_folder)
+        local_dir = os.path.join(local_dir, day_folder)
 
     # Mọi video Ngang (16:9 / width > height) tự động lưu riêng vào thư mục con 'Ngang'
     if is_horizontal:

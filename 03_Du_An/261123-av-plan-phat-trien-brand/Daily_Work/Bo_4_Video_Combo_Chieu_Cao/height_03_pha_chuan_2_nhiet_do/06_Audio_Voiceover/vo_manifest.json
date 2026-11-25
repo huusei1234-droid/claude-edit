@@ -1,0 +1,87 @@
+{
+  "video_key": "height_03_pha_chuan_2_nhiet_do",
+  "title": "Combo Chiều Cao 03 — Bí Kíp Pha Riêng 2 Nhiệt Độ Chuẩn Bao Bì",
+  "final_name": "261124 AVPM Combo Chieu Cao 03 - Cach Pha Chuan 2 Nhiet Do Bojomi AV Protein final.mp4",
+  "voice_profile_name": "THANH THANH TVC",
+  "sample_rate": 24000,
+  "total_duration_s": 62.0,
+  "segments": [
+    {
+      "id": "vo_01",
+      "text": "Dùng bộ đôi Bojomi và AV Protein, tuyệt đối đừng đổ chung vào một ly nước sôi nhé!",
+      "path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Bo_4_Video_Combo_Chieu_Cao\\height_03_pha_chuan_2_nhiet_do\\06_Audio_Voiceover\\vo_01.wav",
+      "shot_start_s": 0.0,
+      "shot_duration_s": 6.0,
+      "shot_end_s": 6.0,
+      "start_s": 0.22,
+      "duration_s": 5.193,
+      "end_s": 5.413
+    },
+    {
+      "id": "vo_02",
+      "text": "Nhiều gia đình hay tiện tay pha chung hai gói một lần, nhưng mỗi sản phẩm lại có ngưỡng nhiệt độ riêng để giữ trọn dưỡng chất.",
+      "path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Bo_4_Video_Combo_Chieu_Cao\\height_03_pha_chuan_2_nhiet_do\\06_Audio_Voiceover\\vo_02.wav",
+      "shot_start_s": 6.0,
+      "shot_duration_s": 8.5,
+      "shot_end_s": 14.5,
+      "start_s": 6.22,
+      "duration_s": 7.693,
+      "end_s": 13.913
+    },
+    {
+      "id": "vo_03",
+      "text": "Hãy chia lịch uống khoa học hai khung giờ trong ngày để cơ thể hấp thu nhẹ bụng và tối ưu nhất.",
+      "path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Bo_4_Video_Combo_Chieu_Cao\\height_03_pha_chuan_2_nhiet_do\\06_Audio_Voiceover\\vo_03.wav",
+      "shot_start_s": 14.5,
+      "shot_duration_s": 6.5,
+      "shot_end_s": 21.0,
+      "start_s": 14.72,
+      "duration_s": 5.846,
+      "end_s": 20.566
+    },
+    {
+      "id": "vo_04",
+      "text": "Buổi sáng, pha AV Protein với nước mát hoặc nước ấm hai mươi đến bốn mươi độ giúp bảo toàn lợi khuẩn B-3 và chất xơ Inulin, nạp ngay hai mươi hai phẩy không năm gam đạm sạch.",
+      "path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Bo_4_Video_Combo_Chieu_Cao\\height_03_pha_chuan_2_nhiet_do\\06_Audio_Voiceover\\vo_04.wav",
+      "shot_start_s": 21.0,
+      "shot_duration_s": 11.75,
+      "shot_end_s": 32.75,
+      "start_s": 21.22,
+      "duration_s": 11.142,
+      "end_s": 32.362
+    },
+    {
+      "id": "vo_05",
+      "text": "Đến bữa phụ chiều hoặc sau buổi tập, pha một gói Bojomi hai mươi gam với hai trăm mililit nước ấm sáu mươi độ cho bột ngũ cốc vị Vani tan mịn thơm béo.",
+      "path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Bo_4_Video_Combo_Chieu_Cao\\height_03_pha_chuan_2_nhiet_do\\06_Audio_Voiceover\\vo_05.wav",
+      "shot_start_s": 32.75,
+      "shot_duration_s": 10.5,
+      "shot_end_s": 43.25,
+      "start_s": 32.97,
+      "duration_s": 9.745,
+      "end_s": 42.715
+    },
+    {
+      "id": "vo_06",
+      "text": "Uống đúng nhiệt độ, đúng khung giờ, kết hợp ngủ sớm và tập bật nhảy giãn cơ mỗi ngày sẽ giúp cơ thể tràn đầy sức sống.",
+      "path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Bo_4_Video_Combo_Chieu_Cao\\height_03_pha_chuan_2_nhiet_do\\06_Audio_Voiceover\\vo_06.wav",
+      "shot_start_s": 43.25,
+      "shot_duration_s": 8.25,
+      "shot_end_s": 51.5,
+      "start_s": 43.47,
+      "duration_s": 7.509,
+      "end_s": 50.979
+    },
+    {
+      "id": "vo_07",
+      "text": "Bộ đôi có giá tám trăm bảy mươi nghìn đồng. Ưu đãi mua ba Bojomi hoặc năm AV Protein tặng ngay Bojomi năm trăm hai mươi nghìn đồng, nhắn Chiều Cao ngay nhé!",
+      "path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Bo_4_Video_Combo_Chieu_Cao\\height_03_pha_chuan_2_nhiet_do\\06_Audio_Voiceover\\vo_07.wav",
+      "shot_start_s": 51.5,
+      "shot_duration_s": 10.5,
+      "shot_end_s": 62.0,
+      "start_s": 51.72,
+      "duration_s": 9.734,
+      "end_s": 61.454
+    }
+  ]
+}

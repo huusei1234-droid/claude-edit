@@ -1,0 +1,65 @@
+{
+  "video_key": "n02_v4_curcumilk_15h_em_bung",
+  "title": "Curcumilk Phyto — Bữa Phụ 15h Văn Phòng Ấm Bụng Phytosome Ý",
+  "final_name": "261125 AVPM 04 - Curcumilk Phyto Bua Phu 15h Van Phong Am Bung final.mp4",
+  "bgm_path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Ngay_02_2511\\02_BGM_Normalized\\n02_v4_curcumilk_15h_em_bung_bgm.mp3",
+  "bgm_original": "02_Chill - Lofi - Vlog Đời Thường\\Apple Pie (1p26s).mp3",
+  "total_duration_s": 43.75,
+  "segments": [
+    {
+      "id": "vo_01",
+      "text": "Ba giờ chiều văn phòng bụng cồn cào mà ngại uống trà sữa nhiều đường? Đổi ngay sang ly sữa nghệ ấm bụng này nhé!",
+      "path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Ngay_02_2511\\n02_v4_curcumilk_15h_em_bung\\06_Audio_Voiceover\\vo_01.wav",
+      "start_s": 0.12,
+      "duration_s": 6.759,
+      "end_s": 6.879,
+      "shot_start_s": 0.0,
+      "shot_duration_s": 7.25,
+      "shot_end_s": 7.25
+    },
+    {
+      "id": "vo_02",
+      "text": "Curcumilk Phyto kết hợp nền ngũ cốc sữa dừa hương Vani thơm béo, hoàn toàn dịu nhẹ và không hề hăng mùi nghệ tươi.",
+      "path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Ngay_02_2511\\n02_v4_curcumilk_15h_em_bung\\06_Audio_Voiceover\\vo_02.wav",
+      "start_s": 7.37,
+      "duration_s": 7.173,
+      "end_s": 14.543,
+      "shot_start_s": 7.25,
+      "shot_duration_s": 7.5,
+      "shot_end_s": 14.75
+    },
+    {
+      "id": "vo_03",
+      "text": "Mỗi gói chứa ba trăm bốn mươi ba phẩy hai miligam Curcuminoid với hệ ba lớp kết hợp Curcumin Phytosome nhập khẩu từ Ý.",
+      "path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Ngay_02_2511\\n02_v4_curcumilk_15h_em_bung\\06_Audio_Voiceover\\vo_03.wav",
+      "start_s": 14.87,
+      "duration_s": 7.437,
+      "end_s": 22.307,
+      "shot_start_s": 14.75,
+      "shot_duration_s": 7.75,
+      "shot_end_s": 22.5
+    },
+    {
+      "id": "vo_04",
+      "text": "Chỉ cần pha một gói với một trăm năm mươi mililit nước ấm bốn mươi đến năm mươi độ, nạp ngay năng lượng lành mạnh buổi chiều.",
+      "path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Ngay_02_2511\\n02_v4_curcumilk_15h_em_bung\\06_Audio_Voiceover\\vo_04.wav",
+      "start_s": 22.62,
+      "duration_s": 7.933,
+      "end_s": 30.553,
+      "shot_start_s": 22.5,
+      "shot_duration_s": 8.25,
+      "shot_end_s": 30.75
+    },
+    {
+      "id": "vo_05",
+      "text": "Curcumilk Phyto giá sáu trăm năm mươi nghìn đồng. Đến hết ba mươi tháng mười một, mua bốn hộp tặng ngay một hộp sáu trăm năm mươi nghìn đồng. Chị nhắn tin Sữa Nghệ để xem bảng thành phần ngay nhé!",
+      "path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Ngay_02_2511\\n02_v4_curcumilk_15h_em_bung\\06_Audio_Voiceover\\vo_05.wav",
+      "start_s": 30.87,
+      "duration_s": 12.481,
+      "end_s": 43.351,
+      "shot_start_s": 30.75,
+      "shot_duration_s": 13.0,
+      "shot_end_s": 43.75
+    }
+  ]
+}

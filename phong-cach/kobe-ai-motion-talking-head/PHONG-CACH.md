@@ -15,6 +15,9 @@ Tài liệu này đúc kết từ việc đo đạc từng khung hình (`refkit.
    - **Cảnh Giải Thích / Chứng Minh (`75–80%` thời lượng)**: Thu người nói vào **Khung Tròn (`Circle PiP`)** có viền màu thương hiệu phát sáng nhẹ, nhường toàn bộ không gian chính cho **Sân khấu Motion Graphics liền mạch** (sơ đồ dây nối, hộp quà mở nắp, cuộn phim, giao diện phần mềm gõ chữ/cuộn trang thật).
 3. **Chuyển cảnh bằng Camera Trượt Trên Bàn Cờ Vô Tận (`Infinite Canvas Pan & Morph`) thay vì cắt rời rạc**:
    - Thay vì mỗi câu hiện 1 ảnh tĩnh rồi tắt, các vật thể nằm trên một mặt lưới tọa độ (`Grid` hoặc `Dot-Matrix`); camera trượt ngang/dọc mượt (`ease: power3.inOut`, `0.45s – 0.65s`) theo đường dây dẫn sáng nối từ ý `1 → 2 → 3 → 4`.
+4. **Quy Luật Chữ Khổng Lồ (`Zero Micro-Text`: `>= 38px – 72px`) & Lấp Đầy Khoảng Trống (`Dense Bento Stage` — Đúc kết từ 5 Reels trên Fanpage Kobe Media)**:
+   - **Cấm chữ nhỏ li ti (`< 36px`)**: Mọi nhãn tiêu đề / Pill Sticker dùng font dày **`54px – 72px ExtraBold`** (`2–5 từ`), phối 2 màu (Đen `#0F172A` + Xanh `#2563EB` / Đỏ `#E11D48` / Cam `#F97316`). Các ô nhánh / Bento dùng **`38px – 50px ExtraBold`** (`1–4 từ`) đi kèm **Icon đồ họa lớn (`76px – 130px`)** hoặc **Số thứ tự lớn (`64px – 84px`)**.
+   - **Lấp kín không gian trống**: Khung sân khấu chính phủ sát biên vùng an toàn (`X = [52..1026px]` nửa trên, `X = [52..884px]` nửa dưới `Y >= 860px`), chia thành **Lưới Bento Đặc Khít (`2×2`, `Split 55/45`, hoặc `2 Thanh Impact Lớn`)** có nền màu pastel/tối tách biệt, khe hở chỉ `12px – 16px`, nối qua đường phân cách ngang xuống `Circle PiP` lớn (`360px – 390px`) để không bao giờ lộ khoảng trắng chết.
 
 ---
 

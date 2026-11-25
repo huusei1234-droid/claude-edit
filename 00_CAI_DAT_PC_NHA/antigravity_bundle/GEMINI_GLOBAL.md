@@ -75,15 +75,22 @@ Tài liệu này lưu trữ **toàn bộ phong cách dựng phim (Editing DNA)**
   - **Ưu tiên Micro-SFX xúc giác ngắn gọn (`30–120ms`, `-9` đến `-14 dB` dưới Voice)**: `sfx_pop_clean.mp3`, `Pop - Hiện chữ nảy nhẹ gọn 02.mp3`, `sfx_click_soft.mp3`, `Whoosh - Gió lướt chữ nhẹ (Swoosh 02).mp3`, `打字-102214` (gõ chữ), `The sound that deals with the Shap Schat card` (lật thẻ nhanh `1→10`), `sfx_ping_glass.mp3`; **tuyệt đối tránh tiếng nổ `Boom` rền to rẻ tiền** ở video chia sẻ chuyên môn/TVC sang trọng.
   - **Đặt mốc chính xác**: Va chạm (`Pop/Click/Tick`) đặt **`0ms` đúng frame chạm đích** & trùng từ nhấn của giọng nói (`0` SFX rơi lạc vào khoảng nghỉ im lặng); tiếng gió lướt (`Airy Whoosh`) đặt sớm **`-110ms` (`-3 frames`)**; chuỗi 3–5 thẻ liên tiếp tăng nhẹ `+1 semitone`/bậc.
 
-### E. Typography & Thiết Kế Chữ (Text Design)
+### E. Typography, Thiết Kế Chữ & Vùng An Toàn Video Dọc `9:16` (TikTok × Reels Safe Zone)
+- **[BẮT BUỘC 100%] Vùng Cấm Đen Cho Mọi Video Dọc `9:16` (`1080×1920` — `safe_zone_9x16.py`)**:
+  - **Cấm tuyệt đối** đặt bất kỳ Text, Phụ đề, Thẻ UI, Logo, Sticker hay Lớp phủ (Overlay/PiP/Bento) nào chạm vào 5 vùng đen bị giao diện TikTok & Reels che khuất:
+    1. **Trên đỉnh**: `Y = 0 → 248px` (CapCut `Y > +0.74`).
+    2. **Dưới đáy**: `Y = 1548 → 1920px` (cao `372px` từ đáy; CapCut `Y < -0.61`).
+    3. **Lề trái**: `X = 0 → 52px` (`X >= 54px`).
+    4. **Lề phải nửa trên (`Y < 860px`)**: `X = 1026 → 1080px` (`X <= 1024px`).
+    5. **Cột nút tương tác Phải-Dưới (`Y = 860 → 1548px`)**: `X = 886 → 1080px` (ở nửa dưới `Y >= 860px` / CapCut `Y <= +0.10`, mép phải của mọi chữ & lớp phủ bắt buộc `X <= 884px`: nếu căn giữa `X=540` thì rộng tối đa `<= 680px`, hoặc dịch tâm trái về `X=469px` / CapCut `X = -0.13` để dùng trọn `830px` vùng trắng `[54..884]`).
 - **Bố Cục Text 2 Tầng Thương Hiệu (TVC / Giới Thiệu Không Gian)**:
-  - **Tầng 1 – Tiêu Đề Chính**: IN HOA toàn bộ, màu **Vàng Gold (`RGB: [1.0, 0.831, 0.0]` / `#FFD400`)**, cỡ `12` (16:9) hoặc `14–15` (9:16), viền đen mảnh (`stroke width: 0.08`), vị trí `Y = -0.42`.
-  - **Tầng 2 – Mô Tả Phụ**: Chữ thường, màu **Trắng (`[1.0, 1.0, 1.0]`)**, cỡ `9`, viền đen `0.08`, vị trí `Y = -0.64`.
+  - **Tầng 1 – Tiêu Đề Chính**: IN HOA toàn bộ, màu **Vàng Gold (`RGB: [1.0, 0.831, 0.0]` / `#FFD400`)**, cỡ `12` (16:9) hoặc `14–15` (9:16), viền đen mảnh (`stroke width: 0.08`), vị trí `Y = -0.38` (9:16, dịch tâm `X = -0.13` hoặc ngắt dòng gọn `<= 680px` tránh cột nút phải) / `Y = -0.42` (16:9).
+  - **Tầng 2 – Mô Tả Phụ**: Chữ thường, màu **Trắng (`[1.0, 1.0, 1.0]`)**, cỡ `9`, viền đen `0.08`, vị trí `Y = -0.52` (9:16 — tuyệt đối không hạ xuống `-0.64` vì lọt vùng đen đáy `>1548px`!) / `Y = -0.64` (16:9).
   - **[NÂNG CẤP] Staggered Text In/Out**: Tầng 2 xuất hiện trễ hơn Tầng 1 từ `0.25s – 0.5s`; luôn gắn hiệu ứng vào (`Chữ mờ dần hiện vào`, `Bụi vàng`, `Mờ`) và hiệu ứng ra (`Mờ dần` `0.4s – 0.5s`) để chữ không biến mất đột ngột.
 - **Text Hook Mở Đầu (Vlog / Reels)**:
-  - Dùng font `Montserrat-Bold.otf` hoặc `Oswald-Bold.ttf`, cỡ `15 – 23`, đặt ở 1/3 trên (`Y = 0.41 – 0.69`), kết hợp hiệu ứng `Máy chữ`, `Xoay lấp lánh`, `Tan chảy điện tử`.
+  - Dùng font `Montserrat-Bold.otf` hoặc `Oswald-Bold.ttf`, cỡ `15 – 23`, đặt ở 1/3 trên trong vùng trắng an toàn (`Y = 0.35 – 0.65`, mép trên `>= 250px`), kết hợp hiệu ứng `Máy chữ`, `Xoay lấp lánh`, `Tan chảy điện tử`.
 - **Phụ Đề Thoại Liên Tục (Subtitles)**:
-  - Cắt gọn từng cụm `1.5s – 2.2s` (tối đa 6–8 từ/dòng), IN HOA, đặt cố định ở `Y = -0.85` (16:9) hoặc `Y = -0.55` (9:16).
+  - Cắt gọn từng cụm `1.5s – 2.2s` (tối đa 5–7 từ/dòng để bề ngang `<= 680px` không chạm cột nút phải `X=886px`), đặt cố định ở `Y = -0.85` (16:9) hoặc `Y = -0.48` đến `-0.54` (9:16, mép dưới `<= 1545px`).
 
 ---
 

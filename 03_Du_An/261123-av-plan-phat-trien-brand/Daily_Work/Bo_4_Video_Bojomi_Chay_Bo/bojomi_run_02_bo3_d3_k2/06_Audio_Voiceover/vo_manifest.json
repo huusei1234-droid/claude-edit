@@ -1,0 +1,87 @@
+{
+  "video_key": "bojomi_run_02_bo3_d3_k2",
+  "title": "Bojomi Chạy Bộ 02 — Bộ 3 Dẫn Đường Ca – D3 – K2 MK-7 Nhẹ Bụng",
+  "final_name": "261124 AVPM Bojomi Chay Bo 02 - Bo 3 Canxi D3 K2 MK7 Nhe Bung final.mp4",
+  "voice_profile_name": "THANH THANH TVC",
+  "sample_rate": 24000,
+  "total_duration_s": 56.75,
+  "segments": [
+    {
+      "id": "vo_01",
+      "text": "Uống Canxi cho dân chạy bộ, nhớ phải đủ bộ đôi D3 và K2 MK-7!",
+      "path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Bo_4_Video_Bojomi_Chay_Bo\\bojomi_run_02_bo3_d3_k2\\06_Audio_Voiceover\\vo_01.wav",
+      "shot_start_s": 0.0,
+      "shot_duration_s": 5.0,
+      "shot_end_s": 5.0,
+      "start_s": 0.22,
+      "duration_s": 4.287,
+      "end_s": 4.507
+    },
+    {
+      "id": "vo_02",
+      "text": "Nhiều bạn chạy bộ uống Canxi thông thường nhưng vẫn dễ nặng bụng, khó hấp thu vì thiếu bộ dẫn đường khoa học.",
+      "path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Bo_4_Video_Bojomi_Chay_Bo\\bojomi_run_02_bo3_d3_k2\\06_Audio_Voiceover\\vo_02.wav",
+      "shot_start_s": 5.0,
+      "shot_duration_s": 7.25,
+      "shot_end_s": 12.25,
+      "start_s": 5.22,
+      "duration_s": 6.64,
+      "end_s": 11.86
+    },
+    {
+      "id": "vo_03",
+      "text": "Ngũ cốc dinh dưỡng Bojomi kết hợp trọn bộ kiềng ba chân: Canxi tảo biển Aquamin F, Vitamin D3 và Vitamin K2 MK-7.",
+      "path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Bo_4_Video_Bojomi_Chay_Bo\\bojomi_run_02_bo3_d3_k2\\06_Audio_Voiceover\\vo_03.wav",
+      "shot_start_s": 12.25,
+      "shot_duration_s": 8.75,
+      "shot_end_s": 21.0,
+      "start_s": 12.47,
+      "duration_s": 7.974,
+      "end_s": 20.444
+    },
+    {
+      "id": "vo_04",
+      "text": "Công thức chuẩn trong một gói gồm bốn trăm mười bảy phẩy sáu miligam Canxi, bảy trăm bảy mươi chín phẩy bốn IU D3 và một trăm sáu mươi chín phẩy tám microgam K2 MK-7.",
+      "path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Bo_4_Video_Bojomi_Chay_Bo\\bojomi_run_02_bo3_d3_k2\\06_Audio_Voiceover\\vo_04.wav",
+      "shot_start_s": 21.0,
+      "shot_duration_s": 12.25,
+      "shot_end_s": 33.25,
+      "start_s": 21.22,
+      "duration_s": 11.534,
+      "end_s": 32.754
+    },
+    {
+      "id": "vo_05",
+      "text": "Dạng bột ngũ cốc vị Vani thanh béo, hòa tan mịn trong hai trăm mililit nước ấm sáu mươi độ, uống cực kỳ nhẹ bụng.",
+      "path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Bo_4_Video_Bojomi_Chay_Bo\\bojomi_run_02_bo3_d3_k2\\06_Audio_Voiceover\\vo_05.wav",
+      "shot_start_s": 33.25,
+      "shot_duration_s": 7.75,
+      "shot_end_s": 41.0,
+      "start_s": 33.47,
+      "duration_s": 7.108,
+      "end_s": 40.578
+    },
+    {
+      "id": "vo_06",
+      "text": "Nhờ hấp thu tốt và êm dạ, mỗi buổi chạy sáng đều tràn đầy hứng khởi và bền bỉ hơn hẳn.",
+      "path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Bo_4_Video_Bojomi_Chay_Bo\\bojomi_run_02_bo3_d3_k2\\06_Audio_Voiceover\\vo_06.wav",
+      "shot_start_s": 41.0,
+      "shot_duration_s": 6.25,
+      "shot_end_s": 47.25,
+      "start_s": 41.22,
+      "duration_s": 5.461,
+      "end_s": 46.681
+    },
+    {
+      "id": "vo_07",
+      "text": "Đừng bỏ lỡ ưu đãi sinh nhật Droppii: mua ba Bojomi tặng ngay một hộp năm trăm hai mươi nghìn. Nhắn Bojomi để nhận tư vấn ngay nhé!",
+      "path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Bo_4_Video_Bojomi_Chay_Bo\\bojomi_run_02_bo3_d3_k2\\06_Audio_Voiceover\\vo_07.wav",
+      "shot_start_s": 47.25,
+      "shot_duration_s": 9.5,
+      "shot_end_s": 56.75,
+      "start_s": 47.47,
+      "duration_s": 8.274,
+      "end_s": 55.744
+    }
+  ]
+}

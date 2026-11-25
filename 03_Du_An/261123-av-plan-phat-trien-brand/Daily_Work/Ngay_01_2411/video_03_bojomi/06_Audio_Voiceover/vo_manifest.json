@@ -1,0 +1,87 @@
+{
+  "video_key": "video_03_bojomi",
+  "title": "Bojomi — Canxi Tảo Biển Aquamin F + D3 + K2 MK-7 (Ngày 01)",
+  "final_name": "261124 AVPM Bojomi Canxi Tao Bien D3 K2 final.mp4",
+  "voice_profile_name": "THANH THANH TVC",
+  "sample_rate": 24000,
+  "total_duration_s": 53.5,
+  "segments": [
+    {
+      "id": "vo_01",
+      "text": "Chọn Canxi đừng chỉ nhìn miligam, hãy hỏi nguồn gốc!",
+      "path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Ngay_01_2411\\video_03_bojomi\\06_Audio_Voiceover\\vo_01.wav",
+      "shot_start_s": 0.0,
+      "shot_duration_s": 4.0,
+      "shot_end_s": 4.0,
+      "start_s": 0.22,
+      "duration_s": 3.381,
+      "end_s": 3.601
+    },
+    {
+      "id": "vo_02",
+      "text": "Nhiều người uống Canxi mãi vẫn thấy nặng bụng, khó hấp thu vì thiếu bộ đôi dẫn đường.",
+      "path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Ngay_01_2411\\video_03_bojomi\\06_Audio_Voiceover\\vo_02.wav",
+      "shot_start_s": 4.0,
+      "shot_duration_s": 6.0,
+      "shot_end_s": 10.0,
+      "start_s": 4.22,
+      "duration_s": 5.282,
+      "end_s": 9.502
+    },
+    {
+      "id": "vo_03",
+      "text": "Bojomi của An Vượng Pharma kết hợp Canxi tảo biển Aquamin F cùng Vitamin D3 và K2 MK-7.",
+      "path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Ngay_01_2411\\video_03_bojomi\\06_Audio_Voiceover\\vo_03.wav",
+      "shot_start_s": 10.0,
+      "shot_duration_s": 7.0,
+      "shot_end_s": 17.0,
+      "start_s": 10.22,
+      "duration_s": 6.321,
+      "end_s": 16.541
+    },
+    {
+      "id": "vo_04",
+      "text": "Mỗi gói cung cấp bốn trăm mười bảy phẩy sáu miligam Canxi, bảy trăm bảy mươi chín phẩy bốn IU D3 và một trăm sáu mươi chín phẩy tám microgam K2 MK-7.",
+      "path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Ngay_01_2411\\video_03_bojomi\\06_Audio_Voiceover\\vo_04.wav",
+      "shot_start_s": 17.0,
+      "shot_duration_s": 11.0,
+      "shot_end_s": 28.0,
+      "start_s": 17.22,
+      "duration_s": 10.298,
+      "end_s": 27.518
+    },
+    {
+      "id": "vo_05",
+      "text": "Bổ sung thêm hai trăm lẻ một phẩy bốn miligam Collagen, hương Vani thơm béo dễ uống, chỉ cần pha với hai trăm mililit nước ấm sáu mươi độ.",
+      "path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Ngay_01_2411\\video_03_bojomi\\06_Audio_Voiceover\\vo_05.wav",
+      "shot_start_s": 28.0,
+      "shot_duration_s": 9.5,
+      "shot_end_s": 37.5,
+      "start_s": 28.22,
+      "duration_s": 8.887,
+      "end_s": 37.107
+    },
+    {
+      "id": "vo_06",
+      "text": "Đóng gói tiện lợi cho người lớn tuổi, dân văn phòng và cả gia đình chăm khung xương dẻo dai mỗi ngày.",
+      "path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Ngay_01_2411\\video_03_bojomi\\06_Audio_Voiceover\\vo_06.wav",
+      "shot_start_s": 37.5,
+      "shot_duration_s": 7.0,
+      "shot_end_s": 44.5,
+      "start_s": 37.72,
+      "duration_s": 6.435,
+      "end_s": 44.155
+    },
+    {
+      "id": "vo_07",
+      "text": "Bojomi năm trăm hai mươi nghìn hộp mười bốn gói. Nhắn Canxi nhận ngay ưu đãi mua ba tặng một đến hết ba mươi tháng mười một nhé!",
+      "path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Ngay_01_2411\\video_03_bojomi\\06_Audio_Voiceover\\vo_07.wav",
+      "shot_start_s": 44.5,
+      "shot_duration_s": 9.0,
+      "shot_end_s": 53.5,
+      "start_s": 44.72,
+      "duration_s": 7.849,
+      "end_s": 52.569
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "video_key": "video_04_collamela",
+  "title": "Collamela — Collagen Tripeptide + HA + C + Kẽm Đón Tết (Ngày 01)",
+  "final_name": "261124 AVPM Collamela Collagen Tripeptide Don Tet final.mp4",
+  "voice_profile_name": "THANH THANH TVC",
+  "sample_rate": 24000,
+  "total_duration_s": 49.5,
+  "segments": [
+    {
+      "id": "vo_01",
+      "text": "Sắp có tiệc cuối năm mới vội chăm da thì đã muộn rồi!",
+      "path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Ngay_01_2411\\video_04_collamela\\06_Audio_Voiceover\\vo_01.wav",
+      "shot_start_s": 0.0,
+      "shot_duration_s": 4.0,
+      "shot_end_s": 4.0,
+      "start_s": 0.22,
+      "duration_s": 3.308,
+      "end_s": 3.528
+    },
+    {
+      "id": "vo_02",
+      "text": "Còn đúng sáu mươi ngày nữa là tới Tết, muốn làn da căng mướt rạng rỡ hãy nuôi dưỡng từ bên trong ngay hôm nay.",
+      "path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Ngay_01_2411\\video_04_collamela\\06_Audio_Voiceover\\vo_02.wav",
+      "shot_start_s": 4.0,
+      "shot_duration_s": 7.5,
+      "shot_end_s": 11.5,
+      "start_s": 4.22,
+      "duration_s": 6.833,
+      "end_s": 11.053
+    },
+    {
+      "id": "vo_03",
+      "text": "Collamela của An Vượng Pharma ứng dụng Collagen Tripeptide phân tử nhỏ giúp cơ thể dễ dàng hấp thu.",
+      "path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Ngay_01_2411\\video_04_collamela\\06_Audio_Voiceover\\vo_03.wav",
+      "shot_start_s": 11.5,
+      "shot_duration_s": 6.5,
+      "shot_end_s": 18.0,
+      "start_s": 11.72,
+      "duration_s": 5.875,
+      "end_s": 17.595
+    },
+    {
+      "id": "vo_04",
+      "text": "Mỗi hai gói cung cấp hai nghìn năm trăm ba mươi miligam Collagen, hai mươi lăm phẩy sáu mươi tám miligam HA cùng Vitamin C và Kẽm.",
+      "path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Ngay_01_2411\\video_04_collamela\\06_Audio_Voiceover\\vo_04.wav",
+      "shot_start_s": 18.0,
+      "shot_duration_s": 8.75,
+      "shot_end_s": 26.75,
+      "start_s": 18.22,
+      "duration_s": 8.078,
+      "end_s": 26.298
+    },
+    {
+      "id": "vo_05",
+      "text": "Vị đào thanh mát hoàn toàn không tanh, chỉ cần pha một trăm mililit nước mát uống ngon mỗi ngày.",
+      "path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Ngay_01_2411\\video_04_collamela\\06_Audio_Voiceover\\vo_05.wav",
+      "shot_start_s": 26.75,
+      "shot_duration_s": 6.75,
+      "shot_end_s": 33.5,
+      "start_s": 26.97,
+      "duration_s": 5.968,
+      "end_s": 32.938
+    },
+    {
+      "id": "vo_06",
+      "text": "Kết hợp ngủ sớm và uống đều đặn để làn da luôn ẩm mịn, đàn hồi và tươi tắn suốt mùa lễ hội.",
+      "path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Ngay_01_2411\\video_04_collamela\\06_Audio_Voiceover\\vo_06.wav",
+      "shot_start_s": 33.5,
+      "shot_duration_s": 6.25,
+      "shot_end_s": 39.75,
+      "start_s": 33.72,
+      "duration_s": 5.666,
+      "end_s": 39.386
+    },
+    {
+      "id": "vo_07",
+      "text": "Ưu đãi sinh nhật Droppii: mua hai hộp hai mươi gói tặng ngay một hộp mười gói bốn trăm tám mươi nghìn. Nhắn Da Đẹp nhận tư vấn ngay nhé!",
+      "path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Ngay_01_2411\\video_04_collamela\\06_Audio_Voiceover\\vo_07.wav",
+      "shot_start_s": 39.75,
+      "shot_duration_s": 9.75,
+      "shot_end_s": 49.5,
+      "start_s": 39.97,
+      "duration_s": 8.565,
+      "end_s": 48.535
+    }
+  ]
+}

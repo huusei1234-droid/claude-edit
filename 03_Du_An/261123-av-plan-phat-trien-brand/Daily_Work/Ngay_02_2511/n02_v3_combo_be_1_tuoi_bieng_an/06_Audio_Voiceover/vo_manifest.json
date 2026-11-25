@@ -1,0 +1,65 @@
+{
+  "video_key": "n02_v3_combo_be_1_tuoi_bieng_an",
+  "title": "Combo Chiều Cao Bé Từ 1 Tuổi+ — Bé Biếng Ăn Lười Sữa Êm Bụng",
+  "final_name": "261125 AVPM 03 - Combo Chieu Cao Be Tu 1 Tuoi Bieng An Em Bung 870K final.mp4",
+  "bgm_path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Ngay_02_2511\\02_BGM_Normalized\\n02_v3_combo_be_1_tuoi_bieng_an_bgm.mp3",
+  "bgm_original": "05_Acoustic - Guitar - Nhẹ Nhàng Mộc Mạc\\Blooming Fields (2p09s).mp3",
+  "total_duration_s": 40.25,
+  "segments": [
+    {
+      "id": "vo_01",
+      "text": "Bé từ một tuổi biếng ăn, lười uống sữa, mẹ bổ sung Đạm và Canxi thế nào cho con êm bụng?",
+      "path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Ngay_02_2511\\n02_v3_combo_be_1_tuoi_bieng_an\\06_Audio_Voiceover\\vo_01.wav",
+      "start_s": 0.12,
+      "duration_s": 5.369,
+      "end_s": 5.489,
+      "shot_start_s": 0.0,
+      "shot_duration_s": 5.75,
+      "shot_end_s": 5.75
+    },
+    {
+      "id": "vo_02",
+      "text": "Bí quyết của mẹ hiện đại là không ép uống dồn một lần, mà chia nhỏ hai khung giờ chuẩn vị dịu nhẹ cho con.",
+      "path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Ngay_02_2511\\n02_v3_combo_be_1_tuoi_bieng_an\\06_Audio_Voiceover\\vo_02.wav",
+      "start_s": 5.87,
+      "duration_s": 6.721,
+      "end_s": 12.591,
+      "shot_start_s": 5.75,
+      "shot_duration_s": 7.25,
+      "shot_end_s": 13.0
+    },
+    {
+      "id": "vo_03",
+      "text": "Buổi sáng pha AV Protein nước mát hai mươi đến bốn mươi độ, đạm thực vật lành tính cùng lợi khuẩn B-3 giúp bé tiêu hóa êm bụng.",
+      "path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Ngay_02_2511\\n02_v3_combo_be_1_tuoi_bieng_an\\06_Audio_Voiceover\\vo_03.wav",
+      "start_s": 13.12,
+      "duration_s": 8.17,
+      "end_s": 21.29,
+      "shot_start_s": 13.0,
+      "shot_duration_s": 8.5,
+      "shot_end_s": 21.5
+    },
+    {
+      "id": "vo_04",
+      "text": "Bữa phụ chiều pha Bojomi nước ấm sáu mươi độ vị Vani thơm béo, giàu Canxi tảo biển Aquamin F, D3 và K2 MK-7.",
+      "path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Ngay_02_2511\\n02_v3_combo_be_1_tuoi_bieng_an\\06_Audio_Voiceover\\vo_04.wav",
+      "start_s": 21.62,
+      "duration_s": 7.46,
+      "end_s": 29.08,
+      "shot_start_s": 21.5,
+      "shot_duration_s": 8.0,
+      "shot_end_s": 29.5
+    },
+    {
+      "id": "vo_05",
+      "text": "Mẹ chia lượng phù hợp từ một tuổi, kết hợp ngủ sớm và vận động. Bộ đôi chính hãng có giá tám trăm bảy mươi nghìn đồng. Mẹ nhắn Bé Một Tuổi nhận bảng khẩu phần chuẩn nhé!",
+      "path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Ngay_02_2511\\n02_v3_combo_be_1_tuoi_bieng_an\\06_Audio_Voiceover\\vo_05.wav",
+      "start_s": 29.62,
+      "duration_s": 10.069,
+      "end_s": 39.689,
+      "shot_start_s": 29.5,
+      "shot_duration_s": 10.75,
+      "shot_end_s": 40.25
+    }
+  ]
+}

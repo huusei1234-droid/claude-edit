@@ -15,7 +15,11 @@ canvas/exports/
 canvas/muse2api/data/
 canvas/muse2api/.env
 edit/.tiktok-brave-profile/
+edit/.tiktok_post.lock
+edit/tiktok_autopost.log
 edit/mcp_open_folder_build/
+huu/logs/
+gude-*.log
 
 # Secrets, Profiles, Cookies & Keys (NEVER COMMIT)
 .env

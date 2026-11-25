@@ -1,0 +1,76 @@
+{
+  "video_key": "kid1y_02_pha_chuan_2_ly",
+  "title": "Combo Chiều Cao Bé Từ 1 Tuổi 02 — Pha Chuẩn 2 Ly Êm Bụng & Quà 520K",
+  "final_name": "261124 AVPM Combo Chieu Cao Be Tu 1 Tuoi 02 - Pha Chuan 2 Ly Em Bung Tang 520K final.mp4",
+  "voice_profile_name": "THANH THANH TVC",
+  "sample_rate": 24000,
+  "total_duration_s": 41.25,
+  "segments": [
+    {
+      "id": "vo_01",
+      "text": "Pha Bojomi và AV Protein cho bé từ một tuổi sao để êm bụng và hấp thu tốt nhất?",
+      "path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Bo_2_Video_Chieu_Cao_Be_Tu_1_Tuoi\\kid1y_02_pha_chuan_2_ly\\06_Audio_Voiceover\\vo_01.wav",
+      "shot_start_s": 0.0,
+      "shot_duration_s": 5.25,
+      "shot_end_s": 5.25,
+      "start_s": 0.16,
+      "duration_s": 4.845,
+      "end_s": 5.005
+    },
+    {
+      "id": "vo_02",
+      "text": "Mẹ nhớ tuyệt đối không đổ chung hai gói vào một ly nước sôi để giữ trọn dưỡng chất cho con.",
+      "path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Bo_2_Video_Chieu_Cao_Be_Tu_1_Tuoi\\kid1y_02_pha_chuan_2_ly\\06_Audio_Voiceover\\vo_02.wav",
+      "shot_start_s": 5.25,
+      "shot_duration_s": 6.0,
+      "shot_end_s": 11.25,
+      "start_s": 5.41,
+      "duration_s": 5.506,
+      "end_s": 10.916
+    },
+    {
+      "id": "vo_03",
+      "text": "Buổi sáng, mẹ pha AV Protein với nước mát hoặc ấm hai mươi đến bốn mươi độ giữ nguyên lợi khuẩn B-3.",
+      "path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Bo_2_Video_Chieu_Cao_Be_Tu_1_Tuoi\\kid1y_02_pha_chuan_2_ly\\06_Audio_Voiceover\\vo_03.wav",
+      "shot_start_s": 11.25,
+      "shot_duration_s": 6.75,
+      "shot_end_s": 18.0,
+      "start_s": 11.41,
+      "duration_s": 6.266,
+      "end_s": 17.676
+    },
+    {
+      "id": "vo_04",
+      "text": "Bữa phụ chiều, pha Bojomi với nước ấm sáu mươi độ thành ly ngũ cốc Vani giàu Canxi tảo biển, D3 và K2.",
+      "path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Bo_2_Video_Chieu_Cao_Be_Tu_1_Tuoi\\kid1y_02_pha_chuan_2_ly\\06_Audio_Voiceover\\vo_04.wav",
+      "shot_start_s": 18.0,
+      "shot_duration_s": 7.0,
+      "shot_end_s": 25.0,
+      "start_s": 18.16,
+      "duration_s": 6.584,
+      "end_s": 24.744
+    },
+    {
+      "id": "vo_05",
+      "text": "Mẹ xem kỹ nhãn chia lượng vừa độ tuổi từ một tuổi trở lên, kết hợp ngủ sớm trước hai mươi hai giờ.",
+      "path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Bo_2_Video_Chieu_Cao_Be_Tu_1_Tuoi\\kid1y_02_pha_chuan_2_ly\\06_Audio_Voiceover\\vo_05.wav",
+      "shot_start_s": 25.0,
+      "shot_duration_s": 6.0,
+      "shot_end_s": 31.0,
+      "start_s": 25.16,
+      "duration_s": 5.445,
+      "end_s": 30.605
+    },
+    {
+      "id": "vo_06",
+      "text": "Bộ đôi Bojomi và AV Protein chính hãng có giá tám trăm bảy mươi nghìn đồng. Mẹ nhắn Bé Một Tuổi nhận ngay bảng hướng dẫn pha chuẩn hai khung giờ nhé!",
+      "path": "d:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Bo_2_Video_Chieu_Cao_Be_Tu_1_Tuoi\\kid1y_02_pha_chuan_2_ly\\06_Audio_Voiceover\\vo_06.wav",
+      "shot_start_s": 31.0,
+      "shot_duration_s": 10.25,
+      "shot_end_s": 41.25,
+      "start_s": 31.16,
+      "duration_s": 9.783,
+      "end_s": 40.943
+    }
+  ]
+}
