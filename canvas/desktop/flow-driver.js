@@ -756,31 +756,40 @@ async function checkPrefixCreditsLive(prefix) {
 }
 
 const PREFERRED_FLOW_EMAIL = "capcutvid274@gmail.com";
+const PREFERRED_EMAIL_RE = /^capcut(?:vid)?274@/i;
 let lastPreferredProbeAt = 0;
+
+function isPreferredEmailMatch(email, want) {
+  const e = String(email || "").trim().toLowerCase();
+  if (!e) return false;
+  if (want && e === want) return true;
+  return PREFERRED_EMAIL_RE.test(e);
+}
 
 function getPreferredPrefix(a) {
   const want = String(a?.preferredEmail || PREFERRED_FLOW_EMAIL).trim().toLowerCase();
-  if (!want) return null;
   const map = a?.prefixCredits || {};
   for (const [pf, info] of Object.entries(map)) {
-    if (String(info?.email || "").trim().toLowerCase() === want) return pf;
+    if (isPreferredEmailMatch(info?.email, want)) return pf;
   }
-  const wt = (a?.workerTargets || []).find((t) => String(t?.email || "").trim().toLowerCase() === want);
+  const wt = (a?.workerTargets || []).find((t) => isPreferredEmailMatch(t?.email, want));
   return wt ? wt.prefix : null;
 }
 
-// Tự động dò & ghim tài khoản ưu tiên số 1 (capcutvid274@gmail.com) lên đầu danh sách workerTargets ngay khi đã đăng nhập trong Brave!
+// Tự động dò & ghim tài khoản ưu tiên số 1 (capcutvid274@gmail.com / capcut274) lên đầu danh sách workerTargets (đủ 9 dự án chạy độc quyền xả điểm)!
 async function ensurePreferredAccountFirst(kind = "video") {
   const a = acct();
   if (!a || !isMainBraveProfile(a.profile)) return null;
   const wantEmail = String(a.preferredEmail || PREFERRED_FLOW_EMAIL).trim().toLowerCase();
-  if (!wantEmail) return null;
 
   const existingPf = getPreferredPrefix(a);
-  if (existingPf && Array.isArray(a.workerTargets) && a.workerTargets[0]?.prefix === existingPf) {
+  const existingPrefCount = existingPf
+    ? (a.workerTargets || []).filter((t) => t && t.prefix === existingPf && t.projectId).length
+    : 0;
+  if (existingPf && existingPrefCount >= MAX_PARALLEL_FLOW && a.workerTargets?.[0]?.prefix === existingPf) {
     return existingPf;
   }
-  if (Date.now() - lastPreferredProbeAt < 25000) return existingPf;
+  if (Date.now() - lastPreferredProbeAt < 25000 && existingPf) return existingPf;
   lastPreferredProbeAt = Date.now();
 
   const b = await ensureBrowser({ visible: true });
@@ -802,14 +811,14 @@ async function ensurePreferredAccountFirst(kind = "video") {
         return btn ? btn.getAttribute("aria-label") || "" : "";
       }).catch(() => "");
       const foundEmail = ((ariaLabel.match(/\(([^)\s]+@[^)\s]+)\)/) || [])[1] || "").trim().toLowerCase();
-      if (foundEmail !== wantEmail) continue;
+      if (!isPreferredEmailMatch(foundEmail, wantEmail)) continue;
 
       const credInfo = await readCreditsOnPage(p).catch(() => null);
       if (credInfo) {
-        recordPrefixHealthyCredits(realPrefix, credInfo.credits, wantEmail);
+        recordPrefixHealthyCredits(realPrefix, credInfo.credits, foundEmail);
       } else {
         const map = getPrefixCreditsMap();
-        map[realPrefix] = { ...(map[realPrefix] || {}), email: wantEmail, updatedAt: Date.now() };
+        map[realPrefix] = { ...(map[realPrefix] || {}), email: foundEmail, updatedAt: Date.now() };
       }
 
       let pids = await p.evaluate(() => [
@@ -820,7 +829,7 @@ async function ensurePreferredAccountFirst(kind = "video") {
         ),
       ]).catch(() => []);
 
-      while (pids.length < 4) {
+      while (pids.length < MAX_PARALLEL_FLOW) {
         await p.goto(`${HOME}${realPrefix}`, { waitUntil: "domcontentloaded" }).catch(() => {});
         await sleep(1600);
         const clicked = await p.evaluate(() => {
@@ -842,14 +851,15 @@ async function ensurePreferredAccountFirst(kind = "video") {
       }
 
       if (pids.length > 0) {
-        const prefTargets = pids.slice(0, 4).map((pid) => ({ prefix: realPrefix, projectId: pid, email: wantEmail }));
+        const prefTargets = pids.slice(0, MAX_PARALLEL_FLOW).map((pid) => ({ prefix: realPrefix, projectId: pid, email: foundEmail }));
         const others = (a.workerTargets || []).filter((t) => t && t.prefix !== realPrefix);
         a.workerTargets = [...prefTargets, ...others];
         a.userPrefix = realPrefix;
         a.projectId = pids[0];
-        a.email = wantEmail;
+        a.email = foundEmail;
+        a.preferredEmail = foundEmail;
         saveConfig();
-        console.log(`[flow:Priority#1] Đã ghim tài khoản ưu tiên số 1 ${wantEmail} (${realPrefix}, ${pids.length} dự án) lên đầu hệ thống!`);
+        console.log(`[flow:Priority#1] Đã khóa ưu tiên xả điểm số 1 cho ${foundEmail} (${realPrefix}, ${prefTargets.length} dự án)!`);
         return realPrefix;
       }
     } finally {
@@ -935,18 +945,29 @@ async function discoverMoreGoogleNicksInBrave(kind = "video", skipPrefixes = new
 async function resolveHealthyTargetForSlot(slotIdx, kind = "video", triedPrefixes = new Set()) {
   const a = acct();
   const targets = Array.isArray(a?.workerTargets) ? a.workerTargets : [];
-  const defaultWt = targets[slotIdx] || null;
-
-  if (defaultWt && defaultWt.projectId && !triedPrefixes.has(defaultWt.prefix) && !isPrefixExhausted(defaultWt.prefix, kind)) {
-    return defaultWt;
-  }
-
-  // Nếu nick mặc định của Slot này đã hết điểm -> chọn ngay một dự án thuộc nick khác còn điểm (ưu tiên dự án đang rảnh)
   const busyUrls = new Set(
     flowSlotPages
       .map((p, idx) => (idx !== slotIdx && p && !p.isClosed() ? p.url() : ""))
       .filter(Boolean)
   );
+
+  // [ƯU TIÊN XẢ ĐIỂM SỐ 1 - capcut274 / capcutvid274@gmail.com]:
+  // Chừng nào tài khoản ưu tiên số 1 còn điểm, dồn 100% mọi luồng (0..8) chạy ĐỘC QUYỀN trên tài khoản đó để giảm điểm nó xuống trước!
+  const prefPf = getPreferredPrefix(a);
+  if (prefPf && !triedPrefixes.has(prefPf) && !isPrefixExhausted(prefPf, kind)) {
+    const prefHealthy = targets.filter((t) => t && t.projectId && t.prefix === prefPf);
+    if (prefHealthy.length > 0) {
+      const freePref = prefHealthy.find((t) => !busyUrls.has(`${HOME}${t.prefix}project/${t.projectId}`));
+      return freePref || prefHealthy[slotIdx % prefHealthy.length];
+    }
+  }
+
+  const defaultWt = targets[slotIdx] || null;
+  if (defaultWt && defaultWt.projectId && !triedPrefixes.has(defaultWt.prefix) && !isPrefixExhausted(defaultWt.prefix, kind)) {
+    return defaultWt;
+  }
+
+  // Nếu nick ưu tiên / mặc định đã hết điểm -> chọn ngay một dự án thuộc nick khác còn điểm (ưu tiên dự án đang rảnh)
   const healthy = targets.filter(
     (t) => t && t.projectId && !triedPrefixes.has(t.prefix) && !isPrefixExhausted(t.prefix, kind)
   );
@@ -970,6 +991,10 @@ async function findOpenTabMatchingAssets(b, slotIdx, kind, triedPrefixes, job) {
     .filter((s) => s && !/^(ảnh|anh|image|img|asset|node|unnamed|untitled)[\s_-]*\d*$/i.test(s));
   if (!wantStems.length) return null;
 
+  const a = acct();
+  const prefPf = getPreferredPrefix(a);
+  const lockToPref = Boolean(prefPf && !triedPrefixes.has(prefPf) && !isPrefixExhausted(prefPf, kind));
+
   const pages = await b.pages().catch(() => []);
   let best = null;
   let bestScore = 0;
@@ -979,6 +1004,7 @@ async function findOpenTabMatchingAssets(b, slotIdx, kind, triedPrefixes, job) {
     const pid = projectOf(u);
     if (!pid || /\/edit\//.test(u)) continue;
     const pf = userPrefixOf(u) || "u/0/";
+    if (lockToPref && pf !== prefPf) continue;
     if (triedPrefixes.has(pf) || isPrefixExhausted(pf, kind)) continue;
     // Không tranh tab đang bận của một slot khác
     const heldByOtherBusy = flowSlotPages.some((sp, idx) => idx !== slotIdx && flowSlotBusy[idx] && sp === p);
@@ -1003,6 +1029,7 @@ async function findOpenTabMatchingAssets(b, slotIdx, kind, triedPrefixes, job) {
 }
 
 async function ensureSlotProjectPage(slotIdx, kind = "video", triedPrefixes = new Set(), job = null) {
+  await ensurePreferredAccountFirst(kind).catch(() => null);
   const b = await ensureBrowser({ visible: true });
 
   // Ưu tiên gắn vào Tab dự án Flow đang mở sẵn đã chứa các ảnh tham chiếu của lệnh này (tránh nhảy sang dự án trống phải tải lại ảnh!)
