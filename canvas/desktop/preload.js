@@ -29,4 +29,11 @@ contextBridge.exposeInMainWorld("desktop", {
     openAccount: (id) => ipcRenderer.invoke("chatgpt:open-account", id),
     generateImage: (job) => ipcRenderer.invoke("chatgpt:generate-image", job),
   },
+  gemini: {
+    status: () => ipcRenderer.invoke("gemini:status"),
+    show: () => ipcRenderer.invoke("gemini:show"),
+    accounts: () => ipcRenderer.invoke("gemini:accounts"),
+    refreshAccounts: (opts) => ipcRenderer.invoke("gemini:refresh-accounts", opts),
+    generateVideo: (job) => ipcRenderer.invoke("gemini:generate-video", job),
+  },
 });

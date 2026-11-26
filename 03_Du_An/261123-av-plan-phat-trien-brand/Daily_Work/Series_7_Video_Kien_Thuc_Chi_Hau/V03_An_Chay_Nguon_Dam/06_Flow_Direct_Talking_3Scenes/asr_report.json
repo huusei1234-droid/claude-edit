@@ -1,0 +1,29 @@
+[
+  {
+    "scene": "scene_01",
+    "duration_s": 12.03,
+    "streams": [
+      "video",
+      "audio"
+    ],
+    "heard": "Một mâm cơm chay có cơm, rau luộc, canh bí và nấm xào nhìn rất đầy đặn. Trước khi ăn, hậu hay hỏi 1 câu, món nào hôm nay là nguồn đạm chính?"
+  },
+  {
+    "scene": "scene_02",
+    "duration_s": 14.04,
+    "streams": [
+      "video",
+      "audio"
+    ],
+    "heard": "Nếu chưa có, mình có thể thêm đậu phụ sốt gà, một phần đậu gà hoặc đậu lang. An trai lâu dài thì đổi qua lại các loại đậu và ngũ cốc trong ngày để có nguồn acid amine đa dạng hơn."
+  },
+  {
+    "scene": "scene_03",
+    "duration_s": 10.03,
+    "streams": [
+      "video",
+      "audio"
+    ],
+    "heard": "Lần tới nấu cơm chay, thử chọn món đạm ngay từ lúc, ngay từ lúc lên thực đơn nhé!"
+  }
+]

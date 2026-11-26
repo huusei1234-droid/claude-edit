@@ -3,12 +3,30 @@ import path from "node:path";
 import { execFileSync, spawn } from "node:child_process";
 import { createRequire } from "node:module";
 
-const require = createRequire(import.meta.url);
-const { chromium } = require("D:/AI/full studio/voice-studio/node_modules/.bun/playwright@1.63.0/node_modules/playwright/index.js");
+import { fileURLToPath } from "node:url";
 
-const EDIT_DIR = "D:\\AI\\full studio\\edit";
-const BRAVE_EXE = "C:\\Program Files\\BraveSoftware\\Brave-Browser\\Application\\brave.exe";
-const BRAVE_STUDIO_LNK = "C:\\Users\\Hang thu\\Desktop\\Brave Studio.lnk";
+const require = createRequire(import.meta.url);
+const EDIT_DIR = path.dirname(fileURLToPath(import.meta.url));
+const STUDIO_ROOT = path.resolve(EDIT_DIR, "..");
+const PLAYWRIGHT_CANDIDATES = [
+  path.join(STUDIO_ROOT, "voice-studio", "node_modules", "playwright", "index.js"),
+  "C:/AI/full studio/voice-studio/node_modules/playwright/index.js",
+  "D:/AI/full studio/voice-studio/node_modules/.bun/playwright@1.63.0/node_modules/playwright/index.js",
+];
+const { chromium } = require(PLAYWRIGHT_CANDIDATES.find((p) => fs.existsSync(p)) || PLAYWRIGHT_CANDIDATES[0]);
+
+const BRAVE_CANDIDATES = [
+  "C:\\Users\\001\\AppData\\Local\\BraveSoftware\\Brave-Browser\\Application\\brave.exe",
+  "C:\\Program Files\\BraveSoftware\\Brave-Browser\\Application\\brave.exe",
+  process.env.LOCALAPPDATA ? path.join(process.env.LOCALAPPDATA, "BraveSoftware\\Brave-Browser\\Application\\brave.exe") : "",
+].filter(Boolean);
+const BRAVE_EXE = BRAVE_CANDIDATES.find((p) => fs.existsSync(p)) || BRAVE_CANDIDATES[0];
+
+const BRAVE_STUDIO_LNKS = [
+  "C:\\Users\\001\\Desktop\\Brave Studio.lnk",
+  "C:\\Users\\Hang thu\\Desktop\\Brave Studio.lnk",
+];
+const BRAVE_STUDIO_LNK = BRAVE_STUDIO_LNKS.find((p) => fs.existsSync(p)) || "";
 const FALLBACK_PROFILE_DIR = path.join(EDIT_DIR, ".tiktok-brave-profile");
 const STATE_FILE = path.join(EDIT_DIR, "tiktok_last_post_state.json");
 const LOCK_FILE = path.join(EDIT_DIR, "tiktok_post_lock.json");
@@ -24,9 +42,11 @@ function isPidAlive(pid) {
 }
 
 const CANDIDATE_SRC_DIRS = [
+  "G:\\Other computers\\My Computer\\hằng thu pharma\\05. Video Hoàn Thiện\\K4 - Mẹ Chồng Nàng Dâu\\đã đăng",
+  "G:\\Máy tính khác\\My Computer\\hằng thu pharma\\05. Video Hoàn Thiện\\K4 - Mẹ Chồng Nàng Dâu\\đã đăng",
+  "G:\\.shortcut-targets-by-id\\1qjnlz_54ZT5OlI9dKMelZ5PJauD4etj-\\hằng thu pharma\\05. Video Hoàn Thiện\\K4 - Mẹ Chồng Nàng Dâu\\đã đăng",
   "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\05. Video Hoàn Thiện\\K4 - Mẹ Chồng Nàng Dâu\\đã đăng",
   "Z:\\.shortcut-targets-by-id\\1qjnlz_54ZT5OlI9dKMelZ5PJauD4etj-\\hằng thu pharma\\05. Video Hoàn Thiện\\K4 - Mẹ Chồng Nàng Dâu\\đã đăng",
-  "Z:\\.shortcut-targets-by-id\\1qjnlz_54ZT5OlI9dKMelZ5PJauD4etj-\\hằng thu pharma\\Video Hoàn thiện\\K4 mẹ ck nàng dâu\\đã đăng",
 ];
 const SRC_DIR = CANDIDATE_SRC_DIRS.find((p) => fs.existsSync(p)) || CANDIDATE_SRC_DIRS[0];
 const DST_DIR = path.join(SRC_DIR, "On air Tiktok");
@@ -67,10 +87,12 @@ function fallbackCaption(filename) {
 }
 
 function makeAutoCover(localVideoPath, titleSource) {
-  const pyExe =
-    process.env.PYTHON && fs.existsSync(process.env.PYTHON)
-      ? process.env.PYTHON
-      : "C:\\Users\\Hang thu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe";
+  const pyCandidates = [
+    process.env.PYTHON || "",
+    "C:\\Users\\001\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+    "C:\\Users\\Hang thu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+  ].filter(Boolean);
+  const pyExe = pyCandidates.find((p) => fs.existsSync(p)) || "python";
   const out = path.join(EDIT_DIR, "tmp_tiktok_cover.png");
   execFileSync(pyExe, [path.join(EDIT_DIR, "make_tiktok_cover.py"), localVideoPath, out, titleSource], {
     stdio: "inherit",
@@ -182,7 +204,7 @@ async function main() {
     if (fs.existsSync(STATE_FILE)) {
       try {
         const st = JSON.parse(fs.readFileSync(STATE_FILE, "utf8"));
-        if (st.lastPostedAt && Date.now() - st.lastPostedAt < 90 * 60 * 1000) {
+        if (st.lastPostedAt && Date.now() - st.lastPostedAt < 35 * 60 * 1000) {
           console.log(`SKIPPED_RECENT_SLOT: Already posted '${st.file}' ${Math.round((Date.now() - st.lastPostedAt) / 60000)}m ago.`);
           return;
         }
@@ -264,6 +286,12 @@ async function main() {
       return;
     }
 
+    const captionText = (args.caption || fallbackCaption(picked.name)).trim();
+    const localTemp = path.join(EDIT_DIR, "tmp_tiktok_upload.mp4");
+    fs.copyFileSync(picked.full, localTemp);
+    // Prepare cover BEFORE opening /tiktokstudio/upload so synchronous Drive copy + ffmpeg never stalls the upload page
+    const coverPath = args.cover && fs.existsSync(args.cover) ? args.cover : makeAutoCover(localTemp, captionText || picked.name);
+
     await page.goto("https://www.tiktok.com/tiktokstudio/upload", { waitUntil: "domcontentloaded", timeout: 90000 });
     const leaveBtn = page.locator('button:text-is("Thoát"), button:text-is("Leave")').first();
     if (await leaveBtn.isVisible({ timeout: 1500 }).catch(() => false)) {
@@ -271,7 +299,7 @@ async function main() {
       await page.waitForTimeout(1000);
     }
 
-    await page.waitForTimeout(3000);
+    await page.waitForTimeout(3500);
     if (page.url().includes("/login")) {
       console.error("AUTH_REQUIRED: Not logged in to TikTok. Please log in on Brave Studio.");
       process.exitCode = 2;
@@ -280,12 +308,6 @@ async function main() {
 
     const fileInput = page.locator('input[type="file"]').first();
     await fileInput.waitFor({ state: "attached", timeout: 30000 });
-
-    const captionText = (args.caption || fallbackCaption(picked.name)).trim();
-    const localTemp = path.join(EDIT_DIR, "tmp_tiktok_upload.mp4");
-    fs.copyFileSync(picked.full, localTemp);
-    // Generate cover BEFORE starting live TikTok Studio upload so execFileSync never stalls the CDP session
-    const coverPath = args.cover && fs.existsSync(args.cover) ? args.cover : makeAutoCover(localTemp, captionText || picked.name);
     console.log(`UPLOADING: ${picked.name}`);
     console.log(`CAPTION: ${captionText}`);
 

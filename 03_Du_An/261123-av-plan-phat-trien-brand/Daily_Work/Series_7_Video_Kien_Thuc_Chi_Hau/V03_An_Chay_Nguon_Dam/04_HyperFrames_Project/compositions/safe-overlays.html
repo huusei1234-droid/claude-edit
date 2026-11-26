@@ -1,0 +1,87 @@
+<template>
+  <style>
+    
+      @font-face { font-family: 'BeVN'; src: url('assets/fonts/BeVietnamPro-SemiBold.ttf') format('truetype'); font-weight: 600; }
+      @font-face { font-family: 'BeVN'; src: url('assets/fonts/BeVietnamPro-Bold.ttf') format('truetype'); font-weight: 700; }
+      @font-face { font-family: 'BeVN'; src: url('assets/fonts/BeVietnamPro-ExtraBold.ttf') format('truetype'); font-weight: 800; }
+    
+    * { box-sizing: border-box; }
+    #root { position: absolute; inset: 0; width: 1080px; height: 1920px; overflow: hidden; pointer-events: none; font-family: 'BeVN', sans-serif; }
+
+    /* Chữ mở đầu tự nhiên kiểu kênh chia sẻ kiến thức đời thường (không khung hộp quảng cáo USP) */
+    .open-title {
+      position: absolute; bottom: 540px; left: 60px; width: 810px;
+      text-align: left;
+    }
+    .ot-line1 {
+      font-weight: 800; font-size: 48px; line-height: 1.18; color: #FFFFFF;
+      -webkit-text-stroke: 8px rgba(24, 38, 28, 0.88); paint-order: stroke fill;
+      filter: drop-shadow(0 6px 16px rgba(0,0,0,0.45));
+    }
+    .ot-line2 {
+      font-weight: 800; font-size: 56px; line-height: 1.18; color: #FFE484; margin-top: 4px;
+      -webkit-text-stroke: 9px rgba(24, 38, 28, 0.90); paint-order: stroke fill;
+      filter: drop-shadow(0 6px 16px rgba(0,0,0,0.45));
+    }
+
+    /* Phụ đề trò chuyện tối giản, dễ đọc, nằm gọn trong vùng an toàn TikTok/Reels (bottom 406px, left 60px, max-width 810px) */
+    .sub-line {
+      position: absolute; bottom: 406px; left: 60px; width: 810px; opacity: 0;
+      display: flex; justify-content: center; text-align: center;
+    }
+    .sub-line > span {
+      display: inline-block; max-width: 810px;
+      background: rgba(18, 24, 20, 0.68);
+      backdrop-filter: blur(4px);
+      border-radius: 16px; padding: 12px 22px;
+      font-weight: 700; font-size: 32px; line-height: 1.35; color: #FFFFFF;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.55);
+    }
+  </style>
+  <div id="root" data-composition-id="safe-overlays" data-width="1080" data-height="1920" data-start="0" data-duration="30.9">
+    <div id="open-title" class="open-title" data-layout-ignore>
+      <div class="ot-line1">MÂM CƠM CHAY NÀY,</div>
+      <div class="ot-line2">ĐẠM Ở ĐÂU?</div>
+    </div>
+    <div id="sub1" class="sub-line" data-layout-ignore><span>Một mâm cơm chay có cơm, rau luộc,</span></div>
+    <div id="sub2" class="sub-line" data-layout-ignore><span>canh bí và nấm xào nhìn rất đầy đặn.</span></div>
+    <div id="sub3" class="sub-line" data-layout-ignore><span>Trước khi ăn, Hậu hay hỏi một câu:</span></div>
+    <div id="sub4" class="sub-line" data-layout-ignore><span>“Món nào hôm nay là nguồn đạm chính?”</span></div>
+    <div id="sub5" class="sub-line" data-layout-ignore><span>Nếu chưa có, mình có thể thêm đậu phụ sốt cà,</span></div>
+    <div id="sub6" class="sub-line" data-layout-ignore><span>một phần đậu gà hoặc đậu lăng.</span></div>
+    <div id="sub7" class="sub-line" data-layout-ignore><span>Ăn chay lâu dài thì đổi qua lại các loại đậu</span></div>
+    <div id="sub8" class="sub-line" data-layout-ignore><span>và ngũ cốc trong ngày</span></div>
+    <div id="sub9" class="sub-line" data-layout-ignore><span>để có nguồn axit amin đa dạng hơn.</span></div>
+    <div id="sub10" class="sub-line" data-layout-ignore><span>Lần tới nấu cơm chay, thử chọn món đạm</span></div>
+    <div id="sub11" class="sub-line" data-layout-ignore><span>ngay từ lúc lên thực đơn nhé.</span></div>
+  </div>
+  <script>
+    window.__timelines = window.__timelines || {};
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#open-title", { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.28, ease: "power2.out" }, 0.0)
+      .to("#open-title", { opacity: 0, duration: 0.25, ease: "power2.in" }, 3.45);
+    tl.fromTo("#sub1", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out", immediateRender: false }, 0.85)
+      .to("#sub1", { opacity: 0, duration: 0.12 }, 2.92);
+    tl.fromTo("#sub2", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out", immediateRender: false }, 3.04)
+      .to("#sub2", { opacity: 0, duration: 0.12 }, 5.23);
+    tl.fromTo("#sub3", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out", immediateRender: false }, 5.8)
+      .to("#sub3", { opacity: 0, duration: 0.12 }, 7.95);
+    tl.fromTo("#sub4", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out", immediateRender: false }, 8.07)
+      .to("#sub4", { opacity: 0, duration: 0.12 }, 10.43);
+    tl.fromTo("#sub5", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out", immediateRender: false }, 11.2)
+      .to("#sub5", { opacity: 0, duration: 0.12 }, 14.27);
+    tl.fromTo("#sub6", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out", immediateRender: false }, 14.39)
+      .to("#sub6", { opacity: 0, duration: 0.12 }, 16.39);
+    tl.fromTo("#sub7", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out", immediateRender: false }, 16.96)
+      .to("#sub7", { opacity: 0, duration: 0.12 }, 20.18);
+    tl.fromTo("#sub8", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out", immediateRender: false }, 20.3)
+      .to("#sub8", { opacity: 0, duration: 0.12 }, 21.77);
+    tl.fromTo("#sub9", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out", immediateRender: false }, 21.89)
+      .to("#sub9", { opacity: 0, duration: 0.12 }, 24.35);
+    tl.fromTo("#sub10", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out", immediateRender: false }, 25.12)
+      .to("#sub10", { opacity: 0, duration: 0.12 }, 27.63);
+    tl.fromTo("#sub11", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out", immediateRender: false }, 27.75)
+      .to("#sub11", { opacity: 0, duration: 0.12 }, 29.63);
+    window.__timelines["safe-overlays"] = tl;
+  </script>
+</template>

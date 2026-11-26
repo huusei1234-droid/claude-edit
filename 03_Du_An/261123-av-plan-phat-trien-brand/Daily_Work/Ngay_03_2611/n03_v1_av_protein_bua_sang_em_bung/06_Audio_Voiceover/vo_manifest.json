@@ -1,0 +1,54 @@
+{
+  "vkey": "n03_v1_av_protein_bua_sang_em_bung",
+  "title": "AV Protein — Bữa Sáng Vội 30 Giây Êm Bụng Nhờ Inulin & Lợi Khuẩn B-3",
+  "final_name": "261126 AVPM 01 - AV Protein Bua Sang Voi Inulin Loi Khuan B3 Em Bung final.mp4",
+  "bgm_path": "C:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Ngay_03_2611\\02_BGM_Normalized\\n03_v1_av_protein_bua_sang_em_bung_bgm.mp3",
+  "total_duration_s": 36.28,
+  "segments": [
+    {
+      "id": "vo_01",
+      "text": "Sáng vội đi làm nhìn đồ khô đã ngán, mà nhịn ăn sáng thì giữa giờ lại nhanh đuối sức?",
+      "path": "C:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Ngay_03_2611\\n03_v1_av_protein_bua_sang_em_bung\\06_Audio_Voiceover\\vo_01.wav",
+      "start_s": 0.22,
+      "duration_s": 5.03,
+      "end_s": 5.25,
+      "shot_end_s": 5.49
+    },
+    {
+      "id": "vo_02",
+      "text": "Đổi ngay sang ly AV Protein mát lành! Chỉ ba mươi giây pha hai gói với nước mát hai mươi đến bốn mươi độ.",
+      "path": "C:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Ngay_03_2611\\n03_v1_av_protein_bua_sang_em_bung\\06_Audio_Voiceover\\vo_02.wav",
+      "start_s": 5.49,
+      "duration_s": 6.34,
+      "end_s": 11.83,
+      "shot_end_s": 12.07
+    },
+    {
+      "id": "vo_03",
+      "text": "Cung cấp hai mươi hai phẩy không năm gam đạm thực vật, kết hợp chất xơ Inulin và lợi khuẩn B-3 giúp êm bụng, không đầy hơi.",
+      "path": "C:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Ngay_03_2611\\n03_v1_av_protein_bua_sang_em_bung\\06_Audio_Voiceover\\vo_03.wav",
+      "start_s": 12.07,
+      "duration_s": 7.75,
+      "end_s": 19.82,
+      "shot_end_s": 20.06
+    },
+    {
+      "id": "vo_04",
+      "text": "Nhẹ nhàng đủ chất để làm việc tỉnh táo suốt buổi sáng mà chỉ mười bảy nghìn năm trăm đồng một gói.",
+      "path": "C:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Ngay_03_2611\\n03_v1_av_protein_bua_sang_em_bung\\06_Audio_Voiceover\\vo_04.wav",
+      "start_s": 20.06,
+      "duration_s": 5.35,
+      "end_s": 25.41,
+      "shot_end_s": 25.65
+    },
+    {
+      "id": "vo_05",
+      "text": "AV Protein giá ba trăm năm mươi nghìn đồng. Đợt cuối đến ba mươi tháng mười một, mua năm hộp tặng ngay một Bojomi năm trăm hai mươi nghìn đồng. Nhắn Đạm Sạch ngay nhé!",
+      "path": "C:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Ngay_03_2611\\n03_v1_av_protein_bua_sang_em_bung\\06_Audio_Voiceover\\vo_05.wav",
+      "start_s": 25.65,
+      "duration_s": 9.88,
+      "end_s": 35.53,
+      "shot_end_s": 36.28
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>AV Protein — Bữa Sáng Vội 30 Giây Êm Bụng Nhờ Inulin & Lợi Khuẩn B-3</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      
+@font-face { font-family: 'BeVN'; src: url('assets/fonts/BeVietnamPro-SemiBold.ttf') format('truetype'); font-weight: 600; }
+@font-face { font-family: 'BeVN'; src: url('assets/fonts/BeVietnamPro-Bold.ttf') format('truetype'); font-weight: 700; }
+@font-face { font-family: 'BeVN'; src: url('assets/fonts/BeVietnamPro-ExtraBold.ttf') format('truetype'); font-weight: 800; }
+@font-face { font-family: 'MontBlk'; src: url('assets/fonts/Montserrat-Black.ttf') format('truetype'); font-weight: 900; }
+
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      html, body { width: 1080px; height: 1920px; overflow: hidden; background: #052B20; font-family: 'BeVN', sans-serif; }
+      #root { position: relative; width: 1080px; height: 1920px; overflow: hidden; }
+      .scene-host { position: absolute; inset: 0; z-index: 2; }
+      .overlay-host { position: absolute; inset: 0; z-index: 14; pointer-events: none; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-width="1080" data-height="1920" data-fps="24" data-duration="36.28">
+      <div id="main-video" class="scene-host" data-composition-id="main-video" data-composition-src="compositions/main-video.html" data-start="0" data-duration="25.65" data-track-index="1" data-track-kind="graphics" data-width="1080" data-height="1920"></div>
+      <div id="endcard" class="scene-host" data-composition-id="endcard" data-composition-src="compositions/endcard.html" data-start="25.65" data-duration="10.63" data-track-index="2" data-track-kind="graphics" data-width="1080" data-height="1920"></div>
+      <div id="safe-overlays" class="overlay-host" data-composition-id="safe-overlays" data-composition-src="compositions/safe-overlays.html" data-start="0" data-duration="36.28" data-track-index="3" data-track-kind="graphics" data-width="1080" data-height="1920"></div>
+
+      <audio id="bgm-main" class="clip" src="assets/audio/bgm_unique.mp3" data-start="0" data-duration="36.28" data-media-start="0" data-track-index="7" data-fade-in="0.22" data-fade-out="0.85" data-fx-chain="{&quot;version&quot;:1,&quot;nodes&quot;:[{&quot;type&quot;:&quot;gain&quot;,&quot;id&quot;:&quot;bgu&quot;,&quot;params&quot;:{&quot;gain&quot;:1.18}},{&quot;type&quot;:&quot;highpass&quot;,&quot;id&quot;:&quot;bhu&quot;,&quot;params&quot;:{&quot;frequency&quot;:80}},{&quot;type&quot;:&quot;peaking&quot;,&quot;id&quot;:&quot;bcu&quot;,&quot;params&quot;:{&quot;frequency&quot;:2350,&quot;gain&quot;:-4.0,&quot;q&quot;:0.85}},{&quot;type&quot;:&quot;highshelf&quot;,&quot;id&quot;:&quot;bau&quot;,&quot;params&quot;:{&quot;frequency&quot;:7800,&quot;gain&quot;:0.8}},{&quot;type&quot;:&quot;limiter&quot;,&quot;id&quot;:&quot;blu&quot;,&quot;params&quot;:{&quot;limit&quot;:-2.5}}]}" data-automation="{&quot;version&quot;:1,&quot;lanes&quot;:[{&quot;target&quot;:&quot;volume&quot;,&quot;points&quot;:[{&quot;t&quot;:0.0,&quot;v&quot;:0.56},{&quot;t&quot;:0.08,&quot;v&quot;:0.5},{&quot;t&quot;:0.22,&quot;v&quot;:0.3},{&quot;t&quot;:5.25,&quot;v&quot;:0.3},{&quot;t&quot;:5.47,&quot;v&quot;:0.5},{&quot;t&quot;:5.49,&quot;v&quot;:0.3},{&quot;t&quot;:11.83,&quot;v&quot;:0.3},{&quot;t&quot;:12.05,&quot;v&quot;:0.5},{&quot;t&quot;:19.82,&quot;v&quot;:0.3},{&quot;t&quot;:20.04,&quot;v&quot;:0.5},{&quot;t&quot;:25.41,&quot;v&quot;:0.3},{&quot;t&quot;:25.63,&quot;v&quot;:0.5},{&quot;t&quot;:35.53,&quot;v&quot;:0.3},{&quot;t&quot;:35.75,&quot;v&quot;:0.5},{&quot;t&quot;:36.28,&quot;v&quot;:0.72}]}]}"></audio>
+      <audio id="aud-vo_01" class="clip" src="assets/audio/vo_01.wav" data-start="0.22" data-duration="5.03" data-track-index="5" data-volume="1.32" data-fade-in="0.04" data-fade-out="0.06" data-fx-chain="{&quot;version&quot;:1,&quot;nodes&quot;:[{&quot;type&quot;:&quot;highpass&quot;,&quot;id&quot;:&quot;vhp&quot;,&quot;params&quot;:{&quot;frequency&quot;:85}},{&quot;type&quot;:&quot;peaking&quot;,&quot;id&quot;:&quot;vlow&quot;,&quot;params&quot;:{&quot;frequency&quot;:210,&quot;gain&quot;:-1.8,&quot;q&quot;:1.1}},{&quot;type&quot;:&quot;peaking&quot;,&quot;id&quot;:&quot;vpres&quot;,&quot;params&quot;:{&quot;frequency&quot;:3100,&quot;gain&quot;:1.8,&quot;q&quot;:1.0}},{&quot;type&quot;:&quot;limiter&quot;,&quot;id&quot;:&quot;vlim&quot;,&quot;params&quot;:{&quot;limit&quot;:-1.0}}]}"></audio>
+      <audio id="aud-vo_02" class="clip" src="assets/audio/vo_02.wav" data-start="5.49" data-duration="6.34" data-track-index="6" data-volume="1.32" data-fade-in="0.04" data-fade-out="0.06" data-fx-chain="{&quot;version&quot;:1,&quot;nodes&quot;:[{&quot;type&quot;:&quot;highpass&quot;,&quot;id&quot;:&quot;vhp&quot;,&quot;params&quot;:{&quot;frequency&quot;:85}},{&quot;type&quot;:&quot;peaking&quot;,&quot;id&quot;:&quot;vlow&quot;,&quot;params&quot;:{&quot;frequency&quot;:210,&quot;gain&quot;:-1.8,&quot;q&quot;:1.1}},{&quot;type&quot;:&quot;peaking&quot;,&quot;id&quot;:&quot;vpres&quot;,&quot;params&quot;:{&quot;frequency&quot;:3100,&quot;gain&quot;:1.8,&quot;q&quot;:1.0}},{&quot;type&quot;:&quot;limiter&quot;,&quot;id&quot;:&quot;vlim&quot;,&quot;params&quot;:{&quot;limit&quot;:-1.0}}]}"></audio>
+      <audio id="aud-vo_03" class="clip" src="assets/audio/vo_03.wav" data-start="12.07" data-duration="7.75" data-track-index="5" data-volume="1.32" data-fade-in="0.04" data-fade-out="0.06" data-fx-chain="{&quot;version&quot;:1,&quot;nodes&quot;:[{&quot;type&quot;:&quot;highpass&quot;,&quot;id&quot;:&quot;vhp&quot;,&quot;params&quot;:{&quot;frequency&quot;:85}},{&quot;type&quot;:&quot;peaking&quot;,&quot;id&quot;:&quot;vlow&quot;,&quot;params&quot;:{&quot;frequency&quot;:210,&quot;gain&quot;:-1.8,&quot;q&quot;:1.1}},{&quot;type&quot;:&quot;peaking&quot;,&quot;id&quot;:&quot;vpres&quot;,&quot;params&quot;:{&quot;frequency&quot;:3100,&quot;gain&quot;:1.8,&quot;q&quot;:1.0}},{&quot;type&quot;:&quot;limiter&quot;,&quot;id&quot;:&quot;vlim&quot;,&quot;params&quot;:{&quot;limit&quot;:-1.0}}]}"></audio>
+      <audio id="aud-vo_04" class="clip" src="assets/audio/vo_04.wav" data-start="20.06" data-duration="5.35" data-track-index="6" data-volume="1.32" data-fade-in="0.04" data-fade-out="0.06" data-fx-chain="{&quot;version&quot;:1,&quot;nodes&quot;:[{&quot;type&quot;:&quot;highpass&quot;,&quot;id&quot;:&quot;vhp&quot;,&quot;params&quot;:{&quot;frequency&quot;:85}},{&quot;type&quot;:&quot;peaking&quot;,&quot;id&quot;:&quot;vlow&quot;,&quot;params&quot;:{&quot;frequency&quot;:210,&quot;gain&quot;:-1.8,&quot;q&quot;:1.1}},{&quot;type&quot;:&quot;peaking&quot;,&quot;id&quot;:&quot;vpres&quot;,&quot;params&quot;:{&quot;frequency&quot;:3100,&quot;gain&quot;:1.8,&quot;q&quot;:1.0}},{&quot;type&quot;:&quot;limiter&quot;,&quot;id&quot;:&quot;vlim&quot;,&quot;params&quot;:{&quot;limit&quot;:-1.0}}]}"></audio>
+      <audio id="aud-vo_05" class="clip" src="assets/audio/vo_05.wav" data-start="25.65" data-duration="9.88" data-track-index="5" data-volume="1.32" data-fade-in="0.04" data-fade-out="0.06" data-fx-chain="{&quot;version&quot;:1,&quot;nodes&quot;:[{&quot;type&quot;:&quot;highpass&quot;,&quot;id&quot;:&quot;vhp&quot;,&quot;params&quot;:{&quot;frequency&quot;:85}},{&quot;type&quot;:&quot;peaking&quot;,&quot;id&quot;:&quot;vlow&quot;,&quot;params&quot;:{&quot;frequency&quot;:210,&quot;gain&quot;:-1.8,&quot;q&quot;:1.1}},{&quot;type&quot;:&quot;peaking&quot;,&quot;id&quot;:&quot;vpres&quot;,&quot;params&quot;:{&quot;frequency&quot;:3100,&quot;gain&quot;:1.8,&quot;q&quot;:1.0}},{&quot;type&quot;:&quot;limiter&quot;,&quot;id&quot;:&quot;vlim&quot;,&quot;params&quot;:{&quot;limit&quot;:-1.0}}]}"></audio>
+      <audio id="sfx-01" class="clip" src="assets/audio/sfx_pop_clean.mp3" data-start="0.1" data-duration="0.55" data-track-index="9" data-volume="0.2" data-fade-out="0.16"></audio>
+      <audio id="sfx-02" class="clip" src="assets/audio/sfx_whoosh_soft.mp3" data-start="5.38" data-duration="0.55" data-track-index="9" data-volume="0.18" data-fade-out="0.16"></audio>
+      <audio id="sfx-03" class="clip" src="assets/audio/sfx_whoosh_soft.mp3" data-start="11.96" data-duration="0.55" data-track-index="9" data-volume="0.18" data-fade-out="0.16"></audio>
+      <audio id="sfx-04" class="clip" src="assets/audio/sfx_ping_glass.mp3" data-start="20.14" data-duration="0.8" data-track-index="10" data-volume="0.2" data-fade-out="0.16"></audio>
+      <audio id="sfx-05" class="clip" src="assets/audio/sfx_whoosh_cinematic.mp3" data-start="25.53" data-duration="0.8" data-track-index="9" data-volume="0.22" data-fade-out="0.16"></audio>
+      <audio id="sfx-06" class="clip" src="assets/audio/sfx_notification_cta.mp3" data-start="26.9" data-duration="2.0" data-track-index="11" data-volume="0.18" data-fade-out="0.16"></audio>
+    </div>
+    <script>
+      window.__timelines = window.__timelines || {};
+      window.__timelines["main"] = gsap.timeline({ paused: true });
+    </script>
+  </body>
+</html>

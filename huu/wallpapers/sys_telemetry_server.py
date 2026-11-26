@@ -242,9 +242,13 @@ def _launch_target(target: str):
         elif target == "resmon":
             subprocess.Popen(["perfmon.exe", "/res"], shell=False)
         elif target == "capcut":
-            p = r"C:\Users\Hang thu\AppData\Local\CapCut\Apps\CapCut.exe"
-            if os.path.exists(p):
-                subprocess.Popen([p], shell=False)
+            for p in (
+                os.path.expandvars(r"%LOCALAPPDATA%\CapCut\Apps\CapCut.exe"),
+                r"C:\Users\Hang thu\AppData\Local\CapCut\Apps\CapCut.exe",
+            ):
+                if os.path.exists(p):
+                    subprocess.Popen([p], shell=False)
+                    break
         elif target == "photoshop":
             for p in (
                 r"C:\Program Files\Adobe\Adobe Photoshop 2026\Photoshop.exe",
@@ -256,6 +260,7 @@ def _launch_target(target: str):
         elif target == "htpm":
             for p in (
                 r"Z:\.shortcut-targets-by-id\1qjnlz_54ZT5OlI9dKMelZ5PJauD4etj-\hằng thu pharma\05. Video Hoàn Thiện\K6 - Hằng Thu Pharma",
+                r"G:\.shortcut-targets-by-id\1qjnlz_54ZT5OlI9dKMelZ5PJauD4etj-\hằng thu pharma\05. Video Hoàn Thiện\K6 - Hằng Thu Pharma",
                 r"D:\XUẤT CAPCUT\hằng thu pharma",
             ):
                 if os.path.exists(p):
@@ -264,18 +269,28 @@ def _launch_target(target: str):
         elif target == "finals":
             for p in (
                 r"Z:\Drive của tôi\AI_Full_Studio\04_Videos_Final",
+                r"G:\My Drive\AI_Full_Studio\04_Videos_Final",
+                r"G:\Drive của tôi\AI_Full_Studio\04_Videos_Final",
                 r"D:\XUẤT CAPCUT",
             ):
                 if os.path.exists(p):
                     os.startfile(p)
                     break
         elif target == "disk_d":
-            os.startfile("D:\\")
+            os.startfile("D:\\" if os.path.exists("D:\\") else "C:\\")
         elif target == "disk_c":
             os.startfile("C:\\")
         elif target == "disk_z":
-            p = r"Z:\Drive của tôi\AI_Full_Studio"
-            os.startfile(p if os.path.exists(p) else "Z:\\")
+            for p in (
+                r"Z:\Drive của tôi\AI_Full_Studio",
+                r"G:\My Drive\AI_Full_Studio",
+                r"G:\Drive của tôi\AI_Full_Studio",
+                "Z:\\",
+                "G:\\",
+            ):
+                if os.path.exists(p):
+                    os.startfile(p)
+                    break
         elif target == "network":
             os.startfile("ms-settings:network")
     except Exception:
@@ -336,9 +351,13 @@ def _poll_loop():
 
             if tick_i % 15 == 0:
                 try:
-                    dd = psutil.disk_usage("D:\\")
-                    disk_d_pct = round(dd.percent, 1)
-                    disk_d_free = int(dd.free / (1024 ** 3))
+                    if os.path.exists("D:\\"):
+                        dd = psutil.disk_usage("D:\\")
+                        disk_d_pct = round(dd.percent, 1)
+                        disk_d_free = int(dd.free / (1024 ** 3))
+                    else:
+                        disk_d_pct = 0.0
+                        disk_d_free = 0
                 except Exception:
                     pass
                 try:
@@ -347,8 +366,10 @@ def _poll_loop():
                 except Exception:
                     pass
                 try:
-                    dz = psutil.disk_usage("Z:\\")
-                    disk_z_free = int(dz.free / (1024 ** 3))
+                    drv = "Z:\\" if os.path.exists("Z:\\") else ("G:\\" if os.path.exists("G:\\") else None)
+                    if drv:
+                        dz = psutil.disk_usage(drv)
+                        disk_z_free = int(dz.free / (1024 ** 3))
                 except Exception:
                     pass
 
@@ -434,11 +455,17 @@ class Handler(BaseHTTPRequestHandler):
             self.end_headers()
 
 
+class ExclusiveThreadingHTTPServer(ThreadingHTTPServer):
+    allow_reuse_address = False
+
+
 def main():
+    try:
+        server = ExclusiveThreadingHTTPServer((HOST, PORT), Handler)
+    except OSError:
+        return
     threading.Thread(target=_poll_loop, daemon=True).start()
     threading.Thread(target=_weather_loop, daemon=True).start()
-    time.sleep(0.4)
-    server = ThreadingHTTPServer((HOST, PORT), Handler)
     server.serve_forever()
 
 

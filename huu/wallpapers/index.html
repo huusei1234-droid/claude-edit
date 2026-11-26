@@ -25,14 +25,13 @@
   }
   .bg-layer {
     position: absolute;
-    inset: -1.6%;
-    width: 103.2%;
-    height: 103.2%;
+    inset: 0;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     object-position: center 22%;
     opacity: 0;
-    transition: opacity 1.8s cubic-bezier(0.4, 0, 0.2, 1);
-    will-change: transform, opacity;
+    transition: opacity 0.9s ease;
   }
   .bg-layer.active { opacity: 1; }
 
@@ -496,8 +495,7 @@
     { id: 12, title: 'ĐÓN GIÓ ĐỒNG LÚA XANH • HỮU SEIZ', base: 'pin29', fx: 'sunmote' },
     { id: 13, title: 'NƠ VOAN TRẮNG BONG BÓNG • HỮU SEIZ', base: 'pin30', fx: 'sakura' },
     { id: 14, title: 'HOA BÁCH HỢP THẢM CỎ XANH • HỮU SEIZ', base: 'pin31', fx: 'sakura' },
-    { id: 15, title: 'KẸP BƯỚM TRẮNG VƯỜN HỒNG • HỮU SEIZ', base: 'pin32', fx: 'sakura' },
-    { id: 16, title: 'XÍCH ĐU HOA TRẮNG NẮNG SỚM • HỮU SEIZ', base: 'pin33', fx: 'sunmote' },
+    { id: 15, title: 'XÍCH ĐU HOA TRẮNG NẮNG SỚM • HỮU SEIZ', base: 'pin33', fx: 'sunmote' },
     { id: 17, title: 'KHĂN REN THƯỞNG HƯƠNG HOA • HỮU SEIZ', base: 'pin34', fx: 'sunmote' },
     { id: 18, title: 'VÒM HOA LI TI ĐỌC SÁCH • HỮU SEIZ', base: 'pin35', fx: 'sunmote' },
     { id: 19, title: 'LỐI MÒN NẮNG SỚM HOA HỒNG • HỮU SEIZ', base: 'pin36', fx: 'sunmote' },
@@ -628,9 +626,10 @@
     valVram.textContent = d.vram_total_gb ? `${Number(d.vram_used_gb || 0).toFixed(1)}G` : `${Math.round(vramPct)}%`;
 
     valNet.textContent = `↓ ${fmtNet(Number(d.net_down_mbps || 0))} · ↑ ${fmtNet(Number(d.net_up_mbps || 0))}`;
-    if (d.disk_d_free_gb || d.disk_z_free_gb) {
-      const zStr = d.disk_z_free_gb ? `Z: ${fmtGb(d.disk_z_free_gb)}` : `C: ${fmtGb(d.disk_c_free_gb || 0)}`;
-      valDisk.textContent = `D: ${fmtGb(d.disk_d_free_gb || 0)} · ${zStr}`;
+    if (d.disk_d_free_gb || d.disk_z_free_gb || d.disk_c_free_gb) {
+      const leftStr = d.disk_d_free_gb ? `D: ${fmtGb(d.disk_d_free_gb)}` : `C: ${fmtGb(d.disk_c_free_gb || 0)}`;
+      const rightStr = d.disk_z_free_gb ? `Drive: ${fmtGb(d.disk_z_free_gb)}` : `C: ${fmtGb(d.disk_c_free_gb || 0)}`;
+      valDisk.textContent = `${leftStr} · ${rightStr}`;
     }
 
     // Weather
@@ -743,70 +742,26 @@
     const prevVid = slotA ? vidB : vidA;
     slotA = !slotA;
 
-    // Cancel any stale in-flight video callbacks to prevent portrait/landscape race condition
+    // Always release previous video decoder immediately to prevent GPU DXVA green-screen overflow
+    prevVid.onloadeddata = null;
     prevVid.oncanplay = null;
     prevVid.onerror = null;
-    if (orientChanged || force) {
-      prevVid.classList.remove('active');
-      try { prevVid.pause(); prevVid.removeAttribute('src'); prevVid.load(); } catch {}
-    }
+    prevVid.classList.remove('active');
+    try { prevVid.pause(); prevVid.removeAttribute('src'); prevVid.load(); } catch {}
 
     nextImg.src = jpgPath;
     nextImg.classList.add('active');
     prevImg.classList.remove('active');
 
+    // Permanently disable <video> hardware decode on this PC to guarantee 0% green/vertical-streak WebView2 DXVA corruption
     nextVid.classList.remove('active');
-    nextVid.muted = true;
-    nextVid.loop = true;
-    nextVid.autoplay = true;
-    const tryStartVid = () => {
-      if (mySeq !== loadSeq) return;
-      const curO = getCurrentOrient();
-      if (nextVid.videoWidth > 0 && nextVid.videoHeight > 0 &&
-          ((curO === 'h' && nextVid.videoHeight > nextVid.videoWidth) ||
-           (curO === 'v' && nextVid.videoWidth > nextVid.videoHeight))) {
-        showScene(idx, true);
-        return;
-      }
-      const p = nextVid.play();
-      if (p && p.then) {
-        p.then(() => {
-          if (mySeq !== loadSeq) return;
-          nextVid.classList.add('active');
-          prevVid.classList.remove('active');
-          setTimeout(() => { if (mySeq === loadSeq) { try { prevVid.pause(); } catch {} } }, 1900);
-        }).catch(() => {});
-      } else {
-        nextVid.classList.add('active');
-        prevVid.classList.remove('active');
-      }
-    };
-    nextVid.onloadeddata = tryStartVid;
-    nextVid.oncanplay = tryStartVid;
-    nextVid.onerror = () => {
-      if (mySeq !== loadSeq) return;
-      nextVid.classList.remove('active');
-      prevVid.classList.remove('active');
-    };
-    nextVid.src = mp4Path;
-    nextVid.load();
+    try { nextVid.pause(); nextVid.removeAttribute('src'); nextVid.load(); } catch {}
 
     updateHud();
   }
 
-  // Self-healing playback watchdog (keeps Muse video moving smoothly after Lively pause/resume)
-  function ensureActiveVideoPlaying() {
-    const activeVid = slotA ? vidB : vidA;
-    if (activeVid && activeVid.getAttribute('src')) {
-      if (activeVid.paused && activeVid.readyState >= 2) {
-        activeVid.muted = true;
-        activeVid.play().then(() => activeVid.classList.add('active')).catch(() => {});
-      } else if (!activeVid.paused && !activeVid.classList.contains('active')) {
-        activeVid.classList.add('active');
-      }
-    }
-  }
-  setInterval(ensureActiveVideoPlaying, 2000);
+  function ensureActiveVideoPlaying() {}
+  setInterval(ensureActiveVideoPlaying, 1500);
   document.addEventListener('visibilitychange', () => { if (!document.hidden) ensureActiveVideoPlaying(); });
 
   function updateHud() {
@@ -841,10 +796,10 @@
   const canvas = document.getElementById('fxCanvas');
   const ctx = canvas.getContext('2d');
   let W = window.innerWidth, H = window.innerHeight;
-  let DPR = Math.min(window.devicePixelRatio || 1, 2.0);
+  let DPR = 1.0;
   function resize() {
     W = window.innerWidth; H = window.innerHeight;
-    DPR = Math.min(window.devicePixelRatio || 1, 2.0);
+    DPR = 1.0;
     canvas.width = Math.round(W * DPR);
     canvas.height = Math.round(H * DPR);
     ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
@@ -945,13 +900,11 @@
     }
   };
 
-  const bgStage = document.getElementById('bgStage');
   const t0 = performance.now();
   function tick(now) {
     const t = (now - t0) * 0.001;
     smx += (mx - smx) * 0.05;
     smy += (my - smy) * 0.05;
-    bgStage.style.transform = `translate3d(${((0.5 - smx) * 14).toFixed(1)}px, ${((0.5 - smy) * 10).toFixed(1)}px, 0)`;
 
     ctx.clearRect(0, 0, W, H);
     if (fxEnabled) {

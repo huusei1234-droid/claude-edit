@@ -1,0 +1,543 @@
+{
+  "title": "3. Ăn chay, nhìn thế nào để biết bữa ăn có nguồn đạm?",
+  "hook_title": "MÂM CƠM CHAY NÀY, ĐẠM Ở ĐÂU?",
+  "bgm_path": "C:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Series_7_Video_Kien_Thuc_Chi_Hau\\V03_An_Chay_Nguon_Dam\\bgm_warm_acoustic.mp3",
+  "total_duration_s": 33.95,
+  "scenes": [
+    {
+      "scene": 1,
+      "start_s": 0.0,
+      "end_s": 11.2,
+      "duration_s": 11.2
+    },
+    {
+      "scene": 2,
+      "start_s": 11.2,
+      "end_s": 25.12,
+      "duration_s": 13.92
+    },
+    {
+      "scene": 3,
+      "start_s": 25.12,
+      "end_s": 33.95,
+      "duration_s": 8.83
+    }
+  ],
+  "segments": [
+    {
+      "id": "vo_01",
+      "scene": 1,
+      "text": "Một mâm cơm chay có cơm, rau luộc, canh bí và nấm xào nhìn rất đầy đặn.",
+      "path": "C:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Series_7_Video_Kien_Thuc_Chi_Hau\\V03_An_Chay_Nguon_Dam\\01_Voiceover\\vo_01.wav",
+      "start_s": 0.85,
+      "end_s": 5.35,
+      "duration_s": 4.5,
+      "next_start_s": 5.8,
+      "words": [
+        {
+          "word": "Một",
+          "rel_start": 0.0,
+          "rel_end": 0.18
+        },
+        {
+          "word": "mầm",
+          "rel_start": 0.18,
+          "rel_end": 0.4
+        },
+        {
+          "word": "cơm",
+          "rel_start": 0.4,
+          "rel_end": 0.62
+        },
+        {
+          "word": "chay",
+          "rel_start": 0.62,
+          "rel_end": 0.84
+        },
+        {
+          "word": "có",
+          "rel_start": 0.84,
+          "rel_end": 0.98
+        },
+        {
+          "word": "cơm,",
+          "rel_start": 0.98,
+          "rel_end": 1.4
+        },
+        {
+          "word": "rau",
+          "rel_start": 1.6,
+          "rel_end": 1.78
+        },
+        {
+          "word": "luộc",
+          "rel_start": 1.78,
+          "rel_end": 2.0
+        },
+        {
+          "word": "canh",
+          "rel_start": 2.0,
+          "rel_end": 2.28
+        },
+        {
+          "word": "bí,",
+          "rel_start": 2.28,
+          "rel_end": 2.52
+        },
+        {
+          "word": "và",
+          "rel_start": 2.68,
+          "rel_end": 2.96
+        },
+        {
+          "word": "nấm",
+          "rel_start": 2.96,
+          "rel_end": 3.2
+        },
+        {
+          "word": "xảo",
+          "rel_start": 3.2,
+          "rel_end": 3.46
+        },
+        {
+          "word": "nhìn",
+          "rel_start": 3.46,
+          "rel_end": 3.76
+        },
+        {
+          "word": "rất",
+          "rel_start": 3.76,
+          "rel_end": 3.9
+        },
+        {
+          "word": "đầy",
+          "rel_start": 3.9,
+          "rel_end": 4.16
+        },
+        {
+          "word": "đặn.",
+          "rel_start": 4.16,
+          "rel_end": 4.4
+        }
+      ]
+    },
+    {
+      "id": "vo_02",
+      "scene": 1,
+      "text": "Trước khi ăn, Hậu hay hỏi một câu: “Món nào hôm nay là nguồn đạm chính?”",
+      "path": "C:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Series_7_Video_Kien_Thuc_Chi_Hau\\V03_An_Chay_Nguon_Dam\\01_Voiceover\\vo_02.wav",
+      "start_s": 5.8,
+      "end_s": 10.55,
+      "duration_s": 4.75,
+      "next_start_s": 11.2,
+      "words": [
+        {
+          "word": "Trước",
+          "rel_start": 0.0,
+          "rel_end": 0.56
+        },
+        {
+          "word": "khi",
+          "rel_start": 0.56,
+          "rel_end": 0.68
+        },
+        {
+          "word": "ăn,",
+          "rel_start": 0.68,
+          "rel_end": 0.92
+        },
+        {
+          "word": "hậu",
+          "rel_start": 1.38,
+          "rel_end": 1.56
+        },
+        {
+          "word": "hãy",
+          "rel_start": 1.56,
+          "rel_end": 1.7
+        },
+        {
+          "word": "hỏi",
+          "rel_start": 1.7,
+          "rel_end": 1.88
+        },
+        {
+          "word": "một",
+          "rel_start": 1.88,
+          "rel_end": 2.04
+        },
+        {
+          "word": "câu,",
+          "rel_start": 2.04,
+          "rel_end": 3.24
+        },
+        {
+          "word": "món",
+          "rel_start": 3.24,
+          "rel_end": 3.76
+        },
+        {
+          "word": "nào",
+          "rel_start": 3.76,
+          "rel_end": 3.96
+        },
+        {
+          "word": "vôm",
+          "rel_start": 3.96,
+          "rel_end": 4.1
+        },
+        {
+          "word": "nay",
+          "rel_start": 4.1,
+          "rel_end": 4.26
+        },
+        {
+          "word": "là",
+          "rel_start": 4.26,
+          "rel_end": 4.36
+        },
+        {
+          "word": "nguồn",
+          "rel_start": 4.36,
+          "rel_end": 4.52
+        },
+        {
+          "word": "đạm",
+          "rel_start": 4.52,
+          "rel_end": 4.74
+        },
+        {
+          "word": "chính?",
+          "rel_start": 4.74,
+          "rel_end": 4.86
+        }
+      ]
+    },
+    {
+      "id": "vo_03",
+      "scene": 2,
+      "text": "Nếu chưa có, mình có thể thêm đậu phụ sốt cà, một phần đậu gà hoặc đậu lăng.",
+      "path": "C:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Series_7_Video_Kien_Thuc_Chi_Hau\\V03_An_Chay_Nguon_Dam\\01_Voiceover\\vo_03.wav",
+      "start_s": 11.2,
+      "end_s": 16.51,
+      "duration_s": 5.31,
+      "next_start_s": 16.96,
+      "words": [
+        {
+          "word": "Nếu",
+          "rel_start": 0.0,
+          "rel_end": 0.3
+        },
+        {
+          "word": "chưa",
+          "rel_start": 0.3,
+          "rel_end": 0.48
+        },
+        {
+          "word": "có,",
+          "rel_start": 0.48,
+          "rel_end": 0.84
+        },
+        {
+          "word": "mình",
+          "rel_start": 1.18,
+          "rel_end": 1.36
+        },
+        {
+          "word": "có",
+          "rel_start": 1.36,
+          "rel_end": 1.52
+        },
+        {
+          "word": "thể",
+          "rel_start": 1.52,
+          "rel_end": 1.72
+        },
+        {
+          "word": "thêm",
+          "rel_start": 1.72,
+          "rel_end": 1.98
+        },
+        {
+          "word": "đậu",
+          "rel_start": 1.98,
+          "rel_end": 2.2
+        },
+        {
+          "word": "phụ",
+          "rel_start": 2.2,
+          "rel_end": 2.36
+        },
+        {
+          "word": "sốt",
+          "rel_start": 2.36,
+          "rel_end": 2.66
+        },
+        {
+          "word": "ca,",
+          "rel_start": 2.66,
+          "rel_end": 2.86
+        },
+        {
+          "word": "một",
+          "rel_start": 3.34,
+          "rel_end": 3.5
+        },
+        {
+          "word": "phần",
+          "rel_start": 3.5,
+          "rel_end": 3.76
+        },
+        {
+          "word": "đậu",
+          "rel_start": 3.76,
+          "rel_end": 4.0
+        },
+        {
+          "word": "gà",
+          "rel_start": 4.0,
+          "rel_end": 4.36
+        },
+        {
+          "word": "hoặc",
+          "rel_start": 4.36,
+          "rel_end": 4.68
+        },
+        {
+          "word": "đậu",
+          "rel_start": 4.68,
+          "rel_end": 4.92
+        },
+        {
+          "word": "lăng.",
+          "rel_start": 4.92,
+          "rel_end": 5.16
+        }
+      ]
+    },
+    {
+      "id": "vo_04",
+      "scene": 2,
+      "text": "Ăn chay lâu dài thì đổi qua lại các loại đậu và ngũ cốc trong ngày, để có nguồn axit amin đa dạng hơn.",
+      "path": "C:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Series_7_Video_Kien_Thuc_Chi_Hau\\V03_An_Chay_Nguon_Dam\\01_Voiceover\\vo_04.wav",
+      "start_s": 16.96,
+      "end_s": 24.47,
+      "duration_s": 7.51,
+      "next_start_s": 25.12,
+      "words": [
+        {
+          "word": "ăn",
+          "rel_start": 0.0,
+          "rel_end": 0.56
+        },
+        {
+          "word": "chay",
+          "rel_start": 0.56,
+          "rel_end": 0.8
+        },
+        {
+          "word": "lâu",
+          "rel_start": 0.8,
+          "rel_end": 0.96
+        },
+        {
+          "word": "dài",
+          "rel_start": 0.96,
+          "rel_end": 1.32
+        },
+        {
+          "word": "thì",
+          "rel_start": 1.32,
+          "rel_end": 1.74
+        },
+        {
+          "word": "đổi",
+          "rel_start": 1.74,
+          "rel_end": 2.02
+        },
+        {
+          "word": "qua",
+          "rel_start": 2.02,
+          "rel_end": 2.2
+        },
+        {
+          "word": "lại",
+          "rel_start": 2.2,
+          "rel_end": 2.5
+        },
+        {
+          "word": "các",
+          "rel_start": 2.5,
+          "rel_end": 2.72
+        },
+        {
+          "word": "loại",
+          "rel_start": 2.72,
+          "rel_end": 3.0
+        },
+        {
+          "word": "đậu",
+          "rel_start": 3.0,
+          "rel_end": 3.34
+        },
+        {
+          "word": "và",
+          "rel_start": 3.34,
+          "rel_end": 3.48
+        },
+        {
+          "word": "ngũ",
+          "rel_start": 3.48,
+          "rel_end": 3.68
+        },
+        {
+          "word": "cốc",
+          "rel_start": 3.68,
+          "rel_end": 3.86
+        },
+        {
+          "word": "trong",
+          "rel_start": 3.86,
+          "rel_end": 4.04
+        },
+        {
+          "word": "ngày",
+          "rel_start": 4.04,
+          "rel_end": 4.32
+        },
+        {
+          "word": "để",
+          "rel_start": 4.32,
+          "rel_end": 4.96
+        },
+        {
+          "word": "có",
+          "rel_start": 4.96,
+          "rel_end": 5.12
+        },
+        {
+          "word": "nguồn",
+          "rel_start": 5.12,
+          "rel_end": 5.5
+        },
+        {
+          "word": "acid",
+          "rel_start": 5.5,
+          "rel_end": 5.82
+        },
+        {
+          "word": "amine",
+          "rel_start": 5.82,
+          "rel_end": 6.42
+        },
+        {
+          "word": "đa",
+          "rel_start": 6.42,
+          "rel_end": 6.76
+        },
+        {
+          "word": "dạng",
+          "rel_start": 6.76,
+          "rel_end": 7.08
+        },
+        {
+          "word": "hơn.",
+          "rel_start": 7.08,
+          "rel_end": 7.26
+        }
+      ]
+    },
+    {
+      "id": "vo_05",
+      "scene": 3,
+      "text": "Lần tới nấu cơm chay, thử chọn món đạm ngay từ lúc lên thực đơn nhé.",
+      "path": "C:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Series_7_Video_Kien_Thuc_Chi_Hau\\V03_An_Chay_Nguon_Dam\\01_Voiceover\\vo_05.wav",
+      "start_s": 25.12,
+      "end_s": 29.75,
+      "duration_s": 4.63,
+      "next_start_s": 33.95,
+      "words": [
+        {
+          "word": "Lần",
+          "rel_start": 0.0,
+          "rel_end": 0.24
+        },
+        {
+          "word": "tới",
+          "rel_start": 0.24,
+          "rel_end": 0.48
+        },
+        {
+          "word": "nấu",
+          "rel_start": 0.48,
+          "rel_end": 0.82
+        },
+        {
+          "word": "cơm",
+          "rel_start": 0.82,
+          "rel_end": 1.04
+        },
+        {
+          "word": "chay,",
+          "rel_start": 1.04,
+          "rel_end": 1.32
+        },
+        {
+          "word": "thử",
+          "rel_start": 1.54,
+          "rel_end": 2.02
+        },
+        {
+          "word": "chọn",
+          "rel_start": 2.02,
+          "rel_end": 2.24
+        },
+        {
+          "word": "món",
+          "rel_start": 2.24,
+          "rel_end": 2.38
+        },
+        {
+          "word": "đạm",
+          "rel_start": 2.38,
+          "rel_end": 2.8
+        },
+        {
+          "word": "ngay",
+          "rel_start": 2.8,
+          "rel_end": 3.04
+        },
+        {
+          "word": "từ",
+          "rel_start": 3.04,
+          "rel_end": 3.22
+        },
+        {
+          "word": "lúc",
+          "rel_start": 3.22,
+          "rel_end": 3.48
+        },
+        {
+          "word": "lên",
+          "rel_start": 3.48,
+          "rel_end": 3.72
+        },
+        {
+          "word": "thực",
+          "rel_start": 3.72,
+          "rel_end": 3.92
+        },
+        {
+          "word": "đơn",
+          "rel_start": 3.92,
+          "rel_end": 4.24
+        },
+        {
+          "word": "nhé!",
+          "rel_start": 4.24,
+          "rel_end": 4.58
+        }
+      ]
+    }
+  ]
+}

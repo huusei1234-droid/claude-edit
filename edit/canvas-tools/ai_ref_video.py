@@ -1,12 +1,14 @@
 """
-Quy Chuẩn Mặc Định Toàn Hệ Thống (Reference-First Ingredients Video + Exact Seconds + 4-Tier Image Fallback):
+Quy Chuẩn Mặc Định Toàn Hệ Thống (Reference-First Video + Gemini Multi-Account 10s/15s -> Flow -> Muse):
 1. Mọi tác vụ sinh Ảnh Tham Chiếu / Ảnh AI mặc định chạy theo chuỗi dự phòng 4 tầng:
-   ChatGPT (chatgpt::chatgpt-image) -> Gemini (flow::flow-nano-banana-2-1)
+   ChatGPT (chatgpt::chatgpt-image, thử tối đa 2 lần) -> Gemini (flow::flow-nano-banana-2-1)
    -> Google Flow (flow::flow-nano-banana-pro) -> Muse (muse::muse-image).
-2. Mọi tác vụ sinh Video AI BẮT BUỘC phải gửi kèm Ảnh Tham Chiếu ở chế độ THÀNH PHẦN
-   (`videoMode: "reference"` -> Flow chọn "Thành phần" / Ingredients, KHÔNG dùng "Khung hình" bắt đầu/kết thúc!)
-   và CÂN CHỈNH ĐÚNG SỐ GIÂY CẦN DÙNG (`calc_optimal_flow_seconds(slot_dur_s)` -> 3s/4s/5s) để tiết kiệm điểm Flow!
-   Ưu tiên số 1: Google Flow (flow::flow-omni-1.2-flash), dự phòng: Muse (muse::muse-video).
+2. Mọi tác vụ sinh Video AI BẮT BUỘC phải gửi kèm Ảnh Tham Chiếu:
+   - ƯU TIÊN SỐ 1: Gemini Web Pro trên Brave (:9333) (`gemini::gemini-video`) hỗ trợ chuẩn `10s` (`10 giây`) & `15s` (`15 giây`),
+     tự động quét và xoay vòng qua TẤT CẢ các tài khoản Google Pro đang đăng nhập trong Brave (`u/0 -> u/1 -> u/2...`).
+   - DỰ PHÒNG TẦNG 2 (chỉ khi TẤT CẢ tài khoản Gemini Pro đã hết lượt tạo video): Google Flow (`flow::flow-omni-1.2-flash`)
+     ở chế độ THÀNH PHẦN (`videoMode: "reference"`, cân chỉnh đúng số giây cần dùng `calc_optimal_flow_seconds`).
+   - DỰ PHÒNG TẦNG 3: Muse (`muse::muse-video`).
 """
 import math
 import os
@@ -36,6 +38,8 @@ def call(name, inp, retries: int = 20, delay: float = 3.0):
 
 MANIFEST_CANDIDATES = [
     os.environ.get("CANVAS_MANIFEST", ""),
+    os.path.normpath(os.path.join(HERE, "..", "..", "canvas", "exports", "manifest.json")),
+    r"C:\AI\full studio\canvas\exports\manifest.json",
     r"d:\AI\full studio\canvas\exports\manifest.json",
     r"D:\infiniti canvas\exports\manifest.json",
     r"E:\antigravyti\infinite-canvas\exports\manifest.json",
@@ -50,6 +54,7 @@ IMAGE_FALLBACK_CHAIN = [
 ]
 
 VIDEO_FALLBACK_CHAIN = [
+    ("Gemini-Brave", "gemini::gemini-video"),
     ("Google-Flow", "flow::flow-omni-1.2-flash"),
     ("Muse", "muse::muse-video"),
 ]
@@ -339,7 +344,7 @@ def generate_video_with_ref(
         base_node = before_nodes.get(ref_img_node_id)
 
         vid_id = None
-        if model_id.startswith("flow::"):
+        if model_id.startswith("flow::") or model_id.startswith("gemini::"):
             vid_id = f"video-{uuid.uuid4()}"
             ref_tags_str = " ".join(f"@[node:{rid}]" for rid in all_refs)
             comp = f"{ref_tags_str} {safe_motion}"
@@ -347,6 +352,8 @@ def generate_video_with_ref(
                 "x": (base_node["position"]["x"] + int(base_node.get("width") or 360) + 140) if base_node else 400,
                 "y": base_node["position"]["y"] if base_node else 200,
             }
+            # Gemini Web hỗ trợ chuẩn 10s và 15s; Google Flow nhận chính xác 3s..15s
+            tier_sec = (15 if int(seconds) >= 12 else 10) if model_id.startswith("gemini::") else max(3, min(15, int(seconds)))
             meta = {
                 "generationMode": "video",
                 "composerContent": comp,
@@ -354,7 +361,7 @@ def generate_video_with_ref(
                 "status": "idle",
                 "model": model_id,
                 "size": ratio,
-                "seconds": str(max(3, min(15, int(seconds)))),
+                "seconds": str(tier_sec),
                 "vquality": "720",
                 "videoMode": video_mode,
             }

@@ -35,7 +35,15 @@ BRAND_ROUTES = {
     },
     "k4": {
         "prefix": "K4",
-        "dir": r"Z:\Máy tính khác\My Computer\hằng thu pharma\05. Video Hoàn Thiện\K4 - Mẹ Chồng Nàng Dâu",
+        "dir": r"G:\.shortcut-targets-by-id\1qjnlz_54ZT5OlI9dKMelZ5PJauD4etj-\hằng thu pharma\05. Video Hoàn Thiện\K4 - Mẹ Chồng Nàng Dâu",
+        "fallback_dir": r"Z:\.shortcut-targets-by-id\1qjnlz_54ZT5OlI9dKMelZ5PJauD4etj-\hằng thu pharma\05. Video Hoàn Thiện\K4 - Mẹ Chồng Nàng Dâu",
+        "local_subdir": "K4 - Mẹ Chồng Nàng Dâu",
+    },
+    "k5": {
+        "prefix": "K5",
+        "dir": r"G:\.shortcut-targets-by-id\1qjnlz_54ZT5OlI9dKMelZ5PJauD4etj-\hằng thu pharma\05. Video Hoàn Thiện\K5 - Phim An Vượng",
+        "fallback_dir": r"Z:\.shortcut-targets-by-id\1qjnlz_54ZT5OlI9dKMelZ5PJauD4etj-\hằng thu pharma\05. Video Hoàn Thiện\K5 - Phim An Vượng",
+        "local_subdir": "K5 - Phim An Vượng",
     },
     "f20": {
         "prefix": "F20",

@@ -2,7 +2,15 @@
 // Google chặn đăng nhập trong cửa sổ Electron nên không dùng được BrowserWindow.
 // Không dùng FlowKit/Python/extension: main process nạp flow-page-driver.js vào trang Flow,
 // điền prompt/ảnh/cài đặt, bấm tạo, đợi video rồi tải về cho canvas.
-const { ipcMain, dialog } = require("electron");
+const _electron = (() => {
+  try {
+    const e = require("electron");
+    return e && typeof e === "object" ? e : {};
+  } catch {
+    return {};
+  }
+})();
+const { ipcMain, dialog } = _electron;
 const { spawn } = require("node:child_process");
 const fs = require("node:fs");
 const path = require("node:path");
@@ -55,6 +63,13 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const isMainBraveProfile = (p) => !p || p === "MAIN_BRAVE" || p === "default";
 
 const loadConfig = () => {
+  if (!configPath) {
+    const os = require("node:os");
+    const dir = path.join(process.env.APPDATA || path.join(os.homedir(), "AppData", "Roaming"), "infinite-canvas-flow");
+    try { fs.mkdirSync(dir, { recursive: true }); } catch {}
+    userData = userData || dir;
+    configPath = path.join(dir, "flow-driver.json");
+  }
   let raw = {};
   try { raw = JSON.parse(fs.readFileSync(configPath, "utf8")); } catch {}
   if (Array.isArray(raw.accounts) && raw.accounts.length) store = { accounts: raw.accounts, active: raw.active, minCredits: raw.minCredits };
@@ -631,31 +646,30 @@ async function withParallelSlot(fn) {
   }
 }
 
+function getAgentOwnedSet(a = acct()) {
+  if (!a) return new Set();
+  if (!Array.isArray(a.agentOwnedProjectIds)) a.agentOwnedProjectIds = [];
+  return new Set(a.agentOwnedProjectIds);
+}
+
+function registerAgentOwnedProject(pid, a = acct()) {
+  if (!a || !pid) return;
+  if (!Array.isArray(a.agentOwnedProjectIds)) a.agentOwnedProjectIds = [];
+  if (!a.agentOwnedProjectIds.includes(pid)) a.agentOwnedProjectIds.push(pid);
+}
+
 async function ensureWorkerProjectId(slotIdx) {
   const a = acct();
-  if (!Array.isArray(a.workerProjectIds)) {
-    a.workerProjectIds = a.projectId ? [a.projectId] : [];
-  }
+  const owned = getAgentOwnedSet(a);
+  a.workerProjectIds = (Array.isArray(a.workerProjectIds) ? a.workerProjectIds : []).filter((id) => owned.has(id));
   if (a.workerProjectIds[slotIdx]) return a.workerProjectIds[slotIdx];
 
-  // Quét trang chủ Flow để lấy danh sách dự án sẵn có hoặc bấm "+ Dự án mới" tạo thêm đủ dự án cho các luồng song song
+  // TUYỆT ĐỐI KHÔNG lấy project sẵn có của người dùng — chỉ bấm "+ Dự án mới" để tạo project riêng của Agent!
   return await withUiFocusLock(async () => {
     if (a.workerProjectIds[slotIdx]) return a.workerProjectIds[slotIdx];
     const b = await ensureBrowser({ visible: true });
-    const helper = await b.newPage();
+    const helper = await createBackgroundPage(b, homeOf());
     try {
-      await helper.goto(homeOf(), { waitUntil: "domcontentloaded" }).catch(() => {});
-      await sleep(2500);
-      const foundIds = await helper.evaluate(() => {
-        return [...new Set(
-          [...document.querySelectorAll('a[href*="/project/"]')]
-            .map((el) => (el.href.match(/\/project\/([0-9a-f-]{36})/) || [])[1])
-            .filter(Boolean)
-        )];
-      }).catch(() => []);
-      for (const id of foundIds) {
-        if (!a.workerProjectIds.includes(id)) a.workerProjectIds.push(id);
-      }
       while (a.workerProjectIds.length <= slotIdx) {
         await helper.goto(homeOf(), { waitUntil: "domcontentloaded" }).catch(() => {});
         await sleep(2000);
@@ -670,13 +684,15 @@ async function ensureWorkerProjectId(slotIdx) {
         for (let w = 0; w < 20; w++) {
           await sleep(500);
           const newId = projectOf(helper.url());
-          if (newId) {
+          if (newId && !owned.has(newId)) {
+            registerAgentOwnedProject(newId, a);
+            owned.add(newId);
             if (!a.workerProjectIds.includes(newId)) a.workerProjectIds.push(newId);
             break;
           }
         }
       }
-      if (!a.projectId && a.workerProjectIds[0]) a.projectId = a.workerProjectIds[0];
+      if (a.workerProjectIds[0]) a.projectId = a.workerProjectIds[0];
       saveConfig();
     } finally {
       await helper.close().catch(() => {});
@@ -821,14 +837,12 @@ async function ensurePreferredAccountFirst(kind = "video") {
         map[realPrefix] = { ...(map[realPrefix] || {}), email: foundEmail, updatedAt: Date.now() };
       }
 
-      let pids = await p.evaluate(() => [
-        ...new Set(
-          [...document.querySelectorAll('a[href*="/project/"]')]
-            .map((el) => (el.href.match(/\/project\/([0-9a-f-]{36})/) || [])[1])
-            .filter(Boolean)
-        ),
-      ]).catch(() => []);
+      const owned = getAgentOwnedSet(a);
+      let pids = (a.workerTargets || [])
+        .filter((t) => t && t.prefix === realPrefix && t.projectId && owned.has(t.projectId))
+        .map((t) => t.projectId);
 
+      // TUYỆT ĐỐI chỉ bấm "+ Dự án mới" tạo project riêng của Agent, KHÔNG lấy project sẵn có của người dùng!
       while (pids.length < MAX_PARALLEL_FLOW) {
         await p.goto(`${HOME}${realPrefix}`, { waitUntil: "domcontentloaded" }).catch(() => {});
         await sleep(1600);
@@ -843,8 +857,10 @@ async function ensurePreferredAccountFirst(kind = "video") {
         for (let w = 0; w < 20; w++) {
           await sleep(450);
           const nid = projectOf(p.url());
-          if (nid) {
-            if (!pids.includes(nid)) pids.push(nid);
+          if (nid && !pids.includes(nid)) {
+            registerAgentOwnedProject(nid, a);
+            owned.add(nid);
+            pids.push(nid);
             break;
           }
         }
@@ -852,7 +868,7 @@ async function ensurePreferredAccountFirst(kind = "video") {
 
       if (pids.length > 0) {
         const prefTargets = pids.slice(0, MAX_PARALLEL_FLOW).map((pid) => ({ prefix: realPrefix, projectId: pid, email: foundEmail }));
-        const others = (a.workerTargets || []).filter((t) => t && t.prefix !== realPrefix);
+        const others = (a.workerTargets || []).filter((t) => t && t.prefix !== realPrefix && owned.has(t.projectId));
         a.workerTargets = [...prefTargets, ...others];
         a.userPrefix = realPrefix;
         a.projectId = pids[0];
@@ -895,14 +911,11 @@ async function discoverMoreGoogleNicksInBrave(kind = "video", skipPrefixes = new
       }
       recordPrefixHealthyCredits(realPrefix, credInfo.credits, credInfo.email);
 
-      // Thu thập hoặc tạo tối thiểu 2 dự án Flow cho nick mới tìm thấy
-      let pids = await p.evaluate(() => {
-        return [...new Set(
-          [...document.querySelectorAll('a[href*="/project/"]')]
-            .map((el) => (el.href.match(/\/project\/([0-9a-f-]{36})/) || [])[1])
-            .filter(Boolean)
-        )];
-      }).catch(() => []);
+      // TUYỆT ĐỐI tạo mới 2 dự án riêng của Agent cho nick phụ, KHÔNG đụng vào bất kỳ dự án cũ nào có sẵn trên nick!
+      const owned = getAgentOwnedSet(a);
+      let pids = (a.workerTargets || [])
+        .filter((t) => t && t.prefix === realPrefix && t.projectId && owned.has(t.projectId))
+        .map((t) => t.projectId);
 
       while (pids.length < 2) {
         await p.goto(`${HOME}${realPrefix}`, { waitUntil: "domcontentloaded" }).catch(() => {});
@@ -918,8 +931,10 @@ async function discoverMoreGoogleNicksInBrave(kind = "video", skipPrefixes = new
         for (let w = 0; w < 20; w++) {
           await sleep(450);
           const nid = projectOf(p.url());
-          if (nid) {
-            if (!pids.includes(nid)) pids.push(nid);
+          if (nid && !pids.includes(nid)) {
+            registerAgentOwnedProject(nid, a);
+            owned.add(nid);
+            pids.push(nid);
             break;
           }
         }
@@ -944,7 +959,8 @@ async function discoverMoreGoogleNicksInBrave(kind = "video", skipPrefixes = new
 
 async function resolveHealthyTargetForSlot(slotIdx, kind = "video", triedPrefixes = new Set()) {
   const a = acct();
-  const targets = Array.isArray(a?.workerTargets) ? a.workerTargets : [];
+  const owned = getAgentOwnedSet(a);
+  const targets = (Array.isArray(a?.workerTargets) ? a.workerTargets : []).filter((t) => t && t.projectId && owned.has(t.projectId));
   const busyUrls = new Set(
     flowSlotPages
       .map((p, idx) => (idx !== slotIdx && p && !p.isClosed() ? p.url() : ""))
@@ -992,6 +1008,7 @@ async function findOpenTabMatchingAssets(b, slotIdx, kind, triedPrefixes, job) {
   if (!wantStems.length) return null;
 
   const a = acct();
+  const owned = getAgentOwnedSet(a);
   const prefPf = getPreferredPrefix(a);
   const lockToPref = Boolean(prefPf && !triedPrefixes.has(prefPf) && !isPrefixExhausted(prefPf, kind));
 
@@ -1002,7 +1019,7 @@ async function findOpenTabMatchingAssets(b, slotIdx, kind, triedPrefixes, job) {
     if (!p || p.isClosed()) continue;
     const u = p.url() || "";
     const pid = projectOf(u);
-    if (!pid || /\/edit\//.test(u)) continue;
+    if (!pid || !owned.has(pid) || /\/edit\//.test(u)) continue;
     const pf = userPrefixOf(u) || "u/0/";
     if (lockToPref && pf !== prefPf) continue;
     if (triedPrefixes.has(pf) || isPrefixExhausted(pf, kind)) continue;
@@ -1201,6 +1218,7 @@ async function generate(job, onProgress, slotIdx = 0) {
   }
 
   const triedPrefixes = new Set();
+  const unusualHitsByPrefix = {};
   const maxAttempts = 6;
   let lastErr = null;
 
@@ -1211,6 +1229,26 @@ async function generate(job, onProgress, slotIdx = 0) {
     } catch (err) {
       lastErr = err;
       const msg = String(err && (err.message || err));
+      if (/hoạt động bất thường|unusual activity/i.test(msg)) {
+        const badPid = projectOf(page?.url?.() || "");
+        await page.close().catch(() => {});
+        if (flowSlotPages[slotIdx] === page) flowSlotPages[slotIdx] = null;
+        const a = acct();
+        if (badPid && Array.isArray(a?.workerTargets) && a.workerTargets.length > 1) {
+          const hit = a.workerTargets.filter((t) => t && t.projectId === badPid);
+          const rest = a.workerTargets.filter((t) => !t || t.projectId !== badPid);
+          a.workerTargets = [...rest, ...hit];
+          saveConfig();
+        }
+        unusualHitsByPrefix[prefix] = (unusualHitsByPrefix[prefix] || 0) + 1;
+        console.warn(`[flow:AntiThrottle] Tab dự án ${badPid || prefix} báo hoạt động bất thường (lần #${unusualHitsByPrefix[prefix]}) -> đóng tab dự án cũ, nghỉ 12s & xoay sang dự án sạch!`);
+        if (unusualHitsByPrefix[prefix] >= 2) {
+          triedPrefixes.add(prefix);
+          console.warn(`[flow:AntiThrottle] Nick ${prefix} bị giới hạn tốc độ tạm thời 2 dự án liên tiếp -> mượn tạm nick phụ cho riêng cảnh này!`);
+        }
+        await sleep(12000);
+        continue;
+      }
       const directCreditHit = msg.includes("FLOW_OUT_OF_CREDITS") || CREDIT_ERR_RE.test(msg);
       const maybeBlockedByCredits = /Flow không nhận lệnh tạo|UI_TIMEOUT: generate enabled/i.test(msg);
 
@@ -1271,7 +1309,13 @@ function setup(app) {
 }
 
 function generateImageFallback(job) {
+  if (!store.accounts.length) loadConfig();
   return withParallelSlot((slotIdx) => generate({ ...(job || {}), kind: "image" }, undefined, slotIdx));
+}
+
+function generateVideoFallback(job) {
+  if (!store.accounts.length) loadConfig();
+  return withParallelSlot((slotIdx) => generate({ ...(job || {}), kind: "video" }, undefined, slotIdx));
 }
 
 // ───────── Điểm (tín dụng) của tài khoản ─────────
@@ -1463,4 +1507,4 @@ function destroy() {
   // không đóng Chrome của Flow: người dùng có thể đang dùng; phiên đăng nhập nằm trong profile riêng
 }
 
-module.exports = { setup, destroy, show, ensureBrowser, debugAlive, withUiFocusLock, ensureWindowOnScreen, createBackgroundPage, generateImageFallback, sweepIdleFlowTabs };
+module.exports = { setup, destroy, show, ensureBrowser, debugAlive, withUiFocusLock, ensureWindowOnScreen, createBackgroundPage, generateImageFallback, generateVideoFallback, sweepIdleFlowTabs };

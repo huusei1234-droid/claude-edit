@@ -1,0 +1,54 @@
+{
+  "vkey": "n03_v2_bojomi_kieng_3_chan_van_phong",
+  "title": "Bojomi — Bộ Kiềng 3 Chân Canxi Aquamin F, D3 & K2 MK-7 Cho Dân Văn Phòng & Người Lớn",
+  "final_name": "261126 AVPM 02 - Bojomi Kieng 3 Chan Canxi D3 K2 MK7 Dan Van Phong final.mp4",
+  "bgm_path": "C:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Ngay_03_2611\\02_BGM_Normalized\\n03_v2_bojomi_kieng_3_chan_van_phong_bgm.mp3",
+  "total_duration_s": 37.13,
+  "segments": [
+    {
+      "id": "vo_01",
+      "text": "Ngồi văn phòng suốt tám tiếng ít gặp nắng sớm, người lớn mình bổ sung Canxi sao cho hấp thu hiệu quả?",
+      "path": "C:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Ngay_03_2611\\n03_v2_bojomi_kieng_3_chan_van_phong\\06_Audio_Voiceover\\vo_01.wav",
+      "start_s": 0.22,
+      "duration_s": 6.05,
+      "end_s": 6.27,
+      "shot_end_s": 6.51
+    },
+    {
+      "id": "vo_02",
+      "text": "Đọc kỹ bảng thành phần Bojomi sẽ thấy ngay bốn trăm mười bảy phẩy sáu miligam Canxi tảo biển đỏ Aquamin F.",
+      "path": "C:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Ngay_03_2611\\n03_v2_bojomi_kieng_3_chan_van_phong\\06_Audio_Voiceover\\vo_02.wav",
+      "start_s": 6.51,
+      "duration_s": 6.76,
+      "end_s": 13.27,
+      "shot_end_s": 13.51
+    },
+    {
+      "id": "vo_03",
+      "text": "Phối hợp chuẩn bộ ba cùng Vitamin D3 và K2 MK-7 hỗ trợ dẫn Canxi vào xương thay vì lắng cặn.",
+      "path": "C:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Ngay_03_2611\\n03_v2_bojomi_kieng_3_chan_van_phong\\06_Audio_Voiceover\\vo_03.wav",
+      "start_s": 13.51,
+      "duration_s": 6.2,
+      "end_s": 19.71,
+      "shot_end_s": 19.95
+    },
+    {
+      "id": "vo_04",
+      "text": "Dạng bột ngũ cốc vị Vani pha ấm sáu mươi độ thơm mịn, rất dễ uống mỗi ngày cho cả dân công sở và bố mẹ.",
+      "path": "C:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Ngay_03_2611\\n03_v2_bojomi_kieng_3_chan_van_phong\\06_Audio_Voiceover\\vo_04.wav",
+      "start_s": 19.95,
+      "duration_s": 6.34,
+      "end_s": 26.29,
+      "shot_end_s": 26.53
+    },
+    {
+      "id": "vo_05",
+      "text": "Bojomi giá năm trăm hai mươi nghìn đồng. Đợt cuối đến ba mươi tháng mười một, mua ba hộp tặng ngay một Bojomi năm trăm hai mươi nghìn đồng. Nhắn Bojomi ngay nhé!",
+      "path": "C:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Ngay_03_2611\\n03_v2_bojomi_kieng_3_chan_van_phong\\06_Audio_Voiceover\\vo_05.wav",
+      "start_s": 26.53,
+      "duration_s": 9.85,
+      "end_s": 36.38,
+      "shot_end_s": 37.13
+    }
+  ]
+}

@@ -336,25 +336,15 @@ def pick_best_frame(video_path: str, out_jpg: str) -> str:
         raise RuntimeError(f"Could not extract a valid frame from {video_path}")
 
     os.makedirs(os.path.dirname(os.path.abspath(out_jpg)), exist_ok=True)
-    cv2.imwrite(out_jpg, best_img, [cv2.IMWRITE_JPEG_QUALITY, 96])
+    if out_jpg.lower().endswith(".png"):
+        cv2.imwrite(out_jpg, best_img)
+    else:
+        cv2.imwrite(out_jpg, best_img, [cv2.IMWRITE_JPEG_QUALITY, 96])
     return out_jpg
 
 
 if __name__ == "__main__":
     video_arg = sys.argv[1]
     out_png = sys.argv[2] if len(sys.argv) > 2 else os.path.join(HERE, "tiktok_cover_preview.png")
-    raw_title = sys.argv[3] if len(sys.argv) > 3 and sys.argv[3].strip() else video_arg
-
-    frame_jpg = os.path.join(HERE, "tmp_cover_frame.jpg")
-    pick_best_frame(video_arg, frame_jpg)
-
-    title = clean_title(raw_title)
-    hook_lines, main_lines = split_semantic_lines(title)
-    payload = json.dumps({"hook": hook_lines, "main": main_lines}, ensure_ascii=False)
-
-    render_js = os.path.join(HERE, "render_cover_poster.mjs")
-    subprocess.run(
-        ["node", render_js, frame_jpg, payload, out_png],
-        check=True,
-    )
+    pick_best_frame(video_arg, out_png)
     print(out_png)

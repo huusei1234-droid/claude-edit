@@ -1,0 +1,693 @@
+{
+  "lang": "vi",
+  "duration": 49.567,
+  "total_frames": 1487,
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 19.06,
+      "text": "Đừng thắc mắc vì sao ăn sáng no căng, mà 10 giờ đã buồn ngủ rũ rượi! Bữa sáng toàn tinh bột, làm đường huyết tăng vọt cực nhanh, rồi tụt dốc không phanh! Chỉ sau 2 tiếng, cơ thể bạn không cần thêm tinh bột, nó đang khát đạm sạch, để giữ năng lượng và nuôi cơ!",
+      "words": [
+        {
+          "word": "Đừng",
+          "start": 0.0,
+          "end": 0.46
+        },
+        {
+          "word": "thắc",
+          "start": 0.46,
+          "end": 0.68
+        },
+        {
+          "word": "mắc",
+          "start": 0.68,
+          "end": 0.9
+        },
+        {
+          "word": "vì",
+          "start": 0.9,
+          "end": 1.12
+        },
+        {
+          "word": "sao",
+          "start": 1.12,
+          "end": 1.46
+        },
+        {
+          "word": "ăn",
+          "start": 1.46,
+          "end": 1.92
+        },
+        {
+          "word": "sáng",
+          "start": 1.92,
+          "end": 2.24
+        },
+        {
+          "word": "no",
+          "start": 2.24,
+          "end": 2.46
+        },
+        {
+          "word": "căng,",
+          "start": 2.46,
+          "end": 2.82
+        },
+        {
+          "word": "mà",
+          "start": 2.82,
+          "end": 3.18
+        },
+        {
+          "word": "10",
+          "start": 3.18,
+          "end": 3.36
+        },
+        {
+          "word": "giờ",
+          "start": 3.36,
+          "end": 3.68
+        },
+        {
+          "word": "đã",
+          "start": 3.68,
+          "end": 3.86
+        },
+        {
+          "word": "buồn",
+          "start": 3.86,
+          "end": 4.08
+        },
+        {
+          "word": "ngủ",
+          "start": 4.08,
+          "end": 4.32
+        },
+        {
+          "word": "rũ",
+          "start": 4.32,
+          "end": 4.56
+        },
+        {
+          "word": "rượi!",
+          "start": 4.56,
+          "end": 4.92
+        },
+        {
+          "word": "Bữa",
+          "start": 5.22,
+          "end": 5.72
+        },
+        {
+          "word": "sáng",
+          "start": 5.72,
+          "end": 6.04
+        },
+        {
+          "word": "toàn",
+          "start": 6.04,
+          "end": 6.38
+        },
+        {
+          "word": "tinh",
+          "start": 6.38,
+          "end": 6.54
+        },
+        {
+          "word": "bột,",
+          "start": 6.54,
+          "end": 6.84
+        },
+        {
+          "word": "làm",
+          "start": 6.84,
+          "end": 7.28
+        },
+        {
+          "word": "đường",
+          "start": 7.28,
+          "end": 7.52
+        },
+        {
+          "word": "huyết",
+          "start": 7.52,
+          "end": 7.78
+        },
+        {
+          "word": "tăng",
+          "start": 7.78,
+          "end": 8.1
+        },
+        {
+          "word": "vọt",
+          "start": 8.1,
+          "end": 8.34
+        },
+        {
+          "word": "cực",
+          "start": 8.34,
+          "end": 8.66
+        },
+        {
+          "word": "nhanh,",
+          "start": 8.66,
+          "end": 9.08
+        },
+        {
+          "word": "rồi",
+          "start": 9.6,
+          "end": 10.22
+        },
+        {
+          "word": "tụt",
+          "start": 10.22,
+          "end": 10.6
+        },
+        {
+          "word": "dốc",
+          "start": 10.6,
+          "end": 10.82
+        },
+        {
+          "word": "không",
+          "start": 10.82,
+          "end": 11.16
+        },
+        {
+          "word": "phanh!",
+          "start": 11.16,
+          "end": 11.48
+        },
+        {
+          "word": "Chỉ",
+          "start": 11.76,
+          "end": 12.32
+        },
+        {
+          "word": "sau",
+          "start": 12.32,
+          "end": 12.54
+        },
+        {
+          "word": "2",
+          "start": 12.54,
+          "end": 12.72
+        },
+        {
+          "word": "tiếng,",
+          "start": 12.72,
+          "end": 13.06
+        },
+        {
+          "word": "cơ",
+          "start": 13.28,
+          "end": 13.48
+        },
+        {
+          "word": "thể",
+          "start": 13.48,
+          "end": 13.6
+        },
+        {
+          "word": "bạn",
+          "start": 13.6,
+          "end": 13.82
+        },
+        {
+          "word": "không",
+          "start": 13.82,
+          "end": 14.06
+        },
+        {
+          "word": "cần",
+          "start": 14.06,
+          "end": 14.26
+        },
+        {
+          "word": "thêm",
+          "start": 14.26,
+          "end": 14.58
+        },
+        {
+          "word": "tinh",
+          "start": 14.58,
+          "end": 14.76
+        },
+        {
+          "word": "bột,",
+          "start": 14.76,
+          "end": 15.04
+        },
+        {
+          "word": "nó",
+          "start": 15.56,
+          "end": 15.84
+        },
+        {
+          "word": "đang",
+          "start": 15.84,
+          "end": 16.22
+        },
+        {
+          "word": "khát",
+          "start": 16.22,
+          "end": 16.42
+        },
+        {
+          "word": "đạm",
+          "start": 16.42,
+          "end": 16.72
+        },
+        {
+          "word": "sạch,",
+          "start": 16.72,
+          "end": 17.02
+        },
+        {
+          "word": "để",
+          "start": 17.02,
+          "end": 17.58
+        },
+        {
+          "word": "giữ",
+          "start": 17.58,
+          "end": 17.86
+        },
+        {
+          "word": "năng",
+          "start": 17.86,
+          "end": 18.12
+        },
+        {
+          "word": "lượng",
+          "start": 18.12,
+          "end": 18.42
+        },
+        {
+          "word": "và",
+          "start": 18.42,
+          "end": 18.62
+        },
+        {
+          "word": "nuôi",
+          "start": 18.62,
+          "end": 18.82
+        },
+        {
+          "word": "cơ!",
+          "start": 18.82,
+          "end": 19.06
+        }
+      ]
+    },
+    {
+      "start": 19.06,
+      "end": 39.6,
+      "text": "Thay vì nhịn sáng hay ăn đại cho xong, chỉ 30 giây, pha 2 gói AV Protein là bạn có ngay 22,05g đạm thực vật từ đậu Hà Lan và gạo, thêm 1.632mg L-Leucine giữ khối cơ săn chắc, nhẹ bụng mà no êm tới trưa!",
+      "words": [
+        {
+          "word": "Thay",
+          "start": 19.06,
+          "end": 19.7
+        },
+        {
+          "word": "vì",
+          "start": 19.7,
+          "end": 19.88
+        },
+        {
+          "word": "nhịn",
+          "start": 19.88,
+          "end": 20.12
+        },
+        {
+          "word": "sáng",
+          "start": 20.12,
+          "end": 20.48
+        },
+        {
+          "word": "hay",
+          "start": 20.48,
+          "end": 20.82
+        },
+        {
+          "word": "ăn",
+          "start": 20.82,
+          "end": 21.0
+        },
+        {
+          "word": "đại",
+          "start": 21.0,
+          "end": 21.18
+        },
+        {
+          "word": "cho",
+          "start": 21.18,
+          "end": 21.36
+        },
+        {
+          "word": "xong,",
+          "start": 21.36,
+          "end": 21.7
+        },
+        {
+          "word": "chỉ",
+          "start": 21.84,
+          "end": 22.34
+        },
+        {
+          "word": "30",
+          "start": 22.34,
+          "end": 22.78
+        },
+        {
+          "word": "giây,",
+          "start": 22.78,
+          "end": 23.14
+        },
+        {
+          "word": "pha",
+          "start": 23.32,
+          "end": 23.74
+        },
+        {
+          "word": "2",
+          "start": 23.74,
+          "end": 23.9
+        },
+        {
+          "word": "gói",
+          "start": 23.9,
+          "end": 24.32
+        },
+        {
+          "word": "AV",
+          "start": 24.32,
+          "end": 24.76
+        },
+        {
+          "word": "Protein",
+          "start": 24.76,
+          "end": 25.46
+        },
+        {
+          "word": "là",
+          "start": 25.46,
+          "end": 26.04
+        },
+        {
+          "word": "bạn",
+          "start": 26.04,
+          "end": 26.24
+        },
+        {
+          "word": "có",
+          "start": 26.24,
+          "end": 26.58
+        },
+        {
+          "word": "ngay",
+          "start": 26.58,
+          "end": 26.92
+        },
+        {
+          "word": "22,05g",
+          "start": 26.92,
+          "end": 29.06
+        },
+        {
+          "word": "đạm",
+          "start": 29.06,
+          "end": 29.52
+        },
+        {
+          "word": "thực",
+          "start": 29.52,
+          "end": 29.64
+        },
+        {
+          "word": "vật",
+          "start": 29.64,
+          "end": 29.94
+        },
+        {
+          "word": "từ",
+          "start": 29.94,
+          "end": 30.16
+        },
+        {
+          "word": "đậu",
+          "start": 30.16,
+          "end": 30.34
+        },
+        {
+          "word": "Hà",
+          "start": 30.34,
+          "end": 30.58
+        },
+        {
+          "word": "Lan",
+          "start": 30.58,
+          "end": 30.82
+        },
+        {
+          "word": "và",
+          "start": 30.82,
+          "end": 31.36
+        },
+        {
+          "word": "gạo,",
+          "start": 31.36,
+          "end": 31.64
+        },
+        {
+          "word": "thêm",
+          "start": 31.9,
+          "end": 32.2
+        },
+        {
+          "word": "1.632mg",
+          "start": 32.2,
+          "end": 34.02
+        },
+        {
+          "word": "L-Leucine",
+          "start": 34.02,
+          "end": 34.96
+        },
+        {
+          "word": "giữ",
+          "start": 34.96,
+          "end": 36.04
+        },
+        {
+          "word": "khối",
+          "start": 36.04,
+          "end": 36.32
+        },
+        {
+          "word": "cơ",
+          "start": 36.32,
+          "end": 36.6
+        },
+        {
+          "word": "săn",
+          "start": 36.6,
+          "end": 36.84
+        },
+        {
+          "word": "chắc,",
+          "start": 36.84,
+          "end": 37.16
+        },
+        {
+          "word": "nhẹ",
+          "start": 37.6,
+          "end": 37.76
+        },
+        {
+          "word": "bụng",
+          "start": 37.76,
+          "end": 38.08
+        },
+        {
+          "word": "mà",
+          "start": 38.08,
+          "end": 38.52
+        },
+        {
+          "word": "no",
+          "start": 38.52,
+          "end": 38.76
+        },
+        {
+          "word": "êm",
+          "start": 38.76,
+          "end": 39.06
+        },
+        {
+          "word": "tới",
+          "start": 39.06,
+          "end": 39.24
+        },
+        {
+          "word": "trưa!",
+          "start": 39.24,
+          "end": 39.6
+        }
+      ]
+    },
+    {
+      "start": 39.6,
+      "end": 48.56,
+      "text": "Gửi ngay video này cho đồng nghiệp, hay ngáp dài lúc 10 giờ nhé! Muốn nhận thực đơn bữa sáng 30 giây đủ đạm, nhắn chữ PROTEIN bên dưới!",
+      "words": [
+        {
+          "word": "Gửi",
+          "start": 39.6,
+          "end": 40.28
+        },
+        {
+          "word": "ngay",
+          "start": 40.28,
+          "end": 40.46
+        },
+        {
+          "word": "video",
+          "start": 40.46,
+          "end": 40.7
+        },
+        {
+          "word": "này",
+          "start": 40.7,
+          "end": 40.98
+        },
+        {
+          "word": "cho",
+          "start": 40.98,
+          "end": 41.16
+        },
+        {
+          "word": "đồng",
+          "start": 41.16,
+          "end": 41.36
+        },
+        {
+          "word": "nghiệp,",
+          "start": 41.36,
+          "end": 41.76
+        },
+        {
+          "word": "hay",
+          "start": 42.0,
+          "end": 42.36
+        },
+        {
+          "word": "ngáp",
+          "start": 42.36,
+          "end": 42.64
+        },
+        {
+          "word": "dài",
+          "start": 42.64,
+          "end": 42.84
+        },
+        {
+          "word": "lúc",
+          "start": 42.84,
+          "end": 43.04
+        },
+        {
+          "word": "10",
+          "start": 43.04,
+          "end": 43.24
+        },
+        {
+          "word": "giờ",
+          "start": 43.24,
+          "end": 43.46
+        },
+        {
+          "word": "nhé!",
+          "start": 43.46,
+          "end": 43.76
+        },
+        {
+          "word": "Muốn",
+          "start": 44.32,
+          "end": 44.5
+        },
+        {
+          "word": "nhận",
+          "start": 44.5,
+          "end": 44.72
+        },
+        {
+          "word": "thực",
+          "start": 44.72,
+          "end": 44.86
+        },
+        {
+          "word": "đơn",
+          "start": 44.86,
+          "end": 45.2
+        },
+        {
+          "word": "bữa",
+          "start": 45.2,
+          "end": 45.4
+        },
+        {
+          "word": "sáng",
+          "start": 45.4,
+          "end": 45.68
+        },
+        {
+          "word": "30",
+          "start": 45.68,
+          "end": 46.02
+        },
+        {
+          "word": "giây",
+          "start": 46.02,
+          "end": 46.32
+        },
+        {
+          "word": "đủ",
+          "start": 46.32,
+          "end": 46.54
+        },
+        {
+          "word": "đạm,",
+          "start": 46.54,
+          "end": 46.88
+        },
+        {
+          "word": "nhắn",
+          "start": 46.94,
+          "end": 47.14
+        },
+        {
+          "word": "chữ",
+          "start": 47.14,
+          "end": 47.36
+        },
+        {
+          "word": "PROTEIN",
+          "start": 47.36,
+          "end": 48.1
+        },
+        {
+          "word": "bên",
+          "start": 48.1,
+          "end": 48.24
+        },
+        {
+          "word": "dưới!",
+          "start": 48.24,
+          "end": 48.56
+        }
+      ]
+    }
+  ]
+}

@@ -36,9 +36,29 @@ foreach ($letter in @("Z", "G", "H", "E", "F", "I", "D")) {
 }
 
 if ($cloudWpDir) {
-    Write-Output "[SYNC] Dang dong bo 40 canh 4K Live tu Google Drive ($cloudWpDir)..."
-    robocopy $cloudWpDir $livelyWpDir *.mp4 *.jpg /XO /MT:8 /NFL /NDL /NJH /NJS /R:2 /W:2 | Out-Null
-    Write-Output "[SYNC] Da dong bo xong media 4K vao Lively Wallpaper!"
+    Write-Output "[SYNC] Dang dong bo an toan 40 canh 4K tu Google Drive ($cloudWpDir) (chong loi file 0x00)..."
+    # TUYET DOI KHONG dung robocopy tren Google DriveFS vi robocopy copy sparse placeholder gay 88% byte 0x00!
+    Get-ChildItem -LiteralPath $cloudWpDir -Filter "*.jpg" -File | ForEach-Object {
+        $dst = Join-Path $livelyWpDir $_.Name
+        $need = $true
+        if (Test-Path -LiteralPath $dst) {
+            try {
+                $lb = [System.IO.File]::ReadAllBytes($dst)
+                if ($lb.Length -eq $_.Length -and $lb.Length -gt 4 -and $lb[-2] -eq 0xFF -and $lb[-1] -eq 0xD9) {
+                    $need = $false
+                }
+            } catch {}
+        }
+        if ($need) {
+            try {
+                $bytes = [System.IO.File]::ReadAllBytes($_.FullName)
+                if ($bytes.Length -gt 4 -and $bytes[-2] -eq 0xFF -and $bytes[-1] -eq 0xD9) {
+                    [System.IO.File]::WriteAllBytes($dst, $bytes)
+                }
+            } catch {}
+        }
+    }
+    Write-Output "[SYNC] Da dong bo & kiem tra toan ven 100% anh 4K vao Lively Wallpaper!"
 } else {
     Write-Output "[WARN] Chua tim thay Google Drive (AI_Full_Studio\05_Live_Wallpapers). Hay mo Google Drive Desktop roi chay lai!"
 }

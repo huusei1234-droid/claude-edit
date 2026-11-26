@@ -71,6 +71,7 @@ const root = app.isPackaged ? process.resourcesPath : path.resolve(__dirname, ".
 const webDir = app.isPackaged ? path.join(root, "web") : path.join(root, "app", "web", "dist");
 const flow = require("./flow-driver");
 const chatgpt = require("./chatgpt-driver");
+const gemini = require("./gemini-driver");
 
 const MIME = { ".html": "text/html", ".js": "text/javascript", ".css": "text/css", ".json": "application/json", ".svg": "image/svg+xml", ".png": "image/png", ".jpg": "image/jpeg", ".ico": "image/x-icon", ".woff2": "font/woff2", ".woff": "font/woff", ".mp4": "video/mp4", ".wasm": "application/wasm" };
 
@@ -158,6 +159,10 @@ function buildMenu() {
     ] },
     { label: "ChatGPT", submenu: [
       { label: "Mở cửa sổ ChatGPT (đăng nhập)", click: () => chatgpt.show().catch((e) => dialog.showErrorBox("ChatGPT", String(e.message || e))) },
+    ] },
+    { label: "Gemini Video", submenu: [
+      { label: "Mở Gemini Videos trong Brave (10s / 15s)", click: () => gemini.show().catch((e) => dialog.showErrorBox("Gemini Video", String(e.message || e))) },
+      { label: "Quét lại tất cả nick Google Pro trong Brave", click: () => gemini.discoverGeminiAccounts({ forceResetCooldown: true }).then((accs) => dialog.showMessageBox({ message: `Đã cập nhật ${accs.length} tài khoản Gemini trong Brave:\n` + accs.map((a) => `• ${a.email || a.prefix} (${a.prefix})`).join("\n") })).catch((e) => dialog.showErrorBox("Gemini Video", String(e.message || e))) },
     ] },
     { label: "Agent", submenu: [
       { label: "Kết nối Claude Agent", click: () => connectCanvasAgent(true) },
@@ -343,6 +348,7 @@ function stopAll() {
   }
   flow.destroy();
   chatgpt.destroy();
+  gemini.destroy();
   if (server) server.close();
 }
 
@@ -356,6 +362,7 @@ async function syncFlowScripts() {
       image: fs.readFileSync(path.join(dir, "flow-image-script.js"), "utf8"),
       video: fs.readFileSync(path.join(dir, "flow-video-script.js"), "utf8"),
       chatgptImage: fs.readFileSync(path.join(dir, "chatgpt-image-script.js"), "utf8"),
+      geminiVideo: fs.readFileSync(path.join(dir, "gemini-video-script.js"), "utf8"),
     };
   } catch { return; }
   const changed = await win.webContents.executeJavaScript(`(() => {
@@ -410,6 +417,46 @@ async function syncFlowScripts() {
       changed = true;
     }
 
+    // 1b. Đồng bộ kênh Gemini Web Pro (10s/15s, tự xoay hết acc -> qua Flow) & đặt làm model tạo Video ưu tiên số 1
+    let gemCh = channels.find((c) => c.id === "gemini");
+    if (!gemCh) {
+      gemCh = {
+        id: "gemini",
+        name: "Gemini Web Pro (đa acc 10s/15s -> Flow)",
+        baseUrl: "https://gemini.google.com",
+        apiKey: "gemini-web-pro",
+        apiFormat: "openai",
+        models: [{ name: "gemini-video", capability: "video", script: scripts.geminiVideo }],
+      };
+      const gptIdx = channels.findIndex((c) => c.id === "chatgpt");
+      channels.splice(gptIdx >= 0 ? gptIdx + 1 : 0, 0, gemCh);
+      changed = true;
+    } else {
+      if (gemCh.name !== "Gemini Web Pro (đa acc 10s/15s -> Flow)") { gemCh.name = "Gemini Web Pro (đa acc 10s/15s -> Flow)"; changed = true; }
+      if (!gemCh.apiKey) { gemCh.apiKey = "gemini-web-pro"; changed = true; }
+      if (!Array.isArray(gemCh.models) || !gemCh.models.some((m) => m.name === "gemini-video")) {
+        gemCh.models = [{ name: "gemini-video", capability: "video", script: scripts.geminiVideo }];
+        changed = true;
+      } else {
+        for (const m of gemCh.models) {
+          if (m.name === "gemini-video" && m.script !== scripts.geminiVideo) {
+            m.script = scripts.geminiVideo;
+            changed = true;
+          }
+        }
+      }
+    }
+
+    if (!cfg._geminiVideoDefaultApplied || !cfg.videoModel || cfg.videoModel.startsWith("default::")) {
+      cfg.videoModel = "gemini::gemini-video";
+      cfg._geminiVideoDefaultApplied = true;
+      changed = true;
+    }
+    if (Array.isArray(cfg.models) && !cfg.models.includes("gemini::gemini-video")) {
+      cfg.models = ["gemini::gemini-video", ...cfg.models];
+      changed = true;
+    }
+
     // 2. Đồng bộ kênh Google Flow (tự động)
     for (const ch of channels) {
       if (ch.id !== "flow") continue;
@@ -440,6 +487,7 @@ async function main() {
   await startWebServer();
   flow.setup(app);
   chatgpt.setup(app);
+  gemini.setup(app);
   startMuse2api();
   startVoiceStudio();
   startProxy();

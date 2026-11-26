@@ -254,26 +254,31 @@ async function uploadReferenceImages(page, images) {
     filePaths.push(fp);
   }
 
-  // Tìm <input type="file"> sẵn có trên trang ChatGPT; nếu chưa gắn vào DOM thì bấm nút '+' trong chế độ chặn dialog
-  let inputHandle = await page.$('input[type="file"]');
-  if (!inputHandle) {
-    await page.evaluate(() => {
-      window.__chatgptFileCap.on = true;
-      window.__chatgptFileCap.input = null;
-      const plus =
-        document.querySelector('[data-testid="composer-plus-btn"]') ||
-        [...document.querySelectorAll("button")].find((b) =>
-          /attach|upload|add files|thêm tệp|đính kèm/i.test(b.getAttribute("aria-label") || b.innerText || "")
-        );
-      if (plus) plus.click();
-    });
-    await sleep(600);
-    await page.evaluate(() => {
-      window.__chatgptFileCap.on = false;
-    });
-    inputHandle = await page.$('input[type="file"]');
-  }
+  // Tìm <input type="file"> sẵn có trên trang ChatGPT (ưu tiên ô có thuộc tính multiple cho phép đính kèm 2+ ảnh cùng lúc)
+  const findFileInput = async () => {
+    let h = await page.$('input[type="file"][multiple]');
+    if (!h) h = await page.$('input[type="file"]');
+    if (!h) {
+      await page.evaluate(() => {
+        window.__chatgptFileCap.on = true;
+        window.__chatgptFileCap.input = null;
+        const plus =
+          document.querySelector('[data-testid="composer-plus-btn"]') ||
+          [...document.querySelectorAll("button")].find((b) =>
+            /attach|upload|add files|thêm tệp|đính kèm/i.test(b.getAttribute("aria-label") || b.innerText || "")
+          );
+        if (plus) plus.click();
+      });
+      await sleep(600);
+      await page.evaluate(() => {
+        window.__chatgptFileCap.on = false;
+      });
+      h = (await page.$('input[type="file"][multiple]')) || (await page.$('input[type="file"]'));
+    }
+    return h;
+  };
 
+  let inputHandle = await findFileInput();
   if (!inputHandle) {
     try {
       fs.rmSync(tmpDir, { recursive: true, force: true });
@@ -281,7 +286,21 @@ async function uploadReferenceImages(page, images) {
     throw new Error("Không tìm thấy ô đính kèm ảnh trên trang ChatGPT (hãy kiểm tra bạn đã đăng nhập tài khoản ChatGPT).");
   }
 
-  await inputHandle.uploadFile(...filePaths);
+  if (filePaths.length === 1) {
+    await inputHandle.uploadFile(filePaths[0]);
+  } else {
+    // Hỗ trợ đính kèm nhiều ảnh tham chiếu (2+ ảnh mới + cũ) trên ChatGPT không bao giờ lỗi <input multiple>
+    const isMulti = await inputHandle.evaluate((el) => !!el.multiple).catch(() => false);
+    if (isMulti) {
+      await inputHandle.uploadFile(...filePaths);
+    } else {
+      for (let k = 0; k < filePaths.length; k++) {
+        const hEach = (k === 0 ? inputHandle : await findFileInput()) || inputHandle;
+        await hEach.uploadFile(filePaths[k]);
+        await sleep(800);
+      }
+    }
+  }
   // Chờ ảnh tải lên hoàn tất (tối đa 35 giây)
   for (let i = 0; i < 70; i++) {
     await sleep(500);
@@ -441,6 +460,7 @@ async function generateOneImage(job, slotIdx = 0) {
   for (;;) {
     await sleep(2500);
     if (Date.now() - t0 > timeoutMs) {
+      await cleanupConversationAfterDownload(page, job).catch(() => {});
       throw new Error("Hết thời gian chờ ChatGPT tạo ảnh (quá 6 phút).");
     }
     await inject(page).catch(() => {});
