@@ -140,6 +140,13 @@ Người dùng đã ủy quyền cho hệ thống **tự động chọn và chuy
   - Khi gặp bài toán quan trọng (viết kịch bản TVC/VSL, dựng Motion Graphics/HyperFrames/Remotion, thiết kế hệ thống, gỡ lỗi phức tạp): chủ động nâng lên **`Gemini 4 Carbon (High)`** (`gemini-4-carbon-high`), **`Gemini 4 Neon (Medium / High)`** (`gemini-4-neon-medium` / `gemini-4-neon-high`) hoặc **`Orchestrator (Neon)`** (`gemini-pro-orchestrator-neon`) (hoặc `invoke_subagent` với `Model: "pro"`).
 - **Tầng 3 — Nhiệm vụ Đặc biệt Quan trọng / Dự án Lớn / Cần Độ Chính Xác Tuyệt Đối (Dùng tới mức `Extra` / `XHigh` khi cần thiết)**:
   - Khi giải quyết kiến trúc lớn, chiến dịch chốt khách quan trọng hoặc lỗi hóc búa đòi hỏi suy luận sâu tối đa: chủ động kích hoạt lên mức **`Extra` (`XHigh`)** với **`Gemini 4 Neon (XHigh)`** (`gemini-4-neon-xhigh`) (kết hợp `gemini-4-hydrogen-xhigh` / `claude-opus-5-5-high` trong `swarm` nếu cần), ưu tiên độ hoàn hảo tuyệt đối.
+- **Tầng 4 — Tận Dụng Hết 100% Cả 2 Kho Hạn Mức (`Gemini Models` & `Claude + GPT Models` — `0%` Lãng Phí Trước Giờ Reset)**:
+  - Chủ động kiểm tra `swarm(action="models", all=True)` để đọc hạn mức thực tế (`quota_remaining` & `quota_resets`) của cả 2 cụm:
+    1. **Cụm `Gemini Models`** (`gemini-4-neon-*`, `gemini-4-hydrogen-*`, `gemini-4-carbon-*`, `gemini-4-argon-*`, `gemini-3.8-flash-*`).
+    2. **Cụm `Claude and GPT models`** (`claude-opus-5-5-*`, `claude-sonnet-5-5-*`, `gpt-oss-120b-medium`).
+  - **Cân bằng thông minh & Vắt kiệt hạn mức trước khi làm mới**:
+    - Khi một cụm chạm đáy hạn mức 5 giờ (`0%`) hoặc sắp cạn hạn mức Tuần (như khi `Claude & GPT` về `0%–3%` trong khi `Gemini` còn dư `50%–90%`): **lập tức chuyển luồng chính & các tác vụ sang cụm còn nhiều % (`Gemini 4 Neon / Hydrogen / Carbon`)** qua `swarm(action="model", ...)` để không bao giờ gián đoạn công việc.
+    - Ngược lại, với phần % hạn mức còn dư của cụm sắp tới giờ Reset 5 giờ / Reset Tuần (ví dụ `Claude Sonnet 5.5`, `Claude Opus 5.5`, `GPT-OSS 120B` hoặc `Gemini 4`): chủ động phân bổ worker trong `swarm` sang cụm đó để **tận dụng sạch 100% cả phần trên (`Gemini`) lẫn phần dưới (`Claude & GPT`)**, không để mất phí bất kỳ % quota nào khi đồng hồ làm mới!
 
 ---
 

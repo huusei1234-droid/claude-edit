@@ -82,6 +82,11 @@ if (Test-Path -LiteralPath "$studioRoot\huu\skills") {
 }
 if (Test-Path -LiteralPath "$bundleDir\antigravity_bundle\plugins") {
     robocopy "$bundleDir\antigravity_bundle\plugins" "$agyCfg\plugins" /E /XO /XF "auth.json" "*.token" /NFL /NDL /NJH /NJS /R:1 /W:1 | Out-Null
+    $ofMcp = "$agyCfg\plugins\open-folder\mcp_config.json"
+    $localPy = "$studioRoot\voice-studio\.venv\Scripts\python.exe"
+    if ((Test-Path -LiteralPath $ofMcp) -and (Test-Path -LiteralPath $localPy)) {
+        @{ mcpServers = @{ explorer = @{ command = $localPy; args = @("-X", "utf8", "`${PLUGIN_ROOT}/bin/server.py") } } } | ConvertTo-Json -Depth 5 | Set-Content -LiteralPath $ofMcp -Encoding UTF8
+    }
 }
 if (Test-Path -LiteralPath "$bundleDir\antigravity_bundle\GEMINI_GLOBAL.md") {
     Copy-Item -LiteralPath "$bundleDir\antigravity_bundle\GEMINI_GLOBAL.md" -Destination "$agyCfg\GEMINI.md" -Force
