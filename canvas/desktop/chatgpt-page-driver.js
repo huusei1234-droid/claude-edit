@@ -230,14 +230,14 @@
       .trim();
 
     const isHardQuotaOrLimit =
-      /reached your.*limit|đạt đến giới hạn|đạt giới hạn tạo|try again later|thử lại sau|too many requests/i.test(
-        cleanedReplyText
+      /not enough usage available|out of images|more will be available after|reached your.*limit|đạt đến giới hạn|đạt giới hạn tạo|try again later|thử lại sau|too many requests/i.test(
+        cleanedReplyText || rawScopeText
       );
-    if (!isStreaming && newTurns.length > 0 && images.length === 0 && isHardQuotaOrLimit && elapsed > 5000) {
+    if (newTurns.length > 0 && images.length === 0 && isHardQuotaOrLimit && elapsed > 3000) {
       return {
         state: "failed",
         hardLimit: true,
-        error: "ChatGPT chạm giới hạn lượt tạo ảnh: " + cleanedReplyText.replace(/\s+/g, " ").slice(0, 260),
+        error: "ChatGPT chạm giới hạn lượt tạo ảnh: " + (cleanedReplyText || rawScopeText).replace(/\s+/g, " ").slice(0, 260),
         images: [],
       };
     }
@@ -273,31 +273,59 @@
   }
 
   async function deleteCurrentConversation() {
-    const convId = (location.pathname.match(/\/c\/([0-9a-f-]{36})/i) || [])[1] || "";
-    if (!convId) {
-      return { deleted: false, skipped: true, reason: "no_conv_id" };
+    const waitMs = (ms) => new Promise((r) => setTimeout(r, ms));
+    let convId = (location.pathname.match(/\/c\/([0-9a-f-]{36})/i) || [])[1] || "";
+    for (let w = 0; w < 6 && !convId; w++) {
+      await waitMs(400);
+      convId = (location.pathname.match(/\/c\/([0-9a-f-]{36})/i) || [])[1] || "";
     }
 
-    // Tầng 1: Xóa sạch cuộc trò chuyện ngay trong ngữ cảnh trang (nhanh ~200ms, không nháy UI, không bao giờ lộ hay trả token ra ngoài)
+    // Tầng 1: Xóa sạch cuộc trò chuyện ngay trong ngữ cảnh trang (nhanh ~200ms, kèm oai-device-id chuẩn để 100% thành công)
     try {
       const sessRes = await fetch("/api/auth/session", { credentials: "include" });
       const sess = sessRes.ok ? await sessRes.json().catch(() => ({})) : {};
       const tok = typeof sess?.accessToken === "string" ? sess.accessToken : "";
+      const rawDid = localStorage.getItem("oai-did") || "";
+      const did = rawDid.replace(/^"|"$/g, "");
       const headers = { "Content-Type": "application/json" };
       if (tok) headers.Authorization = "Bearer " + tok;
-      const patchRes = await fetch(`/backend-api/conversation/${convId}`, {
-        method: "PATCH",
-        credentials: "include",
-        headers,
-        body: JSON.stringify({ is_visible: false }),
-      });
-      if (patchRes.ok) {
-        return { deleted: true, method: "api", convId };
+      if (did) headers["oai-device-id"] = did;
+
+      // Nếu URL vẫn chưa kịp gắn /c/<id>, dò 3 cuộc trò chuyện mới nhất vừa tạo trong 5 phút qua có chữ ký tạo ảnh tự động
+      if (!convId && tok) {
+        const listRes = await fetch("/backend-api/conversations?offset=0&limit=3&order=updated", { credentials: "include", headers });
+        if (listRes.ok) {
+          const lj = await listRes.json().catch(() => ({}));
+          for (const it of lj.items || []) {
+            if (/^Generate\b/i.test(it.title || "")) {
+              convId = it.id;
+              break;
+            }
+          }
+        }
+      }
+
+      if (convId) {
+        for (let attempt = 0; attempt < 2; attempt++) {
+          const patchRes = await fetch(`/backend-api/conversation/${convId}`, {
+            method: "PATCH",
+            credentials: "include",
+            headers,
+            body: JSON.stringify({ is_visible: false }),
+          });
+          if (patchRes.ok) {
+            return { deleted: true, method: "api", convId };
+          }
+          await waitMs(400);
+        }
       }
     } catch {}
 
+    if (!convId) {
+      return { deleted: false, skipped: true, reason: "no_conv_id" };
+    }
+
     // Tầng 2 (Dự phòng giao diện): Bấm nút menu "..." góc phải cuộc trò chuyện -> Xóa / Delete -> Xác nhận
-    const waitMs = (ms) => new Promise((r) => setTimeout(r, ms));
     const optBtn =
       $('[data-testid="conversation-options-button"]') ||
       $('button[aria-label*="conversation options" i]') ||
