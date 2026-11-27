@@ -123,10 +123,9 @@ static class FullStudio
             Thread.Sleep(1200);
         }
 
-        string args = "--remote-debugging-port=9333 --remote-debugging-address=127.0.0.1 --restore-last-session "
+        string args = "--remote-debugging-port=9333 --remote-debugging-address=127.0.0.1 "
             + "--disable-background-timer-throttling --disable-renderer-backgrounding "
-            + "--disable-backgrounding-occluded-windows --disable-features=CalculateNativeWinOcclusion "
-            + "\"https://chatgpt.com/g/g-p-6afbde0b943481919c6ec31a3b4f8642/project\" \"https://flow.google.com/\"";
+            + "--disable-backgrounding-occluded-windows --disable-features=CalculateNativeWinOcclusion";
         try
         {
             Process.Start(new ProcessStartInfo(braveExe, args)

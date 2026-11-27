@@ -153,9 +153,7 @@ async function launchBrowser(visible) {
     "--disable-renderer-backgrounding",
     "--disable-backgrounding-occluded-windows",
     "--disable-features=CalculateNativeWinOcclusion",
-    ...(visible ? [] : ["--headless=new", "--disable-gpu", "--mute-audio"]),
-    start,
-    ...(visible ? [gptHtpm] : []),
+    ...(visible ? [] : ["--headless=new", "--disable-gpu", "--mute-audio", start]),
   ];
 
   const spawnOnce = (restoreSession) => {
