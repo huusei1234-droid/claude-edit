@@ -714,7 +714,7 @@ async function ensureWorkerProjectId(slotIdx) {
 
 // ───────── Tự động theo dõi điểm & Đổi Nick Google (u/0, u/1, u/3, ...) ngay khi hết điểm Flow ─────────
 const CREDIT_EXHAUSTED_TTL_MS = 4 * 3600 * 1000; // đánh dấu tạm nghỉ 4 giờ rồi tự kiểm tra lại (phòng khi Google cộng điểm tháng mới)
-const CREDIT_ERR_RE = /không đủ tín dụng|hết tín dụng|hết điểm|không còn tín dụng|mua thêm tín dụng|nâng cấp gói|đạt đến giới hạn tín dụng|not enough credits|insufficient credits|out of credits|no credits|credit limit|upgrade plan|top up credits/i;
+const CREDIT_ERR_RE = /không đủ.*tín dụng|hết tín dụng|hết điểm|không còn.*tín dụng|mua thêm tín dụng|nâng cấp gói|đạt đến giới hạn.*tín dụng|not enough.*credits?|insufficient.*credits?|out of.*credits?|no.*credits?|credit limit|get more credits?|upgrade plan|top up credits?|\b0\s*(?:ai\s+)?(?:tín dụng|credits?)\b/i;
 
 function getPrefixCreditsMap() {
   const a = acct();
@@ -917,17 +917,20 @@ async function discoverMoreGoogleNicksInBrave(kind = "video", skipPrefixes = new
       if (skipPrefixes.has(realPrefix)) continue;
       const credInfo = await readCreditsOnPage(p);
       if (!credInfo || credInfo.credits < need) {
-        if (credInfo) markPrefixExhausted(realPrefix, credInfo.credits, credInfo.email);
+        markPrefixExhausted(realPrefix, credInfo?.credits ?? 0, credInfo?.email || "");
         skipPrefixes.add(realPrefix);
         continue;
       }
       recordPrefixHealthyCredits(realPrefix, credInfo.credits, credInfo.email);
 
-      // TUYỆT ĐỐI tạo mới 2 dự án riêng của Agent cho nick phụ, KHÔNG đụng vào bất kỳ dự án cũ nào có sẵn trên nick!
+      // Tạo dự án riêng cho nick mới phát hiện nếu chưa có
       const owned = getAgentOwnedSet(a);
       let pids = (a.workerTargets || [])
-        .filter((t) => t && t.prefix === realPrefix && t.projectId && owned.has(t.projectId))
+        .filter((t) => t && t.prefix === realPrefix && t.projectId)
         .map((t) => t.projectId);
+      for (const existingId of pids) {
+        if (!owned.has(existingId)) { registerAgentOwnedProject(existingId, a); owned.add(existingId); }
+      }
 
       while (pids.length < 2) {
         await p.goto(`${HOME}${realPrefix}`, { waitUntil: "domcontentloaded" }).catch(() => {});
@@ -953,14 +956,18 @@ async function discoverMoreGoogleNicksInBrave(kind = "video", skipPrefixes = new
       }
 
       for (const pid of pids) {
+        registerAgentOwnedProject(pid, a);
         if (!a.workerTargets.some((t) => t.prefix === realPrefix && t.projectId === pid)) {
-          a.workerTargets.push({ prefix: realPrefix, projectId: pid });
+          a.workerTargets.push({ prefix: realPrefix, projectId: pid, ...(credInfo.email ? { email: credInfo.email } : {}) });
         }
       }
+      a.userPrefix = realPrefix;
+      if (pids[0]) a.projectId = pids[0];
+      if (credInfo.email) a.email = credInfo.email;
       saveConfig();
       if (pids[0]) {
         console.log(`[flow:AutoSwitch] Đã tự động phát hiện & kích hoạt nick ${realPrefix} (${credInfo.email || "Google"}, còn ${credInfo.credits} điểm)!`);
-        return { prefix: realPrefix, projectId: pids[0] };
+        return { prefix: realPrefix, projectId: pids[0], email: credInfo.email || "" };
       }
     } finally {
       await p.close().catch(() => {});
@@ -972,7 +979,10 @@ async function discoverMoreGoogleNicksInBrave(kind = "video", skipPrefixes = new
 async function resolveHealthyTargetForSlot(slotIdx, kind = "video", triedPrefixes = new Set()) {
   const a = acct();
   const owned = getAgentOwnedSet(a);
-  const targets = (Array.isArray(a?.workerTargets) ? a.workerTargets : []).filter((t) => t && t.projectId && owned.has(t.projectId));
+  const rawTargets = Array.isArray(a?.workerTargets) ? a.workerTargets : [];
+  // Chỉ lọc theo agentOwnedProjectIds nếu danh sách owned đã có phần tử khớp, tránh làm rỗng workerTargets khi mới nạp cấu hình!
+  const anyOwnedMatch = owned.size > 0 && rawTargets.some((t) => t && t.projectId && owned.has(t.projectId));
+  const targets = rawTargets.filter((t) => t && t.projectId && (!anyOwnedMatch || owned.has(t.projectId)));
   const busyUrls = new Set(
     flowSlotPages
       .map((p, idx) => (idx !== slotIdx && p && !p.isClosed() ? p.url() : ""))
@@ -1075,9 +1085,9 @@ async function ensureSlotProjectPage(slotIdx, kind = "video", triedPrefixes = ne
   }
 
   const a = acct();
-  const hasTargets = Array.isArray(a?.workerTargets) && a.workerTargets.length > 0;
-  const wt = hasTargets ? await resolveHealthyTargetForSlot(slotIdx, kind, triedPrefixes) : null;
-  if (hasTargets && !wt) {
+  const useMultiNickPool = isMainBraveProfile(a?.profile) || (Array.isArray(a?.workerTargets) && a.workerTargets.length > 0);
+  const wt = useMultiNickPool ? await resolveHealthyTargetForSlot(slotIdx, kind, triedPrefixes) : null;
+  if (useMultiNickPool && !wt) {
     const map = getPrefixCreditsMap();
     const summary = Object.entries(map)
       .map(([k, v]) => `${k.replace("/", "")}${v.email ? ` (${v.email})` : ""}: ${v.credits ?? 0} điểm`)
@@ -1268,21 +1278,21 @@ async function generate(job, onProgress, slotIdx = 0) {
       let liveCreds = null;
       if (!confirmedLowCredits && maybeBlockedByCredits) {
         liveCreds = await checkPrefixCreditsLive(prefix).catch(() => null);
-        if (liveCreds) {
-          if (liveCreds.credits < minCredits(job.kind)) {
-            confirmedLowCredits = true;
-          } else {
-            recordPrefixHealthyCredits(prefix, liveCreds.credits, liveCreds.email);
-          }
+        if (!liveCreds || liveCreds.credits < minCredits(job.kind)) {
+          confirmedLowCredits = true;
+        } else {
+          recordPrefixHealthyCredits(prefix, liveCreds.credits, liveCreds.email);
         }
       } else if (confirmedLowCredits) {
         liveCreds = await checkPrefixCreditsLive(prefix).catch(() => null);
       }
 
       if (confirmedLowCredits) {
+        await page.close().catch(() => {});
+        if (flowSlotPages[slotIdx] === page) flowSlotPages[slotIdx] = null;
         markPrefixExhausted(prefix, liveCreds?.credits ?? 0, liveCreds?.email || "");
         triedPrefixes.add(prefix);
-        console.warn(`[flow:AutoSwitch] Lần thử #${attempt + 1}: Nick ${prefix} hết điểm -> tự động chuyển ngay sang nick tiếp theo!`);
+        console.warn(`[flow:AutoSwitch] Lần thử #${attempt + 1}: Nick ${prefix} hết điểm (${liveCreds?.credits ?? 0} điểm) -> đóng tab cũ & tự động chuyển ngay sang nick tiếp theo!`);
         continue;
       }
       throw err;
@@ -1357,7 +1367,9 @@ async function readCreditsOnPage(page) {
   for (let i = 0; i < 12 && !m; i++) {
     await sleep(400);
     const t = await page.evaluate(() => document.body.innerText).catch(() => "");
-    m = t.match(/(\d[\d.,]*)\s*(?:tín dụng|credits?)/i);
+    m =
+      t.match(/(\d[\d.,]*)\s*(?:(?:monthly|remaining|available|google\s+flow|ai)\s+){0,3}(?:tín\s*dụng|credits?)/i) ||
+      t.match(/(?:tín\s*dụng(?:\s*ai)?|ai\s+credits?|monthly\s+credits?)[^0-9\n]{0,25}(\d[\d.,]*)/i);
   }
   await closeAccountMenu(page);
   if (!m) return null;
