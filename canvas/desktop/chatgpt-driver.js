@@ -132,13 +132,26 @@ async function sweepIdleChatgptTabs() {
   } catch {}
 }
 
-function releaseGptSlot(slotIdx) {
+async function releaseGptSlot(slotIdx) {
   const next = waitingGptQueue.shift();
   if (next) {
     next(slotIdx);
     return;
   }
   gptSlotBusy[slotIdx] = false;
+  // Nếu toàn bộ các luồng ChatGPT đã xong -> đóng NGAY LẬP TỨC các Tab phụ (#2, #3) & dọn sạch Tab trùng trước khi hàm trả về!
+  if (!gptSlotBusy.some(Boolean) && waitingGptQueue.length === 0) {
+    for (let i = 1; i < MAX_CHATGPT_WORKERS; i++) {
+      if (gptSlotIdleTimers[i]) { clearTimeout(gptSlotIdleTimers[i]); gptSlotIdleTimers[i] = null; }
+      if (gptSlotPages[i]) {
+        const p = gptSlotPages[i];
+        gptSlotPages[i] = null;
+        try { if (!p.isClosed()) await p.close(); } catch {}
+      }
+    }
+    await sweepIdleChatgptTabs().catch(() => {});
+    return;
+  }
   if (slotIdx > 0) {
     if (gptSlotIdleTimers[slotIdx]) clearTimeout(gptSlotIdleTimers[slotIdx]);
     const t = setTimeout(async () => {
@@ -149,12 +162,9 @@ function releaseGptSlot(slotIdx) {
         try { if (!p.isClosed()) await p.close(); } catch {}
       }
       await sweepIdleChatgptTabs();
-    }, 6000);
+    }, 3000);
     if (t.unref) t.unref();
     gptSlotIdleTimers[slotIdx] = t;
-  } else if (!gptSlotBusy.some(Boolean)) {
-    const t = setTimeout(() => { sweepIdleChatgptTabs().catch(() => {}); }, 6000);
-    if (t.unref) t.unref();
   }
 }
 
@@ -163,7 +173,7 @@ async function withGptParallelSlot(fn) {
   try {
     return await fn(slotIdx);
   } finally {
-    releaseGptSlot(slotIdx);
+    await releaseGptSlot(slotIdx);
   }
 }
 

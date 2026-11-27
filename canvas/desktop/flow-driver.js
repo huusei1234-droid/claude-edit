@@ -202,6 +202,8 @@ async function ensureBrowser({ visible = true } = {}) {
   const puppeteer = mod.default && mod.default.connect ? mod.default : mod;
   browser = await puppeteer.connect({ browserWSEndpoint: info.webSocketDebuggerUrl, defaultViewport: null });
   browser.on("disconnected", () => { browser = null; });
+  // Ngay khi vừa kết nối vào Brave, tự động gom dọn sạch các tab Flow/ChatGPT trùng lặp còn tồn từ phiên trước
+  setTimeout(() => { sweepIdleFlowTabs().catch(() => {}); }, 1500).unref?.();
   // nhớ project chính khi chưa cấu hình cụm workerProjectIds / workerTargets đa dự án
   browser.on("targetchanged", (t) => {
     const id = projectOf(t.url());
@@ -610,14 +612,26 @@ async function sweepIdleFlowTabs() {
   } catch {}
 }
 
-function releaseFlowSlot(slotIdx) {
+async function releaseFlowSlot(slotIdx) {
   const next = waitingFlowQueue.shift();
   if (next) {
     next(slotIdx);
     return;
   }
   flowSlotBusy[slotIdx] = false;
-  // Tự động đóng bớt các Tab Worker phụ & Tab trùng lặp sau 8s nhàn rỗi, chỉ giữ 1 Tab Flow chính (không chạm Tab đang render!)
+  // Nếu không còn bất kỳ luồng Flow nào đang chạy -> đóng NGAY LẬP TỨC các Tab phụ & dọn sạch Tab trùng (kể cả khi gọi từ script rời thoát Node ngay sau đó!)
+  if (!flowSlotBusy.some(Boolean) && waitingFlowQueue.length === 0) {
+    for (let i = 1; i < MAX_PARALLEL_FLOW; i++) {
+      if (flowSlotIdleTimers[i]) { clearTimeout(flowSlotIdleTimers[i]); flowSlotIdleTimers[i] = null; }
+      if (flowSlotPages[i]) {
+        const p = flowSlotPages[i];
+        flowSlotPages[i] = null;
+        try { if (!p.isClosed()) await p.close(); } catch {}
+      }
+    }
+    await sweepIdleFlowTabs().catch(() => {});
+    return;
+  }
   if (slotIdx > 0) {
     if (flowSlotIdleTimers[slotIdx]) clearTimeout(flowSlotIdleTimers[slotIdx]);
     const t = setTimeout(async () => {
@@ -628,12 +642,9 @@ function releaseFlowSlot(slotIdx) {
         try { if (!p.isClosed()) await p.close(); } catch {}
       }
       await sweepIdleFlowTabs();
-    }, 8000);
+    }, 3000);
     if (t.unref) t.unref();
     flowSlotIdleTimers[slotIdx] = t;
-  } else if (!flowSlotBusy.some(Boolean)) {
-    const t = setTimeout(() => { sweepIdleFlowTabs().catch(() => {}); }, 8000);
-    if (t.unref) t.unref();
   }
 }
 
@@ -642,7 +653,7 @@ async function withParallelSlot(fn) {
   try {
     return await fn(slotIdx);
   } finally {
-    releaseFlowSlot(slotIdx);
+    await releaseFlowSlot(slotIdx);
   }
 }
 
