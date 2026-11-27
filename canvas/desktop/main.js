@@ -387,6 +387,7 @@ async function syncFlowScripts() {
       chatgptText: fs.readFileSync(path.join(dir, "chatgpt-text-script.js"), "utf8"),
       chatgptCodex: fs.readFileSync(path.join(dir, "chatgpt-codex-script.js"), "utf8"),
       chatgptSoraVideo: fs.readFileSync(path.join(dir, "chatgpt-sora-video-script.js"), "utf8"),
+      chatgptAudio: fs.readFileSync(path.join(dir, "chatgpt-audio-script.js"), "utf8"),
       geminiVideo: fs.readFileSync(path.join(dir, "gemini-video-script.js"), "utf8"),
     };
   } catch { return; }
@@ -401,16 +402,19 @@ async function syncFlowScripts() {
     const scripts = ${JSON.stringify(scripts)};
     let changed = false;
 
-    // 1. Đồng bộ kênh Hệ sinh thái ChatGPT Plus (Ảnh + Codex gpt-6.2-sol + Suy luận + K4 + HTPM + Deep Research + Sora Video)
+    // 1. Đồng bộ trọn vẹn 4/4 năng lực Hệ sinh thái ChatGPT Plus & Codex lên Canvas (Ảnh + Video + Chữ/Code + Giọng nói)
     const desiredGptModels = [
       { name: "chatgpt-image", capability: "image", script: scripts.chatgptImage },
       { name: "codex-gpt-6.2-sol", capability: "text", script: scripts.chatgptCodex },
+      { name: "codex-gpt-reserve", capability: "text", script: scripts.chatgptCodex },
       { name: "codex-agent-workspace", capability: "text", script: scripts.chatgptCodex },
       { name: "chatgpt-plus-thinking", capability: "text", script: scripts.chatgptText },
       { name: "chatgpt-k4-flow", capability: "text", script: scripts.chatgptText },
       { name: "chatgpt-htpm-brand", capability: "text", script: scripts.chatgptText },
+      { name: "chatgpt-avpm-brand", capability: "text", script: scripts.chatgptText },
       { name: "chatgpt-deep-research", capability: "text", script: scripts.chatgptText },
       { name: "sora-video", capability: "video", script: scripts.chatgptSoraVideo },
+      { name: "studio-tts", capability: "audio", script: scripts.chatgptAudio },
     ];
     let gptCh = channels.find((c) => c.id === "chatgpt");
     if (!gptCh) {
@@ -454,18 +458,28 @@ async function syncFlowScripts() {
       cfg._chatgptTextDefaultApplied = true;
       changed = true;
     }
+    if (!cfg._studioAudioDefaultApplied || !cfg.audioModel || cfg.audioModel.startsWith("default::")) {
+      cfg.audioModel = "chatgpt::studio-tts";
+      cfg._studioAudioDefaultApplied = true;
+      changed = true;
+    }
     if (Array.isArray(cfg.models)) {
       const plusIds = [
         "chatgpt::chatgpt-image",
         "chatgpt::codex-gpt-6.2-sol",
+        "chatgpt::codex-gpt-reserve",
         "chatgpt::codex-agent-workspace",
         "chatgpt::chatgpt-plus-thinking",
         "chatgpt::chatgpt-k4-flow",
         "chatgpt::chatgpt-htpm-brand",
+        "chatgpt::chatgpt-avpm-brand",
         "chatgpt::chatgpt-deep-research",
         "chatgpt::sora-video",
+        "chatgpt::studio-tts",
       ];
-      const cleaned = cfg.models.filter((x) => x !== "default::gpt-image-2" && x !== "default::gpt-5.5");
+      const cleaned = cfg.models.filter(
+        (x) => x !== "default::gpt-image-2" && x !== "default::gpt-5.5" && x !== "default::gpt-4o-mini-tts"
+      );
       for (const pid of plusIds.reverse()) {
         if (!cleaned.includes(pid)) {
           cleaned.unshift(pid);

@@ -286,7 +286,9 @@ def ask_codex(
     if proj_up == "AUTO":
         if any(k in prompt for k in ("CHỐT KHÔNG GIAN", "IMAGE XUẤT HIỆN", "ASSET BOARD", "K4", "prompt flow")):
             proj_up = "K4"
-        elif any(k in prompt for k in ("HTPM", "Hằng Thu", "An Vượng", "Bojomi", "AV Protein", "Feel Chicken")):
+        elif any(k in prompt for k in ("AVPM", "An Vượng", "Chị Hậu", "AV Protein", "Bojomi", "Curcumilk", "Collamela")):
+            proj_up = "AVPM"
+        elif any(k in prompt for k in ("HTPM", "Hằng Thu", "Feel Chicken")):
             proj_up = "HTPM"
 
     full_prompt = prompt
@@ -294,6 +296,12 @@ def ask_codex(
         inst_p = os.path.join(mig_base, "K4_Phim_Chuyen_Trong_Nha", "INSTRUCTIONS.txt")
         if os.path.exists(inst_p):
             full_prompt = f"[QUY CHUẨN DỰ ÁN K4]\n{open(inst_p, encoding='utf-8').read().strip()}\n\n[YÊU CẦU]\n{prompt}"
+    elif proj_up == "AVPM":
+        inst_p = os.path.join(mig_base, "AVPM", "INSTRUCTIONS.txt")
+        av_log = r"C:\AI\full studio\03_Du_An\261123-av-plan-phat-trien-brand\03_Mau_USP_Va_Lich_San_Xuat_Hang_Ngay\NHAT_KY_CAP_NHAT_KIEN_THUC_ZALO.md"
+        extra = f"\n\n[CẬP NHẬT ZALO/FB AN VƯỢNG]\n{open(av_log, encoding='utf-8').read()[-3500:]}" if os.path.exists(av_log) else ""
+        if os.path.exists(inst_p):
+            full_prompt = f"[QUY CHUẨN DỰ ÁN AN VƯỢNG PHARMA]\n{open(inst_p, encoding='utf-8').read().strip()}{extra}\n\n[YÊU CẦU]\n{prompt}"
     elif proj_up == "HTPM":
         inst_p = os.path.join(mig_base, "HTPM", "INSTRUCTIONS.txt")
         if os.path.exists(inst_p):
@@ -331,6 +339,87 @@ def ask_codex(
         if proc.returncode != 0:
             raise RuntimeError(f"Codex lỗi (rc={proc.returncode}): {proc.stderr[-500:]}")
         return proc.stdout.strip()
+
+
+def ask_codex_json(
+    prompt: str,
+    schema: dict,
+    model: str = "gpt-6.2-sol",
+    reasoning: str = "medium",
+    project: str = "auto",
+    image_paths: Optional[List[str]] = None,
+) -> dict:
+    """Ép Codex trả về JSON hợp lệ 100% đúng theo JSON Schema (--output-schema) cho tự động hóa kịch bản & CapCut."""
+    import tempfile
+
+    exe = _find_codex_exe()
+    work_dir = r"C:\AI\full studio" if os.path.exists(r"C:\AI\full studio") else os.getcwd()
+    with tempfile.TemporaryDirectory(prefix="codex_schema_") as tmp_d:
+        schema_file = os.path.join(tmp_d, "schema.json")
+        out_msg = os.path.join(tmp_d, "out.json")
+        with open(schema_file, "w", encoding="utf-8") as f:
+            json.dump(schema, f, ensure_ascii=False)
+        cmd = [
+            exe, "exec", "--skip-git-repo-check", "--ephemeral",
+            "-C", work_dir, "-s", "read-only", "-m", model,
+            "--output-schema", schema_file, "-o", out_msg,
+        ]
+        if reasoning in ("minimal", "low", "medium", "high", "xhigh", "max", "ultra"):
+            cmd.extend(["-c", f'model_reasoning_effort="{reasoning}"'])
+        for ip in image_paths or []:
+            if ip and os.path.exists(ip):
+                cmd.extend(["-i", os.path.abspath(ip)])
+        cmd.append("-")
+
+        proc = subprocess.run(
+            cmd, input=prompt, capture_output=True, text=True,
+            encoding="utf-8", errors="replace", cwd=work_dir, shell=exe.lower().endswith(".cmd"), timeout=360
+        )
+        if not os.path.exists(out_msg):
+            raise RuntimeError(f"Codex schema lỗi: {proc.stderr[-400:]}")
+        return json.loads(open(out_msg, encoding="utf-8").read().strip())
+
+
+def codex_parallel(
+    prompts: List[str],
+    max_workers: int = 4,
+    model: str = "gpt-reserve",
+    reasoning: str = "medium",
+    project: str = "auto",
+) -> List[str]:
+    """Chạy song song 4–6 luồng Codex cùng lúc (mặc định dùng gpt-reserve siêu tốc để tiết kiệm 4x hạn mức Plus!)."""
+    from concurrent.futures import ThreadPoolExecutor
+
+    with ThreadPoolExecutor(max_workers=max_workers) as pool:
+        futs = [
+            pool.submit(ask_codex, p, model=model, reasoning=reasoning, project=project)
+            for p in prompts
+        ]
+        return [f.result() for f in futs]
+
+
+def tts_vietnamese(text: str, out_path: str, voice: str = "female", speed: float = 1.0) -> str:
+    """Tạo file giọng đọc tiếng Việt thần kinh chuẩn TVC/Dược sĩ trực tiếp không tốn API key."""
+    venv_py = r"C:\AI\full studio\voice-studio\.venv\Scripts\python.exe"
+    py_exe = venv_py if os.path.exists(venv_py) else sys.executable
+    v_id = "vi-VN-NamMinhNeural" if voice.lower() in ("male", "nam", "onyx", "echo") else "vi-VN-HoaiMyNeural"
+    rate_pct = int(round((speed - 1.0) * 100))
+    rate_arg = f"{rate_pct:+d}%"
+    os.makedirs(os.path.dirname(os.path.abspath(out_path)), exist_ok=True)
+    subprocess.run(
+        [py_exe, "-m", "edge_tts", "--voice", v_id, f"--rate={rate_arg}", "--text", text, "--write-media", out_path],
+        check=True, capture_output=True, text=True, encoding="utf-8"
+    )
+    return os.path.abspath(out_path)
+
+
+def sync_an_vuong_project() -> dict:
+    """Đồng bộ tự động Dự án An Vượng Pharma (Instructions + Nhật ký Zalo/FB mới nhất) lên ChatGPT Plus."""
+    inst_p = r"C:\AI\full studio\huu\chatgpt_migration_huusei1234\02_PROJECTS\AVPM\INSTRUCTIONS.txt"
+    av_log = r"C:\AI\full studio\03_Du_An\261123-av-plan-phat-trien-brand\03_Mau_USP_Va_Lich_San_Xuat_Hang_Ngay\NHAT_KY_CAP_NHAT_KIEN_THUC_ZALO.md"
+    inst = open(inst_p, encoding="utf-8").read().strip() if os.path.exists(inst_p) else ""
+    sources = [av_log] if os.path.exists(av_log) else []
+    return sync_project_knowledge("An Vượng Pharma", instructions=inst, source_files=sources)
 
 
 def run_codex(prompt: str, cwd: Optional[str] = None, sandbox: str = "workspace-write") -> dict:

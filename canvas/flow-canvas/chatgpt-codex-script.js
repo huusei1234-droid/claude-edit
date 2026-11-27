@@ -10,7 +10,11 @@ async function chatgptCodexLocal({ messages, params, model, reasoningEffort, onD
   const p = params || {};
   const rawModel = String(model || "codex-gpt-6.2-sol").replace(/^chatgpt::/i, "");
   const isWorkspaceAgent = /workspace|agent-write/i.test(rawModel);
-  const codexModel = /astra/i.test(rawModel) ? "gpt-6.2-astra" : "gpt-6.2-sol";
+  const codexModel = /reserve/i.test(rawModel)
+    ? "gpt-reserve"
+    : /astra/i.test(rawModel)
+      ? "gpt-6.2-astra"
+      : "gpt-6.2-sol";
   const reqId = "codex_" + Date.now().toString(36) + "_" + Math.random().toString(36).slice(2, 7);
 
   const payload = {
@@ -20,6 +24,7 @@ async function chatgptCodexLocal({ messages, params, model, reasoningEffort, onD
     reasoningEffort: reasoningEffort || p.reasoningEffort || "medium",
     sandbox: isWorkspaceAgent ? "workspace-write" : (p.sandbox || "read-only"),
     project: p.project || "auto",
+    outputSchema: p.outputSchema || null,
     cwd: p.cwd || "",
   };
 

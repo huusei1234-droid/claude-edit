@@ -73,11 +73,15 @@ function resolveProjectTarget(job = {}) {
   if (rawProj.toUpperCase() === "K4" || rawModel.includes("k4")) {
     return { label: "K4 Phim Chuyện Trong Nhà", id: projs.K4, url: `https://chatgpt.com/g/${projs.K4}/project` };
   }
+  if (rawProj.toUpperCase() === "AVPM" || rawModel.includes("avpm")) {
+    const avId = projs.AVPM || projs["AN VƯỢNG PHARMA"] || projs.HTPM;
+    return { label: "An Vượng Pharma", id: avId, url: `https://chatgpt.com/g/${avId}/project` };
+  }
   if (rawProj.toUpperCase() === "HTPM" || rawModel.includes("htpm") || rawModel.includes("brand")) {
     return { label: "HTPM", id: projs.HTPM, url: `https://chatgpt.com/g/${projs.HTPM}/project` };
   }
 
-  // Chế độ auto: tự nhận diện ngữ cảnh K4 Phim AI vs HTPM/An Vượng/Feel Chicken
+  // Chế độ auto: tự nhận diện ngữ cảnh K4 Phim AI vs An Vượng Pharma vs HTPM
   const textSample = String(job.prompt || "");
   if (
     /CHỐT KHÔNG GIAN|IMAGE XUẤT HIỆN|ASSET BOARD|BẮT ĐẦU PROMPT|phim chuyện trong nhà|\bK4\b|viết prompt flow|kịch bản gia đình|mẹ chồng nàng dâu/i.test(
@@ -86,8 +90,12 @@ function resolveProjectTarget(job = {}) {
   ) {
     return { label: "K4 Phim Chuyện Trong Nhà", id: projs.K4, url: `https://chatgpt.com/g/${projs.K4}/project` };
   }
+  if (/\bAVPM\b|An Vượng|Chị Hậu|AV Protein|Bojomi|Curcumilk|Collamela|Droppii/i.test(textSample)) {
+    const avId = projs.AVPM || projs["AN VƯỢNG PHARMA"] || projs.HTPM;
+    return { label: "An Vượng Pharma", id: avId, url: `https://chatgpt.com/g/${avId}/project` };
+  }
   if (
-    /\bHTPM\b|Hằng Thu|An Vượng|AV Protein|Bojomi|Curcumilk|Collamela|Điều Kinh|Phụ Khoa|Feel Chicken|Saranghae/i.test(
+    /\bHTPM\b|Hằng Thu|Điều Kinh|Phụ Khoa|Feel Chicken|Saranghae/i.test(
       textSample
     )
   ) {
@@ -616,14 +624,22 @@ function enrichPromptWithLocalProjectContext(prompt, projectHint = "auto") {
   const target = resolveProjectTarget({ prompt, project: projectHint });
   const migBase = "C:\\AI\\full studio\\huu\\chatgpt_migration_huusei1234\\02_PROJECTS";
   let instFile = "";
+  let extraContext = "";
   if (target.label.includes("K4")) {
     instFile = path.join(migBase, "K4_Phim_Chuyen_Trong_Nha", "INSTRUCTIONS.txt");
+  } else if (target.label.includes("An Vượng")) {
+    instFile = path.join(migBase, "AVPM", "INSTRUCTIONS.txt");
+    const avZaloLog =
+      "C:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\03_Mau_USP_Va_Lich_San_Xuat_Hang_Ngay\\NHAT_KY_CAP_NHAT_KIEN_THUC_ZALO.md";
+    if (fs.existsSync(avZaloLog)) {
+      extraContext = "\n\n[CẬP NHẬT MỚI NHẤT ZALO/FB AN VƯỢNG]\n" + fs.readFileSync(avZaloLog, "utf8").slice(-3500);
+    }
   } else if (target.label === "HTPM") {
     instFile = path.join(migBase, "HTPM", "INSTRUCTIONS.txt");
   }
   if (instFile && fs.existsSync(instFile)) {
     const inst = fs.readFileSync(instFile, "utf8").trim();
-    return `[QUY CHUẨN DỰ ÁN ${target.label}]\n${inst}\n\n[YÊU CẦU]\n${prompt}`;
+    return `[QUY CHUẨN DỰ ÁN ${target.label}]\n${inst}${extraContext}\n\n[YÊU CẦU]\n${prompt}`;
   }
   return prompt;
 }
@@ -643,7 +659,9 @@ async function runCodex(spec = {}) {
   const sandbox = ["read-only", "workspace-write", "danger-full-access"].includes(spec.sandbox)
     ? spec.sandbox
     : "read-only";
-  const effort = ["low", "medium", "high", "xhigh"].includes(String(spec.reasoningEffort || "").toLowerCase())
+  const effort = ["minimal", "low", "medium", "high", "xhigh", "max", "ultra"].includes(
+    String(spec.reasoningEffort || "").toLowerCase()
+  )
     ? String(spec.reasoningEffort).toLowerCase()
     : "";
 
@@ -663,6 +681,12 @@ async function runCodex(spec = {}) {
   }
 
   const args = ["exec", "--skip-git-repo-check", "-C", cwd, "-s", sandbox, "-m", model, "-o", outMsgFile];
+  if (spec.outputSchema) {
+    const schemaPath = path.join(tmpDir, "output_schema.json");
+    const schemaStr = typeof spec.outputSchema === "string" ? spec.outputSchema : JSON.stringify(spec.outputSchema);
+    fs.writeFileSync(schemaPath, schemaStr, "utf8");
+    args.push("--output-schema", schemaPath);
+  }
   if (spec.ephemeral !== false && sandbox === "read-only") {
     args.push("--ephemeral");
   }
@@ -984,6 +1008,80 @@ function startGatewayServer() {
         const body = await readJsonBody(req);
         const r = await runCodex(body);
         sendJson(res, 200, r);
+        return;
+      }
+
+      if (req.method === "POST" && urlPath === "/v1/codex/review") {
+        const body = await readJsonBody(req);
+        const codexExe = findCodexExecutable();
+        const cwd = body.cwd && fs.existsSync(body.cwd) ? body.cwd : "C:\\AI\\full studio";
+        const tmpOut = path.join(os.tmpdir(), `codex-rev-${Date.now()}.txt`);
+        const revRes = await new Promise((resolve) => {
+          const ch = spawn(codexExe, ["exec", "review", "-C", cwd, "-o", tmpOut], {
+            cwd,
+            shell: /\.cmd$/i.test(codexExe),
+            windowsHide: true,
+          });
+          let err = "";
+          ch.stderr.on("data", (d) => { err += d.toString(); });
+          ch.on("close", (code) => {
+            let txt = "";
+            try { if (fs.existsSync(tmpOut)) txt = fs.readFileSync(tmpOut, "utf8").trim(); } catch {}
+            try { fs.unlinkSync(tmpOut); } catch {}
+            resolve(code === 0 || txt ? { ok: true, review: txt } : { ok: false, error: err.slice(-500) });
+          });
+        });
+        sendJson(res, 200, revRes);
+        return;
+      }
+
+      if (req.method === "POST" && urlPath === "/v1/audio/speech") {
+        const body = await readJsonBody(req);
+        const inputTxt = String(body.input || body.prompt || "").trim();
+        if (!inputTxt) {
+          sendJson(res, 400, { ok: false, error: "Missing input text" });
+          return;
+        }
+        const rawVoice = String(body.voice || "alloy").toLowerCase();
+        const speedNum = Math.min(2.0, Math.max(0.5, Number(body.speed) || 1.0));
+        const ratePct = Math.round((speedNum - 1.0) * 100);
+        const rateArg = (ratePct >= 0 ? "+" : "") + ratePct + "%";
+        const edgeVoice = /^(onyx|echo|fable|male|nam)/i.test(rawVoice)
+          ? "vi-VN-NamMinhNeural"
+          : /^vi-VN-/i.test(body.voice || "")
+            ? body.voice
+            : "vi-VN-HoaiMyNeural";
+
+        const venvPy = "C:\\AI\\full studio\\voice-studio\\.venv\\Scripts\\python.exe";
+        const pyExe = fs.existsSync(venvPy) ? venvPy : "python";
+        const tmpMp3 = path.join(os.tmpdir(), `studio-tts-${Date.now()}-${Math.random().toString(36).slice(2, 6)}.mp3`);
+        const tmpTxt = tmpMp3 + ".txt";
+        fs.writeFileSync(tmpTxt, inputTxt, "utf8");
+
+        const ttsOk = await new Promise((resolve) => {
+          const ch = spawn(
+            pyExe,
+            ["-m", "edge_tts", "--voice", edgeVoice, `--rate=${rateArg}`, "--file", tmpTxt, "--write-media", tmpMp3],
+            { windowsHide: true }
+          );
+          let err = "";
+          ch.stderr.on("data", (d) => { err += d.toString(); });
+          ch.on("close", (code) => resolve({ ok: code === 0 && fs.existsSync(tmpMp3), err }));
+        });
+        try { fs.unlinkSync(tmpTxt); } catch {}
+
+        if (!ttsOk.ok) {
+          sendJson(res, 500, { ok: false, error: "TTS failed: " + ttsOk.err.slice(-300) });
+          return;
+        }
+        const mp3Buf = fs.readFileSync(tmpMp3);
+        try { fs.unlinkSync(tmpMp3); } catch {}
+        res.writeHead(200, {
+          "Content-Type": "audio/mpeg",
+          "Content-Length": mp3Buf.length,
+          "Access-Control-Allow-Origin": "*",
+        });
+        res.end(mp3Buf);
         return;
       }
 
