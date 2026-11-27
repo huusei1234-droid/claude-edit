@@ -771,19 +771,19 @@ async function checkPrefixCreditsLive(prefix) {
   }
 }
 
-const PREFERRED_FLOW_EMAIL = "capcutvid274@gmail.com";
-const PREFERRED_EMAIL_RE = /^capcut(?:vid)?274@/i;
+const PREFERRED_FLOW_EMAIL = ""; // Đã bỏ mặc định capcutvid274@gmail.com (tự động chọn nick còn điểm thực tế trong Brave)
 let lastPreferredProbeAt = 0;
 
 function isPreferredEmailMatch(email, want) {
   const e = String(email || "").trim().toLowerCase();
-  if (!e) return false;
-  if (want && e === want) return true;
-  return PREFERRED_EMAIL_RE.test(e);
+  const w = String(want || "").trim().toLowerCase();
+  if (!e || !w) return false;
+  return e === w;
 }
 
 function getPreferredPrefix(a) {
   const want = String(a?.preferredEmail || PREFERRED_FLOW_EMAIL).trim().toLowerCase();
+  if (!want) return null;
   const map = a?.prefixCredits || {};
   for (const [pf, info] of Object.entries(map)) {
     if (isPreferredEmailMatch(info?.email, want)) return pf;
@@ -792,11 +792,12 @@ function getPreferredPrefix(a) {
   return wt ? wt.prefix : null;
 }
 
-// Tự động dò & ghim tài khoản ưu tiên số 1 (capcutvid274@gmail.com / capcut274) lên đầu danh sách workerTargets (đủ 9 dự án chạy độc quyền xả điểm)!
+// Tự động dò & ghim tài khoản ưu tiên (nếu có cấu hình preferredEmail) lên đầu danh sách workerTargets
 async function ensurePreferredAccountFirst(kind = "video") {
   const a = acct();
   if (!a || !isMainBraveProfile(a.profile)) return null;
   const wantEmail = String(a.preferredEmail || PREFERRED_FLOW_EMAIL).trim().toLowerCase();
+  if (!wantEmail) return null;
 
   const existingPf = getPreferredPrefix(a);
   const existingPrefCount = existingPf
