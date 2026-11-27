@@ -11,7 +11,7 @@ const flow = require("./flow-driver");
 const LEGACY_PORT = 9334;
 const HOME = "https://chatgpt.com/";
 const DEFAULT_PROJECT_LABEL = process.env.CHATGPT_PROJECT || "HTPM";
-const DEFAULT_PROJECT_ID = "g-p-6b03c9b49b68819188e93910a01de7b1";
+const DEFAULT_PROJECT_ID = "g-p-6b093335deb88191accc76e34088233f";
 
 let userData = "";
 let configPath = "";
