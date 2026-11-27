@@ -174,8 +174,8 @@ function buildMenu() {
       { label: "Mở Gemini Videos trong Brave (10s / 15s)", click: () => gemini.show().catch((e) => dialog.showErrorBox("Gemini Video", String(e.message || e))) },
       { label: "Quét lại tất cả nick Google Pro trong Brave", click: () => gemini.discoverGeminiAccounts({ forceResetCooldown: true }).then((accs) => dialog.showMessageBox({ message: `Đã cập nhật ${accs.length} tài khoản Gemini trong Brave:\n` + accs.map((a) => `• ${a.email || a.prefix} (${a.prefix})`).join("\n") })).catch((e) => dialog.showErrorBox("Gemini Video", String(e.message || e))) },
     ] },
-    { label: "Agent", submenu: [
-      { label: "Kết nối Claude Agent", click: () => connectCanvasAgent(true) },
+    { label: "Agent (Codex)", submenu: [
+      { label: "Kết nối Bảng Codex Local Agent (:17371)", click: () => connectCanvasAgent(true) },
     ] },
     { label: "Xem", submenu: [{ role: "reload" }, { role: "toggleDevTools" }, { role: "togglefullscreen" }] },
   ]));
@@ -252,7 +252,17 @@ function agentReady() {
 async function startCanvasAgent() {
   if (await agentReady()) return true;
   if (!canvasAgent || canvasAgent.exitCode !== null) {
-    canvasAgent = spawn("npx", ["-y", "@basketikun/canvas-agent@latest"], { shell: true, windowsHide: true });
+    const codexExe = chatgptEcosystem.findCodexExecutable();
+    const codexDir = codexExe && path.isAbsolute(codexExe) ? path.dirname(codexExe) : "";
+    const agentEnv = {
+      ...process.env,
+      ...(codexDir ? { PATH: `${codexDir};${process.env.PATH || ""}`, CODEX_CLI_PATH: codexExe } : {}),
+    };
+    canvasAgent = spawn("npx", ["-y", "@basketikun/canvas-agent@latest"], {
+      shell: true,
+      windowsHide: true,
+      env: agentEnv,
+    });
     canvasAgent.on("error", (e) => { try { console.error("canvas-agent:", e.message); } catch {} });
     canvasAgent.stdout.on("data", (d) => safeWriteStdout(`[canvas-agent] ${d}`));
     canvasAgent.stderr.on("data", (d) => safeWriteStdout(`[canvas-agent] ${d}`));
@@ -375,6 +385,7 @@ async function syncFlowScripts() {
       video: fs.readFileSync(path.join(dir, "flow-video-script.js"), "utf8"),
       chatgptImage: fs.readFileSync(path.join(dir, "chatgpt-image-script.js"), "utf8"),
       chatgptText: fs.readFileSync(path.join(dir, "chatgpt-text-script.js"), "utf8"),
+      chatgptCodex: fs.readFileSync(path.join(dir, "chatgpt-codex-script.js"), "utf8"),
       chatgptSoraVideo: fs.readFileSync(path.join(dir, "chatgpt-sora-video-script.js"), "utf8"),
       geminiVideo: fs.readFileSync(path.join(dir, "gemini-video-script.js"), "utf8"),
     };
@@ -390,9 +401,11 @@ async function syncFlowScripts() {
     const scripts = ${JSON.stringify(scripts)};
     let changed = false;
 
-    // 1. Đồng bộ kênh Hệ sinh thái ChatGPT Plus (Ảnh + Suy luận + K4 + HTPM + Deep Research + Sora Video)
+    // 1. Đồng bộ kênh Hệ sinh thái ChatGPT Plus (Ảnh + Codex gpt-6.2-sol + Suy luận + K4 + HTPM + Deep Research + Sora Video)
     const desiredGptModels = [
       { name: "chatgpt-image", capability: "image", script: scripts.chatgptImage },
+      { name: "codex-gpt-6.2-sol", capability: "text", script: scripts.chatgptCodex },
+      { name: "codex-agent-workspace", capability: "text", script: scripts.chatgptCodex },
       { name: "chatgpt-plus-thinking", capability: "text", script: scripts.chatgptText },
       { name: "chatgpt-k4-flow", capability: "text", script: scripts.chatgptText },
       { name: "chatgpt-htpm-brand", capability: "text", script: scripts.chatgptText },
@@ -444,6 +457,8 @@ async function syncFlowScripts() {
     if (Array.isArray(cfg.models)) {
       const plusIds = [
         "chatgpt::chatgpt-image",
+        "chatgpt::codex-gpt-6.2-sol",
+        "chatgpt::codex-agent-workspace",
         "chatgpt::chatgpt-plus-thinking",
         "chatgpt::chatgpt-k4-flow",
         "chatgpt::chatgpt-htpm-brand",

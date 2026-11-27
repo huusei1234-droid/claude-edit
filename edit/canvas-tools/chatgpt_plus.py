@@ -250,9 +250,92 @@ def open_hub(target: str = "htpm") -> dict:
     return _http_json("POST", "/v1/hub/open", {"target": target}, timeout=45)
 
 
-def run_codex(prompt: str, cwd: Optional[str] = None) -> dict:
-    ensure_gateway_ready()
-    return _http_json("POST", "/v1/codex/exec", {"prompt": prompt, "cwd": cwd or os.getcwd()}, timeout=330)
+def _find_codex_exe() -> str:
+    import glob
+    local_app = os.environ.get("LOCALAPPDATA") or os.path.expanduser(r"~\AppData\Local")
+    candidates = sorted(
+        glob.glob(os.path.join(local_app, "OpenAI", "Codex", "bin", "*", "codex.exe")),
+        key=os.path.getmtime,
+        reverse=True,
+    )
+    if candidates:
+        return candidates[0]
+    npm_shim = os.path.join(os.environ.get("APPDATA", ""), "npm", "codex.cmd")
+    return npm_shim if os.path.exists(npm_shim) else "codex"
+
+
+def ask_codex(
+    prompt: str,
+    model: str = "gpt-6.2-sol",
+    reasoning: str = "medium",
+    project: str = "auto",
+    image_paths: Optional[List[str]] = None,
+    sandbox: str = "read-only",
+    cwd: Optional[str] = None,
+    ephemeral: bool = True,
+    timeout: int = 360,
+) -> str:
+    """
+    Gọi trực tiếp OpenAI Codex cục bộ (gpt-6.2-sol / gpt-6.2-astra) qua gói ChatGPT Plus:
+    chạy ngầm 100%, tốc độ 2-5 giây, không cần mở bất kỳ tab trình duyệt nào!
+    """
+    import tempfile
+
+    mig_base = r"C:\AI\full studio\huu\chatgpt_migration_huusei1234\02_PROJECTS"
+    proj_up = (project or "auto").upper()
+    if proj_up == "AUTO":
+        if any(k in prompt for k in ("CHỐT KHÔNG GIAN", "IMAGE XUẤT HIỆN", "ASSET BOARD", "K4", "prompt flow")):
+            proj_up = "K4"
+        elif any(k in prompt for k in ("HTPM", "Hằng Thu", "An Vượng", "Bojomi", "AV Protein", "Feel Chicken")):
+            proj_up = "HTPM"
+
+    full_prompt = prompt
+    if proj_up == "K4":
+        inst_p = os.path.join(mig_base, "K4_Phim_Chuyen_Trong_Nha", "INSTRUCTIONS.txt")
+        if os.path.exists(inst_p):
+            full_prompt = f"[QUY CHUẨN DỰ ÁN K4]\n{open(inst_p, encoding='utf-8').read().strip()}\n\n[YÊU CẦU]\n{prompt}"
+    elif proj_up == "HTPM":
+        inst_p = os.path.join(mig_base, "HTPM", "INSTRUCTIONS.txt")
+        if os.path.exists(inst_p):
+            full_prompt = f"[QUY CHUẨN DỰ ÁN HTPM]\n{open(inst_p, encoding='utf-8').read().strip()}\n\n[YÊU CẦU]\n{prompt}"
+
+    exe = _find_codex_exe()
+    work_dir = cwd or (r"C:\AI\full studio" if os.path.exists(r"C:\AI\full studio") else os.getcwd())
+    with tempfile.TemporaryDirectory(prefix="codex_py_") as tmp_d:
+        out_msg = os.path.join(tmp_d, "reply.txt")
+        cmd = [exe, "exec", "--skip-git-repo-check", "-C", work_dir, "-s", sandbox, "-m", model, "-o", out_msg]
+        if ephemeral and sandbox == "read-only":
+            cmd.append("--ephemeral")
+        if reasoning in ("low", "medium", "high", "xhigh"):
+            cmd.extend(["-c", f'model_reasoning_effort="{reasoning}"'])
+        for ip in image_paths or []:
+            if ip and os.path.exists(ip):
+                cmd.extend(["-i", os.path.abspath(ip)])
+        cmd.append("-")
+
+        proc = subprocess.run(
+            cmd,
+            input=full_prompt,
+            capture_output=True,
+            text=True,
+            encoding="utf-8",
+            errors="replace",
+            cwd=work_dir,
+            shell=exe.lower().endswith(".cmd"),
+            timeout=timeout,
+        )
+        if os.path.exists(out_msg):
+            ans = open(out_msg, encoding="utf-8", errors="replace").read().strip()
+            if ans:
+                return ans
+        if proc.returncode != 0:
+            raise RuntimeError(f"Codex lỗi (rc={proc.returncode}): {proc.stderr[-500:]}")
+        return proc.stdout.strip()
+
+
+def run_codex(prompt: str, cwd: Optional[str] = None, sandbox: str = "workspace-write") -> dict:
+    text = ask_codex(prompt, sandbox=sandbox, cwd=cwd, ephemeral=False)
+    return {"ok": True, "text": text}
 
 
 def main():
@@ -297,12 +380,22 @@ def main():
     p_sync.add_argument("--instructions", default=None)
     p_sync.add_argument("--source", action="append", default=[])
 
+    p_codex = sub.add_parser("codex", help="Chạy trực tiếp OpenAI Codex (gpt-6.2-sol) siêu tốc 2s không cần mở trình duyệt")
+    p_codex.add_argument("prompt")
+    p_codex.add_argument("--model", default="gpt-6.2-sol")
+    p_codex.add_argument("--reasoning", default="medium", help="low | medium | high | xhigh")
+    p_codex.add_argument("--project", default="auto", help="auto | K4 | HTPM | none")
+    p_codex.add_argument("--sandbox", default="read-only", help="read-only | workspace-write")
+    p_codex.add_argument("--image", action="append", default=[])
+
     p_hub = sub.add_parser("hub", help="Mở nhanh htpm | k4 | sora | codex | library | connectors | scheduled | gpts")
     p_hub.add_argument("target")
 
     args = ap.parse_args()
     if args.cmd == "health":
         print(json.dumps(ensure_gateway_ready(), ensure_ascii=False, indent=2))
+    elif args.cmd == "codex":
+        print(ask_codex(args.prompt, model=args.model, reasoning=args.reasoning, project=args.project, image_paths=args.image, sandbox=args.sandbox))
     elif args.cmd == "ask":
         print(ask_plus(args.prompt, project=args.project, mode=args.mode, image_paths=args.image, file_paths=args.file, keep_chat=args.keep_chat))
     elif args.cmd == "k4":

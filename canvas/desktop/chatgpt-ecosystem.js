@@ -594,31 +594,191 @@ async function scheduleTask(spec = {}) {
   });
 }
 
+function findCodexExecutable() {
+  const localAppData = process.env.LOCALAPPDATA || path.join(os.homedir(), "AppData", "Local");
+  const binRoot = path.join(localAppData, "OpenAI", "Codex", "bin");
+  try {
+    if (fs.existsSync(binRoot)) {
+      const dirs = fs
+        .readdirSync(binRoot)
+        .map((d) => path.join(binRoot, d, "codex.exe"))
+        .filter((p) => fs.existsSync(p))
+        .sort((a, b) => fs.statSync(b).mtimeMs - fs.statSync(a).mtimeMs);
+      if (dirs.length > 0) return dirs[0];
+    }
+  } catch {}
+  const npmShim = path.join(process.env.APPDATA || "", "npm", process.platform === "win32" ? "codex.cmd" : "codex");
+  if (fs.existsSync(npmShim)) return npmShim;
+  return "codex";
+}
+
+function enrichPromptWithLocalProjectContext(prompt, projectHint = "auto") {
+  const target = resolveProjectTarget({ prompt, project: projectHint });
+  const migBase = "C:\\AI\\full studio\\huu\\chatgpt_migration_huusei1234\\02_PROJECTS";
+  let instFile = "";
+  if (target.label.includes("K4")) {
+    instFile = path.join(migBase, "K4_Phim_Chuyen_Trong_Nha", "INSTRUCTIONS.txt");
+  } else if (target.label === "HTPM") {
+    instFile = path.join(migBase, "HTPM", "INSTRUCTIONS.txt");
+  }
+  if (instFile && fs.existsSync(instFile)) {
+    const inst = fs.readFileSync(instFile, "utf8").trim();
+    return `[QUY CHUẨN DỰ ÁN ${target.label}]\n${inst}\n\n[YÊU CẦU]\n${prompt}`;
+  }
+  return prompt;
+}
+
 async function runCodex(spec = {}) {
-  const prompt = String(spec.prompt || "").trim();
-  const cwd = spec.cwd && fs.existsSync(spec.cwd) ? spec.cwd : process.cwd();
-  if (!prompt) {
+  const normalized = normalizeMessagesToPromptAndImages(spec.messages, spec.prompt, spec.images);
+  const rawPrompt = normalized.prompt;
+  if (!rawPrompt) {
     return openHub("codex");
   }
+
+  const finalPrompt = enrichPromptWithLocalProjectContext(rawPrompt, spec.project || "auto");
+  const codexExe = findCodexExecutable();
+  const defaultWorkspace = fs.existsSync("C:\\AI\\full studio") ? "C:\\AI\\full studio" : process.cwd();
+  const cwd = spec.cwd && fs.existsSync(spec.cwd) ? spec.cwd : defaultWorkspace;
+  const model = String(spec.model || "gpt-6.2-sol").replace(/^chatgpt::|^codex-/i, "") || "gpt-6.2-sol";
+  const sandbox = ["read-only", "workspace-write", "danger-full-access"].includes(spec.sandbox)
+    ? spec.sandbox
+    : "read-only";
+  const effort = ["low", "medium", "high", "xhigh"].includes(String(spec.reasoningEffort || "").toLowerCase())
+    ? String(spec.reasoningEffort).toLowerCase()
+    : "";
+
+  const tmpDir = fs.mkdtempSync(path.join(os.tmpdir(), "codex-run-"));
+  const outMsgFile = path.join(tmpDir, "last_message.txt");
+  const imgPaths = [];
+
+  for (let i = 0; i < (normalized.images || []).length; i++) {
+    const im = normalized.images[i];
+    if (typeof im === "string" && fs.existsSync(im)) {
+      imgPaths.push(im);
+    } else if (im && im.base64) {
+      const fp = path.join(tmpDir, (im.name || `img_${i + 1}.png`).replace(/[^a-zA-Z0-9._-]/g, "_"));
+      fs.writeFileSync(fp, Buffer.from(im.base64, "base64"));
+      imgPaths.push(fp);
+    }
+  }
+
+  const args = ["exec", "--skip-git-repo-check", "-C", cwd, "-s", sandbox, "-m", model, "-o", outMsgFile];
+  if (spec.ephemeral !== false && sandbox === "read-only") {
+    args.push("--ephemeral");
+  }
+  if (effort) {
+    args.push("-c", `model_reasoning_effort="${effort}"`);
+  }
+  for (const ip of imgPaths) {
+    args.push("-i", ip);
+  }
+  args.push("--json", "-");
+
   return new Promise((resolve) => {
-    const child = spawn("npx", ["-y", "@openai/codex", "exec", prompt], {
+    const useShell = /\.cmd$/i.test(codexExe);
+    const child = spawn(codexExe, args, {
       cwd,
-      shell: true,
+      shell: useShell,
       windowsHide: true,
     });
-    let out = "";
-    let err = "";
+
+    let stdoutBuf = "";
+    let stderrBuf = "";
+    let streamedText = "";
+
+    const cleanupTmp = () => {
+      try { fs.rmSync(tmpDir, { recursive: true, force: true }); } catch {}
+    };
+
     const timer = setTimeout(() => {
       try { child.kill(); } catch {}
-      resolve({ ok: false, error: "Codex CLI vượt quá thời gian chờ, có thể mở giao diện Web qua hub=codex.", stdout: out, stderr: err });
-    }, (spec.timeoutMin || 5) * 60 * 1000);
-    child.stdout.on("data", (d) => { out += d.toString(); });
-    child.stderr.on("data", (d) => { err += d.toString(); });
+      cleanupTmp();
+      resolve({
+        ok: false,
+        error: "Codex vượt quá thời gian chờ.",
+        text: streamedText,
+        stderr: stderrBuf.slice(-800),
+      });
+    }, (spec.timeoutMin || 8) * 60 * 1000);
+
+    child.stdout.on("data", (chunk) => {
+      const s = chunk.toString("utf8");
+      stdoutBuf += s;
+      // Đọc các dòng JSONL để đẩy streaming text trực tiếp lên Canvas Node nếu có requestId
+      const lines = stdoutBuf.split(/\r?\n/);
+      stdoutBuf = lines.pop() || "";
+      for (const line of lines) {
+        if (!line.trim().startsWith("{")) continue;
+        try {
+          const ev = JSON.parse(line);
+          const candidate =
+            ev?.item?.text ||
+            ev?.msg?.message ||
+            ev?.delta ||
+            (typeof ev?.text === "string" ? ev.text : "");
+          if (candidate) {
+            streamedText = candidate;
+            if (spec.requestId) {
+              const w = getMainWindow();
+              if (w && !w.isDestroyed()) {
+                w.webContents.send("chatgpt:stream-delta", { requestId: spec.requestId, text: streamedText });
+              }
+            }
+          }
+        } catch {}
+      }
+    });
+
+    child.stderr.on("data", (d) => {
+      stderrBuf += d.toString("utf8");
+    });
+
+    child.on("error", (err) => {
+      clearTimeout(timer);
+      cleanupTmp();
+      resolve({ ok: false, error: String(err.message || err) });
+    });
+
     child.on("close", (code) => {
       clearTimeout(timer);
-      if (code === 0) resolve({ ok: true, stdout: out.trim(), stderr: err.trim() });
-      else resolve({ ok: false, code, stdout: out.trim(), stderr: err.trim() });
+      let finalText = "";
+      try {
+        if (fs.existsSync(outMsgFile)) {
+          finalText = fs.readFileSync(outMsgFile, "utf8").trim();
+        }
+      } catch {}
+      if (!finalText) finalText = streamedText.trim();
+      cleanupTmp();
+
+      if (spec.requestId && finalText) {
+        const w = getMainWindow();
+        if (w && !w.isDestroyed()) {
+          w.webContents.send("chatgpt:stream-delta", { requestId: spec.requestId, text: finalText, done: true });
+        }
+      }
+
+      if (code === 0 || finalText) {
+        resolve({
+          ok: true,
+          provider: "openai-codex",
+          model,
+          sandbox,
+          text: finalText,
+          stdout: finalText,
+        });
+      } else {
+        resolve({
+          ok: false,
+          code,
+          error: stderrBuf.trim().slice(-600) || `Codex exited with code ${code}`,
+        });
+      }
     });
+
+    try {
+      child.stdin.write(finalPrompt, "utf8");
+      child.stdin.end();
+    } catch {}
   });
 }
 
@@ -678,6 +838,8 @@ function startGatewayServer() {
 
       if (req.method === "GET" && urlPath === "/v1/models") {
         const models = [
+          { id: "codex-gpt-6.2-sol", capability: "text", desc: "OpenAI Codex Cục Bộ (gpt-6.2-sol siêu tốc 2s, 0 mở tab)" },
+          { id: "codex-agent-workspace", capability: "text", desc: "OpenAI Codex Agent Toàn Quyền (đọc/ghi code trong Full Studio)" },
           { id: "chatgpt-plus-thinking", capability: "text", desc: "ChatGPT Plus Reasoning / Suy luận sâu" },
           { id: "chatgpt-k4-flow", capability: "text", desc: "Dự án K4 Phim Chuyện Trong Nhà (Asset Board + Prompt Flow)" },
           { id: "chatgpt-htpm-brand", capability: "text", desc: "Dự án HTPM / An Vượng / Feel Chicken" },
@@ -696,6 +858,37 @@ function startGatewayServer() {
 
       if (req.method === "POST" && urlPath === "/v1/chat/completions") {
         const body = await readJsonBody(req);
+        const reqModel = String(body.model || "chatgpt-plus-thinking");
+        if (/^(codex|gpt-6)/i.test(reqModel)) {
+          const cr = await runCodex({
+            model: reqModel.replace(/^codex-/i, "") || "gpt-6.2-sol",
+            messages: body.messages,
+            prompt: body.prompt,
+            images: body.images,
+            project: body.project || "auto",
+            reasoningEffort: body.reasoningEffort || body.reasoning_effort || "medium",
+            sandbox: /workspace/i.test(reqModel) ? "workspace-write" : (body.sandbox || "read-only"),
+            cwd: body.cwd,
+          });
+          if (!cr.ok) {
+            sendJson(res, 500, { ok: false, error: cr.error || "Codex error" });
+            return;
+          }
+          sendJson(res, 200, {
+            id: "chatcmpl-codex-" + Date.now().toString(36),
+            object: "chat.completion",
+            created: Math.floor(Date.now() / 1000),
+            model: cr.model,
+            choices: [
+              {
+                index: 0,
+                message: { role: "assistant", content: cr.text },
+                finish_reason: "stop",
+              },
+            ],
+          });
+          return;
+        }
         const r = await askChatGPT({
           model: body.model || "chatgpt-plus-thinking",
           messages: body.messages,
@@ -874,6 +1067,7 @@ module.exports = {
   openHub,
   scheduleTask,
   runCodex,
+  findCodexExecutable,
   readDriverProjects,
   GATEWAY_PORT,
 };
