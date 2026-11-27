@@ -110,24 +110,25 @@ async function sweepIdleChatgptTabs() {
     const b = await ensureBrowser();
     const pages = await b.pages();
     const pid = targetProjectId();
-    const gptTabs = [];
+    const autoGptTabs = [];
     for (const p of pages) {
       if (!p || p.isClosed()) continue;
       const u = p.url() || "";
       if (!/^https:\/\/chatgpt\.com\b/i.test(u)) continue;
+      // Chỉ đóng các tab tự động của dự án HTPM hoặc trang chủ trống do driver mở (TUYỆT ĐỐI không đóng tab hội thoại riêng /c/... của người dùng!)
+      const isAutoTab = u.includes(`/g/${pid}`) || /^https:\/\/chatgpt\.com\/?(\?.*)?$/i.test(u) || p.__gptSlotIdx != null;
+      if (!isAutoTab) continue;
       const busyDom = await p.evaluate(() => !!document.querySelector('[data-testid="stop-button"], button[aria-label*="Stop"], button[aria-label*="Dừng"]')).catch(() => false);
-      if (!busyDom) gptTabs.push(p);
+      if (!busyDom) autoGptTabs.push(p);
     }
-    if (gptTabs.length <= 1) return;
-    // Ưu tiên giữ lại 1 Tab đang nằm trong dự án HTPM (hoặc Tab đầu tiên), đóng gọn toàn bộ Tab phụ nhàn rỗi
-    const keeper = gptTabs.find((p) => (p.url() || "").includes(`/g/${pid}`)) || gptTabs[0];
-    gptSlotPages[0] = keeper;
-    keeper.__gptSlotIdx = 0;
-    for (let i = 1; i < MAX_CHATGPT_WORKERS; i++) gptSlotPages[i] = null;
-    for (const p of gptTabs) {
-      if (p !== keeper) {
-        try { if (!p.isClosed()) await p.close(); } catch {}
-      }
+    if (autoGptTabs.length === 0) return;
+    const otherCount = pages.filter((p) => p && !p.isClosed() && !autoGptTabs.includes(p)).length;
+    if (otherCount === 0 && typeof flow.createBackgroundPage === "function") {
+      await flow.createBackgroundPage(b, "chrome://newtab/").catch(() => {});
+    }
+    for (let i = 0; i < MAX_CHATGPT_WORKERS; i++) gptSlotPages[i] = null;
+    for (const p of autoGptTabs) {
+      try { if (!p.isClosed()) await p.close(); } catch {}
     }
   } catch {}
 }

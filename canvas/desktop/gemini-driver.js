@@ -128,35 +128,38 @@ function markAccountHealthy(prefix, email) {
   saveConfig();
 }
 
-function scheduleIdleCleanup() {
-  if (geminiIdleTimer) clearTimeout(geminiIdleTimer);
-  geminiIdleTimer = setTimeout(async () => {
+async function closeIdleGeminiTabsNow() {
+  if (geminiIdleTimer) {
+    clearTimeout(geminiIdleTimer);
     geminiIdleTimer = null;
-    try {
-      const alive = await flow.debugAlive();
-      if (!alive) return;
-      const b = await flow.ensureBrowser({ visible: true });
-      const pages = await b.pages();
-      const idleGemTabs = [];
-      for (const p of pages) {
-        if (!p || p.isClosed()) continue;
-        const u = p.url() || "";
-        if (!/^https:\/\/gemini\.google\.com\b/i.test(u)) continue;
-        // Chỉ thu gọn các tab /videos trống do driver mở, không đóng tab hội thoại người dùng đang mở sẵn!
-        if (/\/videos(\?.*)?$/i.test(u)) idleGemTabs.push(p);
-      }
-      if (idleGemTabs.length > 1) {
-        const keeper = geminiTab && idleGemTabs.includes(geminiTab) ? geminiTab : idleGemTabs[0];
-        geminiTab = keeper;
-        for (const p of idleGemTabs) {
-          if (p !== keeper) {
-            await p.close().catch(() => {});
-          }
-        }
-      }
-    } catch {}
-  }, 10000);
-  if (geminiIdleTimer.unref) geminiIdleTimer.unref();
+  }
+  try {
+    const alive = await flow.debugAlive();
+    if (!alive) return;
+    const b = await flow.ensureBrowser({ visible: true });
+    const pages = await b.pages();
+    const idleGemTabs = [];
+    for (const p of pages) {
+      if (!p || p.isClosed()) continue;
+      const u = p.url() || "";
+      if (!/^https:\/\/gemini\.google\.com\b/i.test(u)) continue;
+      // Chỉ đóng các tab /videos tự động do driver mở, không đóng tab hội thoại riêng của người dùng!
+      if (/\/videos(\?.*)?$/i.test(u) || p === geminiTab) idleGemTabs.push(p);
+    }
+    if (idleGemTabs.length === 0) return;
+    const otherCount = pages.filter((p) => p && !p.isClosed() && !idleGemTabs.includes(p)).length;
+    if (otherCount === 0 && typeof flow.createBackgroundPage === "function") {
+      await flow.createBackgroundPage(b, "chrome://newtab/").catch(() => {});
+    }
+    geminiTab = null;
+    for (const p of idleGemTabs) {
+      await p.close().catch(() => {});
+    }
+  } catch {}
+}
+
+function scheduleIdleCleanup() {
+  return closeIdleGeminiTabsNow();
 }
 
 async function ensureGeminiWorkerPage(create = true) {
@@ -258,13 +261,7 @@ async function discoverGeminiAccounts({ forceResetCooldown = false } = {}) {
   });
 
   if (discovered.length > 0) {
-    // Ưu tiên tài khoản capcutvid274@gmail.com lên đầu nếu có, sau đó giữ thứ tự u/0, u/1, u/2...
-    discovered.sort((a, b) => {
-      const aPref = /^capcut(?:vid)?274@/i.test(a.email || "") ? 0 : 1;
-      const bPref = /^capcut(?:vid)?274@/i.test(b.email || "") ? 0 : 1;
-      if (aPref !== bPref) return aPref - bPref;
-      return a.prefix.localeCompare(b.prefix, undefined, { numeric: true });
-    });
+    discovered.sort((a, b) => a.prefix.localeCompare(b.prefix, undefined, { numeric: true }));
     store.accounts = discovered;
     store.lastScanAt = Date.now();
     if (!store.activePrefix || !discovered.some((x) => x.prefix === store.activePrefix)) {
@@ -295,12 +292,9 @@ async function getCandidateAccounts() {
     healthy = store.accounts.filter((a) => !isAccountExhausted(a));
   }
 
-  // Sắp xếp đưa activePrefix (hoặc capcut274 nếu còn lượt) lên đầu
+  // Sắp xếp đưa activePrefix lên đầu
   const active = store.activePrefix;
   return [...healthy].sort((a, b) => {
-    const aPref = /^capcut(?:vid)?274@/i.test(a.email || "") ? 0 : 1;
-    const bPref = /^capcut(?:vid)?274@/i.test(b.email || "") ? 0 : 1;
-    if (aPref !== bPref) return aPref - bPref;
     if (a.prefix === active && b.prefix !== active) return -1;
     if (b.prefix === active && a.prefix !== active) return 1;
     return 0;
@@ -724,6 +718,8 @@ async function generateVideoWithMultiAccountAndFlowFallback(rawJob) {
         );
       }
     }
+
+    await closeIdleGeminiTabsNow().catch(() => {});
 
     if (job.noFallback === true) {
       return {

@@ -597,17 +597,15 @@ async function sweepIdleFlowTabs() {
       }).catch(() => false);
       if (!busyDom) idleFlowTabs.push(p);
     }
-    if (idleFlowTabs.length <= 1) return;
-    const keeper = idleFlowTabs.find((p) => projectOf(p.url()) && (!config.projectId || projectOf(p.url()) === config.projectId)) ||
-      idleFlowTabs.find((p) => projectOf(p.url())) ||
-      idleFlowTabs[0];
-    flowSlotPages[0] = keeper;
-    keeper.__flowSlotIdx = 0;
-    for (let i = 1; i < MAX_PARALLEL_FLOW; i++) flowSlotPages[i] = null;
+    if (idleFlowTabs.length === 0) return;
+    // Dùng xong tự tắt hết 100% các tab Flow (nếu trình duyệt chỉ còn đúng các tab này thì mở sẵn 1 New Tab để không tắt hẳn trình duyệt của người dùng)
+    const nonFlowCount = pages.filter((p) => p && !p.isClosed() && !idleFlowTabs.includes(p)).length;
+    if (nonFlowCount === 0) {
+      await createBackgroundPage(b, "chrome://newtab/").catch(() => {});
+    }
+    for (let i = 0; i < MAX_PARALLEL_FLOW; i++) flowSlotPages[i] = null;
     for (const p of idleFlowTabs) {
-      if (p !== keeper) {
-        try { if (!p.isClosed()) await p.close(); } catch {}
-      }
+      try { if (!p.isClosed()) await p.close(); } catch {}
     }
   } catch {}
 }
