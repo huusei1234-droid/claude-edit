@@ -19,7 +19,13 @@
       "main.js",
       "preload.js",
       "flow-driver.js",
-      "flow-page-driver.js"
+      "flow-page-driver.js",
+      "chatgpt-driver.js",
+      "chatgpt-page-driver.js",
+      "chatgpt-ecosystem.js",
+      "sora-driver.js",
+      "gemini-driver.js",
+      "gemini-page-driver.js"
     ],
     "extraResources": [
       {

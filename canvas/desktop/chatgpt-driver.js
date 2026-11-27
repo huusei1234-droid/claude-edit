@@ -207,13 +207,13 @@ async function chatgptSlotPage(slotIdx = 0, create = true) {
       await page.goto(targetProjectUrl(), { waitUntil: "domcontentloaded" }).catch(() => {});
     }
   }
+  // Mở Tab HTPM phụ ngầm 100% (background: true): mở https://chatgpt.com/ trước để page-driver tự vào dự án HTPM nếu tài khoản hiện tại có dự án đó (tránh kẹt Loading project khi đổi tài khoản ChatGPT!)
   if (!page && create) {
-    // Mở Tab HTPM phụ ngầm 100% (background: true) để không bao giờ cướp tiêu điểm chuột của Tab Flow hay Tab ChatGPT khác!
     page = typeof flow.createBackgroundPage === "function"
-      ? await flow.createBackgroundPage(b, targetProjectUrl())
+      ? await flow.createBackgroundPage(b, HOME)
       : await b.newPage();
-    if (!page.url().includes(`/g/${targetProjectId()}`)) {
-      await page.goto(targetProjectUrl(), { waitUntil: "domcontentloaded" }).catch(() => {});
+    if (!/^https:\/\/chatgpt\.com\b/i.test(page.url() || "")) {
+      await page.goto(HOME, { waitUntil: "domcontentloaded" }).catch(() => {});
     }
   }
   if (page) {
@@ -265,9 +265,12 @@ async function uploadReferenceImages(page, images) {
     filePaths.push(fp);
   }
 
-  // Tìm <input type="file"> sẵn có trên trang ChatGPT (ưu tiên ô có thuộc tính multiple cho phép đính kèm 2+ ảnh cùng lúc)
+  // Tìm <input type="file"> sẵn có trên trang ChatGPT (ưu tiên ô accept="image/*" + multiple cho phép đính kèm 2+ ảnh cùng lúc)
   const findFileInput = async () => {
-    let h = await page.$('input[type="file"][multiple]');
+    let h =
+      (await page.$('input[type="file"][accept="image/*"][multiple]')) ||
+      (await page.$('input[type="file"][accept*="image"][multiple]')) ||
+      (await page.$('input[type="file"][multiple]'));
     if (!h) h = await page.$('input[type="file"]');
     if (!h) {
       await page.evaluate(() => {
@@ -352,46 +355,41 @@ async function downloadImageFromChatGPT(page, url) {
 }
 
 async function navigateToTargetProject(page) {
-  const knownPid = targetProjectId();
-  const projUrl = `https://chatgpt.com/g/${knownPid}/project`;
   const curUrl = page.url() || "";
-
-  // Luôn bắt đầu mỗi lượt tạo ảnh bằng 1 phiên trống mới tinh ngay tại trang chủ Dự án HTPM (/g/<pid>/project, không có /c/...)
-  // để: (1) 100% cuộc trò chuyện nằm gọn trong dự án HTPM, (2) không bị lẫn ngữ cảnh ảnh cũ, và (3) xóa sạch sau khi tải xong mà không ảnh hưởng lịch sử khác!
-  const isFreshProjectHome = curUrl.includes(`/g/${knownPid}/project`) && !/\/c\/[0-9a-f-]{36}/i.test(curUrl);
-  if (isFreshProjectHome) {
+  // Nếu đang ở trang chủ sạch https://chatgpt.com/ (hoặc /g/<pid>/project hợp lệ có sẵn ô nhập) và chưa mở chat cũ (/c/...) -> kiểm tra dùng luôn!
+  const isCleanEntry =
+    (/^https:\/\/chatgpt\.com\/?(\?.*)?$/i.test(curUrl) || /\/g\/g-p-[a-z0-9-]+\/project/i.test(curUrl)) &&
+    !/\/c\/[0-9a-f-]{36}/i.test(curUrl);
+  if (isCleanEntry) {
     await inject(page).catch(() => {});
     const st = await page.evaluate(() => window.__chatgptUi?.inspectState()).catch(() => null);
     if (st?.ready && (st.totalTurns || 0) === 0) {
       return;
     }
   }
-
-  await page.goto(projUrl, { waitUntil: "domcontentloaded" }).catch(() => {});
+  await page.goto(HOME, { waitUntil: "domcontentloaded" }).catch(() => {});
 }
 
 async function cleanupConversationAfterDownload(page, job) {
   if (job && job.keepChat === true) return;
-  const projUrl = targetProjectUrl();
   try {
     await sleep(350);
     await inject(page).catch(() => {});
     const delRes = await page.evaluate(() => window.__chatgptUi?.deleteCurrentConversation?.()).catch(() => null);
     if (delRes?.deleted) {
-      console.log(`[chatgpt] đã tự động xóa đoạn chat tạm trong dự án HTPM để làm sạch bộ nhớ (${delRes.method}).`);
+      console.log(`[chatgpt] đã tự động xóa đoạn chat tạm để làm sạch bộ nhớ (${delRes.method}).`);
     }
   } catch (e) {
     console.log("[chatgpt] lưu ý khi dọn đoạn chat tạm:", e.message || e);
   } finally {
-    // Đưa tab quay sẵn về trang trống của dự án HTPM cho lượt tạo tiếp theo
-    await page.goto(projUrl, { waitUntil: "domcontentloaded" }).catch(() => {});
+    await page.goto(HOME, { waitUntil: "domcontentloaded" }).catch(() => {});
   }
 }
 
 async function generateOneImage(job, slotIdx = 0) {
   const tag = `[chatgpt:Tab#${slotIdx + 1}/${MAX_CHATGPT_WORKERS}]`;
   console.log(`${tag} bắt đầu tạo ảnh song song trong dự án HTPM (Brave chính 9333)`);
-  const { page, prevAssistantCount, t0 } = await flow.withUiFocusLock(async () => {
+  const { page, prevAssistantCount, prevTurnKeys, t0 } = await flow.withUiFocusLock(async () => {
     const p = await chatgptSlotPage(slotIdx, true);
     await p.bringToFront().catch(() => {});
 
@@ -418,6 +416,7 @@ async function generateOneImage(job, slotIdx = 0) {
     }
 
     const prevCount = readyState.turnCount || 0;
+    const initialTurnKeys = readyState.turnKeys || [];
     let tmpDir = null;
     try {
       if (job.images && job.images.length) {
@@ -455,7 +454,7 @@ async function generateOneImage(job, slotIdx = 0) {
       } else {
         await p.keyboard.press("Enter");
       }
-      return { page: p, prevAssistantCount: prevCount, t0: Date.now() };
+      return { page: p, prevAssistantCount: prevCount, prevTurnKeys: initialTurnKeys, t0: Date.now() };
     } finally {
       if (tmpDir) {
         try {
@@ -482,7 +481,7 @@ async function generateOneImage(job, slotIdx = 0) {
     }
 
     const st = await page
-      .evaluate((arg) => window.__chatgptUi.poll(arg), { prevAssistantCount, t0 })
+      .evaluate((arg) => window.__chatgptUi.poll(arg), { prevAssistantCount, prevTurnKeys, t0 })
       .catch(() => null);
     if (!st) continue;
     if (st.state === "failed") {
@@ -493,7 +492,7 @@ async function generateOneImage(job, slotIdx = 0) {
       await sleep(1500);
       await inject(page).catch(() => {});
       const finalSt = await page
-        .evaluate((arg) => window.__chatgptUi.poll(arg), { prevAssistantCount, t0 })
+        .evaluate((arg) => window.__chatgptUi.poll(arg), { prevAssistantCount, prevTurnKeys, t0 })
         .catch(() => st);
       const imgs = finalSt?.images?.length ? finalSt.images : st.images;
       const out = [];
@@ -712,4 +711,15 @@ function destroy() {
   // Dùng chung phiên trình duyệt Brave 9333 do flow-driver quản lý
 }
 
-module.exports = { setup, destroy, show, generateImages, sweepIdleChatgptTabs };
+module.exports = {
+  setup,
+  destroy,
+  show,
+  status,
+  generateImages,
+  sweepIdleChatgptTabs,
+  withGptParallelSlot,
+  chatgptSlotPage,
+  inject,
+  cleanupConversationAfterDownload,
+};

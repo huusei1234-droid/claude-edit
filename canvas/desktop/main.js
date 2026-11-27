@@ -71,6 +71,8 @@ const root = app.isPackaged ? process.resourcesPath : path.resolve(__dirname, ".
 const webDir = app.isPackaged ? path.join(root, "web") : path.join(root, "app", "web", "dist");
 const flow = require("./flow-driver");
 const chatgpt = require("./chatgpt-driver");
+const sora = require("./sora-driver");
+const chatgptEcosystem = require("./chatgpt-ecosystem");
 const gemini = require("./gemini-driver");
 
 const MIME = { ".html": "text/html", ".js": "text/javascript", ".css": "text/css", ".json": "application/json", ".svg": "image/svg+xml", ".png": "image/png", ".jpg": "image/jpeg", ".ico": "image/x-icon", ".woff2": "font/woff2", ".woff": "font/woff", ".mp4": "video/mp4", ".wasm": "application/wasm" };
@@ -157,8 +159,16 @@ function buildMenu() {
       { label: "Mở Dashboard (thêm tài khoản)", click: openMuse2apiDashboard },
       { label: "Sao chép API key", click: copyMuse2apiKey },
     ] },
-    { label: "ChatGPT", submenu: [
-      { label: "Mở cửa sổ ChatGPT (đăng nhập)", click: () => chatgpt.show().catch((e) => dialog.showErrorBox("ChatGPT", String(e.message || e))) },
+    { label: "ChatGPT Plus", submenu: [
+      { label: "Mở Dự án HTPM (Hằng Thu / An Vượng)", click: () => chatgptEcosystem.openHub("htpm").catch((e) => dialog.showErrorBox("ChatGPT Plus", String(e.message || e))) },
+      { label: "Mở Dự án K4 Phim Chuyện Trong Nhà (Flow)", click: () => chatgptEcosystem.openHub("k4").catch((e) => dialog.showErrorBox("ChatGPT Plus", String(e.message || e))) },
+      { type: "separator" },
+      { label: "Mở OpenAI Sora Video (sora.chatgpt.com)", click: () => chatgptEcosystem.openHub("sora").catch((e) => dialog.showErrorBox("Sora", String(e.message || e))) },
+      { label: "Mở OpenAI Codex (chatgpt.com/codex)", click: () => chatgptEcosystem.openHub("codex").catch((e) => dialog.showErrorBox("Codex", String(e.message || e))) },
+      { label: "Mở Kho Ảnh AI (ChatGPT Library)", click: () => chatgptEcosystem.openHub("library").catch((e) => dialog.showErrorBox("ChatGPT Library", String(e.message || e))) },
+      { label: "Mở Kết nối Google Drive / Canva (Connectors)", click: () => chatgptEcosystem.openHub("connectors").catch((e) => dialog.showErrorBox("Connectors", String(e.message || e))) },
+      { label: "Mở Lịch Chạy Tự Động (Scheduled Tasks)", click: () => chatgptEcosystem.openHub("scheduled").catch((e) => dialog.showErrorBox("Scheduled Tasks", String(e.message || e))) },
+      { label: "Mở Custom GPTs Store", click: () => chatgptEcosystem.openHub("gpts").catch((e) => dialog.showErrorBox("Custom GPTs", String(e.message || e))) },
     ] },
     { label: "Gemini Video", submenu: [
       { label: "Mở Gemini Videos trong Brave (10s / 15s)", click: () => gemini.show().catch((e) => dialog.showErrorBox("Gemini Video", String(e.message || e))) },
@@ -348,6 +358,8 @@ function stopAll() {
   }
   flow.destroy();
   chatgpt.destroy();
+  sora.destroy();
+  chatgptEcosystem.destroy();
   gemini.destroy();
   if (server) server.close();
 }
@@ -362,6 +374,8 @@ async function syncFlowScripts() {
       image: fs.readFileSync(path.join(dir, "flow-image-script.js"), "utf8"),
       video: fs.readFileSync(path.join(dir, "flow-video-script.js"), "utf8"),
       chatgptImage: fs.readFileSync(path.join(dir, "chatgpt-image-script.js"), "utf8"),
+      chatgptText: fs.readFileSync(path.join(dir, "chatgpt-text-script.js"), "utf8"),
+      chatgptSoraVideo: fs.readFileSync(path.join(dir, "chatgpt-sora-video-script.js"), "utf8"),
       geminiVideo: fs.readFileSync(path.join(dir, "gemini-video-script.js"), "utf8"),
     };
   } catch { return; }
@@ -376,45 +390,74 @@ async function syncFlowScripts() {
     const scripts = ${JSON.stringify(scripts)};
     let changed = false;
 
-    // 1. Đồng bộ kênh ChatGPT Web (tự động) & đặt làm model tạo ảnh mặc định
+    // 1. Đồng bộ kênh Hệ sinh thái ChatGPT Plus (Ảnh + Suy luận + K4 + HTPM + Deep Research + Sora Video)
+    const desiredGptModels = [
+      { name: "chatgpt-image", capability: "image", script: scripts.chatgptImage },
+      { name: "chatgpt-plus-thinking", capability: "text", script: scripts.chatgptText },
+      { name: "chatgpt-k4-flow", capability: "text", script: scripts.chatgptText },
+      { name: "chatgpt-htpm-brand", capability: "text", script: scripts.chatgptText },
+      { name: "chatgpt-deep-research", capability: "text", script: scripts.chatgptText },
+      { name: "sora-video", capability: "video", script: scripts.chatgptSoraVideo },
+    ];
     let gptCh = channels.find((c) => c.id === "chatgpt");
     if (!gptCh) {
       gptCh = {
         id: "chatgpt",
-        name: "ChatGPT Web (tự động)",
-        baseUrl: "https://chatgpt.com",
-        apiKey: "chatgpt-web",
+        name: "ChatGPT Plus Hệ Sinh Thái (tự động)",
+        baseUrl: "http://127.0.0.1:18620/v1",
+        apiKey: "chatgpt-plus-web",
         apiFormat: "openai",
-        models: [{ name: "chatgpt-image", capability: "image", script: scripts.chatgptImage }],
+        models: desiredGptModels,
       };
       channels.unshift(gptCh);
       changed = true;
     } else {
-      if (gptCh.name !== "ChatGPT Web (tự động)") { gptCh.name = "ChatGPT Web (tự động)"; changed = true; }
-      if (!gptCh.apiKey) { gptCh.apiKey = "chatgpt-web"; changed = true; }
-      if (!Array.isArray(gptCh.models) || !gptCh.models.some((m) => m.name === "chatgpt-image")) {
-        gptCh.models = [{ name: "chatgpt-image", capability: "image", script: scripts.chatgptImage }];
-        changed = true;
-      } else {
-        for (const m of gptCh.models) {
-          if (m.name === "chatgpt-image" && m.script !== scripts.chatgptImage) {
-            m.script = scripts.chatgptImage;
-            changed = true;
-          }
+      if (gptCh.name !== "ChatGPT Plus Hệ Sinh Thái (tự động)") { gptCh.name = "ChatGPT Plus Hệ Sinh Thái (tự động)"; changed = true; }
+      if (gptCh.baseUrl !== "http://127.0.0.1:18620/v1") { gptCh.baseUrl = "http://127.0.0.1:18620/v1"; changed = true; }
+      if (!gptCh.apiKey) { gptCh.apiKey = "chatgpt-plus-web"; changed = true; }
+      if (!Array.isArray(gptCh.models)) gptCh.models = [];
+      for (const dm of desiredGptModels) {
+        const existing = gptCh.models.find((m) => m.name === dm.name);
+        if (!existing) {
+          gptCh.models.push(dm);
+          changed = true;
+        } else if (existing.script !== dm.script || existing.capability !== dm.capability) {
+          existing.script = dm.script;
+          existing.capability = dm.capability;
+          changed = true;
         }
       }
     }
 
-    // Đặt chatgpt::chatgpt-image làm model tạo ảnh mặc định nếu đang ở default::* hoặc flow::* lần đầu chuyển
+    // Đặt chatgpt::chatgpt-image làm model Ảnh mặc định và chatgpt::chatgpt-plus-thinking làm model Văn bản/Suy luận mặc định!
     if (!cfg._chatgptDefaultApplied || cfg.imageModel === "default::gpt-image-2" || !cfg.imageModel) {
       cfg.imageModel = "chatgpt::chatgpt-image";
       cfg.model = "chatgpt::chatgpt-image";
       cfg._chatgptDefaultApplied = true;
       changed = true;
     }
-    if (Array.isArray(cfg.models) && !cfg.models.includes("chatgpt::chatgpt-image")) {
-      cfg.models = ["chatgpt::chatgpt-image", ...cfg.models.filter((x) => x !== "default::gpt-image-2")];
+    if (!cfg._chatgptTextDefaultApplied || !cfg.textModel || cfg.textModel.startsWith("default::")) {
+      cfg.textModel = "chatgpt::chatgpt-plus-thinking";
+      cfg._chatgptTextDefaultApplied = true;
       changed = true;
+    }
+    if (Array.isArray(cfg.models)) {
+      const plusIds = [
+        "chatgpt::chatgpt-image",
+        "chatgpt::chatgpt-plus-thinking",
+        "chatgpt::chatgpt-k4-flow",
+        "chatgpt::chatgpt-htpm-brand",
+        "chatgpt::chatgpt-deep-research",
+        "chatgpt::sora-video",
+      ];
+      const cleaned = cfg.models.filter((x) => x !== "default::gpt-image-2" && x !== "default::gpt-5.5");
+      for (const pid of plusIds.reverse()) {
+        if (!cleaned.includes(pid)) {
+          cleaned.unshift(pid);
+          changed = true;
+        }
+      }
+      if (changed) cfg.models = cleaned;
     }
 
     // 1b. Đồng bộ kênh Gemini Web Pro (10s/15s, tự xoay hết acc -> qua Flow) & đặt làm model tạo Video ưu tiên số 1
@@ -487,6 +530,8 @@ async function main() {
   await startWebServer();
   flow.setup(app);
   chatgpt.setup(app);
+  sora.setup();
+  chatgptEcosystem.setup({ app, chatgpt, sora, winGetter: () => win });
   gemini.setup(app);
   startMuse2api();
   startVoiceStudio();

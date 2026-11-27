@@ -56,6 +56,7 @@ IMAGE_FALLBACK_CHAIN = [
 VIDEO_FALLBACK_CHAIN = [
     ("Gemini-Brave", "gemini::gemini-video"),
     ("Google-Flow", "flow::flow-omni-1.2-flash"),
+    ("Sora-Plus", "chatgpt::sora-video"),
     ("Muse", "muse::muse-video"),
 ]
 

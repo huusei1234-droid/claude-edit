@@ -28,6 +28,23 @@ contextBridge.exposeInMainWorld("desktop", {
     renameAccount: (id, name) => ipcRenderer.invoke("chatgpt:rename-account", id, name),
     openAccount: (id) => ipcRenderer.invoke("chatgpt:open-account", id),
     generateImage: (job) => ipcRenderer.invoke("chatgpt:generate-image", job),
+    ask: (job) => ipcRenderer.invoke("chatgpt:ask", job),
+    listProjects: () => ipcRenderer.invoke("chatgpt:list-projects"),
+    syncProject: (spec) => ipcRenderer.invoke("chatgpt:sync-project", spec),
+    scheduleTask: (spec) => ipcRenderer.invoke("chatgpt:schedule-task", spec),
+    openHub: (target) => ipcRenderer.invoke("chatgpt:open-hub", target),
+    codex: (spec) => ipcRenderer.invoke("chatgpt:codex", spec),
+    onStreamDelta: (cb) => {
+      if (typeof cb !== "function") return () => {};
+      const listener = (_e, payload) => cb(payload);
+      ipcRenderer.on("chatgpt:stream-delta", listener);
+      return () => ipcRenderer.removeListener("chatgpt:stream-delta", listener);
+    },
+  },
+  sora: {
+    status: () => ipcRenderer.invoke("sora:status"),
+    show: () => ipcRenderer.invoke("sora:show"),
+    generateVideo: (job) => ipcRenderer.invoke("sora:generate-video", job),
   },
   gemini: {
     status: () => ipcRenderer.invoke("gemini:status"),
