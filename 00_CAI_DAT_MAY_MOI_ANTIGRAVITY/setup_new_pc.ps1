@@ -113,8 +113,12 @@ $skRaw = Get-Content -LiteralPath (Join-Path $agySrc "skills.template.json") -Ra
 Set-Content -LiteralPath (Join-Path $agyTarget "skills.json") -Value ($skRaw.Replace("__STUDIO_SLASH__", $studioSlash)) -Encoding UTF8
 
 $studioUri = "file:///" + ($studioSlash -replace ":", "%3A" -replace " ", "%20")
-$projTpl = Get-Content -LiteralPath (Join-Path $agySrc "projects\8252d576-3728-47e9-9e0c-a7b75f48088d.template.json") -Raw -Encoding UTF8
-Set-Content -LiteralPath (Join-Path $agyTarget "projects\8252d576-3728-47e9-9e0c-a7b75f48088d.json") -Value ($projTpl.Replace("__STUDIO_FILE_URI__", $studioUri)) -Encoding UTF8
+Get-ChildItem -Path (Join-Path $agySrc "projects") -Filter "*.json" -ErrorAction SilentlyContinue | ForEach-Object {
+    $outName = $_.Name -replace "\.template\.json$", ".json"
+    $pRaw = Get-Content -LiteralPath $_.FullName -Raw -Encoding UTF8
+    $pRendered = $pRaw.Replace("__STUDIO_FILE_URI__", $studioUri).Replace("file:///c%3A/AI/full%20studio", $studioUri).Replace("file:///c:/AI/full%20studio", $studioUri)
+    Set-Content -LiteralPath (Join-Path "$agyTarget\projects" $outName) -Value $pRendered -Encoding UTF8
+}
 
 # Chép toàn bộ 7 Plugins & tự động sửa đường dẫn bên trong hooks.json / mcp_config.json / server.py theo máy mới!
 robocopy "$agySrc\plugins" "$agyTarget\plugins" /E /NFL /NDL /NJH /NJS /R:1 /W:1 | Out-Null
@@ -194,6 +198,13 @@ foreach ($ver in @("CSXS.9", "CSXS.10", "CSXS.11", "CSXS.12", "CSXS.13")) {
 }
 Set-ItemProperty -Path "HKCU:\Control Panel\Keyboard" -Name "PrintScreenKeyForSnippingEnabled" -Value 1 -Type DWord -Force -ErrorAction SilentlyContinue
 [Environment]::SetEnvironmentVariable("QT_D3D_NOFLIP", "1", "User")
+
+# 8. Tự động khôi phục 100% Lịch sử Đoạn Chat & Dự án từ Google Drive (nếu máy mới đã đăng nhập Google Drive)
+$mergePy = Join-Path $bundleDir "smart_merge_chats.py"
+if ((Test-Path -LiteralPath $mergePy) -and (Test-Path -LiteralPath $pyExe)) {
+    Write-Host "[8/8] Đang kiểm tra Google Drive để khôi phục 100% Lịch sử Đoạn Chat Antigravity..." -ForegroundColor Cyan
+    & $pyExe -X utf8 "$mergePy" --mode pull
+}
 
 Write-Host "`n==========================================================================" -ForegroundColor Green
 Write-Host "  HOÀN TẤT 100%! MÁY MỚI ĐÃ SẴN SÀNG VỚI TOÀN BỘ SETTINGS ANTIGRAVITY!" -ForegroundColor Green
