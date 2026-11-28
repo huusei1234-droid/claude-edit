@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8" />
+<title>HTPM Multi-Agent AI Studio & Live Video Editor</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; user-select: none; }
+  html, body {
+    width: 1080px;
+    height: 1920px;
+    overflow: hidden;
+    background: #090B10;
+    font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+    color: #E5E7EB;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  #stage {
+    position: relative;
+    width: 1080px;
+    height: 1920px;
+    background: radial-gradient(circle at 50% 22%, #151B2B 0%, #0A0D14 60%);
+  }
+
+  /* ================= TOP SYSTEM MENU BAR (0..30px) ================= */
+  #sysbar {
+    position: absolute;
+    left: 0; top: 0; width: 1080px; height: 30px;
+    background: rgba(11, 14, 22, 0.96);
+    border-bottom: 1px solid #1F2637;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 14px;
+    font-size: 12px; font-weight: 600; letter-spacing: 0.2px;
+    z-index: 10;
+  }
+  .sys-left, .sys-right { display: flex; align-items: center; gap: 12px; }
+  .dot-live {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: #10B981; box-shadow: 0 0 8px #10B981;
+    display: inline-block; margin-right: 5px;
+  }
+  .sys-pill {
+    background: #171E2E; border: 1px solid #28334D;
+    padding: 2px 8px; border-radius: 4px; font-size: 11px; color: #93C5FD;
+  }
+  .sys-pill.amber { color: #FCD34D; border-color: #5C4813; background: #231D0E; }
+  .sys-pill.cyan  { color: #67E8F9; border-color: #154E5B; background: #0D262E; }
+
+  /* ================= TOP ZONE WINDOWS (34..934px) ================= */
+  .win {
+    position: absolute;
+    background: #111520;
+    border: 1px solid #263047;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.45);
+    display: flex; flex-direction: column;
+  }
+  .win-hdr {
+    height: 26px; background: #181E2C;
+    border-bottom: 1px solid #252E42;
+    display: flex; align-items: center; padding: 0 9px; gap: 6px;
+    font-size: 11px; color: #CBD5E1; flex-shrink: 0;
+  }
+  .tl-dots { display: flex; gap: 5px; margin-right: 4px; }
+  .tl-dots span { width: 8px; height: 8px; border-radius: 50%; }
+  .tl-r { background: #EF4444; } .tl-y { background: #F59E0B; } .tl-g { background: #10B981; }
+
+  .browser-tabs {
+    display: flex; gap: 3px; flex: 1; overflow: hidden; align-items: flex-end; height: 26px; padding-top: 4px;
+  }
+  .btab {
+    padding: 3px 9px; border-radius: 5px 5px 0 0;
+    background: #121723; color: #94A3B8; font-size: 10.5px; font-weight: 600;
+    border: 1px solid transparent; white-space: nowrap;
+  }
+  .btab.active {
+    background: #1E2638; color: #F8FAFC; border-color: #303D59; border-bottom-color: #1E2638;
+  }
+  .url-bar {
+    height: 24px; background: #1E2638; border-bottom: 1px solid #2A354D;
+    display: flex; align-items: center; padding: 0 8px; gap: 6px; font-size: 10.5px; flex-shrink: 0;
+  }
+  .url-input {
+    flex: 1; background: #101521; border: 1px solid #2B3752; border-radius: 4px;
+    padding: 2px 8px; color: #93C5FD; font-family: Consolas, monospace; font-size: 10px;
+    white-space: nowrap; overflow: hidden;
+  }
+  .cdp-banner {
+    height: 19px; background: linear-gradient(90deg, #1E3A5F, #172B47);
+    border-bottom: 1px solid #295285;
+    color: #BAE6FD; font-size: 9.8px; font-weight: 600;
+    display: flex; align-items: center; justify-content: space-between; padding: 0 8px; flex-shrink: 0;
+  }
+
+  /* Window 1: Left Automated CMS / E-Commerce Browser */
+  #win-cms { left: 8px; top: 35px; width: 528px; height: 458px; }
+  #cms-body {
+    flex: 1; background: #F8FAFC; color: #0F172A; position: relative; overflow: hidden;
+  }
+  #cms-scroll {
+    position: absolute; left: 0; top: 0; width: 100%;
+    padding: 8px 10px;
+  }
+  .cms-topbar {
+    display: flex; align-items: center; justify-content: space-between;
+    background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 6px;
+    padding: 6px 9px; margin-bottom: 7px;
+  }
+  .cms-brand { font-weight: 800; font-size: 12px; color: #8B1E72; display: flex; align-items: center; gap: 6px; }
+  .cms-btn {
+    background: #8B1E72; color: #FFF; font-size: 10px; font-weight: 700;
+    padding: 4px 9px; border-radius: 4px; display: inline-block;
+  }
+  .cms-btn.green { background: #059669; }
+  .cms-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin-bottom: 7px; }
+  .cms-card {
+    background: #FFF; border: 1px solid #CBD5E1; border-radius: 6px; padding: 5px;
+    position: relative;
+  }
+  .cms-card.selected { border: 2px solid #2563EB; box-shadow: 0 0 0 2px rgba(37,99,235,0.18); }
+  .cms-card img { width: 100%; height: 92px; object-fit: cover; border-radius: 4px; background: #F1F5F9; }
+  .cms-card-title { font-size: 9.5px; font-weight: 700; margin-top: 3px; color: #1E293B; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .cms-card-meta { display: flex; justify-content: space-between; font-size: 9px; color: #059669; font-weight: 700; margin-top: 2px; }
+  .cms-form {
+    background: #FFF; border: 1px solid #CBD5E1; border-radius: 6px; padding: 6px 8px; margin-bottom: 7px;
+  }
+  .cms-field-lbl { font-size: 9.5px; font-weight: 700; color: #475569; margin-bottom: 2px; }
+  .cms-field-box {
+    background: #F8FAFC; border: 1px solid #94A3B8; border-radius: 4px;
+    padding: 4px 6px; font-size: 10px; color: #0F172A; font-weight: 600; min-height: 21px;
+  }
+  .cms-field-box.focused { border-color: #2563EB; background: #EFF6FF; }
+  .cms-table {
+    width: 100%; border-collapse: collapse; background: #FFF; border: 1px solid #E2E8F0; border-radius: 6px; overflow: hidden;
+    font-size: 9.5px;
+  }
+  .cms-table th { background: #F1F5F9; color: #334155; text-align: left; padding: 4px 6px; font-weight: 700; }
+  .cms-table td { padding: 4px 6px; border-top: 1px solid #E2E8F0; color: #1E293B; }
+  .badge-ok { background: #DCFCE7; color: #166534; padding: 1px 5px; border-radius: 3px; font-weight: 700; font-size: 8.5px; }
+  .badge-run { background: #DBEAFE; color: #1E40AF; padding: 1px 5px; border-radius: 3px; font-weight: 700; font-size: 8.5px; }
+  #dom-inspect-box {
+    position: absolute; pointer-events: none;
+    border: 1.5px dashed #2563EB; background: rgba(37, 99, 235, 0.10);
+    z-index: 5; transition: none;
+  }
+  #dom-inspect-tag {
+    position: absolute; left: -1px; top: -15px;
+    background: #2563EB; color: #FFF; font-size: 8.5px; font-family: Consolas, monospace;
+    padding: 1px 4px; border-radius: 2px; white-space: nowrap;
+  }
+
+  /* Window 2: Right Automated Gemini Pro / Flow AI Asset Browser */
+  #win-aiweb { left: 544px; top: 35px; width: 528px; height: 458px; }
+  #aiweb-body {
+    flex: 1; background: #0E131F; padding: 8px 9px; display: flex; flex-direction: column; gap: 6px; overflow: hidden;
+  }
+  .prompt-box {
+    background: #161E31; border: 1px solid #33466E; border-radius: 6px; padding: 6px 8px;
+  }
+  .prompt-hdr { display: flex; justify-content: space-between; font-size: 9.5px; color: #93C5FD; font-weight: 700; margin-bottom: 3px; }
+  .prompt-txt { font-size: 10px; color: #F1F5F9; line-height: 1.32; min-height: 27px; font-family: "Segoe UI", sans-serif; }
+  .gen-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 6px; flex: 1; }
+  .gen-card {
+    background: #151C2C; border: 1px solid #283550; border-radius: 6px; padding: 5px;
+    display: flex; flex-direction: column; position: relative; overflow: hidden;
+  }
+  .gen-card.ready { border-color: #06B6D4; }
+  .gen-thumb-wrap { position: relative; flex: 1; border-radius: 4px; overflow: hidden; background: #0B0F18; }
+  .gen-thumb-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .gen-prog-bar {
+    position: absolute; left: 6px; right: 6px; bottom: 6px; height: 5px;
+    background: rgba(15,23,42,0.85); border-radius: 3px; overflow: hidden;
+  }
+  .gen-prog-fill { height: 100%; background: linear-gradient(90deg, #06B6D4, #3B82F6, #A855F7); }
+  .gen-badge {
+    position: absolute; top: 5px; right: 5px;
+    background: rgba(8, 13, 23, 0.85); border: 1px solid #38BDF8;
+    color: #7DD3FC; font-size: 8.5px; font-weight: 700; padding: 1px 5px; border-radius: 3px;
+  }
+  .gen-foot { display: flex; justify-content: space-between; align-items: center; margin-top: 4px; font-size: 9px; color: #CBD5E1; }
+  .gen-dl-btn { background: #0284C7; color: #FFF; padding: 2px 6px; border-radius: 3px; font-weight: 700; font-size: 8.5px; }
+
+  /* Window 3: Mid-Left Multi-Agent Code IDE */
+  #win-ide { left: 8px; top: 500px; width: 544px; height: 432px; }
+  #ide-body { flex: 1; display: flex; background: #0D1117; overflow: hidden; }
+  #ide-tree {
+    width: 126px; background: #090D13; border-right: 1px solid #1E2636;
+    padding: 6px 5px; font-size: 9.5px; color: #94A3B8; flex-shrink: 0;
+  }
+  .tree-item { padding: 3px 5px; border-radius: 3px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-bottom: 1px; }
+  .tree-item.active { background: #1D283A; color: #E2E8F0; font-weight: 600; }
+  #ide-code-wrap { flex: 1; position: relative; overflow: hidden; font-family: Consolas, "Courier New", monospace; font-size: 10px; line-height: 15.5px; padding: 5px 0; }
+  .code-line { display: flex; padding: 0 6px; white-space: pre; }
+  .code-ln { width: 24px; color: #475569; text-align: right; padding-right: 7px; flex-shrink: 0; }
+  .code-add { background: rgba(16, 185, 129, 0.16); border-left: 2px solid #10B981; }
+  .code-del { background: rgba(239, 68, 68, 0.14); border-left: 2px solid #EF4444; color: #FCA5A5; }
+  .code-cur { background: rgba(56, 189, 248, 0.14); }
+  .kw { color: #FF7B72; } .fn { color: #D2A8FF; } .st { color: #A5D6FF; } .cm { color: #6E7681; } .nu { color: #79C0FF; }
+  #ide-ai-bar {
+    height: 25px; background: #141B29; border-top: 1px solid #26334D;
+    display: flex; align-items: center; justify-content: space-between; padding: 0 8px;
+    font-size: 9.5px; color: #A5F3FC;
+  }
+
+  /* Window 4: Mid-Right AI Swarm Orchestrator & Tool Stream */
+  #win-swarm { left: 558px; top: 500px; width: 514px; height: 432px; }
+  #swarm-body { flex: 1; background: #0B0E14; padding: 6px 8px; display: flex; flex-direction: column; gap: 5px; overflow: hidden; }
+  .agent-chips { display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px; }
+  .ag-chip {
+    background: #131926; border: 1px solid #25314A; border-radius: 4px; padding: 3px 5px;
+    font-size: 8.8px; display: flex; align-items: center; justify-content: space-between;
+  }
+  .ag-chip.busy { border-color: #06B6D4; background: #0E2231; color: #E0F2FE; }
+  #tool-stream { flex: 1; overflow: hidden; display: flex; flex-direction: column; gap: 3px; font-family: Consolas, monospace; font-size: 9.6px; }
+  .tlog {
+    background: #111622; border: 1px solid #1D2538; border-radius: 4px;
+    padding: 3.5px 7px; display: flex; align-items: center; justify-content: space-between; color: #CBD5E1;
+  }
+  .tlog.active { border-color: #38BDF8; background: #132033; color: #F8FAFC; }
+  .tlog .ok { color: #34D399; font-weight: 700; margin-right: 5px; }
+  .tlog .run { color: #38BDF8; font-weight: 700; margin-right: 5px; }
+  .tlog .diff-p { color: #34D399; font-weight: 700; }
+  .tlog .diff-m { color: #F87171; font-weight: 700; margin-left: 3px; }
+  .telemetry-bar {
+    height: 30px; background: #121826; border: 1px solid #222D45; border-radius: 5px;
+    display: flex; align-items: center; justify-content: space-between; padding: 0 8px; font-size: 9.5px;
+  }
+
+  /* ================= ZONE SPLITTER (935..941px) ================= */
+  #zone-divider {
+    position: absolute; left: 0; top: 935px; width: 1080px; height: 6px;
+    background: linear-gradient(90deg, #0EA5E9, #8B5CF6, #06B6D4);
+    box-shadow: 0 0 12px rgba(6, 182, 212, 0.55);
+    z-index: 12;
+  }
+
+  /* ================= BOTTOM ZONE: CAPCUT PRO / NLE EDITOR (941..1920px) ================= */
+  #nle-root {
+    position: absolute; left: 0; top: 941px; width: 1080px; height: 979px;
+    background: #121318; display: flex; flex-direction: column;
+  }
+  #nle-topbar {
+    height: 34px; background: #181A20; border-bottom: 1px solid #262934;
+    display: flex; align-items: center; justify-content: space-between; padding: 0 10px;
+    font-size: 11px; flex-shrink: 0;
+  }
+  .nle-menus { display: flex; gap: 4px; align-items: center; }
+  .nle-logo {
+    background: linear-gradient(135deg, #00E5FF, #2979FF); color: #05080F;
+    font-weight: 900; font-size: 10px; padding: 2px 6px; border-radius: 4px; margin-right: 6px;
+  }
+  .nle-tab { padding: 4px 8px; border-radius: 4px; color: #9CA3AF; font-size: 10.5px; font-weight: 600; }
+  .nle-tab.active { background: #262A36; color: #00E5FF; }
+  .nle-proj-title { color: #E5E7EB; font-weight: 700; font-size: 10.5px; }
+  .nle-export-btn {
+    background: linear-gradient(90deg, #00D2E6, #00A8FF); color: #041019;
+    font-weight: 800; font-size: 11px; padding: 4px 13px; border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 210, 230, 0.4);
+  }
+
+  /* Upper NLE 3-Column Workspace (522px tall) */
+  #nle-upper {
+    height: 522px; display: flex; border-bottom: 1px solid #262934; flex-shrink: 0;
+  }
+
+  /* Col 1: Media Bin */
+  #nle-bin {
+    width: 272px; background: #16181F; border-right: 1px solid #262934;
+    padding: 6px; display: flex; flex-direction: column; gap: 5px;
+  }
+  .panel-title {
+    font-size: 10.5px; font-weight: 700; color: #D1D5DB;
+    display: flex; justify-content: space-between; align-items: center;
+    padding-bottom: 4px; border-bottom: 1px solid #232733;
+  }
+  #bin-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 6px; flex: 1; align-content: start;
+  }
+  .bin-item {
+    background: #1E212B; border: 1.5px solid #2B3040; border-radius: 5px;
+    padding: 3px; position: relative;
+  }
+  .bin-item.selected {
+    border-color: #00E5FF; box-shadow: 0 0 0 2px rgba(0, 229, 255, 0.22);
+  }
+  .bin-item img { width: 100%; height: 78px; object-fit: cover; border-radius: 3px; display: block; }
+  .bin-dur {
+    position: absolute; right: 6px; top: 63px;
+    background: rgba(0,0,0,0.78); color: #F9FAFB; font-size: 8.5px; font-family: Consolas, monospace;
+    padding: 1px 4px; border-radius: 2px;
+  }
+  .bin-lbl {
+    font-size: 9px; color: #CBD5E1; margin-top: 3px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-weight: 600;
+  }
+
+  /* Col 2: HERO PROGRAM MONITOR (Màn hình View Edit Chị Hằng) */
+  #nle-monitor {
+    width: 496px; background: #0E1015; border-right: 1px solid #262934;
+    display: flex; flex-direction: column; position: relative;
+  }
+  #mon-hdr {
+    height: 26px; padding: 0 10px; background: #15171E; border-bottom: 1px solid #222530;
+    display: flex; align-items: center; justify-content: space-between; font-size: 10px; color: #9CA3AF;
+  }
+  #mon-stage {
+    flex: 1; display: flex; align-items: center; justify-content: space-between;
+    padding: 6px 8px; position: relative;
+  }
+  /* Left mini RGB scopes */
+  #mon-scopes {
+    width: 78px; height: 454px; background: #13161E; border: 1px solid #222736; border-radius: 5px;
+    padding: 5px; display: flex; flex-direction: column; gap: 6px;
+  }
+  .scope-box { flex: 1; background: #090B10; border: 1px solid #1D2230; border-radius: 3px; position: relative; overflow: hidden; }
+  .scope-lbl { font-size: 8px; color: #64748B; position: absolute; left: 4px; top: 2px; z-index: 2; font-weight: 700; }
+
+  /* Center 9:16 Real Video Viewport of Chị Hằng */
+  #mon-viewport-wrap {
+    width: 264px; height: 468px; position: relative;
+    background: #000; border: 1.5px solid #333A4D; border-radius: 4px;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.75); overflow: hidden;
+  }
+  #chihang-video-img {
+    width: 100%; height: 100%; object-fit: cover; display: block;
+  }
+  /* Optional LUT Split Wipe Overlay */
+  #lut-wipe {
+    position: absolute; left: 0; top: 0; bottom: 0; width: 0%;
+    backdrop-filter: saturate(0.68) contrast(0.90) brightness(1.04);
+    border-right: 2px solid #00E5FF; pointer-events: none; display: none;
+  }
+  #lut-wipe-tag {
+    position: absolute; right: 4px; top: 8px; background: rgba(0,229,255,0.9);
+    color: #041019; font-size: 8px; font-weight: 800; padding: 1px 4px; border-radius: 2px;
+  }
+  /* NLE Transform Gizmo on Monitor */
+  #mon-gizmo {
+    position: absolute; left: 16px; top: 342px; width: 232px; height: 64px;
+    border: 1.5px solid #00E5FF; pointer-events: none; display: none;
+  }
+  .gizmo-h {
+    width: 6px; height: 6px; background: #FFF; border: 1px solid #00E5FF; position: absolute;
+  }
+  #mon-rec-badge {
+    position: absolute; left: 8px; top: 8px;
+    background: rgba(12, 16, 24, 0.72); border: 1px solid rgba(255,255,255,0.18);
+    color: #F8FAFC; font-size: 8.5px; font-weight: 700; padding: 2px 6px; border-radius: 3px;
+    display: flex; align-items: center; gap: 4px;
+  }
+
+  /* Right Audio Meters (L/R VU) */
+  #mon-meters {
+    width: 62px; height: 454px; background: #13161E; border: 1px solid #222736; border-radius: 5px;
+    padding: 6px 5px; display: flex; flex-direction: column; align-items: center;
+  }
+  .vu-title { font-size: 8.5px; font-weight: 700; color: #94A3B8; margin-bottom: 4px; }
+  .vu-bars { flex: 1; display: flex; gap: 6px; align-items: stretch; width: 100%; justify-content: center; }
+  .vu-col { width: 13px; background: #090B10; border: 1px solid #222838; border-radius: 2px; position: relative; overflow: hidden; }
+  .vu-fill {
+    position: absolute; left: 0; right: 0; bottom: 0; height: 40%;
+    background: linear-gradient(0deg, #10B981 0%, #10B981 68%, #F59E0B 86%, #EF4444 100%);
+  }
+  .vu-db { font-size: 8px; font-family: Consolas, monospace; color: #67E8F9; margin-top: 4px; font-weight: 700; }
+
+  #mon-transport {
+    height: 26px; background: #15171E; border-top: 1px solid #222530;
+    display: flex; align-items: center; justify-content: space-between; padding: 0 12px;
+    font-family: Consolas, monospace; font-size: 10.5px; color: #E2E8F0;
+  }
+
+  /* Col 3: Inspector Panel */
+  #nle-inspector {
+    flex: 1; background: #16181F; padding: 6px 8px; display: flex; flex-direction: column; gap: 6px;
+  }
+  .insp-tabs { display: flex; gap: 3px; background: #101218; padding: 3px; border-radius: 5px; }
+  .itab { flex: 1; text-align: center; font-size: 9.5px; font-weight: 700; padding: 3px 0; border-radius: 3px; color: #9CA3AF; }
+  .itab.active { background: #262B3A; color: #00E5FF; }
+  .insp-sec { background: #1C1F29; border: 1px solid #282D3C; border-radius: 5px; padding: 6px 7px; }
+  .insp-sec-hdr { font-size: 9.5px; font-weight: 700; color: #E5E7EB; margin-bottom: 5px; display: flex; justify-content: space-between; }
+  .s-row { display: flex; align-items: center; gap: 6px; margin-bottom: 5px; font-size: 9.2px; }
+  .s-row:last-child { margin-bottom: 0; }
+  .s-lbl { width: 58px; color: #9CA3AF; }
+  .s-track { flex: 1; height: 4px; background: #0E1016; border-radius: 2px; position: relative; }
+  .s-fill { height: 100%; background: #00E5FF; border-radius: 2px; }
+  .s-thumb {
+    width: 9px; height: 9px; border-radius: 50%; background: #FFF; border: 1.5px solid #00E5FF;
+    position: absolute; top: -2.5px; transform: translateX(-50%);
+  }
+  .s-val { width: 42px; text-align: right; font-family: Consolas, monospace; color: #E2E8F0; background: #11131A; padding: 1px 4px; border-radius: 3px; }
+  .kf-dia { width: 8px; height: 8px; transform: rotate(45deg); border: 1px solid #64748B; flex-shrink: 0; }
+  .kf-dia.on { background: #EC4899; border-color: #F472B6; box-shadow: 0 0 5px #EC4899; }
+
+  .wheels-row { display: flex; justify-content: space-between; gap: 5px; padding-top: 2px; }
+  .cwheel {
+    flex: 1; display: flex; flex-direction: column; align-items: center; gap: 3px; font-size: 8.5px; color: #9CA3AF;
+  }
+  .cwheel-ring {
+    width: 66px; height: 66px; border-radius: 50%;
+    background: conic-gradient(#EF4444, #F59E0B, #10B981, #06B6D4, #3B82F6, #EC4899, #EF4444);
+    padding: 3px; position: relative;
+  }
+  .cwheel-inner {
+    width: 100%; height: 100%; border-radius: 50%;
+    background: radial-gradient(circle, #2A2F3D 0%, #141720 78%);
+    position: relative;
+  }
+  .cwheel-dot {
+    width: 7px; height: 7px; border-radius: 50%; background: #FFF; border: 1px solid #000;
+    position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+  }
+
+  /* Lower NLE Multi-Track Timeline (423px tall) */
+  #nle-timeline {
+    flex: 1; background: #111319; display: flex; flex-direction: column; position: relative; overflow: hidden;
+  }
+  #tl-toolbar {
+    height: 28px; background: #181B24; border-bottom: 1px solid #262A38;
+    display: flex; align-items: center; justify-content: space-between; padding: 0 10px; font-size: 10px; color: #CBD5E1;
+  }
+  .tl-tools { display: flex; gap: 8px; align-items: center; }
+  .tl-tool-btn { padding: 2px 7px; border-radius: 3px; background: #222634; font-size: 9.5px; font-weight: 600; }
+  .tl-tool-btn.active { background: #00E5FF; color: #06121A; font-weight: 800; }
+
+  #tl-canvas {
+    width: 1080px; height: 395px; display: block;
+  }
+
+  /* Full-Screen 60fps Multi-Agent Cursor & Drag Layer */
+  #cursor-canvas {
+    position: absolute; left: 0; top: 0; width: 1080px; height: 1920px;
+    pointer-events: none; z-index: 100;
+  }
+</style>
+</head>
+<body>
+<div id="stage">
+  <!-- 0. Top System Status Bar -->
+  <div id="sysbar">
+    <div class="sys-left">
+      <span><span class="dot-live"></span>HẰNG THU AI STUDIO • MULTI-AGENT SWARM</span>
+      <span class="sys-pill cyan" id="sys-agents-count">68 AI CURSORS ACTIVE</span>
+      <span class="sys-pill">CDP :9333 AUTO-WEB</span>
+    </div>
+    <div class="sys-right">
+      <span class="sys-pill amber" id="sys-task-rate">142 ops/sec</span>
+      <span class="sys-pill" id="sys-gpu">RTX 4070 • 94%</span>
+      <span id="sys-clock">14:45:18</span>
+    </div>
+  </div>
+
+  <!-- 1. TOP-LEFT: Automated Website / CMS & E-Commerce Campaign Publisher -->
+  <div class="win" id="win-cms">
+    <div class="win-hdr">
+      <div class="tl-dots"><span class="tl-r"></span><span class="tl-y"></span><span class="tl-g"></span></div>
+      <div class="browser-tabs">
+        <div class="btab active" id="cms-tab-0">Hằng Thu CMS</div>
+        <div class="btab" id="cms-tab-1">TikTok Shop Auto</div>
+        <div class="btab" id="cms-tab-2">Landing SEO</div>
+      </div>
+    </div>
+    <div class="url-bar">
+      <span style="color:#10B981;font-weight:700;">🔒</span>
+      <div class="url-input" id="cms-url">https://cms.hangthupharma.vn/auto-campaigns/5-san-pham-tuoi-25-chihang</div>
+      <span style="color:#60A5FA;font-size:9.5px;font-weight:700;">200 OK</span>
+    </div>
+    <div class="cdp-banner">
+      <span>⚡ Chrome đang được điều khiển tự động bởi 16 Web Agents</span>
+      <span id="cms-step-lbl">DOM Sync #482</span>
+    </div>
+    <div id="cms-body">
+      <div id="cms-scroll">
+        <div class="cms-topbar">
+          <div class="cms-brand">🌸 HẰNG THU PHARMA • AUTO PUBLISHER</div>
+          <div style="display:flex;gap:5px;">
+            <span class="cms-btn green" id="btn-sync-stock">Đồng bộ SKU ✓</span>
+            <span class="cms-btn" id="btn-pub-now">Xuất bản Đa Kênh</span>
+          </div>
+        </div>
+        <div class="cms-grid">
+          <div class="cms-card selected" id="cms-c0">
+            <img src="assets/thumbs/poster_01.jpg" />
+            <div class="cms-card-title">Điều Kinh HT • Dưỡng Khí Huyết</div>
+            <div class="cms-card-meta"><span>SKU-DK01</span><span id="cms-stat-0">Đã duyệt ✓</span></div>
+          </div>
+          <div class="cms-card" id="cms-c1">
+            <img src="assets/thumbs/poster_02.jpg" />
+            <div class="cms-card-title">Ngọc Long Hoàn • Nguyên Khí</div>
+            <div class="cms-card-meta"><span>SKU-NLH2</span><span id="cms-stat-1">Auto Ads</span></div>
+          </div>
+          <div class="cms-card" id="cms-c2">
+            <img src="assets/thumbs/poster_03.jpg" />
+            <div class="cms-card-title">CEO Nguyễn Thị Hằng • Hệ Sinh Thái</div>
+            <div class="cms-card-meta"><span>BRAND-10</span><span id="cms-stat-2">98.4% QC</span></div>
+          </div>
+        </div>
+        <div class="cms-form">
+          <div class="cms-field-lbl">Tiêu đề chiến dịch Reels & Landing Page (AI Copywriter đang nhập tự động):</div>
+          <div class="cms-field-box focused" id="cms-typing-box"></div>
+        </div>
+        <table class="cms-table">
+          <thead>
+            <tr><th>Kênh Phân Phối</th><th>Tác Vụ Tự Động</th><th>Tốc Độ</th><th>Trạng Thái</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Fanpage Hằng Thu</td><td id="row-task-0">Đăng Reel + Ghim Bình Luận</td><td>0.4s</td><td><span class="badge-ok" id="row-st-0">LIVE ✓</span></td></tr>
+            <tr><td>TikTok K6 HTPM</td><td id="row-task-1">Kiểm duyệt Safe-Zone 9:16</td><td>0.2s</td><td><span class="badge-run" id="row-st-1">SYNCING</span></td></tr>
+            <tr><td>Website Dược Điển</td><td id="row-task-2">Cập nhật Hồ sơ Công bố</td><td>0.3s</td><td><span class="badge-ok" id="row-st-2">200 OK</span></td></tr>
+            <tr><td>Zalo OA & CRM</td><td id="row-task-3">Kịch bản CSKH Bảo mật</td><td>0.5s</td><td><span class="badge-ok" id="row-st-3">ACTIVE</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div id="dom-inspect-box" style="left:14px;top:52px;width:155px;height:130px;">
+        <div id="dom-inspect-tag">div.cms-card#sku-dk01 • 155×130</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. TOP-RIGHT: Automated Gemini Pro / Google Flow AI Video & Asset Pipeline -->
+  <div class="win" id="win-aiweb">
+    <div class="win-hdr">
+      <div class="tl-dots"><span class="tl-r"></span><span class="tl-y"></span><span class="tl-g"></span></div>
+      <div class="browser-tabs">
+        <div class="btab active" id="ai-tab-0">Gemini Pro u/0</div>
+        <div class="btab" id="ai-tab-1">Gemini u/2 [Video]</div>
+        <div class="btab" id="ai-tab-2">Flow Queue (4)</div>
+      </div>
+    </div>
+    <div class="url-bar">
+      <span style="color:#38BDF8;font-weight:700;">✦</span>
+      <div class="url-input" id="ai-url">https://gemini.google.com/u/0/app • Auto-Rotate Pro Pipeline</div>
+      <span style="color:#34D399;font-size:9.5px;font-weight:700;" id="ai-acc-pill">u/0..u/5</span>
+    </div>
+    <div class="cdp-banner">
+      <span>🤖 Tự động lọc source quay thật & đồng bộ B-Roll sang CapCut</span>
+      <span id="ai-queue-lbl">Queue: 12/12 Ready</span>
+    </div>
+    <div id="aiweb-body">
+      <div class="prompt-box">
+        <div class="prompt-hdr">
+          <span>PROMPT & SCENE MATCHER (CHỊ HẰNG REAL FOOTAGE)</span>
+          <span id="ai-tok-speed">86 tok/s</span>
+        </div>
+        <div class="prompt-txt" id="ai-prompt-typing"></div>
+      </div>
+      <div class="gen-grid">
+        <div class="gen-card ready" id="gcard-0">
+          <div class="gen-thumb-wrap">
+            <img src="assets/thumbs/bin_02_laptop_w.jpg" />
+            <div class="gen-badge" id="gbadge-0">REAL 4K ✓</div>
+            <div class="gen-prog-bar"><div class="gen-prog-fill" id="gprog-0" style="width:100%"></div></div>
+          </div>
+          <div class="gen-foot"><span>C1275_ChiHang_Laptop.MP4</span><span class="gen-dl-btn" id="gbtn-0">Đã đẩy NLE</span></div>
+        </div>
+        <div class="gen-card ready" id="gcard-1">
+          <div class="gen-thumb-wrap">
+            <img src="assets/thumbs/bin_01_desk.jpg" />
+            <div class="gen-badge" id="gbadge-1">98% SYNC</div>
+            <div class="gen-prog-bar"><div class="gen-prog-fill" id="gprog-1" style="width:88%"></div></div>
+          </div>
+          <div class="gen-foot"><span>C4134_PhongChuTich.MP4</span><span class="gen-dl-btn" id="gbtn-1">Chèn V1</span></div>
+        </div>
+        <div class="gen-card" id="gcard-2">
+          <div class="gen-thumb-wrap">
+            <img src="assets/thumbs/bin_08_nlh_real.jpg" />
+            <div class="gen-badge" id="gbadge-2">QUAY TAY</div>
+            <div class="gen-prog-bar"><div class="gen-prog-fill" id="gprog-2" style="width:74%"></div></div>
+          </div>
+          <div class="gen-foot"><span>C0304_NgocLongHoan.MP4</span><span class="gen-dl-btn" id="gbtn-2">Chèn B-Roll</span></div>
+        </div>
+        <div class="gen-card" id="gcard-3">
+          <div class="gen-thumb-wrap">
+            <img src="assets/thumbs/bin_06_whiteskin.jpg" />
+            <div class="gen-badge" id="gbadge-3">CHÍNH HÃNG</div>
+            <div class="gen-prog-bar"><div class="gen-prog-fill" id="gprog-3" style="width:95%"></div></div>
+          </div>
+          <div class="gen-foot"><span>SP_WhiteSkin_Combo.jpg</span><span class="gen-dl-btn" id="gbtn-3">Khóa SKU</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. MID-LEFT: Antigravity / Claude Code Live IDE -->
+  <div class="win" id="win-ide">
+    <div class="win-hdr">
+      <div class="tl-dots"><span class="tl-r"></span><span class="tl-y"></span><span class="tl-g"></span></div>
+      <span style="font-weight:700;color:#E2E8F0;">Antigravity IDE — build_v3_real_chihang_videos.py</span>
+      <span style="margin-left:auto;color:#34D399;font-size:10px;font-family:Consolas,monospace;" id="ide-diff-stat">+284 -19 lines</span>
+    </div>
+    <div id="ide-body">
+      <div id="ide-tree">
+        <div style="font-size:8.5px;font-weight:800;color:#64748B;margin-bottom:4px;">EXPLORER • HTPM</div>
+        <div class="tree-item active" id="tr-0">🐍 build_chihang_v5.py</div>
+        <div class="tree-item" id="tr-1">🐍 cut_16_real_clips.py</div>
+        <div class="tree-item" id="tr-2">🐍 whisper_clean_0rep.py</div>
+        <div class="tree-item" id="tr-3">🐍 safe_zone_9x16.py</div>
+        <div class="tree-item" id="tr-4">📄 draft_content.json</div>
+        <div class="tree-item" id="tr-5">🎨 lut_warm_skin.cube</div>
+        <div class="tree-item" id="tr-6">🔊 mix_lufs_minus14.py</div>
+        <div class="tree-item" id="tr-7">🌐 cdp_web_swarm.js</div>
+        <div class="tree-item" id="tr-8">✅ qc_frame_verify.py</div>
+      </div>
+      <div id="ide-code-wrap"></div>
+    </div>
+    <div id="ide-ai-bar">
+      <span id="ide-status-left">⚡ Multi-Cursor Code Agent: Đang tối ưu J-Cut & Keyframe Bezier...</span>
+      <span style="background:#065F46;color:#A7F3D0;padding:1px 6px;border-radius:3px;font-weight:700;">Accept All ⌘⏎</span>
+    </div>
+  </div>
+
+  <!-- 4. MID-RIGHT: Multi-Agent Swarm Tool-Call Stream -->
+  <div class="win" id="win-swarm">
+    <div class="win-hdr">
+      <div class="tl-dots"><span class="tl-r"></span><span class="tl-y"></span><span class="tl-g"></span></div>
+      <span style="font-weight:700;color:#38BDF8;">Swarm Orchestrator • Live Agent Stream</span>
+      <span style="margin-left:auto;color:#FCD34D;font-size:10px;font-weight:700;" id="swarm-completed">418 tasks ✓</span>
+    </div>
+    <div id="swarm-body">
+      <div class="agent-chips" id="agent-chips">
+        <div class="ag-chip busy"><span>Web-Swarm</span><span>16x</span></div>
+        <div class="ag-chip busy"><span>Whisper-QC</span><span>0% lặp</span></div>
+        <div class="ag-chip busy"><span>NLE-Blade</span><span>24x</span></div>
+        <div class="ag-chip busy"><span>Color-LUT</span><span>96%</span></div>
+      </div>
+      <div id="tool-stream"></div>
+      <div class="telemetry-bar">
+        <span style="color:#93C5FD;font-weight:700;">⚡ Pipeline: Web + Code + CapCut NLE</span>
+        <span style="font-family:Consolas,monospace;color:#34D399;" id="swarm-lufs-readout">LUFS: -14.0 • SafeZone: 100% PASS</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- WORKSPACE DIVIDER -->
+  <div id="zone-divider"></div>
+
+  <!-- 5. BOTTOM ZONE: PROFESSIONAL NLE VIDEO EDITOR (Màn hình View Edit Chị Hằng) -->
+  <div id="nle-root">
+    <div id="nle-topbar">
+      <div class="nle-menus">
+        <span class="nle-logo">CAPCUT PRO</span>
+        <span class="nle-tab active" id="ntab-0">Media</span>
+        <span class="nle-tab" id="ntab-1">Audio</span>
+        <span class="nle-tab" id="ntab-2">Text</span>
+        <span class="nle-tab" id="ntab-3">Effects</span>
+        <span class="nle-tab" id="ntab-4">Transitions</span>
+        <span class="nle-tab" id="ntab-5">Filters</span>
+        <span class="nle-tab" id="ntab-6">Adjustment</span>
+      </div>
+      <div class="nle-proj-title">261119_HTPM_5_San_Pham_Tuoi_25_Chi_Hang_Real • 9:16</div>
+      <div class="nle-export-btn" id="nle-export-btn">Export 60fps</div>
+    </div>
+
+    <div id="nle-upper">
+      <!-- Left: Media Bin -->
+      <div id="nle-bin">
+        <div class="panel-title">
+          <span>Kho Quay Gốc Chị Hằng (16)</span>
+          <span style="color:#00E5FF;font-size:9.5px;">Import +</span>
+        </div>
+        <div id="bin-grid">
+          <div class="bin-item selected" id="bin-0">
+            <img src="assets/thumbs/bin_02_laptop_w.jpg" /><span class="bin-dur">04.2s</span>
+            <div class="bin-lbl">C1275_ChiHang_Laptop.MP4</div>
+          </div>
+          <div class="bin-item" id="bin-1">
+            <img src="assets/thumbs/bin_01_desk.jpg" /><span class="bin-dur">04.8s</span>
+            <div class="bin-lbl">C4134_PhongChuTich.MP4</div>
+          </div>
+          <div class="bin-item" id="bin-2">
+            <img src="assets/thumbs/bin_05_gelpk.jpg" /><span class="bin-dur">03.8s</span>
+            <div class="bin-lbl">SP_GelPhuKhang_HT.jpg</div>
+          </div>
+          <div class="bin-item" id="bin-3">
+            <img src="assets/thumbs/bin_06_whiteskin.jpg" /><span class="bin-dur">03.5s</span>
+            <div class="bin-lbl">SP_Legend_WhiteSkin.jpg</div>
+          </div>
+          <div class="bin-item" id="bin-4">
+            <img src="assets/thumbs/bin_07_sp_ban.jpg" /><span class="bin-dur">04.0s</span>
+            <div class="bin-lbl">Combo_5SanPham_HTPM.jpg</div>
+          </div>
+          <div class="bin-item" id="bin-5">
+            <img src="assets/thumbs/bin_08_nlh_real.jpg" /><span class="bin-dur">03.5s</span>
+            <div class="bin-lbl">QuayTay_NgocLongHoan.MP4</div>
+          </div>
+          <div class="bin-item" id="bin-6">
+            <img src="assets/thumbs/bin_03_laptop_b.jpg" /><span class="bin-dur">04.1s</span>
+            <div class="bin-lbl">C1270_ChiHang_Work.MP4</div>
+          </div>
+          <div class="bin-item" id="bin-7">
+            <img src="assets/thumbs/bin_04_exec.jpg" /><span class="bin-dur">04.5s</span>
+            <div class="bin-lbl">C4136_CEO_HangThu.MP4</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Center: HERO PROGRAM MONITOR (Real Video of Chị Hằng) -->
+      <div id="nle-monitor">
+        <div id="mon-hdr">
+          <span style="color:#E2E8F0;font-weight:700;">Program Monitor • Chị Hằng (Video Thực)</span>
+          <span style="color:#34D399;font-weight:700;" id="mon-fps-tag">● LIVE 60.0 FPS | Safe-Zone</span>
+        </div>
+        <div id="mon-stage">
+          <!-- Left RGB Scopes -->
+          <div id="mon-scopes">
+            <div class="scope-box"><span class="scope-lbl">LUMA</span><canvas id="scope-cvs-1" width="66" height="135"></canvas></div>
+            <div class="scope-box"><span class="scope-lbl">RGB PARADE</span><canvas id="scope-cvs-2" width="66" height="135"></canvas></div>
+            <div class="scope-box"><span class="scope-lbl">SKIN TONE</span><canvas id="scope-cvs-3" width="66" height="135"></canvas></div>
+          </div>
+
+          <!-- Center 9:16 Real Chị Hằng Viewport -->
+          <div id="mon-viewport-wrap">
+            <img id="chihang-video-img" src="assets/preview_frames/f_0001.jpg" />
+            <div id="lut-wipe"><div id="lut-wipe-tag">RAW LOG / LUT</div></div>
+            <div id="mon-gizmo">
+              <div class="gizmo-h" style="left:-3px;top:-3px;"></div>
+              <div class="gizmo-h" style="right:-3px;top:-3px;"></div>
+              <div class="gizmo-h" style="left:-3px;bottom:-3px;"></div>
+              <div class="gizmo-h" style="right:-3px;bottom:-3px;"></div>
+            </div>
+            <div id="mon-rec-badge"><span class="dot-live" style="width:6px;height:6px;margin-right:2px;"></span><span id="mon-shot-name">SHOT 01 • C1275 REAL</span></div>
+          </div>
+
+          <!-- Right Stereo Audio VU Meters -->
+          <div id="mon-meters">
+            <div class="vu-title">AUDIO dB</div>
+            <div class="vu-bars">
+              <div class="vu-col"><div class="vu-fill" id="vu-l"></div></div>
+              <div class="vu-col"><div class="vu-fill" id="vu-r"></div></div>
+            </div>
+            <div class="vu-db" id="vu-db-txt">-14.0</div>
+          </div>
+        </div>
+        <div id="mon-transport">
+          <span id="mon-tc" style="color:#00E5FF;font-weight:700;">00:00:00:00</span>
+          <span>⏮ &nbsp; ▶ &nbsp; ⏭ &nbsp; 🔁</span>
+          <span style="color:#94A3B8;">00:00:21:21</span>
+        </div>
+      </div>
+
+      <!-- Right: Inspector -->
+      <div id="nle-inspector">
+        <div class="insp-tabs">
+          <div class="itab active" id="itab-0">Transform</div>
+          <div class="itab" id="itab-1">Color LUT</div>
+          <div class="itab" id="itab-2">Audio</div>
+        </div>
+
+        <div class="insp-sec">
+          <div class="insp-sec-hdr"><span>Position & Scale (Ken Burns)</span><span style="color:#EC4899;">◆ Keyframe</span></div>
+          <div class="s-row"><span class="s-lbl">Scale</span><div class="s-track"><div class="s-fill" id="sl-0-f"></div><div class="s-thumb" id="sl-0-t"></div></div><span class="s-val" id="sl-0-v">102.4%</span><div class="kf-dia on"></div></div>
+          <div class="s-row"><span class="s-lbl">Pos X</span><div class="s-track"><div class="s-fill" id="sl-1-f"></div><div class="s-thumb" id="sl-1-t"></div></div><span class="s-val" id="sl-1-v">0.0</span><div class="kf-dia on"></div></div>
+          <div class="s-row"><span class="s-lbl">Pos Y</span><div class="s-track"><div class="s-fill" id="sl-2-f"></div><div class="s-thumb" id="sl-2-t"></div></div><span class="s-val" id="sl-2-v">-12.0</span><div class="kf-dia"></div></div>
+        </div>
+
+        <div class="insp-sec">
+          <div class="insp-sec-hdr"><span>Lumetri Color & Skin Tone (96%)</span><span style="color:#00E5FF;">LUT ON</span></div>
+          <div class="s-row"><span class="s-lbl">Temp</span><div class="s-track"><div class="s-fill" id="sl-3-f"></div><div class="s-thumb" id="sl-3-t"></div></div><span class="s-val" id="sl-3-v">+4.2</span><div class="kf-dia on"></div></div>
+          <div class="s-row"><span class="s-lbl">Exposure</span><div class="s-track"><div class="s-fill" id="sl-4-f"></div><div class="s-thumb" id="sl-4-t"></div></div><span class="s-val" id="sl-4-v">+0.35</span><div class="kf-dia on"></div></div>
+          <div class="s-row"><span class="s-lbl">Contrast</span><div class="s-track"><div class="s-fill" id="sl-5-f"></div><div class="s-thumb" id="sl-5-t"></div></div><span class="s-val" id="sl-5-v">+11.0</span><div class="kf-dia"></div></div>
+          <div class="s-row"><span class="s-lbl">Saturation</span><div class="s-track"><div class="s-fill" id="sl-6-f"></div><div class="s-thumb" id="sl-6-t"></div></div><span class="s-val" id="sl-6-v">107.5%</span><div class="kf-dia on"></div></div>
+          <div class="wheels-row">
+            <div class="cwheel"><div class="cwheel-ring"><div class="cwheel-inner"><div class="cwheel-dot" id="cw-0"></div></div></div><span>Shadows</span></div>
+            <div class="cwheel"><div class="cwheel-ring"><div class="cwheel-inner"><div class="cwheel-dot" id="cw-1"></div></div></div><span>Midtones</span></div>
+            <div class="cwheel"><div class="cwheel-ring"><div class="cwheel-inner"><div class="cwheel-dot" id="cw-2"></div></div></div><span>Highlights</span></div>
+          </div>
+        </div>
+
+        <div class="insp-sec">
+          <div class="insp-sec-hdr"><span>Voiceover & Sidechain Ducking</span><span style="color:#34D399;">-14 LUFS</span></div>
+          <div class="s-row"><span class="s-lbl">Voice dB</span><div class="s-track"><div class="s-fill" id="sl-7-f"></div><div class="s-thumb" id="sl-7-t"></div></div><span class="s-val" id="sl-7-v">+2.6dB</span><div class="kf-dia on"></div></div>
+          <div class="s-row"><span class="s-lbl">BGM Duck</span><div class="s-track"><div class="s-fill" id="sl-8-f"></div><div class="s-thumb" id="sl-8-t"></div></div><span class="s-val" id="sl-8-v">-10.4dB</span><div class="kf-dia on"></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Lower: Multi-Track NLE Timeline -->
+    <div id="nle-timeline">
+      <div id="tl-toolbar">
+        <div class="tl-tools">
+          <span class="tl-tool-btn active" id="tl-btn-sel">↖ Select [V]</span>
+          <span class="tl-tool-btn" id="tl-btn-cut">✂ Split [B]</span>
+          <span class="tl-tool-btn" id="tl-btn-kf">◆ Keyframe</span>
+          <span class="tl-tool-btn" id="tl-btn-mag">🧲 Snap ON</span>
+          <span class="tl-tool-btn" id="tl-btn-sub">CC Auto-Sub ✓</span>
+        </div>
+        <div style="display:flex;gap:12px;align-items:center;font-family:Consolas,monospace;font-size:9.5px;">
+          <span style="color:#F472B6;" id="tl-kf-count">Keyframes: 42</span>
+          <span style="color:#67E8F9;">7 Tracks • 60fps</span>
+        </div>
+      </div>
+      <canvas id="tl-canvas" width="1080" height="395"></canvas>
+    </div>
+  </div>
+
+  <!-- 6. FULL-SCREEN 60FPS MULTI-CURSOR SWARM LAYER -->
+  <canvas id="cursor-canvas" width="1080" height="1920"></canvas>
+</div>
+
+<script src="assets/audio_data_inline.js"></script>
+<script src="swarm_engine.js"></script>
+</body>
+</html>

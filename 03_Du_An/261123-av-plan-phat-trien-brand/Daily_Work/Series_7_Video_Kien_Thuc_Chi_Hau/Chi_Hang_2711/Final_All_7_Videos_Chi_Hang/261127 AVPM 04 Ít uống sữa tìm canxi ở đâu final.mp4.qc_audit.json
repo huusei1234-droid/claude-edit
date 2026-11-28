@@ -1,0 +1,61 @@
+{
+  "inspected_at": "2026-11-27T17:49:07.317866",
+  "video_path": "C:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Series_7_Video_Kien_Thuc_Chi_Hau\\Chi_Hang_2711\\Final_All_7_Videos_Chi_Hang\\261127 AVPM 04 Ít uống sữa tìm canxi ở đâu final.mp4",
+  "fingerprint": {
+    "file_size": 24815412,
+    "sha256_head_tail": "b0a96dbef1a1456a72ec85b263a22cb61b48729feea11a358ded12878385293a"
+  },
+  "streams": {
+    "width": 1080,
+    "height": 1920,
+    "v_codec": "h264",
+    "a_codec": "aac",
+    "fps": 24.0,
+    "format_dur": 34.785,
+    "video_dur": 34.708,
+    "audio_dur": 34.785,
+    "av_sync_delta": 0.077
+  },
+  "letterbox": {
+    "top_black_px": 0,
+    "bottom_black_px": 0
+  },
+  "integrated_lufs": -15.0,
+  "cut_count": 3,
+  "cuts": [
+    {
+      "index": 1,
+      "start": 0.0,
+      "end": 14.04,
+      "dur": 14.04,
+      "label": "scene_01"
+    },
+    {
+      "index": 2,
+      "start": 14.04,
+      "end": 24.06,
+      "dur": 10.03,
+      "label": "scene_02"
+    },
+    {
+      "index": 3,
+      "start": 24.06,
+      "end": 34.77,
+      "dur": 10.71,
+      "label": "scene_03"
+    }
+  ],
+  "sheets": {
+    "all_cuts_full": "C:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Series_7_Video_Kien_Thuc_Chi_Hau\\Chi_Hang_2711\\V04_It_Uong_Sua_Tim_Canxi\\03_QC_Gate\\QC_FINAL_ALL_CUTS_FULL.jpg",
+    "all_cuts_zoom": "C:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Series_7_Video_Kien_Thuc_Chi_Hau\\Chi_Hang_2711\\V04_It_Uong_Sua_Tim_Canxi\\03_QC_Gate\\QC_FINAL_ALL_CUTS_ZOOM.jpg"
+  },
+  "audio_audit": {
+    "word_count": 113,
+    "eof_tail_sec": 0.155,
+    "eof_cutoff": false,
+    "repetitions": [],
+    "transcript": "Nhà mình có người ngại uống sữa thì tìm canxi ở đâu? Hàng sẽ nhìn ngay vào những món cả nhà vẫn ăn hàng ngày. Ví dụ, cá mòi ăn cả xương là một nguồn canxi, đậu phụ làm bằng muối canxi cũng là một lựa chọn. Còn nếu mua sữa đậu nành, hàng sẽ lật hộp xem có bổ sung canxi không và mỗi khẩu phần có bao nhiêu miligram. Có một chi tiết hay nữa là vitamin D giúp cơ thể hấp thu canxi. Lần tới đi chợ, thử tìm một món dầu canxi hợp khẩu vị cả nhà nhé. Cảm ơn các bạn đã theo dõi và hẹn gặp lại."
+  },
+  "machine_failures": [],
+  "machine_status": "READY_FOR_VISUAL_SIGN_OFF"
+}

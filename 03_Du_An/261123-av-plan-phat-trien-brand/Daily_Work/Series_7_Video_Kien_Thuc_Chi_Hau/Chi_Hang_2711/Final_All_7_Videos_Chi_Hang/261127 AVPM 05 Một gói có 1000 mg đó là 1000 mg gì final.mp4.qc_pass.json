@@ -1,0 +1,13 @@
+{
+  "signed_at": "2026-11-27T18:13:54.867630",
+  "certified_path": "C:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Series_7_Video_Kien_Thuc_Chi_Hau\\Chi_Hang_2711\\Final_All_7_Videos_Chi_Hang\\261127 AVPM 05 Một gói có 1000 mg đó là 1000 mg gì final.mp4",
+  "verdict": "PASS",
+  "auditor_verified": true,
+  "auditor": "video-qc-auditor",
+  "notes": "Đã kiểm duyệt 100% 3 cú cắt (#01, #02, #03) trên FULL/ZOOM sheets và nghe toàn bộ MP4: Cảnh #02 đã khử sạch 100% logo watermark góc dưới phải và tạo nhịp punch-in cận vừa đan xen đẹp mắt với 2 cảnh trung-rộng (#01, #03); cả 3 cảnh sử dụng lọ trắng trơn không nhãn thương hiệu giả, đĩa 1 viên vs 2 viên đúng kịch bản; Chị Hằng đồng nhất bộ Blazer Hồng Đất; hộp chữ nằm trọn trong vùng an toàn 9:16; thoại rõ ràng tròn chữ, 0% lặp từ, 0% đứt chữ, 0% BGM.",
+  "override_reason": "",
+  "cut_count": 3,
+  "integrated_lufs": -15.1,
+  "file_size": 21662062,
+  "sha256_head_tail": "6887483689005ccb8afe1e1480ee9320a42bc3831ffd7e291485e95e50933086"
+}

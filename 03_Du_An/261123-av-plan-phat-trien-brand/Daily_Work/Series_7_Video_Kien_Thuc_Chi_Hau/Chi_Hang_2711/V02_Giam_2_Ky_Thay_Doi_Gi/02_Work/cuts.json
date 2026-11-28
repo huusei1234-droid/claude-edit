@@ -1,0 +1,17 @@
+[
+  {
+    "start": 0.0,
+    "end": 9.76,
+    "label": "scene_01"
+  },
+  {
+    "start": 9.76,
+    "end": 19.461,
+    "label": "scene_02"
+  },
+  {
+    "start": 19.461,
+    "end": 27.961,
+    "label": "scene_03"
+  }
+]

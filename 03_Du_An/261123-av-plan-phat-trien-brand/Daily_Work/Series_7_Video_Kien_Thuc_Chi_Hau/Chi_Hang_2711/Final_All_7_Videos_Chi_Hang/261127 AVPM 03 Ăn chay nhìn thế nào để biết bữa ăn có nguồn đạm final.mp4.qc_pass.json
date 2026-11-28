@@ -1,0 +1,13 @@
+{
+  "signed_at": "2026-11-27T17:09:52.360435",
+  "certified_path": "C:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Series_7_Video_Kien_Thuc_Chi_Hau\\Chi_Hang_2711\\Final_All_7_Videos_Chi_Hang\\261127 AVPM 03 Ăn chay nhìn thế nào để biết bữa ăn có nguồn đạm final.mp4",
+  "verdict": "PASS",
+  "auditor_verified": true,
+  "auditor": "video-qc-auditor",
+  "notes": "Đã kiểm duyệt 100% 3 cú cắt (#01, #02, #03) trên FULL/ZOOM sheets và nghe toàn bộ MP4: Cả 3 cảnh mâm cơm chay đều 100% thuần thực vật (cơm, rau, nấm, canh bí, đậu phụ sốt cà, đậu gà, đậu lăng, ngũ cốc — đã loại sạch 100% đĩa trứng luộc); Chị Hằng đồng nhất bộ Sơ mi Linen Mint; hộp chữ Hook nằm gọn trong vùng an toàn 9:16; thoại rõ ràng đủ 91/91 từ (đủ cụm mình có thể thêm và các loại đậu và ngũ cốc), 0% lặp từ, 0% đứt chữ, 0% BGM.",
+  "override_reason": "",
+  "cut_count": 3,
+  "integrated_lufs": -14.9,
+  "file_size": 22642627,
+  "sha256_head_tail": "eed5a7aa98512f36b59b2d84a2319d401daf28b69bd15345e46fd0fd16abfc2f"
+}

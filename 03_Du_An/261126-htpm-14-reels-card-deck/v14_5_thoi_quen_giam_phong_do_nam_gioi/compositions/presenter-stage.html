@@ -1,0 +1,363 @@
+<template>
+  <style>
+    
+    @font-face { font-family: "Anton"; src: url("assets/fonts/Anton-Regular.ttf") format("truetype"); font-weight: 400; font-display: block; }
+    @font-face { font-family: "BarlowItalic"; src: url("assets/fonts/BarlowCondensed-BlackItalic.ttf") format("truetype"); font-weight: 900; font-style: italic; font-display: block; }
+    @font-face { font-family: "Montserrat"; src: url("assets/fonts/Montserrat-Black.ttf") format("truetype"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Asap"; src: url("assets/fonts/AsapCondensed-ExtraBold.ttf") format("truetype"); font-weight: 800; font-display: block; }
+    @font-face { font-family: "BeVN"; src: url("assets/fonts/BeVietnamPro-ExtraBold.ttf") format("truetype"); font-weight: 800; font-display: block; }
+
+    #root { position: absolute; inset: 0; width: 1080px; height: 1920px; overflow: hidden; background: #f5f2eb; }
+    /* Chị Hằng Base Studio (z-index 1) + Foreground RVM Cutout (z-index 20) — 100% UNSHIFTED & STATIONARY! */
+    #vid-bg { position: absolute; inset: 0; width: 1080px; height: 1920px; object-fit: cover; z-index: 1; }
+    #behind-stage { position: absolute; inset: 0; z-index: 6; pointer-events: none; perspective: 1100px; }
+    #vid-fg { position: absolute; inset: 0; width: 1080px; height: 1920px; object-fit: cover; z-index: 20; pointer-events: none; }
+
+    /* Opening 3s Yellow Hook Box (exact match to image 1 & reel_01..14@1.2s) */
+    #hook-slot { position: absolute; left: 96px; top: 1158px; width: 888px; height: 342px; z-index: 28; }
+    #hook-yellow-box {
+      position: relative; width: 100%; height: 100%;
+      background: linear-gradient(180deg, #ffe800 0%, #ffd200 100%);
+      border-radius: 48px;
+      box-shadow: 0 22px 46px rgba(0,0,0,0.28);
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      padding: 22px 28px; text-align: center; overflow: hidden;
+    }
+    #hook-sheen {
+      position: absolute; top: -40%; left: -35%; width: 45%; height: 180%;
+      background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.58) 50%, rgba(255,255,255,0) 100%);
+      pointer-events: none;
+    }
+    .hook-line {
+      font-family: "Montserrat", sans-serif; font-weight: 900; font-size: 51px;
+      line-height: 1.18; letter-spacing: -0.015em; color: #080808; text-transform: uppercase;
+      position: relative; z-index: 2;
+    }
+
+    /* Reusable Floating Behind-Shoulder Card Base (always inside #behind-stage at z-index 6 < vid-fg 20!) */
+    .sh-card {
+      position: absolute; width: 392px; border-radius: 30px;
+      background: rgba(255, 255, 255, 0.94); backdrop-filter: blur(10px);
+      border: 4px solid #ffffff;
+      box-shadow: 0 22px 48px rgba(15, 23, 42, 0.22);
+      padding: 12px; display: flex; flex-direction: column; gap: 8px;
+      opacity: 0; will-change: transform, opacity;
+    }
+    .sh-card img { width: 100%; height: 246px; border-radius: 20px; object-fit: cover; display: block; }
+    .sh-badge {
+      align-self: flex-start; padding: 5px 14px; border-radius: 999px;
+      font-family: "Montserrat", sans-serif; font-size: 17px; color: #ffffff; background: #0284c7;
+    }
+    .sh-head { font-family: "BeVN", sans-serif; font-size: 26px; line-height: 1.14; color: #0f172a; text-transform: uppercase; }
+    .sh-desc { font-family: "BeVN", sans-serif; font-size: 20px; line-height: 1.20; color: #475569; }
+    
+        .sub-cue {
+          position: absolute; left: 54px; top: 1288px; width: 972px; text-align: center;
+          font-family: "BarlowItalic", sans-serif; font-weight: 900; font-style: italic; font-size: 64px; line-height: 1.12;
+          color: #5cf7e0; -webkit-text-stroke: 10px #08121e; paint-order: stroke fill;
+          filter: drop-shadow(0 6px 16px rgba(0,0,0,0.45));
+          z-index: 25; opacity: 0; pointer-events: none;
+        }
+        .sub-cue .hl-yellow { color: #ffe600; }
+        
+    
+    
+    #th-anim-dim {
+      position: absolute; inset: 0; z-index: 2; opacity: 0; pointer-events: none;
+      background: radial-gradient(circle at 50% 42%, rgba(30, 27, 75, 0.34) 0%, rgba(7, 10, 25, 0.64) 100%);
+    }
+    #th-rings-bg {
+      position: absolute; inset: 0; z-index: 3; opacity: 0; pointer-events: none;
+      background: radial-gradient(circle at 50% 42%, #232c52 0%, #050814 88%);
+      overflow: hidden;
+    }
+    #th-rings-flash { position: absolute; inset: 0; background: #ffffff; opacity: 0; }
+    .th-ring-lg {
+      position: absolute; left: 30px; top: 180px; width: 1020px; height: 1020px;
+      border-radius: 50%; border: 4px dashed rgba(143, 248, 255, 0.50);
+    }
+    .th-ring-sm {
+      position: absolute; left: 150px; top: 300px; width: 780px; height: 780px;
+      border-radius: 50%; border: 3px solid rgba(196, 181, 253, 0.40);
+    }
+    /* Continuous Flying/Gliding Icon Canvas (z-index 4: strictly BEHIND vid-fg z-index 20!) */
+    #th-float-cvs {
+      position: absolute; left: 0; top: 0; width: 1080px; height: 1180px; z-index: 4; pointer-events: none;
+    }
+
+    .th-hook-badge {
+      position: absolute; width: 164px; height: 164px;
+      border-radius:50%; background:linear-gradient(145deg,#083344,#0e7490); border:4px solid #67e8f9; box-shadow:0 14px 32px rgba(6,182,212,0.38);
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; will-change: transform, opacity;
+    }
+    .th-hook-ico { font-size: 70px; filter: drop-shadow(0 4px 12px #ffffff); }
+    .th-burst {
+      position: absolute; width: 84px; height: 84px; border-radius: 50%;
+      border: 5px solid #ffffff; opacity: 0; pointer-events: none;
+    }
+
+    /* Top Keyword Card-Pause Mask: gently hides shoulder cards during [kw_s..kw_e] so 0% collision! */
+    #cards-substage { position: absolute; inset: 0; will-change: opacity; }
+
+    #th-neon-num {
+      position: absolute; right: 28px; top: 197px;
+      font-family: "BarlowItalic", sans-serif; font-size: 205px; line-height: 0.85;
+      color: rgba(154, 130, 255, 0.38); -webkit-text-stroke: 6px #8ff8ff;
+      filter: drop-shadow(0 0 20px rgba(85, 242, 255, 0.72)); opacity: 0;
+    }
+    #th-kw-light-sweep {
+      position: absolute; left: -260px; top: 137px; width: 220px; height: 240px;
+      background: linear-gradient(105deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.80) 50%, rgba(255,255,255,0) 100%);
+      transform: skewX(-22deg); opacity: 0; pointer-events: none; mix-blend-mode: screen; z-index: 9;
+    }
+    .sub-ghost {
+      position: absolute; inset: 0; pointer-events: none;
+      color: transparent !important; -webkit-text-stroke: 3.5px #8ff8ff !important;
+      opacity: 0; will-change: transform, opacity;
+    }
+    
+    
+    .hb-card {
+      position: absolute; top: 336px; width: 364px; padding: 20px 22px; border-radius: 28px;
+      background: rgba(255,255,255,0.95); border: 4px solid #0f172a;
+      box-shadow: 0 20px 44px rgba(15,23,42,0.22); opacity: 0;
+    }
+    .hb-top { font-family:"Montserrat",sans-serif; font-size:21px; color:#fff; display:inline-block; padding:5px 15px; border-radius:999px; margin-bottom:8px; }
+    .hb-h { font-family:"BeVN",sans-serif; font-size:30px; color:#0f172a; }
+    .hb-s { margin-top:4px; font-family:"BeVN",sans-serif; font-size:21px; color:#475569; }
+    
+    
+        #cards-substage [id$="-kw"] { display: none !important; }
+        #top-kw-master {
+          position: absolute; left: 24px; top: 151px; width: 1032px; text-align: center;
+          z-index: 8; opacity: 0; pointer-events: none;
+        }
+        .tkm-l1 {
+          font-family: "BeVN", sans-serif; font-size: 78px; font-style: italic; font-weight: 900;
+          line-height: 1.02; color: #be123c; -webkit-text-stroke: 9px #ffffff; paint-order: stroke fill;
+          filter: drop-shadow(0 8px 20px rgba(0,0,0,0.32)); text-transform: uppercase;
+        }
+        .tkm-l2 {
+          font-family: "BeVN", sans-serif; font-size: 78px; font-style: italic; font-weight: 900;
+          line-height: 1.03; color: #1d4ed8; -webkit-text-stroke: 9px #ffffff; paint-order: stroke fill;
+          filter: drop-shadow(0 8px 20px rgba(0,0,0,0.32)); text-transform: uppercase;
+        }
+        
+  </style>
+  <div id="root" data-composition-id="presenter-stage" data-width="1080" data-height="1920">
+    <video id="vid-bg" class="clip" src="assets/videos/presenter.mp4" data-start="0" data-duration="14.33" data-track-index="1" playsinline data-has-audio="true" data-volume="1.0"></video>
+    
+    <div id="th-anim-dim" data-layout-ignore></div>
+    <div id="th-rings-bg" data-layout-ignore>
+      <div class="th-ring-lg" id="th-rlg"></div>
+      <div class="th-ring-sm" id="th-rsm"></div>
+      <div id="th-rings-flash"></div>
+    </div>
+    <canvas id="th-float-cvs" width="1080" height="1180" data-layout-ignore></canvas>
+    
+    <div id="behind-stage" data-layout-ignore>
+      
+    <div id="th-b1" class="th-burst" style="left: 112px; top: 345px"></div>
+    <div id="th-b2" class="th-burst" style="right: 112px; top: 345px"></div>
+    <div id="th-tile-l" class="th-hook-badge" style="left: 52px; top: 307px">
+      <div class="th-hook-ico">🚭</div>
+    </div>
+    <div id="th-tile-r" class="th-hook-badge" style="right: 52px; top: 307px">
+      <div class="th-hook-ico">🏃</div>
+    </div>
+    <div id="th-neon-num">14</div>
+    <div id="th-kw-light-sweep"></div>
+    
+      <div id="top-kw-master"><div class="tkm-l1">5 THÓI QUEN</div><div class="tkm-l2">BÀO MÒN PHONG ĐỘ!</div></div>
+      <div id="cards-substage">
+        
+    <div id="hb-1" class="hb-card" style="left: 26px; border-color:#ef4444">
+      <img src="assets/images/broll_01.jpg" style="width:100%;height:175px;border-radius:16px;object-fit:cover;margin-bottom:8px" />
+      <div class="hb-top" style="background:#ef4444">THÓI QUEN 01</div>
+      <div class="hb-h">🌙 THỨC KHUYA</div>
+      <div class="hb-s">Suy giảm nội tiết nam</div>
+    </div>
+
+    <div id="hb-2" class="hb-card" style="right: 26px; border-color:#f59e0b">
+      
+      <div class="hb-top" style="background:#f59e0b">THÓI QUEN 02</div>
+      <div class="hb-h">🍻 RƯỢU BIA NHIỀU</div>
+      <div class="hb-s">Cương kém ổn định</div>
+    </div>
+
+    <div id="hb-3" class="hb-card" style="left: 26px; border-color:#dc2626">
+      
+      <div class="hb-top" style="background:#dc2626">THÓI QUEN 03</div>
+      <div class="hb-h">🚬 HÚT THUỐC LÁ</div>
+      <div class="hb-s">Xơ hẹp mạch máu nuôi</div>
+    </div>
+
+    <div id="hb-4" class="hb-card" style="right: 26px; border-color:#0284c7">
+      <img src="assets/images/broll_02.jpg" style="width:100%;height:175px;border-radius:16px;object-fit:cover;margin-bottom:8px" />
+      <div class="hb-top" style="background:#0284c7">THÓI QUEN 04</div>
+      <div class="hb-h">🪑 NGỒI NHIỀU LÌ</div>
+      <div class="hb-s">Trì trệ tuần hoàn chậu</div>
+    </div>
+
+    <div id="hb-5" class="hb-card" style="left: 26px; border-color:#8b5cf6">
+      
+      <div class="hb-top" style="background:#8b5cf6">THÓI QUEN 05</div>
+      <div class="hb-h">⚡ CĂNG THẲNG DÀI</div>
+      <div class="hb-s">Thay đổi sớm ngay nhé!</div>
+    </div>
+      </div>
+    </div>
+    <video id="vid-fg" class="clip" src="assets/videos/presenter_cutout.webm" data-start="0" data-duration="14.33" muted playsinline data-layout-allow-occlusion></video>
+    
+    <div id="hook-slot" class="clip" data-start="0" data-duration="3.45" data-layout-allow-caption-zone data-layout-allow-overflow>
+      <div id="hook-yellow-box">
+        <div id="hook-sheen" data-layout-ignore></div>
+        <div class="hook-line">5 THÓI QUEN</div>
+        <div class="hook-line">ÂM THẦM BÀO MÒN</div>
+        <div class="hook-line">PHONG ĐỘ ĐÀN ÔNG!</div>
+      </div>
+    </div>
+<div id="scue-1" class="sub-cue" data-layout-ignore><div class="sub-ghost">liên tục; thứ hai là uống</div><div class="sub-main">liên tục; thứ hai là uống</div></div>
+<div id="scue-2" class="sub-cue" data-layout-ignore><div class="sub-ghost">nhiều <span class="hl-yellow">rượu</span> <span class="hl-yellow">bia</span> làm <span class="hl-yellow">cương</span> kém</div><div class="sub-main">nhiều <span class="hl-yellow">rượu</span> <span class="hl-yellow">bia</span> làm <span class="hl-yellow">cương</span> kém</div></div>
+<div id="scue-3" class="sub-cue" data-layout-ignore><div class="sub-ghost">hại <span class="hl-yellow">mạch</span> <span class="hl-yellow">máu;</span></div><div class="sub-main">hại <span class="hl-yellow">mạch</span> <span class="hl-yellow">máu;</span></div></div>
+<div id="scue-4" class="sub-cue" data-layout-ignore><div class="sub-ghost">thứ tư là ngồi nhiều ít</div><div class="sub-main">thứ tư là ngồi nhiều ít</div></div>
+<div id="scue-5" class="sub-cue" data-layout-ignore><div class="sub-ghost">vận động; và thứ năm là</div><div class="sub-main">vận động; và thứ năm là</div></div>
+<div id="scue-6" class="sub-cue" data-layout-ignore><div class="sub-ghost"><span class="hl-yellow">căng</span> <span class="hl-yellow">thẳng</span> kéo dài.</div><div class="sub-main"><span class="hl-yellow">căng</span> <span class="hl-yellow">thẳng</span> kéo dài.</div></div>
+<div id="scue-7" class="sub-cue" data-layout-ignore><div class="sub-ghost">Các anh thay đổi sớm nhé!</div><div class="sub-main">Các anh thay đổi sớm nhé!</div></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    
+    // Varied Hook Badges + Burst Rings
+    tl.fromTo("#th-b1", { scale: 0.3, opacity: 0.9 }, { scale: 2.0, opacity: 0, duration: 0.34, ease: "power2.out" }, 0.10);
+    tl.fromTo("#th-tile-l", { y: 95, scale: 0.55, rotation: -14, opacity: 0 }, { y: 0, scale: 0.94, rotation: -6, opacity: 1, duration: 0.30, ease: "back.out(1.8)" }, 0.10);
+    tl.to("#th-tile-l", { y: -45, scale: 0.75, opacity: 0, duration: 0.20, ease: "power2.in" }, 3.23);
+    
+
+    tl.fromTo("#th-b2", { scale: 0.3, opacity: 0.9 }, { scale: 2.0, opacity: 0, duration: 0.34, ease: "power2.out" }, 0.24);
+    tl.fromTo("#th-tile-r", { y: 95, scale: 0.55, rotation: 14, opacity: 0 }, { y: 0, scale: 0.94, rotation: 6, opacity: 1, duration: 0.30, ease: "back.out(1.8)" }, 0.24);
+    tl.to("#th-tile-r", { y: -45, scale: 0.75, opacity: 0, duration: 0.20, ease: "power2.in" }, 3.23);
+        
+
+    tl.to("#cards-substage", { opacity: 0.08, duration: 0.16 }, 6.14);
+    tl.to("#cards-substage", { opacity: 1.0, duration: 0.20 }, 7.34);
+    tl.to("#th-anim-dim", { opacity: 0.82, duration: 0.28, ease: "power2.out" }, 6.14);
+    tl.to("#th-anim-dim", { opacity: 0, duration: 0.28, ease: "power2.in" }, 7.32);
+    tl.fromTo("#th-kw-light-sweep", { x: 120, opacity: 0.95 }, { x: 1180, opacity: 0, duration: 0.76, ease: "power2.inOut", immediateRender: false }, 6.36);
+    
+
+    tl.fromTo("#th-rings-bg", { scale: 1.16, opacity: 0 }, { scale: 1.0, opacity: 0.88, duration: 0.34, ease: "power3.out", immediateRender: false }, 11.48);
+    tl.fromTo("#th-rings-flash", { opacity: 0.48 }, { opacity: 0, duration: 0.15, immediateRender: false }, 11.48);
+    tl.to("#th-rlg", { rotation: 46, duration: 2.85, ease: "none" }, 11.48);
+    tl.to("#th-rsm", { rotation: -54, duration: 2.85, ease: "none" }, 11.48);
+        
+
+    const flCtx = document.getElementById("th-float-cvs").getContext("2d");
+    const VID_IDX = 14;
+    const flPrx = { t: 0 };
+    tl.to(flPrx, {
+      t: 14.33, duration: 14.33, ease: "none",
+      onUpdate: () => {
+        const t = flPrx.t;
+        flCtx.clearRect(0, 0, 1080, 1180);
+        // 8 Gently Gliding / Flying Topic Icons in Left [55..275] & Right [805..1025] Corridors behind Chị Hằng!
+        for (let i = 0; i < 8; i++) {
+          const isLeft = (i % 2 === 0);
+          const laneX = isLeft ? (95 + (i * 37) % 165) : (825 + (i * 43) % 165);
+          const cyc = (t * 0.24 + i * 0.135) % 1;
+          const fx = laneX + Math.sin(t * 1.9 + i * 1.3) * 34;
+          const fy = 980 - cyc * 860;
+          const alpha = Math.sin(cyc * Math.PI) * 0.82;
+          if (alpha <= 0.05) continue;
+
+          flCtx.save();
+          flCtx.globalAlpha = alpha;
+          flCtx.translate(fx, fy);
+          const rot = Math.sin(t * 2.2 + i) * 0.25;
+
+          if (VID_IDX === 1 || VID_IDX === 2 || VID_IDX === 3) {
+            // Flying/Swimming 3D Sperm & Glowing Aqua/Rose Orbs!
+            flCtx.rotate(isLeft ? -0.45 + rot * 0.4 : -2.65 + rot * 0.4);
+            flCtx.fillStyle = (VID_IDX === 3 && i % 3 === 0) ? "#f472b6" : "#38bdf8";
+            flCtx.beginPath(); flCtx.ellipse(0, 0, 15, 9.5, 0, 0, Math.PI * 2); flCtx.fill();
+            flCtx.strokeStyle = "#7dd3fc"; flCtx.lineWidth = 3.5; flCtx.beginPath();
+            for (let k = 0; k <= 8; k++) {
+              const u = k / 8;
+              const tx = -12 - u * 48;
+              const ty = Math.sin(t * 18 + i - u * 6) * (3 + u * 8);
+              if (k === 0) flCtx.moveTo(tx, ty); else flCtx.lineTo(tx, ty);
+            }
+            flCtx.stroke();
+          } else if (VID_IDX === 6 || VID_IDX === 9) {
+            // Gliding Ruby Hearts & Cobalt/Mint Wellness Rings!
+            flCtx.scale(0.85 + (i % 3) * 0.15, 0.85 + (i % 3) * 0.15);
+            flCtx.rotate(rot);
+            if (isLeft) {
+              flCtx.fillStyle = "#fb7185";
+              flCtx.beginPath(); flCtx.moveTo(0, 16); flCtx.bezierCurveTo(-24, -2, -22, -22, 0, -9); flCtx.bezierCurveTo(22, -22, 24, -2, 0, 16); flCtx.fill();
+            } else {
+              flCtx.strokeStyle = "#3b82f6"; flCtx.lineWidth = 4;
+              flCtx.beginPath(); flCtx.arc(0, 0, 16, 0, Math.PI * 2); flCtx.stroke();
+            }
+          } else if (VID_IDX === 11) {
+            // Drifting Frost Crystals &Crescent Moons!
+            flCtx.rotate(t * 0.8 + i);
+            flCtx.strokeStyle = "#38bdf8"; flCtx.lineWidth = 3.5;
+            for (let a = 0; a < 3; a++) {
+              flCtx.rotate(Math.PI / 3);
+              flCtx.beginPath(); flCtx.moveTo(-16, 0); flCtx.lineTo(16, 0); flCtx.stroke();
+            }
+          } else if (VID_IDX === 12) {
+            // Rising Golden Effervescent Bubbles & Red Warning Rings!
+            flCtx.fillStyle = i % 3 === 0 ? "rgba(239,68,68,0.45)" : "rgba(251,191,36,0.55)";
+            flCtx.strokeStyle = "#ffffff"; flCtx.lineWidth = 2.5;
+            flCtx.beginPath(); flCtx.arc(0, 0, 11 + (i % 3) * 5, 0, Math.PI * 2); flCtx.fill(); flCtx.stroke();
+          } else {
+            // Gliding Medical Shields, Plus Crosses & Vitality Rings (#04, #05, #07, #08, #10, #13, #14)
+            flCtx.rotate(rot);
+            if (i % 2 === 0) {
+              flCtx.fillStyle = "#10b981";
+              flCtx.beginPath(); flCtx.roundRect(-5, -16, 10, 32, 4); flCtx.fill();
+              flCtx.beginPath(); flCtx.roundRect(-16, -5, 32, 10, 4); flCtx.fill();
+            } else {
+              flCtx.strokeStyle = "#0ea5e9"; flCtx.lineWidth = 4;
+              flCtx.beginPath(); flCtx.roundRect(-15, -15, 30, 30, 9); flCtx.stroke();
+            }
+          }
+          flCtx.restore();
+        }
+      }
+    }, 0);
+    
+    
+    tl.fromTo("#top-kw-master", { scale: 0.86, y: 20, opacity: 0 }, { scale: 1.0, y: 0, opacity: 1, duration: 0.22, ease: "back.out(1.8)", immediateRender: false }, 6.28);
+    tl.to("#top-kw-master", { y: -18, opacity: 0, duration: 0.16, ease: "power2.in" }, 7.24);
+        
+    
+    
+    tl.fromTo("#hook-yellow-box", { scale: 0.84, y: 36, opacity: 0.92 }, { scale: 1.02, y: -3, opacity: 1, duration: 0.22, ease: "back.out(1.7)" }, 0);
+    tl.to("#hook-yellow-box", { scale: 1.0, y: 0, duration: 0.14, ease: "power2.out" }, 0.22);
+    tl.fromTo("#hook-sheen", { x: -140, rotation: 18 }, { x: 980, rotation: 18, duration: 0.62, ease: "power2.inOut" }, 0.28);
+    tl.to("#hook-yellow-box", { scale: 0.88, y: 30, opacity: 0, duration: 0.20, ease: "power2.in" }, 3.23);
+
+    // A5 + A6 Talking-Head Subtitles: Rise + Blur-Focus + Stroke-Up Expanding Outline Ghost!
+    const subCues = [{ id: "#scue-1", s: 3.53, e: 4.77 }, { id: "#scue-2", s: 4.79, e: 6.01 }, { id: "#scue-3", s: 7.44, e: 8.20 }, { id: "#scue-4", s: 8.33, e: 9.77 }, { id: "#scue-5", s: 9.79, e: 11.19 }, { id: "#scue-6", s: 11.21, e: 12.30 }, { id: "#scue-7", s: 12.81, e: 14.16 }];
+    for (const c of subCues) {
+      tl.set(c.id, { opacity: 1 }, c.s);
+      tl.fromTo(c.id + " .sub-main", { y: 26, filter: "blur(10px)", opacity: 0 }, { y: 0, filter: "blur(0px)", opacity: 1, duration: 0.15, ease: "power3.out", immediateRender: false }, c.s);
+      tl.fromTo(c.id + " .sub-ghost", { scale: 1.0, opacity: 0.72 }, { scale: 1.72, opacity: 0, duration: 0.32, ease: "power2.out", immediateRender: false }, c.s + 0.04);
+      tl.to(c.id, { opacity: 0, duration: 0.08 }, c.e - 0.08);
+    }
+    tl.fromTo("#hb-1", { x: -200, rotation: -10.5, opacity: 0 }, { x: 0, rotation: -3.5, opacity: 1, duration: 0.30, ease: "back.out(1.7)", immediateRender: false }, 2.76);
+tl.to("#hb-1", { y: -50, opacity: 0, duration: 0.20 }, 6.44);
+tl.fromTo("#hb-2", { x: 200, rotation: 10.5, opacity: 0 }, { x: 0, rotation: 3.5, opacity: 1, duration: 0.30, ease: "back.out(1.7)", immediateRender: false }, 4.16);
+tl.to("#hb-2", { y: -50, opacity: 0, duration: 0.20 }, 8.20);
+tl.fromTo("#hb-3", { x: -200, rotation: -10.5, opacity: 0 }, { x: 0, rotation: -3.5, opacity: 1, duration: 0.30, ease: "back.out(1.7)", immediateRender: false }, 6.62);
+tl.to("#hb-3", { y: -50, opacity: 0, duration: 0.20 }, 10.44);
+tl.fromTo("#hb-4", { x: 200, rotation: 10.5, opacity: 0 }, { x: 0, rotation: 3.5, opacity: 1, duration: 0.30, ease: "back.out(1.7)", immediateRender: false }, 8.38);
+tl.fromTo("#hb-5", { x: -200, rotation: -10.5, opacity: 0 }, { x: 0, rotation: -3.5, opacity: 1, duration: 0.30, ease: "back.out(1.7)", immediateRender: false }, 10.62);
+    
+    window.__timelines["presenter-stage"] = tl;
+  </script>
+</template>

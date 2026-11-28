@@ -1,0 +1,13 @@
+{
+  "signed_at": "2026-11-27T16:38:15.000000",
+  "certified_path": "C:\\AI\\full studio\\output\\k5-ep01-v4\\261127 K5 Con dâu khóc nghẹn mất hai hộp sữa chị gái tặng và màn chồng bắt em chồng trả quà xin lỗi tại chỗ final.mp4",
+  "verdict": "PASS",
+  "auditor_verified": true,
+  "auditor": "video-qc-auditor",
+  "notes": "Đã kiểm duyệt độc lập 100% toàn bộ 27/27 cú cắt trên QC_FINAL_ALL_CUTS_FULL.jpg, QC_FINAL_ALL_CUTS_ZOOM.jpg, action_lead_strip.jpg đối chiếu 1:1 với SKU_REF (pr_2bojomi_nobag_1x1.jpg) và .qc_audit.json: (1) Bao bì sản phẩm tại cả 8 cảnh có hộp (#05, #07, #08, #11, #14, #18, #22, #27) khớp 100% thiết kế thật 2 hộp giấy chữ nhật nắp phẳng trắng - xanh lá đậm AN VƯỢNG PHARMA - BOJOMI (0% hộp trắng giả, 0% nắp nhựa vặn, 0% túi xách); (2) 0% đạo cụ/hộp thừa trên mặt bàn ở toàn bộ các cảnh đối thoại không cần sản phẩm (#01, #02, #03, #06, #09, #10, #12, #13, #15, #16, #17, #19, #20, #21, #23, #24, #25, #26); (3) Chuỗi nhân quả vật lý liền mạch chặt chẽ: Bà Hạnh tới bàn gọi Linh (#08 s03) -> Linh lén gom chụp giấu 2 hộp ra sau lưng (#18 s10b) -> Chị Hai Ngân chỉ điểm (#20 s12) -> Tuấn bước nhanh băng ngang phòng qua bắt quả tang Linh trên bàn trống (#21 s12b) -> đặt 2 hộp BOJOMI thu hồi lên bàn (#22 cu_boj_03) -> trả lại trên bàn kết phim (#27 s17); (4) Đan xen 10/26 cảnh Toàn/Trung-Toàn (WS/MLS ~38.5%) thoáng rộng sinh động cùng cảnh Cận cảm xúc và Insert sản phẩm; (5) Kỹ thuật & Âm thanh đạt chuẩn READY_FOR_VISUAL_SIGN_OFF (1080x1920@30fps, av_sync_delta=0.001s, letterbox=0px, -16.2 LUFS, eof_cutoff=false với tail 0.76s, repetitions=[] 0% lặp từ, Hook 3 nhịp mở đầu tròn câu rõ nghĩa).",
+  "override_reason": "",
+  "cut_count": 27,
+  "integrated_lufs": -16.2,
+  "file_size": 114519999,
+  "sha256_head_tail": "bd8044e3a265906cdb5d76b5880af5416b23afddbdf59ff4a287ca2de103d504"
+}

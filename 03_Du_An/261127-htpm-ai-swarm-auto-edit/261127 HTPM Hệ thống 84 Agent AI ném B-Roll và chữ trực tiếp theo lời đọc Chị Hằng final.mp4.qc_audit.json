@@ -1,0 +1,96 @@
+{
+  "inspected_at": "2026-11-27T17:40:02.080847",
+  "video_path": "C:\\AI\\full studio\\projects\\htpm_ai_swarm_auto_edit_261127\\261127 HTPM Hệ thống 84 Agent AI ném B-Roll và chữ trực tiếp theo lời đọc Chị Hằng final.mp4",
+  "fingerprint": {
+    "file_size": 72973398,
+    "sha256_head_tail": "9655df1d9cbc8f70bc14905d4466577c99dbad771858f80ea13c7e2c0742e8c5"
+  },
+  "streams": {
+    "width": 1080,
+    "height": 1920,
+    "v_codec": "h264",
+    "a_codec": "aac",
+    "fps": 60.0,
+    "format_dur": 21.32,
+    "video_dur": 21.317,
+    "audio_dur": 21.32,
+    "av_sync_delta": 0.003
+  },
+  "letterbox": {
+    "top_black_px": 0,
+    "bottom_black_px": 0
+  },
+  "integrated_lufs": -14.2,
+  "cut_count": 8,
+  "cuts": [
+    {
+      "index": 1,
+      "start": 0.0,
+      "end": 1.6,
+      "dur": 1.6,
+      "label": "v4_01_throw_hook_board"
+    },
+    {
+      "index": 2,
+      "start": 1.6,
+      "end": 2.9,
+      "dur": 1.3,
+      "label": "v4_02_throw_pill_tuoi25"
+    },
+    {
+      "index": 3,
+      "start": 2.9,
+      "end": 5.5,
+      "dur": 2.6,
+      "label": "v4_03_throw_5_medical_icons"
+    },
+    {
+      "index": 4,
+      "start": 5.5,
+      "end": 8.2,
+      "dur": 2.7,
+      "label": "v4_04_throw_dieukinh_and_scale"
+    },
+    {
+      "index": 5,
+      "start": 8.2,
+      "end": 13.8,
+      "dur": 5.6,
+      "label": "v4_05_follow_subs_and_cms"
+    },
+    {
+      "index": 6,
+      "start": 13.8,
+      "end": 16.0,
+      "dur": 2.2,
+      "label": "v4_06_throw_tea_broll_and_ui100"
+    },
+    {
+      "index": 7,
+      "start": 16.0,
+      "end": 20.5,
+      "dur": 4.5,
+      "label": "v4_07_follow_nangluong_subs"
+    },
+    {
+      "index": 8,
+      "start": 20.5,
+      "end": 21.35,
+      "dur": 0.85,
+      "label": "v4_08_complete_36clips_export"
+    }
+  ],
+  "sheets": {
+    "all_cuts_full": "C:\\AI\\full studio\\projects\\htpm_ai_swarm_auto_edit_261127\\qc_report_v4\\QC_FINAL_ALL_CUTS_FULL.jpg",
+    "all_cuts_zoom": "C:\\AI\\full studio\\projects\\htpm_ai_swarm_auto_edit_261127\\qc_report_v4\\QC_FINAL_ALL_CUTS_ZOOM.jpg"
+  },
+  "audio_audit": {
+    "word_count": 90,
+    "eof_tail_sec": 0.4,
+    "eof_cutoff": false,
+    "repetitions": [],
+    "transcript": "Có 5 sản phẩm mà nếu là phụ nữ sau tuổi 25, tôi nghĩ chị em nên tìm hiểu để chăm sóc sức khỏe và sắc đẹp từ bên trong. Thứ nhất là sản phẩm hỗ trợ điều hoa chu kỳ và chăm sóc nồi tiết tổ nữ. Một cơ thể khỏe mạnh thường bắt đầu từ sự cân bằng. Khi chăm sóc tổ sức khỏe nồi tiết, nhiều chị em cũng cảm thấy cơ thể có nhiều năng lượng hơn và tự tin hơn trong cuộc sống hàng ngày."
+  },
+  "machine_failures": [],
+  "machine_status": "READY_FOR_VISUAL_SIGN_OFF"
+}

@@ -1,0 +1,174 @@
+<template>
+  <style>
+    @font-face { font-family: "FrauncesVN"; src: url("assets/fonts/Fraunces-Black.ttf") format("truetype"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "PlayfairVN"; src: url("assets/fonts/PlayfairDisplay-ExtraBold.ttf") format("truetype"); font-weight: 800; font-display: block; }
+    @font-face { font-family: "PlayfairVNItalic"; src: url("assets/fonts/PlayfairDisplay-BoldItalic.ttf") format("truetype"); font-weight: 700; font-style: italic; font-display: block; }
+    @font-face { font-family: "BeVietnamVN"; src: url("assets/fonts/BeVietnamPro-ExtraBold.ttf") format("truetype"); font-weight: 800; font-display: block; }
+    @font-face { font-family: "BeVietnamSemiVN"; src: url("assets/fonts/BeVietnamPro-SemiBold.ttf") format("truetype"); font-weight: 600; font-display: block; }
+    @font-face { font-family: "DancingVN"; src: url("assets/fonts/DancingScript-Bold.ttf") format("truetype"); font-weight: 700; font-display: block; }
+
+    #root {
+      position: absolute; inset: 0; width: 1080px; height: 1920px; overflow: hidden;
+      background: #072614; font-family: "BeVietnamVN", sans-serif;
+    }
+    .cam-rig { position: absolute; inset: 0; width: 1080px; height: 1920px; transform-origin: 50% 50%; }
+    .bg-video { position: absolute; inset: 0; width: 1080px; height: 1920px; object-fit: cover; display: block; }
+    .float-stage {
+      position: absolute; inset: 0; width: 1080px; height: 1920px;
+      pointer-events: none; z-index: 9;
+    }
+    .svg-typo { width: 100%; height: 100%; overflow: visible; display: block; }
+    .brand-contour {
+      font-family: "PlayfairVN", Georgia, serif;
+      font-weight: 800; paint-order: stroke fill;
+      stroke: #ffffff; stroke-width: 14px; stroke-linejoin: round; stroke-linecap: round;
+      letter-spacing: 0.01em;
+    }
+    .brand-ht {
+      font-family: "PlayfairVNItalic", Georgia, serif;
+      font-style: italic; font-weight: 700; paint-order: stroke fill;
+      stroke: #ffffff; stroke-width: 14px; stroke-linejoin: round; stroke-linecap: round;
+    }
+    .script-sub {
+      font-family: "DancingVN", cursive;
+      font-weight: 700; paint-order: stroke fill;
+      stroke: rgba(255, 255, 255, 0.95); stroke-width: 8px; stroke-linejoin: round;
+    }
+    .upper-claim {
+      font-family: "BeVietnamVN", sans-serif;
+      font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em;
+      paint-order: stroke fill;
+      stroke: rgba(255, 255, 255, 0.96); stroke-width: 9px; stroke-linejoin: round;
+    }
+    .satin-hero {
+      font-family: "FrauncesVN", "PlayfairVN", Georgia, serif;
+      font-weight: 900; letter-spacing: -0.01em;
+      paint-order: stroke fill;
+      stroke: rgba(255, 255, 255, 0.92); stroke-width: 10px; stroke-linejoin: round;
+    }
+    .cta-open {
+      font-family: "BeVietnamVN", sans-serif;
+      font-weight: 800; letter-spacing: 0.01em;
+      paint-order: stroke fill;
+      stroke: #ffffff; stroke-width: 11px; stroke-linejoin: round; stroke-linecap: round;
+    }
+
+    /* Frosted Liquid-Glass Slide Overlay System (Safe Zone X in [64..865], Face-Safe 100%) */
+    .slide-card {
+      position: absolute;
+      left: 64px;
+      border-radius: 26px;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.94) 0%, rgba(240, 252, 244, 0.90) 100%);
+      border: 2.5px solid rgba(22, 148, 62, 0.34);
+      box-shadow: 0 14px 34px rgba(5, 42, 18, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.95);
+      padding: 18px 24px;
+      z-index: 10;
+      pointer-events: none;
+    }
+    .slide-card-header {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: linear-gradient(90deg, #0B6E2B 0%, #179440 100%);
+      color: #ffffff;
+      font-family: "BeVietnamVN", sans-serif;
+      font-size: 19px;
+      font-weight: 800;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 999px;
+      margin-bottom: 12px;
+      box-shadow: 0 4px 12px rgba(11, 110, 43, 0.28);
+    }
+    .slide-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-family: "BeVietnamVN", sans-serif;
+      font-size: 24px;
+      font-weight: 800;
+      color: #083D19;
+      padding: 6px 0;
+      line-height: 1.28;
+    }
+    .slide-badge-dot {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 17px;
+      font-weight: 800;
+      flex-shrink: 0;
+      background: #E4F8EA;
+      color: #0D7A31;
+      border: 2px solid #8BE0A4;
+    }
+    .slide-badge-warn {
+      background: #FFF1DF;
+      color: #C95B00;
+      border: 2px solid #F7BA77;
+    }
+    .slide-pill-stack {
+      position: absolute;
+      left: 64px;
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+      z-index: 10;
+      pointer-events: none;
+    }
+    .slide-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 247, 236, 0.92) 100%);
+      border-left: 7px solid #E07A00;
+      border-top: 1.5px solid rgba(255, 255, 255, 0.95);
+      border-right: 1.5px solid rgba(224, 122, 0, 0.25);
+      border-bottom: 1.5px solid rgba(224, 122, 0, 0.25);
+      border-radius: 18px;
+      padding: 11px 22px;
+      font-family: "BeVietnamVN", sans-serif;
+      font-size: 24px;
+      font-weight: 800;
+      color: #4A1E00;
+      box-shadow: 0 10px 24px rgba(38, 18, 4, 0.20);
+      width: fit-content;
+      max-width: 780px;
+    }
+    .slide-pill-emerald {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.96) 0%, rgba(236, 253, 241, 0.93) 100%);
+      border-left: 7px solid #0E8A38;
+      border-right: 1.5px solid rgba(14, 138, 56, 0.28);
+      border-bottom: 1.5px solid rgba(14, 138, 56, 0.28);
+      color: #063D18;
+    }
+</style>
+  <div id="root" data-composition-id="act4-payoff" data-width="1080" data-height="1920" data-start="0" data-duration="7">
+    <div id="a4-rig-01" class="cam-rig" data-layout-allow-overflow data-layout-allow-overlap>
+      <video data-color-grading="{&quot;preset&quot;:null,&quot;intensity&quot;:1,&quot;adjust&quot;:{&quot;exposure&quot;:0.04,&quot;contrast&quot;:0.08,&quot;highlights&quot;:0.04,&quot;shadows&quot;:0.05,&quot;whites&quot;:0.06,&quot;blacks&quot;:0,&quot;temperature&quot;:0.03,&quot;tint&quot;:0.01,&quot;vibrance&quot;:0.12,&quot;saturation&quot;:0.05},&quot;details&quot;:{&quot;vignette&quot;:0.04,&quot;vignetteMidpoint&quot;:0.5,&quot;vignetteRoundness&quot;:0,&quot;vignetteFeather&quot;:0.65,&quot;grain&quot;:0,&quot;grainSize&quot;:0.25,&quot;grainRoughness&quot;:0.5},&quot;effects&quot;:{&quot;blur&quot;:0,&quot;pixelate&quot;:0,&quot;chromaBleed&quot;:0,&quot;tapeDamage&quot;:0,&quot;tapeTracking&quot;:0,&quot;tapeNoise&quot;:1,&quot;tapeSpeed&quot;:0.5,&quot;filmArtifacts&quot;:0,&quot;halftone&quot;:0,&quot;halftoneSize&quot;:0,&quot;twoInkPrint&quot;:0,&quot;twoInkPrintSize&quot;:0,&quot;ascii&quot;:0,&quot;asciiSize&quot;:0.065,&quot;asciiInvert&quot;:0,&quot;asciiStyle&quot;:0,&quot;asciiColor&quot;:1,&quot;asciiRotation&quot;:0,&quot;dither&quot;:0,&quot;ditherSize&quot;:0,&quot;bloom&quot;:0,&quot;bloomRadius&quot;:8,&quot;monoScreen&quot;:0,&quot;monoScreenSize&quot;:0,&quot;monoScreenAngle&quot;:0,&quot;monoScreenSpread&quot;:0,&quot;monoScreenShape&quot;:0,&quot;monoScreenInvert&quot;:0,&quot;scanlines&quot;:0,&quot;scanlineCount&quot;:0,&quot;scanlineSoftness&quot;:0,&quot;chromaticAberration&quot;:0,&quot;chromaticAngle&quot;:0,&quot;crtCurvature&quot;:0,&quot;digitalGlitch&quot;:0,&quot;digitalGlitchColorSplit&quot;:0,&quot;digitalGlitchLineTear&quot;:0,&quot;digitalGlitchPixelate&quot;:0,&quot;digitalGlitchBlockAmount&quot;:0,&quot;digitalGlitchBlockDisplacement&quot;:0,&quot;digitalGlitchBlockOpacity&quot;:0,&quot;digitalGlitchSpeed&quot;:0,&quot;engraving&quot;:0,&quot;engravingSpacing&quot;:0.41,&quot;engravingMinThickness&quot;:0.2,&quot;engravingMaxThickness&quot;:0.45,&quot;engravingAngle&quot;:0.25,&quot;engravingContrast&quot;:0.46,&quot;engravingSharpness&quot;:0.59,&quot;engravingWave&quot;:0.2,&quot;engravingWaveFrequency&quot;:0.22,&quot;crosshatch&quot;:0,&quot;crosshatchSpacing&quot;:0.28,&quot;crosshatchThickness&quot;:0.25,&quot;crosshatchAngle&quot;:0.25,&quot;crosshatchContrast&quot;:0.33,&quot;crosshatchEdges&quot;:0.5,&quot;crosshatchLineWeight&quot;:0,&quot;crosshatchWave&quot;:0.33,&quot;crosshatchWaveFrequency&quot;:0.22,&quot;kuwahara&quot;:0,&quot;kuwaharaRadius&quot;:0.14,&quot;kuwaharaSharpness&quot;:0.31,&quot;kuwaharaSaturation&quot;:0.5},&quot;lut&quot;:null,&quot;colorSpace&quot;:&quot;rec709&quot;}" id="a4-v01" class="clip bg-video" src="assets/videos/DD_S12.mp4" data-start="0" data-duration="7" data-media-start="0.25" data-hf-media-start-basis="local" data-track-index="1" muted playsinline></video>
+    </div>
+
+    <!-- SLIDE OVERLAY #5 (0.20 - 6.75s): Frosted Payoff Slide Card (X=64..654, Y=1110..1346 — 0% face touch!) -->
+    <div id="a4-slide-payoff" class="clip slide-card" style="top: 1110px; width: 590px;" data-start="0.2" data-duration="6.55" data-track-index="3" data-layout-ignore>
+      <div class="slide-card-header">✨ Dạ dày êm ái mỗi ngày</div>
+      <div id="a4-p1" class="slide-row"><span class="slide-badge-dot">✓</span> Bữa ăn trọn vẹn niềm vui</div>
+      <div id="a4-p2" class="slide-row"><span class="slide-badge-dot">✓</span> Tối ngủ sâu · Sáng tràn năng lượng</div>
+    </div>
+  </div>
+
+  <script>
+    window.__timelines = window.__timelines || {};
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#a4-rig-01", { scale: 1.00 }, { scale: 1.05, duration: 7.00, ease: "none", immediateRender: false }, 0)
+      .fromTo("#a4-slide-payoff", { opacity: 0, x: -170, filter: "blur(12px)" }, { opacity: 1, x: 0, filter: "blur(0px)", duration: 0.36, ease: "back.out(1.4)", immediateRender: false }, 0.24)
+      .fromTo("#a4-p1", { opacity: 0, x: -24 }, { opacity: 1, x: 0, duration: 0.26, ease: "power2.out", immediateRender: false }, 0.55)
+      .fromTo("#a4-p2", { opacity: 0, x: -24 }, { opacity: 1, x: 0, duration: 0.26, ease: "power2.out", immediateRender: false }, 3.55)
+      .to("#a4-slide-payoff", { opacity: 0, x: -90, filter: "blur(10px)", duration: 0.22, ease: "power2.in" }, 6.50);
+
+    window.__timelines["act4-payoff"] = tl;
+  </script>
+</template>

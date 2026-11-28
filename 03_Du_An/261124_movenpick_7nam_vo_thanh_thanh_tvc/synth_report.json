@@ -1,0 +1,429 @@
+[
+  {
+    "vo_idx": 0,
+    "dur_s": 2.4,
+    "wav": "C:\\Users\\Hang thu\\.gemini\\antigravity\\brain\\8660f1f1-4d9e-4cad-bd1c-d58523b58b85\\scratch\\thanh_thanh_1124_out\\final_segments\\tt_vo_00.wav",
+    "clauses": [
+      {
+        "cid": "00",
+        "text": "Hôm nay, có một lá thư cần gửi đi.",
+        "raw_dur": 1.98,
+        "fit_dur": 1.98,
+        "tempo": 1.0
+      }
+    ]
+  },
+  {
+    "vo_idx": 1,
+    "dur_s": 2.53,
+    "wav": "C:\\Users\\Hang thu\\.gemini\\antigravity\\brain\\8660f1f1-4d9e-4cad-bd1c-d58523b58b85\\scratch\\thanh_thanh_1124_out\\final_segments\\tt_vo_01.wav",
+    "clauses": [
+      {
+        "cid": "01",
+        "text": "Muốn đi khắp resort, phải nhờ cả team!",
+        "raw_dur": 2.45,
+        "fit_dur": 2.45,
+        "tempo": 1.0
+      }
+    ]
+  },
+  {
+    "vo_idx": 2,
+    "dur_s": 0.83,
+    "wav": "C:\\Users\\Hang thu\\.gemini\\antigravity\\brain\\8660f1f1-4d9e-4cad-bd1c-d58523b58b85\\scratch\\thanh_thanh_1124_out\\final_segments\\tt_vo_02.wav",
+    "clauses": [
+      {
+        "cid": "02",
+        "text": "Butler.",
+        "raw_dur": 0.56,
+        "fit_dur": 0.56,
+        "tempo": 1.0
+      }
+    ]
+  },
+  {
+    "vo_idx": 3,
+    "dur_s": 1.13,
+    "wav": "C:\\Users\\Hang thu\\.gemini\\antigravity\\brain\\8660f1f1-4d9e-4cad-bd1c-d58523b58b85\\scratch\\thanh_thanh_1124_out\\final_segments\\tt_vo_03.wav",
+    "clauses": [
+      {
+        "cid": "03",
+        "text": "Người mở cửa.",
+        "raw_dur": 0.95,
+        "fit_dur": 0.95,
+        "tempo": 1.0
+      }
+    ]
+  },
+  {
+    "vo_idx": 4,
+    "dur_s": 2.43,
+    "wav": "C:\\Users\\Hang thu\\.gemini\\antigravity\\brain\\8660f1f1-4d9e-4cad-bd1c-d58523b58b85\\scratch\\thanh_thanh_1124_out\\final_segments\\tt_vo_04.wav",
+    "clauses": [
+      {
+        "cid": "04",
+        "text": "Biết khách cần gì, trước khi khách kịp nói.",
+        "raw_dur": 2.69,
+        "fit_dur": 2.34,
+        "tempo": 1.15
+      }
+    ]
+  },
+  {
+    "vo_idx": 5,
+    "dur_s": 3.5,
+    "wav": "C:\\Users\\Hang thu\\.gemini\\antigravity\\brain\\8660f1f1-4d9e-4cad-bd1c-d58523b58b85\\scratch\\thanh_thanh_1124_out\\final_segments\\tt_vo_05.wav",
+    "clauses": [
+      {
+        "cid": "05",
+        "text": "Mọi kỳ nghỉ ở đây, đều bắt đầu từ quầy lễ tân.",
+        "raw_dur": 2.59,
+        "fit_dur": 2.59,
+        "tempo": 1.0
+      }
+    ]
+  },
+  {
+    "vo_idx": 6,
+    "dur_s": 1.17,
+    "wav": "C:\\Users\\Hang thu\\.gemini\\antigravity\\brain\\8660f1f1-4d9e-4cad-bd1c-d58523b58b85\\scratch\\thanh_thanh_1124_out\\final_segments\\tt_vo_06.wav",
+    "clauses": [
+      {
+        "cid": "06",
+        "text": "Một nụ cười.",
+        "raw_dur": 0.84,
+        "fit_dur": 0.84,
+        "tempo": 1.0
+      }
+    ]
+  },
+  {
+    "vo_idx": 7,
+    "dur_s": 1.4,
+    "wav": "C:\\Users\\Hang thu\\.gemini\\antigravity\\brain\\8660f1f1-4d9e-4cad-bd1c-d58523b58b85\\scratch\\thanh_thanh_1124_out\\final_segments\\tt_vo_07.wav",
+    "clauses": [
+      {
+        "cid": "07",
+        "text": "Một tấm thẻ phòng.",
+        "raw_dur": 1.0,
+        "fit_dur": 1.0,
+        "tempo": 1.0
+      }
+    ]
+  },
+  {
+    "vo_idx": 8,
+    "dur_s": 3.07,
+    "wav": "C:\\Users\\Hang thu\\.gemini\\antigravity\\brain\\8660f1f1-4d9e-4cad-bd1c-d58523b58b85\\scratch\\thanh_thanh_1124_out\\final_segments\\tt_vo_08.wav",
+    "clauses": [
+      {
+        "cid": "08a",
+        "text": "Và câu hỏi quen thuộc:",
+        "raw_dur": 1.24,
+        "fit_dur": 1.24,
+        "tempo": 1.0
+      },
+      {
+        "cid": "08b",
+        "text": "Anh chị đi đường có mệt không ạ?",
+        "raw_dur": 1.87,
+        "fit_dur": 1.58,
+        "tempo": 1.17
+      }
+    ]
+  },
+  {
+    "vo_idx": 9,
+    "dur_s": 3.7,
+    "wav": "C:\\Users\\Hang thu\\.gemini\\antigravity\\brain\\8660f1f1-4d9e-4cad-bd1c-d58523b58b85\\scratch\\thanh_thanh_1124_out\\final_segments\\tt_vo_09.wav",
+    "clauses": [
+      {
+        "cid": "09a",
+        "text": "Check out ở đây, hay kèm một câu:",
+        "raw_dur": 1.96,
+        "fit_dur": 1.75,
+        "tempo": 1.12
+      },
+      {
+        "cid": "09b",
+        "text": "Hẹn mùa hè sau nha!",
+        "raw_dur": 1.55,
+        "fit_dur": 1.55,
+        "tempo": 1.0
+      }
+    ]
+  },
+  {
+    "vo_idx": 10,
+    "dur_s": 0.8,
+    "wav": "C:\\Users\\Hang thu\\.gemini\\antigravity\\brain\\8660f1f1-4d9e-4cad-bd1c-d58523b58b85\\scratch\\thanh_thanh_1124_out\\final_segments\\tt_vo_10.wav",
+    "clauses": [
+      {
+        "cid": "10",
+        "text": "Bellman.",
+        "raw_dur": 1.13,
+        "fit_dur": 0.85,
+        "tempo": 1.32
+      }
+    ]
+  },
+  {
+    "vo_idx": 11,
+    "dur_s": 3.7,
+    "wav": "C:\\Users\\Hang thu\\.gemini\\antigravity\\brain\\8660f1f1-4d9e-4cad-bd1c-d58523b58b85\\scratch\\thanh_thanh_1124_out\\final_segments\\tt_vo_11.wav",
+    "clauses": [
+      {
+        "cid": "11",
+        "text": "Người đầu tiên chạm vào kỳ nghỉ của bạn, bằng cái va li.",
+        "raw_dur": 3.32,
+        "fit_dur": 3.32,
+        "tempo": 1.0
+      }
+    ]
+  },
+  {
+    "vo_idx": 12,
+    "dur_s": 7.53,
+    "wav": "C:\\Users\\Hang thu\\.gemini\\antigravity\\brain\\8660f1f1-4d9e-4cad-bd1c-d58523b58b85\\scratch\\thanh_thanh_1124_out\\final_segments\\tt_vo_12.wav",
+    "clauses": [
+      {
+        "cid": "12a",
+        "text": "Resort rộng, villa nằm giữa vườn cây.",
+        "raw_dur": 2.41,
+        "fit_dur": 2.41,
+        "tempo": 1.0
+      },
+      {
+        "cid": "12b",
+        "text": "Xe điện là phương tiện chính thức.",
+        "raw_dur": 1.93,
+        "fit_dur": 1.91,
+        "tempo": 1.0
+      },
+      {
+        "cid": "12c",
+        "text": "Ngồi yên, hít một hơi gió biển.",
+        "raw_dur": 1.86,
+        "fit_dur": 1.86,
+        "tempo": 1.0
+      }
+    ]
+  },
+  {
+    "vo_idx": 13,
+    "dur_s": 2.47,
+    "wav": "C:\\Users\\Hang thu\\.gemini\\antigravity\\brain\\8660f1f1-4d9e-4cad-bd1c-d58523b58b85\\scratch\\thanh_thanh_1124_out\\final_segments\\tt_vo_13.wav",
+    "clauses": [
+      {
+        "cid": "13",
+        "text": "Hành lý có người lo.",
+        "raw_dur": 1.53,
+        "fit_dur": 1.53,
+        "tempo": 1.0
+      }
+    ]
+  },
+  {
+    "vo_idx": 14,
+    "dur_s": 1.07,
+    "wav": "C:\\Users\\Hang thu\\.gemini\\antigravity\\brain\\8660f1f1-4d9e-4cad-bd1c-d58523b58b85\\scratch\\thanh_thanh_1124_out\\final_segments\\tt_vo_14.wav",
+    "clauses": [
+      {
+        "cid": "14",
+        "text": "Một va li.",
+        "raw_dur": 1.16,
+        "fit_dur": 0.98,
+        "tempo": 1.18
+      }
+    ]
+  },
+  {
+    "vo_idx": 15,
+    "dur_s": 0.77,
+    "wav": "C:\\Users\\Hang thu\\.gemini\\antigravity\\brain\\8660f1f1-4d9e-4cad-bd1c-d58523b58b85\\scratch\\thanh_thanh_1124_out\\final_segments\\tt_vo_15.wav",
+    "clauses": [
+      {
+        "cid": "15",
+        "text": "Hai va li.",
+        "raw_dur": 1.19,
+        "fit_dur": 0.88,
+        "tempo": 1.32
+      }
+    ]
+  },
+  {
+    "vo_idx": 16,
+    "dur_s": 2.53,
+    "wav": "C:\\Users\\Hang thu\\.gemini\\antigravity\\brain\\8660f1f1-4d9e-4cad-bd1c-d58523b58b85\\scratch\\thanh_thanh_1124_out\\final_segments\\tt_vo_16.wav",
+    "clauses": [
+      {
+        "cid": "16",
+        "text": "Mười va li, vẫn một nụ cười.",
+        "raw_dur": 1.62,
+        "fit_dur": 1.62,
+        "tempo": 1.0
+      }
+    ]
+  },
+  {
+    "vo_idx": 17,
+    "dur_s": 1.1,
+    "wav": "C:\\Users\\Hang thu\\.gemini\\antigravity\\brain\\8660f1f1-4d9e-4cad-bd1c-d58523b58b85\\scratch\\thanh_thanh_1124_out\\final_segments\\tt_vo_17.wav",
+    "clauses": [
+      {
+        "cid": "17",
+        "text": "Tới villa rồi!",
+        "raw_dur": 1.11,
+        "fit_dur": 1.03,
+        "tempo": 1.07
+      }
+    ]
+  },
+  {
+    "vo_idx": 18,
+    "dur_s": 1.63,
+    "wav": "C:\\Users\\Hang thu\\.gemini\\antigravity\\brain\\8660f1f1-4d9e-4cad-bd1c-d58523b58b85\\scratch\\thanh_thanh_1124_out\\final_segments\\tt_vo_18.wav",
+    "clauses": [
+      {
+        "cid": "18",
+        "text": "Phía sau mọi yêu cầu của khách,",
+        "raw_dur": 1.52,
+        "fit_dur": 1.52,
+        "tempo": 1.0
+      }
+    ]
+  },
+  {
+    "vo_idx": 19,
+    "dur_s": 1.3,
+    "wav": "C:\\Users\\Hang thu\\.gemini\\antigravity\\brain\\8660f1f1-4d9e-4cad-bd1c-d58523b58b85\\scratch\\thanh_thanh_1124_out\\final_segments\\tt_vo_19.wav",
+    "clauses": [
+      {
+        "cid": "19",
+        "text": "là một giọng nói.",
+        "raw_dur": 1.2,
+        "fit_dur": 1.2,
+        "tempo": 1.0
+      }
+    ]
+  },
+  {
+    "vo_idx": 20,
+    "dur_s": 8.37,
+    "wav": "C:\\Users\\Hang thu\\.gemini\\antigravity\\brain\\8660f1f1-4d9e-4cad-bd1c-d58523b58b85\\scratch\\thanh_thanh_1124_out\\final_segments\\tt_vo_20.wav",
+    "clauses": [
+      {
+        "cid": "20a",
+        "text": "Có lúc điện thoại reo không ngớt, vẫn nhấc máy, vẫn cười.",
+        "raw_dur": 3.64,
+        "fit_dur": 3.64,
+        "tempo": 1.0
+      },
+      {
+        "cid": "20b",
+        "text": "Khách không thấy mặt,",
+        "raw_dur": 0.96,
+        "fit_dur": 0.96,
+        "tempo": 1.0
+      },
+      {
+        "cid": "20c",
+        "text": "nhưng nghe là biết bên kia đang cười.",
+        "raw_dur": 1.98,
+        "fit_dur": 1.98,
+        "tempo": 1.0
+      }
+    ]
+  },
+  {
+    "vo_idx": 23,
+    "dur_s": 3.87,
+    "wav": "C:\\Users\\Hang thu\\.gemini\\antigravity\\brain\\8660f1f1-4d9e-4cad-bd1c-d58523b58b85\\scratch\\thanh_thanh_1124_out\\final_segments\\tt_vo_23.wav",
+    "clauses": [
+      {
+        "cid": "23a",
+        "text": "Không chỉ làm việc,",
+        "raw_dur": 0.9,
+        "fit_dur": 0.9,
+        "tempo": 1.0
+      },
+      {
+        "cid": "23b",
+        "text": "cả team còn cùng nhau leo núi, đá bóng,",
+        "raw_dur": 2.35,
+        "fit_dur": 2.35,
+        "tempo": 1.0
+      }
+    ]
+  },
+  {
+    "vo_idx": 24,
+    "dur_s": 1.6,
+    "wav": "C:\\Users\\Hang thu\\.gemini\\antigravity\\brain\\8660f1f1-4d9e-4cad-bd1c-d58523b58b85\\scratch\\thanh_thanh_1124_out\\final_segments\\tt_vo_24.wav",
+    "clauses": [
+      {
+        "cid": "24",
+        "text": "cùng rất rất nhiều hoạt động khác.",
+        "raw_dur": 1.8,
+        "fit_dur": 1.53,
+        "tempo": 1.16
+      }
+    ]
+  },
+  {
+    "vo_idx": 25,
+    "dur_s": 7.13,
+    "wav": "C:\\Users\\Hang thu\\.gemini\\antigravity\\brain\\8660f1f1-4d9e-4cad-bd1c-d58523b58b85\\scratch\\thanh_thanh_1124_out\\final_segments\\tt_vo_25.wav",
+    "clauses": [
+      {
+        "cid": "25a",
+        "text": "Bảy năm,",
+        "raw_dur": 0.57,
+        "fit_dur": 0.57,
+        "tempo": 1.0
+      },
+      {
+        "cid": "25b",
+        "text": "có người ở lại, có người ghé qua,",
+        "raw_dur": 2.06,
+        "fit_dur": 1.72,
+        "tempo": 1.2
+      },
+      {
+        "cid": "25c",
+        "text": "có người về rồi lại tới.",
+        "raw_dur": 1.4,
+        "fit_dur": 1.4,
+        "tempo": 1.0
+      },
+      {
+        "cid": "25d",
+        "text": "Và hôm nay, ai cũng có đôi lời muốn nói.",
+        "raw_dur": 2.41,
+        "fit_dur": 2.41,
+        "tempo": 1.0
+      }
+    ]
+  },
+  {
+    "vo_idx": 26,
+    "dur_s": 5.0,
+    "wav": "C:\\Users\\Hang thu\\.gemini\\antigravity\\brain\\8660f1f1-4d9e-4cad-bd1c-d58523b58b85\\scratch\\thanh_thanh_1124_out\\final_segments\\tt_vo_26.wav",
+    "clauses": [
+      {
+        "cid": "26a",
+        "text": "Thư đi một vòng, giờ tới nơi.",
+        "raw_dur": 1.74,
+        "fit_dur": 1.74,
+        "tempo": 1.0
+      },
+      {
+        "cid": "26b",
+        "text": "Nội dung chỉ có một câu.",
+        "raw_dur": 1.35,
+        "fit_dur": 1.35,
+        "tempo": 1.0
+      }
+    ]
+  }
+]

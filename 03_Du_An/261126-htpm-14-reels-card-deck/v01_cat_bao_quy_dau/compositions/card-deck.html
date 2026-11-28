@@ -1,0 +1,261 @@
+<template>
+  <style>
+    @font-face {
+      font-family: "Montserrat";
+      src: url("assets/fonts/Montserrat-Black.ttf") format("truetype");
+      font-weight: 900;
+      font-style: normal;
+      font-display: block;
+    }
+    @font-face {
+      font-family: "Be Vietnam Pro";
+      src: url("assets/fonts/BeVietnamPro-Bold.ttf") format("truetype");
+      font-weight: 700;
+      font-style: normal;
+      font-display: block;
+    }
+    @font-face {
+      font-family: "Be Vietnam Pro";
+      src: url("assets/fonts/BeVietnamPro-ExtraBold.ttf") format("truetype");
+      font-weight: 800;
+      font-style: normal;
+      font-display: block;
+    }
+
+    #root {
+      position: absolute;
+      inset: 0;
+      background: transparent;
+      pointer-events: none;
+    }
+
+    #deck-stage {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1080px;
+      height: 520px;
+      perspective: 1200px;
+    }
+
+    .broll-card {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 340px;
+      height: 388px;
+      border-radius: 28px;
+      background: #ffffff;
+      border: 4px solid #e2e8f0;
+      box-shadow:
+        0 24px 52px rgba(15, 23, 42, 0.24),
+        0 6px 16px rgba(15, 23, 42, 0.12);
+      padding: 12px 12px 14px 12px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+      opacity: 0;
+      will-change: transform, opacity;
+    }
+
+    .broll-card.warn-card {
+      border-color: #ef4444;
+    }
+    .broll-card.doc-card {
+      border-color: #0284c7;
+    }
+    .broll-card.valid-card {
+      border-color: #10b981;
+    }
+
+    .card-photo-wrap {
+      position: relative;
+      width: 100%;
+      height: 254px;
+      border-radius: 18px;
+      overflow: hidden;
+      background: #f1f5f9;
+    }
+
+    .card-photo-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .card-tag {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      padding: 5px 13px;
+      border-radius: 999px;
+      font-family: "Montserrat", sans-serif;
+      font-weight: 900;
+      font-size: 14px;
+      color: #ffffff;
+      letter-spacing: 0.03em;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.28);
+    }
+    .card-tag.red {
+      background: #dc2626;
+    }
+    .card-tag.blue {
+      background: #0284c7;
+    }
+    .card-tag.green {
+      background: #059669;
+    }
+
+    .card-sheen {
+      position: absolute;
+      top: -50%;
+      left: -60%;
+      width: 50%;
+      height: 200%;
+      background: linear-gradient(
+        105deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.55) 50%,
+        rgba(255, 255, 255, 0) 100%
+      );
+      pointer-events: none;
+    }
+
+    .card-info {
+      text-align: center;
+      padding: 6px 4px 2px 4px;
+    }
+
+    .card-head {
+      font-family: "Be Vietnam Pro", sans-serif;
+      font-weight: 800;
+      font-size: 24px;
+      line-height: 1.18;
+      text-transform: uppercase;
+      letter-spacing: -0.01em;
+      color: #0f172a;
+    }
+    .card-head.red {
+      color: #b91c1c;
+    }
+    .card-head.blue {
+      color: #0369a1;
+    }
+    .card-head.green {
+      color: #065f46;
+    }
+
+    .card-desc {
+      margin-top: 4px;
+      font-family: "Be Vietnam Pro", sans-serif;
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 1.2;
+      color: #475569;
+    }
+  </style>
+
+  <div id="root" data-composition-id="card-deck" data-width="1080" data-height="1920">
+    <!-- Host starts at t = 3.05s; local_t = video_t - 3.05s -->
+    <div id="deck-stage" data-layout-allow-overlap data-layout-allow-overflow>
+      <!-- CARD 1: Phẫu thuật cắt bao quy đầu ≠ Trị xuất tinh sớm -->
+      <div id="bcard-1" class="broll-card warn-card" style="z-index: 2" data-layout-ignore>
+        <div class="card-photo-wrap">
+          <img src="assets/images/broll_01_surgical_no.jpg" alt="Không phải trị xuất tinh sớm" />
+          <span class="card-tag red">✕ SAI MỤC ĐÍCH</span>
+          <div id="sheen-c1" class="card-sheen"></div>
+        </div>
+        <div class="card-info">
+          <div class="card-head red">CẮT BAO QUY ĐẦU</div>
+          <div class="card-desc">Không trị xuất tinh sớm</div>
+        </div>
+      </div>
+
+      <!-- CARD 2: Hỏi rõ bác sĩ Nam khoa tư vấn -->
+      <div id="bcard-2" class="broll-card doc-card" style="z-index: 3" data-layout-ignore>
+        <div class="card-photo-wrap">
+          <img src="assets/images/broll_02_doctor_consult.jpg" alt="Hỏi rõ bác sĩ chuyên khoa" />
+          <span class="card-tag blue">HỎI RÕ BÁC SĨ</span>
+          <div id="sheen-c2" class="card-sheen"></div>
+        </div>
+        <div class="card-info">
+          <div class="card-head blue">KHÁM ĐÚNG BÁC SĨ</div>
+          <div class="card-desc">Hỏi rõ nguyên nhân thực sự</div>
+        </div>
+      </div>
+
+      <!-- CARD 3: Chỉ phẫu thuật khi có bệnh lý thực thể (Hẹp / Nghẹt / Viêm) -->
+      <div id="bcard-3" class="broll-card valid-card" style="z-index: 4" data-layout-ignore>
+        <div class="card-photo-wrap">
+          <img src="assets/images/broll_03_medical_reason.jpg" alt="Chỉ định bệnh lý cần cắt" />
+          <span class="card-tag green">✔ ĐÚNG BỆNH LÝ</span>
+          <div id="sheen-c3" class="card-sheen"></div>
+        </div>
+        <div class="card-info">
+          <div class="card-head green">CHỈ CẮT KHI BỆNH LÝ</div>
+          <div class="card-desc">Hẹp • Nghẹt • Viêm tái phát</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const tl = gsap.timeline({ paused: true });
+
+    // [0.00s - 1.72s | video 3.05s - 4.77s]: NO cards -> clean view for Behind-Head "KHÔNG PHẢI CÁCH TRỊ CHUẨN!"
+
+    // ─── SCENE A (local 1.74s -> 2.68s | video 4.79s -> 5.73s): "...cho xuất tinh sớm đâu" ───
+    tl.fromTo(
+      "#bcard-1",
+      { x: 370, y: 160, scale: 0.72, rotation: 8, opacity: 0 },
+      { x: 370, y: 56, scale: 1.0, rotation: -2.5, opacity: 1, duration: 0.28, ease: "back.out(1.7)", immediateRender: false },
+      1.74
+    );
+    tl.fromTo("#sheen-c1", { x: -80, rotation: 15 }, { x: 520, rotation: 15, duration: 0.55, ease: "power2.inOut" }, 1.85);
+    tl.to("#bcard-1", { x: -320, y: 80, scale: 0.84, rotation: -14, opacity: 0, duration: 0.24, ease: "power2.in" }, 2.48);
+
+    // ─── SCENE B (local 2.80s -> 5.72s | video 5.85s -> 8.77s): "Nếu được đề nghị cắt, hãy hỏi rõ mình có bệnh lý gì cần xử lý" ───
+    // Step 1 (5.85s): Doctor consultation card deals to center
+    tl.fromTo(
+      "#bcard-2",
+      { x: 370, y: 160, scale: 0.74, rotation: -8, opacity: 0 },
+      { x: 370, y: 56, scale: 1.02, rotation: 1.5, opacity: 1, duration: 0.30, ease: "back.out(1.7)", immediateRender: false },
+      2.80
+    );
+    tl.fromTo("#sheen-c2", { x: -80, rotation: 15 }, { x: 520, rotation: 15, duration: 0.6, ease: "power2.inOut" }, 2.95);
+
+    // Step 2 (6.80s | local 3.75s — "hỏi rõ mình có bệnh lý gì"): Card 2 fans left & Card 3 (Pathology indications) deals right!
+    tl.to("#bcard-2", { x: 148, y: 66, scale: 0.94, rotation: -5.5, duration: 0.36, ease: "back.out(1.5)" }, 3.75);
+    tl.fromTo(
+      "#bcard-3",
+      { x: 370, y: 160, scale: 0.72, rotation: -10, opacity: 0 },
+      { x: 592, y: 58, scale: 0.98, rotation: 5.0, opacity: 1, duration: 0.36, ease: "back.out(1.7)", immediateRender: false },
+      3.80
+    );
+    tl.fromTo("#sheen-c3", { x: -80, rotation: 15 }, { x: 520, rotation: 15, duration: 0.6, ease: "power2.inOut" }, 3.96);
+
+    // Fold both away cleanly before 9.05s ("ĐỪNG VỘI PHẪU THUẬT!" behind-head punchline!)
+    tl.to("#bcard-2", { x: -280, y: 90, scale: 0.8, rotation: -16, opacity: 0, duration: 0.24, ease: "power2.in" }, 5.52);
+    tl.to("#bcard-3", { x: 1020, y: 90, scale: 0.8, rotation: 16, opacity: 0, duration: 0.24, ease: "power2.in" }, 5.56);
+
+    // [local 5.80s - 6.87s | video 8.85s - 9.92s]: NO cards -> clean view for Behind-Head "ĐỪNG VỘI PHẪU THUẬT!"
+
+    // ─── SCENE C (local 6.92s -> 9.08s | video 9.97s -> 12.13s): "...chỉ vì lời hứa kéo dài cuộc yêu nha các anh" ───
+    tl.fromTo(
+      "#bcard-1",
+      { x: -260, y: 110, scale: 0.8, rotation: -14, opacity: 0 },
+      { x: 152, y: 66, scale: 0.94, rotation: -5, opacity: 1, duration: 0.34, ease: "back.out(1.6)", immediateRender: false },
+      6.92
+    );
+    tl.fromTo(
+      "#bcard-2",
+      { x: 1000, y: 110, scale: 0.8, rotation: 14, opacity: 0 },
+      { x: 588, y: 62, scale: 0.97, rotation: 5, opacity: 1, duration: 0.36, ease: "back.out(1.6)", immediateRender: false },
+      7.02
+    );
+
+    window.__timelines["card-deck"] = tl;
+  </script>
+</template>

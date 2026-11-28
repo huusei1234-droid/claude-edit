@@ -1,0 +1,317 @@
+[
+  {
+    "id": "k5v6_s03_9x16",
+    "episode": "k5ep01_v6",
+    "scene": "s03",
+    "scale": "WS",
+    "ratio": "9:16",
+    "seconds": 10,
+    "outPath": "C:\\AI\\full studio\\output\\k5-ep01-v4\\raw_v6_master\\s03.mp4",
+    "refs": [
+      {
+        "path": "C:\\AI\\full studio\\output\\k5-ep01-v4\\sets\\bo1_2bojomi_nobag_9x16.jpg",
+        "name": "bo1_2boj.jpg"
+      },
+      {
+        "path": "C:\\AI\\full studio\\output\\k5-ep01-v4\\cast_clean\\k5_bahanh.jpg",
+        "name": "k5_bahanh.jpg"
+      },
+      {
+        "path": "C:\\AI\\full studio\\output\\k5-ep01-v4\\sets\\pr_2bojomi_nobag_1x1.jpg",
+        "name": "pr_2bojomi_box.jpg"
+      }
+    ],
+    "prompt": "Tạo video 10 giây, photorealistic live-action người Việt Nam thật, phong cách phim truyền hình gia đình Việt Nam chất lượng điện ảnh 8k sáng rõ tự nhiên, tỷ lệ dọc 9:16.\n\nIMAGE XUẤT HIỆN:\n- image 1: BO-1 (Phòng ăn sáng sủa có 2 hộp giấy BOJOMI trên bàn)\n- image 2: CH-1 (Bà Hạnh mặc đồ bộ nhung đỏ đô)\n- image 3: PR-1 (Đúng 2 hộp giấy cứng chữ nhật đứng nắp phẳng AN VƯỢNG PHARMA BOJOMI màu trắng xanh lá đậm)\n\nREFERENCE BẮT BUỘC:\nGiữ nguyên 100% khuôn mặt, kiểu tóc, trang phục CH-1 từ image 2. Hai hộp trên bàn BẮT BUỘC giữ nguyên 100% hình dáng HỘP GIẤY CỨNG NẮP PHẲNG màu trắng - xanh lá đậm có in hình tách xanh và chữ BOJOMI của ĐÚNG 2 HỘP từ image 3 (tuyệt đối không có túi giấy, không hộp trắng trơn, không nắp vặn nhựa).\n\nCAMERA & BỐ CỤC CẢNH TOÀN SINH ĐỘNG (WIDE / MEDIUM-LONG SHOT):\nGóc máy Toàn dọc rộng rãi (thấy từ ngang đùi trở lên và trọn không gian phòng ăn ấm cúng cùng mặt bàn đá phía trước): CH-1 từ phía sau bước nhanh lại sát bàn ăn nơi đặt 2 hộp BOJOMI thật, một tay đặt lên cạnh hộp quà vẻ mặt hớn hở tham lam, tay kia áp điện thoại lên tai gọi con gái trong 4.2 giây đầu.\n\nTHOẠI TRỰC TIẾP (GIỌNG MIỀN NAM VIỆT NAM TỰ NHIÊN, ĐỌC ĐÚNG NGUYÊN VĂN MỘT LẦN DUY NHẤT, KHÔNG LẶP TỪ, NÓI XONG KHÉP MÔI):\nCH-1: “Alo Linh hả con gái! Qua nhà má lẹ lên con, chị vợ thằng Tuấn mới đem qua hai hộp Bojomi xịn lắm nè!”\n(Giọng miền Nam truyền cảm đời thường như diễn viên phim truyền hình thật, phát âm tròn vành rõ chữ không nuốt âm, TUYỆT ĐỐI KHÔNG LẶP LẠI TỪ CUỐI CÂU HAY GIỮA CÂU, nói dứt câu là khép môi tự nhiên nghỉ nhịp thở 2 giây cuối cảnh; nhân vật khác chỉ diễn nét mặt phản ứng, không mở miệng nói chèn).\n\nYÊU CẦU BẮT BUỘC:\nTUYỆT ĐỐI KHÔNG HIỂN THỊ PHỤ ĐỀ, KHÔNG CHỮ ĐÈ LÊN MÀN HÌNH, không khung đen trên dưới, không watermark.",
+    "prompts": [
+      "Tạo video 10 giây, photorealistic live-action người Việt Nam thật, phong cách phim truyền hình gia đình Việt Nam chất lượng điện ảnh 8k sáng rõ tự nhiên, tỷ lệ dọc 9:16.\n\nIMAGE XUẤT HIỆN:\n- image 1: BO-1 (Phòng ăn sáng sủa có 2 hộp giấy BOJOMI trên bàn)\n- image 2: CH-1 (Bà Hạnh mặc đồ bộ nhung đỏ đô)\n- image 3: PR-1 (Đúng 2 hộp giấy cứng chữ nhật đứng nắp phẳng AN VƯỢNG PHARMA BOJOMI màu trắng xanh lá đậm)\n\nREFERENCE BẮT BUỘC:\nGiữ nguyên 100% khuôn mặt, kiểu tóc, trang phục CH-1 từ image 2. Hai hộp trên bàn BẮT BUỘC giữ nguyên 100% hình dáng HỘP GIẤY CỨNG NẮP PHẲNG màu trắng - xanh lá đậm có in hình tách xanh và chữ BOJOMI của ĐÚNG 2 HỘP từ image 3 (tuyệt đối không có túi giấy, không hộp trắng trơn, không nắp vặn nhựa).\n\nCAMERA & BỐ CỤC CẢNH TOÀN SINH ĐỘNG (WIDE / MEDIUM-LONG SHOT):\nGóc máy Toàn dọc rộng rãi (thấy từ ngang đùi trở lên và trọn không gian phòng ăn ấm cúng cùng mặt bàn đá phía trước): CH-1 từ phía sau bước nhanh lại sát bàn ăn nơi đặt 2 hộp BOJOMI thật, một tay đặt lên cạnh hộp quà vẻ mặt hớn hở tham lam, tay kia áp điện thoại lên tai gọi con gái trong 4.2 giây đầu.\n\nTHOẠI TRỰC TIẾP (GIỌNG MIỀN NAM VIỆT NAM TỰ NHIÊN, ĐỌC ĐÚNG NGUYÊN VĂN MỘT LẦN DUY NHẤT, KHÔNG LẶP TỪ, NÓI XONG KHÉP MÔI):\nCH-1: “Alo Linh hả con gái! Qua nhà má lẹ lên con, chị vợ thằng Tuấn mới đem qua hai hộp Bojomi xịn lắm nè!”\n(Giọng miền Nam truyền cảm đời thường như diễn viên phim truyền hình thật, phát âm tròn vành rõ chữ không nuốt âm, TUYỆT ĐỐI KHÔNG LẶP LẠI TỪ CUỐI CÂU HAY GIỮA CÂU, nói dứt câu là khép môi tự nhiên nghỉ nhịp thở 2 giây cuối cảnh; nhân vật khác chỉ diễn nét mặt phản ứng, không mở miệng nói chèn).\n\nYÊU CẦU BẮT BUỘC:\nTUYỆT ĐỐI KHÔNG HIỂN THỊ PHỤ ĐỀ, KHÔNG CHỮ ĐÈ LÊN MÀN HÌNH, không khung đen trên dưới, không watermark.",
+      "Tạo video 10 giây, photorealistic live-action người Việt Nam thật, phong cách phim truyền hình gia đình Việt Nam chất lượng điện ảnh 8k sáng rõ tự nhiên, tỷ lệ dọc 9:16.\n\nIMAGE XUẤT HIỆN:\n- image 1: BO-1 (Phòng ăn sáng sủa có 2 hộp giấy BOJOMI trên bàn)\n- image 2: CH-1 (Bà Hạnh mặc đồ bộ nhung đỏ đô)\n- image 3: PR-1 (Đúng 2 hộp giấy cứng chữ nhật đứng nắp phẳng AN VƯỢNG PHARMA BOJOMI màu trắng xanh lá đậm)\n\nREFERENCE BẮT BUỘC:\nGiữ nguyên 100% khuôn mặt, kiểu tóc, trang phục CH-1 từ image 2. Hai hộp trên bàn BẮT BUỘC giữ nguyên 100% hình dáng HỘP GIẤY CỨNG NẮP PHẲNG màu trắng - xanh lá đậm có in hình tách xanh và chữ BOJOMI của ĐÚNG 2 HỘP từ image 3 (tuyệt đối không có túi giấy, không hộp trắng trơn, không nắp vặn nhựa).\n\nCAMERA & BỐ CỤC CẢNH TOÀN SINH ĐỘNG (WIDE / MEDIUM-LONG SHOT):\nGóc máy Toàn dọc rộng rãi (thấy từ ngang đùi trở lên và trọn không gian phòng ăn ấm cúng cùng mặt bàn đá phía trước): CH-1 từ phía sau bước nhanh lại sát bàn ăn nơi đặt 2 hộp BOJOMI thật, một tay đặt lên cạnh hộp quà vẻ mặt hớn hở tham lam, tay kia áp điện thoại lên tai gọi con gái trong 3.8 giây đầu, nhịp nói dứt khoát trôi chảy.\n\nTHOẠI TRỰC TIẾP (GIỌNG MIỀN NAM VIỆT NAM TỰ NHIÊN, ĐỌC ĐÚNG NGUYÊN VĂN MỘT LẦN DUY NHẤT, KHÔNG LẶP TỪ, NÓI XONG KHÉP MÔI):\nCH-1: “Alo Linh hả con gái! Qua nhà má lẹ lên con, chị vợ thằng Tuấn mới đem qua hai hộp Bojomi xịn lắm nè!”\n(Giọng miền Nam truyền cảm đời thường như diễn viên phim truyền hình thật, phát âm tròn vành rõ chữ không nuốt âm, TUYỆT ĐỐI KHÔNG LẶP LẠI TỪ CUỐI CÂU HAY GIỮA CÂU, nói dứt câu là khép môi tự nhiên nghỉ nhịp thở 2 giây cuối cảnh; nhân vật khác chỉ diễn nét mặt phản ứng, không mở miệng nói chèn).\n\nYÊU CẦU BẮT BUỘC:\nTUYỆT ĐỐI KHÔNG HIỂN THỊ PHỤ ĐỀ, KHÔNG CHỮ ĐÈ LÊN MÀN HÌNH, không khung đen trên dưới, không watermark."
+    ],
+    "overwrite": true
+  },
+  {
+    "id": "k5v6_s06_9x16",
+    "episode": "k5ep01_v6",
+    "scene": "s06",
+    "scale": "MCU",
+    "ratio": "9:16",
+    "seconds": 10,
+    "outPath": "C:\\AI\\full studio\\output\\k5-ep01-v4\\raw_v6_master\\s06.mp4",
+    "refs": [
+      {
+        "path": "C:\\AI\\full studio\\output\\k5-ep01-v4\\sets\\bo1_empty_9x16.jpg",
+        "name": "bo1_empty.jpg"
+      },
+      {
+        "path": "C:\\AI\\full studio\\output\\k5-ep01-v4\\cast_clean\\k5_linh.jpg",
+        "name": "k5_linh.jpg"
+      },
+      {
+        "path": "C:\\AI\\full studio\\output\\k5-ep01-v4\\cast_clean\\k5_bahanh.jpg",
+        "name": "k5_bahanh.jpg"
+      }
+    ],
+    "prompt": "Tạo video 10 giây, photorealistic live-action người Việt Nam thật, phong cách phim truyền hình gia đình Việt Nam chất lượng điện ảnh 8k sáng rõ tự nhiên, tỷ lệ dọc 9:16.\n\nIMAGE XUẤT HIỆN:\n- image 1: BO-1 (Không gian phòng ăn bếp mặt bàn trống gọn gàng)\n- image 2: CH-1 (Linh mặc áo sơ mi trắng bên phải)\n- image 3: CH-2 (Bà Hạnh mặc đồ bộ nhung đỏ đô bên trái)\n\nREFERENCE BẮT BUỘC:\nGiữ nguyên 100% khuôn mặt, kiểu tóc, trang phục CH-1 và CH-2. QUY TẮC ĐẠO CỤ TUYỆT ĐỐI: Trên mặt bàn và trong khung hình TUYỆT ĐỐI KHÔNG CÓ bất kỳ hộp giấy, hộp sữa hay túi quà nào! Chỉ duy nhất trên tay CH-1 đang cầm một chiếc TÁCH SỨ MÀU XANH LÁ ĐẬM nhỏ gọn.\n\nCAMERA & DIỄN BIẾN (MEDIUM CLOSE-UP):\nTrung cận hai mẹ con đứng trò chuyện đắc ý trong bếp (mặt bàn trống sạch hoàn toàn): CH-1 vừa nhấp một ngụm nhỏ từ tách sứ xanh lá đậm vừa quay sang CH-2 xuýt xoa khen ngon trong 4.2 giây đầu, CH-2 đứng cạnh gật gù cười chiều chuộng.\n\nTHOẠI TRỰC TIẾP (GIỌNG MIỀN NAM VIỆT NAM TỰ NHIÊN, ĐỌC ĐÚNG NGUYÊN VĂN MỘT LẦN DUY NHẤT, KHÔNG LẶP TỪ, NÓI XONG KHÉP MÔI):\nCH-1: “Công nhận sữa hạt Bojomi của chị Thảo uống thơm thanh thiệt đó má, thảo nào một hộp hơn năm trăm ngàn!”\n(Giọng miền Nam truyền cảm đời thường như diễn viên phim truyền hình thật, phát âm tròn vành rõ chữ không nuốt âm, TUYỆT ĐỐI KHÔNG LẶP LẠI TỪ CUỐI CÂU HAY GIỮA CÂU, nói dứt câu là khép môi tự nhiên nghỉ nhịp thở 2 giây cuối cảnh; nhân vật khác chỉ diễn nét mặt phản ứng, không mở miệng nói chèn).\n\nYÊU CẦU BẮT BUỘC:\nTUYỆT ĐỐI KHÔNG HIỂN THỊ PHỤ ĐỀ, KHÔNG CHỮ ĐÈ LÊN MÀN HÌNH, không khung đen trên dưới, không watermark.",
+    "prompts": [
+      "Tạo video 10 giây, photorealistic live-action người Việt Nam thật, phong cách phim truyền hình gia đình Việt Nam chất lượng điện ảnh 8k sáng rõ tự nhiên, tỷ lệ dọc 9:16.\n\nIMAGE XUẤT HIỆN:\n- image 1: BO-1 (Không gian phòng ăn bếp mặt bàn trống gọn gàng)\n- image 2: CH-1 (Linh mặc áo sơ mi trắng bên phải)\n- image 3: CH-2 (Bà Hạnh mặc đồ bộ nhung đỏ đô bên trái)\n\nREFERENCE BẮT BUỘC:\nGiữ nguyên 100% khuôn mặt, kiểu tóc, trang phục CH-1 và CH-2. QUY TẮC ĐẠO CỤ TUYỆT ĐỐI: Trên mặt bàn và trong khung hình TUYỆT ĐỐI KHÔNG CÓ bất kỳ hộp giấy, hộp sữa hay túi quà nào! Chỉ duy nhất trên tay CH-1 đang cầm một chiếc TÁCH SỨ MÀU XANH LÁ ĐẬM nhỏ gọn.\n\nCAMERA & DIỄN BIẾN (MEDIUM CLOSE-UP):\nTrung cận hai mẹ con đứng trò chuyện đắc ý trong bếp (mặt bàn trống sạch hoàn toàn): CH-1 vừa nhấp một ngụm nhỏ từ tách sứ xanh lá đậm vừa quay sang CH-2 xuýt xoa khen ngon trong 4.2 giây đầu, CH-2 đứng cạnh gật gù cười chiều chuộng.\n\nTHOẠI TRỰC TIẾP (GIỌNG MIỀN NAM VIỆT NAM TỰ NHIÊN, ĐỌC ĐÚNG NGUYÊN VĂN MỘT LẦN DUY NHẤT, KHÔNG LẶP TỪ, NÓI XONG KHÉP MÔI):\nCH-1: “Công nhận sữa hạt Bojomi của chị Thảo uống thơm thanh thiệt đó má, thảo nào một hộp hơn năm trăm ngàn!”\n(Giọng miền Nam truyền cảm đời thường như diễn viên phim truyền hình thật, phát âm tròn vành rõ chữ không nuốt âm, TUYỆT ĐỐI KHÔNG LẶP LẠI TỪ CUỐI CÂU HAY GIỮA CÂU, nói dứt câu là khép môi tự nhiên nghỉ nhịp thở 2 giây cuối cảnh; nhân vật khác chỉ diễn nét mặt phản ứng, không mở miệng nói chèn).\n\nYÊU CẦU BẮT BUỘC:\nTUYỆT ĐỐI KHÔNG HIỂN THỊ PHỤ ĐỀ, KHÔNG CHỮ ĐÈ LÊN MÀN HÌNH, không khung đen trên dưới, không watermark.",
+      "Tạo video 10 giây, photorealistic live-action người Việt Nam thật, phong cách phim truyền hình gia đình Việt Nam chất lượng điện ảnh 8k sáng rõ tự nhiên, tỷ lệ dọc 9:16.\n\nIMAGE XUẤT HIỆN:\n- image 1: BO-1 (Không gian phòng ăn bếp mặt bàn trống gọn gàng)\n- image 2: CH-1 (Linh mặc áo sơ mi trắng bên phải)\n- image 3: CH-2 (Bà Hạnh mặc đồ bộ nhung đỏ đô bên trái)\n\nREFERENCE BẮT BUỘC:\nGiữ nguyên 100% khuôn mặt, kiểu tóc, trang phục CH-1 và CH-2. QUY TẮC ĐẠO CỤ TUYỆT ĐỐI: Trên mặt bàn và trong khung hình TUYỆT ĐỐI KHÔNG CÓ bất kỳ hộp giấy, hộp sữa hay túi quà nào! Chỉ duy nhất trên tay CH-1 đang cầm một chiếc TÁCH SỨ MÀU XANH LÁ ĐẬM nhỏ gọn.\n\nCAMERA & DIỄN BIẾN (MEDIUM CLOSE-UP):\nTrung cận hai mẹ con đứng trò chuyện đắc ý trong bếp (mặt bàn trống sạch hoàn toàn): CH-1 vừa nhấp một ngụm nhỏ từ tách sứ xanh lá đậm vừa quay sang CH-2 xuýt xoa khen ngon trong 3.8 giây đầu, nhịp nói dứt khoát trôi chảy, CH-2 đứng cạnh gật gù cười chiều chuộng.\n\nTHOẠI TRỰC TIẾP (GIỌNG MIỀN NAM VIỆT NAM TỰ NHIÊN, ĐỌC ĐÚNG NGUYÊN VĂN MỘT LẦN DUY NHẤT, KHÔNG LẶP TỪ, NÓI XONG KHÉP MÔI):\nCH-1: “Công nhận sữa hạt Bojomi của chị Thảo uống thơm thanh thiệt đó má, thảo nào một hộp hơn năm trăm ngàn!”\n(Giọng miền Nam truyền cảm đời thường như diễn viên phim truyền hình thật, phát âm tròn vành rõ chữ không nuốt âm, TUYỆT ĐỐI KHÔNG LẶP LẠI TỪ CUỐI CÂU HAY GIỮA CÂU, nói dứt câu là khép môi tự nhiên nghỉ nhịp thở 2 giây cuối cảnh; nhân vật khác chỉ diễn nét mặt phản ứng, không mở miệng nói chèn).\n\nYÊU CẦU BẮT BUỘC:\nTUYỆT ĐỐI KHÔNG HIỂN THỊ PHỤ ĐỀ, KHÔNG CHỮ ĐÈ LÊN MÀN HÌNH, không khung đen trên dưới, không watermark."
+    ],
+    "overwrite": true
+  },
+  {
+    "id": "k5v6_s07_9x16",
+    "episode": "k5ep01_v6",
+    "scene": "s07",
+    "scale": "CU",
+    "ratio": "9:16",
+    "seconds": 10,
+    "outPath": "C:\\AI\\full studio\\output\\k5-ep01-v4\\raw_v6_master\\s07.mp4",
+    "refs": [
+      {
+        "path": "C:\\AI\\full studio\\output\\k5-ep01-v4\\sets\\bo1_empty_9x16.jpg",
+        "name": "bo1_empty.jpg"
+      },
+      {
+        "path": "C:\\AI\\full studio\\output\\k5-ep01-v4\\cast_clean\\k5_bahanh.jpg",
+        "name": "k5_bahanh.jpg"
+      },
+      {
+        "path": "C:\\AI\\full studio\\output\\k5-ep01-v4\\cast_clean\\k5_linh.jpg",
+        "name": "k5_linh.jpg"
+      }
+    ],
+    "prompt": "Tạo video 10 giây, photorealistic live-action người Việt Nam thật, phong cách phim truyền hình gia đình Việt Nam chất lượng điện ảnh 8k sáng rõ tự nhiên, tỷ lệ dọc 9:16.\n\nIMAGE XUẤT HIỆN:\n- image 1: BO-1 (Phòng ăn bếp ấm cúng mặt bàn trống)\n- image 2: CH-1 (Bà Hạnh mặc đồ bộ nhung đỏ đô bên trái)\n- image 3: CH-2 (Linh mặc áo trắng bên phải)\n\nREFERENCE BẮT BUỘC:\nGiữ nguyên 100% khuôn mặt, kiểu tóc, trang phục CH-1 và CH-2. QUY TẮC ĐẠO CỤ TUYỆT ĐỐI: Khung hình cận từ ngang ngực trở lên, KHÔNG CÓ mặt bàn lộn xộn, TUYỆT ĐỐI KHÔNG CÓ bất kỳ hộp giấy hay hộp quà nào xuất hiện trong cảnh này!\n\nCAMERA & DIỄN BIẾN (CLOSE-UP):\nCận cảnh hai mẹ con: CH-1 âu yếm vỗ nhẹ lên cánh tay CH-2 thiên vị ra mặt, nói nhỏ rủ rỉ trong 4.2 giây đầu; CH-2 cười tít mắt đắc ý.\n\nTHOẠI TRỰC TIẾP (GIỌNG MIỀN NAM VIỆT NAM TỰ NHIÊN, ĐỌC ĐÚNG NGUYÊN VĂN MỘT LẦN DUY NHẤT, KHÔNG LẶP TỪ, NÓI XONG KHÉP MÔI):\nCH-1: “Con gái má cành vàng lá ngọc mới xứng uống canxi tảo biển, lát con đem nguyên hai hộp đó về uống luôn đi!”\n(Giọng miền Nam truyền cảm đời thường như diễn viên phim truyền hình thật, phát âm tròn vành rõ chữ không nuốt âm, TUYỆT ĐỐI KHÔNG LẶP LẠI TỪ CUỐI CÂU HAY GIỮA CÂU, nói dứt câu là khép môi tự nhiên nghỉ nhịp thở 2 giây cuối cảnh; nhân vật khác chỉ diễn nét mặt phản ứng, không mở miệng nói chèn).\n\nYÊU CẦU BẮT BUỘC:\nTUYỆT ĐỐI KHÔNG HIỂN THỊ PHỤ ĐỀ, KHÔNG CHỮ ĐÈ LÊN MÀN HÌNH, không khung đen trên dưới, không watermark.",
+    "prompts": [
+      "Tạo video 10 giây, photorealistic live-action người Việt Nam thật, phong cách phim truyền hình gia đình Việt Nam chất lượng điện ảnh 8k sáng rõ tự nhiên, tỷ lệ dọc 9:16.\n\nIMAGE XUẤT HIỆN:\n- image 1: BO-1 (Phòng ăn bếp ấm cúng mặt bàn trống)\n- image 2: CH-1 (Bà Hạnh mặc đồ bộ nhung đỏ đô bên trái)\n- image 3: CH-2 (Linh mặc áo trắng bên phải)\n\nREFERENCE BẮT BUỘC:\nGiữ nguyên 100% khuôn mặt, kiểu tóc, trang phục CH-1 và CH-2. QUY TẮC ĐẠO CỤ TUYỆT ĐỐI: Khung hình cận từ ngang ngực trở lên, KHÔNG CÓ mặt bàn lộn xộn, TUYỆT ĐỐI KHÔNG CÓ bất kỳ hộp giấy hay hộp quà nào xuất hiện trong cảnh này!\n\nCAMERA & DIỄN BIẾN (CLOSE-UP):\nCận cảnh hai mẹ con: CH-1 âu yếm vỗ nhẹ lên cánh tay CH-2 thiên vị ra mặt, nói nhỏ rủ rỉ trong 4.2 giây đầu; CH-2 cười tít mắt đắc ý.\n\nTHOẠI TRỰC TIẾP (GIỌNG MIỀN NAM VIỆT NAM TỰ NHIÊN, ĐỌC ĐÚNG NGUYÊN VĂN MỘT LẦN DUY NHẤT, KHÔNG LẶP TỪ, NÓI XONG KHÉP MÔI):\nCH-1: “Con gái má cành vàng lá ngọc mới xứng uống canxi tảo biển, lát con đem nguyên hai hộp đó về uống luôn đi!”\n(Giọng miền Nam truyền cảm đời thường như diễn viên phim truyền hình thật, phát âm tròn vành rõ chữ không nuốt âm, TUYỆT ĐỐI KHÔNG LẶP LẠI TỪ CUỐI CÂU HAY GIỮA CÂU, nói dứt câu là khép môi tự nhiên nghỉ nhịp thở 2 giây cuối cảnh; nhân vật khác chỉ diễn nét mặt phản ứng, không mở miệng nói chèn).\n\nYÊU CẦU BẮT BUỘC:\nTUYỆT ĐỐI KHÔNG HIỂN THỊ PHỤ ĐỀ, KHÔNG CHỮ ĐÈ LÊN MÀN HÌNH, không khung đen trên dưới, không watermark.",
+      "Tạo video 10 giây, photorealistic live-action người Việt Nam thật, phong cách phim truyền hình gia đình Việt Nam chất lượng điện ảnh 8k sáng rõ tự nhiên, tỷ lệ dọc 9:16.\n\nIMAGE XUẤT HIỆN:\n- image 1: BO-1 (Phòng ăn bếp ấm cúng mặt bàn trống)\n- image 2: CH-1 (Bà Hạnh mặc đồ bộ nhung đỏ đô bên trái)\n- image 3: CH-2 (Linh mặc áo trắng bên phải)\n\nREFERENCE BẮT BUỘC:\nGiữ nguyên 100% khuôn mặt, kiểu tóc, trang phục CH-1 và CH-2. QUY TẮC ĐẠO CỤ TUYỆT ĐỐI: Khung hình cận từ ngang ngực trở lên, KHÔNG CÓ mặt bàn lộn xộn, TUYỆT ĐỐI KHÔNG CÓ bất kỳ hộp giấy hay hộp quà nào xuất hiện trong cảnh này!\n\nCAMERA & DIỄN BIẾN (CLOSE-UP):\nCận cảnh hai mẹ con: CH-1 âu yếm vỗ nhẹ lên cánh tay CH-2 thiên vị ra mặt, nói nhỏ rủ rỉ trong 3.8 giây đầu, nhịp nói dứt khoát trôi chảy; CH-2 cười tít mắt đắc ý.\n\nTHOẠI TRỰC TIẾP (GIỌNG MIỀN NAM VIỆT NAM TỰ NHIÊN, ĐỌC ĐÚNG NGUYÊN VĂN MỘT LẦN DUY NHẤT, KHÔNG LẶP TỪ, NÓI XONG KHÉP MÔI):\nCH-1: “Con gái má cành vàng lá ngọc mới xứng uống canxi tảo biển, lát con đem nguyên hai hộp đó về uống luôn đi!”\n(Giọng miền Nam truyền cảm đời thường như diễn viên phim truyền hình thật, phát âm tròn vành rõ chữ không nuốt âm, TUYỆT ĐỐI KHÔNG LẶP LẠI TỪ CUỐI CÂU HAY GIỮA CÂU, nói dứt câu là khép môi tự nhiên nghỉ nhịp thở 2 giây cuối cảnh; nhân vật khác chỉ diễn nét mặt phản ứng, không mở miệng nói chèn).\n\nYÊU CẦU BẮT BUỘC:\nTUYỆT ĐỐI KHÔNG HIỂN THỊ PHỤ ĐỀ, KHÔNG CHỮ ĐÈ LÊN MÀN HÌNH, không khung đen trên dưới, không watermark."
+    ],
+    "overwrite": true
+  },
+  {
+    "id": "k5v6_s09_9x16",
+    "episode": "k5ep01_v6",
+    "scene": "s09",
+    "scale": "WS",
+    "ratio": "9:16",
+    "seconds": 10,
+    "outPath": "C:\\AI\\full studio\\output\\k5-ep01-v4\\raw_v6_master\\s09.mp4",
+    "refs": [
+      {
+        "path": "C:\\AI\\full studio\\output\\k5-ep01-v4\\sets\\bo1_empty_9x16.jpg",
+        "name": "bo1_empty.jpg"
+      },
+      {
+        "path": "C:\\AI\\full studio\\output\\k5-ep01-v4\\cast_clean\\k5_bahanh.jpg",
+        "name": "k5_bahanh.jpg"
+      },
+      {
+        "path": "C:\\AI\\full studio\\output\\k5-ep01-v4\\cast_clean\\k5_thao.jpg",
+        "name": "k5_thao.jpg"
+      }
+    ],
+    "prompt": "Tạo video 10 giây, photorealistic live-action người Việt Nam thật, phong cách phim truyền hình gia đình Việt Nam chất lượng điện ảnh 8k sáng rõ tự nhiên, tỷ lệ dọc 9:16.\n\nIMAGE XUẤT HIỆN:\n- image 1: BO-1 (Không gian rộng phòng ăn - bếp mặt bàn trống trơn chỉ có bình hoa góc bàn)\n- image 2: CH-1 (Bà Hạnh mặc đồ bộ nhung đỏ đô đứng bên phải)\n- image 3: CH-2 (Thảo mặc pijama lụa hồng đứng bên trái)\n\nREFERENCE BẮT BUỘC:\nGiữ nguyên 100% khuôn mặt, kiểu tóc, trang phục CH-1 và CH-2. CẤM TUYỆT ĐỐI ĐẶT HỘP SẢN PHẨM: Mặt bàn đá cẩm thạch ở giữa hoàn toàn trống sạch như image 1, TUYỆT ĐỐI KHÔNG CÓ bất kỳ hộp giấy, hộp sữa hay chữ BOJOMI nào trên bàn!\n\nCAMERA & BỐ CỤC CẢNH TOÀN SINH ĐỘNG (WIDE FULL-ROOM BLOCKING SHOT):\nCảnh Toàn dọc (thấy từ đầu gối trở lên của cả hai nhân vật trong không gian phòng bếp rộng thoáng): CH-2 (Thảo, bên trái) mắt đỏ hoe đứng uất ức đối diện má chồng; CH-1 (Bà Hạnh, bên phải) chống một tay ngang hông, tay kia chỉ thẳng vào bếp quát nạt đuổi con dâu trong 4.2 giây đầu.\n\nTHOẠI TRỰC TIẾP (GIỌNG MIỀN NAM VIỆT NAM TỰ NHIÊN, ĐỌC ĐÚNG NGUYÊN VĂN MỘT LẦN DUY NHẤT, KHÔNG LẶP TỪ, NÓI XONG KHÉP MÔI):\nCH-1: “Tao lấy cho con gái ruột tao uống đó rồi sao?! Bước vô nhà này thì cái gì cũng của nhà này, vô bếp đi!”\n(Giọng miền Nam truyền cảm đời thường như diễn viên phim truyền hình thật, phát âm tròn vành rõ chữ không nuốt âm, TUYỆT ĐỐI KHÔNG LẶP LẠI TỪ CUỐI CÂU HAY GIỮA CÂU, nói dứt câu là khép môi tự nhiên nghỉ nhịp thở 2 giây cuối cảnh; nhân vật khác chỉ diễn nét mặt phản ứng, không mở miệng nói chèn).\n\nYÊU CẦU BẮT BUỘC:\nTUYỆT ĐỐI KHÔNG HIỂN THỊ PHỤ ĐỀ, KHÔNG CHỮ ĐÈ LÊN MÀN HÌNH, không khung đen trên dưới, không watermark.",
+    "prompts": [
+      "Tạo video 10 giây, photorealistic live-action người Việt Nam thật, phong cách phim truyền hình gia đình Việt Nam chất lượng điện ảnh 8k sáng rõ tự nhiên, tỷ lệ dọc 9:16.\n\nIMAGE XUẤT HIỆN:\n- image 1: BO-1 (Không gian rộng phòng ăn - bếp mặt bàn trống trơn chỉ có bình hoa góc bàn)\n- image 2: CH-1 (Bà Hạnh mặc đồ bộ nhung đỏ đô đứng bên phải)\n- image 3: CH-2 (Thảo mặc pijama lụa hồng đứng bên trái)\n\nREFERENCE BẮT BUỘC:\nGiữ nguyên 100% khuôn mặt, kiểu tóc, trang phục CH-1 và CH-2. CẤM TUYỆT ĐỐI ĐẶT HỘP SẢN PHẨM: Mặt bàn đá cẩm thạch ở giữa hoàn toàn trống sạch như image 1, TUYỆT ĐỐI KHÔNG CÓ bất kỳ hộp giấy, hộp sữa hay chữ BOJOMI nào trên bàn!\n\nCAMERA & BỐ CỤC CẢNH TOÀN SINH ĐỘNG (WIDE FULL-ROOM BLOCKING SHOT):\nCảnh Toàn dọc (thấy từ đầu gối trở lên của cả hai nhân vật trong không gian phòng bếp rộng thoáng): CH-2 (Thảo, bên trái) mắt đỏ hoe đứng uất ức đối diện má chồng; CH-1 (Bà Hạnh, bên phải) chống một tay ngang hông, tay kia chỉ thẳng vào bếp quát nạt đuổi con dâu trong 4.2 giây đầu.\n\nTHOẠI TRỰC TIẾP (GIỌNG MIỀN NAM VIỆT NAM TỰ NHIÊN, ĐỌC ĐÚNG NGUYÊN VĂN MỘT LẦN DUY NHẤT, KHÔNG LẶP TỪ, NÓI XONG KHÉP MÔI):\nCH-1: “Tao lấy cho con gái ruột tao uống đó rồi sao?! Bước vô nhà này thì cái gì cũng của nhà này, vô bếp đi!”\n(Giọng miền Nam truyền cảm đời thường như diễn viên phim truyền hình thật, phát âm tròn vành rõ chữ không nuốt âm, TUYỆT ĐỐI KHÔNG LẶP LẠI TỪ CUỐI CÂU HAY GIỮA CÂU, nói dứt câu là khép môi tự nhiên nghỉ nhịp thở 2 giây cuối cảnh; nhân vật khác chỉ diễn nét mặt phản ứng, không mở miệng nói chèn).\n\nYÊU CẦU BẮT BUỘC:\nTUYỆT ĐỐI KHÔNG HIỂN THỊ PHỤ ĐỀ, KHÔNG CHỮ ĐÈ LÊN MÀN HÌNH, không khung đen trên dưới, không watermark.",
+      "Tạo video 10 giây, photorealistic live-action người Việt Nam thật, phong cách phim truyền hình gia đình Việt Nam chất lượng điện ảnh 8k sáng rõ tự nhiên, tỷ lệ dọc 9:16.\n\nIMAGE XUẤT HIỆN:\n- image 1: BO-1 (Không gian rộng phòng ăn - bếp mặt bàn trống trơn chỉ có bình hoa góc bàn)\n- image 2: CH-1 (Bà Hạnh mặc đồ bộ nhung đỏ đô đứng bên phải)\n- image 3: CH-2 (Thảo mặc pijama lụa hồng đứng bên trái)\n\nREFERENCE BẮT BUỘC:\nGiữ nguyên 100% khuôn mặt, kiểu tóc, trang phục CH-1 và CH-2. CẤM TUYỆT ĐỐI ĐẶT HỘP SẢN PHẨM: Mặt bàn đá cẩm thạch ở giữa hoàn toàn trống sạch như image 1, TUYỆT ĐỐI KHÔNG CÓ bất kỳ hộp giấy, hộp sữa hay chữ BOJOMI nào trên bàn!\n\nCAMERA & BỐ CỤC CẢNH TOÀN SINH ĐỘNG (WIDE FULL-ROOM BLOCKING SHOT):\nCảnh Toàn dọc (thấy từ đầu gối trở lên của cả hai nhân vật trong không gian phòng bếp rộng thoáng): CH-2 (Thảo, bên trái) mắt đỏ hoe đứng uất ức đối diện má chồng; CH-1 (Bà Hạnh, bên phải) chống một tay ngang hông, tay kia chỉ thẳng vào bếp quát nạt đuổi con dâu trong 3.8 giây đầu, nhịp nói dứt khoát trôi chảy.\n\nTHOẠI TRỰC TIẾP (GIỌNG MIỀN NAM VIỆT NAM TỰ NHIÊN, ĐỌC ĐÚNG NGUYÊN VĂN MỘT LẦN DUY NHẤT, KHÔNG LẶP TỪ, NÓI XONG KHÉP MÔI):\nCH-1: “Tao lấy cho con gái ruột tao uống đó rồi sao?! Bước vô nhà này thì cái gì cũng của nhà này, vô bếp đi!”\n(Giọng miền Nam truyền cảm đời thường như diễn viên phim truyền hình thật, phát âm tròn vành rõ chữ không nuốt âm, TUYỆT ĐỐI KHÔNG LẶP LẠI TỪ CUỐI CÂU HAY GIỮA CÂU, nói dứt câu là khép môi tự nhiên nghỉ nhịp thở 2 giây cuối cảnh; nhân vật khác chỉ diễn nét mặt phản ứng, không mở miệng nói chèn).\n\nYÊU CẦU BẮT BUỘC:\nTUYỆT ĐỐI KHÔNG HIỂN THỊ PHỤ ĐỀ, KHÔNG CHỮ ĐÈ LÊN MÀN HÌNH, không khung đen trên dưới, không watermark."
+    ],
+    "overwrite": true
+  },
+  {
+    "id": "k5v6_s10b_9x16",
+    "episode": "k5ep01_v6",
+    "scene": "s10b",
+    "scale": "MLS",
+    "ratio": "9:16",
+    "seconds": 10,
+    "outPath": "C:\\AI\\full studio\\output\\k5-ep01-v4\\raw_v6_master\\s10b.mp4",
+    "refs": [
+      {
+        "path": "C:\\AI\\full studio\\output\\k5-ep01-v4\\sets\\bo1_2bojomi_nobag_9x16.jpg",
+        "name": "bo1_2boj.jpg"
+      },
+      {
+        "path": "C:\\AI\\full studio\\output\\k5-ep01-v4\\cast_clean\\k5_linh.jpg",
+        "name": "k5_linh.jpg"
+      },
+      {
+        "path": "C:\\AI\\full studio\\output\\k5-ep01-v4\\sets\\pr_2bojomi_nobag_1x1.jpg",
+        "name": "pr_2bojomi_box.jpg"
+      }
+    ],
+    "prompt": "Tạo video 10 giây, photorealistic live-action người Việt Nam thật, phong cách phim truyền hình gia đình Việt Nam chất lượng điện ảnh 8k sáng rõ tự nhiên, tỷ lệ dọc 9:16.\n\nIMAGE XUẤT HIỆN:\n- image 1: BO-1 (Góc bàn và hệ tủ gỗ phòng ăn có đặt đúng 2 hộp giấy BOJOMI)\n- image 2: CH-1 (Linh mặc áo sơ mi trắng)\n- image 3: PR-1 (Đúng 2 hộp giấy cứng chữ nhật đứng nắp phẳng AN VƯỢNG PHARMA BOJOMI màu trắng xanh lá đậm)\n\nREFERENCE BẮT BUỘC:\nGiữ nguyên 100% khuôn mặt, kiểu tóc, trang phục CH-1 từ image 2. Hai hộp sản phẩm CH-1 cầm BẮT BUỘC giữ nguyên 100% thiết kế HỘP GIẤY CỨNG NẮP PHẲNG màu trắng - xanh lá đậm có in hình tách xanh và chữ BOJOMI của ĐÚNG 2 HỘP từ image 3 (không túi giấy, không hộp trắng trơn).\n\nCAMERA & DIỄN BIẾN LOGIC GIẤU TANG VẬT (MEDIUM-LONG SHOT):\nCảnh Trung-Toàn sinh động từ ngang đùi trở lên bên góc tủ gỗ phòng ăn: Nghe tiếng anh Hai vừa về ngoài cửa, CH-1 giật bắn mình tái mặt nhìn ngoái ra hướng cửa, hai tay cuống cuồng gom chụp lấy ĐÚNG 2 HỘP BOJOMI trên bàn ôm giấu sát ra phía sau lưng rồi lùi nép người sát vào cạnh tủ gỗ, miệng lẩm bẩm hoảng hốt trong 4.2 giây đầu.\n\nTHOẠI TRỰC TIẾP (GIỌNG MIỀN NAM VIỆT NAM TỰ NHIÊN, ĐỌC ĐÚNG NGUYÊN VĂN MỘT LẦN DUY NHẤT, KHÔNG LẶP TỪ, NÓI XONG KHÉP MÔI):\nCH-1: “Chết rồi, anh Hai về bất thình lình, phải lén giấu hai hộp này ra sau lưng mới được!”\n(Giọng miền Nam truyền cảm đời thường như diễn viên phim truyền hình thật, phát âm tròn vành rõ chữ không nuốt âm, TUYỆT ĐỐI KHÔNG LẶP LẠI TỪ CUỐI CÂU HAY GIỮA CÂU, nói dứt câu là khép môi tự nhiên nghỉ nhịp thở 2 giây cuối cảnh; nhân vật khác chỉ diễn nét mặt phản ứng, không mở miệng nói chèn).\n\nYÊU CẦU BẮT BUỘC:\nTUYỆT ĐỐI KHÔNG HIỂN THỊ PHỤ ĐỀ, KHÔNG CHỮ ĐÈ LÊN MÀN HÌNH, không khung đen trên dưới, không watermark.",
+    "prompts": [
+      "Tạo video 10 giây, photorealistic live-action người Việt Nam thật, phong cách phim truyền hình gia đình Việt Nam chất lượng điện ảnh 8k sáng rõ tự nhiên, tỷ lệ dọc 9:16.\n\nIMAGE XUẤT HIỆN:\n- image 1: BO-1 (Góc bàn và hệ tủ gỗ phòng ăn có đặt đúng 2 hộp giấy BOJOMI)\n- image 2: CH-1 (Linh mặc áo sơ mi trắng)\n- image 3: PR-1 (Đúng 2 hộp giấy cứng chữ nhật đứng nắp phẳng AN VƯỢNG PHARMA BOJOMI màu trắng xanh lá đậm)\n\nREFERENCE BẮT BUỘC:\nGiữ nguyên 100% khuôn mặt, kiểu tóc, trang phục CH-1 từ image 2. Hai hộp sản phẩm CH-1 cầm BẮT BUỘC giữ nguyên 100% thiết kế HỘP GIẤY CỨNG NẮP PHẲNG màu trắng - xanh lá đậm có in hình tách xanh và chữ BOJOMI của ĐÚNG 2 HỘP từ image 3 (không túi giấy, không hộp trắng trơn).\n\nCAMERA & DIỄN BIẾN LOGIC GIẤU TANG VẬT (MEDIUM-LONG SHOT):\nCảnh Trung-Toàn sinh động từ ngang đùi trở lên bên góc tủ gỗ phòng ăn: Nghe tiếng anh Hai vừa về ngoài cửa, CH-1 giật bắn mình tái mặt nhìn ngoái ra hướng cửa, hai tay cuống cuồng gom chụp lấy ĐÚNG 2 HỘP BOJOMI trên bàn ôm giấu sát ra phía sau lưng rồi lùi nép người sát vào cạnh tủ gỗ, miệng lẩm bẩm hoảng hốt trong 4.2 giây đầu.\n\nTHOẠI TRỰC TIẾP (GIỌNG MIỀN NAM VIỆT NAM TỰ NHIÊN, ĐỌC ĐÚNG NGUYÊN VĂN MỘT LẦN DUY NHẤT, KHÔNG LẶP TỪ, NÓI XONG KHÉP MÔI):\nCH-1: “Chết rồi, anh Hai về bất thình lình, phải lén giấu hai hộp này ra sau lưng mới được!”\n(Giọng miền Nam truyền cảm đời thường như diễn viên phim truyền hình thật, phát âm tròn vành rõ chữ không nuốt âm, TUYỆT ĐỐI KHÔNG LẶP LẠI TỪ CUỐI CÂU HAY GIỮA CÂU, nói dứt câu là khép môi tự nhiên nghỉ nhịp thở 2 giây cuối cảnh; nhân vật khác chỉ diễn nét mặt phản ứng, không mở miệng nói chèn).\n\nYÊU CẦU BẮT BUỘC:\nTUYỆT ĐỐI KHÔNG HIỂN THỊ PHỤ ĐỀ, KHÔNG CHỮ ĐÈ LÊN MÀN HÌNH, không khung đen trên dưới, không watermark.",
+      "Tạo video 10 giây, photorealistic live-action người Việt Nam thật, phong cách phim truyền hình gia đình Việt Nam chất lượng điện ảnh 8k sáng rõ tự nhiên, tỷ lệ dọc 9:16.\n\nIMAGE XUẤT HIỆN:\n- image 1: BO-1 (Góc bàn và hệ tủ gỗ phòng ăn có đặt đúng 2 hộp giấy BOJOMI)\n- image 2: CH-1 (Linh mặc áo sơ mi trắng)\n- image 3: PR-1 (Đúng 2 hộp giấy cứng chữ nhật đứng nắp phẳng AN VƯỢNG PHARMA BOJOMI màu trắng xanh lá đậm)\n\nREFERENCE BẮT BUỘC:\nGiữ nguyên 100% khuôn mặt, kiểu tóc, trang phục CH-1 từ image 2. Hai hộp sản phẩm CH-1 cầm BẮT BUỘC giữ nguyên 100% thiết kế HỘP GIẤY CỨNG NẮP PHẲNG màu trắng - xanh lá đậm có in hình tách xanh và chữ BOJOMI của ĐÚNG 2 HỘP từ image 3 (không túi giấy, không hộp trắng trơn).\n\nCAMERA & DIỄN BIẾN LOGIC GIẤU TANG VẬT (MEDIUM-LONG SHOT):\nCảnh Trung-Toàn sinh động từ ngang đùi trở lên bên góc tủ gỗ phòng ăn: Nghe tiếng anh Hai vừa về ngoài cửa, CH-1 giật bắn mình tái mặt nhìn ngoái ra hướng cửa, hai tay cuống cuồng gom chụp lấy ĐÚNG 2 HỘP BOJOMI trên bàn ôm giấu sát ra phía sau lưng rồi lùi nép người sát vào cạnh tủ gỗ, miệng lẩm bẩm hoảng hốt trong 3.8 giây đầu, nhịp nói dứt khoát trôi chảy.\n\nTHOẠI TRỰC TIẾP (GIỌNG MIỀN NAM VIỆT NAM TỰ NHIÊN, ĐỌC ĐÚNG NGUYÊN VĂN MỘT LẦN DUY NHẤT, KHÔNG LẶP TỪ, NÓI XONG KHÉP MÔI):\nCH-1: “Chết rồi, anh Hai về bất thình lình, phải lén giấu hai hộp này ra sau lưng mới được!”\n(Giọng miền Nam truyền cảm đời thường như diễn viên phim truyền hình thật, phát âm tròn vành rõ chữ không nuốt âm, TUYỆT ĐỐI KHÔNG LẶP LẠI TỪ CUỐI CÂU HAY GIỮA CÂU, nói dứt câu là khép môi tự nhiên nghỉ nhịp thở 2 giây cuối cảnh; nhân vật khác chỉ diễn nét mặt phản ứng, không mở miệng nói chèn).\n\nYÊU CẦU BẮT BUỘC:\nTUYỆT ĐỐI KHÔNG HIỂN THỊ PHỤ ĐỀ, KHÔNG CHỮ ĐÈ LÊN MÀN HÌNH, không khung đen trên dưới, không watermark."
+    ],
+    "overwrite": true
+  },
+  {
+    "id": "k5v6_s11_9x16",
+    "episode": "k5ep01_v6",
+    "scene": "s11",
+    "scale": "CU",
+    "ratio": "9:16",
+    "seconds": 10,
+    "outPath": "C:\\AI\\full studio\\output\\k5-ep01-v4\\raw_v6_master\\s11.mp4",
+    "refs": [
+      {
+        "path": "C:\\AI\\full studio\\output\\k5-ep01-v4\\sets\\bo1_empty_9x16.jpg",
+        "name": "bo1_empty.jpg"
+      },
+      {
+        "path": "C:\\AI\\full studio\\output\\k5-ep01-v4\\cast_clean\\k5_bahanh.jpg",
+        "name": "k5_bahanh.jpg"
+      }
+    ],
+    "prompt": "Tạo video 10 giây, photorealistic live-action người Việt Nam thật, phong cách phim truyền hình gia đình Việt Nam chất lượng điện ảnh 8k sáng rõ tự nhiên, tỷ lệ dọc 9:16.\n\nIMAGE XUẤT HIỆN:\n- image 1: BO-1 (Phòng ăn ấm cúng nền mờ tự nhiên)\n- image 2: CH-1 (Bà Hạnh mặc đồ bộ nhung đỏ đô)\n\nREFERENCE BẮT BUỘC:\nGiữ nguyên 100% khuôn mặt, kiểu tóc, trang phục CH-1. Không có bất kỳ hộp giấy nào trong cảnh.\n\nCAMERA & DIỄN BIẾN (CLOSE-UP):\nCận cảnh CH-1 vội vã bước ra giả bộ nhăn mặt ấm ức đóng kịch mách lẻo với con trai (nhìn về bên trái khung hình), nói mạch lạc rõ từng chữ trong 4.2 giây đầu.\n\nTHOẠI TRỰC TIẾP (GIỌNG MIỀN NAM VIỆT NAM TỰ NHIÊN, ĐỌC ĐÚNG NGUYÊN VĂN MỘT LẦN DUY NHẤT, KHÔNG LẶP TỪ, NÓI XONG KHÉP MÔI):\nCH-1: “Vợ mày ích kỷ lắm Tuấn ơi! Má mới xin uống thử một ly mà nó gào khóc hỗn hào với má kìa!”\n(Giọng miền Nam truyền cảm đời thường như diễn viên phim truyền hình thật, phát âm tròn vành rõ chữ không nuốt âm, TUYỆT ĐỐI KHÔNG LẶP LẠI TỪ CUỐI CÂU HAY GIỮA CÂU, nói dứt câu là khép môi tự nhiên nghỉ nhịp thở 2 giây cuối cảnh; nhân vật khác chỉ diễn nét mặt phản ứng, không mở miệng nói chèn).\n\nYÊU CẦU BẮT BUỘC:\nTUYỆT ĐỐI KHÔNG HIỂN THỊ PHỤ ĐỀ, KHÔNG CHỮ ĐÈ LÊN MÀN HÌNH, không khung đen trên dưới, không watermark.",
+    "prompts": [
+      "Tạo video 10 giây, photorealistic live-action người Việt Nam thật, phong cách phim truyền hình gia đình Việt Nam chất lượng điện ảnh 8k sáng rõ tự nhiên, tỷ lệ dọc 9:16.\n\nIMAGE XUẤT HIỆN:\n- image 1: BO-1 (Phòng ăn ấm cúng nền mờ tự nhiên)\n- image 2: CH-1 (Bà Hạnh mặc đồ bộ nhung đỏ đô)\n\nREFERENCE BẮT BUỘC:\nGiữ nguyên 100% khuôn mặt, kiểu tóc, trang phục CH-1. Không có bất kỳ hộp giấy nào trong cảnh.\n\nCAMERA & DIỄN BIẾN (CLOSE-UP):\nCận cảnh CH-1 vội vã bước ra giả bộ nhăn mặt ấm ức đóng kịch mách lẻo với con trai (nhìn về bên trái khung hình), nói mạch lạc rõ từng chữ trong 4.2 giây đầu.\n\nTHOẠI TRỰC TIẾP (GIỌNG MIỀN NAM VIỆT NAM TỰ NHIÊN, ĐỌC ĐÚNG NGUYÊN VĂN MỘT LẦN DUY NHẤT, KHÔNG LẶP TỪ, NÓI XONG KHÉP MÔI):\nCH-1: “Vợ mày ích kỷ lắm Tuấn ơi! Má mới xin uống thử một ly mà nó gào khóc hỗn hào với má kìa!”\n(Giọng miền Nam truyền cảm đời thường như diễn viên phim truyền hình thật, phát âm tròn vành rõ chữ không nuốt âm, TUYỆT ĐỐI KHÔNG LẶP LẠI TỪ CUỐI CÂU HAY GIỮA CÂU, nói dứt câu là khép môi tự nhiên nghỉ nhịp thở 2 giây cuối cảnh; nhân vật khác chỉ diễn nét mặt phản ứng, không mở miệng nói chèn).\n\nYÊU CẦU BẮT BUỘC:\nTUYỆT ĐỐI KHÔNG HIỂN THỊ PHỤ ĐỀ, KHÔNG CHỮ ĐÈ LÊN MÀN HÌNH, không khung đen trên dưới, không watermark.",
+      "Tạo video 10 giây, photorealistic live-action người Việt Nam thật, phong cách phim truyền hình gia đình Việt Nam chất lượng điện ảnh 8k sáng rõ tự nhiên, tỷ lệ dọc 9:16.\n\nIMAGE XUẤT HIỆN:\n- image 1: BO-1 (Phòng ăn ấm cúng nền mờ tự nhiên)\n- image 2: CH-1 (Bà Hạnh mặc đồ bộ nhung đỏ đô)\n\nREFERENCE BẮT BUỘC:\nGiữ nguyên 100% khuôn mặt, kiểu tóc, trang phục CH-1. Không có bất kỳ hộp giấy nào trong cảnh.\n\nCAMERA & DIỄN BIẾN (CLOSE-UP):\nCận cảnh CH-1 vội vã bước ra giả bộ nhăn mặt ấm ức đóng kịch mách lẻo với con trai (nhìn về bên trái khung hình), nói mạch lạc rõ từng chữ trong 3.8 giây đầu, nhịp nói dứt khoát trôi chảy.\n\nTHOẠI TRỰC TIẾP (GIỌNG MIỀN NAM VIỆT NAM TỰ NHIÊN, ĐỌC ĐÚNG NGUYÊN VĂN MỘT LẦN DUY NHẤT, KHÔNG LẶP TỪ, NÓI XONG KHÉP MÔI):\nCH-1: “Vợ mày ích kỷ lắm Tuấn ơi! Má mới xin uống thử một ly mà nó gào khóc hỗn hào với má kìa!”\n(Giọng miền Nam truyền cảm đời thường như diễn viên phim truyền hình thật, phát âm tròn vành rõ chữ không nuốt âm, TUYỆT ĐỐI KHÔNG LẶP LẠI TỪ CUỐI CÂU HAY GIỮA CÂU, nói dứt câu là khép môi tự nhiên nghỉ nhịp thở 2 giây cuối cảnh; nhân vật khác chỉ diễn nét mặt phản ứng, không mở miệng nói chèn).\n\nYÊU CẦU BẮT BUỘC:\nTUYỆT ĐỐI KHÔNG HIỂN THỊ PHỤ ĐỀ, KHÔNG CHỮ ĐÈ LÊN MÀN HÌNH, không khung đen trên dưới, không watermark."
+    ],
+    "overwrite": true
+  },
+  {
+    "id": "k5v6_s12_9x16",
+    "episode": "k5ep01_v6",
+    "scene": "s12",
+    "scale": "MCU",
+    "ratio": "9:16",
+    "seconds": 10,
+    "outPath": "C:\\AI\\full studio\\output\\k5-ep01-v4\\raw_v6_master\\s12.mp4",
+    "refs": [
+      {
+        "path": "C:\\AI\\full studio\\output\\k5-ep01-v4\\sets\\bo1_empty_9x16.jpg",
+        "name": "bo1_empty.jpg"
+      },
+      {
+        "path": "C:\\AI\\full studio\\output\\k5-ep01-v4\\cast_clean\\k5_ngan.jpg",
+        "name": "k5_ngan.jpg"
+      },
+      {
+        "path": "C:\\AI\\full studio\\output\\k5-ep01-v4\\cast_clean\\k5_tuan.jpg",
+        "name": "k5_tuan.jpg"
+      }
+    ],
+    "prompt": "Tạo video 10 giây, photorealistic live-action người Việt Nam thật, phong cách phim truyền hình gia đình Việt Nam chất lượng điện ảnh 8k sáng rõ tự nhiên, tỷ lệ dọc 9:16.\n\nIMAGE XUẤT HIỆN:\n- image 1: BO-1 (Không gian phòng khách - phòng ăn, mặt bàn trống sạch)\n- image 2: CH-1 (Chị Hai Ngân mặc sơ mi trắng đeo thẻ công sở đứng bên trái)\n- image 3: CH-2 (Tuấn mặc sơ mi trắng quần tây đứng kế bên phải)\n\nREFERENCE BẮT BUỘC:\nGiữ nguyên 100% khuôn mặt, kiểu tóc, trang phục CH-1 và CH-2. Mặt bàn hoàn toàn trống sạch, tuyệt đối không có hộp giấy nào.\n\nCAMERA & DIỄN BIẾN (MEDIUM CLOSE-UP):\nTrung cận hai người từ ngang thắt lưng trở lên: CH-1 ánh mắt sắc sảo nhìn phát hiện về phía góc tủ bên phải, giơ tay chỉ thẳng về hướng góc tủ vạch trần trong 4.2 giây đầu; CH-2 đứng cạnh lập tức quay phắt ánh mắt nhìn theo tay chỉ của chị vợ với vẻ mặt sững sờ.\n\nTHOẠI TRỰC TIẾP (GIỌNG MIỀN NAM VIỆT NAM TỰ NHIÊN, ĐỌC ĐÚNG NGUYÊN VĂN MỘT LẦN DUY NHẤT, KHÔNG LẶP TỪ, NÓI XONG KHÉP MÔI):\nCH-1: “Bác kêu chỉ xin thử một ly, vậy cô Linh đang nép góc tủ lén giấu cái gì sau lưng kia vậy bác?!”\n(Giọng miền Nam truyền cảm đời thường như diễn viên phim truyền hình thật, phát âm tròn vành rõ chữ không nuốt âm, TUYỆT ĐỐI KHÔNG LẶP LẠI TỪ CUỐI CÂU HAY GIỮA CÂU, nói dứt câu là khép môi tự nhiên nghỉ nhịp thở 2 giây cuối cảnh; nhân vật khác chỉ diễn nét mặt phản ứng, không mở miệng nói chèn).\n\nYÊU CẦU BẮT BUỘC:\nTUYỆT ĐỐI KHÔNG HIỂN THỊ PHỤ ĐỀ, KHÔNG CHỮ ĐÈ LÊN MÀN HÌNH, không khung đen trên dưới, không watermark.",
+    "prompts": [
+      "Tạo video 10 giây, photorealistic live-action người Việt Nam thật, phong cách phim truyền hình gia đình Việt Nam chất lượng điện ảnh 8k sáng rõ tự nhiên, tỷ lệ dọc 9:16.\n\nIMAGE XUẤT HIỆN:\n- image 1: BO-1 (Không gian phòng khách - phòng ăn, mặt bàn trống sạch)\n- image 2: CH-1 (Chị Hai Ngân mặc sơ mi trắng đeo thẻ công sở đứng bên trái)\n- image 3: CH-2 (Tuấn mặc sơ mi trắng quần tây đứng kế bên phải)\n\nREFERENCE BẮT BUỘC:\nGiữ nguyên 100% khuôn mặt, kiểu tóc, trang phục CH-1 và CH-2. Mặt bàn hoàn toàn trống sạch, tuyệt đối không có hộp giấy nào.\n\nCAMERA & DIỄN BIẾN (MEDIUM CLOSE-UP):\nTrung cận hai người từ ngang thắt lưng trở lên: CH-1 ánh mắt sắc sảo nhìn phát hiện về phía góc tủ bên phải, giơ tay chỉ thẳng về hướng góc tủ vạch trần trong 4.2 giây đầu; CH-2 đứng cạnh lập tức quay phắt ánh mắt nhìn theo tay chỉ của chị vợ với vẻ mặt sững sờ.\n\nTHOẠI TRỰC TIẾP (GIỌNG MIỀN NAM VIỆT NAM TỰ NHIÊN, ĐỌC ĐÚNG NGUYÊN VĂN MỘT LẦN DUY NHẤT, KHÔNG LẶP TỪ, NÓI XONG KHÉP MÔI):\nCH-1: “Bác kêu chỉ xin thử một ly, vậy cô Linh đang nép góc tủ lén giấu cái gì sau lưng kia vậy bác?!”\n(Giọng miền Nam truyền cảm đời thường như diễn viên phim truyền hình thật, phát âm tròn vành rõ chữ không nuốt âm, TUYỆT ĐỐI KHÔNG LẶP LẠI TỪ CUỐI CÂU HAY GIỮA CÂU, nói dứt câu là khép môi tự nhiên nghỉ nhịp thở 2 giây cuối cảnh; nhân vật khác chỉ diễn nét mặt phản ứng, không mở miệng nói chèn).\n\nYÊU CẦU BẮT BUỘC:\nTUYỆT ĐỐI KHÔNG HIỂN THỊ PHỤ ĐỀ, KHÔNG CHỮ ĐÈ LÊN MÀN HÌNH, không khung đen trên dưới, không watermark.",
+      "Tạo video 10 giây, photorealistic live-action người Việt Nam thật, phong cách phim truyền hình gia đình Việt Nam chất lượng điện ảnh 8k sáng rõ tự nhiên, tỷ lệ dọc 9:16.\n\nIMAGE XUẤT HIỆN:\n- image 1: BO-1 (Không gian phòng khách - phòng ăn, mặt bàn trống sạch)\n- image 2: CH-1 (Chị Hai Ngân mặc sơ mi trắng đeo thẻ công sở đứng bên trái)\n- image 3: CH-2 (Tuấn mặc sơ mi trắng quần tây đứng kế bên phải)\n\nREFERENCE BẮT BUỘC:\nGiữ nguyên 100% khuôn mặt, kiểu tóc, trang phục CH-1 và CH-2. Mặt bàn hoàn toàn trống sạch, tuyệt đối không có hộp giấy nào.\n\nCAMERA & DIỄN BIẾN (MEDIUM CLOSE-UP):\nTrung cận hai người từ ngang thắt lưng trở lên: CH-1 ánh mắt sắc sảo nhìn phát hiện về phía góc tủ bên phải, giơ tay chỉ thẳng về hướng góc tủ vạch trần trong 3.8 giây đầu, nhịp nói dứt khoát trôi chảy; CH-2 đứng cạnh lập tức quay phắt ánh mắt nhìn theo tay chỉ của chị vợ với vẻ mặt sững sờ.\n\nTHOẠI TRỰC TIẾP (GIỌNG MIỀN NAM VIỆT NAM TỰ NHIÊN, ĐỌC ĐÚNG NGUYÊN VĂN MỘT LẦN DUY NHẤT, KHÔNG LẶP TỪ, NÓI XONG KHÉP MÔI):\nCH-1: “Bác kêu chỉ xin thử một ly, vậy cô Linh đang nép góc tủ lén giấu cái gì sau lưng kia vậy bác?!”\n(Giọng miền Nam truyền cảm đời thường như diễn viên phim truyền hình thật, phát âm tròn vành rõ chữ không nuốt âm, TUYỆT ĐỐI KHÔNG LẶP LẠI TỪ CUỐI CÂU HAY GIỮA CÂU, nói dứt câu là khép môi tự nhiên nghỉ nhịp thở 2 giây cuối cảnh; nhân vật khác chỉ diễn nét mặt phản ứng, không mở miệng nói chèn).\n\nYÊU CẦU BẮT BUỘC:\nTUYỆT ĐỐI KHÔNG HIỂN THỊ PHỤ ĐỀ, KHÔNG CHỮ ĐÈ LÊN MÀN HÌNH, không khung đen trên dưới, không watermark."
+    ],
+    "overwrite": true
+  },
+  {
+    "id": "k5v6_s12b_9x16",
+    "episode": "k5ep01_v6",
+    "scene": "s12b",
+    "scale": "WS",
+    "ratio": "9:16",
+    "seconds": 10,
+    "outPath": "C:\\AI\\full studio\\output\\k5-ep01-v4\\raw_v6_master\\s12b.mp4",
+    "refs": [
+      {
+        "path": "C:\\AI\\full studio\\output\\k5-ep01-v4\\sets\\bo1_empty_9x16.jpg",
+        "name": "bo1_empty.jpg"
+      },
+      {
+        "path": "C:\\AI\\full studio\\output\\k5-ep01-v4\\cast_pairs\\pair_tuan_thao_full.jpg",
+        "name": "pair_tuan_thao_full.jpg"
+      },
+      {
+        "path": "C:\\AI\\full studio\\output\\k5-ep01-v4\\cast_clean\\k5_linh.jpg",
+        "name": "k5_linh.jpg"
+      }
+    ],
+    "prompt": "Tạo video 10 giây, photorealistic live-action người Việt Nam thật, phong cách phim truyền hình gia đình Việt Nam chất lượng điện ảnh 8k sáng rõ tự nhiên, tỷ lệ dọc 9:16.\n\nIMAGE XUẤT HIỆN:\n- image 1: BO-1 (Không gian rộng toàn cảnh phòng ăn và hệ tủ gỗ phía sau, mặt bàn trống sạch)\n- image 2: CH-1 (Tuấn mặc sơ mi trắng quần tây bên phải ảnh 2) và CH-2 (Thảo mặc pijama hồng bên trái ảnh 2)\n- image 3: CH-3 (Linh mặc áo trắng đứng nép ở góc tủ bên phải khung hình)\n\nREFERENCE BẮT BUỘC:\nGiữ nguyên 100% khuôn mặt, kiểu tóc, trang phục của Tuấn, Thảo từ image 2 và Linh từ image 3. QUY TẮC ĐẠO CỤ: Mặt bàn trống sạch 100%, hai tay của CH-3 (Linh) đang giấu chặt ra phía sau lưng sát vách tủ nên TUYỆT ĐỐI KHÔNG vẽ hộp giấy lộ trên mặt bàn!\n\nCAMERA & CHUYỂN ĐỘNG CẢNH TOÀN BẮT QUẢ TANG (WIDE DYNAMIC GROUP BLOCKING SHOT):\nCảnh Toàn dọc sinh động thấy rõ toàn bộ chuyển động cơ thể từ đầu gối trở lên trong căn phòng: Từ phía bên trái khung hình, CH-1 (Tuấn) dẫn đầu cùng CH-2 (Thảo) bước nhanh dồn dập băng ngang phòng ùa thẳng qua sát góc tủ bên phải nơi CH-3 (Linh) đang giật mình lùi sát tường giấu hai tay sau lưng; CH-1 đứng sừng sững ngay trước mặt CH-3 chỉ tay nghiêm giọng bắt đưa đồ giấu sau lưng ra trong 4.2 giây đầu.\n\nTHOẠI TRỰC TIẾP (GIỌNG MIỀN NAM VIỆT NAM TỰ NHIÊN, ĐỌC ĐÚNG NGUYÊN VĂN MỘT LẦN DUY NHẤT, KHÔNG LẶP TỪ, NÓI XONG KHÉP MÔI):\nCH-1: “Đứng lại đó Linh! Đưa ngay cái thứ em đang lén giấu sau lưng ra đây cho anh coi!”\n(Giọng miền Nam truyền cảm đời thường như diễn viên phim truyền hình thật, phát âm tròn vành rõ chữ không nuốt âm, TUYỆT ĐỐI KHÔNG LẶP LẠI TỪ CUỐI CÂU HAY GIỮA CÂU, nói dứt câu là khép môi tự nhiên nghỉ nhịp thở 2 giây cuối cảnh; nhân vật khác chỉ diễn nét mặt phản ứng, không mở miệng nói chèn).\n\nYÊU CẦU BẮT BUỘC:\nTUYỆT ĐỐI KHÔNG HIỂN THỊ PHỤ ĐỀ, KHÔNG CHỮ ĐÈ LÊN MÀN HÌNH, không khung đen trên dưới, không watermark.",
+    "prompts": [
+      "Tạo video 10 giây, photorealistic live-action người Việt Nam thật, phong cách phim truyền hình gia đình Việt Nam chất lượng điện ảnh 8k sáng rõ tự nhiên, tỷ lệ dọc 9:16.\n\nIMAGE XUẤT HIỆN:\n- image 1: BO-1 (Không gian rộng toàn cảnh phòng ăn và hệ tủ gỗ phía sau, mặt bàn trống sạch)\n- image 2: CH-1 (Tuấn mặc sơ mi trắng quần tây bên phải ảnh 2) và CH-2 (Thảo mặc pijama hồng bên trái ảnh 2)\n- image 3: CH-3 (Linh mặc áo trắng đứng nép ở góc tủ bên phải khung hình)\n\nREFERENCE BẮT BUỘC:\nGiữ nguyên 100% khuôn mặt, kiểu tóc, trang phục của Tuấn, Thảo từ image 2 và Linh từ image 3. QUY TẮC ĐẠO CỤ: Mặt bàn trống sạch 100%, hai tay của CH-3 (Linh) đang giấu chặt ra phía sau lưng sát vách tủ nên TUYỆT ĐỐI KHÔNG vẽ hộp giấy lộ trên mặt bàn!\n\nCAMERA & CHUYỂN ĐỘNG CẢNH TOÀN BẮT QUẢ TANG (WIDE DYNAMIC GROUP BLOCKING SHOT):\nCảnh Toàn dọc sinh động thấy rõ toàn bộ chuyển động cơ thể từ đầu gối trở lên trong căn phòng: Từ phía bên trái khung hình, CH-1 (Tuấn) dẫn đầu cùng CH-2 (Thảo) bước nhanh dồn dập băng ngang phòng ùa thẳng qua sát góc tủ bên phải nơi CH-3 (Linh) đang giật mình lùi sát tường giấu hai tay sau lưng; CH-1 đứng sừng sững ngay trước mặt CH-3 chỉ tay nghiêm giọng bắt đưa đồ giấu sau lưng ra trong 4.2 giây đầu.\n\nTHOẠI TRỰC TIẾP (GIỌNG MIỀN NAM VIỆT NAM TỰ NHIÊN, ĐỌC ĐÚNG NGUYÊN VĂN MỘT LẦN DUY NHẤT, KHÔNG LẶP TỪ, NÓI XONG KHÉP MÔI):\nCH-1: “Đứng lại đó Linh! Đưa ngay cái thứ em đang lén giấu sau lưng ra đây cho anh coi!”\n(Giọng miền Nam truyền cảm đời thường như diễn viên phim truyền hình thật, phát âm tròn vành rõ chữ không nuốt âm, TUYỆT ĐỐI KHÔNG LẶP LẠI TỪ CUỐI CÂU HAY GIỮA CÂU, nói dứt câu là khép môi tự nhiên nghỉ nhịp thở 2 giây cuối cảnh; nhân vật khác chỉ diễn nét mặt phản ứng, không mở miệng nói chèn).\n\nYÊU CẦU BẮT BUỘC:\nTUYỆT ĐỐI KHÔNG HIỂN THỊ PHỤ ĐỀ, KHÔNG CHỮ ĐÈ LÊN MÀN HÌNH, không khung đen trên dưới, không watermark.",
+      "Tạo video 10 giây, photorealistic live-action người Việt Nam thật, phong cách phim truyền hình gia đình Việt Nam chất lượng điện ảnh 8k sáng rõ tự nhiên, tỷ lệ dọc 9:16.\n\nIMAGE XUẤT HIỆN:\n- image 1: BO-1 (Không gian rộng toàn cảnh phòng ăn và hệ tủ gỗ phía sau, mặt bàn trống sạch)\n- image 2: CH-1 (Tuấn mặc sơ mi trắng quần tây bên phải ảnh 2) và CH-2 (Thảo mặc pijama hồng bên trái ảnh 2)\n- image 3: CH-3 (Linh mặc áo trắng đứng nép ở góc tủ bên phải khung hình)\n\nREFERENCE BẮT BUỘC:\nGiữ nguyên 100% khuôn mặt, kiểu tóc, trang phục của Tuấn, Thảo từ image 2 và Linh từ image 3. QUY TẮC ĐẠO CỤ: Mặt bàn trống sạch 100%, hai tay của CH-3 (Linh) đang giấu chặt ra phía sau lưng sát vách tủ nên TUYỆT ĐỐI KHÔNG vẽ hộp giấy lộ trên mặt bàn!\n\nCAMERA & CHUYỂN ĐỘNG CẢNH TOÀN BẮT QUẢ TANG (WIDE DYNAMIC GROUP BLOCKING SHOT):\nCảnh Toàn dọc sinh động thấy rõ toàn bộ chuyển động cơ thể từ đầu gối trở lên trong căn phòng: Từ phía bên trái khung hình, CH-1 (Tuấn) dẫn đầu cùng CH-2 (Thảo) bước nhanh dồn dập băng ngang phòng ùa thẳng qua sát góc tủ bên phải nơi CH-3 (Linh) đang giật mình lùi sát tường giấu hai tay sau lưng; CH-1 đứng sừng sững ngay trước mặt CH-3 chỉ tay nghiêm giọng bắt đưa đồ giấu sau lưng ra trong 3.8 giây đầu, nhịp nói dứt khoát trôi chảy.\n\nTHOẠI TRỰC TIẾP (GIỌNG MIỀN NAM VIỆT NAM TỰ NHIÊN, ĐỌC ĐÚNG NGUYÊN VĂN MỘT LẦN DUY NHẤT, KHÔNG LẶP TỪ, NÓI XONG KHÉP MÔI):\nCH-1: “Đứng lại đó Linh! Đưa ngay cái thứ em đang lén giấu sau lưng ra đây cho anh coi!”\n(Giọng miền Nam truyền cảm đời thường như diễn viên phim truyền hình thật, phát âm tròn vành rõ chữ không nuốt âm, TUYỆT ĐỐI KHÔNG LẶP LẠI TỪ CUỐI CÂU HAY GIỮA CÂU, nói dứt câu là khép môi tự nhiên nghỉ nhịp thở 2 giây cuối cảnh; nhân vật khác chỉ diễn nét mặt phản ứng, không mở miệng nói chèn).\n\nYÊU CẦU BẮT BUỘC:\nTUYỆT ĐỐI KHÔNG HIỂN THỊ PHỤ ĐỀ, KHÔNG CHỮ ĐÈ LÊN MÀN HÌNH, không khung đen trên dưới, không watermark."
+    ],
+    "overwrite": true
+  },
+  {
+    "id": "k5v6_s13_9x16",
+    "episode": "k5ep01_v6",
+    "scene": "s13",
+    "scale": "MCU",
+    "ratio": "9:16",
+    "seconds": 10,
+    "outPath": "C:\\AI\\full studio\\output\\k5-ep01-v4\\raw_v6_master\\s13.mp4",
+    "refs": [
+      {
+        "path": "C:\\AI\\full studio\\output\\k5-ep01-v4\\sets\\bo1_empty_9x16.jpg",
+        "name": "bo1_empty.jpg"
+      },
+      {
+        "path": "C:\\AI\\full studio\\output\\k5-ep01-v4\\cast_clean\\k5_tuan.jpg",
+        "name": "k5_tuan.jpg"
+      },
+      {
+        "path": "C:\\AI\\full studio\\output\\k5-ep01-v4\\cast_clean\\k5_linh.jpg",
+        "name": "k5_linh.jpg"
+      }
+    ],
+    "prompt": "Tạo video 10 giây, photorealistic live-action người Việt Nam thật, phong cách phim truyền hình gia đình Việt Nam chất lượng điện ảnh 8k sáng rõ tự nhiên, tỷ lệ dọc 9:16.\n\nIMAGE XUẤT HIỆN:\n- image 1: BO-1 (Không gian phòng ăn ấm cúng)\n- image 2: CH-1 (Tuấn mặc sơ mi trắng đứng bên trái)\n- image 3: CH-2 (Linh mặc áo trắng đứng bên phải)\n\nREFERENCE BẮT BUỘC:\nGiữ nguyên 100% khuôn mặt, kiểu tóc, trang phục CH-1 và CH-2. CẤM TUYỆT ĐỐI ĐẶT HỘP TRONG KHUNG HÌNH NÀY: Khung hình lấy từ ngang ngực trở lên, tiền cảnh hoàn toàn trống thoáng, TUYỆT ĐỐI KHÔNG CÓ bất kỳ hộp giấy trắng hay vật thể nào che trước người nhân vật!\n\nCAMERA & DIỄN BIẾN (MEDIUM CLOSE-UP):\nTrung cận căng thẳng: CH-1 (Tuấn, bên trái) chau mày giận dữ nhìn thẳng chất vấn em gái trong 4.2 giây đầu; CH-2 (Linh, bên phải) sợ xanh mặt rụt vai cúi mắt không dám cãi.\n\nTHOẠI TRỰC TIẾP (GIỌNG MIỀN NAM VIỆT NAM TỰ NHIÊN, ĐỌC ĐÚNG NGUYÊN VĂN MỘT LẦN DUY NHẤT, KHÔNG LẶP TỪ, NÓI XONG KHÉP MÔI):\nCH-1: “Cái gì đây Linh?! Nguyên hai hộp Bojomi của chị dâu em lén giấu đem về mà còn hùa nhau vu oan cho Thảo hả?!”\n(Giọng miền Nam truyền cảm đời thường như diễn viên phim truyền hình thật, phát âm tròn vành rõ chữ không nuốt âm, TUYỆT ĐỐI KHÔNG LẶP LẠI TỪ CUỐI CÂU HAY GIỮA CÂU, nói dứt câu là khép môi tự nhiên nghỉ nhịp thở 2 giây cuối cảnh; nhân vật khác chỉ diễn nét mặt phản ứng, không mở miệng nói chèn).\n\nYÊU CẦU BẮT BUỘC:\nTUYỆT ĐỐI KHÔNG HIỂN THỊ PHỤ ĐỀ, KHÔNG CHỮ ĐÈ LÊN MÀN HÌNH, không khung đen trên dưới, không watermark.",
+    "prompts": [
+      "Tạo video 10 giây, photorealistic live-action người Việt Nam thật, phong cách phim truyền hình gia đình Việt Nam chất lượng điện ảnh 8k sáng rõ tự nhiên, tỷ lệ dọc 9:16.\n\nIMAGE XUẤT HIỆN:\n- image 1: BO-1 (Không gian phòng ăn ấm cúng)\n- image 2: CH-1 (Tuấn mặc sơ mi trắng đứng bên trái)\n- image 3: CH-2 (Linh mặc áo trắng đứng bên phải)\n\nREFERENCE BẮT BUỘC:\nGiữ nguyên 100% khuôn mặt, kiểu tóc, trang phục CH-1 và CH-2. CẤM TUYỆT ĐỐI ĐẶT HỘP TRONG KHUNG HÌNH NÀY: Khung hình lấy từ ngang ngực trở lên, tiền cảnh hoàn toàn trống thoáng, TUYỆT ĐỐI KHÔNG CÓ bất kỳ hộp giấy trắng hay vật thể nào che trước người nhân vật!\n\nCAMERA & DIỄN BIẾN (MEDIUM CLOSE-UP):\nTrung cận căng thẳng: CH-1 (Tuấn, bên trái) chau mày giận dữ nhìn thẳng chất vấn em gái trong 4.2 giây đầu; CH-2 (Linh, bên phải) sợ xanh mặt rụt vai cúi mắt không dám cãi.\n\nTHOẠI TRỰC TIẾP (GIỌNG MIỀN NAM VIỆT NAM TỰ NHIÊN, ĐỌC ĐÚNG NGUYÊN VĂN MỘT LẦN DUY NHẤT, KHÔNG LẶP TỪ, NÓI XONG KHÉP MÔI):\nCH-1: “Cái gì đây Linh?! Nguyên hai hộp Bojomi của chị dâu em lén giấu đem về mà còn hùa nhau vu oan cho Thảo hả?!”\n(Giọng miền Nam truyền cảm đời thường như diễn viên phim truyền hình thật, phát âm tròn vành rõ chữ không nuốt âm, TUYỆT ĐỐI KHÔNG LẶP LẠI TỪ CUỐI CÂU HAY GIỮA CÂU, nói dứt câu là khép môi tự nhiên nghỉ nhịp thở 2 giây cuối cảnh; nhân vật khác chỉ diễn nét mặt phản ứng, không mở miệng nói chèn).\n\nYÊU CẦU BẮT BUỘC:\nTUYỆT ĐỐI KHÔNG HIỂN THỊ PHỤ ĐỀ, KHÔNG CHỮ ĐÈ LÊN MÀN HÌNH, không khung đen trên dưới, không watermark.",
+      "Tạo video 10 giây, photorealistic live-action người Việt Nam thật, phong cách phim truyền hình gia đình Việt Nam chất lượng điện ảnh 8k sáng rõ tự nhiên, tỷ lệ dọc 9:16.\n\nIMAGE XUẤT HIỆN:\n- image 1: BO-1 (Không gian phòng ăn ấm cúng)\n- image 2: CH-1 (Tuấn mặc sơ mi trắng đứng bên trái)\n- image 3: CH-2 (Linh mặc áo trắng đứng bên phải)\n\nREFERENCE BẮT BUỘC:\nGiữ nguyên 100% khuôn mặt, kiểu tóc, trang phục CH-1 và CH-2. CẤM TUYỆT ĐỐI ĐẶT HỘP TRONG KHUNG HÌNH NÀY: Khung hình lấy từ ngang ngực trở lên, tiền cảnh hoàn toàn trống thoáng, TUYỆT ĐỐI KHÔNG CÓ bất kỳ hộp giấy trắng hay vật thể nào che trước người nhân vật!\n\nCAMERA & DIỄN BIẾN (MEDIUM CLOSE-UP):\nTrung cận căng thẳng: CH-1 (Tuấn, bên trái) chau mày giận dữ nhìn thẳng chất vấn em gái trong 3.8 giây đầu, nhịp nói dứt khoát trôi chảy; CH-2 (Linh, bên phải) sợ xanh mặt rụt vai cúi mắt không dám cãi.\n\nTHOẠI TRỰC TIẾP (GIỌNG MIỀN NAM VIỆT NAM TỰ NHIÊN, ĐỌC ĐÚNG NGUYÊN VĂN MỘT LẦN DUY NHẤT, KHÔNG LẶP TỪ, NÓI XONG KHÉP MÔI):\nCH-1: “Cái gì đây Linh?! Nguyên hai hộp Bojomi của chị dâu em lén giấu đem về mà còn hùa nhau vu oan cho Thảo hả?!”\n(Giọng miền Nam truyền cảm đời thường như diễn viên phim truyền hình thật, phát âm tròn vành rõ chữ không nuốt âm, TUYỆT ĐỐI KHÔNG LẶP LẠI TỪ CUỐI CÂU HAY GIỮA CÂU, nói dứt câu là khép môi tự nhiên nghỉ nhịp thở 2 giây cuối cảnh; nhân vật khác chỉ diễn nét mặt phản ứng, không mở miệng nói chèn).\n\nYÊU CẦU BẮT BUỘC:\nTUYỆT ĐỐI KHÔNG HIỂN THỊ PHỤ ĐỀ, KHÔNG CHỮ ĐÈ LÊN MÀN HÌNH, không khung đen trên dưới, không watermark."
+    ],
+    "overwrite": true
+  },
+  {
+    "id": "k5v6_s16_9x16",
+    "episode": "k5ep01_v6",
+    "scene": "s16",
+    "scale": "MCU",
+    "ratio": "9:16",
+    "seconds": 10,
+    "outPath": "C:\\AI\\full studio\\output\\k5-ep01-v4\\raw_v6_master\\s16.mp4",
+    "refs": [
+      {
+        "path": "C:\\AI\\full studio\\output\\k5-ep01-v4\\sets\\bo1_empty_9x16.jpg",
+        "name": "bo1_empty.jpg"
+      },
+      {
+        "path": "C:\\AI\\full studio\\output\\k5-ep01-v4\\cast_clean\\k5_linh.jpg",
+        "name": "k5_linh.jpg"
+      },
+      {
+        "path": "C:\\AI\\full studio\\output\\k5-ep01-v4\\cast_clean\\k5_bahanh.jpg",
+        "name": "k5_bahanh.jpg"
+      }
+    ],
+    "prompt": "Tạo video 10 giây, photorealistic live-action người Việt Nam thật, phong cách phim truyền hình gia đình Việt Nam chất lượng điện ảnh 8k sáng rõ tự nhiên, tỷ lệ dọc 9:16.\n\nIMAGE XUẤT HIỆN:\n- image 1: BO-1 (Không gian phòng ăn ấm cúng)\n- image 2: CH-1 (Linh mặc áo sơ mi trắng đứng tiền cảnh bên phải)\n- image 3: CH-2 (Bà Hạnh mặc đồ bộ nhung đỏ đô đứng lùi phía sau kế bên)\n\nREFERENCE BẮT BUỘC:\nGiữ nguyên 100% khuôn mặt, kiểu tóc, trang phục CH-1 và CH-2. Mặt bàn và tiền cảnh trống thoáng, không có hộp giấy.\n\nCAMERA & DIỄN BIẾN (MEDIUM CLOSE-UP):\nTrung cận hả dạ từ ngang thắt lưng trở lên: CH-1 hai tay đan khép nép trước bụng, cúi thấp đầu hối lỗi hướng về bên trái khung hình nói trọn vẹn câu xin lỗi mạch lạc liền một hơi trong 4.2 giây đầu (tuyệt đối không ngắc ngứ lặp từ); CH-2 đứng kế bên cũng tái mặt cúi gằm đầu xấu hổ im lặng.\n\nTHOẠI TRỰC TIẾP (GIỌNG MIỀN NAM VIỆT NAM TỰ NHIÊN, ĐỌC ĐÚNG NGUYÊN VĂN MỘT LẦN DUY NHẤT, KHÔNG LẶP TỪ, NÓI XONG KHÉP MÔI):\nCH-1: “Em xin lỗi chị Hai Ngân, em xin lỗi chị Thảo, từ nay em không dám tham lam lấy đồ của chị nữa.”\n(Giọng miền Nam truyền cảm đời thường như diễn viên phim truyền hình thật, phát âm tròn vành rõ chữ không nuốt âm, TUYỆT ĐỐI KHÔNG LẶP LẠI TỪ CUỐI CÂU HAY GIỮA CÂU, nói dứt câu là khép môi tự nhiên nghỉ nhịp thở 2 giây cuối cảnh; nhân vật khác chỉ diễn nét mặt phản ứng, không mở miệng nói chèn).\n\nYÊU CẦU BẮT BUỘC:\nTUYỆT ĐỐI KHÔNG HIỂN THỊ PHỤ ĐỀ, KHÔNG CHỮ ĐÈ LÊN MÀN HÌNH, không khung đen trên dưới, không watermark.",
+    "prompts": [
+      "Tạo video 10 giây, photorealistic live-action người Việt Nam thật, phong cách phim truyền hình gia đình Việt Nam chất lượng điện ảnh 8k sáng rõ tự nhiên, tỷ lệ dọc 9:16.\n\nIMAGE XUẤT HIỆN:\n- image 1: BO-1 (Không gian phòng ăn ấm cúng)\n- image 2: CH-1 (Linh mặc áo sơ mi trắng đứng tiền cảnh bên phải)\n- image 3: CH-2 (Bà Hạnh mặc đồ bộ nhung đỏ đô đứng lùi phía sau kế bên)\n\nREFERENCE BẮT BUỘC:\nGiữ nguyên 100% khuôn mặt, kiểu tóc, trang phục CH-1 và CH-2. Mặt bàn và tiền cảnh trống thoáng, không có hộp giấy.\n\nCAMERA & DIỄN BIẾN (MEDIUM CLOSE-UP):\nTrung cận hả dạ từ ngang thắt lưng trở lên: CH-1 hai tay đan khép nép trước bụng, cúi thấp đầu hối lỗi hướng về bên trái khung hình nói trọn vẹn câu xin lỗi mạch lạc liền một hơi trong 4.2 giây đầu (tuyệt đối không ngắc ngứ lặp từ); CH-2 đứng kế bên cũng tái mặt cúi gằm đầu xấu hổ im lặng.\n\nTHOẠI TRỰC TIẾP (GIỌNG MIỀN NAM VIỆT NAM TỰ NHIÊN, ĐỌC ĐÚNG NGUYÊN VĂN MỘT LẦN DUY NHẤT, KHÔNG LẶP TỪ, NÓI XONG KHÉP MÔI):\nCH-1: “Em xin lỗi chị Hai Ngân, em xin lỗi chị Thảo, từ nay em không dám tham lam lấy đồ của chị nữa.”\n(Giọng miền Nam truyền cảm đời thường như diễn viên phim truyền hình thật, phát âm tròn vành rõ chữ không nuốt âm, TUYỆT ĐỐI KHÔNG LẶP LẠI TỪ CUỐI CÂU HAY GIỮA CÂU, nói dứt câu là khép môi tự nhiên nghỉ nhịp thở 2 giây cuối cảnh; nhân vật khác chỉ diễn nét mặt phản ứng, không mở miệng nói chèn).\n\nYÊU CẦU BẮT BUỘC:\nTUYỆT ĐỐI KHÔNG HIỂN THỊ PHỤ ĐỀ, KHÔNG CHỮ ĐÈ LÊN MÀN HÌNH, không khung đen trên dưới, không watermark.",
+      "Tạo video 10 giây, photorealistic live-action người Việt Nam thật, phong cách phim truyền hình gia đình Việt Nam chất lượng điện ảnh 8k sáng rõ tự nhiên, tỷ lệ dọc 9:16.\n\nIMAGE XUẤT HIỆN:\n- image 1: BO-1 (Không gian phòng ăn ấm cúng)\n- image 2: CH-1 (Linh mặc áo sơ mi trắng đứng tiền cảnh bên phải)\n- image 3: CH-2 (Bà Hạnh mặc đồ bộ nhung đỏ đô đứng lùi phía sau kế bên)\n\nREFERENCE BẮT BUỘC:\nGiữ nguyên 100% khuôn mặt, kiểu tóc, trang phục CH-1 và CH-2. Mặt bàn và tiền cảnh trống thoáng, không có hộp giấy.\n\nCAMERA & DIỄN BIẾN (MEDIUM CLOSE-UP):\nTrung cận hả dạ từ ngang thắt lưng trở lên: CH-1 hai tay đan khép nép trước bụng, cúi thấp đầu hối lỗi hướng về bên trái khung hình nói trọn vẹn câu xin lỗi mạch lạc liền một hơi trong 3.8 giây đầu, nhịp nói dứt khoát trôi chảy (tuyệt đối không ngắc ngứ lặp từ); CH-2 đứng kế bên cũng tái mặt cúi gằm đầu xấu hổ im lặng.\n\nTHOẠI TRỰC TIẾP (GIỌNG MIỀN NAM VIỆT NAM TỰ NHIÊN, ĐỌC ĐÚNG NGUYÊN VĂN MỘT LẦN DUY NHẤT, KHÔNG LẶP TỪ, NÓI XONG KHÉP MÔI):\nCH-1: “Em xin lỗi chị Hai Ngân, em xin lỗi chị Thảo, từ nay em không dám tham lam lấy đồ của chị nữa.”\n(Giọng miền Nam truyền cảm đời thường như diễn viên phim truyền hình thật, phát âm tròn vành rõ chữ không nuốt âm, TUYỆT ĐỐI KHÔNG LẶP LẠI TỪ CUỐI CÂU HAY GIỮA CÂU, nói dứt câu là khép môi tự nhiên nghỉ nhịp thở 2 giây cuối cảnh; nhân vật khác chỉ diễn nét mặt phản ứng, không mở miệng nói chèn).\n\nYÊU CẦU BẮT BUỘC:\nTUYỆT ĐỐI KHÔNG HIỂN THỊ PHỤ ĐỀ, KHÔNG CHỮ ĐÈ LÊN MÀN HÌNH, không khung đen trên dưới, không watermark."
+    ],
+    "overwrite": true
+  },
+  {
+    "id": "k5v6_s17_9x16",
+    "episode": "k5ep01_v6",
+    "scene": "s17",
+    "scale": "WS",
+    "ratio": "9:16",
+    "seconds": 10,
+    "outPath": "C:\\AI\\full studio\\output\\k5-ep01-v4\\raw_v6_master\\s17.mp4",
+    "refs": [
+      {
+        "path": "C:\\AI\\full studio\\output\\k5-ep01-v4\\sets\\bo1_2bojomi_nobag_9x16.jpg",
+        "name": "bo1_2boj.jpg"
+      },
+      {
+        "path": "C:\\AI\\full studio\\output\\k5-ep01-v4\\cast_pairs\\pair_tuan_thao_full.jpg",
+        "name": "pair_tuan_thao_full.jpg"
+      },
+      {
+        "path": "C:\\AI\\full studio\\output\\k5-ep01-v4\\sets\\pr_2bojomi_nobag_1x1.jpg",
+        "name": "pr_2bojomi_box.jpg"
+      }
+    ],
+    "prompt": "Tạo video 10 giây, photorealistic live-action người Việt Nam thật, phong cách phim truyền hình gia đình Việt Nam chất lượng điện ảnh 8k sáng rõ tự nhiên, tỷ lệ dọc 9:16.\n\nIMAGE XUẤT HIỆN:\n- image 1: BO-1 (Phòng ăn sáng ấm có đúng 2 hộp giấy BOJOMI đặt ngay ngắn trên bàn)\n- image 2: CH-1 (Thảo mặc pijama hồng bên trái) và CH-2 (Tuấn mặc sơ mi trắng bên phải)\n- image 3: PR-1 (Đúng 2 hộp giấy cứng chữ nhật đứng nắp phẳng AN VƯỢNG PHARMA BOJOMI màu trắng xanh lá đậm)\n\nREFERENCE BẮT BUỘC:\nGiữ nguyên 100% khuôn mặt, kiểu tóc, trang phục của Thảo và Tuấn từ image 2. Hai hộp đặt trên mặt bàn phía trước BẮT BUỘC giữ nguyên 100% HỘP GIẤY CỨNG NẮP PHẲNG màu trắng - xanh lá đậm có in hình tách xanh và chữ BOJOMI của ĐÚNG 2 HỘP từ image 3 (không túi giấy, không hộp trắng trơn).\n\nCAMERA & BỐ CỤC CẢNH TOÀN KẾT PHIM (WIDE / MEDIUM-LONG WARM TABLEAU):\nCảnh Toàn-Trung rộng thoáng thấy rõ không gian phòng ăn ấm áp, hai vợ chồng đứng phía sau bàn ăn có 2 hộp BOJOMI vừa đòi lại được: CH-2 (Tuấn) vòng tay khoác vai CH-1 (Thảo đang mỉm cười hạnh phúc nhẹ nhõm), Tuấn nhìn thẳng ống kính nói dõng dạc mạch lạc trong 4.2 giây đầu.\n\nTHOẠI TRỰC TIẾP (GIỌNG MIỀN NAM VIỆT NAM TỰ NHIÊN, ĐỌC ĐÚNG NGUYÊN VĂN MỘT LẦN DUY NHẤT, KHÔNG LẶP TỪ, NÓI XONG KHÉP MÔI):\nCH-2: “Từ nay trong nhà này ai còn ức hiếp Thảo là tui đưa vợ ra ở riêng ngay! Tui xử lý vậy đã hợp tình hợp lý chưa cô chú anh chị?”\n(Giọng miền Nam truyền cảm đời thường như diễn viên phim truyền hình thật, phát âm tròn vành rõ chữ không nuốt âm, TUYỆT ĐỐI KHÔNG LẶP LẠI TỪ CUỐI CÂU HAY GIỮA CÂU, nói dứt câu là khép môi tự nhiên nghỉ nhịp thở 2 giây cuối cảnh; nhân vật khác chỉ diễn nét mặt phản ứng, không mở miệng nói chèn).\n\nYÊU CẦU BẮT BUỘC:\nTUYỆT ĐỐI KHÔNG HIỂN THỊ PHỤ ĐỀ, KHÔNG CHỮ ĐÈ LÊN MÀN HÌNH, không khung đen trên dưới, không watermark.",
+    "prompts": [
+      "Tạo video 10 giây, photorealistic live-action người Việt Nam thật, phong cách phim truyền hình gia đình Việt Nam chất lượng điện ảnh 8k sáng rõ tự nhiên, tỷ lệ dọc 9:16.\n\nIMAGE XUẤT HIỆN:\n- image 1: BO-1 (Phòng ăn sáng ấm có đúng 2 hộp giấy BOJOMI đặt ngay ngắn trên bàn)\n- image 2: CH-1 (Thảo mặc pijama hồng bên trái) và CH-2 (Tuấn mặc sơ mi trắng bên phải)\n- image 3: PR-1 (Đúng 2 hộp giấy cứng chữ nhật đứng nắp phẳng AN VƯỢNG PHARMA BOJOMI màu trắng xanh lá đậm)\n\nREFERENCE BẮT BUỘC:\nGiữ nguyên 100% khuôn mặt, kiểu tóc, trang phục của Thảo và Tuấn từ image 2. Hai hộp đặt trên mặt bàn phía trước BẮT BUỘC giữ nguyên 100% HỘP GIẤY CỨNG NẮP PHẲNG màu trắng - xanh lá đậm có in hình tách xanh và chữ BOJOMI của ĐÚNG 2 HỘP từ image 3 (không túi giấy, không hộp trắng trơn).\n\nCAMERA & BỐ CỤC CẢNH TOÀN KẾT PHIM (WIDE / MEDIUM-LONG WARM TABLEAU):\nCảnh Toàn-Trung rộng thoáng thấy rõ không gian phòng ăn ấm áp, hai vợ chồng đứng phía sau bàn ăn có 2 hộp BOJOMI vừa đòi lại được: CH-2 (Tuấn) vòng tay khoác vai CH-1 (Thảo đang mỉm cười hạnh phúc nhẹ nhõm), Tuấn nhìn thẳng ống kính nói dõng dạc mạch lạc trong 4.2 giây đầu.\n\nTHOẠI TRỰC TIẾP (GIỌNG MIỀN NAM VIỆT NAM TỰ NHIÊN, ĐỌC ĐÚNG NGUYÊN VĂN MỘT LẦN DUY NHẤT, KHÔNG LẶP TỪ, NÓI XONG KHÉP MÔI):\nCH-2: “Từ nay trong nhà này ai còn ức hiếp Thảo là tui đưa vợ ra ở riêng ngay! Tui xử lý vậy đã hợp tình hợp lý chưa cô chú anh chị?”\n(Giọng miền Nam truyền cảm đời thường như diễn viên phim truyền hình thật, phát âm tròn vành rõ chữ không nuốt âm, TUYỆT ĐỐI KHÔNG LẶP LẠI TỪ CUỐI CÂU HAY GIỮA CÂU, nói dứt câu là khép môi tự nhiên nghỉ nhịp thở 2 giây cuối cảnh; nhân vật khác chỉ diễn nét mặt phản ứng, không mở miệng nói chèn).\n\nYÊU CẦU BẮT BUỘC:\nTUYỆT ĐỐI KHÔNG HIỂN THỊ PHỤ ĐỀ, KHÔNG CHỮ ĐÈ LÊN MÀN HÌNH, không khung đen trên dưới, không watermark.",
+      "Tạo video 10 giây, photorealistic live-action người Việt Nam thật, phong cách phim truyền hình gia đình Việt Nam chất lượng điện ảnh 8k sáng rõ tự nhiên, tỷ lệ dọc 9:16.\n\nIMAGE XUẤT HIỆN:\n- image 1: BO-1 (Phòng ăn sáng ấm có đúng 2 hộp giấy BOJOMI đặt ngay ngắn trên bàn)\n- image 2: CH-1 (Thảo mặc pijama hồng bên trái) và CH-2 (Tuấn mặc sơ mi trắng bên phải)\n- image 3: PR-1 (Đúng 2 hộp giấy cứng chữ nhật đứng nắp phẳng AN VƯỢNG PHARMA BOJOMI màu trắng xanh lá đậm)\n\nREFERENCE BẮT BUỘC:\nGiữ nguyên 100% khuôn mặt, kiểu tóc, trang phục của Thảo và Tuấn từ image 2. Hai hộp đặt trên mặt bàn phía trước BẮT BUỘC giữ nguyên 100% HỘP GIẤY CỨNG NẮP PHẲNG màu trắng - xanh lá đậm có in hình tách xanh và chữ BOJOMI của ĐÚNG 2 HỘP từ image 3 (không túi giấy, không hộp trắng trơn).\n\nCAMERA & BỐ CỤC CẢNH TOÀN KẾT PHIM (WIDE / MEDIUM-LONG WARM TABLEAU):\nCảnh Toàn-Trung rộng thoáng thấy rõ không gian phòng ăn ấm áp, hai vợ chồng đứng phía sau bàn ăn có 2 hộp BOJOMI vừa đòi lại được: CH-2 (Tuấn) vòng tay khoác vai CH-1 (Thảo đang mỉm cười hạnh phúc nhẹ nhõm), Tuấn nhìn thẳng ống kính nói dõng dạc mạch lạc trong 3.8 giây đầu, nhịp nói dứt khoát trôi chảy.\n\nTHOẠI TRỰC TIẾP (GIỌNG MIỀN NAM VIỆT NAM TỰ NHIÊN, ĐỌC ĐÚNG NGUYÊN VĂN MỘT LẦN DUY NHẤT, KHÔNG LẶP TỪ, NÓI XONG KHÉP MÔI):\nCH-2: “Từ nay trong nhà này ai còn ức hiếp Thảo là tui đưa vợ ra ở riêng ngay! Tui xử lý vậy đã hợp tình hợp lý chưa cô chú anh chị?”\n(Giọng miền Nam truyền cảm đời thường như diễn viên phim truyền hình thật, phát âm tròn vành rõ chữ không nuốt âm, TUYỆT ĐỐI KHÔNG LẶP LẠI TỪ CUỐI CÂU HAY GIỮA CÂU, nói dứt câu là khép môi tự nhiên nghỉ nhịp thở 2 giây cuối cảnh; nhân vật khác chỉ diễn nét mặt phản ứng, không mở miệng nói chèn).\n\nYÊU CẦU BẮT BUỘC:\nTUYỆT ĐỐI KHÔNG HIỂN THỊ PHỤ ĐỀ, KHÔNG CHỮ ĐÈ LÊN MÀN HÌNH, không khung đen trên dưới, không watermark."
+    ],
+    "overwrite": true
+  }
+]

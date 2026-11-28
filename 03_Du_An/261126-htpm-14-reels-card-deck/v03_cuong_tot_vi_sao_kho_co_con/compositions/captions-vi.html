@@ -1,0 +1,55 @@
+<template>
+  <style>
+    @font-face { font-family: "Montserrat"; src: url("assets/fonts/Montserrat-ExtraBold.ttf") format("truetype"); font-weight: 800; font-display: block; }
+    @font-face { font-family: "Montserrat"; src: url("assets/fonts/Montserrat-Black.ttf") format("truetype"); font-weight: 900; font-display: block; }
+    #root { position: absolute; inset: 0; background: transparent; pointer-events: none; }
+    .cap-group {
+      position: absolute; left: 110px; top: 1340px; width: 860px;
+      display: flex; justify-content: center; align-items: center; text-align: center;
+      overflow: visible; opacity: 0; visibility: hidden;
+    }
+    .cap-pill {
+      display: inline-block; max-width: 840px; padding: 16px 30px; border-radius: 26px;
+      background: linear-gradient(180deg, rgba(12,28,22,0.94) 0%, rgba(7,18,14,0.96) 100%);
+      border: 2.5px solid rgba(255,228,77,0.82);
+      box-shadow: 0 16px 36px rgba(0,0,0,0.36);
+      font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 37px;
+      line-height: 1.25; color: #ffffff; letter-spacing: -0.01em;
+      text-shadow: 0 3px 8px rgba(0,0,0,0.65); will-change: transform, opacity;
+    }
+    .hl-yellow { color: #ffe600; font-weight: 900; }
+  </style>
+  <div id="root" data-composition-id="captions-vi" data-width="1080" data-height="1920">
+    <div id="cg-1" class="clip cap-group" data-start="1.65" data-duration="0.99" data-layout-allow-caption-zone><div class="cap-pill">không cho biết số lượng,</div></div>
+    <div id="cg-2" class="clip cap-group" data-start="2.67" data-duration="1.06" data-layout-allow-caption-zone><div class="cap-pill">độ di động hay hình dạng</div></div>
+    <div id="cg-3" class="clip cap-group" data-start="3.75" data-duration="0.75" data-layout-allow-caption-zone><div class="cap-pill"><span class="hl-yellow">tinh</span> <span class="hl-yellow">trùng</span> bên trong.</div></div>
+    <div id="cg-4" class="clip cap-group" data-start="4.91" data-duration="1.09" data-layout-allow-caption-zone><div class="cap-pill">Muốn biết chính xác</div></div>
+    <div id="cg-5" class="clip cap-group" data-start="6.11" data-duration="1.11" data-layout-allow-caption-zone><div class="cap-pill">phải xét nghiệm <span class="hl-yellow">tinh</span> <span class="hl-yellow">dịch</span> đồ.</div></div>
+    <div id="cg-6" class="clip cap-group" data-start="7.51" data-duration="1.14" data-layout-allow-caption-zone><div class="cap-pill">Chậm có con thì hai vợ</div></div>
+    <div id="cg-7" class="clip cap-group" data-start="8.67" data-duration="1.48" data-layout-allow-caption-zone><div class="cap-pill">chồng cùng đi kiểm tra sớm</div></div>
+    <div id="cg-8" class="clip cap-group" data-start="10.17" data-duration="0.42" data-layout-allow-caption-zone><div class="cap-pill">nhé!</div></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    const cues = [
+
+      { id: "#cg-1", s: 1.65, e: 2.64, rot: -1.0 },
+      { id: "#cg-2", s: 2.67, e: 3.73, rot: 1.0 },
+      { id: "#cg-3", s: 3.75, e: 4.50, rot: -1.0 },
+      { id: "#cg-4", s: 4.91, e: 6.00, rot: 1.0 },
+      { id: "#cg-5", s: 6.11, e: 7.22, rot: -1.0 },
+      { id: "#cg-6", s: 7.51, e: 8.65, rot: 1.0 },
+      { id: "#cg-7", s: 8.67, e: 10.15, rot: -1.0 },
+      { id: "#cg-8", s: 10.17, e: 10.59, rot: 1.0 }
+    ];
+    for (const c of cues) {
+      const pill = c.id + " .cap-pill";
+      tl.set(c.id, { visibility: "visible", opacity: 1 }, c.s);
+      tl.fromTo(pill, { scale: 0.84, y: 18, rotation: c.rot * 1.6, opacity: 0 }, { scale: 1.03, y: -2, rotation: c.rot, opacity: 1, duration: 0.13, ease: "back.out(2.0)" }, c.s);
+      tl.to(pill, { scale: 1.0, y: 0, rotation: 0, duration: 0.10, ease: "power2.out" }, c.s + 0.13);
+      tl.to(pill, { scale: 0.92, y: -8, opacity: 0, duration: 0.08, ease: "power2.in" }, c.e - 0.08);
+      tl.set(c.id, { opacity: 0, visibility: "hidden" }, c.e);
+    }
+    window.__timelines["captions-vi"] = tl;
+  </script>
+</template>

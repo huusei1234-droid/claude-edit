@@ -1,0 +1,61 @@
+{
+  "inspected_at": "2026-11-27T17:00:25.153260",
+  "video_path": "C:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Series_7_Video_Kien_Thuc_Chi_Hau\\Chi_Hang_2711\\Final_All_7_Videos_Chi_Hang\\261127 AVPM 01 Tại sao ăn đủ đạm giúp giảm cân dễ hơn final.mp4",
+  "fingerprint": {
+    "file_size": 23881941,
+    "sha256_head_tail": "63e77f1d3548961f5045280fdf01bbe7706e01a5e7b4bf3bf61c045872eb3700"
+  },
+  "streams": {
+    "width": 1080,
+    "height": 1920,
+    "v_codec": "h264",
+    "a_codec": "aac",
+    "fps": 24.0,
+    "format_dur": 31.164,
+    "video_dur": 31.083,
+    "audio_dur": 31.164,
+    "av_sync_delta": 0.081
+  },
+  "letterbox": {
+    "top_black_px": 0,
+    "bottom_black_px": 0
+  },
+  "integrated_lufs": -15.2,
+  "cut_count": 3,
+  "cuts": [
+    {
+      "index": 1,
+      "start": 0.0,
+      "end": 11.03,
+      "dur": 11.03,
+      "label": "scene_01"
+    },
+    {
+      "index": 2,
+      "start": 11.03,
+      "end": 20.95,
+      "dur": 9.92,
+      "label": "scene_02"
+    },
+    {
+      "index": 3,
+      "start": 20.95,
+      "end": 31.14,
+      "dur": 10.19,
+      "label": "scene_03"
+    }
+  ],
+  "sheets": {
+    "all_cuts_full": "C:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Series_7_Video_Kien_Thuc_Chi_Hau\\Chi_Hang_2711\\V01_An_Du_Dam_Giam_Can\\03_QC_Gate\\QC_FINAL_ALL_CUTS_FULL.jpg",
+    "all_cuts_zoom": "C:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Series_7_Video_Kien_Thuc_Chi_Hau\\Chi_Hang_2711\\V01_An_Du_Dam_Giam_Can\\03_QC_Gate\\QC_FINAL_ALL_CUTS_ZOOM.jpg"
+  },
+  "audio_audit": {
+    "word_count": 102,
+    "eof_tail_sec": 0.664,
+    "eof_cutoff": false,
+    "repetitions": [],
+    "transcript": "đang giảm cân mà 10 giờ sáng đã mở tủ tìm đồ ăn. Thử nhìn lại bữa sáng xem có món nào dầu đạm chưa? Nếu sáng nay chỉ ăn khoai với trái cây, Mai Hằng gợi ý giữ phần khoai và thêm một quả trứng hoặc một hũ sữa chua dầu đạm. Protein có thể giúp mình thấy no hơn sau bữa ăn. Còn cân nặng thay đổi thế nào vẫn phụ thuộc vào tổng năng lượng mình ăn và tiêu hao theo thời gian. Mai thử đổi bữa sáng rồi để ý xem mấy giờ mình bắt đầu đói nhé."
+  },
+  "machine_failures": [],
+  "machine_status": "READY_FOR_VISUAL_SIGN_OFF"
+}

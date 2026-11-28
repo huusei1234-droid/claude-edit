@@ -1,0 +1,13 @@
+{
+  "signed_at": "2026-11-27T17:09:38.814361",
+  "certified_path": "C:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Series_7_Video_Kien_Thuc_Chi_Hau\\Chi_Hang_2711\\Final_All_7_Videos_Chi_Hang\\261127 AVPM 01 Tại sao ăn đủ đạm giúp giảm cân dễ hơn final.mp4",
+  "verdict": "PASS",
+  "auditor_verified": true,
+  "auditor": "video-qc-auditor",
+  "notes": "Đã kiểm duyệt 100% 3 cú cắt (#01, #02, #03) trên FULL/ZOOM sheets và nghe toàn bộ MP4: Cảnh #01 quay mới sạch 100% chữ rác AI trên cánh tủ bếp; nhân vật Chị Hằng đồng nhất bộ Thể thao Xanh Sage xuyên suốt; đạo cụ khoai lang, trái cây, trứng luộc và hũ sữa chua thủy tinh trơn đúng kịch bản (0% hộp giả); hộp chữ Hook & thẻ câu hỏi nằm gọn trong vùng an toàn 9:16; thoại đủ 102/102 từ khớp kịch bản, 0% lặp từ, 0% đứt chữ, 0% BGM.",
+  "override_reason": "",
+  "cut_count": 3,
+  "integrated_lufs": -15.2,
+  "file_size": 23881941,
+  "sha256_head_tail": "63e77f1d3548961f5045280fdf01bbe7706e01a5e7b4bf3bf61c045872eb3700"
+}

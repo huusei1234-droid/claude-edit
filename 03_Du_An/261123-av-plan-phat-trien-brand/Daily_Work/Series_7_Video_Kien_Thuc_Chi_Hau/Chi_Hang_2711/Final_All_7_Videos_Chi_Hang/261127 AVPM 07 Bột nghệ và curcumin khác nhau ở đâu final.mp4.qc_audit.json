@@ -1,0 +1,61 @@
+{
+  "inspected_at": "2026-11-27T17:12:43.888185",
+  "video_path": "C:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Series_7_Video_Kien_Thuc_Chi_Hau\\Chi_Hang_2711\\Final_All_7_Videos_Chi_Hang\\261127 AVPM 07 Bột nghệ và curcumin khác nhau ở đâu final.mp4",
+  "fingerprint": {
+    "file_size": 21682365,
+    "sha256_head_tail": "91cf2750660d46441954bc36c9083506e123bd2616faef996550ff8ace391fe1"
+  },
+  "streams": {
+    "width": 1080,
+    "height": 1920,
+    "v_codec": "h264",
+    "a_codec": "aac",
+    "fps": 24.0,
+    "format_dur": 28.423,
+    "video_dur": 28.375,
+    "audio_dur": 28.423,
+    "av_sync_delta": 0.048
+  },
+  "letterbox": {
+    "top_black_px": 0,
+    "bottom_black_px": 0
+  },
+  "integrated_lufs": -14.8,
+  "cut_count": 3,
+  "cuts": [
+    {
+      "index": 1,
+      "start": 0.0,
+      "end": 10.24,
+      "dur": 10.24,
+      "label": "scene_01"
+    },
+    {
+      "index": 2,
+      "start": 10.24,
+      "end": 19.26,
+      "dur": 9.02,
+      "label": "scene_02"
+    },
+    {
+      "index": 3,
+      "start": 19.26,
+      "end": 28.43,
+      "dur": 9.17,
+      "label": "scene_03"
+    }
+  ],
+  "sheets": {
+    "all_cuts_full": "C:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Series_7_Video_Kien_Thuc_Chi_Hau\\Chi_Hang_2711\\V07_Bot_Nghe_Va_Curcumin\\03_QC_Gate\\QC_FINAL_ALL_CUTS_FULL.jpg",
+    "all_cuts_zoom": "C:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Series_7_Video_Kien_Thuc_Chi_Hau\\Chi_Hang_2711\\V07_Bot_Nghe_Va_Curcumin\\03_QC_Gate\\QC_FINAL_ALL_CUTS_ZOOM.jpg"
+  },
+  "audio_audit": {
+    "word_count": 103,
+    "eof_tail_sec": 0.603,
+    "eof_cutoff": false,
+    "repetitions": [],
+    "transcript": "Một nhãn ghi 500mg bột nghệ, nhãn kia ghi 500mg chiết xuất nghệ, hai con số giống nhau nhưng mô tả hai nguyên liệu khác nhau. Cơ cu min là một trong các hợp chất có trong củ nghệ. Khi xem nhãn, hàng đọc tên nguyên liệu trước, rồi xem có ghi riêng lượng cơ cu min hoặc tổng cơ cu min nôi trên mỗi khẩu phần hay không. Nếu nhãn chỉ ghi lượng bột nghệ hoặc chiết xuất, mình chưa biết chính xác lượng cơ cu min từ con số đó. Lật mặt sau đọc thêm một dòng là rõ hơn nhiều."
+  },
+  "machine_failures": [],
+  "machine_status": "READY_FOR_VISUAL_SIGN_OFF"
+}

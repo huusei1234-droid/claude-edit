@@ -1,0 +1,61 @@
+{
+  "inspected_at": "2026-11-27T16:05:31.246073",
+  "video_path": "C:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Series_7_Video_Kien_Thuc_Chi_Hau\\Chi_Hang_2711\\Final_All_7_Videos_Chi_Hang\\261127 AVPM 02 Cùng giảm 2 ký cơ thể thay đổi giống nhau không final.mp4",
+  "fingerprint": {
+    "file_size": 22606953,
+    "sha256_head_tail": "b89dee939b626fe4ca3778035ea70d16bef00dd99273980bbc39cce4941f10aa"
+  },
+  "streams": {
+    "width": 1080,
+    "height": 1920,
+    "v_codec": "h264",
+    "a_codec": "aac",
+    "fps": 24.0,
+    "format_dur": 27.99,
+    "video_dur": 27.917,
+    "audio_dur": 27.99,
+    "av_sync_delta": 0.073
+  },
+  "letterbox": {
+    "top_black_px": 0,
+    "bottom_black_px": 0
+  },
+  "integrated_lufs": -15.1,
+  "cut_count": 3,
+  "cuts": [
+    {
+      "index": 1,
+      "start": 0.0,
+      "end": 9.76,
+      "dur": 9.76,
+      "label": "scene_01"
+    },
+    {
+      "index": 2,
+      "start": 9.76,
+      "end": 19.46,
+      "dur": 9.7,
+      "label": "scene_02"
+    },
+    {
+      "index": 3,
+      "start": 19.46,
+      "end": 27.96,
+      "dur": 8.5,
+      "label": "scene_03"
+    }
+  ],
+  "sheets": {
+    "all_cuts_full": "C:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Series_7_Video_Kien_Thuc_Chi_Hau\\Chi_Hang_2711\\V02_Giam_2_Ky_Thay_Doi_Gi\\03_QC_Gate\\QC_FINAL_ALL_CUTS_FULL.jpg",
+    "all_cuts_zoom": "C:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Series_7_Video_Kien_Thuc_Chi_Hau\\Chi_Hang_2711\\V02_Giam_2_Ky_Thay_Doi_Gi\\03_QC_Gate\\QC_FINAL_ALL_CUTS_ZOOM.jpg"
+  },
+  "audio_audit": {
+    "word_count": 94,
+    "eof_tail_sec": 0.39,
+    "eof_cutoff": false,
+    "repetitions": [],
+    "transcript": "Cùng giảm 2 ký, có người vẫn leo cầu thang khỏe, có người lại thấy yếu đi. Cái cân cho mình biết cân nặng thay đổi bao nhiêu. Số ký giảm có thể gồm cả mỡ, nước và cơ. Khi đang giảm cân, ăn đủ đạm và tập sức mạnh giúp mình giữ cơ tốt hơn. Hàng gợi ý theo dõi thêm một việc rất đời thường như đứng lên khỏi ghế hoặc xách đồ đi chợ. Nếu cân đang xuống, hãy để ý xem sức mình thay đổi thế nào qua từng tuần."
+  },
+  "machine_failures": [],
+  "machine_status": "READY_FOR_VISUAL_SIGN_OFF"
+}

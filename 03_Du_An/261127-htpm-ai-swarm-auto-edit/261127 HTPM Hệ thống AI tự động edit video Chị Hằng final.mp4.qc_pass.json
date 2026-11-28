@@ -1,0 +1,13 @@
+{
+  "signed_at": "2026-11-27T15:39:44.704115",
+  "certified_path": "C:\\AI\\full studio\\projects\\htpm_ai_swarm_auto_edit_261127\\261127 HTPM Hệ thống AI tự động edit video Chị Hằng final.mp4",
+  "verdict": "PASS",
+  "auditor_verified": true,
+  "auditor": "video-qc-auditor",
+  "notes": "PASS 100% ca 5 tieu chi tren 6/6 pha cat (#01..#06, 21.32s @ 60fps, -14.2 LUFS, SyncDelta=0.003s): (A) 100% bao bi san pham that HTPM tren ban Chi Hang, CMS, Gemini va Kho Media (Dieu Kinh HT, Ngoc Long Hoan, Legend White Skin, Gel Phu Khang); (B) 0% dao cu thua hay thumbnail cat loi, nhan Shot & Track V1 khop 100% Program Monitor; (C) Logic da tac vu 68 con tro AI muot 60fps ne guong mat Chi Hang, ket tron cau thoai tai 20.92s va khoa frame mim cuoi tu nhien kem Render Complete + VU Meter -48dB o 0.4s cuoi (0% nhep moi cam); (D) Bo cuc toan canh Multi-Window ket hop trung canh Program Monitor + B-Roll sinh dong; (E) 0% lap tu, 0% dut chu, Program Monitor nam tron trong vung trang an toan TikTok/Reels 9:16.",
+  "override_reason": "",
+  "cut_count": 6,
+  "integrated_lufs": -14.2,
+  "file_size": 78002625,
+  "sha256_head_tail": "753242a768107786d87ae783dae27627af8aabe0e048145f1bbd5b8ed2197c85"
+}

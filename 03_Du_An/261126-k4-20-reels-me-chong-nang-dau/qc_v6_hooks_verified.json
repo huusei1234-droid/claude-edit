@@ -1,0 +1,619 @@
+{
+  "total_mp4_count": 91,
+  "over_90_violations": [],
+  "missing_sync": [],
+  "durations": [
+    {
+      "filename": "261122 K4 Bố chồng thu thẻ lương dạy con thương vợ tập 1 final.mp4",
+      "duration": 72.37,
+      "is_full": false
+    },
+    {
+      "filename": "261122 K4 Bố chồng thu thẻ lương dạy con thương vợ tập 2 final.mp4",
+      "duration": 61.9,
+      "is_full": false
+    },
+    {
+      "filename": "261122 K4 Bố chồng thu thẻ lương dạy con thương vợ tập 3 final.mp4",
+      "duration": 66.3,
+      "is_full": false
+    },
+    {
+      "filename": "261122 K4 Bố chồng thu thẻ lương dạy con thương vợ tập full final.mp4",
+      "duration": 164.53,
+      "is_full": true
+    },
+    {
+      "filename": "261122 K4 Mẹ chỉ có một vợ tự chọn đi tập 1 final.mp4",
+      "duration": 65.13,
+      "is_full": false
+    },
+    {
+      "filename": "261122 K4 Mẹ chỉ có một vợ tự chọn đi tập 2 final.mp4",
+      "duration": 58.43,
+      "is_full": false
+    },
+    {
+      "filename": "261122 K4 Mẹ chỉ có một vợ tự chọn đi tập full final.mp4",
+      "duration": 106.43,
+      "is_full": true
+    },
+    {
+      "filename": "261122 K4 Mẹ kế chủ tịch làm chủ cho con chồng tập 1 final.mp4",
+      "duration": 81.8,
+      "is_full": false
+    },
+    {
+      "filename": "261122 K4 Mẹ kế chủ tịch làm chủ cho con chồng tập 2 final.mp4",
+      "duration": 64.93,
+      "is_full": false
+    },
+    {
+      "filename": "261122 K4 Mẹ kế chủ tịch làm chủ cho con chồng tập full final.mp4",
+      "duration": 132.97,
+      "is_full": true
+    },
+    {
+      "filename": "261122 K4 Mẹ quê vượt ngàn cây số tìm con gái final.mp4",
+      "duration": 82.7,
+      "is_full": false
+    },
+    {
+      "filename": "261122 K4 Đòi 2 tỷ sính lễ ngay trước cổng cưới final.mp4",
+      "duration": 76.93,
+      "is_full": false
+    },
+    {
+      "filename": "261123 K4 Bố già vác bao tải thử lòng ba con ngày giáp Tết final.mp4",
+      "duration": 80.7,
+      "is_full": false
+    },
+    {
+      "filename": "261123 K4 Chàng trai thật thà bán ổi cho nợ cả sạp và cái kết ấm lòng lúc chiều muộn final.mp4",
+      "duration": 89.93,
+      "is_full": false
+    },
+    {
+      "filename": "261123 K4 Chồng đi phụ hồ ngày lễ mua quà cho vợ và cái kết final.mp4",
+      "duration": 81.97,
+      "is_full": false
+    },
+    {
+      "filename": "261123 K4 Con rể hiếu thảo đón cả bố mẹ vợ về nuôi tập 1 final.mp4",
+      "duration": 67.97,
+      "is_full": false
+    },
+    {
+      "filename": "261123 K4 Con rể hiếu thảo đón cả bố mẹ vợ về nuôi tập 2 final.mp4",
+      "duration": 70.87,
+      "is_full": false
+    },
+    {
+      "filename": "261123 K4 Con rể hiếu thảo đón cả bố mẹ vợ về nuôi tập full final.mp4",
+      "duration": 121.43,
+      "is_full": true
+    },
+    {
+      "filename": "261123 K4 Cô gái hám danh đi xem mắt tưởng giám đốc tập đoàn là thợ lau xe tập 1 final.mp4",
+      "duration": 75.4,
+      "is_full": false
+    },
+    {
+      "filename": "261123 K4 Cô gái hám danh đi xem mắt tưởng giám đốc tập đoàn là thợ lau xe tập 2 final.mp4",
+      "duration": 51.17,
+      "is_full": false
+    },
+    {
+      "filename": "261123 K4 Cô gái hám danh đi xem mắt tưởng giám đốc tập đoàn là thợ lau xe tập full final.mp4",
+      "duration": 109.97,
+      "is_full": true
+    },
+    {
+      "filename": "261123 K4 Khi sự quan tâm của chồng bị coi là phiền phức cái kết lạnh lòng final.mp4",
+      "duration": 66.2,
+      "is_full": false
+    },
+    {
+      "filename": "261123 K4 Khinh mẹ chú rể ăn mặc giản dị ngay tiệc cưới bố vợ mất trắng vốn đầu tư final.mp4",
+      "duration": 73.67,
+      "is_full": false
+    },
+    {
+      "filename": "261123 K4 Mang tiếng ác từ chối bạn thân để giữ sổ đỏ cứu vợ con bạn final.mp4",
+      "duration": 76.2,
+      "is_full": false
+    },
+    {
+      "filename": "261123 K4 Nhịn nhục sếp hống hách nuôi bố ốm cô gái được cất nhắc tổng giám đốc final.mp4",
+      "duration": 84.37,
+      "is_full": false
+    },
+    {
+      "filename": "261123 K4 Tình cũ mang hai tỷ khinh vợ giản dị của chồng và màn lột xác chấn động tập 1 final.mp4",
+      "duration": 65.37,
+      "is_full": false
+    },
+    {
+      "filename": "261123 K4 Tình cũ mang hai tỷ khinh vợ giản dị của chồng và màn lột xác chấn động tập 2 final.mp4",
+      "duration": 79.47,
+      "is_full": false
+    },
+    {
+      "filename": "261123 K4 Tình cũ mang hai tỷ khinh vợ giản dị của chồng và màn lột xác chấn động tập full final.mp4",
+      "duration": 131.8,
+      "is_full": true
+    },
+    {
+      "filename": "261124 K4 Bố vợ dầm mưa mang trứng gà lên thăm con rể giấu vợ rút tiết kiệm sửa mái nhà tập 1 final.mp4",
+      "duration": 81.1,
+      "is_full": false
+    },
+    {
+      "filename": "261124 K4 Bố vợ dầm mưa mang trứng gà lên thăm con rể giấu vợ rút tiết kiệm sửa mái nhà tập 2 final.mp4",
+      "duration": 81.93,
+      "is_full": false
+    },
+    {
+      "filename": "261124 K4 Bố vợ dầm mưa mang trứng gà lên thăm con rể giấu vợ rút tiết kiệm sửa mái nhà tập full final.mp4",
+      "duration": 151.2,
+      "is_full": true
+    },
+    {
+      "filename": "261124 K4 Con trai lên Trưởng khoa nhà vợ khinh bố quê làm thợ xây vôi ăn sần tay tập 1 final.mp4",
+      "duration": 72.37,
+      "is_full": false
+    },
+    {
+      "filename": "261124 K4 Con trai lên Trưởng khoa nhà vợ khinh bố quê làm thợ xây vôi ăn sần tay tập 2 final.mp4",
+      "duration": 64.9,
+      "is_full": false
+    },
+    {
+      "filename": "261124 K4 Con trai lên Trưởng khoa nhà vợ khinh bố quê làm thợ xây vôi ăn sần tay tập 3 final.mp4",
+      "duration": 51.87,
+      "is_full": false
+    },
+    {
+      "filename": "261124 K4 Con trai lên Trưởng khoa nhà vợ khinh bố quê làm thợ xây vôi ăn sần tay tập full final.mp4",
+      "duration": 161.67,
+      "is_full": true
+    },
+    {
+      "filename": "261124 K4 Mẹ chồng tự ý đem xe hồi môn của con dâu hứa cho em chồng và cái kết tập 1 final.mp4",
+      "duration": 83.03,
+      "is_full": false
+    },
+    {
+      "filename": "261124 K4 Mẹ chồng tự ý đem xe hồi môn của con dâu hứa cho em chồng và cái kết tập 2 final.mp4",
+      "duration": 79.7,
+      "is_full": false
+    },
+    {
+      "filename": "261124 K4 Mẹ chồng tự ý đem xe hồi môn của con dâu hứa cho em chồng và cái kết tập full final.mp4",
+      "duration": 149.0,
+      "is_full": true
+    },
+    {
+      "filename": "261124 K4 Mẹ quê mặc áo vá dự lễ khánh thành công ty và cái kết con trai cõng mẹ trên thảm đỏ tập 1 final.mp4",
+      "duration": 87.3,
+      "is_full": false
+    },
+    {
+      "filename": "261124 K4 Mẹ quê mặc áo vá dự lễ khánh thành công ty và cái kết con trai cõng mẹ trên thảm đỏ tập 2 final.mp4",
+      "duration": 80.23,
+      "is_full": false
+    },
+    {
+      "filename": "261124 K4 Mẹ quê mặc áo vá dự lễ khánh thành công ty và cái kết con trai cõng mẹ trên thảm đỏ tập full final.mp4",
+      "duration": 153.37,
+      "is_full": true
+    },
+    {
+      "filename": "261124 K4 Mở đại tiệc mừng thọ bảy lăm tuổi nhưng giấu mẹ già trong buồng tối tập 1 final.mp4",
+      "duration": 73.47,
+      "is_full": false
+    },
+    {
+      "filename": "261124 K4 Mở đại tiệc mừng thọ bảy lăm tuổi nhưng giấu mẹ già trong buồng tối tập 2 final.mp4",
+      "duration": 60.23,
+      "is_full": false
+    },
+    {
+      "filename": "261124 K4 Mở đại tiệc mừng thọ bảy lăm tuổi nhưng giấu mẹ già trong buồng tối tập 3 final.mp4",
+      "duration": 62.83,
+      "is_full": false
+    },
+    {
+      "filename": "261124 K4 Mở đại tiệc mừng thọ bảy lăm tuổi nhưng giấu mẹ già trong buồng tối tập full final.mp4",
+      "duration": 169.6,
+      "is_full": true
+    },
+    {
+      "filename": "261126 K4 Biếu mẹ ngoại mười triệu được khen biếu mẹ ruột năm triệu mua thuốc bị vợ cấm tập 1 final.mp4",
+      "duration": 57.33,
+      "is_full": false
+    },
+    {
+      "filename": "261126 K4 Biếu mẹ ngoại mười triệu được khen biếu mẹ ruột năm triệu mua thuốc bị vợ cấm tập 2 final.mp4",
+      "duration": 51.43,
+      "is_full": false
+    },
+    {
+      "filename": "261126 K4 Biếu mẹ ngoại mười triệu được khen biếu mẹ ruột năm triệu mua thuốc bị vợ cấm tập full final.mp4",
+      "duration": 96.0,
+      "is_full": true
+    },
+    {
+      "filename": "261126 K4 Bà cụ nhặt ve chai trả lại cọc tiền rơi bị cô gái sang chảnh vu ăn cắp final.mp4",
+      "duration": 86.8,
+      "is_full": false
+    },
+    {
+      "filename": "261126 K4 Bà cụ nhặt vỏ chai xin cơm thừa ở quán vỉa hè và tấm lòng chàng trai trẻ final.mp4",
+      "duration": 87.47,
+      "is_full": false
+    },
+    {
+      "filename": "261126 K4 Chị dâu mắng mẹ chồng làm rụng tóc khắp nhà và sự thật sợi tóc nhuộm nâu tập 1 final.mp4",
+      "duration": 54.43,
+      "is_full": false
+    },
+    {
+      "filename": "261126 K4 Chị dâu mắng mẹ chồng làm rụng tóc khắp nhà và sự thật sợi tóc nhuộm nâu tập 2 final.mp4",
+      "duration": 60.63,
+      "is_full": false
+    },
+    {
+      "filename": "261126 K4 Chị dâu mắng mẹ chồng làm rụng tóc khắp nhà và sự thật sợi tóc nhuộm nâu tập full final.mp4",
+      "duration": 97.8,
+      "is_full": true
+    },
+    {
+      "filename": "261126 K4 Chồng ham bạn nhậu bỏ mặc vợ đợi cơm nguội và bữa cơm sườn thức tỉnh final.mp4",
+      "duration": 79.87,
+      "is_full": false
+    },
+    {
+      "filename": "261126 K4 Con dâu gửi năm triệu báo hiếu bố bị mắng ăn bám và sự thật thu nhập tập 1 final.mp4",
+      "duration": 50.77,
+      "is_full": false
+    },
+    {
+      "filename": "261126 K4 Con dâu gửi năm triệu báo hiếu bố bị mắng ăn bám và sự thật thu nhập tập 2 final.mp4",
+      "duration": 71.17,
+      "is_full": false
+    },
+    {
+      "filename": "261126 K4 Con dâu gửi năm triệu báo hiếu bố bị mắng ăn bám và sự thật thu nhập tập full final.mp4",
+      "duration": 110.07,
+      "is_full": true
+    },
+    {
+      "filename": "261126 K4 Con dâu nấu mười mâm cỗ giỗ bỏng tay bị vu đập bát và bố chồng xử công minh tập 1 final.mp4",
+      "duration": 64.9,
+      "is_full": false
+    },
+    {
+      "filename": "261126 K4 Con dâu nấu mười mâm cỗ giỗ bỏng tay bị vu đập bát và bố chồng xử công minh tập 2 final.mp4",
+      "duration": 61.0,
+      "is_full": false
+    },
+    {
+      "filename": "261126 K4 Con dâu nấu mười mâm cỗ giỗ bỏng tay bị vu đập bát và bố chồng xử công minh tập full final.mp4",
+      "duration": 113.53,
+      "is_full": true
+    },
+    {
+      "filename": "261126 K4 Con gái trách mẹ kho cá mặn giặt rách áo mà không biết mẹ mờ mắt giấu mười triệu phụ con tập 1 final.mp4",
+      "duration": 57.7,
+      "is_full": false
+    },
+    {
+      "filename": "261126 K4 Con gái trách mẹ kho cá mặn giặt rách áo mà không biết mẹ mờ mắt giấu mười triệu phụ con tập 2 final.mp4",
+      "duration": 74.47,
+      "is_full": false
+    },
+    {
+      "filename": "261126 K4 Con gái trách mẹ kho cá mặn giặt rách áo mà không biết mẹ mờ mắt giấu mười triệu phụ con tập full final.mp4",
+      "duration": 111.13,
+      "is_full": true
+    },
+    {
+      "filename": "261126 K4 Con trai lấy tiền lẻ bán rau của mẹ già đi nhậu và bài học thức tỉnh giữa chợ chiều tập 1 final.mp4",
+      "duration": 60.07,
+      "is_full": false
+    },
+    {
+      "filename": "261126 K4 Con trai lấy tiền lẻ bán rau của mẹ già đi nhậu và bài học thức tỉnh giữa chợ chiều tập 2 final.mp4",
+      "duration": 57.4,
+      "is_full": false
+    },
+    {
+      "filename": "261126 K4 Con trai lấy tiền lẻ bán rau của mẹ già đi nhậu và bài học thức tỉnh giữa chợ chiều tập full final.mp4",
+      "duration": 100.27,
+      "is_full": true
+    },
+    {
+      "filename": "261126 K4 Dặn chồng giữ thể diện trước bố mẹ vợ cô vợ ngủ nướng tự làm tự chịu trong bếp tập 1 final.mp4",
+      "duration": 52.27,
+      "is_full": false
+    },
+    {
+      "filename": "261126 K4 Dặn chồng giữ thể diện trước bố mẹ vợ cô vợ ngủ nướng tự làm tự chịu trong bếp tập 2 final.mp4",
+      "duration": 58.83,
+      "is_full": false
+    },
+    {
+      "filename": "261126 K4 Dặn chồng giữ thể diện trước bố mẹ vợ cô vợ ngủ nướng tự làm tự chịu trong bếp tập full final.mp4",
+      "duration": 95.83,
+      "is_full": true
+    },
+    {
+      "filename": "261126 K4 Giám đốc chi nhánh bắt cô lao công quỳ lau giày và màn vi hành của Chủ tịch trẻ tập 1 final.mp4",
+      "duration": 65.17,
+      "is_full": false
+    },
+    {
+      "filename": "261126 K4 Giám đốc chi nhánh bắt cô lao công quỳ lau giày và màn vi hành của Chủ tịch trẻ tập 2 final.mp4",
+      "duration": 55.97,
+      "is_full": false
+    },
+    {
+      "filename": "261126 K4 Giám đốc chi nhánh bắt cô lao công quỳ lau giày và màn vi hành của Chủ tịch trẻ tập full final.mp4",
+      "duration": 104.83,
+      "is_full": true
+    },
+    {
+      "filename": "261126 K4 Mẹ quê mang làn trứng lên thăm bị gài bẫy lấy nhẫn kim cương trăm triệu tập 1 final.mp4",
+      "duration": 58.53,
+      "is_full": false
+    },
+    {
+      "filename": "261126 K4 Mẹ quê mang làn trứng lên thăm bị gài bẫy lấy nhẫn kim cương trăm triệu tập 2 final.mp4",
+      "duration": 65.7,
+      "is_full": false
+    },
+    {
+      "filename": "261126 K4 Mẹ quê mang làn trứng lên thăm bị gài bẫy lấy nhẫn kim cương trăm triệu tập full final.mp4",
+      "duration": 108.23,
+      "is_full": true
+    },
+    {
+      "filename": "261126 K4 Quản lý ăn chặn một triệu tiền công của bà cụ có chồng nằm viện và cái kết tập 1 final.mp4",
+      "duration": 63.37,
+      "is_full": false
+    },
+    {
+      "filename": "261126 K4 Quản lý ăn chặn một triệu tiền công của bà cụ có chồng nằm viện và cái kết tập 2 final.mp4",
+      "duration": 58.77,
+      "is_full": false
+    },
+    {
+      "filename": "261126 K4 Quản lý ăn chặn một triệu tiền công của bà cụ có chồng nằm viện và cái kết tập full final.mp4",
+      "duration": 101.87,
+      "is_full": true
+    },
+    {
+      "filename": "261126 K4 Sau đám tang bố già người vợ rụt rè xin nuôi hai cháu mồ côi và câu trả lời của chồng final.mp4",
+      "duration": 85.33,
+      "is_full": false
+    },
+    {
+      "filename": "261126 K4 Tiệc tân gia sáu tỷ nhà ngoại nhận vơ khinh thông gia quê tập 1 final.mp4",
+      "duration": 65.4,
+      "is_full": false
+    },
+    {
+      "filename": "261126 K4 Tiệc tân gia sáu tỷ nhà ngoại nhận vơ khinh thông gia quê tập 2 final.mp4",
+      "duration": 63.33,
+      "is_full": false
+    },
+    {
+      "filename": "261126 K4 Tiệc tân gia sáu tỷ nhà ngoại nhận vơ khinh thông gia quê tập full final.mp4",
+      "duration": 113.8,
+      "is_full": true
+    },
+    {
+      "filename": "261126 K4 Vay hai mươi lăm cây vàng lúc bốn lăm triệu nay vàng tăng đòi trả một tỷ tiền mặt tập 1 final.mp4",
+      "duration": 65.5,
+      "is_full": false
+    },
+    {
+      "filename": "261126 K4 Vay hai mươi lăm cây vàng lúc bốn lăm triệu nay vàng tăng đòi trả một tỷ tiền mặt tập 2 final.mp4",
+      "duration": 56.1,
+      "is_full": false
+    },
+    {
+      "filename": "261126 K4 Vay hai mươi lăm cây vàng lúc bốn lăm triệu nay vàng tăng đòi trả một tỷ tiền mặt tập full final.mp4",
+      "duration": 99.77,
+      "is_full": true
+    },
+    {
+      "filename": "261126 K4 Về quê thăm mẹ già dậy sớm nấu cơm con dâu chê bẩn ném trả tờ hai trăm nghìn final.mp4",
+      "duration": 79.07,
+      "is_full": false
+    },
+    {
+      "filename": "261126 K4 Vợ bắt tống mẹ chồng ngồi xe lăn vào viện dưỡng lão dù đang ở nhà tên mẹ tập 1 final.mp4",
+      "duration": 73.13,
+      "is_full": false
+    },
+    {
+      "filename": "261126 K4 Vợ bắt tống mẹ chồng ngồi xe lăn vào viện dưỡng lão dù đang ở nhà tên mẹ tập 2 final.mp4",
+      "duration": 60.37,
+      "is_full": false
+    },
+    {
+      "filename": "261126 K4 Vợ bắt tống mẹ chồng ngồi xe lăn vào viện dưỡng lão dù đang ở nhà tên mẹ tập full final.mp4",
+      "duration": 108.3,
+      "is_full": true
+    },
+    {
+      "filename": "261126 K4 Ông cụ đãng trí ngồi nhầm bàn ăn bị xua đuổi và món quà bất ngờ từ người con gái final.mp4",
+      "duration": 76.47,
+      "is_full": false
+    },
+    {
+      "filename": "261126 K4 Động chút cãi nhau là chặn số xách vali về ngoại và bài học giữ gìn hôn nhân final.mp4",
+      "duration": 85.23,
+      "is_full": false
+    }
+  ],
+  "hook_transcripts": [
+    {
+      "filename": "261122 K4 Bố chồng thu thẻ lương dạy con thương vợ tập full final.mp4",
+      "hook_end_sec": 15.77,
+      "hook_transcript": "Vợ ơi, mau ra đây xách phụ anh một tay coi | Hôm nay anh mua bao nhiêu là đồ bổ xịn mang về nhà mình nè | Ai bảo em là anh mua quà đi thăm mẹ vợ | Mấy hợp yến xào cao cấp này là anh mua bồi bổ cho ba anh á | Em cứ tưởng anh nhớ cuối tuần sinh nhật mẹ em ở quê | Nên mới mua sẵn quà cho hai vợ chồng mang về thăm mẹ"
+    },
+    {
+      "filename": "261122 K4 Mẹ chỉ có một vợ tự chọn đi tập full final.mp4",
+      "hook_end_sec": 16.3,
+      "hook_transcript": "Tiền Lương Hiêu bà hết sạch rồi | Mỗi ngày tôi nấu cho một bữa là tốt lắm rồi | Bà còn đòi gì nữa | Khôi | Mày để vợ mẹ ăn nói hổng hào với mẹ ruột mình như vậy | Mà mày đứng trơ mắt nhìn được hả? | Chuyện nhẹ mà đừng xíu vô | Mẹ già bệnh tật tổng kém đủ thứ | Anh thương quá thì tự rước về mà nuôi"
+    },
+    {
+      "filename": "261122 K4 Mẹ kế chủ tịch làm chủ cho con chồng tập full final.mp4",
+      "hook_end_sec": 15.47,
+      "hook_transcript": "Đi chỗ khác ngay, là chồng của Chủ tịch Lan danh giá | làm gì của đứa con đi làm thợ hồ lấm lèm nghèo giách như thế này? | Đang giờ làm việc có chuyện gì mà chú lớn tiếng xua đuổi người ta ngay giữa đại sảnh tập đoàn thế này hả? | Tại hai nghe em ăn mặc luận thuận này cứ khăng khăng cầm ảnh cũ tới nhận chồng Chủ tịch là bố ruột ạ"
+    },
+    {
+      "filename": "261123 K4 Con rể hiếu thảo đón cả bố mẹ vợ về nuôi tập full final.mp4",
+      "hook_end_sec": 17.93,
+      "hook_transcript": "Em mai bảo bên đó nuôi bố rồi, nên đưa mẹ sang ở cùng vợ chồng con. Mẹ thông cảm cho con nhé. | Dạo này anh Tuấn làm ăn khó khăn, sợ gánh không nổi. Mẹ hiếu rồi, mẹ không làm gắn nẵng đâu. | Để mẹ ra bến bác xe về quê."
+    },
+    {
+      "filename": "261123 K4 Cô gái hám danh đi xem mắt tưởng giám đốc tập đoàn là thợ lau xe tập full final.mp4",
+      "hook_end_sec": 16.33,
+      "hook_transcript": "Chú Trần hứa giới thiệu đại gia | Ai về gặp thở lau xe bày đặt mặc vết làm màu | Cô thành kiến với người lao động thế nhỉ | Làm nghề chân chính có gì đáng xấu hổ đâu | Cả tháng tiền lương của hạ người như anh còn chẳng đủ cho tôi ăn 1 bữa nhà ăn 1 bữa nhà hạ"
+    },
+    {
+      "filename": "261123 K4 Tình cũ mang hai tỷ khinh vợ giản dị của chồng và màn lột xác chấn động tập full final.mp4",
+      "hook_end_sec": 14.33,
+      "hook_transcript": "Sưa tôi bận đi nước ngoài mới chia tay | Chứ quê mùa như cô làm gì có cửa lấy anh ấy | Tôi nghe rõ ý cô rồi | Nhưng còn đứa con nhỏ của tụi tôi thì tính sao đây | Đứa bé đó cô tự giác đi luôn đi | Tụi với anh Tuấn còn sinh con riêng của tụi tôi chứ"
+    },
+    {
+      "filename": "261124 K4 Bố vợ dầm mưa mang trứng gà lên thăm con rể giấu vợ rút tiết kiệm sửa mái nhà tập full final.mp4",
+      "hook_end_sec": 11.73,
+      "hook_transcript": "Ngoài trời tối mưa rồi | Bố ở lại với tụi con đêm nay đi | Sáng mai tạnh mưa hãng bắt xe về quê bố ơi | Bố thông cảm trong vì con chỉ còn mấy đồng lẻ này thôi | Bố cầm tạm bắt xe khách về quê sớm kèo tối mượn ạ"
+    },
+    {
+      "filename": "261124 K4 Con trai lên Trưởng khoa nhà vợ khinh bố quê làm thợ xây vôi ăn sần tay tập full final.mp4",
+      "hook_end_sec": 12.83,
+      "hook_transcript": "Trong quần áo với bản tay đầy sẹo vôi vỡ kìa | Thấy trồng tôi vừa lên trưởng khoa là vội bắt xe lên ăn trực ạ | Hôm nay toàn bác sĩ danh giá với khách quý nhà tôi | 2 người mau ra bến bắt xe về quê đừng làm bận bứa tiệc"
+    },
+    {
+      "filename": "261124 K4 Mẹ chồng tự ý đem xe hồi môn của con dâu hứa cho em chồng và cái kết tập full final.mp4",
+      "hook_end_sec": 13.83,
+      "hook_transcript": "Xe nào cửa? | Dạ thưa mẹ con hứa tặng chiếc xe hồi môn của con cho em link từ bao giờ thế ạ | Là chính mẹ hứa cho đấy | Vợ chồng con có xe của thằng Tuấn rồi | Chiếc xe kia để dư thì nhường cho em gái"
+    },
+    {
+      "filename": "261124 K4 Mẹ quê mặc áo vá dự lễ khánh thành công ty và cái kết con trai cõng mẹ trên thảm đỏ tập full final.mp4",
+      "hook_end_sec": 15.73,
+      "hook_transcript": "Dạ, cô cậu thông cảm, tôi không phải ăn xin đâu ạ. | Tôi ở dưới quê bắt xe liên thăm con trai làm việc ở công ty mình. | Áo quần bá đụp thế kia thì con bà giỏi lắm cũng chỉ làm bảo vệ ca đêm. | Hay tập vụ thôi, bòng ra cửa sau mà đợi."
+    },
+    {
+      "filename": "261124 K4 Mở đại tiệc mừng thọ bảy lăm tuổi nhưng giấu mẹ già trong buồng tối tập full final.mp4",
+      "hook_end_sec": 13.37,
+      "hook_transcript": "Trọng ơi, này là lễ mừng thọ 75 tuổi của mẹ | Cho mẹ ra chào họ hàng 5 phút thôi con | Ngoài sánh toàn chủ doanh nghiệp với đối tác lớn của con | Mẹ ăn cháo trong này đi"
+    },
+    {
+      "filename": "261126 K4 Biếu mẹ ngoại mười triệu được khen biếu mẹ ruột năm triệu mua thuốc bị vợ cấm tập full final.mp4",
+      "hook_end_sec": 17.27,
+      "hook_transcript": "Kìa Vân, em hạ rộng xuống đi. | Anh lấy tiền lương mình làm ra mua thuốc cho mẹ. | Có gì sai? | Tôi chỉ cho phép bíu mẹ để tôi 10 triệu thôi. | Ai cho phép anh, anh tự ý đưa mẹ anh 5 triệu. | Tháng nào, anh cũng nộp hết lương. | Bíu bảo ngoại 10 triệu được sao? | Mẹ anh 5 triệu em lại tiếc."
+    },
+    {
+      "filename": "261126 K4 Bà cụ nhặt ve chai trả lại cọc tiền rơi bị cô gái sang chảnh vu ăn cắp final.mp4",
+      "hook_end_sec": 11.63,
+      "hook_transcript": "Tiền của tôi đây! Hóa ra bà không chỉ nhặt giác mà còn dám móc túi ăn cắp tiền của tôi à? | Trời đất ơi! Chính mắt tôi thấy tiền rơi khỏi túi cô nên chạy theo trả sao cô nỡ nói vậy?"
+    },
+    {
+      "filename": "261126 K4 Bà cụ nhặt vỏ chai xin cơm thừa ở quán vỉa hè và tấm lòng chàng trai trẻ final.mp4",
+      "hook_end_sec": 10.17,
+      "hook_transcript": "Đã nghèo, giách còn không biết điều | Nhìn đứng cạnh bàn ăn ngứa cả mắt | Dạ cậu ơi | Đĩa cơm khách bàn bên bỏ lại kia cậu cho tôi xin mang ăn tạm được không ạ?"
+    },
+    {
+      "filename": "261126 K4 Chị dâu mắng mẹ chồng làm rụng tóc khắp nhà và sự thật sợi tóc nhuộm nâu tập full final.mp4",
+      "hook_end_sec": 17.83,
+      "hook_transcript": "Không phải tóc của mẹ đâu con ơi | Tóc mẹ bạc trắng lại búi gọn thế này sao đen nâu thế kia được | Không tóc bà dụng thì tóc ai vào đây? | Tôi còn trẻ đẹp thế này làm gì có chuyện dụng tóc? | Thôi con đừng nóng dẫn nữa | Để mẹ quét dọn sạch lại ngay từ mai mẹ chú ý hơn"
+    },
+    {
+      "filename": "261126 K4 Chồng ham bạn nhậu bỏ mặc vợ đợi cơm nguội và bữa cơm sườn thức tỉnh final.mp4",
+      "hook_end_sec": 10.67,
+      "hook_transcript": "Đàn ông ra đường không rượu trẻ bạn bè thì còn gì là bản lĩnh | Chú toàn ngồi uống tiếp với anh em | Em cứ đi về nhà trước đi | Anh ngồi với anh em thêm lúc nữa rồi về | Làm gì mà căng thế"
+    },
+    {
+      "filename": "261126 K4 Con dâu gửi năm triệu báo hiếu bố bị mắng ăn bám và sự thật thu nhập tập full final.mp4",
+      "hook_end_sec": 16.97,
+      "hook_transcript": "Thảo nào suốt ngày thấy cô ôm máy tính | Hóa ra, ăn bám chồng rồi tuần tiền về ngoại à? | Mẹ và chị hiểu lâm rồi ạ | Bố con ở quê đau khớp | nên con gửi tiền riêng mua thuốc thôi | Suốt ngày chỉ ngồi ở nhà thì lấy đâu ra tiền riêng | Em nói rõ cho mẹ với chị nghe xem"
+    },
+    {
+      "filename": "261126 K4 Con dâu nấu mười mâm cỗ giỗ bỏng tay bị vu đập bát và bố chồng xử công minh tập full final.mp4",
+      "hook_end_sec": 16.53,
+      "hook_transcript": "Mời bác trưởng xôi cổ ạ. Từ 5 giờ sáng, một tay chị lệ chị lệ em nấu chọn 10 mâm đấy. | Bác trưởng xem kìa. Ngày rỗ tổ mà con râu lười biến dám ném vỡ bát dần mặt tôi. | Bác ơi, còn không dám đập bát đâu ạ. Chính mẹ vừa hất tay con làm rơi đấy ạ."
+    },
+    {
+      "filename": "261126 K4 Con gái trách mẹ kho cá mặn giặt rách áo mà không biết mẹ mờ mắt giấu mười triệu phụ con tập full final.mp4",
+      "hook_end_sec": 21.3,
+      "hook_transcript": "Mẹ du cháu ngủ say rồi | Mẹ già mắt mờ tay vụng ở lại chỉ làm vợ chồng con thêm bực mình thôi | Con đi làm 10 tiếng mệt giã rồi | Về ăn miếng cá mặn chát | Áo lộ rặt máy rách bơm sao không sót | Em có đuổi mẹ đâu? | Ở nhà mỗi việc bé cháu nấu cơm không chú tâm | Thì mới nhầm hụ muối với hụ đường chứ"
+    },
+    {
+      "filename": "261126 K4 Con trai lấy tiền lẻ bán rau của mẹ già đi nhậu và bài học thức tỉnh giữa chợ chiều tập full final.mp4",
+      "hook_end_sec": 16.97,
+      "hook_transcript": "Có mấy đồng tiền lẻ mà mẹ dặn giò mãi | Chiều mẹ chịu khó ra chợ bán hết gánh rau tối con về nha | Này anh bạn | Anh hẹn bạn vào quán sang trọng ăn uống | Có biết mẹ già ở nhà đang vất vả thế nào không? | Anh là người ngoài biết gì chuyện gia đình tôi | Xin anh tránh đường đừng can thiệp chuyện riêng"
+    },
+    {
+      "filename": "261126 K4 Dặn chồng giữ thể diện trước bố mẹ vợ cô vợ ngủ nướng tự làm tự chịu trong bếp tập full final.mp4",
+      "hook_end_sec": 13.37,
+      "hook_transcript": "Cái gì thế này sao trên bản toàn dâu thế hả? | Anh trọng nội khinh ngoại định mời bố mẹ em ăn chay à | Khó quá em bình tĩnh nghe anh nói hết câu đã nào | Giải thích gì nữa cả 5 bố mẹ em mới ghé thăm 1 lần mà anh mua toàn dâu muống thế kia"
+    },
+    {
+      "filename": "261126 K4 Giám đốc chi nhánh bắt cô lao công quỳ lau giày và màn vi hành của Chủ tịch trẻ tập full final.mp4",
+      "hook_end_sec": 18.0,
+      "hook_transcript": "Dạ, giám đốc thông cảm. Thang hàng đang bảo chi mà tôi phải lên rọn gấp phòng hợp đón lãnh đạo tổng ạ. | Lãnh đạo tổng liên quan gì tới bà? | Cúi xuống lau sặt mũi dày cho tôi, không tôi đối việc ngay. Mày do ai đấy? | Chị ruột tao là giám đốc nhân sự trên tổng công ty ở đây. | Tao thích đuổi ai là đuổi."
+    },
+    {
+      "filename": "261126 K4 Mẹ quê mang làn trứng lên thăm bị gài bẫy lấy nhẫn kim cương trăm triệu tập full final.mp4",
+      "hook_end_sec": 16.77,
+      "hook_transcript": "Tăng vật nằm sờ sờ trong làn chứng đây rồi | Bà mang quả quê lên chỉ để ăn cắp nhẫn à | Quàng ơi con tin mẹ đi | Cả đời mẹ nghèo khổ nhưng chưa từng lấy của ai một đồng nào | Tôi ngồi ghế phòng khách làm chứng nhé | Chính mắt tôi thấy bà già này lén lút gần cửa phòng"
+    },
+    {
+      "filename": "261126 K4 Quản lý ăn chặn một triệu tiền công của bà cụ có chồng nằm viện và cái kết tập full final.mp4",
+      "hook_end_sec": 20.5,
+      "hook_transcript": "Ờ cô ơi | Sáng nay lúc thuê dọn tổng vệ sinh | cô thỏa thuận trả 2 triệu | Sao giờ chỉ có 1 triệu à? | Lúc sáng nói miệng thế thôi | Sảnh rộng mà bác lâu dọn chậm chạp thế này | nhận 1 triệu là nhiều lắm rồi | Ai mà chẳng cần tiền? | Bà còn đứng kì kèo nữa | Tôi gọi bảo vệ lôi cổ ra khỏi cổng bây giờ"
+    },
+    {
+      "filename": "261126 K4 Sau đám tang bố già người vợ rụt rè xin nuôi hai cháu mồ côi và câu trả lời của chồng final.mp4",
+      "hook_end_sec": 16.03,
+      "hook_transcript": "Vợ chồng mình đón hai cháu lên ở cung được không anh? | Em xin nhận thêm việc làm đêm | Để phụ anh lo lắng | Em vừa nói cái câu gì đấy hả Thùy? | Em xin lỗi anh đừng dẫn nhá | Nui con mình đã chật vật rồi | Anh cứ coi như em chưa nhắc tới đi ạ"
+    },
+    {
+      "filename": "261126 K4 Tiệc tân gia sáu tỷ nhà ngoại nhận vơ khinh thông gia quê tập full final.mp4",
+      "hook_end_sec": 18.67,
+      "hook_transcript": "Thôi Kien ạ | Tại bố mẹ nghèo làm xấu mặt họ hàng | Để bố mẹ ra biến xe về quê | Anh Kien đưa bố mẹ anh ra biến xe luôn đi | Hôm nay em mất mặt trước khách lắm rồi | Thân làm dễ, nhờ Phước nhà vợ mua cho căn nhà 6 tỷ | Cậu còn dám chừng mắt với ai"
+    },
+    {
+      "filename": "261126 K4 Vay hai mươi lăm cây vàng lúc bốn lăm triệu nay vàng tăng đòi trả một tỷ tiền mặt tập full final.mp4",
+      "hook_end_sec": 22.6,
+      "hook_transcript": "Năm xưa lúc anh chị vai dàng, giá có 45 triệu 1 cây | Này cứ tính tròn 1 tỷ tiền mặt nha | Sao lại tiến thế được ạ? | Năm năm trước em đưa anh chị tròn 25 cây vàng | Để cứu nợ làm ăn cơ mà | Chú ăn học cao mà sống tính toán với anh ruột thế à? | Sống với anh ruột thế à? | Giờ dàng đắt gấp đôi | Bắt anh mua dàng trả thì thất đức quá"
+    },
+    {
+      "filename": "261126 K4 Về quê thăm mẹ già dậy sớm nấu cơm con dâu chê bẩn ném trả tờ hai trăm nghìn final.mp4",
+      "hook_end_sec": 17.63,
+      "hook_transcript": "Hai ngày anh nhìn nhà quê của ú kỹ chậu chội của mẹ anh xem tui thở làm sao nổi hai ngày | Nghe tin em về, mẹ dậy từ bốn giờ sáng ra chợ mua toàn món ngon em thích | Em còn đòi hỏi gì nữa? | Cơm bếp củi ám khỏi đen nhèm ai nuốt nổi | Bà 200 bạc lẻ nãy anh cầm chả ba đi"
+    },
+    {
+      "filename": "261126 K4 Vợ bắt tống mẹ chồng ngồi xe lăn vào viện dưỡng lão dù đang ở nhà tên mẹ tập full final.mp4",
+      "hook_end_sec": 20.27,
+      "hook_transcript": "Tài chân mẹ đau không làm lụt được | Em cấm đưa tiền thì ngay hôm nay anh đón mẹ về nhà mình ờ | Nhìn cái xe lan đã trướng mắt rồi | Một là tống bá ấy vào viện dưỡng lão | Hai là đẩy về quê | Thôi Đăng ơi mẹ già rồi sống đâu cũng được | Con đừng vì mẹ mà vợ chồng cái vá khổ tâm"
+    },
+    {
+      "filename": "261126 K4 Ông cụ đãng trí ngồi nhầm bàn ăn bị xua đuổi và món quà bất ngờ từ người con gái final.mp4",
+      "hook_end_sec": 9.4,
+      "hook_transcript": "Đi ra chỗ khác ngay lập tức, tự dưng mất cả hướng ăn chưa? | Bác ơi, bác sang ngồi bàn bọn cháu cho vui nhé. | Bác cứ ăn uống tự nhiên thoải mái đấy ạ."
+    },
+    {
+      "filename": "261126 K4 Động chút cãi nhau là chặn số xách vali về ngoại và bài học giữ gìn hôn nhân final.mp4",
+      "hook_end_sec": 16.23,
+      "hook_transcript": "Cầm thì cầm chứ, tôi chặn hết số của anh rồi | Không cần anh phải giả vờ lo lắng | Anh vừa chuyển 20 triệu vào thể của em đấy | Về bên ngoại, nhớ mua quà, kéo bố mẹ hai bên lo | Anh chuyển nhiều tiền rồi dục tôi đi nghĩa là sao? | Anh mong tôi ở luôn bên nhà ngoại với gì?"
+    }
+  ]
+}

@@ -1,0 +1,538 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Teleprompter Pro 20 Tập — An Vượng & Hằng Thu Pharma</title>
+<style>
+  :root {
+    --bg: #080a0f;
+    --panel: #121621;
+    --border: #262e42;
+    --text: #f8fafc;
+    --muted: #94a3b8;
+    --gold: #f6cf65;
+    --emerald: #22c55e;
+    --crimson: #f43f5e;
+    --cyan: #38bdf8;
+    --font-size: 56px;
+    --line-height: 1.48;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Segoe UI", "Be Vietnam Pro", Arial, sans-serif;
+    overflow: hidden;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  /* Top Control Bar */
+  .toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 14px;
+    background: var(--panel);
+    border-bottom: 1px solid var(--border);
+    z-index: 30;
+  }
+  .toolbar .group {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding-right: 10px;
+    border-right: 1px solid var(--border);
+  }
+  .toolbar .group:last-child { border-right: none; }
+  button, select {
+    background: #1d2436;
+    color: var(--text);
+    border: 1px solid #334155;
+    border-radius: 8px;
+    padding: 7px 11px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  button:hover, select:hover { background: #29334d; }
+  button.active { background: #0ea5e9; border-color: #38bdf8; color: #04101d; }
+  button.play-btn { background: #16a34a; border-color: #22c55e; color: #fff; min-width: 96px; }
+  button.play-btn.playing { background: #e11d48; border-color: #fb7185; }
+  button.done-btn.is-done { background: #15803d; border-color: #4ade80; color: #fff; }
+  label.slider-lbl { font-size: 12px; color: var(--muted); display: flex; align-items: center; gap: 6px; }
+  input[type=range] { width: 84px; accent-color: var(--gold); }
+
+  /* Main Workspace */
+  .workspace {
+    flex: 1;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+  }
+  /* Sidebar Episode List */
+  .sidebar {
+    width: 310px;
+    background: #0d111a;
+    border-right: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition: width 0.2s;
+  }
+  .sidebar.hidden { width: 0; border-right: none; }
+  .filter-tabs {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 4px;
+    padding: 8px;
+    border-bottom: 1px solid var(--border);
+  }
+  .filter-tabs button { padding: 6px 4px; font-size: 11px; }
+  .ep-list {
+    flex: 1;
+    overflow-y: auto;
+    padding: 8px;
+  }
+  .set-header {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.6px;
+    color: var(--gold);
+    padding: 10px 6px 5px;
+    text-transform: uppercase;
+  }
+  .ep-item {
+    padding: 9px 10px;
+    margin-bottom: 5px;
+    border-radius: 9px;
+    background: #141a27;
+    border: 1px solid transparent;
+    cursor: pointer;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .ep-item:hover { border-color: #3b4a6b; }
+  .ep-item.active { background: #1e293b; border-color: var(--gold); }
+  .ep-item.done { opacity: 0.62; }
+  .badge {
+    font-size: 10px;
+    font-weight: 800;
+    padding: 2px 6px;
+    border-radius: 5px;
+    white-space: nowrap;
+  }
+  .badge.av { background: #064e3b; color: #6ee7b7; border: 1px solid #10b981; }
+  .badge.ht { background: #701a3c; color: #fda4af; border: 1px solid #f43f5e; }
+  .ep-title { font-size: 12.5px; font-weight: 600; line-height: 1.3; }
+  .ep-sub { font-size: 11px; color: var(--muted); margin-top: 2px; }
+
+  /* Prompter Stage */
+  .stage-wrap {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    background: #000;
+  }
+  /* Eye-level Reading Guide Bar */
+  .reading-guide {
+    position: absolute;
+    top: 28%;
+    left: 0;
+    right: 0;
+    height: 110px;
+    border-top: 2px solid rgba(246, 207, 101, 0.55);
+    border-bottom: 2px solid rgba(246, 207, 101, 0.55);
+    background: rgba(246, 207, 101, 0.05);
+    pointer-events: none;
+    z-index: 10;
+  }
+  .reading-guide::before {
+    content: "▶";
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--gold);
+    font-size: 24px;
+  }
+  .reading-guide::after {
+    content: "◀";
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--gold);
+    font-size: 24px;
+  }
+
+  .prompter-scroll {
+    height: 100%;
+    overflow-y: auto;
+    padding: 28vh 8% 60vh 8%;
+    scroll-behavior: auto;
+  }
+  .prompter-scroll.mirror-x { transform: scaleX(-1); }
+  .prompter-scroll.mirror-y { transform: scaleY(-1); }
+  .prompter-scroll.mirror-xy { transform: scale(-1, -1); }
+
+  .meta-banner {
+    background: #111827;
+    border: 1px solid #334155;
+    border-radius: 14px;
+    padding: 16px 22px;
+    margin-bottom: 28px;
+    font-size: 18px;
+    line-height: 1.5;
+  }
+  .meta-banner .m-top {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+  }
+  .meta-banner .m-id { font-size: 24px; font-weight: 800; color: var(--gold); }
+  .meta-banner .m-props { color: #7dd3fc; font-weight: 600; }
+  .meta-banner .m-mood { color: #fde68a; }
+
+  .hook-switcher {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 22px;
+  }
+  .hook-switcher button { font-size: 14px; padding: 8px 14px; }
+
+  .script-content {
+    font-size: var(--font-size);
+    line-height: var(--line-height);
+    font-weight: 700;
+    letter-spacing: 0.2px;
+  }
+  .line-hook {
+    color: var(--gold);
+    margin-bottom: 0.7em;
+    border-left: 6px solid var(--gold);
+    padding-left: 22px;
+  }
+  .line-body {
+    color: #ffffff;
+    margin-bottom: 0.65em;
+  }
+  .line-cta {
+    color: #6ee7b7;
+    margin-top: 0.7em;
+    margin-bottom: 0.7em;
+    border-left: 6px solid #22c55e;
+    padding-left: 22px;
+  }
+  .line-cue {
+    font-size: calc(var(--font-size) * 0.46);
+    line-height: 1.35;
+    color: #38bdf8;
+    font-weight: 600;
+    background: rgba(56, 189, 248, 0.11);
+    border-radius: 10px;
+    padding: 8px 16px;
+    margin: 0.45em 0 0.55em 0;
+  }
+  .hide-cues .line-cue { display: none; }
+  .slash-mark {
+    color: #64748b;
+    font-weight: 400;
+    padding: 0 4px;
+  }
+  .disclaimer-box {
+    margin-top: 32px;
+    font-size: 18px;
+    color: #94a3b8;
+    border-top: 1px dashed #334155;
+    padding-top: 14px;
+    font-weight: 500;
+  }
+  .status-bar {
+    position: absolute;
+    bottom: 12px;
+    right: 18px;
+    background: rgba(15, 23, 42, 0.88);
+    border: 1px solid #334155;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 12px;
+    color: var(--muted);
+    z-index: 25;
+  }
+</style>
+</head>
+<body>
+
+<div class="toolbar">
+  <div class="group">
+    <button id="btnSidebar" title="Ẩn/Hiện danh sách tập">☰ Danh sách</button>
+    <button id="btnPrev" title="Tập trước (←)">◀ Trước</button>
+    <button id="btnNext" title="Tập sau (→)">Sau ▶</button>
+  </div>
+  <div class="group">
+    <button id="btnPlay" class="play-btn">▶ CHẠY (Space)</button>
+    <button id="btnReset">↺ Về đầu</button>
+  </div>
+  <div class="group">
+    <label class="slider-lbl">Tốc độ <input id="rngSpeed" type="range" min="10" max="160" value="48"><span id="valSpeed">48</span></label>
+    <label class="slider-lbl">Cỡ chữ <input id="rngFont" type="range" min="32" max="92" value="56"><span id="valFont">56</span></label>
+  </div>
+  <div class="group">
+    <button id="btnMirrorX" title="Lật gương ngang cho kính Teleprompter">⇄ Lật Gương</button>
+    <button id="btnCues" class="active" title="Bật/Tắt gợi ý tay & đạo cụ">🎬 Gợi ý diễn</button>
+    <button id="btnDone" class="done-btn">☐ Đánh dấu đã quay</button>
+  </div>
+  <div class="group">
+    <span id="progressTxt" style="font-size:13px;color:var(--gold);font-weight:700;">Đã quay: 0/20</span>
+  </div>
+</div>
+
+<div class="workspace">
+  <aside class="sidebar" id="sidebar">
+    <div class="filter-tabs">
+      <button class="f-btn active" data-filter="ALL">3 Set (20)</button>
+      <button class="f-btn" data-filter="AV">An Vượng</button>
+      <button class="f-btn" data-filter="HT">Hằng Thu</button>
+      <button class="f-btn" data-filter="TODO">Chưa quay</button>
+    </div>
+    <div class="ep-list" id="epList"></div>
+  </aside>
+
+  <main class="stage-wrap">
+    <div class="reading-guide"></div>
+    <div class="prompter-scroll" id="scroller">
+      <div id="stageContent"></div>
+    </div>
+    <div class="status-bar">
+      Phím tắt: <b>Space</b> Chạy/Dừng · <b>↑/↓</b> Tăng/Giảm tốc · <b>←/→</b> Đổi tập · <b>R</b> Về đầu · <b>M</b> Lật gương
+    </div>
+  </main>
+</div>
+
+<script>
+const EPISODES = [{"id": "AV01", "brand": "AN VƯỢNG", "set": "SET1", "set_name": "SET 1 — ĐÈN ĐỎ CẢNH BÁO (Red LED)", "product": "AV Protein (Đạm thực vật)", "duration": "32s", "props": "Hộp AV Protein thật + Ly nước lắc", "mood": "Mắt mở tập trung, nghiêm nghị ở 13s đầu → Chuyển tươi sáng, tự tin khi cầm hộp", "hooks": [["Hook 1 (Nỗi đau)", "Đừng thắc mắc vì sao ăn sáng no căng / mà 10 giờ đã buồn ngủ rũ rượi!"], ["Hook 2 (Tò mò)", "Nhìn hai bữa sáng cùng tầm tiền này — / một bên kéo bạn tụt pin, / một bên giữ bạn tỉnh táo tới trưa!"], ["Hook 3 (Ngược đám đông)", "Bạn không bị thiếu ngủ đâu — / bạn đang ăn sáng THIẾU ĐẠM trầm trọng!"]], "lines": [{"type": "cue", "text": "[✋ Nhìn thẳng ống kính, mắt mở to cảnh báo, tay vẽ đường vọt lên rồi rơi xuống]"}, {"type": "body", "text": "Bữa sáng toàn tinh bột / làm đường huyết vọt lên cực nhanh... / rồi tụt dốc không phanh / chỉ sau hai tiếng!"}, {"type": "body", "text": "Cơ thể bạn không cần thêm tinh bột — / nó đang khát ĐẠM SẠCH / để giữ năng lượng và nuôi cơ!"}, {"type": "cue", "text": "[📦 Nâng hộp AV Protein thật, chỉ thẳng vào bảng dinh dưỡng, giọng sáng và tự tin]"}, {"type": "body", "text": "Thay vì nhịn sáng hay ăn đại cho xong, / chỉ 30 giây pha 2 gói AV Protein / là bạn có ngay 22 phẩy 05 gam đạm thực vật / từ đậu Hà Lan và gạo,"}, {"type": "body", "text": "thêm 1 nghìn 632 miligam L-Leucine / giữ khối cơ săn chắc — / nhẹ bụng mà no êm tới trưa!"}, {"type": "cue", "text": "[😊 Mỉm cười nâng ly, giơ tay chỉ nhẹ hướng Share & Comment]"}, {"type": "cta", "text": "Gửi ngay video này cho đồng nghiệp / hay ngáp dài lúc 10 giờ nhé! / Muốn nhận thực đơn bữa sáng 30 giây đủ đạm, / nhắn chữ PROTEIN bên dưới!"}], "disclaimer": "Thực phẩm bổ sung. Không phải là thuốc và không có tác dụng thay thế thuốc chữa bệnh."}, {"id": "AV02", "brand": "AN VƯỢNG", "set": "SET1", "set_name": "SET 1 — ĐÈN ĐỎ CẢNH BÁO (Red LED)", "product": "AV Protein (Mẹo pha chuẩn 20–40°C)", "duration": "28s", "props": "Gói stick AV Protein + Bình lắc nước mát", "mood": "Giơ bàn tay chặn thẳng ống kính ngay giây 0 → Nhấn rõ nhiệt độ 20–40 độ", "hooks": [["Hook 1 (Nỗi đau)", "Dừng tay lại ngay / nếu bạn đang pha bột đạm / bằng nước sôi 100 độ!"], ["Hook 2 (Tò mò)", "Chỉ sai đúng nhiệt độ nước, / bạn đã tự tay đánh mất / thứ đắt giá nhất trong gói này!"], ["Hook 3 (Ngược đám đông)", "Đừng nghĩ nước càng nóng pha bột càng tan — / với AV Protein thì ngược lại hoàn toàn!"]], "lines": [{"type": "cue", "text": "[✋ Giơ bàn tay chặn thẳng trước ống kính ngay câu đầu, biểu cảm cảnh báo gấp]"}, {"type": "body", "text": "Vì trong mỗi khẩu phần AV Protein / không chỉ có đạm thực vật / và 1 nghìn 090 miligam chất xơ Inulin..."}, {"type": "body", "text": "mà còn có 50 miligam lợi khuẩn / B. breve B-3! / Nước sôi 100 độ vừa làm đạm vón cục, / vừa làm hỏng hết nhóm lợi khuẩn quý giá này!"}, {"type": "cue", "text": "[✅ Cầm gói stick AV Protein thật, gật đầu chắc chắn, đổi giọng thân thiện]"}, {"type": "body", "text": "Cách pha chuẩn khoa học cực dễ: / cứ dùng 300 mililít nước lọc mát / hoặc ấm nhẹ từ 20 đến 40 độ C, / khuấy hoặc lắc 15 giây —"}, {"type": "body", "text": "bột tan mịn, thơm dịu, / êm bụng cả với người hay đầy hơi vì sữa bò!"}, {"type": "cue", "text": "[😊 Mỉm cười nhấp thử 1 ngụm nhẹ]"}, {"type": "cta", "text": "Lưu lại ngay để khỏi pha phí nhé! / Ai đang uống AV Protein mà chưa biết mẹo này, / gửi liền cho họ!"}], "disclaimer": "Thực phẩm bổ sung. Không phải là thuốc và không có tác dụng thay thế thuốc chữa bệnh."}, {"id": "AV06", "brand": "AN VƯỢNG", "set": "SET1", "set_name": "SET 1 — ĐÈN ĐỎ CẢNH BÁO (Red LED)", "product": "Curcumilk Phyto (Hệ 3 lớp Curcumin + Phytosome Ý)", "duration": "33s", "props": "Hộp Curcumilk Phyto thật + Gói stick + Ly sữa nghệ ấm", "mood": "Chỉ thẳng lên nửa trên (cốc nghệ đóng cặn) → Chuyển hào hứng khi giới thiệu Phytosome Ý", "hooks": [["Hook 1 (Nỗi đau)", "Nếu sáng nào bạn cũng pha bột nghệ thô thế này — / dừng lại nhìn đáy cốc đã!"], ["Hook 2 (Tò mò)", "Tại sao nghệ rất tốt / nhưng đa số người uống bột nghệ thô / lại hấp thu cực kém?"], ["Hook 3 (Ngược đám đông)", "Uống bột nghệ càng đậm đặc, càng hăng / không có nghĩa là cơ thể hấp thu càng nhiều đâu!"]], "lines": [{"type": "cue", "text": "[☝️ Chỉ thẳng tay lên nửa trên khung hình nơi có B-Roll cốc nghệ vón cục]"}, {"type": "body", "text": "Bản chất Curcumin tự nhiên / rất khó tan trong nước — / uống vào dễ bị đào thải sớm / trước khi cơ thể kịp tận dụng!"}, {"type": "body", "text": "Chưa kể mùi hăng nồng, / uống vài hôm là ngán, / vàng hết cả ly lẫn môi!"}, {"type": "cue", "text": "[📦 Cầm hộp Curcumilk Phyto thật & gói stick, giọng rõ ràng đầy thuyết phục]"}, {"type": "body", "text": "Đó là điểm khác biệt của Curcumilk Phyto: / mỗi gói 15 gam có 343 phẩy 2 miligam Curcuminoid / với hệ 3 lớp kết hợp / Curcumin Phytosome từ Ý —"}, {"type": "body", "text": "hòa quyện cùng ngũ cốc sữa dừa hương Vani, / pha nước ấm 40 đến 50 độ tan mịn, / thơm dịu không hề hăng nghệ!"}, {"type": "cue", "text": "[😊 Nâng ly sữa nghệ ấm mỉm cười tự nhiên]"}, {"type": "cta", "text": "Gửi ngay cho ai hay khó chịu dạ dày / mà cứ sợ mùi nghệ nhé! / Nhắn NGHỆ để nhận cách pha chuẩn!"}], "disclaimer": "Thực phẩm bổ sung. Không phải là thuốc và không có tác dụng thay thế thuốc chữa bệnh."}, {"id": "HT01", "brand": "HẰNG THU", "set": "SET1", "set_name": "SET 1 — ĐÈN ĐỎ CẢNH BÁO (Red LED)", "product": "DDVS Romance VIP (150ml)", "duration": "31s", "props": "Chai DDVS Romance VIP thật", "mood": "Giơ tay chặn thẳng ống kính cảnh báo → Dịu dàng, tinh tế khi cầm chai Romance VIP", "hooks": [["Hook 1 (Nỗi đau)", "Dừng ngay thói quen xịt vòi sen / thụt rửa sâu vào bên trong / vì nghĩ như thế mới sạch!"], ["Hook 2 (Tò mò)", "Đây là hành động 7 trên 10 chị em làm mỗi tối — / và chính nó làm bạn / càng rửa càng khó chịu!"], ["Hook 3 (Ngược đám đông)", "Vùng nhạy cảm có cơ chế tự làm sạch tuyệt vời — / việc bạn rửa quá mạnh / đang phá hỏng nó!"]], "lines": [{"type": "cue", "text": "[✋ Giơ bàn tay chặn thẳng trước ống kính, ánh mắt nghiêm túc như chuyên gia]"}, {"type": "body", "text": "Khi bạn xịt nước áp lực mạnh / hoặc dùng xà phòng tẩy rửa gắt, / bạn đang cuốn trôi sạch / hàng rào lợi khuẩn tự nhiên / và làm lệch độ pH chuẩn!"}, {"type": "body", "text": "Mất lá chắn bảo vệ rồi / thì mùi khó chịu và cảm giác khô rát / càng dễ quay lại liên tục!"}, {"type": "cue", "text": "[📦 Cầm chai Romance VIP thật, hạ giọng dịu dàng, thanh lịch]"}, {"type": "body", "text": "Đúng khoa học là chỉ làm sạch dịu nhẹ / vùng bên ngoài mỗi ngày! / Một ấn nhỏ Dung dịch kháng khuẩn Romance VIP / với chiết xuất hoa hồng Bulgaria, / trà xanh, lô hội và Vitamin E —"}, {"type": "body", "text": "vừa sạch thoáng, giảm mùi suốt 24 giờ, / vừa giữ ẩm mềm mịn / không hề khô căng!"}, {"type": "cue", "text": "[😊 Mỉm cười ấm áp, gật đầu nhẹ]"}, {"type": "cta", "text": "Gửi ngay video này cho em gái / hoặc bạn thân của bạn biết nhé! / Nhắn ROMANCE VIP / để Hằng tư vấn chăm sóc đúng cách!"}], "disclaimer": "Chăm sóc dịu nhẹ vùng ngoài mỗi ngày, giữ cân bằng pH tự nhiên."}, {"id": "HT04", "brand": "HẰNG THU", "set": "SET1", "set_name": "SET 1 — ĐÈN ĐỎ CẢNH BÁO (Red LED)", "product": "Viên Uống Điều Kinh Bổ Trứng HT", "duration": "33s", "props": "Hộp Điều Kinh Bổ Trứng Hằng Thu thật", "mood": "Trăn trở, sắc sảo ở cú lật 'chuông báo cháy' → Dịu dàng, ấm áp khi cầm hộp thảo dược", "hooks": [["Hook 1 (Nỗi đau)", "Tháng 25 ngày, tháng 45 ngày, / mỗi kỳ lại đau quặn bụng / mà bạn vẫn cứ uống viên giảm đau cho qua?"], ["Hook 2 (Tò mò)", "Kinh nguyệt thất thường không chỉ làm bạn khó chịu 5 ngày — / nó đang nói lên điều gì / về buồng trứng và sắc diện của bạn?"], ["Hook 3 (Ngược đám đông)", "Đừng nghĩ uống thuốc giảm đau mỗi tháng là xong — / bạn mới chỉ tắt chuông báo cháy / chứ chưa gỡ gốc rễ!"]], "lines": [{"type": "cue", "text": "[⚠️ Mắt tập trung thẳng ống kính, tay làm động tác gạt tắt chuông]"}, {"type": "body", "text": "Uống giảm đau chỉ giống như / bạn đưa tay tắt chuông báo cháy — / còn gốc rễ bên trong là khí huyết lưu thông kém, / nội tiết chao đảo / thì vẫn còn nguyên!"}, {"type": "body", "text": "Chu kỳ không ổn định / vừa khiến da nhanh sạm, người mệt rũ, / lại ảnh hưởng trực tiếp tới sức khỏe buồng trứng / và hành trình mong con!"}, {"type": "cue", "text": "[📦 Nâng hộp Điều Kinh HT thật, giọng ấm áp đáng tin cậy]"}, {"type": "body", "text": "Phụ nữ muốn khỏe trong đẹp ngoài, / phải bồi bổ từ khí huyết! / Viên uống Điều Kinh Bổ Trứng Hằng Thu / kết hợp Đương quy, Hương phụ, Hồng hoa, Sài hồ —"}, {"type": "body", "text": "hỗ trợ hoạt huyết, điều hòa chu kỳ êm ái, / nuôi dưỡng buồng trứng khỏe / và giúp mỗi tháng nhẹ tênh hơn hẳn!"}, {"type": "cue", "text": "[😊 Mỉm cười ấm áp]"}, {"type": "cta", "text": "Lưu lại và gửi cho chị em nào / mỗi tháng tới kỳ đều ám ảnh nhé! / Nhắn ĐIỀU KINH / để Hằng tư vấn theo đúng thể trạng!"}], "disclaimer": "Thực phẩm này không phải là thuốc và không có tác dụng thay thế thuốc chữa bệnh."}, {"id": "HT07", "brand": "HẰNG THU", "set": "SET1", "set_name": "SET 1 — ĐÈN ĐỎ CẢNH BÁO (Red LED)", "product": "Viên Đặt Phụ Khoa (Hộp Xanh)", "duration": "29s", "props": "Hộp Viên Đặt Phụ Khoa Hộp Xanh thật", "mood": "Lắc đầu cương quyết trước sai lầm xịt thơm → Tự tin, tươi sáng khi chia sẻ giải pháp + Kegel", "hooks": [["Hook 1 (Nỗi đau)", "Dừng ngay việc xịt nước hoa / hay dùng khăn ướt tẩm mùi thơm / để che mùi vùng nhạy cảm!"], ["Hook 2 (Tò mò)", "Bạn tưởng xịt cho thơm là tự tin hơn — / nhưng 3 tiếng sau mùi còn nặng hơn gấp đôi, / tại sao?"], ["Hook 3 (Ngược đám đông)", "Vùng nhạy cảm không cần mùi nước hoa nồng nặc — / nó chỉ cần sạch êm và đúng pH!"]], "lines": [{"type": "cue", "text": "[🙅‍♀️ Lắc đầu dứt khoát, tay khoanh chéo dấu X ngắn]"}, {"type": "body", "text": "Cồn và hương liệu tổng hợp / có thể át mùi trong đúng 15 phút — / nhưng ngay sau đó nó gây kích ứng, / phá vỡ môi trường pH tự nhiên / khiến vùng da bí bách / và mùi càng khó chịu hơn!"}, {"type": "body", "text": "Sau sinh, độ đàn hồi giảm / lại càng cần chăm từ gốc / chứ không thể che tạm!"}, {"type": "cue", "text": "[📦 Cầm hộp Viên Đặt Hộp Xanh thật, mỉm cười tươi tắn]"}, {"type": "body", "text": "Thay vì che giấu bên ngoài, / chị em chăm gọn từ gốc / với Viên Đặt Phụ Khoa Hộp Xanh Hằng Thu / từ Cúc La Mã, Cam thảo và Lactic Acid —"}, {"type": "body", "text": "hỗ trợ làm sạch dịch tồn đọng, giảm mùi, / cân bằng pH và cải thiện độ săn chắc sau sinh, / kết hợp thêm bài tập cơ sàn chậu mỗi ngày!"}, {"type": "cue", "text": "[😊 Gật đầu nhẹ nhàng, thân thiện]"}, {"type": "cta", "text": "Lưu lại và gửi cho hội mẹ bỉm sau sinh nha! / Nhắn HỘP XANH / để Hằng gửi kèm hướng dẫn bài tập săn chắc tại nhà!"}], "disclaimer": "Chăm sóc thảo dược dịu nhẹ kết hợp bài tập cơ sàn chậu mỗi ngày."}, {"id": "AV04", "brand": "AN VƯỢNG", "set": "SET2", "set_name": "SET 2 — ĐÈN XANH Y KHOA / LỤC BẢO (Blue / Emerald LED)", "product": "Bojomi (Canxi Aquamin F + D3 + K2 MK-7 + Collagen)", "duration": "34s", "props": "Hộp Bojomi thật (chỉ rõ bảng thành phần mặt sau)", "mood": "Phong thái chuyên gia sắc nét, đếm rõ 3 bước Kiềng Ba Chân, chỉ thẳng bảng thành phần", "hooks": [["Hook 1 (Ngược đám đông)", "Canxi uống vào bụng / không tự động chạy thẳng vào xương / như bạn vẫn nghĩ đâu!"], ["Hook 2 (Nỗi đau)", "Bổ sung Canxi cả năm trời / mà xương vẫn kém dẻo dai? / Nhìn hạt Canxi lạc đường này!"], ["Hook 3 (Tò mò)", "Chọn Canxi mà chỉ nhìn mỗi chữ 'Bao nhiêu miligam' / là bạn đang bỏ qua / 2 người dẫn đường quan trọng nhất!"]], "lines": [{"type": "cue", "text": "[☝️ Đếm rõ 3 ngón tay theo nhịp: 1. Aquamin F → 2. D3 → 3. K2 MK-7]"}, {"type": "body", "text": "Muốn Canxi đi đúng chỗ, / cơ thể cần trọn bộ kiềng ba chân: / Canxi nguồn gốc tự nhiên dễ hấp thu —"}, {"type": "body", "text": "có Vitamin D3 mở cửa đưa vào máu — / và đặc biệt là Vitamin K2 MK-7 / làm 'tài xế' dẫn thẳng vào khung xương! / Thiếu bộ dẫn đường này, / uống nhiều cũng rất lãng phí."}, {"type": "cue", "text": "[📦 Quay mặt sau hộp Bojomi thật, ngón tay chỉ rõ từng con số trên nhãn]"}, {"type": "body", "text": "Đó là lý do mình thích đọc kỹ nhãn hộp Bojomi này: / mỗi gói 20 gam có sẵn / 417 phẩy 6 miligam Canxi tảo biển đỏ Aquamin F,"}, {"type": "body", "text": "đi kèm 779 phẩy 4 IU Vitamin D3, / 169 phẩy 8 microgam K2 MK-7 / và thêm 201 phẩy 4 miligam Collagen / nuôi độ dẻo dai!"}, {"type": "cue", "text": "[✅ Gật đầu chắc chắn, ánh mắt tin cậy]"}, {"type": "cta", "text": "Lưu lại 3 chữ 'Aquamin F – D3 – K2' / trước khi mua Canxi cho bố mẹ nhé! / Nhắn BOJOMI để xem bảng đọc nhãn chi tiết!"}], "disclaimer": "Thực phẩm bổ sung (dành cho người trưởng thành & người lớn tuổi). Không phải là thuốc và không có tác dụng thay thế thuốc chữa bệnh."}, {"id": "AV09", "brand": "AN VƯỢNG", "set": "SET2", "set_name": "SET 2 — ĐÈN XANH Y KHOA / LỤC BẢO (Blue / Emerald LED)", "product": "Combo Xương – Cơ (AV Protein + Bojomi)", "duration": "31s", "props": "Cả 2 hộp thật: AV Protein + Bojomi đặt cạnh nhau", "mood": "Hỏi xoáy đầy thuyết phục → Đan chặt 2 bàn tay vào nhau khi nói Xương + Cơ", "hooks": [["Hook 1 (Tò mò)", "Xây nhà mà chỉ dựng khung sắt, / không xây tường gạch — / nhà có vững được không?"], ["Hook 2 (Nỗi đau)", "Bố mẹ đi bộ 15 phút đã mỏi chân, / lên cầu thang thở dốc? / Đừng chỉ mua mỗi hộp Canxi!"], ["Hook 3 (Ngược đám đông)", "Xương cứng thôi chưa đủ để đi đứng vững vàng — / nếu khối cơ quanh khớp / đang teo dần mỗi năm!"]], "lines": [{"type": "cue", "text": "[🤝 Đan chặt 2 bàn tay vào nhau để minh họa Xương và Cơ nâng đỡ nhau]"}, {"type": "body", "text": "Cơ thể chúng ta cũng vậy: / Xương là bộ khung sắt, / còn Cơ bắp là phần nâng đỡ / và kéo khung xương di chuyển!"}, {"type": "body", "text": "Nhiều gia đình chỉ lo bổ sung Canxi cho bố mẹ / mà quên mất người lớn tuổi ăn ít thịt / rất dễ hụt ĐẠM — / thiếu cơ là đi đứng lập tức nhanh mỏi!"}, {"type": "cue", "text": "[📦 Nâng lần lượt hộp AV Protein (tay trái) rồi Bojomi (tay phải)]"}, {"type": "body", "text": "Công thức chăm cả nhà cực gọn: / Sáng 1 ly AV Protein / bổ sung đạm thực vật và L-Leucine giữ cơ —"}, {"type": "body", "text": "Chiều 1 ly Bojomi hương Vani / bổ sung Canxi tảo biển đỏ Aquamin F, / D3, K2 MK-7 và Collagen dưỡng xương!"}, {"type": "cue", "text": "[😊 Đặt 2 hộp cạnh nhau, mỉm cười ấm áp]"}, {"type": "cta", "text": "Gửi ngay video này cho người đang tìm quà / chăm sức khỏe cho bố mẹ nhé! / Nhắn XƯƠNG CƠ mình gửi chi tiết!"}], "disclaimer": "Thực phẩm bổ sung. Không phải là thuốc và không có tác dụng thay thế thuốc chữa bệnh."}, {"id": "HT02", "brand": "HẰNG THU", "set": "SET2", "set_name": "SET 2 — ĐÈN XANH Y KHOA / LỤC BẢO (Blue / Emerald LED)", "product": "Viên Đặt Phụ Khoa LT Plus (Hộp Hồng)", "duration": "34s", "props": "Hộp LT Plus Hộp Hồng thật", "mood": "Nghiêm túc, điềm tĩnh đếm 1-2-3 → Ấm áp, tinh tế, tạo cảm giác an toàn bảo mật", "hooks": [["Hook 1 (Tò mò)", "Vùng nhạy cảm không biết nhắn tin — / nhưng nó luôn gửi tín hiệu báo động / qua 3 dấu hiệu này!"], ["Hook 2 (Nỗi đau)", "Đừng tặc lưỡi 'chắc nóng trong người thôi' / nếu thấy 3 tín hiệu bất thường này / lặp lại liên tục!"], ["Hook 3 (Ngược đám đông)", "Nghe tới lộ tuyến mà hoang mang mất ngủ / rồi tự tra mạng làm theo mẹo truyền miệng / mới là điều đáng lo nhất!"]], "lines": [{"type": "cue", "text": "[☝️ Đếm rõ ràng từng ngón tay 1 – 2 – 3, ánh mắt chân thành]"}, {"type": "body", "text": "Một là ẩm ướt kéo dài, / dịch tiết đổi màu vàng xanh / hoặc vón lợn cợn."}, {"type": "body", "text": "Hai là có mùi khó chịu / khiến bạn ngồi họp hay đứng gần ai / cũng thấp thỏm."}, {"type": "body", "text": "Ba là cảm giác ngứa rát, / e ngại mỗi lần gần gũi chồng! / Càng để lâu tự chịu, / tình trạng càng dễ nặng và tái đi tái lại!"}, {"type": "cue", "text": "[📦 Cầm hộp LT Plus thật, giọng điềm tĩnh đáng tin cậy]"}, {"type": "body", "text": "Bình tĩnh thăm khám rõ tình trạng / và chọn giải pháp chăm sóc thảo dược uy tín! / Viên đặt LT Plus Hằng Thu / kết hợp Hoàng bá, Kim ngân hoa, / Trầu không và Acid Lactic —"}, {"type": "body", "text": "hỗ trợ làm sạch dịch nhầy từ sâu bên trong, / cân bằng độ pH / và nâng niu niêm mạc êm dịu ngay tại nhà!"}, {"type": "cue", "text": "[💖 Ánh mắt thấu hiểu, hạ giọng nhẹ ấm]"}, {"type": "cta", "text": "Phụ nữ thương mình / thì đừng âm thầm chịu đựng một mình nhé! / Nhắn riêng chữ LT PLUS / để Hằng lắng nghe và hướng dẫn kín đáo!"}], "disclaimer": "Hỗ trợ làm sạch dịch nhầy, cân bằng pH và chăm sóc niêm mạc vùng nhạy cảm êm dịu."}, {"id": "HT09", "brand": "HẰNG THU", "set": "SET2", "set_name": "SET 2 — ĐÈN XANH Y KHOA / LỤC BẢO (Blue / Emerald LED)", "product": "Viên Uống Hằng Thu Eva (Postbiotics + Nam Việt Quất)", "duration": "35s", "props": "Hộp Viên Uống Hằng Thu Eva thật", "mood": "Sắc sảo, tư duy khoa học rõ ràng (ẩn dụ khu vườn cắt cỏ vs gieo lợi khuẩn)", "hooks": [["Hook 1 (Nỗi đau)", "Vừa thấy êm được 2 tuần / lại quay vòng khó chịu y như cũ? / Nhìn khu vườn này sẽ hiểu ngay!"], ["Hook 2 (Tò mò)", "Tại sao làm sạch bên ngoài mãi / mà hệ vi sinh bên trong / vẫn cứ yếu và dễ tái đi tái lại?"], ["Hook 3 (Ngược đám đông)", "Chỉ dọn cỏ bề mặt / mà không gieo lại 'hạt giống tốt', / thì cỏ dại sẽ mọc lại sau đúng một cơn mưa!"]], "lines": [{"type": "cue", "text": "[🌱 Chỉ tay lên nửa trên khung hình nơi chạy 3D khu vườn lợi khuẩn]"}, {"type": "body", "text": "Nếu chỉ làm sạch bề mặt / mà không nuôi dưỡng lại đội quân lợi khuẩn bên trong, / hàng rào bảo vệ tự nhiên rất yếu —"}, {"type": "body", "text": "chỉ cần đổi thời tiết, thức khuya / hay qua một kỳ kinh / là vấn đề phụ khoa hoặc tiểu buốt, tiểu rắt / lại gõ cửa!"}, {"type": "cue", "text": "[📦 Nâng hộp Viên uống Eva thật, đọc rõ 3 hoạt chất nổi bật]"}, {"type": "body", "text": "Đó là lý do Hằng Thu phát triển Viên uống Eva / theo hướng chăm từ bên trong: / kết hợp 75 miligam Postbiotics PE0401, / 80 miligam Nam Việt Quất Exocyan, / 80 miligam Quả cơm cháy"}, {"type": "body", "text": "cùng Đương quy, Ích mẫu, Kim ngân hoa — / hỗ trợ tạo môi trường thuận lợi cho lợi khuẩn, / bảo vệ cả vùng nhạy cảm và đường tiết niệu!"}, {"type": "cue", "text": "[✅ Giơ 2 ngón tay nhắc liều dùng gọn]"}, {"type": "cta", "text": "Mỗi ngày 2 viên sau ăn 30 phút / để chủ động bảo vệ từ gốc! / Nhắn EVA để Hằng tư vấn liệu trình phù hợp nhé!"}], "disclaimer": "Thực phẩm này không phải là thuốc và không có tác dụng thay thế thuốc chữa bệnh."}, {"id": "HT10", "brand": "HẰNG THU", "set": "SET2", "set_name": "SET 2 — ĐÈN XANH Y KHOA / LỤC BẢO (Blue / Emerald LED)", "product": "Ngọc Long Hoàn (8 Thảo dược phái mạnh)", "duration": "33s", "props": "Hộp Ngọc Long Hoàn thật", "mood": "Trầm ấm, sang trọng, thấu hiểu tâm lý vợ–chồng (kích nút Share cực mạnh)", "hooks": [["Hook 1 (Nỗi đau)", "Chị em đừng vội trách chồng hời hợt — / nếu thấy 3 dấu hiệu / anh đang 'cạn pin' âm thầm này!"], ["Hook 2 (Tò mò)", "Đàn ông ngoài mặt vẫn cười nói đi làm, / nhưng nỗi lo lớn nhất sau tuổi 30 / lại chẳng bao giờ dám kể với vợ!"], ["Hook 3 (Ngược đám đông)", "Bản lĩnh đàn ông không nằm ở mấy mẹo thúc ép tức thời — / mà ở nền tảng thể lực được bồi bổ từ gốc!"]], "lines": [{"type": "cue", "text": "[🪫 Giọng trầm ấm, đếm nhẹ từng dấu hiệu 1 – 2 – 3 đầy thấu cảm]"}, {"type": "body", "text": "Một là tan làm về chỉ muốn nằm ngủ, / hay kêu đau lưng mỏi gối. / Hai là dễ cáu gắt, / hụt hơi nhanh khi làm việc áp lực."}, {"type": "body", "text": "Ba là bắt đầu né tránh chuyện vợ chồng / vì tự ti sợ làm vợ thất vọng! / Đàn ông hay giấu lắm, / chẳng mấy khi mở lời đâu!"}, {"type": "cue", "text": "[📦 Nâng hộp Ngọc Long Hoàn thật, phong thái lịch lãm tinh tế]"}, {"type": "body", "text": "Thay vì giận dỗi hay mua đồ cấp tốc hại sức khỏe, / người vợ tâm lý chăm nền tảng thể lực cho chồng từ gốc!"}, {"type": "body", "text": "Ngọc Long Hoàn Hằng Thu hội tụ 8 thảo dược quý / như Đông trùng hạ thảo, Nhung hươu, / Ba kích tím, Bá bệnh, Sâm cau — / hỗ trợ bổ thận, tăng sức bền / và giữ vững phong độ bền bỉ!"}, {"type": "cue", "text": "[😊 Mỉm cười tinh tế, gật đầu nhẹ]"}, {"type": "cta", "text": "Lưu lại làm món quà tinh tế tặng anh xã nhé! / Nhắn NGỌC LONG HOÀN / để Hằng tư vấn bảo mật 100 phần trăm!"}], "disclaimer": "Dành cho nam giới ≥18 tuổi; người cao huyết áp không sử dụng. Thực phẩm này không phải là thuốc và không có tác dụng thay thế thuốc chữa bệnh."}, {"id": "AV03", "brand": "AN VƯỢNG", "set": "SET3", "set_name": "SET 3 — ĐÈN VÀNG ẤM & ĐỜI THỰC / Ô TÔ (Warm Amber + Real Life)", "product": "AV Protein (L-Leucine cho người tập luyện)", "duration": "30s", "props": "Hộp AV Protein + Bình lắc thể thao", "mood": "Năng lượng tươi khỏe, nhấn rõ con số 17.500đ/gói", "hooks": [["Hook 1 (Nỗi đau)", "Tập đổ mồ hôi mỗi ngày / mà cơ vẫn lỏng lẻo? / Nhìn hai quả bóng này!"], ["Hook 2 (Tò mò)", "Đây là lý do 80 phần trăm chị em / tập thể dục giảm cân / nhưng nhìn lại càng mệt và xệ!"], ["Hook 3 (Ngược đám đông)", "Giảm cân bằng cách cắt sạch đạm / không giúp bạn đẹp hơn — / nó chỉ làm bạn mất cơ!"]], "lines": [{"type": "cue", "text": "[💡 Giơ ngón tay bật tưởng tượng 1 chiếc công tắc khi nói 'L-Leucine']"}, {"type": "body", "text": "Khi bạn tập xong mà chỉ ăn rau với trái cây, / cơ thể thiếu đạm để phục hồi sợi cơ — / đặc biệt là thiếu L-Leucine, / thứ được ví như chiếc công tắc / khởi động quá trình nuôi dưỡng khối cơ."}, {"type": "body", "text": "Kết quả là cân có thể tụt, / nhưng người lại mềm nhũn và dễ kiệt sức!"}, {"type": "cue", "text": "[📦 Nâng hộp AV Protein thật, nhấn mạnh con số 17.500 đồng]"}, {"type": "body", "text": "Sau buổi tập 30 phút, / chỉ cần 1 ly AV Protein: / 22 phẩy 05 gam đạm đậu Hà Lan và gạo / hoàn toàn từ thực vật, / không lo đầy bụng vì sữa bò,"}, {"type": "body", "text": "lại sẵn 1 nghìn 632 miligam L-Leucine — / tính ra mỗi gói chỉ 17 nghìn 500 đồng thôi!"}, {"type": "cue", "text": "[😊 Cười rạng rỡ, hướng về camera]"}, {"type": "cta", "text": "Tag ngay đứa bạn cùng phòng tập vào đây nhé! / Cần bảng tính lượng đạm theo cân nặng, / nhắn chữ ĐẠM mình gửi miễn phí!"}], "disclaimer": "Thực phẩm bổ sung. Không phải là thuốc và không có tác dụng thay thế thuốc chữa bệnh."}, {"id": "AV05", "brand": "AN VƯỢNG", "set": "SET3", "set_name": "SET 3 — ĐÈN VÀNG ẤM & ĐỜI THỰC / Ô TÔ (Warm Amber + Real Life)", "product": "Bojomi (Hương Vani dễ uống biếu bố mẹ)", "duration": "29s", "props": "Hộp Bojomi + Gói stick + Ly ngũ cốc Vani ấm bốc khói", "mood": "Gần gũi, thấu hiểu tâm lý người lớn tuổi → Nâng ly ấm đầy tình cảm", "hooks": [["Hook 1 (Nỗi đau)", "Có phải lọ Canxi bạn mua tặng bố mẹ... / uống được 3 hôm / là phủ bụi trên kệ?"], ["Hook 2 (Tò mò)", "Lý do thật sự khiến người lớn tuổi sợ uống Canxi / không phải vì quên — / mà vì cảm giác này!"], ["Hook 3 (Ngược đám đông)", "Canxi tốt nhất không phải loại đắt nhất, / mà là loại bố mẹ VUI VẺ uống hết mỗi sáng!"]], "lines": [{"type": "cue", "text": "[💛 Giọng thủ thỉ đồng cảm như nói chuyện gia đình]"}, {"type": "body", "text": "Đừng trách ông bà lười uống! / Nhiều viên Canxi vừa to khó nuốt, / lại hay có mùi phấn, / uống xong nóng bụng, nặng tiêu — / thế là các cụ sợ dần / rồi cất luôn vào góc tủ!"}, {"type": "cue", "text": "[☕ Khuấy nhẹ ly Bojomi ấm bốc khói, đưa hộp thật lại gần]"}, {"type": "body", "text": "Đổi sang 1 gói ngũ cốc Canxi tảo biển Bojomi hương Vani: / chỉ cần xé gói, pha 200 mililít nước ấm / khoảng 60 độ —"}, {"type": "body", "text": "thơm béo dịu nhẹ như bữa phụ sáng, / dễ uống mà đủ Canxi Aquamin F, / D3, K2 MK-7 và Collagen!"}, {"type": "cue", "text": "[😊 2 tay nâng ly ấm nhẹ nhàng]"}, {"type": "cta", "text": "Món quà quý nhất biếu bố mẹ / là thứ ông bà uống hết mỗi ngày! / Gửi ngay cho anh chị em trong nhà tham khảo nhé!"}], "disclaimer": "Thực phẩm bổ sung (dành cho người trưởng thành & người lớn tuổi). Không phải là thuốc và không có tác dụng thay thế thuốc chữa bệnh."}, {"id": "AV08", "brand": "AN VƯỢNG", "set": "SET3", "set_name": "SET 3 — ĐÈN VÀNG ẤM & ĐỜI THỰC / Ô TÔ (Warm Amber + Real Life)", "product": "Collamela (Collagen Tripeptide vị Đào)", "duration": "34s", "props": "Hộp Collamela 20 gói & 10 gói + Ly nước vị Đào hồng trong", "mood": "Tươi sáng, sang trọng, đọc mượt 4 con số đẹp trên hộp Collamela", "hooks": [["Hook 1 (Nỗi đau)", "Bôi kem đắt tiền mà da vẫn khô mốc, kém căng mướt? / Nhìn miếng bọt biển này!"], ["Hook 2 (Tò mò)", "Đừng chỉ nhìn con số Collagen thật to — / hãy nhìn kích thước mảnh ghép này!"], ["Hook 3 (Ngược đám đông)", "Uống Collagen mà không có Vitamin C và HA đi kèm / giống như mua gạch mà quên xi măng!"]], "lines": [{"type": "cue", "text": "[✨ Mỉm cười sắc sảo, tay mô tả kích thước phân tử to vs nhỏ]"}, {"type": "body", "text": "Sau tuổi 25, làn da mất dần / cả khung đàn hồi lẫn độ ẩm từ sâu bên trong! / Nếu chỉ chọn Collagen phân tử thường quá lớn, / cơ thể tốn nhiều công bẻ nhỏ;"}, {"type": "body", "text": "còn uống Collagen trơn mà thiếu Vitamin C / thì quá trình tổng hợp cũng kém hiệu quả hẳn đi!"}, {"type": "cue", "text": "[🍑 Cầm hộp Collamela thật + ly nước hồng đào trong veo]"}, {"type": "body", "text": "Collamela gói gọn bộ tứ cực thông minh / trong 2 gói nhỏ vị Đào: / 2 nghìn 530 miligam Collagen Tripeptide, / 25 phẩy 68 miligam HA giữ ẩm,"}, {"type": "body", "text": "87 miligam Vitamin C và 3 phẩy 9 miligam Kẽm — / chỉ cần pha 100 mililít nước mát, / thơm vị đào thanh nhẹ, không hề tanh!"}, {"type": "cue", "text": "[😊 Nhấp 1 ngụm nhỏ, cười rạng rỡ]"}, {"type": "cta", "text": "Chăm da cần đều mỗi ngày chứ đừng đợi sát Tết! / Lưu lại và nhắn COLLAMELA / để nhận lộ trình 60 ngày nhé!"}], "disclaimer": "Thực phẩm bổ sung (không dùng cho trẻ <6 tuổi). Không phải là thuốc và không có tác dụng thay thế thuốc chữa bệnh."}, {"id": "AV10", "brand": "AN VƯỢNG", "set": "SET3", "set_name": "SET 3 — ĐÈN VÀNG ẤM & ĐỜI THỰC / Ô TÔ (Warm Amber + Real Life)", "product": "Combo 60 Ngày Đón Tết Xinh (AV Protein + Curcumilk + Collamela)", "duration": "33s", "props": "Bộ 3–4 hộp sản phẩm An Vượng thật đặt gọn đẹp", "mood": "Khí thế đếm ngược 60 ngày → Nhịp rõ ràng Sáng / Tối rạng rỡ lễ hội", "hooks": [["Hook 1 (Nỗi đau)", "Còn đúng 60 ngày nữa là Tết! / Đừng đợi tới 28 Tết mới cuống cuồng / nhịn ăn cấp tốc!"], ["Hook 2 (Tò mò)", "Chỉ còn đúng 60 ngày nữa tới Tết — / bạn muốn bước vào năm mới / với bộ dạng thế nào?"], ["Hook 3 (Ngược đám đông)", "Muốn Tết này gọn dáng, sáng da, khỏe bụng / thì thứ bạn cần đổi KHÔNG phải tủ quần áo — / mà là 2 khung giờ này!"]], "lines": [{"type": "cue", "text": "[🗓️ Thẳng thắn, dứt khoát, tay nhịp theo 2 khung giờ Sáng – Tối]"}, {"type": "body", "text": "Ép cân sát Tết chỉ khiến mặt hốc hác, / da sạm xỉn, dạ dày lại biểu tình / đúng mấy ngày tiệc tùng! / Muốn rạng rỡ thật sự, / cơ thể cần một nhịp chăm đều / từ bên trong suốt 60 ngày!"}, {"type": "cue", "text": "[📦 Chỉ lần lượt: AV Protein (Sáng) → Curcumilk + Collamela (Tối)]"}, {"type": "body", "text": "Lưu ngay lịch 2 khung giờ cực nhàn này: / Buổi sáng 1 ly AV Protein / đủ đạm gọn dáng nhẹ bụng —"}, {"type": "body", "text": "Buổi tối 1 ly sữa nghệ ấm Curcumilk Phyto / êm dạ dày, / kèm 1 gói Collamela vị Đào / bổ sung Collagen Tripeptide và HA dưỡng da căng mướt!"}, {"type": "cue", "text": "[🎉 Cười rạng rỡ, tràn năng lượng đón Tết]"}, {"type": "cta", "text": "Tag ngay hội bạn thân / cùng rủ nhau giữ kỷ luật 60 ngày đón Tết xinh nhé! / Nhắn TẾT XINH để nhận trọn bộ ưu đãi!"}], "disclaimer": "Thực phẩm bổ sung. Không phải là thuốc và không có tác dụng thay thế thuốc chữa bệnh."}, {"id": "HT03", "brand": "HẰNG THU", "set": "SET3", "set_name": "SET 3 — ĐÈN VÀNG ẤM & ĐỜI THỰC / Ô TÔ (Warm Amber + Real Life)", "product": "Dạ Dày HT Hằng Thu (Dạ cẩm & Nghệ)", "duration": "32s", "props": "Hộp Dạ Dày HT thật", "mood": "Mở đầu đánh thẳng dân mê cà phê → Chuyển ân cần, thực tế khi hướng dẫn giờ ăn + Dạ Dày HT", "hooks": [["Hook 1 (Nỗi đau)", "Sáng một ly cà phê bụng rỗng, / tối 9 giờ mới ăn bù? / Nhìn dạ dày của bạn lúc này đi!"], ["Hook 2 (Tò mò)", "Tại sao ban ngày vẫn chịu được, / mà cứ nằm xuống giường / là cổ họng lại nóng rát, đắng miệng?"], ["Hook 3 (Ngược đám đông)", "Ợ hơi, vướng nghẹn cổ họng buổi sáng / không phải bị viêm họng đâu — / coi chừng dạ dày đang trào ngược!"]], "lines": [{"type": "cue", "text": "[☕ Nhìn thẳng camera, chỉ nhẹ từ ngực lên cổ họng khi nói trào ngược]"}, {"type": "body", "text": "Bụng trống cả sáng mà nạp ngay caffeine / khiến acid dịch vị bào mòn thẳng lớp niêm mạc! / Đến tối ăn muộn rồi đi nằm sớm, / trọng lực không giữ được nữa —"}, {"type": "body", "text": "dòng acid trào ngược lên thực quản / gây nóng rát ngực, ợ chua, / sáng dậy đắng miệng và vướng cổ họng!"}, {"type": "cue", "text": "[📦 Nâng hộp Dạ Dày HT thật, giọng rõ ràng, chân thành]"}, {"type": "body", "text": "Đừng để thành mạn tính / rồi bữa ngon trước mặt cũng chẳng dám ăn! / Tập ăn sáng nhẹ trước khi uống cà phê, / ăn tối trước giờ ngủ 3 tiếng —"}, {"type": "body", "text": "kết hợp Dạ Dày HT Hằng Thu / từ chiết xuất Dạ cẩm và Nghệ / giúp hỗ trợ trung hòa acid, / làm dịu cơn nóng rát và bao phủ bảo vệ niêm mạc êm khỏe!"}, {"type": "cue", "text": "[😊 Giơ tay hướng về nút Share]"}, {"type": "cta", "text": "Gửi ngay cho người hay uống cà phê sáng thay cơm / trong nhà bạn nha! / Nhắn DẠ DÀY để Hằng gửi mẹo ăn uống êm bụng!"}], "disclaimer": "Thực phẩm này không phải là thuốc và không có tác dụng thay thế thuốc chữa bệnh."}, {"id": "HT05", "brand": "HẰNG THU", "set": "SET3", "set_name": "SET 3 — ĐÈN VÀNG ẤM & ĐỜI THỰC / Ô TÔ (Warm Amber + Real Life)", "product": "Legend White Skin (L-Glutathione, NMN, Vitamin E)", "duration": "31s", "props": "Hộp Legend White Skin thật (có thể cầm thêm nửa quả táo tươi)", "mood": "Tươi sáng, sắc sảo, tự tin khoe nền da rạng rỡ", "hooks": [["Hook 1 (Ẩn dụ 30M)", "Nhìn nửa quả táo cắt ra để 10 phút là thâm sạm lại — / da bạn sau tuổi 25 / cũng đang 'rỉ sét' y hệt!"], ["Hook 2 (Nỗi đau)", "Bôi cả chục bước skincare đắt tiền / mà da vẫn sạm xỉn, chụp cam thường phải bật filter? / Nhìn nửa quả táo này!"], ["Hook 3 (Ngược đám đông)", "Muốn da sáng bền không phải tìm kem trắng bật tông 7 ngày — / mà là chặn quá trình 'rỉ sét' từ bên trong!"]], "lines": [{"type": "cue", "text": "[🍎 Ánh sáng trong trẻo tôn da, nhấn mạnh 2 chữ OXY HÓA]"}, {"type": "body", "text": "Đó gọi là quá trình OXY HÓA! / Tia UV, ánh sáng xanh màn hình và thức khuya / tạo ra vô số gốc tự do tấn công tế bào da mỗi ngày."}, {"type": "body", "text": "Nếu bạn chỉ bôi kem bên ngoài mà bỏ mặc bên trong, / nền da rất khó đều màu / và vết sạm cứ lỳ lợm mãi!"}, {"type": "cue", "text": "[📦 Nâng hộp Legend White Skin thật, đọc rõ bộ 3 hoạt chất]"}, {"type": "body", "text": "Bí quyết của phụ nữ hiện đại / là trong uống ngoài thoa: / ban ngày chống nắng kỹ, / bên trong bổ sung Legend White Skin Hằng Thu"}, {"type": "body", "text": "với bộ ba L-Glutathione, NMN và Vitamin E — / hỗ trợ chống oxy hóa, làm mờ vết sạm / và nuôi nền da sáng mịn rạng rỡ từ gốc!"}, {"type": "cue", "text": "[✨ Cười tự tin, duyên dáng]"}, {"type": "cta", "text": "Đừng giao hết KPI sáng mịn cho app chỉnh ảnh nữa nha! / Nhắn WHITESKIN / để Hằng gửi lịch chăm da sáng đều đón Tết!"}], "disclaimer": "Thực phẩm này không phải là thuốc và không có tác dụng thay thế thuốc chữa bệnh."}, {"id": "HT06", "brand": "HẰNG THU", "set": "SET3", "set_name": "SET 3 — ĐÈN VÀNG ẤM & ĐỜI THỰC / Ô TÔ (Warm Amber + Real Life)", "product": "Viên Dưỡng Tử Cung Romance Love", "duration": "31s", "props": "Hộp Romance Love thật (đèn vàng champagne ấm áp)", "mood": "Nhịp nói chậm hơn các tập khác 1 chút — trầm ấm, tinh tế, chạm sâu cảm xúc phụ nữ", "hooks": [["Hook 1 (Ẩn dụ hoa hồng)", "Nhìn hai cánh hoa hồng này — / rất nhiều chị em sau sinh / đang âm thầm giống cánh hoa bên trái!"], ["Hook 2 (Nỗi đau)", "Đừng im lặng chịu đựng / nếu sau sinh mỗi lần gần gũi chồng / lại trở thành nỗi ngại ngần vì khô căng!"], ["Hook 3 (Ngược đám đông)", "Chăm sóc da mặt tốn chục triệu mỗi năm, / nhưng thứ giữ trọn sự tự tin của người phụ nữ / lại thường bị bỏ quên!"]], "lines": [{"type": "cue", "text": "[🌹 Hạ nhịp giọng trầm ấm, ánh mắt thấu cảm, nhìn sâu vào ống kính]"}, {"type": "body", "text": "Sau sinh nở hoặc bước qua tuổi 30, / nội tiết suy giảm / khiến độ ẩm tự nhiên sụt hẳn đi."}, {"type": "body", "text": "Cảm giác khô căng, rát nhẹ / làm không ít chị em ngại gần gũi bạn đời — / lâu dần vợ chồng dễ xa cách / mà chẳng ai nói ra thành lời!"}, {"type": "cue", "text": "[📦 Nâng nhẹ hộp Romance Love thật, phong thái sang trọng tinh tế]"}, {"type": "body", "text": "Da mặt cần serum cấp ẩm, / thì vùng riêng tư cũng cần được nâng niu đúng chuẩn! / Viên dưỡng Romance Love Hằng Thu / giàu Hyaluronic Acid, Vitamin B5, / Niacinamide, Collagen và Vitamin E —"}, {"type": "body", "text": "giúp cấp ẩm chuyên sâu, làm mềm mịn, / hỗ trợ khử thâm và giữ trọn nét tươi trẻ!"}, {"type": "cue", "text": "[💖 Mỉm cười nhẹ nhàng, đầy nữ tính]"}, {"type": "cta", "text": "Phụ nữ biết yêu chiều bản thân / thì hạnh phúc tự khắc ở lại! / Nhắn riêng ROMANCE LOVE / để Hằng tư vấn thật bảo mật nhé!"}], "disclaimer": "Cấp ẩm dịu nhẹ, hỗ trợ làm mềm mịn và chăm sóc vùng nhạy cảm mỗi ngày."}, {"id": "AV07", "brand": "AN VƯỢNG", "set": "SET3", "set_name": "SET 3 — ĐÈN VÀNG ẤM & ĐỜI THỰC / Ô TÔ (Warm Amber + Real Life)", "product": "Curcumilk Phyto (Bữa phụ 15h — QUAY TRONG Ô TÔ / BÀN LÀM VIỆC)", "duration": "27s", "props": "1 gói stick Curcumilk Phyto rút trực tiếp từ túi xách (QUAY CẦM TAY TRONG XE Ô TÔ HOẶC BÀN LÀM VIỆC)", "mood": "Cực kỳ tự nhiên như đang tâm sự thật với bạn thân (kiểu Car-Talking-Head 36M của Mustafa!)", "hooks": [["Hook 1 (Nỗi đau)", "3 giờ chiều đói cồn cào / mà bạn lại order ly trà sữa hay cà phê đá? / Dừng lại ngay!"], ["Hook 2 (Tò mò)", "Đây là thứ đang âm thầm làm bụng dân văn phòng / lúc nào cũng khó chịu / lúc 4 giờ chiều!"], ["Hook 3 (Ngược đám đông)", "Không phải cứ ăn cay mới hại dạ dày — / chính ly đồ uống lạnh lúc bụng rỗng / mới là thủ phạm!"]], "lines": [{"type": "cue", "text": "[🚗 Ngồi ghế ô tô hoặc bàn làm việc ánh sáng tự nhiên, lắc đầu cực thật]"}, {"type": "body", "text": "Bụng đang rỗng, / áp lực công việc lại làm dịch vị tiết mạnh — / tống thêm đá lạnh, caffeine và đường ngọt vào / chỉ khiến dạ dày càng cồn cào, đầy hơi, / đến tối lại chẳng buồn ăn cơm!"}, {"type": "cue", "text": "[👜 Rút 1 gói stick Curcumilk Phyto thật từ túi xách giơ gần camera!]"}, {"type": "body", "text": "Trong túi xách mình lúc nào cũng thủ sẵn / 1 gói stick Curcumilk Phyto nhỏ xíu này!"}, {"type": "body", "text": "Ra quầy nước lấy 150 mililít nước ấm / 40 đến 50 độ, / khuấy 20 giây là có bữa phụ sữa dừa nghệ Vani ấm dịu, / no nhẹ mà êm bụng cả chiều!"}, {"type": "cue", "text": "[😄 Cười tinh nghịch, tự nhiên]"}, {"type": "cta", "text": "Gửi ngay cho đồng nghiệp ngồi cạnh / chuyên rủ đặt trà sữa lúc 3 giờ chiều nha!"}], "disclaimer": "Thực phẩm bổ sung. Không phải là thuốc và không có tác dụng thay thế thuốc chữa bệnh."}, {"id": "HT08", "brand": "HẰNG THU", "set": "SET3", "set_name": "SET 3 — ĐÈN VÀNG ẤM & ĐỜI THỰC / Ô TÔ (Warm Amber + Real Life)", "product": "Gel Phụ Khang Hằng Thu (QUAY TẠI BÀN LÀM VIỆC / Ô TÔ)", "duration": "28s", "props": "Hộp Gel Phụ Khang Hằng Thu (mặc Blazer công sở ngồi bàn làm việc / trong xe)", "mood": "Tự nhiên, tinh tế, nói trúng tim đen chị em công sở", "hooks": [["Hook 1 (Nỗi đau)", "Ngồi ghế văn phòng 8 tiếng / cộng mặc quần ôm sát — / bạn đang vô tình tạo ra 'hiệu ứng nhà kính' đấy!"], ["Hook 2 (Tò mò)", "Tại sao sáng tắm rửa thơm tho lắm / mà tới 4 giờ chiều ngồi họp / vẫn thấy bí bách, mất tự tin?"], ["Hook 3 (Ngược đám đông)", "Ngồi phòng máy lạnh mát rượi / không có nghĩa là vùng nhạy cảm của bạn / đang được thoáng mát đâu!"]], "lines": [{"type": "cue", "text": "[💼 Ngồi bàn làm việc / trong ô tô, mặc blazer công sở, chỉ nhẹ lên nhiệt kế nửa trên]"}, {"type": "body", "text": "Ít vận động, quần jean dày / hoặc đồ lót sợi tổng hợp / làm độ ẩm và nhiệt độ tăng cao liên tục — / đây là môi trường lý tưởng / để mùi khó chịu và tình trạng bí rít / xuất hiện mỗi cuối ngày!"}, {"type": "cue", "text": "[📦 Nâng hộp Gel Phụ Khang thật, giọng nhẹ nhàng tươi mát]"}, {"type": "body", "text": "Ngoài việc đổi đồ lót cotton thoáng / và đứng dậy đi lại mỗi giờ, / chị em đừng quên làm sạch êm dịu cuối ngày / bằng Gel Phụ Khang Hằng Thu —"}, {"type": "body", "text": "chiết xuất Kim ngân hoa, Trầu không, / Khổ sâm và Trinh nữ hoàng cung / giúp làm sạch nhẹ, khử mùi, / giữ ẩm và thơm mát dễ chịu!"}, {"type": "cue", "text": "[😊 Mỉm cười thân thiện]"}, {"type": "cta", "text": "Gửi ngay cho cô bạn đồng nghiệp / ngồi dán mắt máy tính cả ngày nhé! / Nhắn GEL PHỤ KHANG để Hằng tư vấn!"}], "disclaimer": "Làm sạch dịu nhẹ, hỗ trợ khử mùi và giữ ẩm vùng nhạy cảm hằng ngày."}];
+let currentFilter = "ALL";
+let currentId = EPISODES[0].id;
+let selectedHookIdx = 0;
+let isPlaying = false;
+let speed = 48; // px per second
+let mirrorX = false;
+let showCues = true;
+let lastFrameTime = null;
+let doneMap = JSON.parse(localStorage.getItem("tp_done_20_av_htpm") || "{}");
+
+const epListEl = document.getElementById("epList");
+const stageEl = document.getElementById("stageContent");
+const scroller = document.getElementById("scroller");
+const btnPlay = document.getElementById("btnPlay");
+const btnDone = document.getElementById("btnDone");
+const progressTxt = document.getElementById("progressTxt");
+
+function getFiltered() {
+  if (currentFilter === "AV") return EPISODES.filter(e => e.brand === "AN VƯỢNG");
+  if (currentFilter === "HT") return EPISODES.filter(e => e.brand === "HẰNG THU");
+  if (currentFilter === "TODO") return EPISODES.filter(e => !doneMap[e.id]);
+  return EPISODES;
+}
+
+function formatText(t) {
+  return t.replace(/ \/ /g, '<span class="slash-mark"> / </span><br>');
+}
+
+function updateProgress() {
+  const cnt = EPISODES.filter(e => doneMap[e.id]).length;
+  progressTxt.textContent = `Đã quay: ${cnt}/${EPISODES.length}`;
+}
+
+function renderSidebar() {
+  const list = getFiltered();
+  epListEl.innerHTML = "";
+  let lastSet = "";
+  list.forEach(ep => {
+    if (currentFilter === "ALL" && ep.set_name !== lastSet) {
+      lastSet = ep.set_name;
+      const sh = document.createElement("div");
+      sh.className = "set-header";
+      sh.textContent = ep.set_name;
+      epListEl.appendChild(sh);
+    }
+    const item = document.createElement("div");
+    item.className = "ep-item" + (ep.id === currentId ? " active" : "") + (doneMap[ep.id] ? " done" : "");
+    item.innerHTML = `
+      <span class="badge ${ep.brand === 'AN VƯỢNG' ? 'av' : 'ht'}">${ep.id}</span>
+      <div style="flex:1">
+        <div class="ep-title">${doneMap[ep.id] ? "✅ " : ""}${ep.product}</div>
+        <div class="ep-sub">${ep.duration} · ${ep.set}</div>
+      </div>
+    `;
+    item.onclick = () => selectEpisode(ep.id);
+    epListEl.appendChild(item);
+  });
+  updateProgress();
+}
+
+function selectEpisode(id) {
+  currentId = id;
+  selectedHookIdx = 0;
+  stopPlay();
+  renderSidebar();
+  renderStage();
+  scroller.scrollTop = 0;
+}
+
+function renderStage() {
+  const ep = EPISODES.find(e => e.id === currentId) || EPISODES[0];
+  const isDone = !!doneMap[ep.id];
+  btnDone.classList.toggle("is-done", isDone);
+  btnDone.textContent = isDone ? "✅ Đã quay xong" : "☐ Đánh dấu đã quay";
+
+  const hookBtns = ep.hooks.map((h, i) => `
+    <button class="${i === selectedHookIdx ? 'active' : ''}" onclick="switchHook(${i})">${h[0]}</button>
+  `).join("");
+
+  const bodyHtml = ep.lines.map(ln => {
+    if (ln.type === "cue") return `<div class="line-cue">${ln.text}</div>`;
+    if (ln.type === "cta") return `<div class="line-cta">${formatText(ln.text)}</div>`;
+    return `<div class="line-body">${formatText(ln.text)}</div>`;
+  }).join("");
+
+  stageEl.innerHTML = `
+    <div class="meta-banner">
+      <div class="m-top">
+        <span class="m-id">${ep.id} — ${ep.brand}</span>
+        <span class="badge ${ep.brand === 'AN VƯỢNG' ? 'av' : 'ht'}">${ep.duration}</span>
+        <span style="color:#cbd5e1;font-weight:700;">${ep.set_name}</span>
+      </div>
+      <div class="m-props">📦 Đạo cụ: ${ep.props}</div>
+      <div class="m-mood">🎭 Diễn xuất: ${ep.mood}</div>
+    </div>
+    <div class="hook-switcher">${hookBtns}</div>
+    <div class="script-content ${showCues ? '' : 'hide-cues'}">
+      <div class="line-hook">${formatText(ep.hooks[selectedHookIdx][1])}</div>
+      ${bodyHtml}
+      <div class="disclaimer-box">⚖️ Dòng chạy cuối video (không cần đọc to): ${ep.disclaimer}</div>
+    </div>
+  `;
+}
+
+window.switchHook = function(idx) {
+  selectedHookIdx = idx;
+  renderStage();
+};
+
+function startPlay() {
+  if (isPlaying) return;
+  isPlaying = true;
+  lastFrameTime = null;
+  btnPlay.classList.add("playing");
+  btnPlay.textContent = "⏸ DỪNG (Space)";
+  requestAnimationFrame(tickScroll);
+}
+
+function stopPlay() {
+  isPlaying = false;
+  lastFrameTime = null;
+  btnPlay.classList.remove("playing");
+  btnPlay.textContent = "▶ CHẠY (Space)";
+}
+
+function tickScroll(ts) {
+  if (!isPlaying) return;
+  if (lastFrameTime !== null) {
+    const dt = (ts - lastFrameTime) / 1000;
+    scroller.scrollTop += speed * dt;
+    if (scroller.scrollTop + scroller.clientHeight >= scroller.scrollHeight - 2) {
+      stopPlay();
+      return;
+    }
+  }
+  lastFrameTime = ts;
+  requestAnimationFrame(tickScroll);
+}
+
+btnPlay.onclick = () => isPlaying ? stopPlay() : startPlay();
+document.getElementById("btnReset").onclick = () => { stopPlay(); scroller.scrollTop = 0; };
+document.getElementById("btnSidebar").onclick = () => document.getElementById("sidebar").classList.toggle("hidden");
+document.getElementById("btnMirrorX").onclick = (e) => {
+  mirrorX = !mirrorX;
+  scroller.classList.toggle("mirror-x", mirrorX);
+  e.target.classList.toggle("active", mirrorX);
+};
+document.getElementById("btnCues").onclick = (e) => {
+  showCues = !showCues;
+  e.target.classList.toggle("active", showCues);
+  renderStage();
+};
+btnDone.onclick = () => {
+  doneMap[currentId] = !doneMap[currentId];
+  localStorage.setItem("tp_done_20_av_htpm", JSON.stringify(doneMap));
+  renderSidebar();
+  renderStage();
+};
+
+document.getElementById("rngSpeed").oninput = (e) => {
+  speed = Number(e.target.value);
+  document.getElementById("valSpeed").textContent = speed;
+};
+document.getElementById("rngFont").oninput = (e) => {
+  const v = Number(e.target.value);
+  document.documentElement.style.setProperty("--font-size", v + "px");
+  document.getElementById("valFont").textContent = v;
+};
+
+function stepEp(dir) {
+  const list = getFiltered();
+  if (!list.length) return;
+  const idx = list.findIndex(e => e.id === currentId);
+  const next = list[(idx + dir + list.length) % list.length];
+  selectEpisode(next.id);
+}
+document.getElementById("btnPrev").onclick = () => stepEp(-1);
+document.getElementById("btnNext").onclick = () => stepEp(1);
+
+document.querySelectorAll(".f-btn").forEach(b => {
+  b.onclick = () => {
+    document.querySelectorAll(".f-btn").forEach(x => x.classList.remove("active"));
+    b.classList.add("active");
+    currentFilter = b.dataset.filter;
+    const list = getFiltered();
+    if (list.length && !list.some(e => e.id === currentId)) {
+      currentId = list[0].id;
+    }
+    renderSidebar();
+    renderStage();
+  };
+});
+
+document.addEventListener("keydown", (e) => {
+  if (e.code === "Space") { e.preventDefault(); isPlaying ? stopPlay() : startPlay(); }
+  else if (e.code === "ArrowRight") stepEp(1);
+  else if (e.code === "ArrowLeft") stepEp(-1);
+  else if (e.code === "ArrowUp") {
+    speed = Math.min(160, speed + 6);
+    document.getElementById("rngSpeed").value = speed;
+    document.getElementById("valSpeed").textContent = speed;
+  }
+  else if (e.code === "ArrowDown") {
+    speed = Math.max(10, speed - 6);
+    document.getElementById("rngSpeed").value = speed;
+    document.getElementById("valSpeed").textContent = speed;
+  }
+  else if (e.key.toLowerCase() === "r") { stopPlay(); scroller.scrollTop = 0; }
+  else if (e.key.toLowerCase() === "m") document.getElementById("btnMirrorX").click();
+});
+
+renderSidebar();
+renderStage();
+</script>
+</body>
+</html>

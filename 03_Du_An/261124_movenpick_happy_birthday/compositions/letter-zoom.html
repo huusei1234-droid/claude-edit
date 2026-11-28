@@ -1,0 +1,298 @@
+<template>
+  <style>
+    @font-face {
+      font-family: "DancingScriptLocal";
+      src: url("assets/fonts/DancingScript-Bold.ttf") format("truetype");
+      font-weight: 700;
+      font-style: normal;
+      font-display: block;
+    }
+
+    #root {
+      position: absolute;
+      inset: 0;
+      width: 1080px;
+      height: 1920px;
+      overflow: hidden;
+      background: #f8f9fb;
+      font-family: "DancingScriptLocal", serif;
+    }
+
+    /* 1. VFX-Tracked Source Video (with realistic printed Happy Birthday + Movenpick logo directly on her hand-held card!) */
+    .mv-cam-rig {
+      position: absolute;
+      inset: 0;
+      width: 1080px;
+      height: 1920px;
+      transform-origin: 50% 54%;
+      z-index: 1;
+    }
+    .mv-source-video {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1080px;
+      height: 1920px;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* 2. Clean Enlarged Card ("Phóng to cái bức thư" — 100% identical matte white stationery print as her hand card!)
+       Exact aspect ratio 2.33:1 matching real hand card (188x81.5px -> 880x378px).
+       Resting box: X=[100..980], Y=[321..699] -> 100% inside 9:16 Safe Zone + 131px clean gap above her head! */
+    .mv-card-stage {
+      position: absolute;
+      left: 100px;
+      top: 321px;
+      width: 880px;
+      height: 378px;
+      pointer-events: none;
+      z-index: 8;
+    }
+    .mv-enlarged-card {
+      position: relative;
+      width: 880px;
+      height: 378px;
+      border-radius: 6px;
+      transform-origin: 50% 50%;
+      background: linear-gradient(155deg, #fbfcfd 0%, #f5f6f9 60%, #eef0f4 100%);
+      box-shadow:
+        0 26px 56px rgba(18, 22, 30, 0.28),
+        0 6px 18px rgba(18, 22, 30, 0.14),
+        0 0 0 1px rgba(210, 214, 222, 0.65) inset;
+      overflow: hidden;
+    }
+    .mv-enlarged-card-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* 3. Clean Pure-White Full-Screen Finale ("Cuối cùng zô cái chữ Mövenpick vào màn hình" — ZERO bling-bling!) */
+    .mv-finale-bg {
+      position: absolute;
+      inset: 0;
+      width: 1080px;
+      height: 1920px;
+      background: radial-gradient(closest-side at 50% 48%, #ffffff 0%, #f7f8fa 68%, #eceff4 100%);
+      pointer-events: none;
+      z-index: 12;
+    }
+
+    /* Hero Center Lockup — STRICT 9:16 Safe Zone Compliance:
+       Width = 650px (X=[215..865]; even at 1.04x slow push => X=[202..878] <= 884px!)
+       Height = 368px (Y=[746..1114]; optical center inside Y=[250..1545]!) */
+    .mv-finale-lockup {
+      position: absolute;
+      left: 215px;
+      top: 746px;
+      width: 650px;
+      height: 368px;
+      transform-origin: 50% 50%;
+      pointer-events: none;
+      z-index: 15;
+    }
+    .mv-finale-hb {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 650px;
+      height: 108px;
+      text-align: center;
+      font-family: "DancingScriptLocal", serif;
+      font-size: 76px;
+      font-weight: 700;
+      line-height: 104px;
+      color: #826434;
+      letter-spacing: 0.01em;
+    }
+    .mv-finale-logo-wrap {
+      position: absolute;
+      left: 0;
+      top: 124px;
+      width: 650px;
+      height: 217px;
+      transform-origin: 50% 50%;
+    }
+    .mv-finale-logo-img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+  </style>
+
+  <div
+    id="root"
+    data-composition-id="letter-zoom"
+    data-width="1080"
+    data-height="1920"
+  >
+    <!-- 1. Tracked Source Video with Printed Happy Birthday + Movenpick Logo on Her Real Hand Card -->
+    <div id="mv-cam-rig" class="mv-cam-rig" data-layout-allow-overflow>
+      <video
+        id="mv-source-video"
+        class="clip mv-source-video"
+        src="assets/video/source_printed.mp4"
+        data-start="0"
+        data-duration="8.25"
+        muted
+        playsinline
+      ></video>
+    </div>
+
+    <!-- 2. Exact 1-to-1 Magnified Card Lifting Smoothly Out of Her Hand-Held Card (Zero Bling!) -->
+    <div id="mv-card-stage" class="mv-card-stage" data-layout-allow-overflow>
+      <div id="mv-enlarged-card" class="mv-enlarged-card" data-layout-allow-overflow>
+        <img
+          id="mv-enlarged-card-img"
+          class="mv-enlarged-card-img"
+          src="assets/images/card_clean_master.png"
+          alt="Happy Birthday Mövenpick Resort Cam Ranh card"
+        />
+      </div>
+    </div>
+
+    <!-- 3. Clean Pure-White Finale Screen & Hero Logo Zoom-In ("Zô chữ Mövenpick vào màn hình") -->
+    <div id="mv-finale-bg" class="mv-finale-bg" data-layout-ignore></div>
+
+    <div id="mv-finale-lockup" class="mv-finale-lockup" data-layout-allow-overflow>
+      <div
+        id="mv-finale-hb"
+        class="mv-finale-hb"
+        data-var-text="greeting_text"
+      >Happy Birthday</div>
+
+      <div id="mv-finale-logo-wrap" class="mv-finale-logo-wrap" data-layout-allow-overflow>
+        <img
+          id="mv-finale-logo-img"
+          class="mv-finale-logo-img"
+          src="assets/images/movenpick-logo.png"
+          data-var-src="logo_src"
+          alt="Mövenpick Resort Cam Ranh"
+        />
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+
+      // =====================================================================
+      // ACT 1 (0.00s - 4.80s): Clean Real Footage + Printed Card Pull-Out
+      // =====================================================================
+      tl.fromTo(
+        "#mv-cam-rig",
+        { scale: 1.0, y: 0 },
+        { scale: 1.02, y: -6, duration: 7.18, ease: "none" },
+        0,
+      );
+
+      // =====================================================================
+      // ACT 2 (4.80s - 7.18s): CLEAN MAGNIFICATION OF THE EXACT HAND CARD
+      // Exact hand-card anchor at frame 144 (4.80s):
+      //   cx=430.66, cy=1087.97, w=187.94, h=81.5, angle=-10.16deg
+      // Resting showcase card: cx=540, cy=510, w=880, h=378, angle=0deg
+      //   => dx = -109.34, dy = +577.97, scale = 0.2136, rotation = -10.16deg
+      // =====================================================================
+      tl.fromTo(
+        "#mv-enlarged-card",
+        {
+          x: -109.34,
+          y: 577.97,
+          scale: 0.2136,
+          rotation: -10.16,
+          opacity: 0,
+        },
+        {
+          x: 0,
+          y: 0,
+          scale: 1.0,
+          rotation: 0,
+          opacity: 1,
+          duration: 0.56,
+          ease: "power3.out",
+        },
+        4.80,
+      );
+
+      // Subtle, crisp editorial hover while she says "Happy Birthday, Mövenpick Resort Cam Ranh!"
+      tl.to(
+        "#mv-enlarged-card",
+        { y: -6, scale: 1.018, duration: 1.80, ease: "sine.inOut" },
+        5.38,
+      );
+
+      // =====================================================================
+      // ACT 3 (7.18s - 10.30s): ZOOM LETTER FULL-SCREEN & ZÔ LOGO MÖVENPICK
+      // =====================================================================
+      // Background footage pushes gently in as the card dives straight into the camera
+      tl.to(
+        "#mv-cam-rig",
+        { scale: 1.16, y: -28, duration: 0.88, ease: "power3.inOut" },
+        7.18,
+      );
+
+      // The enlarged white card glides to center and zooms massive (scale 5.2) to fill 100% of screen white!
+      tl.to(
+        "#mv-enlarged-card",
+        {
+          x: 0,
+          y: 450,
+          scale: 5.2,
+          duration: 0.84,
+          ease: "power3.inOut",
+        },
+        7.18,
+      );
+      // Crossfade seamlessly to the crisp full-screen white canvas right as card covers viewport
+      tl.fromTo(
+        "#mv-finale-bg",
+        { opacity: 0 },
+        { opacity: 1, duration: 0.28, ease: "power2.out" },
+        7.64,
+      );
+
+      // HERO ZOOM-IN ("Zô cái chữ Mövenpick vào màn hình") — pure clean motion, zero bling!
+      tl.fromTo(
+        "#mv-finale-lockup",
+        { opacity: 0, scale: 0.58, y: 20 },
+        { opacity: 1, scale: 1.0, y: 0, duration: 0.62, ease: "expo.out" },
+        7.82,
+      );
+
+      // Dedicated bold crisp zoom-in punch specifically on the Official MÖVENPICK RESORT CAM RANH Logo
+      tl.fromTo(
+        "#mv-finale-logo-wrap",
+        { scale: 0.44, opacity: 0, filter: "blur(10px)" },
+        { scale: 1.03, opacity: 1, filter: "blur(0px)", duration: 0.60, ease: "expo.out" },
+        7.86,
+      );
+      tl.to(
+        "#mv-finale-logo-wrap",
+        { scale: 1.0, duration: 0.24, ease: "power2.out" },
+        8.48,
+      );
+
+      // Clean "Happy Birthday" script settles calmly right above the zoomed-in Movenpick logo
+      tl.fromTo(
+        "#mv-finale-hb",
+        { opacity: 0, y: -14, filter: "blur(6px)" },
+        { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.44, ease: "power3.out" },
+        8.08,
+      );
+
+      // Subtle slow editorial push-in through end frame (max 1.04x => X=[202..878] <= 884px, 100% Safe Zone!)
+      tl.to(
+        "#mv-finale-lockup",
+        { scale: 1.04, duration: 1.52, ease: "none" },
+        8.78,
+      );
+
+      window.__timelines = window.__timelines || {};
+      window.__timelines["letter-zoom"] = tl;
+    })();
+  </script>
+</template>

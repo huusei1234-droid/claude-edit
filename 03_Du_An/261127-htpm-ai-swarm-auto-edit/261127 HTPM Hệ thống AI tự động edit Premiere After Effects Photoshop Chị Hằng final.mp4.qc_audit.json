@@ -1,0 +1,96 @@
+{
+  "inspected_at": "2026-11-27T16:04:50.163805",
+  "video_path": "C:\\AI\\full studio\\projects\\htpm_ai_swarm_auto_edit_261127\\261127 HTPM Hệ thống AI tự động edit Premiere After Effects Photoshop Chị Hằng final.mp4",
+  "fingerprint": {
+    "file_size": 84514283,
+    "sha256_head_tail": "1e9db126569ef7e6847fc9e90ff1af28f5c630308b06b13cf3de428b6da5b217"
+  },
+  "streams": {
+    "width": 1080,
+    "height": 1920,
+    "v_codec": "h264",
+    "a_codec": "aac",
+    "fps": 60.0,
+    "format_dur": 21.32,
+    "video_dur": 21.317,
+    "audio_dur": 21.32,
+    "av_sync_delta": 0.003
+  },
+  "letterbox": {
+    "top_black_px": 0,
+    "bottom_black_px": 0
+  },
+  "integrated_lufs": -14.2,
+  "cut_count": 8,
+  "cuts": [
+    {
+      "index": 1,
+      "start": 0.0,
+      "end": 1.6,
+      "dur": 1.6,
+      "label": "p01_ps_whiteskin_pr"
+    },
+    {
+      "index": 2,
+      "start": 1.6,
+      "end": 4.2,
+      "dur": 2.6,
+      "label": "p02_alttab_ai_pr"
+    },
+    {
+      "index": 3,
+      "start": 4.2,
+      "end": 6.8,
+      "dur": 2.6,
+      "label": "p03_ps_romance_ae_dynlink"
+    },
+    {
+      "index": 4,
+      "start": 6.8,
+      "end": 9.5,
+      "dur": 2.7,
+      "label": "p04_me_swarm_ae_pr"
+    },
+    {
+      "index": 5,
+      "start": 9.5,
+      "end": 13.4,
+      "dur": 3.9,
+      "label": "p05_ps_center_pr_lumetri"
+    },
+    {
+      "index": 6,
+      "start": 13.4,
+      "end": 16.5,
+      "dur": 3.1,
+      "label": "p06_cms_web_ae_roto3d"
+    },
+    {
+      "index": 7,
+      "start": 16.5,
+      "end": 19.5,
+      "dur": 3.0,
+      "label": "p07_ai_ps_ae_to_pr"
+    },
+    {
+      "index": 8,
+      "start": 19.5,
+      "end": 21.35,
+      "dur": 1.85,
+      "label": "p08_complete_export"
+    }
+  ],
+  "sheets": {
+    "all_cuts_full": "C:\\AI\\full studio\\projects\\htpm_ai_swarm_auto_edit_261127\\qc_report_v2\\QC_FINAL_ALL_CUTS_FULL.jpg",
+    "all_cuts_zoom": "C:\\AI\\full studio\\projects\\htpm_ai_swarm_auto_edit_261127\\qc_report_v2\\QC_FINAL_ALL_CUTS_ZOOM.jpg"
+  },
+  "audio_audit": {
+    "word_count": 90,
+    "eof_tail_sec": 0.4,
+    "eof_cutoff": false,
+    "repetitions": [],
+    "transcript": "Có 5 sản phẩm mà nếu là phụ nữ sau tuổi 25, tôi nghĩ chị em nên tìm hiểu để chăm sóc sức khỏe và sắc đẹp từ bên trong. Thứ nhất là sản phẩm hỗ trợ điều hoa chu kỳ và chăm sóc nồi tiết tổ nữ. Một cơ thể khỏe mạnh thường bắt đầu từ sự cân bằng. Khi chăm sóc tổ sức khỏe nồi tiết, nhiều chị em cũng cảm thấy cơ thể có nhiều năng lượng hơn và tự tin hơn trong cuộc sống hàng ngày."
+  },
+  "machine_failures": [],
+  "machine_status": "READY_FOR_VISUAL_SIGN_OFF"
+}

@@ -1,0 +1,101 @@
+{
+  "anchors": {
+    "ch_hang": "image-ch_hang_dd-6ffc91",
+    "pr_combo": "image-pr_dd_combo-7d0c11",
+    "pr_box": "image-pr_dd_box-bff263",
+    "pr_pills": "image-pr_dd_pills-69b812"
+  },
+  "shots": [
+    {
+      "shot_id": "DD_S01",
+      "ref_tag": "dd_s01_ref",
+      "img_node_id": "XMPeyjgi8rRghVfH6UDLR",
+      "provider": "ChatGPT",
+      "local_path": "d:\\AI\\full studio\\output\\htpm-usp-da-day-261123\\01_ChatGPT_Ingredients\\DD_S01_ref.png"
+    },
+    {
+      "shot_id": "DD_S02",
+      "ref_tag": "dd_s02_ref",
+      "img_node_id": "-Xz432ComM55ua2vD3cJ7",
+      "provider": "ChatGPT",
+      "local_path": "d:\\AI\\full studio\\output\\htpm-usp-da-day-261123\\01_ChatGPT_Ingredients\\DD_S02_ref.png"
+    },
+    {
+      "shot_id": "DD_S03",
+      "ref_tag": "dd_s03_ref",
+      "img_node_id": "WayjXrSvcdYrBqYVmzemO",
+      "provider": "ChatGPT",
+      "local_path": "d:\\AI\\full studio\\output\\htpm-usp-da-day-261123\\01_ChatGPT_Ingredients\\DD_S03_ref.png"
+    },
+    {
+      "shot_id": "DD_S04",
+      "ref_tag": "dd_s04_ref",
+      "img_node_id": "WT-YrHWmzENjgWLRbQ9Bv",
+      "provider": "ChatGPT",
+      "local_path": "d:\\AI\\full studio\\output\\htpm-usp-da-day-261123\\01_ChatGPT_Ingredients\\DD_S04_ref.png"
+    },
+    {
+      "shot_id": "DD_S05",
+      "ref_tag": "dd_s05_ref",
+      "img_node_id": "u3Ls6kq2NFwCA2USTgNmG",
+      "provider": "ChatGPT",
+      "local_path": "d:\\AI\\full studio\\output\\htpm-usp-da-day-261123\\01_ChatGPT_Ingredients\\DD_S05_ref.png"
+    },
+    {
+      "shot_id": "DD_S06",
+      "ref_tag": "dd_s06_ref",
+      "img_node_id": "XYBukdXXhulY2PD7BiGCc",
+      "provider": "ChatGPT",
+      "local_path": "d:\\AI\\full studio\\output\\htpm-usp-da-day-261123\\01_ChatGPT_Ingredients\\DD_S06_ref.png"
+    },
+    {
+      "shot_id": "DD_S07",
+      "ref_tag": "dd_s07_ref",
+      "img_node_id": "E4T51iN0_kL3P10hByurO",
+      "provider": "ChatGPT",
+      "local_path": "d:\\AI\\full studio\\output\\htpm-usp-da-day-261123\\01_ChatGPT_Ingredients\\DD_S07_ref.png"
+    },
+    {
+      "shot_id": "DD_S08",
+      "ref_tag": "dd_s08_ref",
+      "img_node_id": "PR1Dd3IqpsrCy4RDf2LoW",
+      "provider": "ChatGPT",
+      "local_path": "d:\\AI\\full studio\\output\\htpm-usp-da-day-261123\\01_ChatGPT_Ingredients\\DD_S08_ref.png"
+    },
+    {
+      "shot_id": "DD_S09",
+      "ref_tag": "dd_s09_ref",
+      "img_node_id": "ME3lNkpODi4kj4ed_v1d6",
+      "provider": "ChatGPT",
+      "local_path": "d:\\AI\\full studio\\output\\htpm-usp-da-day-261123\\01_ChatGPT_Ingredients\\DD_S09_ref.png"
+    },
+    {
+      "shot_id": "DD_S10",
+      "ref_tag": "dd_s10_ref",
+      "img_node_id": "ULcYZYP8b2gzoJ2yFzWhz",
+      "provider": "ChatGPT",
+      "local_path": "d:\\AI\\full studio\\output\\htpm-usp-da-day-261123\\01_ChatGPT_Ingredients\\DD_S10_ref.png"
+    },
+    {
+      "shot_id": "DD_S11",
+      "ref_tag": "dd_s11_ref",
+      "img_node_id": "j6hh0CYJAxIaoJT04Zzz3",
+      "provider": "ChatGPT",
+      "local_path": "d:\\AI\\full studio\\output\\htpm-usp-da-day-261123\\01_ChatGPT_Ingredients\\DD_S11_ref.png"
+    },
+    {
+      "shot_id": "DD_S12",
+      "ref_tag": "dd_s12_ref",
+      "img_node_id": "V4ME7n9dmSoOW7sBbVnnF",
+      "provider": "ChatGPT",
+      "local_path": "d:\\AI\\full studio\\output\\htpm-usp-da-day-261123\\01_ChatGPT_Ingredients\\DD_S12_ref.png"
+    },
+    {
+      "shot_id": "DD_S13",
+      "ref_tag": "dd_s13_ref",
+      "img_node_id": "_fgieUmDm-hZNOb6712zA",
+      "provider": "ChatGPT",
+      "local_path": "d:\\AI\\full studio\\output\\htpm-usp-da-day-261123\\01_ChatGPT_Ingredients\\DD_S13_ref.png"
+    }
+  ]
+}

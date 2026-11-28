@@ -1,0 +1,82 @@
+{
+  "inspected_at": "2026-11-27T15:35:20.481900",
+  "video_path": "C:\\AI\\full studio\\projects\\htpm_ai_swarm_auto_edit_261127\\261127 HTPM Hệ thống AI tự động edit video Chị Hằng final.mp4",
+  "fingerprint": {
+    "file_size": 78002625,
+    "sha256_head_tail": "753242a768107786d87ae783dae27627af8aabe0e048145f1bbd5b8ed2197c85"
+  },
+  "streams": {
+    "width": 1080,
+    "height": 1920,
+    "v_codec": "h264",
+    "a_codec": "aac",
+    "fps": 60.0,
+    "format_dur": 21.32,
+    "video_dur": 21.317,
+    "audio_dur": 21.32,
+    "av_sync_delta": 0.003
+  },
+  "letterbox": {
+    "top_black_px": 0,
+    "bottom_black_px": 0
+  },
+  "integrated_lufs": -14.2,
+  "cut_count": 6,
+  "cuts": [
+    {
+      "index": 1,
+      "start": 0.0,
+      "end": 3.6,
+      "dur": 3.6,
+      "label": "phase_01_hook"
+    },
+    {
+      "index": 2,
+      "start": 3.6,
+      "end": 7.2,
+      "dur": 3.6,
+      "label": "phase_02_noi_tiet"
+    },
+    {
+      "index": 3,
+      "start": 7.2,
+      "end": 11.2,
+      "dur": 4.0,
+      "label": "phase_03_web_swarm"
+    },
+    {
+      "index": 4,
+      "start": 11.2,
+      "end": 15.6,
+      "dur": 4.4,
+      "label": "phase_04_can_bang"
+    },
+    {
+      "index": 5,
+      "start": 15.6,
+      "end": 19.2,
+      "dur": 3.6,
+      "label": "phase_05_nang_luong"
+    },
+    {
+      "index": 6,
+      "start": 19.2,
+      "end": 21.35,
+      "dur": 2.15,
+      "label": "phase_06_complete_export"
+    }
+  ],
+  "sheets": {
+    "all_cuts_full": "C:\\AI\\full studio\\projects\\htpm_ai_swarm_auto_edit_261127\\qc_report\\QC_FINAL_ALL_CUTS_FULL.jpg",
+    "all_cuts_zoom": "C:\\AI\\full studio\\projects\\htpm_ai_swarm_auto_edit_261127\\qc_report\\QC_FINAL_ALL_CUTS_ZOOM.jpg"
+  },
+  "audio_audit": {
+    "word_count": 90,
+    "eof_tail_sec": 0.4,
+    "eof_cutoff": false,
+    "repetitions": [],
+    "transcript": "Có 5 sản phẩm mà nếu là phụ nữ sau tuổi 25, tôi nghĩ chị em nên tìm hiểu để chăm sóc sức khỏe và sắc đẹp từ bên trong. Thứ nhất là sản phẩm hỗ trợ điều hoa chu kỳ và chăm sóc nồi tiết tổ nữ. Một cơ thể khỏe mạnh thường bắt đầu từ sự cân bằng. Khi chăm sóc tổ sức khỏe nồi tiết, nhiều chị em cũng cảm thấy cơ thể có nhiều năng lượng hơn và tự tin hơn trong cuộc sống hàng ngày."
+  },
+  "machine_failures": [],
+  "machine_status": "READY_FOR_VISUAL_SIGN_OFF"
+}

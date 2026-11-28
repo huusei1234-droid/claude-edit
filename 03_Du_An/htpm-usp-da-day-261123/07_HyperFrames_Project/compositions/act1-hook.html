@@ -1,0 +1,284 @@
+<template>
+  <style>
+    @font-face { font-family: "FrauncesVN"; src: url("assets/fonts/Fraunces-Black.ttf") format("truetype"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "PlayfairVN"; src: url("assets/fonts/PlayfairDisplay-ExtraBold.ttf") format("truetype"); font-weight: 800; font-display: block; }
+    @font-face { font-family: "PlayfairVNItalic"; src: url("assets/fonts/PlayfairDisplay-BoldItalic.ttf") format("truetype"); font-weight: 700; font-style: italic; font-display: block; }
+    @font-face { font-family: "BeVietnamVN"; src: url("assets/fonts/BeVietnamPro-ExtraBold.ttf") format("truetype"); font-weight: 800; font-display: block; }
+    @font-face { font-family: "BeVietnamSemiVN"; src: url("assets/fonts/BeVietnamPro-SemiBold.ttf") format("truetype"); font-weight: 600; font-display: block; }
+    @font-face { font-family: "DancingVN"; src: url("assets/fonts/DancingScript-Bold.ttf") format("truetype"); font-weight: 700; font-display: block; }
+
+    #root {
+      position: absolute; inset: 0; width: 1080px; height: 1920px; overflow: hidden;
+      background: #072614; font-family: "BeVietnamVN", sans-serif;
+    }
+    .cam-rig { position: absolute; inset: 0; width: 1080px; height: 1920px; transform-origin: 50% 50%; }
+    .bg-video { position: absolute; inset: 0; width: 1080px; height: 1920px; object-fit: cover; display: block; }
+    .float-stage {
+      position: absolute; inset: 0; width: 1080px; height: 1920px;
+      pointer-events: none; z-index: 9;
+    }
+    .svg-typo { width: 100%; height: 100%; overflow: visible; display: block; }
+    .brand-contour {
+      font-family: "PlayfairVN", Georgia, serif;
+      font-weight: 800; paint-order: stroke fill;
+      stroke: #ffffff; stroke-width: 14px; stroke-linejoin: round; stroke-linecap: round;
+      letter-spacing: 0.01em;
+    }
+    .brand-ht {
+      font-family: "PlayfairVNItalic", Georgia, serif;
+      font-style: italic; font-weight: 700; paint-order: stroke fill;
+      stroke: #ffffff; stroke-width: 14px; stroke-linejoin: round; stroke-linecap: round;
+    }
+    .script-sub {
+      font-family: "DancingVN", cursive;
+      font-weight: 700; paint-order: stroke fill;
+      stroke: rgba(255, 255, 255, 0.95); stroke-width: 8px; stroke-linejoin: round;
+    }
+    .upper-claim {
+      font-family: "BeVietnamVN", sans-serif;
+      font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em;
+      paint-order: stroke fill;
+      stroke: rgba(255, 255, 255, 0.96); stroke-width: 9px; stroke-linejoin: round;
+    }
+    .satin-hero {
+      font-family: "FrauncesVN", "PlayfairVN", Georgia, serif;
+      font-weight: 900; letter-spacing: -0.01em;
+      paint-order: stroke fill;
+      stroke: rgba(255, 255, 255, 0.92); stroke-width: 10px; stroke-linejoin: round;
+    }
+    .cta-open {
+      font-family: "BeVietnamVN", sans-serif;
+      font-weight: 800; letter-spacing: 0.01em;
+      paint-order: stroke fill;
+      stroke: #ffffff; stroke-width: 11px; stroke-linejoin: round; stroke-linecap: round;
+    }
+
+    /* Frosted Liquid-Glass Slide Overlay System (Safe Zone X in [64..865], Face-Safe 100%) */
+    .slide-card {
+      position: absolute;
+      left: 64px;
+      border-radius: 26px;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.94) 0%, rgba(240, 252, 244, 0.90) 100%);
+      border: 2.5px solid rgba(22, 148, 62, 0.34);
+      box-shadow: 0 14px 34px rgba(5, 42, 18, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.95);
+      padding: 18px 24px;
+      z-index: 10;
+      pointer-events: none;
+    }
+    .slide-card-header {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: linear-gradient(90deg, #0B6E2B 0%, #179440 100%);
+      color: #ffffff;
+      font-family: "BeVietnamVN", sans-serif;
+      font-size: 19px;
+      font-weight: 800;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 999px;
+      margin-bottom: 12px;
+      box-shadow: 0 4px 12px rgba(11, 110, 43, 0.28);
+    }
+    .slide-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-family: "BeVietnamVN", sans-serif;
+      font-size: 24px;
+      font-weight: 800;
+      color: #083D19;
+      padding: 6px 0;
+      line-height: 1.28;
+    }
+    .slide-badge-dot {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 17px;
+      font-weight: 800;
+      flex-shrink: 0;
+      background: #E4F8EA;
+      color: #0D7A31;
+      border: 2px solid #8BE0A4;
+    }
+    .slide-badge-warn {
+      background: #FFF1DF;
+      color: #C95B00;
+      border: 2px solid #F7BA77;
+    }
+    .slide-pill-stack {
+      position: absolute;
+      left: 64px;
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+      z-index: 10;
+      pointer-events: none;
+    }
+    .slide-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 247, 236, 0.92) 100%);
+      border-left: 7px solid #E07A00;
+      border-top: 1.5px solid rgba(255, 255, 255, 0.95);
+      border-right: 1.5px solid rgba(224, 122, 0, 0.25);
+      border-bottom: 1.5px solid rgba(224, 122, 0, 0.25);
+      border-radius: 18px;
+      padding: 11px 22px;
+      font-family: "BeVietnamVN", sans-serif;
+      font-size: 24px;
+      font-weight: 800;
+      color: #4A1E00;
+      box-shadow: 0 10px 24px rgba(38, 18, 4, 0.20);
+      width: fit-content;
+      max-width: 780px;
+    }
+    .slide-pill-emerald {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.96) 0%, rgba(236, 253, 241, 0.93) 100%);
+      border-left: 7px solid #0E8A38;
+      border-right: 1.5px solid rgba(14, 138, 56, 0.28);
+      border-bottom: 1.5px solid rgba(14, 138, 56, 0.28);
+      color: #063D18;
+    }
+</style>
+  <div id="root" data-composition-id="act1-hook" data-width="1080" data-height="1920" data-start="0" data-duration="12.75">
+    <div id="a1-rig-01" class="cam-rig" data-layout-allow-overflow data-layout-allow-overlap>
+      <video data-color-grading="{&quot;preset&quot;:null,&quot;intensity&quot;:1,&quot;adjust&quot;:{&quot;exposure&quot;:0.04,&quot;contrast&quot;:0.08,&quot;highlights&quot;:0.04,&quot;shadows&quot;:0.05,&quot;whites&quot;:0.06,&quot;blacks&quot;:0,&quot;temperature&quot;:0.03,&quot;tint&quot;:0.01,&quot;vibrance&quot;:0.12,&quot;saturation&quot;:0.05},&quot;details&quot;:{&quot;vignette&quot;:0.04,&quot;vignetteMidpoint&quot;:0.5,&quot;vignetteRoundness&quot;:0,&quot;vignetteFeather&quot;:0.65,&quot;grain&quot;:0,&quot;grainSize&quot;:0.25,&quot;grainRoughness&quot;:0.5},&quot;effects&quot;:{&quot;blur&quot;:0,&quot;pixelate&quot;:0,&quot;chromaBleed&quot;:0,&quot;tapeDamage&quot;:0,&quot;tapeTracking&quot;:0,&quot;tapeNoise&quot;:1,&quot;tapeSpeed&quot;:0.5,&quot;filmArtifacts&quot;:0,&quot;halftone&quot;:0,&quot;halftoneSize&quot;:0,&quot;twoInkPrint&quot;:0,&quot;twoInkPrintSize&quot;:0,&quot;ascii&quot;:0,&quot;asciiSize&quot;:0.065,&quot;asciiInvert&quot;:0,&quot;asciiStyle&quot;:0,&quot;asciiColor&quot;:1,&quot;asciiRotation&quot;:0,&quot;dither&quot;:0,&quot;ditherSize&quot;:0,&quot;bloom&quot;:0,&quot;bloomRadius&quot;:8,&quot;monoScreen&quot;:0,&quot;monoScreenSize&quot;:0,&quot;monoScreenAngle&quot;:0,&quot;monoScreenSpread&quot;:0,&quot;monoScreenShape&quot;:0,&quot;monoScreenInvert&quot;:0,&quot;scanlines&quot;:0,&quot;scanlineCount&quot;:0,&quot;scanlineSoftness&quot;:0,&quot;chromaticAberration&quot;:0,&quot;chromaticAngle&quot;:0,&quot;crtCurvature&quot;:0,&quot;digitalGlitch&quot;:0,&quot;digitalGlitchColorSplit&quot;:0,&quot;digitalGlitchLineTear&quot;:0,&quot;digitalGlitchPixelate&quot;:0,&quot;digitalGlitchBlockAmount&quot;:0,&quot;digitalGlitchBlockDisplacement&quot;:0,&quot;digitalGlitchBlockOpacity&quot;:0,&quot;digitalGlitchSpeed&quot;:0,&quot;engraving&quot;:0,&quot;engravingSpacing&quot;:0.41,&quot;engravingMinThickness&quot;:0.2,&quot;engravingMaxThickness&quot;:0.45,&quot;engravingAngle&quot;:0.25,&quot;engravingContrast&quot;:0.46,&quot;engravingSharpness&quot;:0.59,&quot;engravingWave&quot;:0.2,&quot;engravingWaveFrequency&quot;:0.22,&quot;crosshatch&quot;:0,&quot;crosshatchSpacing&quot;:0.28,&quot;crosshatchThickness&quot;:0.25,&quot;crosshatchAngle&quot;:0.25,&quot;crosshatchContrast&quot;:0.33,&quot;crosshatchEdges&quot;:0.5,&quot;crosshatchLineWeight&quot;:0,&quot;crosshatchWave&quot;:0.33,&quot;crosshatchWaveFrequency&quot;:0.22,&quot;kuwahara&quot;:0,&quot;kuwaharaRadius&quot;:0.14,&quot;kuwaharaSharpness&quot;:0.31,&quot;kuwaharaSaturation&quot;:0.5},&quot;lut&quot;:null,&quot;colorSpace&quot;:&quot;rec709&quot;}" id="a1-v01" class="clip bg-video" src="assets/videos/DD_S01.mp4" data-start="0" data-duration="2.5" data-media-start="0.2" data-hf-media-start-basis="local" data-track-index="1" muted playsinline></video>
+    </div>
+    <div id="a1-rig-02" class="cam-rig" data-layout-allow-overflow data-layout-allow-overlap>
+      <video data-color-grading="{&quot;preset&quot;:null,&quot;intensity&quot;:1,&quot;adjust&quot;:{&quot;exposure&quot;:0.04,&quot;contrast&quot;:0.08,&quot;highlights&quot;:0.04,&quot;shadows&quot;:0.05,&quot;whites&quot;:0.06,&quot;blacks&quot;:0,&quot;temperature&quot;:0.03,&quot;tint&quot;:0.01,&quot;vibrance&quot;:0.12,&quot;saturation&quot;:0.05},&quot;details&quot;:{&quot;vignette&quot;:0.04,&quot;vignetteMidpoint&quot;:0.5,&quot;vignetteRoundness&quot;:0,&quot;vignetteFeather&quot;:0.65,&quot;grain&quot;:0,&quot;grainSize&quot;:0.25,&quot;grainRoughness&quot;:0.5},&quot;effects&quot;:{&quot;blur&quot;:0,&quot;pixelate&quot;:0,&quot;chromaBleed&quot;:0,&quot;tapeDamage&quot;:0,&quot;tapeTracking&quot;:0,&quot;tapeNoise&quot;:1,&quot;tapeSpeed&quot;:0.5,&quot;filmArtifacts&quot;:0,&quot;halftone&quot;:0,&quot;halftoneSize&quot;:0,&quot;twoInkPrint&quot;:0,&quot;twoInkPrintSize&quot;:0,&quot;ascii&quot;:0,&quot;asciiSize&quot;:0.065,&quot;asciiInvert&quot;:0,&quot;asciiStyle&quot;:0,&quot;asciiColor&quot;:1,&quot;asciiRotation&quot;:0,&quot;dither&quot;:0,&quot;ditherSize&quot;:0,&quot;bloom&quot;:0,&quot;bloomRadius&quot;:8,&quot;monoScreen&quot;:0,&quot;monoScreenSize&quot;:0,&quot;monoScreenAngle&quot;:0,&quot;monoScreenSpread&quot;:0,&quot;monoScreenShape&quot;:0,&quot;monoScreenInvert&quot;:0,&quot;scanlines&quot;:0,&quot;scanlineCount&quot;:0,&quot;scanlineSoftness&quot;:0,&quot;chromaticAberration&quot;:0,&quot;chromaticAngle&quot;:0,&quot;crtCurvature&quot;:0,&quot;digitalGlitch&quot;:0,&quot;digitalGlitchColorSplit&quot;:0,&quot;digitalGlitchLineTear&quot;:0,&quot;digitalGlitchPixelate&quot;:0,&quot;digitalGlitchBlockAmount&quot;:0,&quot;digitalGlitchBlockDisplacement&quot;:0,&quot;digitalGlitchBlockOpacity&quot;:0,&quot;digitalGlitchSpeed&quot;:0,&quot;engraving&quot;:0,&quot;engravingSpacing&quot;:0.41,&quot;engravingMinThickness&quot;:0.2,&quot;engravingMaxThickness&quot;:0.45,&quot;engravingAngle&quot;:0.25,&quot;engravingContrast&quot;:0.46,&quot;engravingSharpness&quot;:0.59,&quot;engravingWave&quot;:0.2,&quot;engravingWaveFrequency&quot;:0.22,&quot;crosshatch&quot;:0,&quot;crosshatchSpacing&quot;:0.28,&quot;crosshatchThickness&quot;:0.25,&quot;crosshatchAngle&quot;:0.25,&quot;crosshatchContrast&quot;:0.33,&quot;crosshatchEdges&quot;:0.5,&quot;crosshatchLineWeight&quot;:0,&quot;crosshatchWave&quot;:0.33,&quot;crosshatchWaveFrequency&quot;:0.22,&quot;kuwahara&quot;:0,&quot;kuwaharaRadius&quot;:0.14,&quot;kuwaharaSharpness&quot;:0.31,&quot;kuwaharaSaturation&quot;:0.5},&quot;lut&quot;:null,&quot;colorSpace&quot;:&quot;rec709&quot;}" id="a1-v02" class="clip bg-video" src="assets/videos/DD_S02.mp4" data-start="2.5" data-duration="2.75" data-media-start="0.2" data-hf-media-start-basis="local" data-track-index="2" muted playsinline></video>
+    </div>
+    <div id="a1-rig-03" class="cam-rig" data-layout-allow-overflow data-layout-allow-overlap>
+      <video data-color-grading="{&quot;preset&quot;:null,&quot;intensity&quot;:1,&quot;adjust&quot;:{&quot;exposure&quot;:0.04,&quot;contrast&quot;:0.08,&quot;highlights&quot;:0.04,&quot;shadows&quot;:0.05,&quot;whites&quot;:0.06,&quot;blacks&quot;:0,&quot;temperature&quot;:0.03,&quot;tint&quot;:0.01,&quot;vibrance&quot;:0.12,&quot;saturation&quot;:0.05},&quot;details&quot;:{&quot;vignette&quot;:0.04,&quot;vignetteMidpoint&quot;:0.5,&quot;vignetteRoundness&quot;:0,&quot;vignetteFeather&quot;:0.65,&quot;grain&quot;:0,&quot;grainSize&quot;:0.25,&quot;grainRoughness&quot;:0.5},&quot;effects&quot;:{&quot;blur&quot;:0,&quot;pixelate&quot;:0,&quot;chromaBleed&quot;:0,&quot;tapeDamage&quot;:0,&quot;tapeTracking&quot;:0,&quot;tapeNoise&quot;:1,&quot;tapeSpeed&quot;:0.5,&quot;filmArtifacts&quot;:0,&quot;halftone&quot;:0,&quot;halftoneSize&quot;:0,&quot;twoInkPrint&quot;:0,&quot;twoInkPrintSize&quot;:0,&quot;ascii&quot;:0,&quot;asciiSize&quot;:0.065,&quot;asciiInvert&quot;:0,&quot;asciiStyle&quot;:0,&quot;asciiColor&quot;:1,&quot;asciiRotation&quot;:0,&quot;dither&quot;:0,&quot;ditherSize&quot;:0,&quot;bloom&quot;:0,&quot;bloomRadius&quot;:8,&quot;monoScreen&quot;:0,&quot;monoScreenSize&quot;:0,&quot;monoScreenAngle&quot;:0,&quot;monoScreenSpread&quot;:0,&quot;monoScreenShape&quot;:0,&quot;monoScreenInvert&quot;:0,&quot;scanlines&quot;:0,&quot;scanlineCount&quot;:0,&quot;scanlineSoftness&quot;:0,&quot;chromaticAberration&quot;:0,&quot;chromaticAngle&quot;:0,&quot;crtCurvature&quot;:0,&quot;digitalGlitch&quot;:0,&quot;digitalGlitchColorSplit&quot;:0,&quot;digitalGlitchLineTear&quot;:0,&quot;digitalGlitchPixelate&quot;:0,&quot;digitalGlitchBlockAmount&quot;:0,&quot;digitalGlitchBlockDisplacement&quot;:0,&quot;digitalGlitchBlockOpacity&quot;:0,&quot;digitalGlitchSpeed&quot;:0,&quot;engraving&quot;:0,&quot;engravingSpacing&quot;:0.41,&quot;engravingMinThickness&quot;:0.2,&quot;engravingMaxThickness&quot;:0.45,&quot;engravingAngle&quot;:0.25,&quot;engravingContrast&quot;:0.46,&quot;engravingSharpness&quot;:0.59,&quot;engravingWave&quot;:0.2,&quot;engravingWaveFrequency&quot;:0.22,&quot;crosshatch&quot;:0,&quot;crosshatchSpacing&quot;:0.28,&quot;crosshatchThickness&quot;:0.25,&quot;crosshatchAngle&quot;:0.25,&quot;crosshatchContrast&quot;:0.33,&quot;crosshatchEdges&quot;:0.5,&quot;crosshatchLineWeight&quot;:0,&quot;crosshatchWave&quot;:0.33,&quot;crosshatchWaveFrequency&quot;:0.22,&quot;kuwahara&quot;:0,&quot;kuwaharaRadius&quot;:0.14,&quot;kuwaharaSharpness&quot;:0.31,&quot;kuwaharaSaturation&quot;:0.5},&quot;lut&quot;:null,&quot;colorSpace&quot;:&quot;rec709&quot;}" id="a1-v03" class="clip bg-video" src="assets/videos/DD_S03.mp4" data-start="5.25" data-duration="3.75" data-media-start="0.25" data-hf-media-start-basis="local" data-track-index="1" muted playsinline></video>
+    </div>
+    <div id="a1-rig-04" class="cam-rig" data-layout-allow-overflow data-layout-allow-overlap>
+      <video data-color-grading="{&quot;preset&quot;:null,&quot;intensity&quot;:1,&quot;adjust&quot;:{&quot;exposure&quot;:0.04,&quot;contrast&quot;:0.08,&quot;highlights&quot;:0.04,&quot;shadows&quot;:0.05,&quot;whites&quot;:0.06,&quot;blacks&quot;:0,&quot;temperature&quot;:0.03,&quot;tint&quot;:0.01,&quot;vibrance&quot;:0.12,&quot;saturation&quot;:0.05},&quot;details&quot;:{&quot;vignette&quot;:0.04,&quot;vignetteMidpoint&quot;:0.5,&quot;vignetteRoundness&quot;:0,&quot;vignetteFeather&quot;:0.65,&quot;grain&quot;:0,&quot;grainSize&quot;:0.25,&quot;grainRoughness&quot;:0.5},&quot;effects&quot;:{&quot;blur&quot;:0,&quot;pixelate&quot;:0,&quot;chromaBleed&quot;:0,&quot;tapeDamage&quot;:0,&quot;tapeTracking&quot;:0,&quot;tapeNoise&quot;:1,&quot;tapeSpeed&quot;:0.5,&quot;filmArtifacts&quot;:0,&quot;halftone&quot;:0,&quot;halftoneSize&quot;:0,&quot;twoInkPrint&quot;:0,&quot;twoInkPrintSize&quot;:0,&quot;ascii&quot;:0,&quot;asciiSize&quot;:0.065,&quot;asciiInvert&quot;:0,&quot;asciiStyle&quot;:0,&quot;asciiColor&quot;:1,&quot;asciiRotation&quot;:0,&quot;dither&quot;:0,&quot;ditherSize&quot;:0,&quot;bloom&quot;:0,&quot;bloomRadius&quot;:8,&quot;monoScreen&quot;:0,&quot;monoScreenSize&quot;:0,&quot;monoScreenAngle&quot;:0,&quot;monoScreenSpread&quot;:0,&quot;monoScreenShape&quot;:0,&quot;monoScreenInvert&quot;:0,&quot;scanlines&quot;:0,&quot;scanlineCount&quot;:0,&quot;scanlineSoftness&quot;:0,&quot;chromaticAberration&quot;:0,&quot;chromaticAngle&quot;:0,&quot;crtCurvature&quot;:0,&quot;digitalGlitch&quot;:0,&quot;digitalGlitchColorSplit&quot;:0,&quot;digitalGlitchLineTear&quot;:0,&quot;digitalGlitchPixelate&quot;:0,&quot;digitalGlitchBlockAmount&quot;:0,&quot;digitalGlitchBlockDisplacement&quot;:0,&quot;digitalGlitchBlockOpacity&quot;:0,&quot;digitalGlitchSpeed&quot;:0,&quot;engraving&quot;:0,&quot;engravingSpacing&quot;:0.41,&quot;engravingMinThickness&quot;:0.2,&quot;engravingMaxThickness&quot;:0.45,&quot;engravingAngle&quot;:0.25,&quot;engravingContrast&quot;:0.46,&quot;engravingSharpness&quot;:0.59,&quot;engravingWave&quot;:0.2,&quot;engravingWaveFrequency&quot;:0.22,&quot;crosshatch&quot;:0,&quot;crosshatchSpacing&quot;:0.28,&quot;crosshatchThickness&quot;:0.25,&quot;crosshatchAngle&quot;:0.25,&quot;crosshatchContrast&quot;:0.33,&quot;crosshatchEdges&quot;:0.5,&quot;crosshatchLineWeight&quot;:0,&quot;crosshatchWave&quot;:0.33,&quot;crosshatchWaveFrequency&quot;:0.22,&quot;kuwahara&quot;:0,&quot;kuwaharaRadius&quot;:0.14,&quot;kuwaharaSharpness&quot;:0.31,&quot;kuwaharaSaturation&quot;:0.5},&quot;lut&quot;:null,&quot;colorSpace&quot;:&quot;rec709&quot;}" id="a1-v04" class="clip bg-video" src="assets/videos/DD_S04.mp4" data-start="9" data-duration="3.75" data-media-start="0.25" data-hf-media-start-basis="local" data-track-index="2" muted playsinline></video>
+    </div>
+
+    <!-- Shot 1 ONLY (0.12 - 2.44s): Top 3D Hook in open sunlit window ABOVE head (Y=308..415px < 490px!) -->
+    <div id="a1-t1-clip" class="clip float-stage" data-start="0.12" data-duration="2.32" data-track-index="3" data-layout-ignore>
+      <svg class="svg-typo" viewBox="0 0 1080 1920">
+        
+      <defs>
+        <linearGradient id="a1t1-emerald-fill" x1="0%" y1="0%" x2="14%" y2="100%">
+          <stop offset="0%" stop-color="#EBFFF1" />
+          <stop offset="24%" stop-color="#58DF7E" />
+          <stop offset="52%" stop-color="#0E8A38" />
+          <stop offset="78%" stop-color="#6CEB90" />
+          <stop offset="100%" stop-color="#064D1E" />
+        </linearGradient>
+
+        <linearGradient id="a1t1-gold-fill" x1="0%" y1="0%" x2="12%" y2="100%">
+          <stop offset="0%" stop-color="#FFFDF2" />
+          <stop offset="25%" stop-color="#FFE173" />
+          <stop offset="52%" stop-color="#E28708" />
+          <stop offset="78%" stop-color="#FFEC9E" />
+          <stop offset="100%" stop-color="#8C4800" />
+        </linearGradient>
+
+        <linearGradient id="a1t1-brand-deep" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="#0D6E2C" />
+          <stop offset="55%" stop-color="#074B1D" />
+          <stop offset="100%" stop-color="#042E11" />
+        </linearGradient>
+
+        <linearGradient id="a1t1-ht-accent" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#F59B14" />
+          <stop offset="55%" stop-color="#D46B00" />
+          <stop offset="100%" stop-color="#8C3E00" />
+        </linearGradient>
+
+        <filter id="a1t1-silk-3d" x="-16%" y="-24%" width="132%" height="152%" color-interpolation-filters="sRGB">
+          <feMorphology in="SourceAlpha" operator="dilate" radius="1.1" result="extrudeAlpha" />
+          <feOffset in="extrudeAlpha" dx="1.2" dy="3.0" result="extrudeShift" />
+          <feFlood flood-color="#053816" flood-opacity="0.78" result="extrudeColor" />
+          <feComposite in="extrudeColor" in2="extrudeShift" operator="in" result="extrudeRim" />
+          <feDropShadow in="SourceAlpha" dx="0" dy="6" stdDeviation="6" flood-color="#04240E" flood-opacity="0.28" result="softShadow" />
+          <feGaussianBlur in="SourceAlpha" stdDeviation="2.4" result="bevelBlur" />
+          <feSpecularLighting in="bevelBlur" surfaceScale="7.5" specularConstant="1.45" specularExponent="24" lighting-color="#FFFFFF" result="specRaw">
+            <fePointLight id="a1t1-light" x="240" y="-110" z="240" />
+          </feSpecularLighting>
+          <feComposite in="specRaw" in2="SourceAlpha" operator="in" result="specClipped" />
+          <feMerge>
+            <feMergeNode in="softShadow" />
+            <feMergeNode in="extrudeRim" />
+            <feMergeNode in="SourceGraphic" />
+            <feMergeNode in="specClipped" />
+          </feMerge>
+        </filter>
+
+        <filter id="a1t1-clean-lift" x="-14%" y="-22%" width="128%" height="148%">
+          <feDropShadow dx="0" dy="4" stdDeviation="5" flood-color="#04240E" flood-opacity="0.24" />
+        </filter>
+      </defs>
+    
+        <g id="a1-t1-badge" filter="url(#a1t1-clean-lift)">
+          <text x="540" y="308" text-anchor="middle" class="upper-claim" font-size="28" fill="#0B6B29">SÁNG CÀ PHÊ · TRƯA KẸT HỌP</text>
+        </g>
+        <g id="a1-t1-hero">
+          <text x="540" y="410" text-anchor="middle" class="satin-hero" font-size="88" fill="url(#a1t1-gold-fill)" filter="url(#a1t1-silk-3d)">Tối ăn bù?</text>
+        </g>
+      </svg>
+    </div>
+
+    <!-- SLIDE OVERLAY #1 (Shot 2: 2.52 - 5.15s): Frosted Slide Card in Lower-Left Face-Safe Zone (X=64..610, Y=1055..1345) -->
+    <div id="a1-slide-meal" class="clip slide-card" style="top: 1058px; width: 548px;" data-start="2.52" data-duration="2.63" data-track-index="4" data-layout-ignore>
+      <div class="slide-card-header">⏰ Nhịp ăn uống lệch chuẩn</div>
+      <div id="a1-m1" class="slide-row"><span class="slide-badge-dot slide-badge-warn">1</span> Sáng: Uống cà phê vội</div>
+      <div id="a1-m2" class="slide-row"><span class="slide-badge-dot slide-badge-warn">2</span> Trưa: Kẹt họp ăn qua loa</div>
+      <div id="a1-m3" class="slide-row" style="color:#C95B00;"><span class="slide-badge-dot slide-badge-warn">3</span> Tối về: Ăn bù thật no!</div>
+    </div>
+
+    <!-- SLIDE OVERLAY #2 (Shot 3: 5.35 - 8.92s): 3 Staggered Symptom Slide Pills (X=64..540, Y=955..1215 — Clear of face & hand!) -->
+    <div id="a1-slide-sym" class="clip slide-pill-stack" style="top: 958px;" data-start="5.35" data-duration="3.57" data-track-index="3" data-layout-ignore>
+      <div id="a1-sp1" class="slide-pill"><span class="slide-badge-dot slide-badge-warn">!</span> Nóng rát vùng thượng vị</div>
+      <div id="a1-sp2" class="slide-pill"><span class="slide-badge-dot slide-badge-warn">!</span> Ợ hơi · Đầy tức khó tiêu</div>
+      <div id="a1-sp3" class="slide-pill"><span class="slide-badge-dot slide-badge-warn">!</span> Cảm giác buồn nôn</div>
+    </div>
+
+    <!-- Shot 4 (9.12 - 12.55s): Gentle Self-Care Pill below cup (X=64..620, Y=1255..1340 — 100% Face-Safe!) -->
+    <div id="a1-slide-care" class="clip slide-pill-stack" style="top: 1256px;" data-start="9.12" data-duration="3.43" data-track-index="4" data-layout-ignore>
+      <div id="a1-care-pill" class="slide-pill slide-pill-emerald"><span class="slide-badge-dot">♥</span> Chăm sóc &amp; thương lấy dạ dày mình</div>
+    </div>
+  </div>
+
+  <script>
+    window.__timelines = window.__timelines || {};
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#a1-rig-01", { scale: 1.00 }, { scale: 1.05, duration: 2.50, ease: "none", immediateRender: false }, 0)
+      .fromTo("#a1-rig-02", { scale: 1.04 }, { scale: 1.00, duration: 2.75, ease: "none", immediateRender: false }, 2.50)
+      .fromTo("#a1-rig-03", { scale: 1.00 }, { scale: 1.05, duration: 3.75, ease: "none", immediateRender: false }, 5.25)
+      .fromTo("#a1-rig-04", { scale: 1.05 }, { scale: 1.00, duration: 3.75, ease: "none", immediateRender: false }, 9.00);
+
+    // Shot 1 Top 3D Hook
+    tl.fromTo("#a1-t1-badge", { opacity: 0, y: -12, scale: 0.93, filter: "blur(12px)", transformOrigin: "50% 50%" }, { opacity: 1, y: 0, scale: 1, filter: "blur(0px)", duration: 0.26, ease: "power3.out", immediateRender: false }, 0.14)
+      .fromTo("#a1-t1-hero", { opacity: 0, y: 16, scale: 0.93, filter: "blur(14px)", transformOrigin: "50% 50%" }, { opacity: 1, y: 0, scale: 1, filter: "blur(0px)", duration: 0.32, ease: "back.out(1.4)", immediateRender: false }, 0.24)
+      .fromTo("#a1t1-light", { attr: { x: 180 } }, { attr: { x: 900 }, duration: 1.9, ease: "sine.inOut", immediateRender: false }, 0.28)
+      .to("#a1-t1-clip", { opacity: 0, filter: "blur(10px)", duration: 0.18, ease: "power2.in" }, 2.24);
+
+    // Slide Overlay #1 (Shot 2)
+    tl.fromTo("#a1-slide-meal", { opacity: 0, x: -160, filter: "blur(12px)" }, { opacity: 1, x: 0, filter: "blur(0px)", duration: 0.34, ease: "back.out(1.35)", immediateRender: false }, 2.54)
+      .fromTo("#a1-m1", { opacity: 0, x: -24 }, { opacity: 1, x: 0, duration: 0.22, ease: "power2.out", immediateRender: false }, 2.66)
+      .fromTo("#a1-m2", { opacity: 0, x: -24 }, { opacity: 1, x: 0, duration: 0.22, ease: "power2.out", immediateRender: false }, 2.80)
+      .fromTo("#a1-m3", { opacity: 0, x: -24, scale: 0.95 }, { opacity: 1, x: 0, scale: 1, duration: 0.26, ease: "back.out(1.5)", immediateRender: false }, 2.96)
+      .to("#a1-slide-meal", { opacity: 0, x: -90, filter: "blur(10px)", duration: 0.20, ease: "power2.in" }, 4.92);
+
+    // Slide Overlay #2 (Shot 3 — Staggered Symptom Pills)
+    tl.fromTo("#a1-sp1", { opacity: 0, x: -140, filter: "blur(10px)" }, { opacity: 1, x: 0, filter: "blur(0px)", duration: 0.30, ease: "back.out(1.4)", immediateRender: false }, 5.38)
+      .fromTo("#a1-sp2", { opacity: 0, x: -140, filter: "blur(10px)" }, { opacity: 1, x: 0, filter: "blur(0px)", duration: 0.30, ease: "back.out(1.4)", immediateRender: false }, 6.10)
+      .fromTo("#a1-sp3", { opacity: 0, x: -140, filter: "blur(10px)" }, { opacity: 1, x: 0, filter: "blur(0px)", duration: 0.30, ease: "back.out(1.4)", immediateRender: false }, 6.85)
+      .to("#a1-slide-sym", { opacity: 0, x: -80, filter: "blur(10px)", duration: 0.20, ease: "power2.in" }, 8.70);
+
+    // Shot 4 Gentle Pill
+    tl.fromTo("#a1-care-pill", { opacity: 0, x: -130, filter: "blur(10px)" }, { opacity: 1, x: 0, filter: "blur(0px)", duration: 0.32, ease: "back.out(1.35)", immediateRender: false }, 9.15)
+      .to("#a1-slide-care", { opacity: 0, filter: "blur(8px)", duration: 0.20, ease: "power2.in" }, 12.32);
+
+    window.__timelines["act1-hook"] = tl;
+  </script>
+</template>

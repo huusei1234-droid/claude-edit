@@ -1,0 +1,229 @@
+{
+  "inspected_at": "2026-11-27T16:35:23.735913",
+  "video_path": "C:\\AI\\full studio\\output\\k5-ep01-v4\\261127 K5 Con dâu khóc nghẹn mất hai hộp sữa chị gái tặng và màn chồng bắt em chồng trả quà xin lỗi tại chỗ final.mp4",
+  "fingerprint": {
+    "file_size": 114519999,
+    "sha256_head_tail": "bd8044e3a265906cdb5d76b5880af5416b23afddbdf59ff4a287ca2de103d504"
+  },
+  "streams": {
+    "width": 1080,
+    "height": 1920,
+    "v_codec": "h264",
+    "a_codec": "aac",
+    "fps": 30.0,
+    "format_dur": 132.1,
+    "video_dur": 132.099,
+    "audio_dur": 132.1,
+    "av_sync_delta": 0.001
+  },
+  "letterbox": {
+    "top_black_px": 0,
+    "bottom_black_px": 0
+  },
+  "integrated_lufs": -16.2,
+  "cut_count": 27,
+  "cuts": [
+    {
+      "index": 1,
+      "start": 0.0,
+      "end": 4.77,
+      "dur": 4.77,
+      "label": "hook_s04"
+    },
+    {
+      "index": 2,
+      "start": 4.77,
+      "end": 11.13,
+      "dur": 6.37,
+      "label": "hook_s06"
+    },
+    {
+      "index": 3,
+      "start": 11.13,
+      "end": 14.17,
+      "dur": 3.03,
+      "label": "hook_s08"
+    },
+    {
+      "index": 4,
+      "start": 14.17,
+      "end": 14.43,
+      "dur": 0.27,
+      "label": "hook_flash"
+    },
+    {
+      "index": 5,
+      "start": 14.43,
+      "end": 21.0,
+      "dur": 6.57,
+      "label": "s01"
+    },
+    {
+      "index": 6,
+      "start": 21.0,
+      "end": 24.63,
+      "dur": 3.63,
+      "label": "s02"
+    },
+    {
+      "index": 7,
+      "start": 24.63,
+      "end": 26.93,
+      "dur": 2.3,
+      "label": "cu_boj_01"
+    },
+    {
+      "index": 8,
+      "start": 26.93,
+      "end": 34.67,
+      "dur": 7.73,
+      "label": "s03"
+    },
+    {
+      "index": 9,
+      "start": 34.67,
+      "end": 39.43,
+      "dur": 4.77,
+      "label": "s04"
+    },
+    {
+      "index": 10,
+      "start": 39.43,
+      "end": 45.17,
+      "dur": 5.73,
+      "label": "s05"
+    },
+    {
+      "index": 11,
+      "start": 45.17,
+      "end": 47.27,
+      "dur": 2.1,
+      "label": "cu_boj_02"
+    },
+    {
+      "index": 12,
+      "start": 47.27,
+      "end": 51.53,
+      "dur": 4.27,
+      "label": "s06"
+    },
+    {
+      "index": 13,
+      "start": 51.53,
+      "end": 55.83,
+      "dur": 4.3,
+      "label": "s07"
+    },
+    {
+      "index": 14,
+      "start": 55.83,
+      "end": 58.03,
+      "dur": 2.2,
+      "label": "cu_boj_04"
+    },
+    {
+      "index": 15,
+      "start": 58.03,
+      "end": 64.9,
+      "dur": 6.87,
+      "label": "s08"
+    },
+    {
+      "index": 16,
+      "start": 64.9,
+      "end": 71.77,
+      "dur": 6.87,
+      "label": "s09"
+    },
+    {
+      "index": 17,
+      "start": 71.77,
+      "end": 76.33,
+      "dur": 4.57,
+      "label": "s10"
+    },
+    {
+      "index": 18,
+      "start": 76.33,
+      "end": 81.97,
+      "dur": 5.63,
+      "label": "s10b"
+    },
+    {
+      "index": 19,
+      "start": 81.97,
+      "end": 87.1,
+      "dur": 5.13,
+      "label": "s11"
+    },
+    {
+      "index": 20,
+      "start": 87.1,
+      "end": 92.87,
+      "dur": 5.77,
+      "label": "s12"
+    },
+    {
+      "index": 21,
+      "start": 92.87,
+      "end": 96.43,
+      "dur": 3.57,
+      "label": "s12b"
+    },
+    {
+      "index": 22,
+      "start": 96.43,
+      "end": 98.83,
+      "dur": 2.4,
+      "label": "cu_boj_03"
+    },
+    {
+      "index": 23,
+      "start": 98.83,
+      "end": 105.5,
+      "dur": 6.67,
+      "label": "s13"
+    },
+    {
+      "index": 24,
+      "start": 105.5,
+      "end": 111.63,
+      "dur": 6.13,
+      "label": "s14"
+    },
+    {
+      "index": 25,
+      "start": 111.63,
+      "end": 117.93,
+      "dur": 6.3,
+      "label": "s15"
+    },
+    {
+      "index": 26,
+      "start": 117.93,
+      "end": 123.93,
+      "dur": 6.0,
+      "label": "s16"
+    },
+    {
+      "index": 27,
+      "start": 123.93,
+      "end": 132.1,
+      "dur": 8.17,
+      "label": "s17"
+    }
+  ],
+  "sheets": {
+    "all_cuts_full": "C:\\AI\\full studio\\output\\k5-ep01-v4\\qc_gate_v6\\QC_FINAL_ALL_CUTS_FULL.jpg",
+    "all_cuts_zoom": "C:\\AI\\full studio\\output\\k5-ep01-v4\\qc_gate_v6\\QC_FINAL_ALL_CUTS_ZOOM.jpg"
+  },
+  "audio_audit": {
+    "word_count": 486,
+    "eof_tail_sec": 0.76,
+    "eof_cutoff": false,
+    "repetitions": [],
+    "transcript": "Ủa má ơi, 2 hộp sữa Bojomi chị hai mới đem qua cho con để đây đâu mất tiêu rồi má Công nhận sữa hạt Bojomi của chị Thảo uống thơm thanh thiệt đó má Thảo nào 1 hộp hơn 500 ngàn Đồ chị hai thương em cực nhọc mới mua cho Thấy em thức khuya chăm con đau mỏi lưng gối Chị hai mua 2 hộp Bojomi này qua bồi bổ cho em nè Em cảm ơn chị hai nhiều lắm Để em tiễn chị hai ra thang máy rồi vô pha uống liền ngang Alo Linh hả con gái, qua nhà má lẹ lên con Chị vợ thằng Tuấn mới đem qua 2 hộp Bo Yumi xịn lắm nè Ủa má ơi 2 hộp sữa Bo Yumi chị hai mới đem qua cho con Để đây đâu mất tiêu rồi má Ai thèm rớ tới đồ của cô mà hỏi Tự cất đâu quên rồi Tính đổ thừa cho má chồng hả Công nhận sữa hạt Bo Yumi của chị Thảo Uống thơm thanh thiệt đó má Thảo nào 1 hộp hơn 500 ngàn Con gái má cành vàng lá ngọc Mới xứng uống canxi tảo biển Lát con đem nguyên 2 hộp đó về uống luôn đi Đồ chị hai thương em cực nhọc mới mua cho Vậy mà má cũng lén lấy cho cô Linh hết trơn Tao lấy cho con gái ruột tao uống đó rồi sao Bước vô nhà này thì cái gì cũng của nhà này Vô bếp đi Có chuyện gì mà ồn ào dưới bếp vậy má Sao mắt vợ con đỏ hoe hết trơn vậy nè Chết rồi anh hai về bất thành linh Phải lén giấu hai hộp này ra sau lưng mới được Vợ mày ích kỷ lắm Tuấn ơi Má mới xin 1 ly mà nó gào khóc hổn hào với má kìa Bác kêu chỉ xin thử 1 ly Vậy cô Linh đang nếp góc tủ lén dấu cái gì sau lưng kia vậy bác Đứng lại đó Linh Đưa ngay cái thứ em đang lén dấu sau lưng ra đây cho anh coi Cái gì đây Linh Nguyên hai hộp Bozomi của chị dâu em lén dấu đem về Mà còn hùa nhau vu quan cho Thảo hả Dạ đâu phải em tự lấy đâu anh hai Chính má lấy dấu của chị Thảo Rồi gọi em qua đem về đó chứ Bưng ngay hai hộp đó bằng hai tay trả lại cho chị Thảo Rồi cuối đầu xin lỗi chị dâu liền trước mặt anh Em xin lỗi chị Hai Ngân Em xin lỗi chị Thảo Từ nay em không dám tham lam lấy đồ của chị nữa Từ nay trong nhà này Ai còn ức hiếp Thảo là tôi đưa vợ ra ở riêng ngay Tôi xử lý vậy Đã hợp tình hợp lý chưa cô chú anh chị"
+  },
+  "machine_failures": [],
+  "machine_status": "READY_FOR_VISUAL_SIGN_OFF"
+}

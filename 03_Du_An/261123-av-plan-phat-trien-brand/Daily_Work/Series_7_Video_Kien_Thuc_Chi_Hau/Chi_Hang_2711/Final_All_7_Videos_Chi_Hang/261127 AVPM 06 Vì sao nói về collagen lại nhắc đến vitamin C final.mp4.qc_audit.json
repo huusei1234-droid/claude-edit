@@ -1,0 +1,61 @@
+{
+  "inspected_at": "2026-11-27T17:01:41.703950",
+  "video_path": "C:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Series_7_Video_Kien_Thuc_Chi_Hau\\Chi_Hang_2711\\Final_All_7_Videos_Chi_Hang\\261127 AVPM 06 Vì sao nói về collagen lại nhắc đến vitamin C final.mp4",
+  "fingerprint": {
+    "file_size": 21419204,
+    "sha256_head_tail": "751e764aaecbe41e75a9237e6acd8ae08d5fba3c221b32d3a819ce5591a2f052"
+  },
+  "streams": {
+    "width": 1080,
+    "height": 1920,
+    "v_codec": "h264",
+    "a_codec": "aac",
+    "fps": 24.0,
+    "format_dur": 28.375,
+    "video_dur": 28.333,
+    "audio_dur": 28.372,
+    "av_sync_delta": 0.039
+  },
+  "letterbox": {
+    "top_black_px": 0,
+    "bottom_black_px": 0
+  },
+  "integrated_lufs": -14.7,
+  "cut_count": 3,
+  "cuts": [
+    {
+      "index": 1,
+      "start": 0.0,
+      "end": 10.03,
+      "dur": 10.03,
+      "label": "scene_01"
+    },
+    {
+      "index": 2,
+      "start": 10.03,
+      "end": 19.33,
+      "dur": 9.3,
+      "label": "scene_02"
+    },
+    {
+      "index": 3,
+      "start": 19.33,
+      "end": 28.38,
+      "dur": 9.05,
+      "label": "scene_03"
+    }
+  ],
+  "sheets": {
+    "all_cuts_full": "C:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Series_7_Video_Kien_Thuc_Chi_Hau\\Chi_Hang_2711\\V06_Collagen_Va_Vitamin_C\\03_QC_Gate\\QC_FINAL_ALL_CUTS_FULL.jpg",
+    "all_cuts_zoom": "C:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Series_7_Video_Kien_Thuc_Chi_Hau\\Chi_Hang_2711\\V06_Collagen_Va_Vitamin_C\\03_QC_Gate\\QC_FINAL_ALL_CUTS_ZOOM.jpg"
+  },
+  "audio_audit": {
+    "word_count": 94,
+    "eof_tail_sec": 0.715,
+    "eof_cutoff": false,
+    "repetitions": [],
+    "transcript": "Nhắc đến collagen mà hàng lại cầm một quả ổi, nghe hơi lạ đúng không? Cơ thể mình tự tạo collagen và vitamin C tham gia vào quá trình đó. Collagen có trong da và nhiều mô liên kết của cơ thể, vậy hôm nay làm gì cho dễ? Nhìn xem bữa ăn của mình có thực phẩm dầu vitamin C chưa? Có thể là vài miếng ổi sau bữa trưa, một quả cam cho bữa xế, hoặc thêm ớt chuông vào đĩa rau, chọn món mình thích để dễ ăn đều hơn nhé."
+  },
+  "machine_failures": [],
+  "machine_status": "READY_FOR_VISUAL_SIGN_OFF"
+}

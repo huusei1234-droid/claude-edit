@@ -1,0 +1,13 @@
+{
+  "signed_at": "2026-11-27T18:00:16.292707",
+  "certified_path": "C:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Series_7_Video_Kien_Thuc_Chi_Hau\\Chi_Hang_2711\\Final_All_7_Videos_Chi_Hang\\261127 AVPM 04 Ít uống sữa tìm canxi ở đâu final.mp4",
+  "verdict": "PASS",
+  "auditor_verified": true,
+  "auditor": "video-qc-auditor",
+  "notes": "Đã kiểm duyệt 100% 3 cú cắt (#01, #02, #03) trên FULL/ZOOM sheets và nghe toàn bộ MP4: Bàn ăn #01 (cá mòi, đậu phụ, rau xanh, chén trà ấm) và #03 (rổ thực phẩm giàu canxi + ly nước lọc trong suốt) đã sạch 100% ly/bình sữa trắng; #02 cầm hộp sữa đậu nành trơn xem bảng Nutrition Facts chuẩn kịch bản; Chị Hằng đồng nhất bộ Đầm Vàng Cardigan; hộp chữ nằm trọn trong vùng an toàn 9:16; thoại trôi chảy 100% (đã xử lý sạch âm vấp môi ở câu kết, đủ chữ những món), 0% lặp từ, 0% đứt chữ, 0% BGM.",
+  "override_reason": "",
+  "cut_count": 3,
+  "integrated_lufs": -15.0,
+  "file_size": 24815412,
+  "sha256_head_tail": "b0a96dbef1a1456a72ec85b263a22cb61b48729feea11a358ded12878385293a"
+}

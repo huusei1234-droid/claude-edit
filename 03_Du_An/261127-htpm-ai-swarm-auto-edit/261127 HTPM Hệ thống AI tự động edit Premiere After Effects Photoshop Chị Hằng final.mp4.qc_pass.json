@@ -1,0 +1,13 @@
+{
+  "signed_at": "2026-11-27T16:11:01.260442",
+  "certified_path": "C:\\AI\\full studio\\projects\\htpm_ai_swarm_auto_edit_261127\\261127 HTPM Hệ thống AI tự động edit Premiere After Effects Photoshop Chị Hằng final.mp4",
+  "verdict": "PASS",
+  "auditor_verified": true,
+  "auditor": "video-qc-auditor",
+  "notes": "PASS 100% ca 5 tieu chi tren 8/8 pha chuyen ung dung Adobe CC (#01..#08, 21.32s @ 60fps, -14.2 LUFS, SyncDelta=0.003s): (A) 100% bao bi san pham that HTPM tren Photoshop 2026 (Legend White Skin, Gel Phu Khang, Romance Love, Poster He Sinh Thai), tren ban Chi Hang, CMS, Gemini va Project Bin; (B) Dong bo chuan he sinh thai Premiere Pro 2026 x After Effects 2026 Dynamic Link x Photoshop x Illustrator x Media Encoder x Alt+Tab, 0% dao cu thua hay anh cat loi; (C) 72 con tro OS 60fps muot ne sach guong mat Chi Hang, ket tron 4 cau thoai tai 20.92s va khoa frame mim cuoi tu nhien kem Render Complete + Master Meter -48dB o 0.40s cuoi (0% nhep moi cam); (D) 8 pha bo cuc da cua so sinh dong; (E) 0% lap tu, 0% dut chu, Program/Composition Monitor nam gon trong vung trang an toan TikTok/Reels 9:16.",
+  "override_reason": "",
+  "cut_count": 8,
+  "integrated_lufs": -14.2,
+  "file_size": 84514283,
+  "sha256_head_tail": "1e9db126569ef7e6847fc9e90ff1af28f5c630308b06b13cf3de428b6da5b217"
+}

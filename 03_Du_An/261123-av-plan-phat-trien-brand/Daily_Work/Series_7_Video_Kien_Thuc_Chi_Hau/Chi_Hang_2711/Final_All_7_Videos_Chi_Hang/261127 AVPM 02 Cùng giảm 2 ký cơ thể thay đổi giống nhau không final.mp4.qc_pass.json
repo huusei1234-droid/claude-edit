@@ -1,0 +1,13 @@
+{
+  "signed_at": "2026-11-27T16:23:36.572066",
+  "certified_path": "C:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Series_7_Video_Kien_Thuc_Chi_Hau\\Chi_Hang_2711\\Final_All_7_Videos_Chi_Hang\\261127 AVPM 02 Cùng giảm 2 ký cơ thể thay đổi giống nhau không final.mp4",
+  "verdict": "PASS",
+  "auditor_verified": true,
+  "auditor": "video-qc-auditor",
+  "notes": "PASS 100%: Chị Hằng đồng nhất gương mặt & áo polo kem navy xuyên suốt 3 cảnh; cân điện tử, tạ tay pastel, túi đi chợ + bữa cơm cá rau khớp kịch bản; 94/94 từ rõ chữ 0% lặp từ, 0% nuốt chữ, -15.1 LUFS, Safe Zone 9:16 chuẩn.",
+  "override_reason": "",
+  "cut_count": 3,
+  "integrated_lufs": -15.1,
+  "file_size": 22606953,
+  "sha256_head_tail": "b89dee939b626fe4ca3778035ea70d16bef00dd99273980bbc39cce4941f10aa"
+}

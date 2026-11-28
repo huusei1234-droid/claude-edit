@@ -1,0 +1,411 @@
+<template>
+  <style>
+    
+    @font-face { font-family: "FrauncesVN"; src: url("assets/fonts/Fraunces-Black.ttf") format("truetype"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "PlayfairVN"; src: url("assets/fonts/PlayfairDisplay-ExtraBold.ttf") format("truetype"); font-weight: 800; font-display: block; }
+    @font-face { font-family: "PlayfairVNItalic"; src: url("assets/fonts/PlayfairDisplay-BoldItalic.ttf") format("truetype"); font-weight: 700; font-style: italic; font-display: block; }
+    @font-face { font-family: "BeVietnamVN"; src: url("assets/fonts/BeVietnamPro-ExtraBold.ttf") format("truetype"); font-weight: 800; font-display: block; }
+    @font-face { font-family: "BeVietnamSemiVN"; src: url("assets/fonts/BeVietnamPro-SemiBold.ttf") format("truetype"); font-weight: 600; font-display: block; }
+    @font-face { font-family: "DancingVN"; src: url("assets/fonts/DancingScript-Bold.ttf") format("truetype"); font-weight: 700; font-display: block; }
+
+    #root {
+      position: absolute; inset: 0; width: 1080px; height: 1920px; overflow: hidden;
+      background: #072614; font-family: "BeVietnamVN", sans-serif;
+    }
+    .cam-rig { position: absolute; inset: 0; width: 1080px; height: 1920px; transform-origin: 50% 50%; }
+    .bg-video { position: absolute; inset: 0; width: 1080px; height: 1920px; object-fit: cover; display: block; }
+    .float-stage {
+      position: absolute; inset: 0; width: 1080px; height: 1920px;
+      pointer-events: none; z-index: 9;
+    }
+    .svg-typo { width: 100%; height: 100%; overflow: visible; display: block; }
+    .brand-contour {
+      font-family: "PlayfairVN", Georgia, serif;
+      font-weight: 800; paint-order: stroke fill;
+      stroke: #ffffff; stroke-width: 14px; stroke-linejoin: round; stroke-linecap: round;
+      letter-spacing: 0.01em;
+    }
+    .brand-ht {
+      font-family: "PlayfairVNItalic", Georgia, serif;
+      font-style: italic; font-weight: 700; paint-order: stroke fill;
+      stroke: #ffffff; stroke-width: 14px; stroke-linejoin: round; stroke-linecap: round;
+    }
+    .script-sub {
+      font-family: "DancingVN", cursive;
+      font-weight: 700; paint-order: stroke fill;
+      stroke: rgba(255, 255, 255, 0.95); stroke-width: 8px; stroke-linejoin: round;
+    }
+    .upper-claim {
+      font-family: "BeVietnamVN", sans-serif;
+      font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em;
+      paint-order: stroke fill;
+      stroke: rgba(255, 255, 255, 0.96); stroke-width: 9px; stroke-linejoin: round;
+    }
+    .satin-hero {
+      font-family: "FrauncesVN", "PlayfairVN", Georgia, serif;
+      font-weight: 900; letter-spacing: -0.01em;
+      paint-order: stroke fill;
+      stroke: rgba(255, 255, 255, 0.92); stroke-width: 10px; stroke-linejoin: round;
+    }
+    .cta-open {
+      font-family: "BeVietnamVN", sans-serif;
+      font-weight: 800; letter-spacing: 0.01em;
+      paint-order: stroke fill;
+      stroke: #ffffff; stroke-width: 11px; stroke-linejoin: round; stroke-linecap: round;
+    }
+
+    /* Frosted Liquid-Glass Slide Overlay System (Safe Zone X in [64..865], Face-Safe 100%) */
+    .slide-card {
+      position: absolute;
+      left: 64px;
+      border-radius: 26px;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.94) 0%, rgba(240, 252, 244, 0.90) 100%);
+      border: 2.5px solid rgba(22, 148, 62, 0.34);
+      box-shadow: 0 14px 34px rgba(5, 42, 18, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.95);
+      padding: 18px 24px;
+      z-index: 10;
+      pointer-events: none;
+    }
+    .slide-card-header {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: linear-gradient(90deg, #0B6E2B 0%, #179440 100%);
+      color: #ffffff;
+      font-family: "BeVietnamVN", sans-serif;
+      font-size: 19px;
+      font-weight: 800;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 999px;
+      margin-bottom: 12px;
+      box-shadow: 0 4px 12px rgba(11, 110, 43, 0.28);
+    }
+    .slide-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-family: "BeVietnamVN", sans-serif;
+      font-size: 24px;
+      font-weight: 800;
+      color: #083D19;
+      padding: 6px 0;
+      line-height: 1.28;
+    }
+    .slide-badge-dot {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 17px;
+      font-weight: 800;
+      flex-shrink: 0;
+      background: #E4F8EA;
+      color: #0D7A31;
+      border: 2px solid #8BE0A4;
+    }
+    .slide-badge-warn {
+      background: #FFF1DF;
+      color: #C95B00;
+      border: 2px solid #F7BA77;
+    }
+    .slide-pill-stack {
+      position: absolute;
+      left: 64px;
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+      z-index: 10;
+      pointer-events: none;
+    }
+    .slide-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 247, 236, 0.92) 100%);
+      border-left: 7px solid #E07A00;
+      border-top: 1.5px solid rgba(255, 255, 255, 0.95);
+      border-right: 1.5px solid rgba(224, 122, 0, 0.25);
+      border-bottom: 1.5px solid rgba(224, 122, 0, 0.25);
+      border-radius: 18px;
+      padding: 11px 22px;
+      font-family: "BeVietnamVN", sans-serif;
+      font-size: 24px;
+      font-weight: 800;
+      color: #4A1E00;
+      box-shadow: 0 10px 24px rgba(38, 18, 4, 0.20);
+      width: fit-content;
+      max-width: 780px;
+    }
+    .slide-pill-emerald {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.96) 0%, rgba(236, 253, 241, 0.93) 100%);
+      border-left: 7px solid #0E8A38;
+      border-right: 1.5px solid rgba(14, 138, 56, 0.28);
+      border-bottom: 1.5px solid rgba(14, 138, 56, 0.28);
+      color: #063D18;
+    }
+
+    .herb-grid {
+      position: absolute;
+      left: 64px;
+      top: 438px;
+      width: 432px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      z-index: 10;
+      pointer-events: none;
+    }
+    .herb-chip {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.96) 0%, rgba(238, 253, 242, 0.93) 100%);
+      border-left: 6px solid #0E8A38;
+      border-radius: 16px;
+      padding: 10px 18px;
+      font-family: "BeVietnamVN", sans-serif;
+      font-size: 22px;
+      font-weight: 800;
+      color: #063D18;
+      box-shadow: 0 8px 22px rgba(5, 38, 16, 0.20);
+    }
+    .herb-sub {
+      font-family: "BeVietnamSemiVN", sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      color: #B85900;
+      margin-left: auto;
+    }
+    .usp-bar {
+      position: absolute;
+      left: 64px;
+      top: 1268px;
+      width: 796px;
+      display: flex;
+      gap: 12px;
+      z-index: 10;
+      pointer-events: none;
+    }
+    .usp-tag {
+      flex: 1;
+      text-align: center;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(236, 253, 241, 0.92) 100%);
+      border: 2px solid rgba(14, 138, 56, 0.34);
+      border-radius: 16px;
+      padding: 10px 10px;
+      font-family: "BeVietnamVN", sans-serif;
+      font-size: 20px;
+      font-weight: 800;
+      color: #07461C;
+      box-shadow: 0 8px 20px rgba(4, 34, 14, 0.18);
+    }
+  </style>
+  <div id="root" data-composition-id="act3-hero-demo" data-width="1080" data-height="1920" data-start="0" data-duration="15.75">
+    <div id="a3-rig-01" class="cam-rig" data-layout-allow-overflow data-layout-allow-overlap>
+      <video data-color-grading="{&quot;preset&quot;:null,&quot;intensity&quot;:1,&quot;adjust&quot;:{&quot;exposure&quot;:0.04,&quot;contrast&quot;:0.08,&quot;highlights&quot;:0.04,&quot;shadows&quot;:0.05,&quot;whites&quot;:0.06,&quot;blacks&quot;:0,&quot;temperature&quot;:0.03,&quot;tint&quot;:0.01,&quot;vibrance&quot;:0.12,&quot;saturation&quot;:0.05},&quot;details&quot;:{&quot;vignette&quot;:0.04,&quot;vignetteMidpoint&quot;:0.5,&quot;vignetteRoundness&quot;:0,&quot;vignetteFeather&quot;:0.65,&quot;grain&quot;:0,&quot;grainSize&quot;:0.25,&quot;grainRoughness&quot;:0.5},&quot;effects&quot;:{&quot;blur&quot;:0,&quot;pixelate&quot;:0,&quot;chromaBleed&quot;:0,&quot;tapeDamage&quot;:0,&quot;tapeTracking&quot;:0,&quot;tapeNoise&quot;:1,&quot;tapeSpeed&quot;:0.5,&quot;filmArtifacts&quot;:0,&quot;halftone&quot;:0,&quot;halftoneSize&quot;:0,&quot;twoInkPrint&quot;:0,&quot;twoInkPrintSize&quot;:0,&quot;ascii&quot;:0,&quot;asciiSize&quot;:0.065,&quot;asciiInvert&quot;:0,&quot;asciiStyle&quot;:0,&quot;asciiColor&quot;:1,&quot;asciiRotation&quot;:0,&quot;dither&quot;:0,&quot;ditherSize&quot;:0,&quot;bloom&quot;:0,&quot;bloomRadius&quot;:8,&quot;monoScreen&quot;:0,&quot;monoScreenSize&quot;:0,&quot;monoScreenAngle&quot;:0,&quot;monoScreenSpread&quot;:0,&quot;monoScreenShape&quot;:0,&quot;monoScreenInvert&quot;:0,&quot;scanlines&quot;:0,&quot;scanlineCount&quot;:0,&quot;scanlineSoftness&quot;:0,&quot;chromaticAberration&quot;:0,&quot;chromaticAngle&quot;:0,&quot;crtCurvature&quot;:0,&quot;digitalGlitch&quot;:0,&quot;digitalGlitchColorSplit&quot;:0,&quot;digitalGlitchLineTear&quot;:0,&quot;digitalGlitchPixelate&quot;:0,&quot;digitalGlitchBlockAmount&quot;:0,&quot;digitalGlitchBlockDisplacement&quot;:0,&quot;digitalGlitchBlockOpacity&quot;:0,&quot;digitalGlitchSpeed&quot;:0,&quot;engraving&quot;:0,&quot;engravingSpacing&quot;:0.41,&quot;engravingMinThickness&quot;:0.2,&quot;engravingMaxThickness&quot;:0.45,&quot;engravingAngle&quot;:0.25,&quot;engravingContrast&quot;:0.46,&quot;engravingSharpness&quot;:0.59,&quot;engravingWave&quot;:0.2,&quot;engravingWaveFrequency&quot;:0.22,&quot;crosshatch&quot;:0,&quot;crosshatchSpacing&quot;:0.28,&quot;crosshatchThickness&quot;:0.25,&quot;crosshatchAngle&quot;:0.25,&quot;crosshatchContrast&quot;:0.33,&quot;crosshatchEdges&quot;:0.5,&quot;crosshatchLineWeight&quot;:0,&quot;crosshatchWave&quot;:0.33,&quot;crosshatchWaveFrequency&quot;:0.22,&quot;kuwahara&quot;:0,&quot;kuwaharaRadius&quot;:0.14,&quot;kuwaharaSharpness&quot;:0.31,&quot;kuwaharaSaturation&quot;:0.5},&quot;lut&quot;:null,&quot;colorSpace&quot;:&quot;rec709&quot;}" id="a3-v01" class="clip bg-video" src="assets/videos/DD_S09.mp4" data-start="0" data-duration="7.5" data-media-start="0.15" data-playback-rate="0.95" data-hf-media-start-basis="local" data-track-index="1" muted playsinline></video>
+    </div>
+    <div id="a3-rig-02" class="cam-rig" data-layout-allow-overflow data-layout-allow-overlap>
+      <video data-color-grading="{&quot;preset&quot;:null,&quot;intensity&quot;:1,&quot;adjust&quot;:{&quot;exposure&quot;:0.04,&quot;contrast&quot;:0.08,&quot;highlights&quot;:0.04,&quot;shadows&quot;:0.05,&quot;whites&quot;:0.06,&quot;blacks&quot;:0,&quot;temperature&quot;:0.03,&quot;tint&quot;:0.01,&quot;vibrance&quot;:0.12,&quot;saturation&quot;:0.05},&quot;details&quot;:{&quot;vignette&quot;:0.04,&quot;vignetteMidpoint&quot;:0.5,&quot;vignetteRoundness&quot;:0,&quot;vignetteFeather&quot;:0.65,&quot;grain&quot;:0,&quot;grainSize&quot;:0.25,&quot;grainRoughness&quot;:0.5},&quot;effects&quot;:{&quot;blur&quot;:0,&quot;pixelate&quot;:0,&quot;chromaBleed&quot;:0,&quot;tapeDamage&quot;:0,&quot;tapeTracking&quot;:0,&quot;tapeNoise&quot;:1,&quot;tapeSpeed&quot;:0.5,&quot;filmArtifacts&quot;:0,&quot;halftone&quot;:0,&quot;halftoneSize&quot;:0,&quot;twoInkPrint&quot;:0,&quot;twoInkPrintSize&quot;:0,&quot;ascii&quot;:0,&quot;asciiSize&quot;:0.065,&quot;asciiInvert&quot;:0,&quot;asciiStyle&quot;:0,&quot;asciiColor&quot;:1,&quot;asciiRotation&quot;:0,&quot;dither&quot;:0,&quot;ditherSize&quot;:0,&quot;bloom&quot;:0,&quot;bloomRadius&quot;:8,&quot;monoScreen&quot;:0,&quot;monoScreenSize&quot;:0,&quot;monoScreenAngle&quot;:0,&quot;monoScreenSpread&quot;:0,&quot;monoScreenShape&quot;:0,&quot;monoScreenInvert&quot;:0,&quot;scanlines&quot;:0,&quot;scanlineCount&quot;:0,&quot;scanlineSoftness&quot;:0,&quot;chromaticAberration&quot;:0,&quot;chromaticAngle&quot;:0,&quot;crtCurvature&quot;:0,&quot;digitalGlitch&quot;:0,&quot;digitalGlitchColorSplit&quot;:0,&quot;digitalGlitchLineTear&quot;:0,&quot;digitalGlitchPixelate&quot;:0,&quot;digitalGlitchBlockAmount&quot;:0,&quot;digitalGlitchBlockDisplacement&quot;:0,&quot;digitalGlitchBlockOpacity&quot;:0,&quot;digitalGlitchSpeed&quot;:0,&quot;engraving&quot;:0,&quot;engravingSpacing&quot;:0.41,&quot;engravingMinThickness&quot;:0.2,&quot;engravingMaxThickness&quot;:0.45,&quot;engravingAngle&quot;:0.25,&quot;engravingContrast&quot;:0.46,&quot;engravingSharpness&quot;:0.59,&quot;engravingWave&quot;:0.2,&quot;engravingWaveFrequency&quot;:0.22,&quot;crosshatch&quot;:0,&quot;crosshatchSpacing&quot;:0.28,&quot;crosshatchThickness&quot;:0.25,&quot;crosshatchAngle&quot;:0.25,&quot;crosshatchContrast&quot;:0.33,&quot;crosshatchEdges&quot;:0.5,&quot;crosshatchLineWeight&quot;:0,&quot;crosshatchWave&quot;:0.33,&quot;crosshatchWaveFrequency&quot;:0.22,&quot;kuwahara&quot;:0,&quot;kuwaharaRadius&quot;:0.14,&quot;kuwaharaSharpness&quot;:0.31,&quot;kuwaharaSaturation&quot;:0.5},&quot;lut&quot;:null,&quot;colorSpace&quot;:&quot;rec709&quot;}" id="a3-v02" class="clip bg-video" src="assets/videos/DD_S10.mp4" data-start="7.5" data-duration="4" data-media-start="0.25" data-hf-media-start-basis="local" data-track-index="2" muted playsinline></video>
+    </div>
+    <div id="a3-rig-03" class="cam-rig" data-layout-allow-overflow data-layout-allow-overlap>
+      <video data-color-grading="{&quot;preset&quot;:null,&quot;intensity&quot;:1,&quot;adjust&quot;:{&quot;exposure&quot;:0.04,&quot;contrast&quot;:0.08,&quot;highlights&quot;:0.04,&quot;shadows&quot;:0.05,&quot;whites&quot;:0.06,&quot;blacks&quot;:0,&quot;temperature&quot;:0.03,&quot;tint&quot;:0.01,&quot;vibrance&quot;:0.12,&quot;saturation&quot;:0.05},&quot;details&quot;:{&quot;vignette&quot;:0.04,&quot;vignetteMidpoint&quot;:0.5,&quot;vignetteRoundness&quot;:0,&quot;vignetteFeather&quot;:0.65,&quot;grain&quot;:0,&quot;grainSize&quot;:0.25,&quot;grainRoughness&quot;:0.5},&quot;effects&quot;:{&quot;blur&quot;:0,&quot;pixelate&quot;:0,&quot;chromaBleed&quot;:0,&quot;tapeDamage&quot;:0,&quot;tapeTracking&quot;:0,&quot;tapeNoise&quot;:1,&quot;tapeSpeed&quot;:0.5,&quot;filmArtifacts&quot;:0,&quot;halftone&quot;:0,&quot;halftoneSize&quot;:0,&quot;twoInkPrint&quot;:0,&quot;twoInkPrintSize&quot;:0,&quot;ascii&quot;:0,&quot;asciiSize&quot;:0.065,&quot;asciiInvert&quot;:0,&quot;asciiStyle&quot;:0,&quot;asciiColor&quot;:1,&quot;asciiRotation&quot;:0,&quot;dither&quot;:0,&quot;ditherSize&quot;:0,&quot;bloom&quot;:0,&quot;bloomRadius&quot;:8,&quot;monoScreen&quot;:0,&quot;monoScreenSize&quot;:0,&quot;monoScreenAngle&quot;:0,&quot;monoScreenSpread&quot;:0,&quot;monoScreenShape&quot;:0,&quot;monoScreenInvert&quot;:0,&quot;scanlines&quot;:0,&quot;scanlineCount&quot;:0,&quot;scanlineSoftness&quot;:0,&quot;chromaticAberration&quot;:0,&quot;chromaticAngle&quot;:0,&quot;crtCurvature&quot;:0,&quot;digitalGlitch&quot;:0,&quot;digitalGlitchColorSplit&quot;:0,&quot;digitalGlitchLineTear&quot;:0,&quot;digitalGlitchPixelate&quot;:0,&quot;digitalGlitchBlockAmount&quot;:0,&quot;digitalGlitchBlockDisplacement&quot;:0,&quot;digitalGlitchBlockOpacity&quot;:0,&quot;digitalGlitchSpeed&quot;:0,&quot;engraving&quot;:0,&quot;engravingSpacing&quot;:0.41,&quot;engravingMinThickness&quot;:0.2,&quot;engravingMaxThickness&quot;:0.45,&quot;engravingAngle&quot;:0.25,&quot;engravingContrast&quot;:0.46,&quot;engravingSharpness&quot;:0.59,&quot;engravingWave&quot;:0.2,&quot;engravingWaveFrequency&quot;:0.22,&quot;crosshatch&quot;:0,&quot;crosshatchSpacing&quot;:0.28,&quot;crosshatchThickness&quot;:0.25,&quot;crosshatchAngle&quot;:0.25,&quot;crosshatchContrast&quot;:0.33,&quot;crosshatchEdges&quot;:0.5,&quot;crosshatchLineWeight&quot;:0,&quot;crosshatchWave&quot;:0.33,&quot;crosshatchWaveFrequency&quot;:0.22,&quot;kuwahara&quot;:0,&quot;kuwaharaRadius&quot;:0.14,&quot;kuwaharaSharpness&quot;:0.31,&quot;kuwaharaSaturation&quot;:0.5},&quot;lut&quot;:null,&quot;colorSpace&quot;:&quot;rec709&quot;}" id="a3-v03" class="clip bg-video" src="assets/videos/DD_S11.mp4" data-start="11.5" data-duration="4.25" data-media-start="0.25" data-hf-media-start-basis="local" data-track-index="1" muted playsinline></video>
+    </div>
+
+    <!-- Shot 9: Capitalized 4-Tier Hero Lockup in Open Sky (Y=310..625px, clear of box Y>=660px!) -->
+    <div id="a3-kv-clip" class="clip float-stage" data-start="0.125" data-duration="7.25" data-track-index="3" data-layout-ignore>
+      <svg class="svg-typo" viewBox="0 0 1080 1920">
+        
+      <defs>
+        <linearGradient id="a3kv-emerald-fill" x1="0%" y1="0%" x2="14%" y2="100%">
+          <stop offset="0%" stop-color="#EBFFF1" />
+          <stop offset="24%" stop-color="#58DF7E" />
+          <stop offset="52%" stop-color="#0E8A38" />
+          <stop offset="78%" stop-color="#6CEB90" />
+          <stop offset="100%" stop-color="#064D1E" />
+        </linearGradient>
+
+        <linearGradient id="a3kv-gold-fill" x1="0%" y1="0%" x2="12%" y2="100%">
+          <stop offset="0%" stop-color="#FFFDF2" />
+          <stop offset="25%" stop-color="#FFE173" />
+          <stop offset="52%" stop-color="#E28708" />
+          <stop offset="78%" stop-color="#FFEC9E" />
+          <stop offset="100%" stop-color="#8C4800" />
+        </linearGradient>
+
+        <linearGradient id="a3kv-brand-deep" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="#0D6E2C" />
+          <stop offset="55%" stop-color="#074B1D" />
+          <stop offset="100%" stop-color="#042E11" />
+        </linearGradient>
+
+        <linearGradient id="a3kv-ht-accent" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#F59B14" />
+          <stop offset="55%" stop-color="#D46B00" />
+          <stop offset="100%" stop-color="#8C3E00" />
+        </linearGradient>
+
+        <filter id="a3kv-silk-3d" x="-16%" y="-24%" width="132%" height="152%" color-interpolation-filters="sRGB">
+          <feMorphology in="SourceAlpha" operator="dilate" radius="1.1" result="extrudeAlpha" />
+          <feOffset in="extrudeAlpha" dx="1.2" dy="3.0" result="extrudeShift" />
+          <feFlood flood-color="#053816" flood-opacity="0.78" result="extrudeColor" />
+          <feComposite in="extrudeColor" in2="extrudeShift" operator="in" result="extrudeRim" />
+          <feDropShadow in="SourceAlpha" dx="0" dy="6" stdDeviation="6" flood-color="#04240E" flood-opacity="0.28" result="softShadow" />
+          <feGaussianBlur in="SourceAlpha" stdDeviation="2.4" result="bevelBlur" />
+          <feSpecularLighting in="bevelBlur" surfaceScale="7.5" specularConstant="1.45" specularExponent="24" lighting-color="#FFFFFF" result="specRaw">
+            <fePointLight id="a3kv-light" x="240" y="-110" z="240" />
+          </feSpecularLighting>
+          <feComposite in="specRaw" in2="SourceAlpha" operator="in" result="specClipped" />
+          <feMerge>
+            <feMergeNode in="softShadow" />
+            <feMergeNode in="extrudeRim" />
+            <feMergeNode in="SourceGraphic" />
+            <feMergeNode in="specClipped" />
+          </feMerge>
+        </filter>
+
+        <filter id="a3kv-clean-lift" x="-14%" y="-22%" width="128%" height="148%">
+          <feDropShadow dx="0" dy="4" stdDeviation="5" flood-color="#04240E" flood-opacity="0.24" />
+        </filter>
+      </defs>
+    
+        <g id="a3-logo" filter="url(#a3kv-clean-lift)">
+          <text x="540" y="314" text-anchor="middle" font-size="54">
+            <tspan class="brand-contour" fill="url(#a3kv-brand-deep)">DẠ DÀY </tspan>
+            <tspan class="brand-ht" fill="url(#a3kv-ht-accent)" font-size="58">HT</tspan>
+          </text>
+        </g>
+        <g id="a3-script" filter="url(#a3kv-clean-lift)">
+          <text x="540" y="376" text-anchor="middle" class="script-sub" font-size="50" fill="#084D1E">Hằng Thu</text>
+        </g>
+        <g id="a3-claim" filter="url(#a3kv-clean-lift)">
+          <text x="540" y="432" text-anchor="middle" class="upper-claim" font-size="28" fill="#C96400">GIẢM ACID · BẢO VỆ NIÊM MẠC</text>
+        </g>
+        <g id="a3-satin">
+          <text x="540" y="530" text-anchor="middle" class="satin-hero" font-size="100" fill="url(#a3kv-emerald-fill)" filter="url(#a3kv-silk-3d)">Xoa dịu êm</text>
+          <text x="540" y="632" text-anchor="middle" class="satin-hero" font-size="96" fill="url(#a3kv-gold-fill)" filter="url(#a3kv-silk-3d)">Trào ngược</text>
+        </g>
+      </svg>
+    </div>
+
+    <!-- SLIDE OVERLAY #4A (Shot 9: 3.85 - 7.30s): 3-Chip USP Benefit Slide Bar below marble podium (X=64..860, Y=1268..1345) -->
+    <div id="a3-usp-bar" class="clip usp-bar" data-start="3.85" data-duration="3.45" data-track-index="5" data-layout-ignore>
+      <div id="a3-u1" class="usp-tag">✓ Dịu đau thượng vị</div>
+      <div id="a3-u2" class="usp-tag">✓ Giảm ợ hơi, ợ chua</div>
+      <div id="a3-u3" class="usp-tag">✓ Êm bụng, hết buồn nôn</div>
+    </div>
+
+    <!-- Shots 10-11: Capitalized Top 3D Title (Y=308..398px — 100% above S11 box at Y=580px!) -->
+    <div id="a3-herb-clip" class="clip float-stage" data-start="7.625" data-duration="7.95" data-track-index="4" data-layout-ignore>
+      <svg class="svg-typo" viewBox="0 0 1080 1920">
+        
+      <defs>
+        <linearGradient id="a3hb-emerald-fill" x1="0%" y1="0%" x2="14%" y2="100%">
+          <stop offset="0%" stop-color="#EBFFF1" />
+          <stop offset="24%" stop-color="#58DF7E" />
+          <stop offset="52%" stop-color="#0E8A38" />
+          <stop offset="78%" stop-color="#6CEB90" />
+          <stop offset="100%" stop-color="#064D1E" />
+        </linearGradient>
+
+        <linearGradient id="a3hb-gold-fill" x1="0%" y1="0%" x2="12%" y2="100%">
+          <stop offset="0%" stop-color="#FFFDF2" />
+          <stop offset="25%" stop-color="#FFE173" />
+          <stop offset="52%" stop-color="#E28708" />
+          <stop offset="78%" stop-color="#FFEC9E" />
+          <stop offset="100%" stop-color="#8C4800" />
+        </linearGradient>
+
+        <linearGradient id="a3hb-brand-deep" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="#0D6E2C" />
+          <stop offset="55%" stop-color="#074B1D" />
+          <stop offset="100%" stop-color="#042E11" />
+        </linearGradient>
+
+        <linearGradient id="a3hb-ht-accent" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#F59B14" />
+          <stop offset="55%" stop-color="#D46B00" />
+          <stop offset="100%" stop-color="#8C3E00" />
+        </linearGradient>
+
+        <filter id="a3hb-silk-3d" x="-16%" y="-24%" width="132%" height="152%" color-interpolation-filters="sRGB">
+          <feMorphology in="SourceAlpha" operator="dilate" radius="1.1" result="extrudeAlpha" />
+          <feOffset in="extrudeAlpha" dx="1.2" dy="3.0" result="extrudeShift" />
+          <feFlood flood-color="#053816" flood-opacity="0.78" result="extrudeColor" />
+          <feComposite in="extrudeColor" in2="extrudeShift" operator="in" result="extrudeRim" />
+          <feDropShadow in="SourceAlpha" dx="0" dy="6" stdDeviation="6" flood-color="#04240E" flood-opacity="0.28" result="softShadow" />
+          <feGaussianBlur in="SourceAlpha" stdDeviation="2.4" result="bevelBlur" />
+          <feSpecularLighting in="bevelBlur" surfaceScale="7.5" specularConstant="1.45" specularExponent="24" lighting-color="#FFFFFF" result="specRaw">
+            <fePointLight id="a3hb-light" x="240" y="-110" z="240" />
+          </feSpecularLighting>
+          <feComposite in="specRaw" in2="SourceAlpha" operator="in" result="specClipped" />
+          <feMerge>
+            <feMergeNode in="softShadow" />
+            <feMergeNode in="extrudeRim" />
+            <feMergeNode in="SourceGraphic" />
+            <feMergeNode in="specClipped" />
+          </feMerge>
+        </filter>
+
+        <filter id="a3hb-clean-lift" x="-14%" y="-22%" width="128%" height="148%">
+          <feDropShadow dx="0" dy="4" stdDeviation="5" flood-color="#04240E" flood-opacity="0.24" />
+        </filter>
+      </defs>
+    
+        <g id="a3-hb-top" filter="url(#a3hb-clean-lift)">
+          <text x="540" y="308" text-anchor="middle" class="upper-claim" font-size="26" fill="#0B6B29">CÔNG THỨC 4 THẢO DƯỢC ĐÔNG Y</text>
+        </g>
+        <g id="a3-hb-satin">
+          <text x="540" y="396" text-anchor="middle" class="satin-hero" font-size="78" fill="url(#a3hb-gold-fill)" filter="url(#a3hb-silk-3d)">Tinh túy thảo dược Việt</text>
+        </g>
+      </svg>
+    </div>
+
+    <!-- SLIDE OVERLAY #4B (Shots 10-11: 9.10 - 15.55s): 4 Botanical Slide Cards synced to voice in open Left Bokeh (X=64..496, Y=438..735 — 0% box overlap!) -->
+    <div id="a3-herb-slides" class="clip herb-grid" data-start="9.1" data-duration="6.45" data-track-index="5" data-layout-ignore>
+      <div id="a3-hc1" class="herb-chip"><span class="slide-badge-dot">1</span> Dạ cẩm <span class="herb-sub">Trung hòa acid</span></div>
+      <div id="a3-hc2" class="herb-chip"><span class="slide-badge-dot">2</span> Nghệ đen <span class="herb-sub">Êm niêm mạc</span></div>
+      <div id="a3-hc3" class="herb-chip"><span class="slide-badge-dot">3</span> Hoàng liên <span class="herb-sub">Thanh nhiệt</span></div>
+      <div id="a3-hc4" class="herb-chip"><span class="slide-badge-dot">4</span> Mộc hương <span class="herb-sub">Giảm đầy hơi</span></div>
+    </div>
+  </div>
+
+  <script>
+    window.__timelines = window.__timelines || {};
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#a3-rig-01", { scale: 1.00 }, { scale: 1.05, duration: 7.50, ease: "none", immediateRender: false }, 0)
+      .fromTo("#a3-rig-02", { scale: 1.00 }, { scale: 1.05, duration: 4.00, ease: "none", immediateRender: false }, 7.50)
+      .fromTo("#a3-rig-03", { scale: 1.05 }, { scale: 1.00, duration: 4.25, ease: "none", immediateRender: false }, 11.50);
+
+    tl.fromTo("#a3-logo", { opacity: 0, y: -16, scale: 0.93, filter: "blur(12px)", transformOrigin: "50% 50%" }, { opacity: 1, y: 0, scale: 1, filter: "blur(0px)", duration: 0.30, ease: "back.out(1.5)", immediateRender: false }, 0.14)
+      .fromTo("#a3-script", { opacity: 0, y: 10, filter: "blur(10px)" }, { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.26, ease: "power2.out", immediateRender: false }, 0.26)
+      .fromTo("#a3-claim", { opacity: 0, y: 12, filter: "blur(10px)" }, { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.28, ease: "power3.out", immediateRender: false }, 0.36)
+      .fromTo("#a3-satin", { opacity: 0, y: 22, scale: 0.94, filter: "blur(14px)", transformOrigin: "50% 50%" }, { opacity: 1, y: 0, scale: 1, filter: "blur(0px)", duration: 0.40, ease: "back.out(1.4)", immediateRender: false }, 0.46)
+      .fromTo("#a3kv-light", { attr: { x: 160 } }, { attr: { x: 940 }, duration: 6.4, ease: "sine.inOut", immediateRender: false }, 0.50)
+      .to("#a3-kv-clip", { opacity: 0, filter: "blur(10px)", duration: 0.20, ease: "power2.in" }, 7.15);
+
+    // 3-Chip USP Slide Bar
+    tl.fromTo("#a3-u1", { opacity: 0, y: 28, filter: "blur(8px)" }, { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.26, ease: "back.out(1.5)", immediateRender: false }, 3.88)
+      .fromTo("#a3-u2", { opacity: 0, y: 28, filter: "blur(8px)" }, { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.26, ease: "back.out(1.5)", immediateRender: false }, 4.08)
+      .fromTo("#a3-u3", { opacity: 0, y: 28, filter: "blur(8px)" }, { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.26, ease: "back.out(1.5)", immediateRender: false }, 4.28)
+      .to("#a3-usp-bar", { opacity: 0, y: 16, filter: "blur(8px)", duration: 0.20, ease: "power2.in" }, 7.08);
+
+    // Shots 10-11 Top Title + 4 Staggered Botanical Slide Chips synced to voice timestamps!
+    // Global 33.75 + local 9.35 = 43.10s ("Dạ cẩm"), +10.25 = 44.00s ("Nghệ đen"), +11.15 = 44.90s ("Hoàng liên"), +11.70 = 45.45s ("Mộc hương")
+    tl.fromTo("#a3-hb-top", { opacity: 0, y: -12, scale: 0.93, filter: "blur(12px)", transformOrigin: "50% 50%" }, { opacity: 1, y: 0, scale: 1, filter: "blur(0px)", duration: 0.30, ease: "power3.out", immediateRender: false }, 7.65)
+      .fromTo("#a3-hb-satin", { opacity: 0, y: 18, scale: 0.94, filter: "blur(14px)", transformOrigin: "50% 50%" }, { opacity: 1, y: 0, scale: 1, filter: "blur(0px)", duration: 0.36, ease: "back.out(1.4)", immediateRender: false }, 7.80)
+      .fromTo("#a3hb-light", { attr: { x: 160 } }, { attr: { x: 940 }, duration: 7.2, ease: "sine.inOut", immediateRender: false }, 7.85)
+      .to("#a3-herb-clip", { opacity: 0, filter: "blur(10px)", duration: 0.20, ease: "power2.in" }, 15.35);
+
+    tl.fromTo("#a3-hc1", { opacity: 0, x: -130, filter: "blur(10px)" }, { opacity: 1, x: 0, filter: "blur(0px)", duration: 0.28, ease: "back.out(1.4)", immediateRender: false }, 9.30)
+      .fromTo("#a3-hc2", { opacity: 0, x: -130, filter: "blur(10px)" }, { opacity: 1, x: 0, filter: "blur(0px)", duration: 0.28, ease: "back.out(1.4)", immediateRender: false }, 10.20)
+      .fromTo("#a3-hc3", { opacity: 0, x: -130, filter: "blur(10px)" }, { opacity: 1, x: 0, filter: "blur(0px)", duration: 0.28, ease: "back.out(1.4)", immediateRender: false }, 11.10)
+      .fromTo("#a3-hc4", { opacity: 0, x: -130, filter: "blur(10px)" }, { opacity: 1, x: 0, filter: "blur(0px)", duration: 0.28, ease: "back.out(1.4)", immediateRender: false }, 11.68)
+      .to("#a3-herb-slides", { opacity: 0, x: -90, filter: "blur(10px)", duration: 0.20, ease: "power2.in" }, 15.32);
+
+    window.__timelines["act3-hero-demo"] = tl;
+  </script>
+</template>

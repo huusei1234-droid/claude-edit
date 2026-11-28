@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8" />
+<title>HTPM True NLE Build-From-Zero + Multi-Agent Adobe CC</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; user-select: none; }
+  html, body {
+    width: 1080px; height: 1920px; overflow: hidden;
+    background: #0B0D12;
+    font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+    color: #E2E8F0;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  #stage {
+    position: relative; width: 1080px; height: 1920px;
+    background: radial-gradient(circle at 50% 18%, #161C2C 0%, #0A0C10 65%);
+  }
+
+  .cc-badge {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 20px; height: 20px; border-radius: 4px;
+    font-weight: 900; font-size: 11px; letter-spacing: -0.4px; flex-shrink: 0;
+  }
+  .cc-pr { background: #00005B; color: #9999FF; border: 1px solid #5C5CFF; }
+  .cc-ae { background: #00005B; color: #CF96FD; border: 1px solid #8F5BFF; }
+  .cc-ps { background: #001E36; color: #31A8FF; border: 1px solid #31A8FF; }
+  .cc-ai { background: #330000; color: #FF9A00; border: 1px solid #FF9A00; }
+  .cc-me { background: #00005B; color: #A699FF; border: 1px solid #6E5CFF; }
+
+  /* ================= TOP OS DOCK BAR (0..32px) ================= */
+  #sysbar {
+    position: absolute; left: 0; top: 0; width: 1080px; height: 32px;
+    background: #0E1118; border-bottom: 1px solid #242B3D;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 12px; font-size: 11px; font-weight: 700; z-index: 50;
+  }
+  .dock-apps { display: flex; align-items: center; gap: 6px; }
+  .dock-pill {
+    display: flex; align-items: center; gap: 5px;
+    padding: 2px 7px; border-radius: 4px; background: #161B26; border: 1px solid #262F45;
+    font-size: 10px; color: #94A3B8;
+  }
+  .dock-pill.active {
+    background: #212B42; border-color: #38BDF8; color: #FFFFFF;
+    box-shadow: 0 0 8px rgba(56, 189, 248, 0.35);
+  }
+  .dot-live {
+    width: 7px; height: 7px; border-radius: 50%;
+    background: #10B981; box-shadow: 0 0 7px #10B981; display: inline-block;
+  }
+
+  /* ================= TOP MULTI-APP DESKTOP STAGE (32..934px) ================= */
+  #top-desktop {
+    position: absolute; left: 0; top: 32px; width: 1080px; height: 902px;
+    overflow: hidden;
+    background:
+      linear-gradient(180deg, rgba(16,22,36,0.92), rgba(10,13,20,0.96)),
+      repeating-linear-gradient(90deg, rgba(255,255,255,0.015) 0 1px, transparent 1px 40px),
+      repeating-linear-gradient(0deg, rgba(255,255,255,0.015) 0 1px, transparent 1px 40px);
+  }
+
+  .app-win {
+    position: absolute; background: #181A20;
+    border: 1.5px solid #2F374C; border-radius: 8px; overflow: hidden;
+    box-shadow: 0 14px 36px rgba(0,0,0,0.68);
+    display: flex; flex-direction: column; transform-origin: center center;
+  }
+  .app-win.focused {
+    border-color: #38BDF8;
+    box-shadow: 0 18px 46px rgba(0,0,0,0.85), 0 0 0 1px rgba(56,189,248,0.45);
+  }
+  .win-bar {
+    height: 26px; background: #1F232D; border-bottom: 1px solid #2D3343;
+    display: flex; align-items: center; padding: 0 8px; gap: 6px;
+    font-size: 10.5px; font-weight: 700; color: #CBD5E1; flex-shrink: 0;
+  }
+  .app-win.focused .win-bar { background: #252B3B; color: #FFFFFF; }
+  .w-dots { display: flex; gap: 4px; margin-right: 3px; }
+  .w-dots i { width: 8px; height: 8px; border-radius: 50%; display: block; }
+  .wr { background: #EF4444; } .wy { background: #F59E0B; } .wg { background: #10B981; }
+
+  /* Photoshop 2026 */
+  #win-ps { width: 650px; height: 470px; background: #252526; }
+  .ps-menubar {
+    height: 21px; background: #2D2D30; border-bottom: 1px solid #1B1B1D;
+    display: flex; align-items: center; gap: 10px; padding: 0 8px; font-size: 9.5px; color: #CCCCCC;
+  }
+  .ps-body { flex: 1; display: flex; overflow: hidden; background: #1E1E1E; }
+  .ps-tools {
+    width: 30px; background: #2D2D30; border-right: 1px solid #19191B;
+    display: flex; flex-direction: column; align-items: center; padding: 5px 0; gap: 5px; font-size: 11px; color: #BDBDBD;
+  }
+  .ps-tbtn { width: 22px; height: 20px; border-radius: 3px; display: flex; align-items: center; justify-content: center; font-size: 10px; }
+  .ps-tbtn.on { background: #47474A; color: #31A8FF; border: 1px solid #31A8FF; }
+  .ps-canvas-area { flex: 1; position: relative; display: flex; align-items: center; justify-content: center; background: #191919; overflow: hidden; }
+  .ps-checker {
+    width: 410px; height: 365px; position: relative;
+    background-image:
+      linear-gradient(45deg, #2A2A2A 25%, transparent 25%),
+      linear-gradient(-45deg, #2A2A2A 25%, transparent 25%),
+      linear-gradient(45deg, transparent 75%, #2A2A2A 75%),
+      linear-gradient(-45deg, transparent 75%, #2A2A2A 75%);
+    background-size: 16px 16px;
+    background-position: 0 0, 0 8px, 8px -8px, -8px 0;
+    background-color: #202020; border: 1px solid #3E3E42; overflow: hidden;
+  }
+  #ps-cvs { width: 410px; height: 365px; display: block; }
+  .ps-ctx-bar {
+    position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%);
+    background: #2D2D30; border: 1px solid #4A4A4F; border-radius: 6px;
+    padding: 4px 8px; display: flex; align-items: center; gap: 6px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.6); font-size: 9.2px; white-space: nowrap;
+  }
+  .ps-ctx-btn { background: #3E3E42; color: #F1F5F9; padding: 2px 7px; border-radius: 3px; font-weight: 600; }
+  .ps-ctx-btn.blue { background: #1473E6; color: #FFF; }
+  .ps-layers { width: 176px; background: #252526; border-left: 1px solid #19191B; display: flex; flex-direction: column; font-size: 9.2px; }
+  .ps-sec-hdr { background: #2D2D30; padding: 4px 7px; font-weight: 700; color: #D4D4D8; border-bottom: 1px solid #19191B; }
+  .ps-lyr { display: flex; align-items: center; gap: 5px; padding: 4px 6px; border-bottom: 1px solid #1F1F22; color: #CCCCCC; }
+  .ps-lyr.sel { background: #37373D; color: #FFFFFF; border-left: 2px solid #31A8FF; }
+  .ps-lyr-th { width: 22px; height: 22px; border-radius: 2px; background: #18181B; border: 1px solid #52525B; object-fit: contain; }
+
+  /* Illustrator 2026 */
+  #win-ai { width: 520px; height: 400px; background: #262626; }
+  #ai-cvs { width: 100%; flex: 1; display: block; background: #1B1B1B; }
+
+  /* Chrome Auto-CMS */
+  #win-cms { width: 540px; height: 440px; background: #F8FAFC; color: #0F172A; }
+  .url-strip { height: 23px; background: #1E2638; border-bottom: 1px solid #2C3852; display: flex; align-items: center; padding: 0 8px; gap: 6px; font-size: 9.8px; color: #93C5FD; }
+  .cms-content { flex: 1; padding: 7px 9px; overflow: hidden; position: relative; background: #F8FAFC; }
+  .cms-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin-bottom: 6px; }
+  .cms-card { background: #FFF; border: 1px solid #CBD5E1; border-radius: 5px; padding: 4px; }
+  .cms-card.sel { border: 2px solid #2563EB; }
+  .cms-card img { width: 100%; height: 84px; object-fit: cover; border-radius: 3px; }
+  .cms-card-t { font-size: 9px; font-weight: 700; color: #1E293B; margin-top: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .cms-inp { background: #EFF6FF; border: 1.5px solid #2563EB; border-radius: 4px; padding: 4px 7px; font-size: 9.8px; font-weight: 600; color: #0F172A; margin-bottom: 6px; min-height: 22px; }
+  .cms-tbl { width: 100%; border-collapse: collapse; font-size: 9px; background: #FFF; }
+  .cms-tbl th { background: #F1F5F9; padding: 3px 5px; text-align: left; color: #334155; }
+  .cms-tbl td { padding: 3px 5px; border-top: 1px solid #E2E8F0; color: #0F172A; }
+
+  /* Gemini Pro / Bridge */
+  #win-gem { width: 520px; height: 430px; background: #0F1420; }
+  .gem-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 6px; padding: 7px; flex: 1; }
+  .gem-card { background: #161E30; border: 1px solid #2A3957; border-radius: 5px; padding: 4px; display: flex; flex-direction: column; }
+  .gem-card.ok { border-color: #06B6D4; }
+  .gem-card img { width: 100%; height: 112px; object-fit: cover; border-radius: 3px; }
+  .gem-bar { height: 4px; background: #0B0F19; border-radius: 2px; margin-top: 4px; overflow: hidden; }
+  .gem-fill { height: 100%; background: linear-gradient(90deg, #06B6D4, #8B5CF6); }
+
+  /* ExtendScript IDE */
+  #win-ide { width: 550px; height: 410px; background: #0D1117; }
+  #ide-lines { flex: 1; padding: 6px 8px; font-family: Consolas, monospace; font-size: 9.8px; line-height: 15px; overflow: hidden; }
+  .cl { white-space: pre; padding: 0 4px; }
+  .cl.add { background: rgba(16,185,129,0.16); border-left: 2px solid #10B981; }
+  .cl.cur { background: rgba(56,189,248,0.16); }
+  .kw { color: #FF7B72; } .fn { color: #D2A8FF; } .st { color: #A5D6FF; } .cm { color: #6E7681; } .nu { color: #79C0FF; }
+
+  /* Swarm + Media Encoder */
+  #win-swarm { width: 515px; height: 410px; background: #0B0E15; }
+  #swarm-rows { flex: 1; padding: 6px 8px; display: flex; flex-direction: column; gap: 3.5px; font-family: Consolas, monospace; font-size: 9.4px; overflow: hidden; }
+  .srow { background: #121826; border: 1px solid #1F2A40; border-radius: 4px; padding: 3.5px 7px; display: flex; justify-content: space-between; }
+  .srow.hot { border-color: #A855F7; background: #1A1630; color: #F8FAFC; }
+
+  /* Alt+Tab HUD */
+  #alt-tab-hud {
+    position: absolute; left: 50%; top: 430px; transform: translate(-50%, -50%);
+    background: rgba(15, 19, 30, 0.92); backdrop-filter: blur(12px);
+    border: 1.5px solid rgba(147, 197, 253, 0.45); border-radius: 12px;
+    padding: 10px 16px; display: none; align-items: center; gap: 12px;
+    box-shadow: 0 18px 50px rgba(0,0,0,0.85); z-index: 45;
+  }
+  .at-item { display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 6px 10px; border-radius: 8px; font-size: 9.5px; font-weight: 700; color: #94A3B8; }
+  .at-item.sel { background: rgba(59, 130, 246, 0.28); border: 1.5px solid #60A5FA; color: #FFFFFF; }
+  .at-item .cc-badge { width: 32px; height: 32px; font-size: 15px; border-radius: 7px; }
+
+  #zone-divider {
+    position: absolute; left: 0; top: 934px; width: 1080px; height: 6px;
+    background: linear-gradient(90deg, #31A8FF, #9999FF, #CF96FD, #FF9A00); z-index: 40;
+  }
+
+  /* ================= BOTTOM WORKSPACE: PREMIERE PRO 2026 <-> AFTER EFFECTS 2026 ================= */
+  #adobe-nle {
+    position: absolute; left: 0; top: 940px; width: 1080px; height: 980px;
+    background: #1D1D1D; display: flex; flex-direction: column;
+  }
+  #nle-hdr {
+    height: 34px; background: #232323; border-bottom: 1px solid #111111;
+    display: flex; align-items: center; justify-content: space-between; padding: 0 10px; font-size: 10.5px; flex-shrink: 0;
+  }
+  .ws-tabs { display: flex; align-items: center; gap: 3px; }
+  .ws-tab { padding: 4px 8px; border-radius: 3px; color: #A1A1AA; font-weight: 600; font-size: 10px; }
+  .ws-tab.active-pr { background: #2D3250; color: #9999FF; border-bottom: 2px solid #9999FF; }
+  .ws-tab.active-ae { background: #37294F; color: #CF96FD; border-bottom: 2px solid #CF96FD; }
+  .dynlink-pill { background: #2B2144; border: 1px solid #9333EA; color: #E9D5FF; padding: 3px 9px; border-radius: 4px; font-size: 9.8px; font-weight: 700; }
+  .adobe-export-btn { background: #1473E6; color: #FFFFFF; font-weight: 700; font-size: 10.5px; padding: 4px 12px; border-radius: 12px; }
+  .adobe-export-btn.done { background: #059669; box-shadow: 0 0 12px rgba(16,185,129,0.55); }
+
+  #nle-upper { height: 522px; display: flex; border-bottom: 2px solid #121212; flex-shrink: 0; background: #1D1D1D; }
+
+  #nle-left {
+    width: 272px; background: #232323; border-right: 2px solid #121212;
+    padding: 6px; display: flex; flex-direction: column; gap: 5px;
+  }
+  .adobe-phdr { display: flex; gap: 8px; font-size: 10px; font-weight: 700; color: #D4D4D8; border-bottom: 1px solid #323232; padding-bottom: 4px; }
+  .adobe-phdr span.on { color: #4B9CFF; border-bottom: 2px solid #4B9CFF; padding-bottom: 2px; }
+  #bin-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 5px; flex: 1; align-content: start; }
+  .bin-item { background: #191919; border: 1.5px solid #333333; border-radius: 3px; padding: 3px; position: relative; }
+  .bin-item.sel { border-color: #4B9CFF; box-shadow: 0 0 0 1px #4B9CFF; }
+  .bin-item img { width: 100%; height: 78px; object-fit: cover; display: block; border-radius: 2px; }
+  .bin-dur { position: absolute; right: 5px; top: 63px; background: rgba(0,0,0,0.82); color: #9999FF; font-size: 8.5px; font-family: Consolas, monospace; padding: 1px 4px; border-radius: 2px; }
+  .bin-lbl { font-size: 8.8px; color: #D4D4D8; margin-top: 3px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+  /* Center Column: TRUE COMPOSITING PROGRAM MONITOR */
+  #nle-center {
+    width: 496px; background: #181818; border-right: 2px solid #121212;
+    display: flex; flex-direction: column; position: relative;
+  }
+  #mon-hdr {
+    height: 26px; background: #232323; border-bottom: 1px solid #111;
+    display: flex; align-items: center; justify-content: space-between; padding: 0 10px; font-size: 10px; color: #D4D4D8;
+  }
+  #mon-stage { flex: 1; display: flex; align-items: center; justify-content: space-between; padding: 6px 8px; position: relative; }
+  #mon-scopes { width: 78px; height: 454px; background: #141414; border: 1px solid #2C2C2C; padding: 4px; display: flex; flex-direction: column; gap: 5px; }
+  .scope-box { flex: 1; background: #0A0A0A; border: 1px solid #242424; position: relative; overflow: hidden; }
+  .scope-lbl { position: absolute; left: 3px; top: 2px; font-size: 7.5px; color: #8E8E93; font-weight: 700; z-index: 2; }
+
+  /* HERO 9:16 LIVE VIEWPORT WITH REAL TIMELINE LAYER COMPOSITING */
+  #mon-viewport-wrap {
+    width: 264px; height: 468px; position: relative;
+    background: #050505; border: 1.5px solid #3F3F46;
+    box-shadow: 0 8px 26px rgba(0,0,0,0.82); overflow: hidden;
+  }
+  #mon-layer-stack {
+    position: absolute; left: 0; top: 0; width: 100%; height: 100%;
+    transform-origin: center center;
+  }
+  #chihang-video-img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  /* Clean masks that hide unplaced tracks so "gắn gì hiện cái đó" works 100%! */
+  #mask-no-topcard {
+    position: absolute; left: 0; top: 0; width: 100%; height: 100%;
+    object-fit: cover; pointer-events: none;
+  }
+  #mask-no-subtitle {
+    position: absolute; left: 0; top: 0; width: 100%; height: 100%;
+    object-fit: cover; pointer-events: none;
+  }
+  /* Empty Sequence Black Overlay (when V1 has not been dropped yet!) */
+  #mon-empty-black {
+    position: absolute; left: 0; top: 0; width: 100%; height: 100%;
+    background: #060608; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; gap: 6px;
+    color: #52525B; font-size: 10.5px; font-weight: 700; z-index: 8;
+  }
+  /* Direct Manipulation Wireframe Box when dropping/scaling Top Card or Subtitle */
+  #pr-wireframe {
+    position: absolute; border: 1.5px solid #4B9CFF; pointer-events: none; display: none; z-index: 6;
+  }
+  .wf-h { width: 6px; height: 6px; background: #FFF; border: 1px solid #4B9CFF; position: absolute; }
+
+  #mon-mode-pill {
+    position: absolute; left: 7px; top: 7px; z-index: 9;
+    background: rgba(12, 14, 22, 0.84); border: 1px solid #4B9CFF;
+    color: #E0F2FE; font-size: 8.5px; font-weight: 800; padding: 2px 6px; border-radius: 3px;
+  }
+
+  /* Keystroke / Spacebar Action Toast (KeyCastr style) */
+  #keystroke-hud {
+    position: absolute; left: 50%; bottom: 38px; transform: translateX(-50%);
+    background: rgba(10, 14, 23, 0.92); border: 1.5px solid #38BDF8;
+    color: #F8FAFC; font-family: Consolas, monospace; font-size: 10.5px; font-weight: 800;
+    padding: 4px 11px; border-radius: 6px; white-space: nowrap;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.75); z-index: 20; display: none;
+  }
+  #keystroke-hud.play-on {
+    background: rgba(6, 78, 59, 0.95); border-color: #34D399; color: #A7F3D0;
+    box-shadow: 0 0 18px rgba(16, 185, 129, 0.55);
+  }
+
+  #mon-meters {
+    width: 62px; height: 454px; background: #141414; border: 1px solid #2C2C2C;
+    padding: 6px 5px; display: flex; flex-direction: column; align-items: center;
+  }
+  .vu-bars { flex: 1; display: flex; gap: 6px; align-items: stretch; width: 100%; justify-content: center; margin-top: 4px; }
+  .vu-col { width: 13px; background: #080808; border: 1px solid #2A2A2A; position: relative; overflow: hidden; }
+  .vu-fill {
+    position: absolute; left: 0; right: 0; bottom: 0; height: 0%;
+    background: linear-gradient(0deg, #22C55E 0%, #22C55E 68%, #EAB308 86%, #EF4444 100%);
+  }
+  .vu-db { font-size: 8px; font-family: Consolas, monospace; color: #FACC15; margin-top: 4px; font-weight: 700; }
+
+  #mon-transport {
+    height: 26px; background: #202020; border-top: 1px solid #111;
+    display: flex; align-items: center; justify-content: space-between; padding: 0 12px;
+    font-family: Consolas, monospace; font-size: 10.5px;
+  }
+  .tr-btns { display: flex; align-items: center; gap: 10px; color: #D4D4D8; }
+  #btn-play-toggle {
+    padding: 1px 7px; border-radius: 3px; background: #2C2C34; color: #FFF; font-weight: 900;
+  }
+  #btn-play-toggle.playing {
+    background: #1473E6; color: #FFFFFF; box-shadow: 0 0 8px rgba(20,115,230,0.7);
+  }
+
+  /* Right Column: Lumetri Color & AE Graph */
+  #nle-right { flex: 1; background: #232323; padding: 6px 8px; display: flex; flex-direction: column; gap: 6px; }
+  .lum-sec { background: #1B1B1B; border: 1px solid #323232; border-radius: 3px; padding: 6px; }
+  .lum-hdr { font-size: 9.5px; font-weight: 700; color: #E4E4E7; margin-bottom: 5px; display: flex; justify-content: space-between; }
+  .s-row { display: flex; align-items: center; gap: 5px; margin-bottom: 4.5px; font-size: 9px; }
+  .s-lbl { width: 58px; color: #A1A1AA; }
+  .s-trk { flex: 1; height: 4px; background: #0E0E0E; border-radius: 2px; position: relative; }
+  .s-fl  { height: 100%; background: #4B9CFF; border-radius: 2px; }
+  .s-th  { width: 8px; height: 8px; border-radius: 50%; background: #E4E4E7; border: 1.5px solid #4B9CFF; position: absolute; top: -2px; transform: translateX(-50%); }
+  .s-vl  { width: 42px; text-align: right; font-family: Consolas, monospace; color: #60A5FA; font-size: 9px; }
+
+  #ae-graph-box { background: #141414; border: 1px solid #383838; border-radius: 3px; height: 118px; position: relative; overflow: hidden; }
+  #ae-graph-cvs { width: 288px; height: 118px; display: block; }
+
+  .wheels-row { display: flex; justify-content: space-between; gap: 4px; }
+  .cw { flex: 1; display: flex; flex-direction: column; align-items: center; font-size: 8px; color: #A1A1AA; gap: 2px; }
+  .cw-ring { width: 60px; height: 60px; border-radius: 50%; background: conic-gradient(#EF4444, #F59E0B, #22C55E, #06B6D4, #3B82F6, #EC4899, #EF4444); padding: 2.5px; }
+  .cw-in { width: 100%; height: 100%; border-radius: 50%; background: radial-gradient(circle, #2C2C2C 0%, #141414 78%); position: relative; }
+  .cw-dot { width: 6px; height: 6px; border-radius: 50%; background: #FFF; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); }
+
+  #nle-timeline { flex: 1; background: #191919; display: flex; flex-direction: column; overflow: hidden; }
+  #tl-bar {
+    height: 26px; background: #232323; border-bottom: 1px solid #111;
+    display: flex; align-items: center; justify-content: space-between; padding: 0 10px; font-size: 9.5px; color: #D4D4D8;
+  }
+  .tl-tbtns { display: flex; gap: 6px; align-items: center; }
+  .tl-b { padding: 2px 6px; background: #2F2F2F; border-radius: 3px; font-size: 9px; font-weight: 600; }
+  .tl-b.on { background: #4B9CFF; color: #08101E; font-weight: 800; }
+  #tl-canvas { width: 1080px; height: 398px; display: block; }
+
+  #cursor-canvas {
+    position: absolute; left: 0; top: 0; width: 1080px; height: 1920px;
+    pointer-events: none; z-index: 100;
+  }
+</style>
+</head>
+<body>
+<div id="stage">
+  <div id="sysbar">
+    <div class="dock-apps">
+      <div class="dock-pill active" id="dk-ps"><span class="cc-badge cc-ps">Ps</span>Photoshop</div>
+      <div class="dock-pill" id="dk-pr"><span class="cc-badge cc-pr">Pr</span>Premiere</div>
+      <div class="dock-pill" id="dk-ae"><span class="cc-badge cc-ae">Ae</span>After Effects</div>
+      <div class="dock-pill" id="dk-ai"><span class="cc-badge cc-ai">Ai</span>Illustrator</div>
+      <div class="dock-pill" id="dk-web">🌐 Auto-Web</div>
+      <div class="dock-pill" id="dk-ag">🤖 AI Swarm</div>
+    </div>
+    <div style="display:flex;align-items:center;gap:8px;font-size:10px;color:#93C5FD;">
+      <span><span class="dot-live"></span> DYNAMIC LINK</span>
+      <span id="sys-ops" style="color:#FCD34D;">SYNCED</span>
+    </div>
+  </div>
+
+  <!-- TOP MULTI-APP RAPID DESKTOP -->
+  <div id="top-desktop">
+    <div class="app-win focused" id="win-ps" style="left:12px;top:10px;z-index:16;">
+      <div class="win-bar">
+        <div class="w-dots"><i class="wr"></i><i class="wy"></i><i class="wg"></i></div>
+        <span class="cc-badge cc-ps">Ps</span>
+        <span>HTPM_SanPham_ChiHang_Retouch.psd @ 100% (RGB/16#)</span>
+        <span style="margin-left:auto;color:#31A8FF;">GPU CUDA</span>
+      </div>
+      <div class="ps-menubar">
+        <span>File</span><span>Edit</span><span>Image</span><span>Layer</span><span>Select</span><span style="color:#31A8FF;font-weight:700;">Filter (Neural)</span><span>View</span><span>Plugins (MCP)</span>
+      </div>
+      <div class="ps-body">
+        <div class="ps-tools">
+          <div class="ps-tbtn" id="pst-0">✥</div>
+          <div class="ps-tbtn on" id="pst-1">⬚</div>
+          <div class="ps-tbtn" id="pst-2">🪄</div>
+          <div class="ps-tbtn" id="pst-3">🖌</div>
+          <div class="ps-tbtn" id="pst-4">✒</div>
+          <div class="ps-tbtn" id="pst-5">T</div>
+        </div>
+        <div class="ps-canvas-area">
+          <div class="ps-checker"><canvas id="ps-cvs" width="410" height="365"></canvas></div>
+          <div class="ps-ctx-bar">
+            <span class="ps-ctx-btn blue" id="ps-act-lbl">Select Subject ✓</span>
+            <span class="ps-ctx-btn">Curves Skin 96%</span>
+            <span class="ps-ctx-btn">Send -> Pr</span>
+          </div>
+        </div>
+        <div class="ps-layers">
+          <div class="ps-sec-hdr">Layers • Pass Through</div>
+          <div class="ps-lyr sel" id="psl-0">👁 <span>◐ Curves_Skin_96%</span></div>
+          <div class="ps-lyr" id="psl-1">👁 <img class="ps-lyr-th" src="assets/thumbs/SP_WHITESKIN_COMBO_CUTOUT.png"/><span>SP_WhiteSkin_Cut</span></div>
+          <div class="ps-lyr" id="psl-2">👁 <img class="ps-lyr-th" src="assets/thumbs/SP_ROMANCE_LOVE_CUTOUT.png"/><span>SP_RomanceLove</span></div>
+          <div class="ps-lyr" id="psl-3">👁 <img class="ps-lyr-th" src="assets/thumbs/SP_GEL_PHU_KHANG_CUTOUT.png"/><span>SP_GelPhuKhang</span></div>
+          <div class="ps-lyr" id="psl-4">👁 <img class="ps-lyr-th" src="assets/thumbs/poster_03.jpg"/><span>CEO_ChiHang_Smart</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="app-win" id="win-ai" style="left:540px;top:22px;z-index:12;">
+      <div class="win-bar">
+        <div class="w-dots"><i class="wr"></i><i class="wy"></i><i class="wg"></i></div>
+        <span class="cc-badge cc-ai">Ai</span>
+        <span>HTPM_Brand_Vector_Titles.ai @ 150%</span>
+      </div>
+      <canvas id="ai-cvs" width="520" height="372"></canvas>
+    </div>
+
+    <div class="app-win" id="win-cms" style="left:16px;top:435px;z-index:13;">
+      <div class="win-bar">
+        <div class="w-dots"><i class="wr"></i><i class="wy"></i><i class="wg"></i></div>
+        <span>🌐 Chrome Auto-Agent — Hằng Thu Pharma CMS & TikTok Ads</span>
+        <span style="margin-left:auto;color:#10B981;">CDP :9333</span>
+      </div>
+      <div class="url-strip"><span>🔒 https://cms.hangthupharma.vn/auto-campaigns/5-san-pham-tuoi-25-chihang</span></div>
+      <div class="cms-content">
+        <div class="cms-grid">
+          <div class="cms-card sel" id="cmsc-0"><img src="assets/thumbs/poster_01.jpg"/><div class="cms-card-t">Điều Kinh HT • Chính Hãng</div></div>
+          <div class="cms-card" id="cmsc-1"><img src="assets/thumbs/poster_02.jpg"/><div class="cms-card-t">Ngọc Long Hoàn • HTPM</div></div>
+          <div class="cms-card" id="cmsc-2"><img src="assets/thumbs/poster_03.jpg"/><div class="cms-card-t">CEO Nguyễn Thị Hằng</div></div>
+        </div>
+        <div class="cms-inp" id="cms-type"></div>
+        <table class="cms-tbl">
+          <thead><tr><th>Kênh Tự Động</th><th>Tác Vụ</th><th>Trạng Thái</th></tr></thead>
+          <tbody>
+            <tr><td>Fanpage Hằng Thu</td><td>Đăng Reel 60fps + Ghim</td><td style="color:#059669;font-weight:700;">READY ✓</td></tr>
+            <tr><td>TikTok K6 HTPM</td><td>Đồng bộ Giỏ hàng SKU</td><td style="color:#2563EB;font-weight:700;">SYNCED</td></tr>
+            <tr><td>Zalo OA & Web</td><td>Cập nhật Bài viết SEO</td><td style="color:#059669;font-weight:700;">200 OK</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="app-win" id="win-gem" style="left:546px;top:445px;z-index:14;">
+      <div class="win-bar">
+        <div class="w-dots"><i class="wr"></i><i class="wy"></i><i class="wg"></i></div>
+        <span>✦ Gemini Pro (u/0..u/5) × Adobe Bridge Asset Sync</span>
+        <span style="margin-left:auto;color:#38BDF8;" id="gem-acc">u/0 ACTIVE</span>
+      </div>
+      <div class="gem-grid">
+        <div class="gem-card ok"><img src="assets/thumbs/bin_02_laptop_w.jpg"/><div style="font-size:8.8px;margin-top:3px;">C1275_ChiHang_Laptop.MP4</div><div class="gem-bar"><div class="gem-fill" id="gf-0" style="width:100%"></div></div></div>
+        <div class="gem-card ok"><img src="assets/thumbs/bin_01_desk.jpg"/><div style="font-size:8.8px;margin-top:3px;">C4134_PhongChuTich.MP4</div><div class="gem-bar"><div class="gem-fill" id="gf-1" style="width:100%"></div></div></div>
+        <div class="gem-card"><img src="assets/thumbs/bin_08_nlh_real.jpg"/><div style="font-size:8.8px;margin-top:3px;">C0304_NgocLongHoan.MP4</div><div class="gem-bar"><div class="gem-fill" id="gf-2" style="width:94%"></div></div></div>
+        <div class="gem-card"><img src="assets/thumbs/bin_06_whiteskin.jpg"/><div style="font-size:8.8px;margin-top:3px;">SP_Legend_WhiteSkin.jpg</div><div class="gem-bar"><div class="gem-fill" id="gf-3" style="width:100%"></div></div></div>
+      </div>
+    </div>
+
+    <div class="app-win" id="win-ide" style="left:28px;top:240px;z-index:11;">
+      <div class="win-bar">
+        <div class="w-dots"><i class="wr"></i><i class="wy"></i><i class="wg"></i></div>
+        <span>⚡ Antigravity IDE — build_sequence_from_zero.jsx</span>
+        <span style="margin-left:auto;color:#34D399;" id="ide-stat">+284 -0</span>
+      </div>
+      <div id="ide-lines"></div>
+    </div>
+
+    <div class="app-win" id="win-swarm" style="left:532px;top:235px;z-index:15;">
+      <div class="win-bar">
+        <div class="w-dots"><i class="wr"></i><i class="wy"></i><i class="wg"></i></div>
+        <span class="cc-badge cc-me">Me</span>
+        <span>Swarm Action Log × Media Encoder</span>
+        <span style="margin-left:auto;color:#FCD34D;" id="sw-cnt">LIVE</span>
+      </div>
+      <div id="swarm-rows"></div>
+    </div>
+
+    <div id="alt-tab-hud">
+      <div class="at-item" id="at-0"><span class="cc-badge cc-ps">Ps</span>Photoshop</div>
+      <div class="at-item" id="at-1"><span class="cc-badge cc-pr">Pr</span>Premiere</div>
+      <div class="at-item" id="at-2"><span class="cc-badge cc-ae">Ae</span>After Effects</div>
+      <div class="at-item" id="at-3"><span class="cc-badge cc-ai">Ai</span>Illustrator</div>
+      <div class="at-item" id="at-4"><span class="cc-badge cc-me">Me</span>Encoder</div>
+      <div class="at-item" id="at-5"><span class="cc-badge" style="background:#0F2942;color:#38BDF8;border:1px solid #38BDF8;">🌐</span>Auto-Web</div>
+    </div>
+  </div>
+
+  <div id="zone-divider"></div>
+
+  <!-- BOTTOM WORKSPACE: TRUE NLE BUILD-FROM-ZERO -->
+  <div id="adobe-nle">
+    <div id="nle-hdr">
+      <div class="ws-tabs">
+        <span class="cc-badge cc-pr" id="nle-app-badge" style="margin-right:6px;">Pr</span>
+        <span id="nle-app-name" style="font-weight:800;color:#FFF;margin-right:10px;">Adobe Premiere Pro 2026</span>
+        <span class="ws-tab active-pr" id="wstab-0">Editing</span>
+        <span class="ws-tab" id="wstab-1">Color (Lumetri)</span>
+        <span class="ws-tab" id="wstab-2">Effects / Ae Link</span>
+        <span class="ws-tab" id="wstab-3">Audio (-14 LUFS)</span>
+      </div>
+      <span class="dynlink-pill" id="dynlink-lbl">⇄ Dynamic Link: Pr × Ae × Ps</span>
+      <span class="adobe-export-btn" id="export-btn">Queue in Me 60fps</span>
+    </div>
+
+    <div id="nle-upper">
+      <div id="nle-left">
+        <div class="adobe-phdr">
+          <span class="on">Project: HTPM_ChiHang.prproj</span>
+          <span>Effects</span>
+        </div>
+        <div id="bin-grid">
+          <div class="bin-item sel" id="bin-0"><img src="assets/thumbs/bin_01_desk.jpg"/><span class="bin-dur">21.0s</span><div class="bin-lbl">CamA_ChiHang_RawLog.MP4</div></div>
+          <div class="bin-item" id="bin-1"><img src="assets/thumbs/bin_02_laptop_w.jpg"/><span class="bin-dur">04.2s</span><div class="bin-lbl">C1275_ChiHang_Laptop.MP4</div></div>
+          <div class="bin-item" id="bin-2"><img src="assets/thumbs/bin_05_gelpk.jpg"/><span class="bin-dur">PSD</span><div class="bin-lbl">SP_GelPhuKhang_HT.psd</div></div>
+          <div class="bin-item" id="bin-3"><img src="assets/thumbs/bin_06_whiteskin.jpg"/><span class="bin-dur">PSD</span><div class="bin-lbl">SP_Legend_WhiteSkin.psd</div></div>
+          <div class="bin-item" id="bin-4"><img src="assets/thumbs/bin_07_sp_ban.jpg"/><span class="bin-dur">AEP</span><div class="bin-lbl">Stage_5SanPham_Cards.aep</div></div>
+          <div class="bin-item" id="bin-5"><img src="assets/thumbs/bin_08_nlh_real.jpg"/><span class="bin-dur">03.5s</span><div class="bin-lbl">QuayTay_NgocLongHoan.MP4</div></div>
+          <div class="bin-item" id="bin-6"><img src="assets/thumbs/bin_03_laptop_b.jpg"/><span class="bin-dur">CUBE</span><div class="bin-lbl">Lumetri_WarmSkin96.cube</div></div>
+          <div class="bin-item" id="bin-7"><img src="assets/thumbs/bin_04_exec.jpg"/><span class="bin-dur">WAV</span><div class="bin-lbl">BGM_Wellness_SFX_Pack.wav</div></div>
+        </div>
+      </div>
+
+      <!-- Center: LIVE COMPOSITING MONITOR (Matches Timeline 100%!) -->
+      <div id="nle-center">
+        <div id="mon-hdr">
+          <span id="mon-title" style="font-weight:700;color:#E4E4E7;">Program: Sequence 01 (Empty)</span>
+          <span id="mon-state-lbl" style="color:#F59E0B;font-weight:700;">⏸ SCRUBBING / EDITING</span>
+        </div>
+        <div id="mon-stage">
+          <div id="mon-scopes">
+            <div class="scope-box"><span class="scope-lbl">LUMETRI LUMA</span><canvas id="sc-1" width="68" height="135"></canvas></div>
+            <div class="scope-box"><span class="scope-lbl">RGB PARADE</span><canvas id="sc-2" width="68" height="135"></canvas></div>
+            <div class="scope-box"><span class="scope-lbl">VECTORSCOPE</span><canvas id="sc-3" width="68" height="135"></canvas></div>
+          </div>
+
+          <div id="mon-viewport-wrap">
+            <div id="mon-layer-stack">
+              <img id="chihang-video-img" src="assets/preview_frames/f_0001.jpg" />
+              <img id="mask-no-topcard" src="assets/thumbs/clean_wall_rgba.png" />
+              <img id="mask-no-subtitle" src="assets/thumbs/clean_sub_rgba.png" />
+            </div>
+            <div id="pr-wireframe">
+              <div class="wf-h" style="left:-3px;top:-3px;"></div>
+              <div class="wf-h" style="right:-3px;top:-3px;"></div>
+              <div class="wf-h" style="left:-3px;bottom:-3px;"></div>
+              <div class="wf-h" style="right:-3px;bottom:-3px;"></div>
+            </div>
+            <div id="mon-empty-black">
+              <span style="font-size:18px;color:#3F3F46;">🎬</span>
+              <span>Sequence 01 — Chưa có Clip</span>
+              <span style="font-size:9px;color:#3F3F46;">Kéo Media vào Timeline để bắt đầu dựng</span>
+            </div>
+            <div id="mon-mode-pill">EMPTY SEQUENCE</div>
+          </div>
+
+          <div id="keystroke-hud">⌘N New Sequence</div>
+
+          <div id="mon-meters">
+            <span style="font-size:8px;font-weight:700;color:#A1A1AA;">MASTER</span>
+            <div class="vu-bars">
+              <div class="vu-col"><div class="vu-fill" id="vu-l"></div></div>
+              <div class="vu-col"><div class="vu-fill" id="vu-r"></div></div>
+            </div>
+            <div class="vu-db" id="vu-db">-∞ dB</div>
+          </div>
+        </div>
+        <div id="mon-transport">
+          <span id="mon-tc" style="color:#4B9CFF;font-weight:700;">00:00:00:00</span>
+          <div class="tr-btns">
+            <span>|◄</span><span>◄</span>
+            <span id="btn-play-toggle">▶</span>
+            <span>►</span><span>►|</span>
+          </div>
+          <span style="color:#A1A1AA;">00:00:21:00</span>
+        </div>
+      </div>
+
+      <!-- Right: Sliders ONLY move when physically dragged by a cursor! -->
+      <div id="nle-right">
+        <div class="lum-sec">
+          <div class="lum-hdr"><span>Lumetri Color & Motion</span><span id="lut-badge" style="color:#71717A;">RAW S-LOG3</span></div>
+          <div class="s-row"><span class="s-lbl">Scale</span><div class="s-trk" id="strk-0"><div class="s-fl" id="sl0f"></div><div class="s-th" id="sl0t"></div></div><span class="s-vl" id="sl0v">100.0%</span></div>
+          <div class="s-row"><span class="s-lbl">Temp</span><div class="s-trk" id="strk-1"><div class="s-fl" id="sl1f"></div><div class="s-th" id="sl1t"></div></div><span class="s-vl" id="sl1v">0.0</span></div>
+          <div class="s-row"><span class="s-lbl">Exposure</span><div class="s-trk" id="strk-2"><div class="s-fl" id="sl2f"></div><div class="s-th" id="sl2t"></div></div><span class="s-vl" id="sl2v">0.00</span></div>
+          <div class="s-row"><span class="s-lbl">Contrast</span><div class="s-trk" id="strk-3"><div class="s-fl" id="sl3f"></div><div class="s-th" id="sl3t"></div></div><span class="s-vl" id="sl3v">0.0</span></div>
+          <div class="s-row"><span class="s-lbl">Saturation</span><div class="s-trk" id="strk-4"><div class="s-fl" id="sl4f"></div><div class="s-th" id="sl4t"></div></div><span class="s-vl" id="sl4v">52.0%</span></div>
+        </div>
+
+        <div class="lum-sec">
+          <div class="lum-hdr"><span>Ae Graph Editor (Easy-Ease)</span><span style="color:#FACC15;">Bezier</span></div>
+          <div id="ae-graph-box"><canvas id="ae-graph-cvs" width="288" height="118"></canvas></div>
+        </div>
+
+        <div class="lum-sec">
+          <div class="lum-hdr"><span>Color Wheels (Skin Tone 96%)</span><span id="cw-status" style="color:#71717A;">Bypass</span></div>
+          <div class="wheels-row">
+            <div class="cw"><div class="cw-ring"><div class="cw-in"><div class="cw-dot" id="cwd0"></div></div></div><span>Shadows</span></div>
+            <div class="cw"><div class="cw-ring"><div class="cw-in"><div class="cw-dot" id="cwd1"></div></div></div><span>Midtones</span></div>
+            <div class="cw"><div class="cw-ring"><div class="cw-in"><div class="cw-dot" id="cwd2"></div></div></div><span>Highlights</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="nle-timeline">
+      <div id="tl-bar">
+        <div class="tl-tbtns">
+          <span class="tl-b on" id="tlb-0">↖ Selection [V]</span>
+          <span class="tl-b" id="tlb-1">🪒 Razor [C]</span>
+          <span class="tl-b" id="tlb-2">↔ Ripple [B]</span>
+          <span class="tl-b" id="tlb-3">✒ Pen [P]</span>
+          <span class="tl-b on" id="tlb-4">🧲 Snap</span>
+        </div>
+        <span id="tl-clip-counter" style="font-family:Consolas,monospace;color:#9999FF;font-weight:700;">Clips: 0/26 • Empty</span>
+      </div>
+      <canvas id="tl-canvas" width="1080" height="398"></canvas>
+    </div>
+  </div>
+
+  <canvas id="cursor-canvas" width="1080" height="1920"></canvas>
+</div>
+
+<script src="assets/audio_data_v3_inline.js"></script>
+<script src="swarm_engine_v3.js"></script>
+</body>
+</html>

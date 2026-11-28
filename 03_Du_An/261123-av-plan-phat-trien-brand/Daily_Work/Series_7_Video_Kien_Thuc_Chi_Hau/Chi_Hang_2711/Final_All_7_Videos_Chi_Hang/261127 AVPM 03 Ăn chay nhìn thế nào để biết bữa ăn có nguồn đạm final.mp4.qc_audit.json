@@ -1,0 +1,61 @@
+{
+  "inspected_at": "2026-11-27T17:00:45.980101",
+  "video_path": "C:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Series_7_Video_Kien_Thuc_Chi_Hau\\Chi_Hang_2711\\Final_All_7_Videos_Chi_Hang\\261127 AVPM 03 Ăn chay nhìn thế nào để biết bữa ăn có nguồn đạm final.mp4",
+  "fingerprint": {
+    "file_size": 22642627,
+    "sha256_head_tail": "eed5a7aa98512f36b59b2d84a2319d401daf28b69bd15345e46fd0fd16abfc2f"
+  },
+  "streams": {
+    "width": 1080,
+    "height": 1920,
+    "v_codec": "h264",
+    "a_codec": "aac",
+    "fps": 24.0,
+    "format_dur": 29.946,
+    "video_dur": 29.875,
+    "audio_dur": 29.946,
+    "av_sync_delta": 0.071
+  },
+  "letterbox": {
+    "top_black_px": 0,
+    "bottom_black_px": 0
+  },
+  "integrated_lufs": -14.9,
+  "cut_count": 3,
+  "cuts": [
+    {
+      "index": 1,
+      "start": 0.0,
+      "end": 10.98,
+      "dur": 10.98,
+      "label": "scene_01"
+    },
+    {
+      "index": 2,
+      "start": 10.98,
+      "end": 19.34,
+      "dur": 8.36,
+      "label": "scene_02"
+    },
+    {
+      "index": 3,
+      "start": 19.34,
+      "end": 29.89,
+      "dur": 10.55,
+      "label": "scene_03"
+    }
+  ],
+  "sheets": {
+    "all_cuts_full": "C:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Series_7_Video_Kien_Thuc_Chi_Hau\\Chi_Hang_2711\\V03_An_Chay_Nguon_Dam\\03_QC_Gate\\QC_FINAL_ALL_CUTS_FULL.jpg",
+    "all_cuts_zoom": "C:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Series_7_Video_Kien_Thuc_Chi_Hau\\Chi_Hang_2711\\V03_An_Chay_Nguon_Dam\\03_QC_Gate\\QC_FINAL_ALL_CUTS_ZOOM.jpg"
+  },
+  "audio_audit": {
+    "word_count": 91,
+    "eof_tail_sec": 0.786,
+    "eof_cutoff": false,
+    "repetitions": [],
+    "transcript": "Một mâm cơm chay có cơm, rau luộc, canh bí và nấm xào nhìn rất đầy đặn. Trước khi ăn, hàng hay hỏi một câu, món nào hôm nay là nguồn đạm chính? Nếu chưa có, mình có thể thêm đậu phụ sốt cà, một phần đậu gà hoặc đậu lăng. Ăn chay lâu dài thì đổi qua lại các loại đậu và ngũ cốc trong ngày để có nguồn acid amine đa dạng hơn. Lần tới nấu cơm chay, thử chọn món đạm ngay từ lúc lên thực đơn nhé."
+  },
+  "machine_failures": [],
+  "machine_status": "READY_FOR_VISUAL_SIGN_OFF"
+}

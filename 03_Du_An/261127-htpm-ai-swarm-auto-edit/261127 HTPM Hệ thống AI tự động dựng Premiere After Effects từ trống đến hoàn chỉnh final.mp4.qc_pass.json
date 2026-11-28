@@ -1,0 +1,13 @@
+{
+  "signed_at": "2026-11-27T16:52:41.557782",
+  "certified_path": "C:\\AI\\full studio\\projects\\htpm_ai_swarm_auto_edit_261127\\261127 HTPM Hệ thống AI tự động dựng Premiere After Effects từ trống đến hoàn chỉnh final.mp4",
+  "verdict": "PASS",
+  "auditor_verified": true,
+  "auditor": "video-qc-auditor",
+  "notes": "PASS 100% ca 5 tieu chi tren 9/9 pha dung tu Sequence trong den hoan chinh (#01..#09, 30.30s @ 60fps, -14.8 LUFS, SyncDelta=0.0s): (A) 100% bao bi san pham that HTPM tren Photoshop, CMS, Gemini, Project Bin va ban Chi Hang; (B) Logic nhan qua tuyet doi 1:1 Timeline <-> Program Monitor (0/28 Empty den -> V1 Raw S-Log3 khong the/khong sub + Razor 3 nhat -> V2 gan Stage01 bat the, scrub sang vung trong tat the -> V3 gan Sub_01..10 bat phu de -> V4 Lumetri bung sang mau Studio + A2/A3 -> 8.92s bam Space kim xanh la phat muot 60fps); (C) Ket tron 4 cau thoai tai 29.91s va bam Space dung mim cuoi tu nhien kem Queued 60fps o 0.39s cuoi (0% nhep moi cam, 0% chuot thua che mat); (D)&(E) Bo cuc Adobe CC Dynamic Link sinh dong, 0% lap tu, 0% dut chu, Program Monitor nam gon trong vung trang an toan TikTok/Reels 9:16.",
+  "override_reason": "",
+  "cut_count": 9,
+  "integrated_lufs": -14.8,
+  "file_size": 54848499,
+  "sha256_head_tail": "d73ffb720e3d2d9118489ee882d5cf09906aff2c40a6b909ae53a3ea581dddd4"
+}

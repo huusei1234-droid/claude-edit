@@ -1,0 +1,1218 @@
+{
+  "total_duration_s": 63.0,
+  "fps": 24,
+  "segments": [
+    {
+      "id": "vo_01",
+      "shot_id": "DD_S01",
+      "voice_profile": "THANH THANH TVC",
+      "voice_profile_id": "78ef243f",
+      "text": "Bữa sáng là ly cà phê vội, bữa trưa thì kẹt họp, tối về lại ăn bù thật no.",
+      "path": "d:\\AI\\full studio\\output\\htpm-usp-da-day-261123\\06_Audio_Voiceover\\vo_01.wav",
+      "shot_start_s": 0.0,
+      "shot_duration_s": 5.25,
+      "shot_end_s": 5.25,
+      "recommended_flow_gen_s": 7,
+      "start_s": 0.24,
+      "duration_s": 4.604,
+      "end_s": 4.844,
+      "whisper_heard": "Bữa sáng là ly cà phê vội, bữa trưa thì kẹt họp, tối về lại ăn bù thật no.",
+      "words": [
+        {
+          "w": "Bữa",
+          "s": 0.0,
+          "e": 0.28
+        },
+        {
+          "w": "sáng",
+          "s": 0.28,
+          "e": 0.54
+        },
+        {
+          "w": "là",
+          "s": 0.54,
+          "e": 0.68
+        },
+        {
+          "w": "ly",
+          "s": 0.68,
+          "e": 0.8
+        },
+        {
+          "w": "cà",
+          "s": 0.8,
+          "e": 0.98
+        },
+        {
+          "w": "phê",
+          "s": 0.98,
+          "e": 1.2
+        },
+        {
+          "w": "vội,",
+          "s": 1.2,
+          "e": 1.68
+        },
+        {
+          "w": "bữa",
+          "s": 1.94,
+          "e": 2.1
+        },
+        {
+          "w": "trưa",
+          "s": 2.1,
+          "e": 2.36
+        },
+        {
+          "w": "thì",
+          "s": 2.36,
+          "e": 2.56
+        },
+        {
+          "w": "kẹt",
+          "s": 2.56,
+          "e": 2.78
+        },
+        {
+          "w": "họp,",
+          "s": 2.78,
+          "e": 3.16
+        },
+        {
+          "w": "tối",
+          "s": 3.26,
+          "e": 3.36
+        },
+        {
+          "w": "về",
+          "s": 3.36,
+          "e": 3.54
+        },
+        {
+          "w": "lại",
+          "s": 3.54,
+          "e": 3.66
+        },
+        {
+          "w": "ăn",
+          "s": 3.66,
+          "e": 3.86
+        },
+        {
+          "w": "bù",
+          "s": 3.86,
+          "e": 4.06
+        },
+        {
+          "w": "thật",
+          "s": 4.06,
+          "e": 4.28
+        },
+        {
+          "w": "no.",
+          "s": 4.28,
+          "e": 4.5
+        }
+      ]
+    },
+    {
+      "id": "vo_02",
+      "shot_id": "DD_S02",
+      "voice_profile": "THANH THANH TVC",
+      "voice_profile_id": "78ef243f",
+      "text": "Đến lúc bụng trên nóng rát, ợ hơi và buồn nôn, chị mới giật mình nhớ ra cả ngày chưa thương lấy dạ dày mình.",
+      "path": "d:\\AI\\full studio\\output\\htpm-usp-da-day-261123\\06_Audio_Voiceover\\vo_02.wav",
+      "shot_start_s": 5.25,
+      "shot_duration_s": 7.5,
+      "shot_end_s": 12.75,
+      "recommended_flow_gen_s": 8,
+      "start_s": 5.49,
+      "duration_s": 6.684,
+      "end_s": 12.174,
+      "whisper_heard": "Đến lúc bụng trên nóng giác, ợ hơi và buồn nôn Chị mới giật mình nhớ ra cả ngày chưa thương lấy dạ dày mình",
+      "words": [
+        {
+          "w": "Đến",
+          "s": 0.0,
+          "e": 0.32
+        },
+        {
+          "w": "lúc",
+          "s": 0.32,
+          "e": 0.52
+        },
+        {
+          "w": "bụng",
+          "s": 0.52,
+          "e": 0.78
+        },
+        {
+          "w": "trên",
+          "s": 0.78,
+          "e": 0.92
+        },
+        {
+          "w": "nóng",
+          "s": 0.92,
+          "e": 1.2
+        },
+        {
+          "w": "giác,",
+          "s": 1.2,
+          "e": 1.7
+        },
+        {
+          "w": "ợ",
+          "s": 1.92,
+          "e": 1.98
+        },
+        {
+          "w": "hơi",
+          "s": 1.98,
+          "e": 2.3
+        },
+        {
+          "w": "và",
+          "s": 2.3,
+          "e": 2.46
+        },
+        {
+          "w": "buồn",
+          "s": 2.46,
+          "e": 2.74
+        },
+        {
+          "w": "nôn",
+          "s": 2.74,
+          "e": 3.28
+        },
+        {
+          "w": "Chị",
+          "s": 3.28,
+          "e": 3.64
+        },
+        {
+          "w": "mới",
+          "s": 3.64,
+          "e": 3.8
+        },
+        {
+          "w": "giật",
+          "s": 3.8,
+          "e": 4.06
+        },
+        {
+          "w": "mình",
+          "s": 4.06,
+          "e": 4.34
+        },
+        {
+          "w": "nhớ",
+          "s": 4.34,
+          "e": 4.54
+        },
+        {
+          "w": "ra",
+          "s": 4.54,
+          "e": 4.74
+        },
+        {
+          "w": "cả",
+          "s": 4.74,
+          "e": 4.92
+        },
+        {
+          "w": "ngày",
+          "s": 4.92,
+          "e": 5.22
+        },
+        {
+          "w": "chưa",
+          "s": 5.22,
+          "e": 5.46
+        },
+        {
+          "w": "thương",
+          "s": 5.46,
+          "e": 5.74
+        },
+        {
+          "w": "lấy",
+          "s": 5.74,
+          "e": 6.0
+        },
+        {
+          "w": "dạ",
+          "s": 6.0,
+          "e": 6.12
+        },
+        {
+          "w": "dày",
+          "s": 6.12,
+          "e": 6.34
+        },
+        {
+          "w": "mình",
+          "s": 6.34,
+          "e": 6.58
+        }
+      ]
+    },
+    {
+      "id": "vo_03",
+      "shot_id": "DD_S03",
+      "voice_profile": "THANH THANH TVC",
+      "voice_profile_id": "78ef243f",
+      "text": "Khi ăn uống thất thường kéo dài, lượng a-xít dịch vị dư thừa dễ làm tổn thương lớp niêm mạc dạ dày mỏng manh.",
+      "path": "d:\\AI\\full studio\\output\\htpm-usp-da-day-261123\\06_Audio_Voiceover\\vo_03.wav",
+      "shot_start_s": 12.75,
+      "shot_duration_s": 7.0,
+      "shot_end_s": 19.75,
+      "recommended_flow_gen_s": 8,
+      "start_s": 12.99,
+      "duration_s": 6.302,
+      "end_s": 19.292,
+      "whisper_heard": "Khi ăn uống thất thường kéo dài, lượng acid dịch vị dư thừa dễ làm tổn thương lớp niêm mạc dạ dày mỏng manh.",
+      "words": [
+        {
+          "w": "Khi",
+          "s": 0.0,
+          "e": 0.24
+        },
+        {
+          "w": "ăn",
+          "s": 0.24,
+          "e": 0.4
+        },
+        {
+          "w": "uống",
+          "s": 0.4,
+          "e": 0.54
+        },
+        {
+          "w": "thất",
+          "s": 0.54,
+          "e": 0.68
+        },
+        {
+          "w": "thường",
+          "s": 0.68,
+          "e": 0.9
+        },
+        {
+          "w": "kéo",
+          "s": 0.9,
+          "e": 1.06
+        },
+        {
+          "w": "dài,",
+          "s": 1.06,
+          "e": 1.72
+        },
+        {
+          "w": "lượng",
+          "s": 1.92,
+          "e": 2.1
+        },
+        {
+          "w": "acid",
+          "s": 2.1,
+          "e": 2.58
+        },
+        {
+          "w": "dịch",
+          "s": 2.58,
+          "e": 2.9
+        },
+        {
+          "w": "vị",
+          "s": 2.9,
+          "e": 3.04
+        },
+        {
+          "w": "dư",
+          "s": 3.04,
+          "e": 3.3
+        },
+        {
+          "w": "thừa",
+          "s": 3.3,
+          "e": 3.7
+        },
+        {
+          "w": "dễ",
+          "s": 3.7,
+          "e": 4.06
+        },
+        {
+          "w": "làm",
+          "s": 4.06,
+          "e": 4.28
+        },
+        {
+          "w": "tổn",
+          "s": 4.28,
+          "e": 4.56
+        },
+        {
+          "w": "thương",
+          "s": 4.56,
+          "e": 4.7
+        },
+        {
+          "w": "lớp",
+          "s": 4.7,
+          "e": 4.98
+        },
+        {
+          "w": "niêm",
+          "s": 4.98,
+          "e": 5.2
+        },
+        {
+          "w": "mạc",
+          "s": 5.2,
+          "e": 5.42
+        },
+        {
+          "w": "dạ",
+          "s": 5.42,
+          "e": 5.6
+        },
+        {
+          "w": "dày",
+          "s": 5.6,
+          "e": 5.76
+        },
+        {
+          "w": "mỏng",
+          "s": 5.76,
+          "e": 6.02
+        },
+        {
+          "w": "manh.",
+          "s": 6.02,
+          "e": 6.2
+        }
+      ]
+    },
+    {
+      "id": "vo_04",
+      "shot_id": "DD_S04",
+      "voice_profile": "THANH THANH TVC",
+      "voice_profile_id": "78ef243f",
+      "text": "Hãy bắt đầu chăm bản thân từ những điều nhỏ: ăn đúng bữa, vừa phải, ngủ nghỉ điều độ và đừng nằm ngay sau ăn.",
+      "path": "d:\\AI\\full studio\\output\\htpm-usp-da-day-261123\\06_Audio_Voiceover\\vo_04.wav",
+      "shot_start_s": 19.75,
+      "shot_duration_s": 7.5,
+      "shot_end_s": 27.25,
+      "recommended_flow_gen_s": 8,
+      "start_s": 19.99,
+      "duration_s": 6.911,
+      "end_s": 26.901,
+      "whisper_heard": "Hãy bắt đầu chăm bản thân từ những điều nhỏ, ăn đúng bữa, vừa phải, ngủ nghỉ đều độ và đừng nằm ngay sau ăn.",
+      "words": [
+        {
+          "w": "Hãy",
+          "s": 0.0,
+          "e": 0.2
+        },
+        {
+          "w": "bắt",
+          "s": 0.2,
+          "e": 0.42
+        },
+        {
+          "w": "đầu",
+          "s": 0.42,
+          "e": 0.6
+        },
+        {
+          "w": "chăm",
+          "s": 0.6,
+          "e": 0.78
+        },
+        {
+          "w": "bản",
+          "s": 0.78,
+          "e": 1.02
+        },
+        {
+          "w": "thân",
+          "s": 1.02,
+          "e": 1.3
+        },
+        {
+          "w": "từ",
+          "s": 1.3,
+          "e": 1.5
+        },
+        {
+          "w": "những",
+          "s": 1.5,
+          "e": 1.72
+        },
+        {
+          "w": "điều",
+          "s": 1.72,
+          "e": 1.84
+        },
+        {
+          "w": "nhỏ,",
+          "s": 1.84,
+          "e": 2.7
+        },
+        {
+          "w": "ăn",
+          "s": 2.9,
+          "e": 2.98
+        },
+        {
+          "w": "đúng",
+          "s": 2.98,
+          "e": 3.2
+        },
+        {
+          "w": "bữa,",
+          "s": 3.2,
+          "e": 3.48
+        },
+        {
+          "w": "vừa",
+          "s": 3.76,
+          "e": 3.94
+        },
+        {
+          "w": "phải,",
+          "s": 3.94,
+          "e": 4.28
+        },
+        {
+          "w": "ngủ",
+          "s": 4.54,
+          "e": 4.68
+        },
+        {
+          "w": "nghỉ",
+          "s": 4.68,
+          "e": 4.88
+        },
+        {
+          "w": "đều",
+          "s": 4.88,
+          "e": 5.08
+        },
+        {
+          "w": "độ",
+          "s": 5.08,
+          "e": 5.32
+        },
+        {
+          "w": "và",
+          "s": 5.32,
+          "e": 5.74
+        },
+        {
+          "w": "đừng",
+          "s": 5.74,
+          "e": 5.9
+        },
+        {
+          "w": "nằm",
+          "s": 5.9,
+          "e": 6.18
+        },
+        {
+          "w": "ngay",
+          "s": 6.18,
+          "e": 6.44
+        },
+        {
+          "w": "sau",
+          "s": 6.44,
+          "e": 6.56
+        },
+        {
+          "w": "ăn.",
+          "s": 6.56,
+          "e": 6.82
+        }
+      ]
+    },
+    {
+      "id": "vo_05",
+      "shot_id": "DD_S05",
+      "voice_profile": "THANH THANH TVC",
+      "voice_profile_id": "78ef243f",
+      "text": "Và để dạ dày luôn khỏe êm suốt ngày dài bận rộn, chị chọn đồng hành cùng Dạ Dày Hằng Thu.",
+      "path": "d:\\AI\\full studio\\output\\htpm-usp-da-day-261123\\06_Audio_Voiceover\\vo_05.wav",
+      "shot_start_s": 27.25,
+      "shot_duration_s": 6.5,
+      "shot_end_s": 33.75,
+      "recommended_flow_gen_s": 8,
+      "start_s": 27.49,
+      "duration_s": 5.717,
+      "end_s": 33.207,
+      "whisper_heard": "Và để dạ dày luôn khỏe êm, suốt ngày dài bận rộn Chị chọn đồng hành cùng dạ dày hàng thu",
+      "words": [
+        {
+          "w": "Và",
+          "s": 0.0,
+          "e": 0.48
+        },
+        {
+          "w": "để",
+          "s": 0.48,
+          "e": 0.74
+        },
+        {
+          "w": "dạ",
+          "s": 0.74,
+          "e": 0.96
+        },
+        {
+          "w": "dày",
+          "s": 0.96,
+          "e": 1.16
+        },
+        {
+          "w": "luôn",
+          "s": 1.16,
+          "e": 1.36
+        },
+        {
+          "w": "khỏe",
+          "s": 1.36,
+          "e": 1.66
+        },
+        {
+          "w": "êm,",
+          "s": 1.66,
+          "e": 2.18
+        },
+        {
+          "w": "suốt",
+          "s": 2.26,
+          "e": 2.4
+        },
+        {
+          "w": "ngày",
+          "s": 2.4,
+          "e": 2.62
+        },
+        {
+          "w": "dài",
+          "s": 2.62,
+          "e": 2.8
+        },
+        {
+          "w": "bận",
+          "s": 2.8,
+          "e": 3.0
+        },
+        {
+          "w": "rộn",
+          "s": 3.0,
+          "e": 3.6
+        },
+        {
+          "w": "Chị",
+          "s": 3.6,
+          "e": 3.8
+        },
+        {
+          "w": "chọn",
+          "s": 3.8,
+          "e": 3.98
+        },
+        {
+          "w": "đồng",
+          "s": 3.98,
+          "e": 4.2
+        },
+        {
+          "w": "hành",
+          "s": 4.2,
+          "e": 4.44
+        },
+        {
+          "w": "cùng",
+          "s": 4.44,
+          "e": 4.68
+        },
+        {
+          "w": "dạ",
+          "s": 4.68,
+          "e": 4.98
+        },
+        {
+          "w": "dày",
+          "s": 4.98,
+          "e": 5.18
+        },
+        {
+          "w": "hàng",
+          "s": 5.18,
+          "e": 5.34
+        },
+        {
+          "w": "thu",
+          "s": 5.34,
+          "e": 5.68
+        }
+      ]
+    },
+    {
+      "id": "vo_06",
+      "shot_id": "DD_S06",
+      "voice_profile": "THANH THANH TVC",
+      "voice_profile_id": "78ef243f",
+      "text": "Dạ Dày Hằng Thu hỗ trợ giảm a-xít dịch vị, giúp bảo vệ niêm mạc, xoa dịu cơn đau dạ dày, ợ hơi và trào ngược.",
+      "path": "d:\\AI\\full studio\\output\\htpm-usp-da-day-261123\\06_Audio_Voiceover\\vo_06.wav",
+      "shot_start_s": 33.75,
+      "shot_duration_s": 7.5,
+      "shot_end_s": 41.25,
+      "recommended_flow_gen_s": 8,
+      "start_s": 33.99,
+      "duration_s": 6.701,
+      "end_s": 40.691,
+      "whisper_heard": "dạ dày hàng thu hỗ trợ giảm áxít dịch vị, giúp bảo vệ niêm mạc, xoà dịu cơn đau dạ dày, ợ hơi và chào ngược.",
+      "words": [
+        {
+          "w": "dạ",
+          "s": 0.0,
+          "e": 0.38
+        },
+        {
+          "w": "dày",
+          "s": 0.38,
+          "e": 0.5
+        },
+        {
+          "w": "hàng",
+          "s": 0.5,
+          "e": 0.66
+        },
+        {
+          "w": "thu",
+          "s": 0.66,
+          "e": 0.88
+        },
+        {
+          "w": "hỗ",
+          "s": 0.88,
+          "e": 1.08
+        },
+        {
+          "w": "trợ",
+          "s": 1.08,
+          "e": 1.38
+        },
+        {
+          "w": "giảm",
+          "s": 1.38,
+          "e": 1.74
+        },
+        {
+          "w": "áxít",
+          "s": 1.74,
+          "e": 2.0
+        },
+        {
+          "w": "dịch",
+          "s": 2.0,
+          "e": 2.24
+        },
+        {
+          "w": "vị,",
+          "s": 2.24,
+          "e": 2.64
+        },
+        {
+          "w": "giúp",
+          "s": 2.9,
+          "e": 3.02
+        },
+        {
+          "w": "bảo",
+          "s": 3.02,
+          "e": 3.24
+        },
+        {
+          "w": "vệ",
+          "s": 3.24,
+          "e": 3.38
+        },
+        {
+          "w": "niêm",
+          "s": 3.38,
+          "e": 3.66
+        },
+        {
+          "w": "mạc,",
+          "s": 3.66,
+          "e": 4.06
+        },
+        {
+          "w": "xoà",
+          "s": 4.2,
+          "e": 4.36
+        },
+        {
+          "w": "dịu",
+          "s": 4.36,
+          "e": 4.58
+        },
+        {
+          "w": "cơn",
+          "s": 4.58,
+          "e": 4.74
+        },
+        {
+          "w": "đau",
+          "s": 4.74,
+          "e": 4.86
+        },
+        {
+          "w": "dạ",
+          "s": 4.86,
+          "e": 5.02
+        },
+        {
+          "w": "dày,",
+          "s": 5.02,
+          "e": 5.48
+        },
+        {
+          "w": "ợ",
+          "s": 5.72,
+          "e": 5.82
+        },
+        {
+          "w": "hơi",
+          "s": 5.82,
+          "e": 6.1
+        },
+        {
+          "w": "và",
+          "s": 6.1,
+          "e": 6.32
+        },
+        {
+          "w": "chào",
+          "s": 6.32,
+          "e": 6.48
+        },
+        {
+          "w": "ngược.",
+          "s": 6.48,
+          "e": 6.68
+        }
+      ]
+    },
+    {
+      "id": "vo_07",
+      "shot_id": "DD_S07",
+      "voice_profile": "THANH THANH TVC",
+      "voice_profile_id": "78ef243f",
+      "text": "Sự kết hợp tinh túy từ Dạ cẩm, Nghệ đen, Hoàng liên và Mộc hương giúp nâng niu hệ tiêu hóa từ thảo dược thiên nhiên.",
+      "path": "d:\\AI\\full studio\\output\\htpm-usp-da-day-261123\\06_Audio_Voiceover\\vo_07.wav",
+      "shot_start_s": 41.25,
+      "shot_duration_s": 8.25,
+      "shot_end_s": 49.5,
+      "recommended_flow_gen_s": 8,
+      "start_s": 41.49,
+      "duration_s": 7.496,
+      "end_s": 48.986,
+      "whisper_heard": "sự kết hợp tinh túy từ dạ cẩm, nghệ đen, hoàng liên và mộc hương giúp nâng niu hệ tiêu hóa từ thảo dược thiên nhiên.",
+      "words": [
+        {
+          "w": "sự",
+          "s": 0.0,
+          "e": 0.56
+        },
+        {
+          "w": "kết",
+          "s": 0.56,
+          "e": 0.72
+        },
+        {
+          "w": "hợp",
+          "s": 0.72,
+          "e": 0.94
+        },
+        {
+          "w": "tinh",
+          "s": 0.94,
+          "e": 1.08
+        },
+        {
+          "w": "túy",
+          "s": 1.08,
+          "e": 1.32
+        },
+        {
+          "w": "từ",
+          "s": 1.32,
+          "e": 1.6
+        },
+        {
+          "w": "dạ",
+          "s": 1.6,
+          "e": 1.84
+        },
+        {
+          "w": "cẩm,",
+          "s": 1.84,
+          "e": 2.4
+        },
+        {
+          "w": "nghệ",
+          "s": 2.5,
+          "e": 2.62
+        },
+        {
+          "w": "đen,",
+          "s": 2.62,
+          "e": 3.12
+        },
+        {
+          "w": "hoàng",
+          "s": 3.4,
+          "e": 3.56
+        },
+        {
+          "w": "liên",
+          "s": 3.56,
+          "e": 3.8
+        },
+        {
+          "w": "và",
+          "s": 3.8,
+          "e": 3.94
+        },
+        {
+          "w": "mộc",
+          "s": 3.94,
+          "e": 4.14
+        },
+        {
+          "w": "hương",
+          "s": 4.14,
+          "e": 4.74
+        },
+        {
+          "w": "giúp",
+          "s": 4.74,
+          "e": 5.2
+        },
+        {
+          "w": "nâng",
+          "s": 5.2,
+          "e": 5.42
+        },
+        {
+          "w": "niu",
+          "s": 5.42,
+          "e": 5.64
+        },
+        {
+          "w": "hệ",
+          "s": 5.64,
+          "e": 5.8
+        },
+        {
+          "w": "tiêu",
+          "s": 5.8,
+          "e": 6.06
+        },
+        {
+          "w": "hóa",
+          "s": 6.06,
+          "e": 6.32
+        },
+        {
+          "w": "từ",
+          "s": 6.32,
+          "e": 6.54
+        },
+        {
+          "w": "thảo",
+          "s": 6.54,
+          "e": 6.78
+        },
+        {
+          "w": "dược",
+          "s": 6.78,
+          "e": 6.96
+        },
+        {
+          "w": "thiên",
+          "s": 6.96,
+          "e": 7.2
+        },
+        {
+          "w": "nhiên.",
+          "s": 7.2,
+          "e": 7.44
+        }
+      ]
+    },
+    {
+      "id": "vo_08",
+      "shot_id": "DD_S08",
+      "voice_profile": "THANH THANH TVC",
+      "voice_profile_id": "78ef243f",
+      "text": "Dạ dày êm ái để mỗi bữa ăn lại trọn vẹn niềm vui, tối ngủ thật sâu và sáng mai tràn đầy năng lượng.",
+      "path": "d:\\AI\\full studio\\output\\htpm-usp-da-day-261123\\06_Audio_Voiceover\\vo_08.wav",
+      "shot_start_s": 49.5,
+      "shot_duration_s": 7.0,
+      "shot_end_s": 56.5,
+      "recommended_flow_gen_s": 8,
+      "start_s": 49.74,
+      "duration_s": 6.283,
+      "end_s": 56.023,
+      "whisper_heard": "dạ dày êm ái, để mỗi bữa ăn lại trọn vẹn niềm vui tối ngủ thật sâu và sáng mai tràn đầy năng lượng",
+      "words": [
+        {
+          "w": "dạ",
+          "s": 0.0,
+          "e": 0.46
+        },
+        {
+          "w": "dày",
+          "s": 0.46,
+          "e": 0.64
+        },
+        {
+          "w": "êm",
+          "s": 0.64,
+          "e": 0.96
+        },
+        {
+          "w": "ái,",
+          "s": 0.96,
+          "e": 1.44
+        },
+        {
+          "w": "để",
+          "s": 1.56,
+          "e": 1.68
+        },
+        {
+          "w": "mỗi",
+          "s": 1.68,
+          "e": 1.86
+        },
+        {
+          "w": "bữa",
+          "s": 1.86,
+          "e": 1.98
+        },
+        {
+          "w": "ăn",
+          "s": 1.98,
+          "e": 2.2
+        },
+        {
+          "w": "lại",
+          "s": 2.2,
+          "e": 2.46
+        },
+        {
+          "w": "trọn",
+          "s": 2.46,
+          "e": 2.62
+        },
+        {
+          "w": "vẹn",
+          "s": 2.62,
+          "e": 2.88
+        },
+        {
+          "w": "niềm",
+          "s": 2.88,
+          "e": 3.06
+        },
+        {
+          "w": "vui",
+          "s": 3.06,
+          "e": 3.5
+        },
+        {
+          "w": "tối",
+          "s": 3.5,
+          "e": 3.8
+        },
+        {
+          "w": "ngủ",
+          "s": 3.8,
+          "e": 3.98
+        },
+        {
+          "w": "thật",
+          "s": 3.98,
+          "e": 4.18
+        },
+        {
+          "w": "sâu",
+          "s": 4.18,
+          "e": 4.62
+        },
+        {
+          "w": "và",
+          "s": 4.62,
+          "e": 4.86
+        },
+        {
+          "w": "sáng",
+          "s": 4.86,
+          "e": 5.0
+        },
+        {
+          "w": "mai",
+          "s": 5.0,
+          "e": 5.32
+        },
+        {
+          "w": "tràn",
+          "s": 5.32,
+          "e": 5.66
+        },
+        {
+          "w": "đầy",
+          "s": 5.66,
+          "e": 5.86
+        },
+        {
+          "w": "năng",
+          "s": 5.86,
+          "e": 6.06
+        },
+        {
+          "w": "lượng",
+          "s": 6.06,
+          "e": 6.26
+        }
+      ]
+    },
+    {
+      "id": "vo_09",
+      "shot_id": "DD_S09",
+      "voice_profile": "THANH THANH TVC",
+      "voice_profile_id": "78ef243f",
+      "text": "Nhắn ngay Dạ Dày Hằng Thu, để được tư vấn chăm sóc dạ dày khỏe êm mỗi ngày chị nhé.",
+      "path": "d:\\AI\\full studio\\output\\htpm-usp-da-day-261123\\06_Audio_Voiceover\\vo_09.wav",
+      "shot_start_s": 56.5,
+      "shot_duration_s": 6.5,
+      "shot_end_s": 63.0,
+      "recommended_flow_gen_s": 8,
+      "start_s": 56.74,
+      "duration_s": 5.297,
+      "end_s": 62.037,
+      "whisper_heard": "Nhắn ngay Dạ Dày Hằng Thu để được tư vấn chăm sóc dạ dày khỏe êm mỗi ngày chị nhé!",
+      "words": [
+        {
+          "w": "Nhấn",
+          "s": 0.0,
+          "e": 0.34
+        },
+        {
+          "w": "ngay",
+          "s": 0.34,
+          "e": 0.64
+        },
+        {
+          "w": "dạ",
+          "s": 0.64,
+          "e": 0.86
+        },
+        {
+          "w": "dày",
+          "s": 0.86,
+          "e": 1.06
+        },
+        {
+          "w": "hàng",
+          "s": 1.06,
+          "e": 1.28
+        },
+        {
+          "w": "thư",
+          "s": 1.28,
+          "e": 1.82
+        },
+        {
+          "w": "để",
+          "s": 1.82,
+          "e": 2.08
+        },
+        {
+          "w": "được",
+          "s": 2.08,
+          "e": 2.3
+        },
+        {
+          "w": "tư",
+          "s": 2.3,
+          "e": 2.5
+        },
+        {
+          "w": "vấn",
+          "s": 2.5,
+          "e": 2.68
+        },
+        {
+          "w": "chăm",
+          "s": 2.68,
+          "e": 2.86
+        },
+        {
+          "w": "sóc",
+          "s": 2.86,
+          "e": 3.02
+        },
+        {
+          "w": "dạ",
+          "s": 3.02,
+          "e": 3.22
+        },
+        {
+          "w": "dày",
+          "s": 3.22,
+          "e": 3.5
+        },
+        {
+          "w": "khỏe",
+          "s": 3.5,
+          "e": 3.8
+        },
+        {
+          "w": "êm",
+          "s": 3.8,
+          "e": 4.08
+        },
+        {
+          "w": "mỗi",
+          "s": 4.08,
+          "e": 4.28
+        },
+        {
+          "w": "ngày",
+          "s": 4.28,
+          "e": 4.52
+        },
+        {
+          "w": "chị",
+          "s": 4.52,
+          "e": 4.7
+        },
+        {
+          "w": "nhớ.",
+          "s": 4.7,
+          "e": 4.98
+        }
+      ]
+    }
+  ]
+}

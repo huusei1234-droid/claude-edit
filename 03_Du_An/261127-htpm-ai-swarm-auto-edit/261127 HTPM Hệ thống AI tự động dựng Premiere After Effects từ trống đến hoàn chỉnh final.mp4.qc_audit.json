@@ -1,0 +1,103 @@
+{
+  "inspected_at": "2026-11-27T16:47:08.008062",
+  "video_path": "C:\\AI\\full studio\\projects\\htpm_ai_swarm_auto_edit_261127\\261127 HTPM Hệ thống AI tự động dựng Premiere After Effects từ trống đến hoàn chỉnh final.mp4",
+  "fingerprint": {
+    "file_size": 54848499,
+    "sha256_head_tail": "d73ffb720e3d2d9118489ee882d5cf09906aff2c40a6b909ae53a3ea581dddd4"
+  },
+  "streams": {
+    "width": 1080,
+    "height": 1920,
+    "v_codec": "h264",
+    "a_codec": "aac",
+    "fps": 60.0,
+    "format_dur": 30.3,
+    "video_dur": 30.3,
+    "audio_dur": 30.3,
+    "av_sync_delta": 0.0
+  },
+  "letterbox": {
+    "top_black_px": 0,
+    "bottom_black_px": 0
+  },
+  "integrated_lufs": -14.8,
+  "cut_count": 9,
+  "cuts": [
+    {
+      "index": 1,
+      "start": 0.0,
+      "end": 0.65,
+      "dur": 0.65,
+      "label": "s01_empty_timeline_black"
+    },
+    {
+      "index": 2,
+      "start": 0.65,
+      "end": 2.9,
+      "dur": 2.25,
+      "label": "s02_v1_raw_slog_razor_cuts"
+    },
+    {
+      "index": 3,
+      "start": 2.9,
+      "end": 3.8,
+      "dur": 0.9,
+      "label": "s03_v2_card1_pops_on"
+    },
+    {
+      "index": 4,
+      "start": 3.8,
+      "end": 4.3,
+      "dur": 0.5,
+      "label": "s04_scrub_empty_v2_card_off"
+    },
+    {
+      "index": 5,
+      "start": 4.3,
+      "end": 5.55,
+      "dur": 1.25,
+      "label": "s05_v2_cards234_drop"
+    },
+    {
+      "index": 6,
+      "start": 5.55,
+      "end": 7.15,
+      "dur": 1.6,
+      "label": "s06_v3_captions_cascade"
+    },
+    {
+      "index": 7,
+      "start": 7.15,
+      "end": 8.9,
+      "dur": 1.75,
+      "label": "s07_v4_lumetri_grade_sfx"
+    },
+    {
+      "index": 8,
+      "start": 8.9,
+      "end": 20.0,
+      "dur": 11.1,
+      "label": "s08_space_smooth_play_part1"
+    },
+    {
+      "index": 9,
+      "start": 20.0,
+      "end": 30.35,
+      "dur": 10.35,
+      "label": "s09_space_smooth_play_complete"
+    }
+  ],
+  "sheets": {
+    "all_cuts_full": "C:\\AI\\full studio\\projects\\htpm_ai_swarm_auto_edit_261127\\qc_report_v3\\QC_FINAL_ALL_CUTS_FULL.jpg",
+    "all_cuts_zoom": "C:\\AI\\full studio\\projects\\htpm_ai_swarm_auto_edit_261127\\qc_report_v3\\QC_FINAL_ALL_CUTS_ZOOM.jpg"
+  },
+  "audio_audit": {
+    "word_count": 90,
+    "eof_tail_sec": 0.39,
+    "eof_cutoff": false,
+    "repetitions": [],
+    "transcript": "Có 5 sản phẩm mà nếu là phụ nữ sau tuổi 25, tôi nghĩ chị em nên tìm hiểu để chăm sóc sức khỏe và sắc đẹp từ bên trong. Thứ nhất là sản phẩm hỗ trợ điều hoa chú kỳ và chăm sóc nồi tiết tổ nữ. Một cơ thể khỏe mạnh thường bắt đầu từ sự cân bằng. Khi chăm sóc tổ sức khỏe nồi tiết, nhiều chị em cũng cảm thấy cơ thể có nhiều năng lượng hơn và tự tin hơn trong cuộc sống hàng ngày."
+  },
+  "machine_failures": [],
+  "machine_status": "READY_FOR_VISUAL_SIGN_OFF"
+}

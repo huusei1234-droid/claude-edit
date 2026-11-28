@@ -1,0 +1,61 @@
+{
+  "inspected_at": "2026-11-27T18:03:38.868582",
+  "video_path": "C:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Series_7_Video_Kien_Thuc_Chi_Hau\\Chi_Hang_2711\\Final_All_7_Videos_Chi_Hang\\261127 AVPM 05 Một gói có 1000 mg đó là 1000 mg gì final.mp4",
+  "fingerprint": {
+    "file_size": 21662062,
+    "sha256_head_tail": "6887483689005ccb8afe1e1480ee9320a42bc3831ffd7e291485e95e50933086"
+  },
+  "streams": {
+    "width": 1080,
+    "height": 1920,
+    "v_codec": "h264",
+    "a_codec": "aac",
+    "fps": 24.0,
+    "format_dur": 29.498,
+    "video_dur": 29.417,
+    "audio_dur": 29.498,
+    "av_sync_delta": 0.082
+  },
+  "letterbox": {
+    "top_black_px": 0,
+    "bottom_black_px": 0
+  },
+  "integrated_lufs": -15.1,
+  "cut_count": 3,
+  "cuts": [
+    {
+      "index": 1,
+      "start": 0.0,
+      "end": 12.31,
+      "dur": 12.31,
+      "label": "scene_01"
+    },
+    {
+      "index": 2,
+      "start": 12.31,
+      "end": 21.17,
+      "dur": 8.86,
+      "label": "scene_02"
+    },
+    {
+      "index": 3,
+      "start": 21.17,
+      "end": 29.46,
+      "dur": 8.29,
+      "label": "scene_03"
+    }
+  ],
+  "sheets": {
+    "all_cuts_full": "C:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Series_7_Video_Kien_Thuc_Chi_Hau\\Chi_Hang_2711\\V05_Mot_Goi_1000mg_La_Gi\\03_QC_Gate\\QC_FINAL_ALL_CUTS_FULL.jpg",
+    "all_cuts_zoom": "C:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Series_7_Video_Kien_Thuc_Chi_Hau\\Chi_Hang_2711\\V05_Mot_Goi_1000mg_La_Gi\\03_QC_Gate\\QC_FINAL_ALL_CUTS_ZOOM.jpg"
+  },
+  "audio_audit": {
+    "word_count": 89,
+    "eof_tail_sec": 0.788,
+    "eof_cutoff": false,
+    "repetitions": [],
+    "transcript": "Khi xem một sản phẩm bổ sung canxi, hàng hay đọc phần chữ đi cùng con số. Ví dụ, nếu nhãn ghi 1000mg canxi carbonate thì con số đó là khối lượng của cả hợp chất. Lượng canxi nguyên tố trong đó khoảng 400mg. Giờ mình nhìn thêm một chỗ nữa, lượng này tính cho một viên hay cả một khẩu phần gồm 2 viên. Khi so hai sản phẩm, cứ đưa về cùng đơn vị cùng tính miligram canxi nguyên tố trên mỗi khẩu phần, rồi mới so."
+  },
+  "machine_failures": [],
+  "machine_status": "READY_FOR_VISUAL_SIGN_OFF"
+}

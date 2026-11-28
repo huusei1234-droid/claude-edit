@@ -1,0 +1,13 @@
+{
+  "signed_at": "2026-11-27T17:10:04.292439",
+  "certified_path": "C:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Series_7_Video_Kien_Thuc_Chi_Hau\\Chi_Hang_2711\\Final_All_7_Videos_Chi_Hang\\261127 AVPM 06 Vì sao nói về collagen lại nhắc đến vitamin C final.mp4",
+  "verdict": "PASS",
+  "auditor_verified": true,
+  "auditor": "video-qc-auditor",
+  "notes": "Đã kiểm duyệt 100% 3 cú cắt (#01, #02, #03) trên FULL/ZOOM sheets và nghe toàn bộ MP4: Đã khử sạch 100% hợp âm piano đầu #01 (0% BGM xuyên suốt); đồng bộ 100% quả ổi giòn ruột trắng từ cảnh bổ trên thớt (#01) sang đĩa ổi (#02) và bộ 3 đĩa ổi ruột trắng + cam + salad ớt chuông (#03); Chị Hằng đồng nhất bộ Lụa Ngọc Lục Bảo; hộp chữ nằm trọn trong vùng an toàn 9:16; thoại đủ 94/94 từ (rõ nhiều mô liên kết và vài miếng ổi sau bữa trưa), 0% lặp từ, 0% đứt chữ.",
+  "override_reason": "",
+  "cut_count": 3,
+  "integrated_lufs": -14.7,
+  "file_size": 21419204,
+  "sha256_head_tail": "751e764aaecbe41e75a9237e6acd8ae08d5fba3c221b32d3a819ce5591a2f052"
+}

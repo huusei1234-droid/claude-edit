@@ -1,0 +1,13 @@
+{
+  "signed_at": "2026-11-27T17:21:29.097582",
+  "certified_path": "C:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Series_7_Video_Kien_Thuc_Chi_Hau\\Chi_Hang_2711\\Final_All_7_Videos_Chi_Hang\\261127 AVPM 07 Bột nghệ và curcumin khác nhau ở đâu final.mp4",
+  "verdict": "PASS",
+  "auditor_verified": true,
+  "auditor": "video-qc-auditor",
+  "notes": "Đã kiểm duyệt 100% 3 cú cắt (#01, #02, #03) trên FULL/ZOOM sheets và nghe toàn bộ MP4: Nhân vật Chị Hằng đồng nhất bộ Tạp Dề Bếp Ấm xuyên suốt 3 cảnh; đạo cụ củ nghệ tươi, bột nghệ, 2 hũ thủy tinh trong suốt (#01), 2 hũ sứ kem trơn 0% chữ mặt trước (#02) và hộp giấy kem trơn xoay mặt sau bảng Nutrition Facts (#03) chuẩn 100% kịch bản; toàn bộ hộp chữ nằm trọn trong vùng an toàn 9:16; thoại trôi chảy đủ 103/103 từ, phát âm rõ Curcumin/Curcuminoid, 0% lặp từ, 0% đứt chữ, 0% BGM.",
+  "override_reason": "",
+  "cut_count": 3,
+  "integrated_lufs": -14.8,
+  "file_size": 21682365,
+  "sha256_head_tail": "91cf2750660d46441954bc36c9083506e123bd2616faef996550ff8ace391fe1"
+}

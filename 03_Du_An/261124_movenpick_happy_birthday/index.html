@@ -1,0 +1,117 @@
+<!doctype html>
+<html
+  lang="vi"
+  data-composition-variables='[
+    {"id":"greeting_text","type":"string","label":"Lời chúc","default":"Happy Birthday"},
+    {"id":"logo_src","type":"string","label":"Logo thương hiệu","default":"assets/images/movenpick-logo.png"}
+  ]'
+>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>Happy Birthday Mövenpick Resort Cam Ranh (Clean Edition)</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        width: 1080px;
+        height: 1920px;
+        overflow: hidden;
+        background: #f8f9fb;
+      }
+      #root {
+        position: relative;
+        width: 1080px;
+        height: 1920px;
+        overflow: hidden;
+      }
+      .scene-host {
+        position: absolute;
+        inset: 0;
+        z-index: 2;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="root"
+      data-composition-id="main"
+      data-start="0"
+      data-duration="10.3"
+      data-width="1080"
+      data-height="1920"
+      data-fps="30"
+    >
+      <div
+        id="letter-zoom"
+        class="scene-host"
+        data-composition-id="letter-zoom"
+        data-composition-src="compositions/letter-zoom.html"
+        data-start="0"
+        data-duration="10.3"
+        data-track-index="1"
+        data-track-kind="graphics"
+        data-width="1080"
+        data-height="1920"
+      ></div>
+
+      <!-- Cleaned Original Voice (Happy Birthday, Movenpick Resort Cam Ranh!) -->
+      <audio
+        id="aud-voice"
+        class="clip"
+        src="assets/audio/voice_clean.wav"
+        data-start="0"
+        data-duration="8.25"
+        data-track-index="2"
+        data-volume="1.38"
+        data-fade-in="0.08"
+        data-fade-out="0.45"
+      ></audio>
+
+      <!-- Warm Grand Piano Happy Birthday BGM (Ducked during speech, resolves cleanly at 10.30s) -->
+      <audio
+        id="aud-bgm"
+        class="clip"
+        src="assets/audio/bgm_hb_10s.wav"
+        data-start="0"
+        data-duration="10.3"
+        data-track-index="3"
+        data-volume="0.56"
+        data-fade-in="0.18"
+        data-fade-out="0.65"
+      ></audio>
+
+      <!-- Clean Subtle Motion Whooshes ONLY (Zero bling/sparkle/chime SFX) -->
+      <audio
+        id="sfx-card-zoom-out"
+        class="clip"
+        src="assets/audio/sfx_whoosh_soft.mp3"
+        data-start="4.72"
+        data-duration="0.48"
+        data-track-index="4"
+        data-volume="0.20"
+        data-fade-out="0.14"
+      ></audio>
+      <audio
+        id="sfx-finale-zoom"
+        class="clip"
+        src="assets/audio/sfx_whoosh_soft.mp3"
+        data-start="7.16"
+        data-duration="0.55"
+        data-track-index="4"
+        data-volume="0.24"
+        data-fade-out="0.18"
+      ></audio>
+    </div>
+
+    <script>
+      window.__timelines = window.__timelines || {};
+      window.__timelines["main"] = gsap.timeline({ paused: true });
+    </script>
+  </body>
+</html>
