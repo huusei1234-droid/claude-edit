@@ -1,0 +1,202 @@
+{
+  "exportedAt": "2026-11-27T06:55:01.336Z",
+  "accountInfo": {
+    "url": "https://chatgpt.com/",
+    "title": "ChatGPT",
+    "profileLabel": " | Open profile menu",
+    "menuText": ""
+  },
+  "personalization": {
+    "settingsText": "",
+    "customInstructionsFields": [],
+    "memories": []
+  },
+  "projects": [
+    {
+      "id": "g-p-6ac5c68cc60c8191bab63b740e910809",
+      "name": "K4 Phim Chuyện Trong Nhà",
+      "openedInstructionsHow": "menu_no_inst:Organize sidebar|Sort chats by|Organize sidebar|Sort by|Show",
+      "instructions": "",
+      "sources": {
+        "clicked": true,
+        "tabLabel": "Sources",
+        "rawText": "Upgrade\nK4 Phim Chuyện Trong Nhà\nShare\n\n\n\n\nThink\nChats\nSources\nNewest\nAll\nGive ChatGPT more context\n\nAdd sources to give ChatGPT deeper context about your project\n\nAdd sources",
+        "items": [
+          "K4 Phim Chuyện Trong Nhà\nShare\n\n\n\n\nThink\nChats\nSources\nNewest\nAll\nGive ChatGPT more context\n\nAdd sources to give ChatGPT deeper context about your project\n\nAdd sources"
+        ]
+      },
+      "pageMainSample": "Upgrade\nK4 Phim Chuyện Trong Nhà\nShare\n\n\n\n\nThink\nChats\nSources\nPhim Chuyện Trong Nhà\nđúng 8 giây cái gì đã bảo tùy cảnh, cảnh bao nhiêu giây thì tạo bấy nhiêu giây, có cảnh từ 1 đến 15s giới hạn để tránh mất điểm\nNov 19\nViết kịch bản gia đình\nlàm ra prompt cho tôi đi. nhớ là Mỗi prompt video sẽ có `IMAGE XUẤT HIỆN`, `CHỐT KHÔNG GIAN`, `BẮT ĐẦU PROMPT`. Các vị trí nhân vật phải được ghi rõ để tránh nhảy vị trí giữa các cảnh. sử dụng cảnh cậ\nNov 7\nPhân tích kịch bản gia đình\nrồi làm ra 5 prompt đi. cái phần chốt không gian phải nằm trong prompt luôn. nhân vật đứng vị trí nào cũng trong các prompt luôn. không cần miêu ta nhân vật đạo cụ bối cảnh là gì vì tất cả đã có trong\nOct 15",
+      "projChats": [
+        {
+          "id": "6ac2a590-bff4-83ec-9dae-9d393aeb1b1a",
+          "projectId": "g-p-6ac5c68cc60c8191bab63b740e910809",
+          "href": "/g/g-p-6ac5c68cc60c8191bab63b740e910809/c/6ac2a590-bff4-83ec-9dae-9d393aeb1b1a",
+          "title": "Phim Chuyện Trong Nhà\nđúng 8 giây cái gì đã bảo tùy cảnh, cảnh bao nhiêu giây thì tạo bấy nhiêu giây, có cảnh từ 1 đến 15s giới hạn để tránh mất điểm"
+        },
+        {
+          "id": "6ac608aa-96fc-83ec-91dd-19ee2ceb9169",
+          "projectId": "g-p-6ac5c68cc60c8191bab63b740e910809",
+          "href": "/g/g-p-6ac5c68cc60c8191bab63b740e910809/c/6ac608aa-96fc-83ec-91dd-19ee2ceb9169",
+          "title": "Viết kịch bản gia đình\nlàm ra prompt cho tôi đi. nhớ là Mỗi prompt video sẽ có `IMAGE XUẤT HIỆN`, `CHỐT KHÔNG GIAN`, `BẮT ĐẦU PROMPT`. Các vị trí nhân vật phải được ghi rõ để tránh nhảy vị trí giữa các cảnh. sử dụng cảnh cậ"
+        },
+        {
+          "id": "6ad0a4c3-6d04-83ec-a0a8-624746013e68",
+          "projectId": "g-p-6ac5c68cc60c8191bab63b740e910809",
+          "href": "/g/g-p-6ac5c68cc60c8191bab63b740e910809/c/6ad0a4c3-6d04-83ec-a0a8-624746013e68",
+          "title": "Phân tích kịch bản gia đình\nrồi làm ra 5 prompt đi. cái phần chốt không gian phải nằm trong prompt luôn. nhân vật đứng vị trí nào cũng trong các prompt luôn. không cần miêu ta nhân vật đạo cụ bối cảnh là gì vì tất cả đã có trong"
+        }
+      ]
+    },
+    {
+      "id": "g-p-6afbde0b943481919c6ec31a3b4f8642",
+      "name": "HTPM",
+      "openedInstructionsHow": "menu_no_inst:Organize sidebar|Sort chats by|Organize sidebar|Sort by|Show",
+      "instructions": "",
+      "sources": {
+        "clicked": true,
+        "tabLabel": "Sources",
+        "rawText": "Upgrade\nHTPM\nShare\n\n\n\n\nThink\nChats\nSources\nNewest\nAll\nGive ChatGPT more context\n\nAdd sources to give ChatGPT deeper context about your project\n\nAdd sources",
+        "items": [
+          "HTPM\nShare\n\n\n\n\nThink\nChats\nSources\nNewest\nAll\nGive ChatGPT more context\n\nAdd sources to give ChatGPT deeper context about your project\n\nAdd sources"
+        ]
+      },
+      "pageMainSample": "Upgrade\nHTPM\nShare\n\n\n\n\nThink\nChats\nSources\nPhân tích sản phẩmադրում\nNov 23",
+      "projChats": [
+        {
+          "id": "6b03c911-cc6c-83ec-9af5-9c1e981a9b37",
+          "projectId": "g-p-6afbde0b943481919c6ec31a3b4f8642",
+          "href": "/g/g-p-6afbde0b943481919c6ec31a3b4f8642/c/6b03c911-cc6c-83ec-9af5-9c1e981a9b37",
+          "title": "Phân tích sản phẩmադրում"
+        }
+      ]
+    }
+  ],
+  "conversations": [
+    {
+      "id": "6ac2a590-bff4-83ec-9dae-9d393aeb1b1a",
+      "projectId": "g-p-6ac5c68cc60c8191bab63b740e910809",
+      "href": "/g/g-p-6ac5c68cc60c8191bab63b740e910809/c/6ac2a590-bff4-83ec-9dae-9d393aeb1b1a",
+      "title": "Phim Chuyện Trong Nhà",
+      "pageTitle": "Phim Chuyện Trong Nhà",
+      "turnCount": 0,
+      "turns": []
+    },
+    {
+      "id": "6ae32d8b-5350-83ec-9e2b-ad5bd72d288c",
+      "projectId": null,
+      "href": "/c/6ae32d8b-5350-83ec-9e2b-ad5bd72d288c",
+      "title": "CT tủ",
+      "pageTitle": "CT tủ",
+      "turnCount": 0,
+      "turns": []
+    },
+    {
+      "id": "6b05a422-4ed8-83ec-853d-588ce0df42b6",
+      "projectId": null,
+      "href": "/c/6b05a422-4ed8-83ec-853d-588ce0df42b6",
+      "title": "Sửa tủ lạnh hư",
+      "pageTitle": "Sửa tủ lạnh hư",
+      "turnCount": 0,
+      "turns": []
+    },
+    {
+      "id": "6b05669a-66d4-83ec-b26a-d844dd746e16",
+      "projectId": null,
+      "href": "/c/6b05669a-66d4-83ec-b26a-d844dd746e16",
+      "title": "Chở bé bằng xe máy",
+      "pageTitle": "Chở bé bằng xe máy",
+      "turnCount": 0,
+      "turns": []
+    },
+    {
+      "id": "6b04ee8f-b8a0-83ec-ae32-582b1859dc85",
+      "projectId": null,
+      "href": "/c/6b04ee8f-b8a0-83ec-ae32-582b1859dc85",
+      "title": "Khắc phục đưa nôi yếu",
+      "pageTitle": "Khắc phục đưa nôi yếu",
+      "turnCount": 0,
+      "turns": []
+    },
+    {
+      "id": "6b044f91-e6a8-83ec-9758-494cb5942f68",
+      "projectId": null,
+      "href": "/c/6b044f91-e6a8-83ec-9758-494cb5942f68",
+      "title": "Khắc phục RustDesk",
+      "pageTitle": "Khắc phục RustDesk",
+      "turnCount": 0,
+      "turns": []
+    },
+    {
+      "id": "6b03c911-cc6c-83ec-9af5-9c1e981a9b37",
+      "projectId": "g-p-6afbde0b943481919c6ec31a3b4f8642",
+      "href": "/g/g-p-6afbde0b943481919c6ec31a3b4f8642/c/6b03c911-cc6c-83ec-9af5-9c1e981a9b37",
+      "title": "Phân tích sản phẩmադրում",
+      "pageTitle": "Phân tích sản phẩmադրում",
+      "turnCount": 0,
+      "turns": []
+    },
+    {
+      "id": "6b01d267-ff1c-83ec-82be-f1fc60eb24a9",
+      "projectId": null,
+      "href": "/c/6b01d267-ff1c-83ec-82be-f1fc60eb24a9",
+      "title": "Bố trí bàn gọn hơn",
+      "pageTitle": "Bố trí bàn gọn hơn",
+      "turnCount": 0,
+      "turns": []
+    },
+    {
+      "id": "6b01b856-ffa0-83ec-a9ed-25894217bfb7",
+      "projectId": null,
+      "href": "/c/6b01b856-ffa0-83ec-a9ed-25894217bfb7",
+      "title": "Viết content quảng cáo",
+      "pageTitle": "Viết content quảng cáo",
+      "turnCount": 0,
+      "turns": []
+    },
+    {
+      "id": "6b01225d-5e98-83ec-9a31-5bb169519ded",
+      "projectId": null,
+      "href": "/c/6b01225d-5e98-83ec-9a31-5bb169519ded",
+      "title": "Hỏi về Hưng Huỳnh",
+      "pageTitle": "Hỏi về Hưng Huỳnh",
+      "turnCount": 0,
+      "turns": []
+    },
+    {
+      "id": "6b011d48-7b00-83ec-946a-ccfe51981c1c",
+      "projectId": null,
+      "href": "/c/6b011d48-7b00-83ec-946a-ccfe51981c1c",
+      "title": "Học nghề sắt",
+      "pageTitle": "Học nghề sắt",
+      "turnCount": 0,
+      "turns": []
+    },
+    {
+      "id": "6b0083de-434c-83ec-a366-7fe5e060e237",
+      "projectId": null,
+      "href": "/c/6b0083de-434c-83ec-a366-7fe5e060e237",
+      "title": "Kiểm tra phiên bản Windows",
+      "pageTitle": "Kiểm tra phiên bản Windows",
+      "turnCount": 0,
+      "turns": []
+    },
+    {
+      "id": "6ac608aa-96fc-83ec-91dd-19ee2ceb9169",
+      "projectId": "g-p-6ac5c68cc60c8191bab63b740e910809",
+      "href": "/g/g-p-6ac5c68cc60c8191bab63b740e910809/c/6ac608aa-96fc-83ec-91dd-19ee2ceb9169",
+      "title": "Viết kịch bản gia đình",
+      "pageTitle": "Viết kịch bản gia đình",
+      "turnCount": 0,
+      "turns": []
+    },
+    {
+      "id": "6ad0a4c3-6d04-83ec-a0a8-624746013e68",
+      "projectId": "g-p-6ac5c68cc60c8191bab63b740e910809",
+      "href": "/g/g-p-6ac5c68cc60c8191bab63b740e910809/c/6ad0a4c3-6d04-83ec-a0a8-624746013e68",
+      "title": "Phân tích kịch bản gia đình",
+      "pageTitle": "Phân tích kịch bản gia đình",
+      "turnCount": 0,
+      "turns": []
+    }
+  ]
+}

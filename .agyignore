@@ -1,0 +1,11 @@
+# Prevent IDE language server from indexing virtualenvs, caches, and heavy video renders
+**/node_modules/
+**/.venv/
+**/__pycache__/
+**/dist/
+**/exports/
+**/*.mp4
+**/*.mov
+**/*.webm
+**/*.wav
+**/*.psd

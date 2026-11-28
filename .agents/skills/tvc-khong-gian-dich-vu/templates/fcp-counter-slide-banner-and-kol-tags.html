@@ -1,0 +1,242 @@
+<!--
+  Mẫu chuẩn từ TVC Win Hair Salon CS2 (V11 Final Master):
+  1. Chữ Vàng Ánh Kim Không Cắt Dấu Tiếng Việt (.wh-bullion-face)
+  2. Bảng Tiêu Đề Góc Trái Trên Trượt Ngược Kiểu Final Cut Pro (Đen Phải->Trái x Vàng Trái->Phải x Chữ Trượt Mặt Nạ)
+  3. Bộ Thẻ Tên Đôi KOL Nổi Tiếng Vát Nghiêng (.kol-tag-wrap)
+  4. Phụ Đề Truyền Hình 43px Đọc Rõ Trên TV + Nền Tối Đáy Tan Mượt (.tv-scrim)
+-->
+<template>
+  <style>
+    :root {
+      --champagne: #F3D69C;
+      --ivory: #FFFDF8;
+      --warm-gray: #E6DDD0;
+    }
+
+    /* 1. CHỮ VÀNG ÁNH KIM KHÔNG BAO GIỜ CẮT DẤU MŨ/MÓC TIẾNG VIỆT (Ể, Ẩ, Ỗ, Ắ) */
+    .wh-bullion-wrap {
+      position: relative;
+      display: inline-block;
+    }
+    .wh-bullion-face {
+      position: relative;
+      display: inline-block;
+      /* Bù đệm âm bắt buộc để không xén đỉnh dấu chữ hoa tiếng Việt khi dùng background-clip: text */
+      padding: 48px 22px 28px 22px;
+      margin: -44px -22px -24px -22px;
+      line-height: 1.32;
+      background-size: 240% 100%, 100% 100%;
+      background-position: -130% 0, 0 0;
+      background-repeat: no-repeat;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.72));
+    }
+    .wh-gold-metal {
+      background-image:
+        linear-gradient(112deg, rgba(255,255,255,0) 38%, rgba(255,252,238,0.95) 50%, rgba(255,255,255,0) 62%),
+        linear-gradient(180deg, #FFF8E2 0%, #F2DAA4 26%, #C99E52 50%, #FFF0CA 68%, #9A7032 100%);
+    }
+
+    /* 2. BẢNG TIÊU ĐỀ GÓC TRÁI TRÊN TRƯỢT NGƯỢC ĐEN – VÀNG KIỂU FINAL CUT PRO
+          (Thuần GPU transform + overflow: hidden -> 0% lỗi đen hình heavy-overlay!) */
+    .wh-fcp-host {
+      position: absolute;
+      left: 54px;
+      top: 38px;
+      z-index: 24;
+      pointer-events: none;
+    }
+    .wh-fcp-viewport {
+      position: relative;
+      display: inline-flex;
+      align-items: stretch;
+      overflow: hidden;
+      border-radius: 10px 0 0 10px;
+      max-width: 1080px;
+    }
+    .wh-fcp-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background: linear-gradient(90deg, rgba(18, 12, 8, 0.94) 0%, rgba(22, 15, 10, 0.85) 74%, rgba(22, 15, 10, 0.0) 100%);
+      border-radius: 10px 0 0 10px;
+      will-change: transform;
+    }
+    .wh-fcp-gold-run {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: 44%;
+      z-index: 2;
+      pointer-events: none;
+      background: linear-gradient(90deg, rgba(244, 198, 92, 0.0) 0%, rgba(244, 198, 92, 0.42) 48%, rgba(255, 232, 156, 0.88) 84%, rgba(255, 248, 220, 0.0) 100%);
+      will-change: transform, opacity;
+    }
+    .wh-fcp-bar {
+      position: relative;
+      z-index: 4;
+      width: 7px;
+      flex-shrink: 0;
+      border-radius: 6px;
+      background: linear-gradient(180deg, #FFF2CA 0%, #E5B24C 52%, #9B6E2B 100%);
+      box-shadow: 0 0 16px rgba(244, 200, 103, 0.60);
+      transform-origin: 50% 100%;
+      will-change: transform;
+    }
+    .wh-fcp-body {
+      position: relative;
+      z-index: 3;
+      padding: 18px 72px 18px 26px;
+    }
+    .wh-fcp-mask {
+      overflow: hidden;
+      padding: 4px 6px 4px 0;
+      margin: -4px 0;
+    }
+    .wh-fcp-rule {
+      width: 220px;
+      height: 2px;
+      margin: 5px 0;
+      border-radius: 2px;
+      background: linear-gradient(90deg, #FFE89E 0%, #D9A443 68%, rgba(217, 164, 67, 0.0) 100%);
+      transform-origin: 0% 50%;
+      will-change: transform;
+    }
+    .wh-fcp-kicker {
+      font-family: "Be Vietnam Pro", sans-serif;
+      font-weight: 700;
+      font-size: 18px;
+      letter-spacing: 0.16em;
+      color: #F5CE7B;
+      text-transform: uppercase;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.85);
+    }
+    .wh-fcp-title {
+      margin-top: 2px;
+      font-family: "Oswald", sans-serif;
+      font-weight: 700;
+      font-size: 44px;
+      line-height: 1.14;
+      color: #FFFDF8;
+      letter-spacing: 0.025em;
+      text-transform: uppercase;
+      text-shadow: 0 3px 14px rgba(0,0,0,0.92);
+    }
+    .wh-fcp-sub {
+      margin-top: 5px;
+      font-family: "Be Vietnam Pro", sans-serif;
+      font-weight: 600;
+      font-size: 23px;
+      line-height: 1.28;
+      color: #F2E9DA;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.90);
+    }
+
+    /* 3. BỘ THẺ TÊN ĐÔI KOL NỔI TIẾNG VÁT NGHIÊNG (-14deg) */
+    .kol-tag-wrap { position: absolute; pointer-events: none; }
+    .kol-pill-top {
+      display: inline-block;
+      margin-left: 34px;
+      margin-bottom: -8px;
+      position: relative;
+      z-index: 3;
+      padding: 6px 24px;
+      border-radius: 6px;
+      transform: skewX(-14deg);
+      background: linear-gradient(180deg, #FFE89C 0%, #DF9F2B 100%);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.68);
+    }
+    .kol-pill-top span {
+      display: inline-block;
+      transform: skewX(14deg);
+      font-family: "Montserrat", sans-serif;
+      font-weight: 800;
+      font-size: 17px;
+      letter-spacing: 0.08em;
+      color: #15100A;
+      text-transform: uppercase;
+    }
+    .kol-plate {
+      position: relative;
+      padding: 18px 30px 17px 26px;
+      border-radius: 12px;
+      transform: skewX(-14deg);
+      background: linear-gradient(160deg, rgba(34, 25, 18, 0.96) 0%, rgba(14, 11, 9, 0.98) 100%);
+      border: 2px solid #F4C867;
+      box-shadow: 0 0 26px rgba(244, 200, 103, 0.40), 0 18px 40px rgba(0, 0, 0, 0.88);
+    }
+    .kol-inner {
+      transform: skewX(14deg);
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    /* 4. PHỤ ĐỀ TV 43PX DỄ ĐỌC TỪ XA + NỀN TỐI TAN MƯỢT */
+    .tv-scrim {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 220px;
+      background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(10,7,5,0.68) 58%, rgba(8,5,4,0.88) 100%);
+      pointer-events: none;
+    }
+    .tv-cap-line {
+      position: absolute;
+      left: 96px;
+      right: 96px;
+      bottom: 42px;
+      font-family: "Be Vietnam Pro", sans-serif;
+      font-weight: 700;
+      font-size: 43px;
+      line-height: 1.30;
+      color: #FFFDF8;
+      text-align: center;
+      text-transform: uppercase;
+      text-shadow: 0 3px 8px rgba(0,0,0,0.94), 0 8px 22px rgba(0,0,0,0.82);
+    }
+    .tv-kw { color: #FAD882; }
+  </style>
+
+  <!-- Ví dụ cấu trúc DOM Bảng FCP Counter-Slide -->
+  <div id="hud-koc" class="clip wh-fcp-host" data-start="12.570000" data-duration="3.750000" data-track-index="2">
+    <div id="hud-koc-vp" class="wh-fcp-viewport">
+      <div id="hud-koc-bg" class="wh-fcp-bg" data-layout-ignore></div>
+      <div id="hud-koc-gold-run" class="wh-fcp-gold-run" data-layout-ignore></div>
+      <div id="hud-koc-bar" class="wh-fcp-bar" data-layout-ignore></div>
+      <div class="wh-fcp-body">
+        <div class="wh-fcp-mask"><div id="hud-koc-k" class="wh-fcp-kicker">UY TÍN THƯƠNG HIỆU</div></div>
+        <div id="hud-koc-rule" class="wh-fcp-rule" data-layout-ignore></div>
+        <div class="wh-fcp-mask"><div id="hud-koc-t" class="wh-fcp-title">ĐÔNG ĐẢO KOC &amp; KOL TIN CHỌN</div></div>
+        <div class="wh-fcp-mask"><div id="hud-koc-s" class="wh-fcp-sub">Hài lòng khách địa phương lẫn du khách quốc tế</div></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // GSAP Timeline mẫu cho Bảng FCP Counter-Slide (hst = 12.57, hdur = 3.75, exit_t = 15.86)
+    function mountFcpBanner(tl, hid, hst, hdur) {
+      const exitT = hst + hdur - 0.46;
+      // Vào: Đen quét Phải -> Trái, Vàng chạy ngược Trái -> Phải, 3 dòng chữ trượt mở từ mặt nạ
+      tl.fromTo(`#${hid}-bg`, { xPercent: 103 }, { xPercent: 0, duration: 0.42, ease: "expo.out" }, hst);
+      tl.fromTo(`#${hid}-gold-run`, { xPercent: -115, opacity: 1 }, { xPercent: 245, opacity: 0.92, duration: 0.56, ease: "power3.inOut" }, hst + 0.06);
+      tl.fromTo(`#${hid}-bar`, { scaleY: 0 }, { scaleY: 1, duration: 0.34, ease: "expo.out" }, hst + 0.08);
+      tl.fromTo(`#${hid}-rule`, { scaleX: 0 }, { scaleX: 1, duration: 0.46, ease: "expo.out" }, hst + 0.14);
+      tl.fromTo(`#${hid}-k`, { xPercent: -106, opacity: 0 }, { xPercent: 0, opacity: 1, duration: 0.40, ease: "expo.out" }, hst + 0.15);
+      tl.fromTo(`#${hid}-t`, { yPercent: 120 }, { yPercent: 0, duration: 0.46, ease: "expo.out" }, hst + 0.21);
+      tl.fromTo(`#${hid}-s`, { yPercent: 120, opacity: 0 }, { yPercent: 0, opacity: 1, duration: 0.44, ease: "power3.out" }, hst + 0.29);
+
+      // Ra: Thu chữ vào mặt nạ & rút nền đen sang phải
+      tl.fromTo(`#${hid}-s`, { yPercent: 0, opacity: 1 }, { yPercent: 120, opacity: 0, duration: 0.24, ease: "power2.in", immediateRender: false }, exitT);
+      tl.fromTo(`#${hid}-t`, { yPercent: 0 }, { yPercent: -120, duration: 0.26, ease: "power2.in", immediateRender: false }, exitT + 0.04);
+      tl.fromTo(`#${hid}-k`, { xPercent: 0, opacity: 1 }, { xPercent: -106, opacity: 0, duration: 0.24, ease: "power2.in", immediateRender: false }, exitT + 0.06);
+      tl.fromTo(`#${hid}-rule`, { scaleX: 1 }, { scaleX: 0, duration: 0.24, ease: "power2.in", immediateRender: false }, exitT + 0.08);
+      tl.fromTo(`#${hid}-bar`, { scaleY: 1 }, { scaleY: 0, duration: 0.26, ease: "power2.in", immediateRender: false }, exitT + 0.12);
+      tl.fromTo(`#${hid}-bg`, { xPercent: 0 }, { xPercent: 104, duration: 0.34, ease: "power3.in", immediateRender: false }, exitT + 0.10);
+    }
+  </script>
+</template>

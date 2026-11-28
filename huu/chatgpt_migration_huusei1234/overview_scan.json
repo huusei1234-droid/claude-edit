@@ -1,0 +1,147 @@
+{
+  "profileInfo": {
+    "title": "ChatGPT",
+    "url": "https://chatgpt.com/",
+    "profileBtnText": "Loading profile",
+    "menuText": ""
+  },
+  "sidebarData": {
+    "projLinks": [
+      {
+        "id": "g-p-6ac5c68cc60c8191bab63b740e910809",
+        "href": "/g/g-p-6ac5c68cc60c8191bab63b740e910809/c/6ac2a590-bff4-83ec-9dae-9d393aeb1b1a",
+        "name": "Phim Chuyện Trong Nhà"
+      },
+      {
+        "id": "g-p-6afbde0b943481919c6ec31a3b4f8642",
+        "href": "/g/g-p-6afbde0b943481919c6ec31a3b4f8642/c/6b03c911-cc6c-83ec-9af5-9c1e981a9b37",
+        "name": "Phân tích sản phẩmադրում"
+      }
+    ],
+    "chatCount": 12,
+    "chatSample": [
+      {
+        "id": "6ac2a590-bff4-83ec-9dae-9d393aeb1b1a",
+        "href": "/g/g-p-6ac5c68cc60c8191bab63b740e910809/c/6ac2a590-bff4-83ec-9dae-9d393aeb1b1a",
+        "title": "Phim Chuyện Trong Nhà"
+      },
+      {
+        "id": "6ae32d8b-5350-83ec-9e2b-ad5bd72d288c",
+        "href": "/c/6ae32d8b-5350-83ec-9e2b-ad5bd72d288c",
+        "title": "CT tủ"
+      },
+      {
+        "id": "6b05a422-4ed8-83ec-853d-588ce0df42b6",
+        "href": "/c/6b05a422-4ed8-83ec-853d-588ce0df42b6",
+        "title": "Sửa tủ lạnh hư"
+      },
+      {
+        "id": "6b05669a-66d4-83ec-b26a-d844dd746e16",
+        "href": "/c/6b05669a-66d4-83ec-b26a-d844dd746e16",
+        "title": "Chở bé bằng xe máy"
+      },
+      {
+        "id": "6b04ee8f-b8a0-83ec-ae32-582b1859dc85",
+        "href": "/c/6b04ee8f-b8a0-83ec-ae32-582b1859dc85",
+        "title": "Khắc phục đưa nôi yếu"
+      },
+      {
+        "id": "6b044f91-e6a8-83ec-9758-494cb5942f68",
+        "href": "/c/6b044f91-e6a8-83ec-9758-494cb5942f68",
+        "title": "Khắc phục RustDesk"
+      },
+      {
+        "id": "6b03c911-cc6c-83ec-9af5-9c1e981a9b37",
+        "href": "/g/g-p-6afbde0b943481919c6ec31a3b4f8642/c/6b03c911-cc6c-83ec-9af5-9c1e981a9b37",
+        "title": "Phân tích sản phẩmադրում"
+      },
+      {
+        "id": "6b01d267-ff1c-83ec-82be-f1fc60eb24a9",
+        "href": "/c/6b01d267-ff1c-83ec-82be-f1fc60eb24a9",
+        "title": "Bố trí bàn gọn hơn"
+      },
+      {
+        "id": "6b01b856-ffa0-83ec-a9ed-25894217bfb7",
+        "href": "/c/6b01b856-ffa0-83ec-a9ed-25894217bfb7",
+        "title": "Viết content quảng cáo"
+      },
+      {
+        "id": "6b01225d-5e98-83ec-9a31-5bb169519ded",
+        "href": "/c/6b01225d-5e98-83ec-9a31-5bb169519ded",
+        "title": "Hỏi về Hưng Huỳnh"
+      },
+      {
+        "id": "6b011d48-7b00-83ec-946a-ccfe51981c1c",
+        "href": "/c/6b011d48-7b00-83ec-946a-ccfe51981c1c",
+        "title": "Học nghề sắt"
+      },
+      {
+        "id": "6b0083de-434c-83ec-a366-7fe5e060e237",
+        "href": "/c/6b0083de-434c-83ec-a366-7fe5e060e237",
+        "title": "Kiểm tra phiên bản Windows"
+      }
+    ],
+    "allChats": [
+      {
+        "id": "6ac2a590-bff4-83ec-9dae-9d393aeb1b1a",
+        "href": "/g/g-p-6ac5c68cc60c8191bab63b740e910809/c/6ac2a590-bff4-83ec-9dae-9d393aeb1b1a",
+        "title": "Phim Chuyện Trong Nhà"
+      },
+      {
+        "id": "6ae32d8b-5350-83ec-9e2b-ad5bd72d288c",
+        "href": "/c/6ae32d8b-5350-83ec-9e2b-ad5bd72d288c",
+        "title": "CT tủ"
+      },
+      {
+        "id": "6b05a422-4ed8-83ec-853d-588ce0df42b6",
+        "href": "/c/6b05a422-4ed8-83ec-853d-588ce0df42b6",
+        "title": "Sửa tủ lạnh hư"
+      },
+      {
+        "id": "6b05669a-66d4-83ec-b26a-d844dd746e16",
+        "href": "/c/6b05669a-66d4-83ec-b26a-d844dd746e16",
+        "title": "Chở bé bằng xe máy"
+      },
+      {
+        "id": "6b04ee8f-b8a0-83ec-ae32-582b1859dc85",
+        "href": "/c/6b04ee8f-b8a0-83ec-ae32-582b1859dc85",
+        "title": "Khắc phục đưa nôi yếu"
+      },
+      {
+        "id": "6b044f91-e6a8-83ec-9758-494cb5942f68",
+        "href": "/c/6b044f91-e6a8-83ec-9758-494cb5942f68",
+        "title": "Khắc phục RustDesk"
+      },
+      {
+        "id": "6b03c911-cc6c-83ec-9af5-9c1e981a9b37",
+        "href": "/g/g-p-6afbde0b943481919c6ec31a3b4f8642/c/6b03c911-cc6c-83ec-9af5-9c1e981a9b37",
+        "title": "Phân tích sản phẩmադրում"
+      },
+      {
+        "id": "6b01d267-ff1c-83ec-82be-f1fc60eb24a9",
+        "href": "/c/6b01d267-ff1c-83ec-82be-f1fc60eb24a9",
+        "title": "Bố trí bàn gọn hơn"
+      },
+      {
+        "id": "6b01b856-ffa0-83ec-a9ed-25894217bfb7",
+        "href": "/c/6b01b856-ffa0-83ec-a9ed-25894217bfb7",
+        "title": "Viết content quảng cáo"
+      },
+      {
+        "id": "6b01225d-5e98-83ec-9a31-5bb169519ded",
+        "href": "/c/6b01225d-5e98-83ec-9a31-5bb169519ded",
+        "title": "Hỏi về Hưng Huỳnh"
+      },
+      {
+        "id": "6b011d48-7b00-83ec-946a-ccfe51981c1c",
+        "href": "/c/6b011d48-7b00-83ec-946a-ccfe51981c1c",
+        "title": "Học nghề sắt"
+      },
+      {
+        "id": "6b0083de-434c-83ec-a366-7fe5e060e237",
+        "href": "/c/6b0083de-434c-83ec-a366-7fe5e060e237",
+        "title": "Kiểm tra phiên bản Windows"
+      }
+    ]
+  }
+}

@@ -1,0 +1,8 @@
+Dự án chuyên biệt An Vượng Pharma (AVPM — Cộng đồng Droppii x An Vượng Pharma).
+Quy chuẩn bắt buộc khi viết kịch bản Video AI, thiết kế Poster USP và viết Content cho An Vượng Pharma:
+1. Nhịp cắt nhanh (1.8s – 2.7s / cảnh): Tuyệt đối không để một cảnh kéo lê thê hay slow-mo rề rà; toàn bộ hoạt động là sinh hoạt đời thường thực tế khớp sát từng câu thoại (không ép bối cảnh Nha Trang).
+2. 0% Hiệu ứng Bling-Bling: Tuyệt đối không mô tả hay chèn sao lấp lánh, kim tuyến, chớp sáng giả màu mè.
+3. Chuỗi 4 bước pha chế liền mạch bắt buộc cho sản phẩm dạng gói bột (AV Protein, Bojomi, Curcumilk Phyto, Collamela):
+   (1) Cắt/xé đầu gói stick -> (2) Đổ dòng bột mịn vào ly -> (3) Chế nước đúng nhiệt độ vào ly bột -> (4) Khuấy đều tan mịn & uống thưởng thức.
+4. Nhân vật đại diện chính thức kênh: Chị Hậu (giữ 100% gương mặt Chị Hậu kết hợp vóc dáng thon gọn cân đối; mỗi ngày và mỗi video bắt buộc đổi trang phục & phụ kiện đa style: thể thao năng động, blazer công sở, đầm len trà chiều, lụa dạo tối, áo dài cách tân...).
+5. Chống hộp sản phẩm giả trên Video AI: Không nhắc tên hộp/gói sản phẩm trong cảnh video nếu cảnh đó không truyền trực tiếp ảnh thật sản phẩm (SKU_REF).
