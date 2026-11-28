@@ -28,6 +28,56 @@ DEFAULT_TAGS = "#MeChongNangDau #PhimNgan #PhimDrama #DramaGiaDinh #PhimViet"
 
 CURATED_CAPTIONS = [
     (
+        r"năm chỉ vàng đầy tháng",
+        "Đầy tháng cháu nội mà 5 chỉ vàng trong phòng bất ngờ bốc hơi, cả nhà chưa kịp hỏi đã vội đổ hết tội lên đầu nàng dâu mới... 💔 Đến lúc mở đoạn bằng chứng ra ai cũng chết lặng! Phải các chị bị nghi oan vậy có bỏ qua nổi không?",
+        "5 CHỈ VÀNG ĐẦY THÁNG BỐC HƠI!",
+    ),
+    (
+        r"tô cháo cá chép ở cữ",
+        "Vừa sinh con ở cữ còn yếu rớt nước mắt, bưng tô cháo cá chép chưa kịp ăn đã bị giật phăng ngay trên tay... 😢 Phụ nữ lúc sinh nở mới thấu hết lòng người nhà chồng, xem đoạn sau mà nghẹn giọng!",
+        "TÔ CHÁO Ở CỮ BỊ GIẬT TRÊN TAY!",
+    ),
+    (
+        r"phong bì mừng thọ năm trăm nghìn",
+        "Vợ chồng nghèo gom góp phong bì 500 nghìn mừng thọ mẹ mà bị đem ra bêu riếu giữa mâm cỗ họ hàng... 😔 Nhưng đến khi biết sự thật đằng sau tờ tiền ấy thì cả bàn tiệc cúi đầu im phăng phắc! Báo hiếu tính bằng tiền hay bằng tấm lòng hả cả nhà?",
+        "PHONG BÌ 500K BỊ BÊU RIẾU!",
+    ),
+    (
+        r"hai trăm triệu bán đất quê",
+        "Nghe tin mẹ già bán mảnh đất dưới quê được 200 triệu, con cái lập tức thay đổi thái độ ngọt nhạt... 🔥 Đâu ngờ đó chỉ là phép thử lòng đắt giá nhất đời người mẹ! Nhà các bác có cảnh chia đất chia tiền mới lộ lòng con không?",
+        "200 TRIỆU & PHÉP THỬ LÒNG CON!",
+    ),
+    (
+        r"biếu mẹ ngoại mười triệu",
+        "Biếu mẹ vợ 10 triệu thì cười tươi khen ngợi, đến lúc chồng gửi 5 triệu về quê cho mẹ ruột mua thuốc lại nổi đóa cấm cản... 😤 Làm vợ xử sự phân biệt nội ngoại như vậy có chấp nhận được không các bác?",
+        "NỘI NGOẠI HAI LÒNG SAO ĐƯỢC!",
+    ),
+    (
+        r"bố chồng thu thẻ lương",
+        "Thấy con trai đi làm về quát tháo coi thường vợ ở nhà nội trợ, bố chồng thẳng tay thu luôn thẻ lương dạy cho một bài học nhớ đời! 👏 Có ông bố chồng tâm lý thế này đúng là phúc lớn của nàng dâu!",
+        "BỐ CHỒNG THU THẺ LƯƠNG DẠY CON!",
+    ),
+    (
+        r"con dâu gửi năm triệu báo hiếu",
+        "Con dâu gửi 5 triệu báo hiếu bố ruột mà bị mắng là đồ ăn bám nhà chồng, đến khi lộ ra mức thu nhập thật sự thì cả nhà ngã ngửa! 🔥 Phụ nữ tự chủ tài chính chính là chỗ dựa cứng nhất, đúng không các chị?",
+        "MẮNG DÂU ĂN BÁM & CÁI KẾT!",
+    ),
+    (
+        r"mẹ chồng tự ý đem xe hồi môn",
+        "Xe hồi môn bố mẹ đẻ tặng con gái về nhà chồng, vậy mà mẹ chồng tự ý đem hứa cho không em chồng như của chung! 😤 Đụng tới của hồi môn là không nhịn được rồi, các chị gặp cảnh này xử lý sao?",
+        "LẤY XE HỒI MÔN CỦA DÂU CHO CON!",
+    ),
+    (
+        r"đòi 2 tỷ sính lễ",
+        "Xe hoa đã đỗ ngay trước cổng cưới mà nhà gái bất ngờ hét đủ 2 tỷ tiền sính lễ mới cho rước dâu... 😳 Quyết định dứt khoát ngay tại cổng của chú rể khiến cả hôn trường sững sờ!",
+        "HÉT 2 TỶ SÍNH LỄ TRƯỚC CỔNG CƯỚI!",
+    ),
+    (
+        r"tình cũ mang hai tỷ khinh vợ",
+        "Người yêu cũ cầm 2 tỷ tìm tới tận nơi mỉa mai người vợ ăn mặc giản dị của chồng, đâu ngờ màn xuất hiện thật sự phía sau làm cô ta tái mặt! 🔥 Đừng bao giờ nhìn bề ngoài mà khinh người khác!",
+        "CẦM 2 TỶ KHINH VỢ GIẢN DỊ!",
+    ),
+    (
         r"bát canh vỡ",
         "Lỡ tay làm vỡ bát canh mà bị mẹ chồng mắng không kịp vuốt mặt, nhìn thái độ của chồng đứng cạnh mới thật sự nghẹn lòng... 😔 Phải các chị ở hoàn cảnh này thì nhịn cho êm cửa êm nhà hay nói thẳng một lần?",
         "CHỈ VÌ BÁT CANH VỠ...",

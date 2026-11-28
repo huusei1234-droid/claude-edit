@@ -183,7 +183,11 @@ try {
         "output", "exports", ".tiktok-brave-profile", ".cover_frames", ".cover_frames_new",
         "live-wallpapers", "BO_KIEN_THUC_TVC_AI_PORTABLE", "win-unpacked", "data"
     )
-    $excludeFiles = @("*.pyc", "*.bak", "*.tmp", "api_key", "auth.json", "canvas-agent.json", ".env")
+    $excludeFiles = @(
+        "*.pyc", "*.bak", "*.tmp", "api_key", "auth.json", "canvas-agent.json", ".env",
+        "tiktok_last_post_state.json", "tiktok_posted_history.json", "tiktok_post_lock.json",
+        ".tiktok_post.lock", "tiktok_autopost.log", "tmp_tiktok_*"
+    )
 
     function Install-ContinuousSyncTask {
         $localEngine = Join-Path $localSyncBin "sync_engine.ps1"

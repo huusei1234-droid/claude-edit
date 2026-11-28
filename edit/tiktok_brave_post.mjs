@@ -2,7 +2,6 @@ import fs from "node:fs";
 import path from "node:path";
 import { execFileSync, spawn } from "node:child_process";
 import { createRequire } from "node:module";
-
 import { fileURLToPath } from "node:url";
 
 const require = createRequire(import.meta.url);
@@ -28,8 +27,37 @@ const BRAVE_STUDIO_LNKS = [
 ];
 const BRAVE_STUDIO_LNK = BRAVE_STUDIO_LNKS.find((p) => fs.existsSync(p)) || "";
 const FALLBACK_PROFILE_DIR = path.join(EDIT_DIR, ".tiktok-brave-profile");
+
+// === STRICT FIXED SCHEDULE CONSTANTS: EXACTLY 2 VIDEOS / DAY (11:30 & 19:30 VN) ===
+const MAX_POSTS_PER_DAY = 2;
+const MIN_SLOT_GAP_MS = 4 * 60 * 60 * 1000; // Minimum 4h gap between Slot #1 (11:30) and Slot #2 (19:30)
+const VN_TZ = "Asia/Ho_Chi_Minh";
+
 const STATE_FILE = path.join(EDIT_DIR, "tiktok_last_post_state.json");
+const HISTORY_FILE = path.join(EDIT_DIR, "tiktok_posted_history.json");
 const LOCK_FILE = path.join(EDIT_DIR, "tiktok_post_lock.json");
+
+const PY_CANDIDATES = [
+  process.env.PYTHON || "",
+  "C:\\Users\\001\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+  "C:\\Users\\Hang thu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+].filter(Boolean);
+const PY_EXE = PY_CANDIDATES.find((p) => fs.existsSync(p)) || "python";
+
+const FFPROBE_CANDIDATES = [
+  "C:\\Users\\001\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-9.0.2-full_build\\bin\\ffprobe.exe",
+  "ffprobe",
+];
+const FFPROBE_EXE = FFPROBE_CANDIDATES.find((p) => p === "ffprobe" || fs.existsSync(p)) || "ffprobe";
+
+function getVnDateStr(ms = Date.now()) {
+  return new Intl.DateTimeFormat("en-CA", {
+    timeZone: VN_TZ,
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  }).format(new Date(ms));
+}
 
 function isPidAlive(pid) {
   if (!pid || typeof pid !== "number") return false;
@@ -41,15 +69,18 @@ function isPidAlive(pid) {
   }
 }
 
-const CANDIDATE_SRC_DIRS = [
-  "G:\\Other computers\\My Computer\\hằng thu pharma\\05. Video Hoàn Thiện\\K4 - Mẹ Chồng Nàng Dâu\\đã đăng",
-  "G:\\Máy tính khác\\My Computer\\hằng thu pharma\\05. Video Hoàn Thiện\\K4 - Mẹ Chồng Nàng Dâu\\đã đăng",
-  "G:\\.shortcut-targets-by-id\\1qjnlz_54ZT5OlI9dKMelZ5PJauD4etj-\\hằng thu pharma\\05. Video Hoàn Thiện\\K4 - Mẹ Chồng Nàng Dâu\\đã đăng",
-  "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\05. Video Hoàn Thiện\\K4 - Mẹ Chồng Nàng Dâu\\đã đăng",
-  "Z:\\.shortcut-targets-by-id\\1qjnlz_54ZT5OlI9dKMelZ5PJauD4etj-\\hằng thu pharma\\05. Video Hoàn Thiện\\K4 - Mẹ Chồng Nàng Dâu\\đã đăng",
+const CANDIDATE_K4_MASTERS = [
+  "G:\\Other computers\\My Computer\\hằng thu pharma\\05. Video Hoàn Thiện\\K4 - Mẹ Chồng Nàng Dâu",
+  "G:\\Máy tính khác\\My Computer\\hằng thu pharma\\05. Video Hoàn Thiện\\K4 - Mẹ Chồng Nàng Dâu",
+  "G:\\.shortcut-targets-by-id\\1qjnlz_54ZT5OlI9dKMelZ5PJauD4etj-\\hằng thu pharma\\05. Video Hoàn Thiện\\K4 - Mẹ Chồng Nàng Dâu",
+  "Z:\\Máy tính khác\\My Computer\\hằng thu pharma\\05. Video Hoàn Thiện\\K4 - Mẹ Chồng Nàng Dâu",
+  "Z:\\.shortcut-targets-by-id\\1qjnlz_54ZT5OlI9dKMelZ5PJauD4etj-\\hằng thu pharma\\05. Video Hoàn Thiện\\K4 - Mẹ Chồng Nàng Dâu",
 ];
-const SRC_DIR = CANDIDATE_SRC_DIRS.find((p) => fs.existsSync(p)) || CANDIDATE_SRC_DIRS[0];
+const K4_MASTER_DIR = CANDIDATE_K4_MASTERS.find((p) => fs.existsSync(p)) || CANDIDATE_K4_MASTERS[0];
+const SRC_DIR = path.join(K4_MASTER_DIR, "đã đăng");
 const DST_DIR = path.join(SRC_DIR, "On air Tiktok");
+const CLOUD_STATE_FILE = path.join(DST_DIR, ".tiktok_daily_state.json");
+const CLOUD_HISTORY_FILE = path.join(DST_DIR, ".tiktok_posted_history.json");
 const DEFAULT_TAGS = "#MeChongNangDau #PhimNgan #PhimDrama #DramaGiaDinh #PhimViet";
 
 function parseArgs(argv) {
@@ -58,6 +89,7 @@ function parseArgs(argv) {
     const a = argv[i];
     if (a === "--login") args.mode = "login";
     else if (a === "--post") args.mode = "post";
+    else if (a === "--status" || a === "--dry-run") args.mode = "status";
     else if (a === "--force") args.force = true;
     else if (a === "--caption" && argv[i + 1]) args.caption = argv[++i];
     else if (a === "--file" && argv[i + 1]) args.file = argv[++i];
@@ -66,12 +98,92 @@ function parseArgs(argv) {
   return args;
 }
 
+function readJsonSafe(p, fallback) {
+  try {
+    if (fs.existsSync(p)) return JSON.parse(fs.readFileSync(p, "utf8"));
+  } catch {}
+  return fallback;
+}
+
+function loadMergedDailyState() {
+  const today = getVnDateStr();
+  const sLocal = readJsonSafe(STATE_FILE, {});
+  const sCloud = readJsonSafe(CLOUD_STATE_FILE, {});
+
+  // Pick whichever record matches today with higher dailyCount / newer lastPostedAt
+  const candidates = [sLocal, sCloud].filter((s) => s && typeof s === "object");
+  let best = { dailyDate: today, dailyCount: 0, maxPerDay: MAX_POSTS_PER_DAY, filesToday: [], lastPostedAt: 0, file: "", iso: "" };
+
+  for (const c of candidates) {
+    const cDate = c.dailyDate || (c.lastPostedAt ? getVnDateStr(c.lastPostedAt) : "");
+    const cFiles = Array.isArray(c.filesToday) ? c.filesToday : c.file && cDate === today ? [c.file] : [];
+    const cCount = cDate === today ? Math.max(Number(c.dailyCount || 0), cFiles.length) : 0;
+    if (cCount > best.dailyCount || ((c.lastPostedAt || 0) > (best.lastPostedAt || 0) && cCount >= best.dailyCount)) {
+      best = {
+        dailyDate: today,
+        dailyCount: cCount,
+        maxPerDay: MAX_POSTS_PER_DAY,
+        filesToday: cFiles,
+        lastPostedAt: Number(c.lastPostedAt || 0),
+        file: c.file || (cFiles[cFiles.length - 1] || ""),
+        iso: c.iso || "",
+      };
+    }
+  }
+  return best;
+}
+
+function saveDailyState(stateObj) {
+  const txt = JSON.stringify(stateObj, null, 2);
+  fs.writeFileSync(STATE_FILE, txt, "utf8");
+  try {
+    fs.mkdirSync(DST_DIR, { recursive: true });
+    fs.writeFileSync(CLOUD_STATE_FILE, txt, "utf8");
+  } catch {}
+}
+
+function loadPostedHistorySet() {
+  const set = new Set();
+  for (const f of [HISTORY_FILE, CLOUD_HISTORY_FILE]) {
+    const arr = readJsonSafe(f, []);
+    if (Array.isArray(arr)) {
+      for (const item of arr) {
+        if (typeof item === "string") set.add(normalizeForMatch(item));
+        else if (item && item.name) set.add(normalizeForMatch(item.name));
+      }
+    }
+  }
+  if (fs.existsSync(DST_DIR)) {
+    for (const d of fs.readdirSync(DST_DIR, { withFileTypes: true })) {
+      if (d.isFile() && d.name.toLowerCase().endsWith(".mp4")) {
+        set.add(normalizeForMatch(d.name));
+      }
+    }
+  }
+  return set;
+}
+
+function recordPostedHistory(filename) {
+  const nowIso = new Date().toISOString();
+  for (const f of [HISTORY_FILE, CLOUD_HISTORY_FILE]) {
+    try {
+      const arr = readJsonSafe(f, []);
+      const list = Array.isArray(arr) ? arr : [];
+      if (!list.some((x) => (typeof x === "string" ? x === filename : x?.name === filename))) {
+        list.push({ name: filename, postedAt: nowIso });
+      }
+      fs.mkdirSync(path.dirname(f), { recursive: true });
+      fs.writeFileSync(f, JSON.stringify(list, null, 2), "utf8");
+    } catch {}
+  }
+}
+
 function cleanViTitle(raw) {
   let s = raw
     .replace(/\.mp4$/i, "")
-    .replace(/^\d{6}\s+/, "")
+    .replace(/^\d{6}\s+(?:K4\s+)?/i, "")
     .replace(/\(\s*(?:full|\d+)\s*\)/gi, "")
-    .replace(/\bfull\b$/i, "")
+    .replace(/\b(?:full|final)\b$/i, "")
     .replace(/\bnhà trồng\b/gi, "nhà chồng")
     .replace(/\bchữ hiêu\b/gi, "chữ hiếu")
     .replace(/\btrong nha\b/gi, "trong nhà")
@@ -82,38 +194,26 @@ function cleanViTitle(raw) {
   return s;
 }
 
-function fallbackCaption(filename) {
-  return `${cleanViTitle(filename)} ${DEFAULT_TAGS}`;
+function getViralCaptionAndBadge(filename) {
+  try {
+    const out = execFileSync(PY_EXE, [path.join(EDIT_DIR, "optimize_tiktok_viral.py"), "--caption", filename], {
+      encoding: "utf8",
+      stdio: ["ignore", "pipe", "ignore"],
+    });
+    const parsed = JSON.parse(out.trim());
+    if (parsed && parsed.caption) return parsed;
+  } catch {}
+  return { caption: `${cleanViTitle(filename)} ${DEFAULT_TAGS}`, badge: cleanViTitle(filename).toUpperCase() };
 }
 
 function makeAutoCover(localVideoPath, titleSource) {
-  const pyCandidates = [
-    process.env.PYTHON || "",
-    "C:\\Users\\001\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
-    "C:\\Users\\Hang thu\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
-  ].filter(Boolean);
-  const pyExe = pyCandidates.find((p) => fs.existsSync(p)) || "python";
+  // Strictly picks sharpest frame from video + 2-line title (no AI background poster)
   const out = path.join(EDIT_DIR, "tmp_tiktok_cover.png");
-  execFileSync(pyExe, [path.join(EDIT_DIR, "make_tiktok_cover.py"), localVideoPath, out, titleSource], {
+  const coverTitle = cleanViTitle(titleSource);
+  execFileSync(PY_EXE, [path.join(EDIT_DIR, "make_tiktok_cover.py"), localVideoPath, out, coverTitle], {
     stdio: "inherit",
   });
   return out;
-}
-
-function listCandidateMp4s() {
-  if (!fs.existsSync(SRC_DIR)) throw new Error(`Source folder not found: ${SRC_DIR}`);
-  const files = fs
-    .readdirSync(SRC_DIR, { withFileTypes: true })
-    .filter((d) => d.isFile() && d.name.toLowerCase().endsWith(".mp4"))
-    .map((d) => {
-      const full = path.join(SRC_DIR, d.name);
-      const st = fs.statSync(full);
-      const isFull = /\bfull\b/i.test(d.name);
-      return { name: d.name, full, mtimeMs: st.mtimeMs, isFull };
-    })
-    .sort((a, b) => a.mtimeMs - b.mtimeMs);
-  const singles = files.filter((f) => !f.isFull);
-  return singles.length > 0 ? [...singles, ...files.filter((f) => f.isFull)] : files;
 }
 
 function normalizeForMatch(s) {
@@ -121,7 +221,9 @@ function normalizeForMatch(s) {
     .toLowerCase()
     .replace(/#\S+/g, "")
     .replace(/\.mp4$/i, "")
-    .replace(/^\d{6}\s+/, "")
+    .replace(/^\d{6}\s+(?:k4\s+)?/i, "")
+    .replace(/\(\s*(?:full|\d+)\s*\)/gi, "")
+    .replace(/\b(?:final|full)\b/gi, "")
     .replace(/\bnhà trồng\b/g, "nhà chồng")
     .replace(/\btrong nha\b/g, "trong nhà")
     .replace(/[^\p{L}\p{N}\s]/gu, " ")
@@ -129,14 +231,123 @@ function normalizeForMatch(s) {
     .trim();
 }
 
-async function connectMainBraveStudio() {
-  // 1. Try existing Brave Studio on port 9333 (shared with Google Flow & ChatGPT HTPM)
+function probeDurationSec(filePath) {
   try {
-    const browser = await chromium.connectOverCDP("http://127.0.0.1:9333");
-    return { browser, context: browser.contexts()[0], usingMain9333: true, spawnedFallback: false };
-  } catch {}
+    const out = execFileSync(
+      FFPROBE_EXE,
+      ["-v", "error", "-show_entries", "format=duration", "-of", "default=noprint_wrappers=1:nokey=1", filePath],
+      { encoding: "utf8", timeout: 8000, stdio: ["ignore", "pipe", "ignore"] }
+    );
+    const d = parseFloat(out.trim());
+    return Number.isFinite(d) ? d : -1;
+  } catch {
+    return -1;
+  }
+}
 
-  // 2. Launch Brave Studio via explorer.exe so it opens on user's desktop with port 9333
+function listCandidateMp4s() {
+  const postedSet = loadPostedHistorySet();
+  const results = [];
+
+  // 1. Priority 1: Crisp episodes in K4_MASTER_DIR (keep masters in place, never delete from brand root!)
+  if (fs.existsSync(K4_MASTER_DIR)) {
+    const masterEntries = fs
+      .readdirSync(K4_MASTER_DIR, { withFileTypes: true })
+      .filter((d) => d.isFile() && d.name.toLowerCase().endsWith(".mp4"))
+      .filter((d) => {
+        const low = d.name.toLowerCase();
+        // Skip multi-part full compilations ("tập full final.mp4") and draft Muse variant
+        if (/\btập\s*full\b/i.test(low)) return false;
+        if (/nha trang muse/i.test(low)) return false;
+        return true;
+      })
+      .map((d) => {
+        const full = path.join(K4_MASTER_DIR, d.name);
+        const st = fs.statSync(full);
+        const is261128 = /^261\d{3}\s+K4\b/i.test(d.name);
+        return {
+          name: d.name,
+          full,
+          mtimeMs: st.mtimeMs,
+          isFull: false,
+          keepMaster: true,
+          priorityTier: is261128 ? 0 : 1,
+        };
+      })
+      .sort((a, b) => {
+        if (a.priorityTier !== b.priorityTier) return a.priorityTier - b.priorityTier;
+        return a.name.localeCompare(b.name, "vi");
+      });
+
+    for (const item of masterEntries) {
+      const norm = normalizeForMatch(item.name);
+      if (postedSet.has(norm)) continue;
+      results.push(item);
+    }
+  }
+
+  // 2. Priority 2: Remaining files in SRC_DIR ("đã đăng\")
+  if (fs.existsSync(SRC_DIR)) {
+    const legacyFiles = fs
+      .readdirSync(SRC_DIR, { withFileTypes: true })
+      .filter((d) => d.isFile() && d.name.toLowerCase().endsWith(".mp4"))
+      .map((d) => {
+        const full = path.join(SRC_DIR, d.name);
+        const st = fs.statSync(full);
+        const isFull = /\bfull\b/i.test(d.name);
+        return {
+          name: d.name,
+          full,
+          mtimeMs: st.mtimeMs,
+          isFull,
+          keepMaster: false,
+          priorityTier: isFull ? 3 : 2,
+        };
+      })
+      .sort((a, b) => (a.priorityTier !== b.priorityTier ? a.priorityTier - b.priorityTier : a.mtimeMs - b.mtimeMs));
+
+    for (const item of legacyFiles) {
+      const norm = normalizeForMatch(item.name);
+      if (postedSet.has(norm)) continue;
+      results.push(item);
+    }
+  }
+
+  return results;
+}
+
+async function preCleanStaleBlankTabs9333() {
+  try {
+    const res = await fetch("http://127.0.0.1:9333/json/list", { signal: AbortSignal.timeout(2500) });
+    if (!res.ok) return false;
+    const targets = await res.json();
+    if (!Array.isArray(targets)) return true;
+    for (const t of targets) {
+      if (t.type === "page" && (t.url === "about:blank" || t.url.includes("tiktok.com/tiktokstudio/upload"))) {
+        await fetch(`http://127.0.0.1:9333/json/close/${t.id}`, { signal: AbortSignal.timeout(1500) }).catch(() => {});
+      }
+    }
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+async function connectMainBraveStudio() {
+  const portAlive = await preCleanStaleBlankTabs9333();
+  if (portAlive) {
+    try {
+      const browser = await chromium.connectOverCDP("http://127.0.0.1:9333", { timeout: 90000 });
+      return { browser, context: browser.contexts()[0], usingMain9333: true, spawnedFallback: false };
+    } catch (e) {
+      console.warn("WARN: First connectOverCDP(:9333) attempt failed, retrying once...", e?.message || e);
+      await new Promise((r) => setTimeout(r, 1500));
+      const browser = await chromium.connectOverCDP("http://127.0.0.1:9333", { timeout: 90000 });
+      return { browser, context: browser.contexts()[0], usingMain9333: true, spawnedFallback: false };
+    }
+  }
+
+  // Launch Brave Studio via explorer.exe so it opens on user's desktop with port 9333
   if (fs.existsSync(BRAVE_STUDIO_LNK)) {
     const launcher = spawn("explorer.exe", [BRAVE_STUDIO_LNK], { detached: true, stdio: "ignore" });
     launcher.unref();
@@ -157,14 +368,16 @@ async function connectMainBraveStudio() {
   }
 
   for (let i = 0; i < 25; i++) {
-    await new Promise((r) => setTimeout(r, 700));
-    try {
-      const browser = await chromium.connectOverCDP("http://127.0.0.1:9333");
-      return { browser, context: browser.contexts()[0], usingMain9333: true, spawnedFallback: false };
-    } catch {}
+    await new Promise((r) => setTimeout(r, 800));
+    if (await preCleanStaleBlankTabs9333()) {
+      try {
+        const browser = await chromium.connectOverCDP("http://127.0.0.1:9333", { timeout: 90000 });
+        return { browser, context: browser.contexts()[0], usingMain9333: true, spawnedFallback: false };
+      } catch {}
+    }
   }
 
-  // 3. Fallback to isolated port 19333 ONLY if unattached Brave blocked port 9333 (never kill user's Brave!)
+  // Fallback to isolated port 19333 ONLY if unattached Brave blocked port 9333 (never kill user's Brave!)
   fs.mkdirSync(FALLBACK_PROFILE_DIR, { recursive: true });
   const fb = spawn(
     BRAVE_EXE,
@@ -179,9 +392,9 @@ async function connectMainBraveStudio() {
   );
   fb.unref();
   for (let i = 0; i < 25; i++) {
-    await new Promise((r) => setTimeout(r, 600));
+    await new Promise((r) => setTimeout(r, 700));
     try {
-      const browser = await chromium.connectOverCDP("http://127.0.0.1:19333");
+      const browser = await chromium.connectOverCDP("http://127.0.0.1:19333", { timeout: 60000 });
       return { browser, context: browser.contexts()[0], usingMain9333: false, spawnedFallback: true };
     } catch {}
   }
@@ -190,8 +403,35 @@ async function connectMainBraveStudio() {
 
 async function main() {
   const args = parseArgs(process.argv);
+  const dailyState = loadMergedDailyState();
+  const todayVn = getVnDateStr();
 
-  if (args.mode === "post" && !args.force && !args.file) {
+  if (args.mode === "status") {
+    const queue = listCandidateMp4s();
+    const nextItem = queue[0] || null;
+    const nextCap = nextItem ? getViralCaptionAndBadge(nextItem.name).caption : null;
+    const nextDur = nextItem ? probeDurationSec(nextItem.full) : null;
+    console.log(
+      JSON.stringify(
+        {
+          schedule: "Fixed 2 videos/day at 11:30 & 19:30 (Asia/Ho_Chi_Minh)",
+          todayVn,
+          postedToday: `${dailyState.dailyCount}/${MAX_POSTS_PER_DAY}`,
+          filesToday: dailyState.filesToday,
+          lastPostedAtIso: dailyState.iso || null,
+          queueRemaining: queue.length,
+          nextUp: nextItem ? { name: nextItem.name, durationSec: nextDur, keepMaster: nextItem.keepMaster, caption: nextCap } : null,
+          previewQueueTop6: queue.slice(0, 6).map((q) => q.name),
+        },
+        null,
+        2
+      )
+    );
+    return;
+  }
+
+  // Enforce STRICT 2 VIDEOS / DAY & 4-HOUR SLOT GAP (unless --force is explicitly passed)
+  if (args.mode === "post" && !args.force) {
     if (fs.existsSync(LOCK_FILE)) {
       try {
         const lk = JSON.parse(fs.readFileSync(LOCK_FILE, "utf8"));
@@ -201,14 +441,20 @@ async function main() {
         }
       } catch {}
     }
-    if (fs.existsSync(STATE_FILE)) {
-      try {
-        const st = JSON.parse(fs.readFileSync(STATE_FILE, "utf8"));
-        if (st.lastPostedAt && Date.now() - st.lastPostedAt < 35 * 60 * 1000) {
-          console.log(`SKIPPED_RECENT_SLOT: Already posted '${st.file}' ${Math.round((Date.now() - st.lastPostedAt) / 60000)}m ago.`);
-          return;
-        }
-      } catch {}
+
+    if (dailyState.dailyDate === todayVn && dailyState.dailyCount >= MAX_POSTS_PER_DAY) {
+      console.log(
+        `SKIPPED_DAILY_LIMIT: Fixed limit ${dailyState.dailyCount}/${MAX_POSTS_PER_DAY} videos already posted on ${todayVn} (${dailyState.filesToday.join(", ")}). Next slot tomorrow at 11:30.`
+      );
+      return;
+    }
+
+    if (dailyState.lastPostedAt && Date.now() - dailyState.lastPostedAt < MIN_SLOT_GAP_MS) {
+      const minsAgo = Math.round((Date.now() - dailyState.lastPostedAt) / 60000);
+      console.log(
+        `SKIPPED_SLOT_GAP: Last video '${dailyState.file}' posted ${minsAgo}m ago (< ${MIN_SLOT_GAP_MS / 60000}m minimum gap between 11:30 and 19:30).`
+      );
+      return;
     }
   }
 
@@ -221,7 +467,6 @@ async function main() {
     const { context, usingMain9333 } = conn;
     console.log("CONNECTED_BRAVE:", usingMain9333 ? "Main Brave Studio (:9333)" : "Fallback Profile (:19333)");
 
-    // Always open a dedicated temporary tab so existing Flow / ChatGPT / TikTok tabs are untouched
     page = await context.newPage();
     page.on("dialog", async (d) => {
       await d.accept().catch(() => {});
@@ -262,7 +507,8 @@ async function main() {
 
     let picked = null;
     if (args.file) {
-      picked = { name: path.basename(args.file), full: args.file };
+      const isMaster = path.resolve(path.dirname(args.file)).toLowerCase() === path.resolve(K4_MASTER_DIR).toLowerCase();
+      picked = { name: path.basename(args.file), full: args.file, keepMaster: isMaster };
     } else {
       const candidates = listCandidateMp4s();
       fs.mkdirSync(DST_DIR, { recursive: true });
@@ -271,9 +517,16 @@ async function main() {
         const alreadyOnChannel =
           key.length >= 10 && publishedNorms.some((p) => p.includes(key) || (key.length >= 18 && p.includes(key.slice(0, 18))));
         if (alreadyOnChannel) {
-          const dupDst = path.join(DST_DIR, cand.name);
-          fs.renameSync(cand.full, dupDst);
-          console.log(`MOVED_ALREADY_POSTED: ${dupDst}`);
+          recordPostedHistory(cand.name);
+          if (!cand.keepMaster) {
+            const dupDst = path.join(DST_DIR, cand.name);
+            try {
+              fs.renameSync(cand.full, dupDst);
+            } catch {}
+            console.log(`MOVED_ALREADY_POSTED: ${dupDst}`);
+          } else {
+            console.log(`RECORDED_ALREADY_POSTED_MASTER: ${cand.name}`);
+          }
           continue;
         }
         picked = cand;
@@ -282,15 +535,30 @@ async function main() {
     }
 
     if (!picked || !fs.existsSync(picked.full)) {
-      console.log("NO_VIDEO: No unposted .mp4 files remaining in source folder.");
+      console.log("NO_VIDEO: No unposted .mp4 files remaining in queue.");
       return;
     }
 
-    const captionText = (args.caption || fallbackCaption(picked.name)).trim();
+    const { caption: autoCaption, badge: hookBadge } = getViralCaptionAndBadge(picked.name);
+    const captionText = (args.caption || autoCaption).trim();
     const localTemp = path.join(EDIT_DIR, "tmp_tiktok_upload.mp4");
-    fs.copyFileSync(picked.full, localTemp);
-    // Prepare cover BEFORE opening /tiktokstudio/upload so synchronous Drive copy + ffmpeg never stalls the upload page
-    const coverPath = args.cover && fs.existsSync(args.cover) ? args.cover : makeAutoCover(localTemp, captionText || picked.name);
+
+    // Episodes dated 261126+ already contain a built-in Cold-Open Climax Hook; legacy clips get a 2.2s cold-open hook prepended
+    const alreadyHasColdOpen = /^261\d{3}\s+K4\b/i.test(picked.name);
+    if (alreadyHasColdOpen) {
+      fs.copyFileSync(picked.full, localTemp);
+    } else {
+      try {
+        execFileSync(PY_EXE, [path.join(EDIT_DIR, "optimize_tiktok_viral.py"), "--prepare", picked.full, localTemp], {
+          stdio: "inherit",
+        });
+      } catch {
+        fs.copyFileSync(picked.full, localTemp);
+      }
+    }
+
+    // Extract sharpest frame from video + 2-line title (no AI background poster)
+    const coverPath = args.cover && fs.existsSync(args.cover) ? args.cover : makeAutoCover(localTemp, picked.name || hookBadge);
 
     await page.goto("https://www.tiktok.com/tiktokstudio/upload", { waitUntil: "domcontentloaded", timeout: 90000 });
     const leaveBtn = page.locator('button:text-is("Thoát"), button:text-is("Leave")').first();
@@ -308,7 +576,7 @@ async function main() {
 
     const fileInput = page.locator('input[type="file"]').first();
     await fileInput.waitFor({ state: "attached", timeout: 30000 });
-    console.log(`UPLOADING: ${picked.name}`);
+    console.log(`UPLOADING [${dailyState.dailyCount + 1}/${MAX_POSTS_PER_DAY} today]: ${picked.name}`);
     console.log(`CAPTION: ${captionText}`);
 
     await page.bringToFront().catch(() => {});
@@ -444,7 +712,6 @@ async function main() {
       return;
     }
 
-    // Wait 15s for TikTok Studio background copyright & content quality checks to finish cleanly
     await page.waitForTimeout(15000);
     await dismissModals();
     await page.evaluate(() => {
@@ -470,23 +737,36 @@ async function main() {
     );
 
     fs.mkdirSync(DST_DIR, { recursive: true });
-    const dstPath = path.join(DST_DIR, picked.name);
-    fs.renameSync(picked.full, dstPath);
+    recordPostedHistory(picked.name);
+    let finalRecordedPath = picked.full;
+    if (!picked.keepMaster) {
+      const dstPath = path.join(DST_DIR, picked.name);
+      fs.renameSync(picked.full, dstPath);
+      finalRecordedPath = dstPath;
+    }
     try {
       fs.unlinkSync(localTemp);
     } catch {}
-    fs.writeFileSync(
-      STATE_FILE,
-      JSON.stringify({ lastPostedAt: Date.now(), file: picked.name, iso: new Date().toISOString() }, null, 2),
-      "utf8"
-    );
-    console.log(`POSTED_AND_MOVED: ${dstPath}`);
+
+    const refreshed = loadMergedDailyState();
+    const filesToday = Array.from(new Set([...(refreshed.dailyDate === todayVn ? refreshed.filesToday : []), picked.name]));
+    const updatedState = {
+      dailyDate: todayVn,
+      dailyCount: filesToday.length,
+      maxPerDay: MAX_POSTS_PER_DAY,
+      filesToday,
+      lastPostedAt: Date.now(),
+      file: picked.name,
+      iso: new Date().toISOString(),
+    };
+    saveDailyState(updatedState);
+
+    console.log(`POSTED_OK [${updatedState.dailyCount}/${MAX_POSTS_PER_DAY} on ${todayVn}]: ${finalRecordedPath}`);
     await page.waitForTimeout(2500);
   } finally {
     try {
       fs.unlinkSync(LOCK_FILE);
     } catch {}
-    // Close ONLY our temporary upload tab; NEVER close user's Main Brave Studio (:9333)!
     if (page) {
       await page.close().catch(() => {});
     }
