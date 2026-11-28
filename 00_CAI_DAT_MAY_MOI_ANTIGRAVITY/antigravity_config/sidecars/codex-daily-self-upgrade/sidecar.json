@@ -5,21 +5,21 @@
     "agentapi",
     "new-conversation",
     "--",
-    "Thực hiện quy trình Tự Động Bào Điểm OpenAI Codex Nâng Cấp Hệ Thống Hàng Ngày trong thư mục C:\\AI\\full studio:\n1. Chạy lệnh: C:\\Users\\001\\AppData\\Local\\Programs\\Python\\Python311\\python.exe -X utf8 \"C:\\AI\\full studio\\edit\\canvas-tools\\codex_daily_self_evolver.py\" --max-tasks 3 để dùng điểm OpenAI Codex (gpt-6.2-sol mức xhigh) rèn thêm công cụ, preset và kiểm thử tự động (--self-test) cho các bộ kỹ năng trong C:\\AI\\full studio\\.agents\\skills\\.\n2. Chạy lệnh kiểm tra tổng thể: C:\\Users\\001\\AppData\\Local\\Programs\\Python\\Python311\\python.exe -X utf8 \"C:\\AI\\full studio\\.agents\\skills\\studio_skill_router.py\" --self-test.\n3. Nếu có kỹ năng vừa nâng cấp vượt cổng kiểm định (UPGRADED_PASS), đọc C:\\AI\\full studio\\.agents\\skills\\CODEX_DAILY_EVOLUTION_LOG.md, đồng bộ thư mục kỹ năng đó sang G:\\My Drive\\AI_Full_Studio\\01_Skills\\ (nếu ổ G: đang mở) và tóm tắt ngắn gọn các nâng cấp mới hoàn thành trong ngày."
+    "Thực hiện quy trình Tự Động Bào Điểm OpenAI Codex Nâng Cấp Hệ Thống Hàng Ngày trong C:\\AI\\full studio:\n1. Chạy lệnh: & \"C:\\Users\\001\\AppData\\Local\\Programs\\Python\\Python311\\python.exe\" -X utf8 \"C:\\AI\\full studio\\edit\\canvas-tools\\codex_daily_self_evolver.py\" --max-tasks 3 (dùng hạn mức OpenAI Codex gpt-6.2-sol mức tối thượng xhigh reset trong ngày để rèn thêm công cụ, preset và test-case cho kho 43+ Siêu Kỹ Năng; tự động dừng êm nếu chạm trần quota).\n2. Chạy lệnh kiểm định tổng thể: & \"C:\\Users\\001\\AppData\\Local\\Programs\\Python\\Python311\\python.exe\" -X utf8 \"C:\\AI\\full studio\\.agents\\skills\\studio_skill_router.py\" --self-test.\n3. Đọc tệp C:\\AI\\full studio\\.agents\\skills\\CODEX_DAILY_EVOLUTION_LOG.md và báo cáo ngắn gọn các kỹ năng vừa được nâng cấp trong ngày (hoặc thông báo nếu quota Codex đang chờ đợt reset kế tiếp)."
   ],
   "restart_policy": "always",
   "display_name": "Tự Động Bào Điểm Codex Nâng Cấp Hàng Ngày",
-  "description": "Mỗi ngày lúc 12:30 trưa (Asia/Ho_Chi_Minh), tự động dùng hạn mức OpenAI Codex reset trong ngày để nâng cấp thêm công cụ, preset và kiểm thử tự động cho kho 43+ Siêu Kỹ Năng Full Studio.",
+  "description": "Mỗi ngày lúc 12:30 trưa (Asia/Ho_Chi_Minh), tự động dùng hạn mức OpenAI Codex reset trong ngày ở mức suy luận tối thượng (xhigh) để nâng cấp kho 43+ Siêu Kỹ Năng Full Studio.",
   "agent_permissions": {
     "workspace_uris": [
       "file:///C:/AI/full%20studio"
     ],
     "access_grants": [
-      "command(C:\\Users\\001\\AppData\\Local\\Programs\\Python\\Python311\\python.exe)",
+      "command(C:\\Users\\001\\AppData\\Local\\Programs\\Python\\Python311\\python.exe -X utf8 \"C:\\AI\\full studio\\edit\\canvas-tools\\codex_daily_self_evolver.py\")",
+      "command(C:\\Users\\001\\AppData\\Local\\Programs\\Python\\Python311\\python.exe -X utf8 \"C:\\AI\\full studio\\.agents\\skills\\studio_skill_router.py\")",
       "read_file(C:/AI/full studio/.agents/skills)",
       "write_file(C:/AI/full studio/.agents/skills)",
-      "read_file(C:/AI/full studio/edit/canvas-tools)",
-      "write_file(G:/My Drive/AI_Full_Studio/01_Skills)"
+      "read_file(C:/AI/full studio/edit/canvas-tools)"
     ]
   }
 }

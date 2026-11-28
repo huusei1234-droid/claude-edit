@@ -1,0 +1,20 @@
+{
+  "generation_cycle": 1,
+  "completed_ids": [],
+  "total_runs": 1,
+  "history": [
+    {
+      "at": "2026-11-28 20:47:14",
+      "quota_hit": true,
+      "results": [
+        {
+          "id": "evo_01_remotion_3d_pack",
+          "skill": "remotion-best-practices",
+          "status": "QUOTA_REACHED",
+          "seconds": 13.5
+        }
+      ]
+    }
+  ],
+  "last_run_at": "2026-11-28 20:47:14"
+}
