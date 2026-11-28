@@ -1,0 +1,16 @@
+{
+  "id":  "8252d576-3728-47e9-9e0c-a7b75f48088d",
+  "name":  "full studio",
+  "projectResources":  {
+    "resources":  [
+      {
+        "folderUri":  "file:///c%3A/AI/full%20studio"
+      }
+    ]
+  },
+  "permissionGrants":  {
+    "v2Migrated":  true
+  },
+  "settings":  {},
+  "isWorkspaceOnly":  false
+}

@@ -1,0 +1,28 @@
+{
+  "id": "a293b945-e9fb-47c7-ad98-68e3feb6bcd5",
+  "name": "daily-morning-briefing-8h",
+  "projectResources": {
+    "resources": [
+      {
+        "folderUri": "file:///c:/AI/full%20studio"
+      }
+    ]
+  },
+  "permissionGrants": {
+    "permissionGrants": {
+      "allow": [
+        "command(powershell -NoProfile -ExecutionPolicy Bypass -File \"Z:/Drive của tôi/AI_Full_Studio/00_Lich_Cong_Viec_Hang_Ngay/scan_today.ps1\")",
+        "read_file(Z:/Drive của tôi/AI_Full_Studio/00_Lich_Cong_Viec_Hang_Ngay)",
+        "write_file(Z:/Drive của tôi/AI_Full_Studio/00_Lich_Cong_Viec_Hang_Ngay)",
+        "read_file(C:/Users/Hang thu/.gemini/antigravity/brain)"
+      ]
+    },
+    "v2Migrated": true
+  },
+  "settings": {
+    "artifactReviewMode": "ARTIFACT_REVIEW_MODE_TURBO"
+  },
+  "sidecar": {
+    "sidecarId": "daily-morning-briefing-8h"
+  }
+}

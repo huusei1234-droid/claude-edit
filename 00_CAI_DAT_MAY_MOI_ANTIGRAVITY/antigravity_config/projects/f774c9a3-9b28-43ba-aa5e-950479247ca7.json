@@ -1,0 +1,15 @@
+{
+  "id": "f774c9a3-9b28-43ba-aa5e-950479247ca7",
+  "name": "swarm/swarm_board",
+  "projectResources": {},
+  "permissionGrants": {
+    "permissionGrants": {},
+    "v2Migrated": true
+  },
+  "settings": {
+    "artifactReviewMode": "ARTIFACT_REVIEW_MODE_TURBO"
+  },
+  "sidecar": {
+    "sidecarId": "swarm/swarm_board"
+  }
+}

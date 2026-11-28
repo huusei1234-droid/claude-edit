@@ -1,0 +1,30 @@
+{
+  "id": "4de0627f-8aab-4d36-9dfd-e2c49f1ba59e",
+  "name": "daily-evening-report-17h",
+  "projectResources": {
+    "resources": [
+      {
+        "folderUri": "file:///c:/AI/full%20studio"
+      }
+    ]
+  },
+  "permissionGrants": {
+    "permissionGrants": {
+      "allow": [
+        "command(powershell -NoProfile -ExecutionPolicy Bypass -File \"Z:/Drive của tôi/AI_Full_Studio/00_Lich_Cong_Viec_Hang_Ngay/scan_today.ps1\")",
+        "read_file(Z:/Drive của tôi/AI_Full_Studio/00_Lich_Cong_Viec_Hang_Ngay)",
+        "write_file(Z:/Drive của tôi/AI_Full_Studio/00_Lich_Cong_Viec_Hang_Ngay)",
+        "read_file(Z:/Drive của tôi/AI_Full_Studio/04_Videos_Final)",
+        "read_file(D:/XUẤT CAPCUT)",
+        "read_file(Z:/Drive của tôi/dự án ngoài/MS Nội Thất)"
+      ]
+    },
+    "v2Migrated": true
+  },
+  "settings": {
+    "artifactReviewMode": "ARTIFACT_REVIEW_MODE_TURBO"
+  },
+  "sidecar": {
+    "sidecarId": "daily-evening-report-17h"
+  }
+}

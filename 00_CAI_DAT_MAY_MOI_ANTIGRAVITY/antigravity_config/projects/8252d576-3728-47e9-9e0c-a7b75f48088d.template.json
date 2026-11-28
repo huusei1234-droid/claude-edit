@@ -1,0 +1,18 @@
+{
+  "id": "8252d576-3728-47e9-9e0c-a7b75f48088d",
+  "name": "full studio",
+  "projectResources": {
+    "resources": [
+      {
+        "folderUri": "__STUDIO_FILE_URI__"
+      }
+    ]
+  },
+  "permissionGrants": {
+    "v2Migrated": true
+  },
+  "settings": {
+    "artifactReviewMode": "ARTIFACT_REVIEW_MODE_TURBO"
+  },
+  "isWorkspaceOnly": false
+}
