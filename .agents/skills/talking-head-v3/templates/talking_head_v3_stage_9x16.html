@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Talking Head V3 · V6 Siêu Cấp</title>
+  <style>
+    @font-face {
+      font-family: "Asap Condensed";
+      src: local("Asap Condensed Bold"), url("assets/fonts/AsapCondensed-Bold.ttf");
+      font-weight: 700;
+      font-display: swap;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body { margin: 0; background: #151117; }
+    [hidden] { display: none !important; }
+    #stage {
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      width: 1080px;
+      height: 1920px;
+      color: #fff2e8;
+      font-family: "Asap Condensed", "Arial Narrow", "Segoe UI", sans-serif;
+      --accent: #f9bfac;
+    }
+    .full { position: absolute; inset: 0; width: 100%; height: 100%; }
+    #room, #presenter { object-fit: cover; object-position: center; }
+    #room { z-index: 0; }
+    #room-dim { z-index: 1; background: #000; opacity: 0; }
+    #behind-presenter { z-index: 2; opacity: 0; pointer-events: none; }
+    #presenter { z-index: 3; }
+    .orbit {
+      position: absolute;
+      top: 350px;
+      left: 300px;
+      width: 480px;
+      height: 360px;
+      border: 2px solid #f9bfac4d;
+      border-right: 4px solid var(--accent);
+      border-radius: 50%;
+      box-shadow: inset 0 0 20px #ffb89d24, 0 0 20px #ffb89d23;
+    }
+    .orbit + .orbit { border-right: 2px solid #f9bfac4d; border-top: 3px solid #fff3ca; }
+    #keyword {
+      position: absolute;
+      inset: 318px 56px auto;
+      display: grid;
+      place-items: center;
+      height: 254px;
+      padding: 18px;
+      overflow: hidden;
+      font-weight: 700;
+      text-align: center;
+      text-transform: uppercase;
+      text-shadow: 0 2px 14px #f9b5a66b;
+    }
+    #keyword-ink {
+      display: block;
+      width: max-content;
+      white-space: nowrap;
+      background: linear-gradient(105deg, #e69b8d 15%, #fff2cd 49%, #e49b91 79%);
+      background-size: 170% 100%;
+      background-clip: text;
+      color: transparent;
+    }
+    #split { z-index: 4; pointer-events: none; }
+    .card {
+      position: absolute;
+      margin: 0;
+      overflow: hidden;
+      border-radius: 46px;
+      background: #20161c;
+    }
+    .card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border: 2px solid #efb4b3ba;
+      border-radius: inherit;
+    }
+    .showcase { background: radial-gradient(ellipse at 50% 46%, #624049, #261922 75%); }
+    .showcase::after { border-color: #ffdbacbb; }
+    .asset { position: absolute; inset: 0 auto auto 0; display: block; }
+    #caption {
+      position: absolute;
+      z-index: 5;
+      display: grid;
+      place-items: center;
+      padding: 16px;
+      overflow: hidden;
+      color: var(--word-color, #ffda9e);
+      font-weight: 700;
+      line-height: 1.08;
+      text-align: center;
+      pointer-events: none;
+    }
+    #caption-ink {
+      display: block;
+      width: max-content;
+      white-space: nowrap;
+      -webkit-text-stroke: 2px #281825;
+      paint-order: stroke fill;
+      text-shadow: 0 0 var(--glow, 8px) currentColor, 0 3px 12px #110d16;
+    }
+  </style>
+</head>
+<body>
+  <main id="stage" data-width="1080" data-height="1920" data-fps="30" aria-label="Sân khấu Talking Head V3">
+    <video id="room" class="full" muted playsinline preload="auto" aria-hidden="true"></video>
+    <div id="room-dim" class="full" aria-hidden="true"></div>
+    <div id="behind-presenter" class="full" aria-hidden="true">
+      <i class="orbit"></i><i class="orbit"></i>
+      <div id="keyword" hidden><span id="keyword-ink"></span></div>
+    </div>
+    <video id="presenter" class="full" muted playsinline preload="auto" aria-hidden="true"></video>
+    <div id="split" class="full" aria-hidden="true"></div>
+    <div id="caption" hidden><span id="caption-ink"></span></div>
+  </main>
+
+  <!-- Paste the generated plan in place of null and the timed words in captions. -->
+  <script id="stage-data" type="application/json">
+    {
+      "room": "assets/presenter_room.mp4",
+      "presenter": "assets/presenter_cutout.webm",
+      "plan": null,
+      "captions": {"words": []},
+      "keywords": []
+    }
+  </script>
+  <script>
+    (() => {
+      "use strict";
+
+      const WIDTH = 1080;
+      const HEIGHT = 1920;
+      const FPS = 30;
+      const CAPTION_SAFE = [54, 248, 884, 1545];
+      const DEFAULT_CAPTION_BOX = [66, 1255, 872, 1420];
+      const $ = id => document.getElementById(id);
+      const stage = $("stage");
+      const room = $("room");
+      const presenter = $("presenter");
+      const split = $("split");
+      const behind = $("behind-presenter");
+      const keyword = $("keyword");
+      const keywordInk = $("keyword-ink");
+      const caption = $("caption");
+      const captionInk = $("caption-ink");
+      const orbits = [...behind.querySelectorAll(".orbit")];
+      let config;
+      let tail = Promise.resolve();
+
+      const clamp = (value, min, max) => Math.max(min, Math.min(max, value));
+      function smoothstep(progress) {
+        const t = clamp(progress, 0, 1);
+        return t * t * (3 - 2 * t);
+      }
+      function envelope(frame, start, end, fade) {
+        return smoothstep(Math.min(frame - start, end - frame) / fade);
+      }
+      function dimAt(frame, cues) {
+        if (!cues) return 0;
+        for (let i = 1; i < cues.length; i++) {
+          const from = cues[i - 1];
+          const to = cues[i];
+          if (frame <= to.frame) {
+            const mix = smoothstep((frame - from.frame) / (to.frame - from.frame));
+            return from.alpha + (to.alpha - from.alpha) * mix;
+          }
+        }
+        return 0;
+      }
+
+      function place(element, [left, top, right, bottom]) {
+        Object.assign(element.style, {
+          left: `${left}px`, top: `${top}px`, width: `${right - left}px`, height: `${bottom - top}px`
+        });
+      }
+      function cover(element, bbox, focus, zoom) {
+        const sw = element.videoWidth || element.naturalWidth;
+        const sh = element.videoHeight || element.naturalHeight;
+        const w = bbox[2] - bbox[0];
+        const h = bbox[3] - bbox[1];
+        const scale = Math.max(w / sw, h / sh) * zoom;
+        const fittedWidth = sw * scale;
+        const fittedHeight = sh * scale;
+        const x = clamp(w / 2 - focus[0] * fittedWidth, Math.min(0, w - fittedWidth), 0);
+        const y = clamp(h / 2 - focus[1] * fittedHeight, Math.min(0, h - fittedHeight), 0);
+        place(element, [x, y, x + fittedWidth, y + fittedHeight]);
+      }
+      function makeCard(layer, sceneId) {
+        const card = document.createElement("figure");
+        const video = layer.media_type === "video";
+        const asset = document.createElement(video ? "video" : "img");
+        if (video) {
+          asset.muted = true;
+          asset.playsInline = true;
+          asset.preload = "auto";
+        } else {
+          asset.alt = "";
+        }
+        asset.className = "asset";
+        asset.src = layer.src;
+        card.id = `${sceneId}-${layer.track}`;
+        card.className = `card ${layer.track}`;
+        card.hidden = true;
+        place(card, layer.bbox);
+        card.append(asset);
+        split.append(card);
+        return {card, asset, layer};
+      }
+
+      function wordBox(word) {
+        const raw = word.bbox ?? ("x" in word || "left" in word ? word : DEFAULT_CAPTION_BOX);
+        let box = raw;
+        if (!Array.isArray(raw)) {
+          box = "left" in raw ? [raw.left, raw.top, raw.right, raw.bottom]
+            : [raw.x, raw.y, raw.x + raw.width, raw.y + raw.height];
+        }
+        const pad = word.glow_padding ?? 0;
+        if (box.length !== 4 || !box.every(Number.isFinite) || !Number.isFinite(pad) || pad < 0
+            || box[0] >= box[2] || box[1] >= box[3]) {
+          throw new Error("BBox phụ đề cần 4 tọa độ hợp lệ và glow_padding >= 0.");
+        }
+        const [left, top, right, bottom] = [box[0] - pad, box[1] - pad, box[2] + pad, box[3] + pad];
+        const [x0, y0, x1, y1] = CAPTION_SAFE;
+        if (left < x0 || top < y0 || right > x1 || bottom > y1) {
+          throw new Error(`Phụ đề vượt vùng an toàn tại ${word.start}s: ${word.word ?? word.text}`);
+        }
+        return [left, top, right, bottom];
+      }
+
+      function configure({plan, captions = [], keywords = [], room: roomSrc = "assets/presenter_room.mp4",
+                          presenter: presenterSrc = "assets/presenter_cutout.webm"}) {
+        const canvas = plan?.canvas;
+        if (canvas?.fps !== FPS || canvas.width !== WIDTH || canvas.height !== HEIGHT
+            || !Number.isInteger(plan.duration_frames) || plan.duration_frames < 1 || plan.scenes?.length !== 4) {
+          throw new Error("Cần plan 1080×1920 @ 30fps có 4 cảnh Split B-Roll.");
+        }
+        const inputWords = Array.isArray(captions) ? captions : captions.words;
+        const words = inputWords.map(word => {
+          const text = word.word ?? word.text;
+          if (typeof text !== "string" || !text.trim() || !Number.isFinite(word.start) || !Number.isFinite(word.end)
+              || word.start < 0 || word.end <= word.start) {
+            throw new Error("Mỗi từ cần word hoặc text và start/end tính theo giây.");
+          }
+          return {word: text.trim(), start: word.start, end: word.end, color: word.color, bbox: wordBox(word)};
+        }).sort((a, b) => a.start - b.start);
+        const titles = keywords.map(cue => {
+          if (typeof cue.text !== "string" || !cue.text.trim() || !Number.isInteger(cue.start_frame)
+              || !Number.isInteger(cue.end_frame) || cue.start_frame < 0 || cue.end_frame <= cue.start_frame
+              || cue.end_frame > plan.duration_frames) {
+            throw new Error("Keyword cần text và start_frame/end_frame hợp lệ.");
+          }
+          return cue;
+        });
+
+        split.replaceChildren();
+        room.src = roomSrc;
+        presenter.src = presenterSrc;
+        const scenes = plan.scenes.map(scene => ({
+          ...scene, cards: scene.layers.map(layer => makeCard(layer, scene.id))
+        }));
+        config = {duration: plan.duration_frames, scenes, words, titles};
+      }
+
+      function waitMedia(element, event) {
+        if (element.error) return Promise.reject(new Error(`Lỗi đọc video: ${element.src}`));
+        return new Promise((resolve, reject) => {
+          const done = () => {
+            element.removeEventListener("error", fail);
+            resolve();
+          };
+          const fail = () => {
+            element.removeEventListener(event, done);
+            reject(new Error(`Lỗi đọc video: ${element.src}`));
+          };
+          element.addEventListener(event, done, {once: true});
+          element.addEventListener("error", fail, {once: true});
+        });
+      }
+      async function seekVideo(video, seconds) {
+        if (video.error || video.readyState < 1) await waitMedia(video, "loadedmetadata");
+        const target = Math.min(seconds, Math.max(0, video.duration - 0.5 / FPS));
+        if (Math.abs(video.currentTime - target) > 0.0001 || video.seeking) {
+          const ready = waitMedia(video, "seeked");
+          video.currentTime = target;
+          await ready;
+        }
+        if (video.readyState < 2) await waitMedia(video, "loadeddata");
+      }
+
+      function fitText(element, holder, text, maxSize, padding) {
+        element.textContent = text;
+        element.style.fontSize = `${maxSize}px`;
+        const w = Math.max(1, holder.clientWidth - padding);
+        const h = Math.max(1, holder.clientHeight - padding);
+        const fit = Math.min(1, w / element.offsetWidth, h / element.offsetHeight);
+        element.style.fontSize = `${maxSize * fit}px`;
+      }
+
+      async function renderFrame(frame) {
+        if (!config || !Number.isInteger(frame) || frame < 0 || frame >= config.duration) {
+          throw new RangeError("Cần cấu hình plan và chọn frame trong timeline.");
+        }
+        const time = frame / FPS;
+        const active = config.scenes.find(scene => frame >= scene.start_frame && frame < scene.end_frame);
+        const title = config.titles.find(cue => frame >= cue.start_frame && frame < cue.end_frame);
+        const titleFade = title ? Math.min(15, (title.end_frame - title.start_frame) / 3) : 1;
+        const titleAlpha = title ? envelope(frame, title.start_frame, title.end_frame, titleFade) : 0;
+        const alpha = Math.max(dimAt(frame, active?.dim_room_alpha), titleAlpha * 0.42);
+        $("room-dim").style.opacity = String(alpha);
+        behind.style.opacity = String(alpha / 0.42);
+        orbits.forEach((orbit, index) => {
+          orbit.style.transform = `rotate(${(index ? -time : time) * 32 + index * 44}deg)`;
+        });
+        keyword.hidden = !title;
+        if (title) {
+          keyword.style.opacity = String(titleAlpha);
+          fitText(keywordInk, keyword, title.text, 154, 36);
+          const progress = (frame - title.start_frame) / (title.end_frame - title.start_frame);
+          keywordInk.style.backgroundPosition = `${100 - progress * 100}% 50%`;
+        }
+
+        const pending = [seekVideo(room, time), seekVideo(presenter, time)];
+        for (const scene of config.scenes) {
+          for (const {card, asset, layer} of scene.cards) {
+            card.hidden = scene !== active;
+            if (card.hidden) continue;
+            const local = frame - scene.start_frame;
+            const opacity = envelope(frame, scene.start_frame, scene.end_frame, scene.transition_frames);
+            const progress = smoothstep(local / (scene.end_frame - scene.start_frame));
+            const video = layer.media_type === "video";
+            const direction = video ? -1 : 1;
+            card.style.opacity = String(opacity);
+            card.style.transform = `translateX(${direction * (1 - opacity) * 18}px) rotate(${direction}deg)`;
+            const ready = video ? seekVideo(asset, layer.source_start + local / FPS) : asset.decode();
+            pending.push(ready.then(() => {
+              cover(asset, layer.bbox, layer.focus, video ? 1.02 + 0.07 * progress : 1.08 - 0.06 * progress);
+            }));
+          }
+        }
+
+        const spoken = config.words.findLast(word => word.start <= time && time < word.end);
+        caption.hidden = !spoken;
+        if (spoken) {
+          place(caption, spoken.bbox);
+          caption.style.setProperty("--word-color", spoken.color || "#ffda9e");
+          caption.style.setProperty("--glow", `${7 + 4 * (1 - smoothstep((time - spoken.start) / 0.16))}px`);
+          fitText(captionInk, caption, spoken.word, 74, 32);
+        }
+        const results = await Promise.allSettled(pending);
+        const failed = results.find(result => result.status === "rejected");
+        if (failed) throw failed.reason;
+        stage.dataset.frame = String(frame);
+      }
+
+      function setFrame(frame) {
+        tail = tail.catch(() => {}).then(async () => {
+          await renderFrame(frame);
+          if ((!caption.hidden || !keyword.hidden) && document.fonts.status === "loading") {
+            await document.fonts.ready;
+            if (!caption.hidden) fitText(captionInk, caption, captionInk.textContent, 74, 32);
+            if (!keyword.hidden) fitText(keywordInk, keyword, keywordInk.textContent, 154, 36);
+          }
+        });
+        return tail;
+      }
+
+      window.talkingHeadV3 = {
+        configure, setFrame,
+        captionLayout: () => ({words: config ? config.words.map(word => ({...word, bbox: [...word.bbox]})) : []})
+      };
+      const embedded = JSON.parse($("stage-data").textContent);
+      if (embedded.plan) {
+        Promise.resolve().then(() => {
+          configure(embedded);
+          return setFrame(0);
+        }).catch(error => {
+          stage.dataset.error = error.message;
+          console.error(error);
+        });
+      }
+    })();
+  </script>
+</body>
+</html>

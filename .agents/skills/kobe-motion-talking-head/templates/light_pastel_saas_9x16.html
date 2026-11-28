@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="vi" data-composition-variables='[
+  {"id":"headline","type":"string","label":"Tiêu đề","default":"Hiệu suất"},
+  {"id":"backTitle","type":"string","label":"Chữ sau người nói","default":"TĂNG NHỊP"},
+  {"id":"metricOne","type":"string","label":"Số liệu 1","default":"+18%"},
+  {"id":"metricTwo","type":"string","label":"Số liệu 2","default":"+37%"},
+  {"id":"metricThree","type":"string","label":"Số liệu 3","default":"+64%"},
+  {"id":"labelOne","type":"string","label":"Nhãn 1","default":"Khởi động"},
+  {"id":"labelTwo","type":"string","label":"Nhãn 2","default":"Tăng tốc"},
+  {"id":"labelThree","type":"string","label":"Nhãn 3","default":"Cao trào"}
+]'>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Light Pastel Dot-Grid SaaS UI · Kobe Motion V6</title>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #e4defc; }
+    #root { position: absolute; inset: 0; width: 1080px; height: 1920px; overflow: hidden; font: 700 38px/1.15 Arial, sans-serif; color: #202044; }
+    .backdrop {
+      position: absolute; inset: 0;
+      background: radial-gradient(circle, #8583ba57 1.6px, transparent 1.8px) 0 0 / 32px 32px,
+        radial-gradient(ellipse at 11% 13%, #fbfcff, transparent 48%), linear-gradient(155deg, #f1f2fb, #ded7fa 78%);
+    }
+    /* Background may bleed. Every foreground pixel goes through this stepped mask. */
+    .safe {
+      position: absolute; inset: 0;
+      clip-path: polygon(54px 250px, 1024px 250px, 1024px 860px, 884px 860px, 884px 1545px, 54px 1545px);
+    }
+    h1 { position: absolute; left: 86px; top: 307px; width: 900px; margin: 0; color: #22204e; font-size: 82px; letter-spacing: -.05em; }
+    .metric-deck { position: absolute; inset: 0; z-index: 2; }
+    .metric-slot { position: absolute; width: 270px; height: 269px; }
+    #light-metric-one { left: 86px; top: 527px; }
+    #light-metric-two { left: 386px; top: 484px; }
+    #light-metric-three { left: 686px; top: 441px; }
+    .metric {
+      display: flex; flex-direction: column; justify-content: space-between; height: 100%; padding: 24px 20px;
+      transform-origin: 50% 100%; border: 2px solid #fff; border-radius: 32px;
+      background: #fbfcff; box-shadow: 0 12px 24px #564f921f;
+    }
+    .metric b { color: #37318c; font-size: 79px; line-height: 1; letter-spacing: -.085em; font-variant-numeric: tabular-nums; white-space: nowrap; }
+    .metric-label { font-size: 38px; letter-spacing: -.035em; white-space: nowrap; }
+    #light-metric-two .metric { background: #f6f2ff; }
+    #light-metric-three .metric { background: #5142ab; border-color: #9e93e4; color: #fff; }
+    #light-metric-three b { color: #fff; }
+    .meter { display: flex; gap: 9px; }
+    .meter i { width: 54px; height: 11px; border-radius: 20px; background: #e7e3f8; }
+    #light-metric-one i:first-child, #light-metric-two i:nth-child(-n+2) { background: #7868ce; }
+    #light-metric-three i { background: #d4cbff; }
+    .track { position: absolute; left: 88px; top: 884px; width: 758px; border-top: 3px dashed #9488d0; }
+    #light-confirm {
+      position: absolute; z-index: 2; left: 794px; top: 856px; width: 56px; height: 56px;
+      border: 3px solid #a394e1; border-radius: 50%; background: #fff;
+    }
+    #light-confirm::after {
+      content: ""; position: absolute; left: 14px; top: 11px; width: 12px; height: 21px;
+      border: solid #453594; border-width: 0 5px 5px 0; rotate: 45deg;
+    }
+    #light-gravity { position: absolute; inset: 0; z-index: 3; pointer-events: none; }
+    .particle { position: absolute; left: 684px; top: 722px; width: 11px; height: 11px; border-radius: 50%; background: #6a56c6; }
+    .particle:nth-child(3n) { background: #f0829f; border-radius: 3px; }
+    .particle:nth-child(3n + 1) { background: #36a9a5; }
+    .orbit { position: absolute; left: 117px; top: 969px; width: 710px; height: 542px; border: 1px solid #a095dc; border-radius: 50%; background: radial-gradient(ellipse, #fefcff83, transparent 69%); }
+    #light-back-title {
+      position: absolute; z-index: 2; left: 78px; top: 1000px; width: 786px; margin: 0;
+      color: #292052; text-align: center; font-size: 144px; font-weight: 900; line-height: 1.17; letter-spacing: -.06em;
+    }
+    .presenter-slot { position: absolute; z-index: 3; left: 158px; top: 1073px; width: 626px; height: 449px; pointer-events: none; }
+    .portrait-placeholder { position: absolute; inset: 0; overflow: hidden; border-radius: 0 0 38px 38px; }
+    .portrait-placeholder::before, .portrait-placeholder::after { content: ""; position: absolute; left: 50%; translate: -50% 0; }
+    .portrait-placeholder::before { top: 55px; width: 178px; height: 196px; border-radius: 47% 47% 43% 43%; background: linear-gradient(150deg, #a697d0, #7463b5); }
+    .portrait-placeholder::after { top: 228px; width: 478px; height: 257px; border-radius: 53% 53% 0 0; background: linear-gradient(145deg, #9386c7, #585191 68%); }
+    .presenter-media { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; object-position: bottom center; }
+  </style>
+</head>
+<body>
+  <main id="root" data-composition-id="light-pastel-saas" data-start="0" data-duration="6" data-width="1080" data-height="1920" data-fps="30">
+    <div class="backdrop" aria-hidden="true"></div>
+    <div class="safe">
+      <h1 data-var-text="headline">Hiệu suất</h1>
+      <div id="light-deck" class="metric-deck">
+        <div id="light-metric-one" class="clip metric-slot" data-start="1.46" data-duration="4.54" data-track-index="1" data-track-kind="graphics">
+          <span class="metric"><b data-var-text="metricOne">+18%</b><span class="metric-label" data-var-text="labelOne">Khởi động</span><span class="meter" aria-hidden="true"><i></i><i></i><i></i></span></span>
+        </div>
+        <div id="light-metric-two" class="clip metric-slot" data-start="2.36" data-duration="3.64" data-track-index="2" data-track-kind="graphics">
+          <span class="metric"><b data-var-text="metricTwo">+37%</b><span class="metric-label" data-var-text="labelTwo">Tăng tốc</span><span class="meter" aria-hidden="true"><i></i><i></i><i></i></span></span>
+        </div>
+        <div id="light-metric-three" class="clip metric-slot" data-start="3.26" data-duration="2.74" data-track-index="3" data-track-kind="graphics">
+          <span class="metric"><b data-var-text="metricThree">+64%</b><span class="metric-label" data-var-text="labelThree">Cao trào</span><span class="meter" aria-hidden="true"><i></i><i></i><i></i></span></span>
+        </div>
+      </div>
+      <div class="track" aria-hidden="true"></div>
+      <div id="light-confirm" aria-hidden="true"></div>
+      <div id="light-gravity" aria-hidden="true">
+        <i class="particle"></i><i class="particle"></i><i class="particle"></i><i class="particle"></i>
+        <i class="particle"></i><i class="particle"></i><i class="particle"></i><i class="particle"></i>
+        <i class="particle"></i><i class="particle"></i><i class="particle"></i><i class="particle"></i>
+      </div>
+      <div class="orbit" aria-hidden="true"></div>
+      <h2 id="light-back-title" data-var-text="backTitle" data-layout-allow-occlusion="true">TĂNG NHỊP</h2>
+      <div class="presenter-slot">
+        <div class="portrait-placeholder" aria-hidden="true"></div>
+        <!-- Replace the placeholder with a cutout with alpha. Keep this wrapper untimed.
+        <video id="light-presenter" class="clip presenter-media" data-start="0" data-duration="6" data-track-index="4" src="assets/presenter-alpha.webm" muted playsinline></video>
+        -->
+      </div>
+    </div>
+  </main>
+  <script>
+    window.__timelines = window.__timelines || {};
+    const lightTimeline = gsap.timeline({ paused: true });
+    const lightSlideAt = 39 / 30;
+
+    lightTimeline.fromTo("#light-deck", { x: -18 },
+      { x: 0, duration: 0.46, ease: "power2.out" }, lightSlideAt);
+    lightTimeline.fromTo("#light-back-title", { y: 24, opacity: 0.35 },
+      { y: 0, opacity: 1, duration: 0.50, ease: "power2.out" }, 0.18);
+
+    ["light-metric-one", "light-metric-two", "light-metric-three"].forEach((id, index) => {
+      const tile = `#${id} .metric`;
+      const contact = [51, 78, 105][index] / 30;
+      lightTimeline.fromTo(tile, { opacity: 0, y: 46, scale: 0.97 },
+        { opacity: 1, y: 0, scale: 1, duration: 0.24, ease: "power2.out" }, contact - 0.24);
+      lightTimeline.to(tile, { scale: 1.035, duration: 0.10, ease: "power2.out" }, contact);
+      lightTimeline.to(tile, { scale: 1, duration: 0.18, ease: "power2.inOut" }, contact + 0.10);
+    });
+
+    const lightBurstAt = 105 / 30;
+    const lightFlight = { age: 0 };
+    const lightParticles = Array.from(document.querySelectorAll(".particle"), (element, index) => ({
+      element,
+      vx: -246 + index * 25,
+      vy: -250 + (index % 4) * 34,
+      lifetime: 0.76 + (index % 5) * 0.07,
+    }));
+    lightTimeline.set("#light-gravity", { opacity: 0 }, 0);
+    lightTimeline.set("#light-gravity", { opacity: 1 }, lightBurstAt);
+    lightTimeline.to(lightFlight, {
+      age: 1.05, duration: 1.05, ease: "none",
+      onUpdate() {
+        const age = lightFlight.age;
+        for (const { element, vx, vy, lifetime } of lightParticles) {
+          const y = vy * age + 0.5 * 820 * age ** 2;
+          element.style.transform = `translate(${vx * age}px, ${y}px) rotate(${vx * age}deg)`;
+          element.style.opacity = Math.max(0, 1 - age / lifetime);
+        }
+      },
+    }, lightBurstAt);
+
+    const lightLockAt = 138 / 30;
+    lightTimeline.fromTo("#light-confirm", { opacity: 0, scale: 0.75 },
+      { opacity: 1, scale: 1, duration: 0.16, ease: "power2.out" }, lightLockAt - 0.16);
+    lightTimeline.set("#light-confirm", { opacity: 1 }, 6);
+    window.__timelines["light-pastel-saas"] = lightTimeline;
+  </script>
+</body>
+</html>

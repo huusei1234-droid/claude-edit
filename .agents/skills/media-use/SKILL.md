@@ -1,6 +1,6 @@
 ---
 name: media-use
-description: Get or make any media for a HyperFrames video - music, sound effects, images, icons, logos, voiceover, avatar and generated video, transcripts, cutouts, colour grades and looks - with HeyGen or free local tools, and mix placed audio. Also for footage that looks dark, flat or dull, or should be stylized or hidden.
+description: Resolve and generate HyperFrames media, including voiceover, music, SFX, images, video and transcripts. Treat footage and mix placed audio using Full Studio V6 Broadcast Audio & Media Master for frame-aligned Tactile Micro-SFX, voice loudness and BGM gain staging.
 ---
 
 **Plugin installs:** Inside a HyperFrames plugin, follow [plugin execution rules](../hyperframes/references/plugin-installation.md).
@@ -42,6 +42,41 @@ It prints one line, `resolved <id> → <path> (<type>, <metadata>)`. List reusab
 ## Looks on real footage
 
 Feedback that footage is dark, flat or dull, should feel retro or printed, needs a face hidden, or needs a reveal is media intent. Inspect the real `<img>`/`<video>`, pick one intent, and follow `references/media-treatments.md`; persist with `npx hyperframes media-treatment`, never a CSS, SVG or `.cube` stand-in.
+
+## V6 Broadcast Audio & Media Master
+
+Dùng `.agents/skills/media-use/scripts/studio_audio_sfx_mixer.py` để xuất bản phối Full Studio khi đã có thoại và mốc hình. Công cụ chạy bằng Python 3.11 và dùng FFmpeg trong `PATH` để xuất WAV stereo 48 kHz, PCM 24-bit.
+
+```powershell
+python -X utf8 .agents/skills/media-use/scripts/studio_audio_sfx_mixer.py --spec mix_spec.json --out mixed.wav
+python -X utf8 .agents/skills/media-use/scripts/studio_audio_sfx_mixer.py --spec mix_spec.json --dry-run-filter
+python -X utf8 .agents/skills/media-use/scripts/studio_audio_sfx_mixer.py --self-test
+```
+
+Mẫu `mix_spec.json` dùng UTF-8.
+
+```json
+{
+  "voice": "audio/voice.wav",
+  "bgm": "audio/bed.wav",
+  "existing_bgm_detected": false,
+  "fps": 30,
+  "events": [
+    { "type": "airy_whoosh", "frame": 30 },
+    { "type": "pop", "frame": 30, "sequence_id": "reveal" },
+    { "type": "click", "frame": 39, "sequence_id": "reveal" },
+    { "type": "card_riffle", "frame": 48, "sequence_id": "reveal", "path": "audio/cards.wav" },
+    { "type": "soft_ping", "time_ms": 2600 }
+  ]
+}
+```
+
+- Đường dẫn tương đối tính từ thư mục chứa JSON. `voice` là bắt buộc. `bgm` và `events` có thể bỏ qua. `existing_bgm_detected: true` tắt track BGM bổ sung. Tên `Whoosh - Lướt chuyển cảnh cơ bản.mp3` bị chặn ở mọi nguồn trong cấu hình, kể cả BGM đã tắt.
+- Đặt mỗi cue bằng `time_ms` hoặc `frame` đếm từ 0. Khi dùng `frame`, khai báo `fps` bằng số hoặc phân số như `"30000/1001"`. `pop` và `click` khớp frame chạm đích. `airy_whoosh` (cũng nhận `whoosh`) vào sớm 110 ms, phần vượt trước đầu timeline được cắt. Dùng `source_onset_ms` để bỏ đoạn dẫn đầu đã có sẵn trong file SFX.
+- `pop`, `click`, `soft_ping` và `airy_whoosh` có âm thanh đi kèm. Dùng `path` để chọn asset riêng. `card_riffle` cần `path`.
+- Gắn cùng `sequence_id` cho 3–5 cue cùng chuỗi, mỗi cue một mốc. Cao độ đi lần lượt `0`, `+1`, `+2` semitone và tiếp tục theo số cue, tính theo thời gian xuất hiện. Với cue chưa gắn nhóm, công cụ nhận chuỗi 3–5 mốc cách nhau tối đa 500 ms và bỏ qua whoosh khi dò chuỗi. Nâng cao độ bằng đổi tốc độ phát nên cue ngắn đi nhẹ.
+- Chuẩn hóa thoại về `−14.5 LUFS` tích hợp. Đo RMS thoại đã chuẩn hóa để đặt từng Micro-SFX thấp hơn `11 dB` và BGM thấp hơn `14.5 dB` trước limiter của bản phối. BGM dừng khi phần thoại và SFX kết thúc.
+- `--dry-run-filter` in filtergraph và thứ tự input với mức gain danh định. Khi xuất WAV, công cụ đo nguồn để tính gain thực. `--self-test` kiểm tra filtergraph và chặn file cấm mà không cần FFmpeg hay media đầu vào.
 
 ## Offer once, never add silently
 

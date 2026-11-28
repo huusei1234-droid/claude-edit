@@ -1,6 +1,6 @@
 ---
 name: hyperframes
-description: Read first to make, edit, animate or render any video with HyperFrames (HTML rendered to video), including launch films, explainers, music videos, charts, maps, vertical clips, title cards, captions and overlays. Holds the render contract, the work loop and what each kind of video needs.
+description: Read first to make, edit, animate or render any video with HyperFrames (HTML rendered to video), including launch films, explainers, music videos, charts, maps, vertical clips, title cards, captions and overlays. Covers the render contract, the work loop, and static stage checks with the V6 Safe-Zone & Physics Inspector.
 ---
 
 **Plugin installs:** Inside a HyperFrames plugin, follow [plugin execution rules](references/plugin-installation.md).
@@ -40,6 +40,24 @@ Build what was asked: no voiceover or captions and no new aspect ratio unless th
 11. Grades, grain, blur and vignettes on footage go through `npx hyperframes media-treatment` (`/media-use`), never CSS filters.
 12. A scene file puts its styles, markup and scripts inside `<template>` and styles its root as `#root`. Intended overflow or overlap: `data-layout-allow-overflow`, `data-layout-allow-overlap`.
 
+## V6 Safe-Zone & Physics Inspector
+
+Chạy bộ kiểm tra tĩnh bằng Python 3.11 ở chế độ UTF-8 từ thư mục gốc. Công cụ đọc HTML bằng `html.parser` và nhận diện khai báo CSS cùng tín hiệu GSAP bằng regex.
+
+```powershell
+python -X utf8 ".agents/skills/hyperframes/scripts/hyperframes_stage_auditor.py" --html "<stage.html>"
+python -X utf8 ".agents/skills/hyperframes/scripts/hyperframes_stage_auditor.py" --audit-all ".agents/skills"
+python -X utf8 ".agents/skills/hyperframes/scripts/hyperframes_stage_auditor.py" --self-test
+```
+
+- `STAGE_SIZE` và `STAGE_OVERFLOW` báo lỗi khi sân khấu sai kích thước hoặc thiếu `overflow: hidden` trên một trong hai trục. Công cụ đọc cặp `data-width` / `data-height` và kích thước CSS theo px trên phần tử sân khấu. Kích thước hợp lệ là 1080×1920 hoặc 1920×1080.
+- `CAPTION_BOTTOM` cảnh báo khi CSS đặt `bottom < 372px` cho `.subtitle` hoặc `.caption` trong khung dọc 1080×1920. Ngưỡng `372px` tương ứng với mép dưới vùng an toàn `Y = 1548px`. Kiểm tra cả thuộc tính `style` của phần tử phụ đề và giá trị số 0 viết dưới dạng `bottom: 0`.
+- `MOTION_SIGNALS` liệt kê dấu hiệu còn thiếu trong mã nguồn, gồm `blur`, `scale` và đường cong `cubic-bezier` hoặc `ease` phi tuyến GSAP.
+
+`--audit-all` quét đệ quy các HTML nhận diện được là sân khấu, kể cả sân khấu trong bộ dữ liệu kiểm thử, và in tổng số tệp kiểm tra, tệp bỏ qua, lỗi và cảnh báo. Mã thoát `0` cho phép có cảnh báo. Mã `1` báo lỗi kiểm tra, lỗi đọc tệp hoặc đợt quét rỗng. `--self-test` in `SELF_TEST_OK` khi qua các ca tích hợp, gồm mép an toàn `372px` và trường hợp vượt mép dưới.
+
+Kiểm tra tĩnh dựa trên CSS và JS nhúng, selector đơn giản cho phần tử sân khấu và giá trị `bottom` trực tiếp theo px. Dùng bước kiểm tra layout của HyperFrames bên dưới để xác nhận vị trí và chuyển động thực tế, gồm các giá trị từ stylesheet liên kết, biến CSS và GSAP chạy theo thời gian.
+
 ## Keep it editable
 
 Studio edits the tags you write.
@@ -54,6 +72,7 @@ Studio edits the tags you write.
 
 - An existing project: `npx hyperframes timeline --json` shows what plays when; before any change, `npx hyperframes history --since mine --who <you>` shows what the person changed since your last turn: build on it (`/hyperframes-cli`).
 - A new film over ~15 s that tells something: its type's file (below), then `references/story.md`: three storylines that are three different films, in words only; the person picks unless they asked for the file or no stops. Then `SPEC.md` (`references/spec.md`): every adjective as a number, the defaults banned by name, the shots by frame.
+- For a new or changed HTML stage, run the V6 inspector with `--html` before the HyperFrames layout check and review its warnings.
 - After your last edit: `npx hyperframes check --json`; fix every error, weigh every warning. A film: `npx hyperframes snapshot --review` and `references/review.md`, ending in `REVIEW.md`. A small edit: snapshot what you changed (`--at`, `--range`, `--composition`) and look before you reply.
 - Render when the person approves the Studio preview, asks for the file or asks for no stops, after your check and review pass; otherwise stop at the preview and wait.
 

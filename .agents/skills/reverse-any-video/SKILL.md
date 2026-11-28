@@ -1,17 +1,32 @@
 ---
 name: reverse-any-video
-description: Rebuild any video file as an editable HyperFrames project - motion graphics, talking heads, live action or AI-generated footage - checked against the original frame by frame. Use to reverse, recreate, remake, replicate or copy a video, or 「复刻这个视频」「照着这个视频做一个」.
+description: Analyze a reference video's cuts, camera motion and colors with the V6 blueprint, or rebuild the video as an editable HyperFrames project checked frame by frame. Use to reverse-engineer, recreate or remake a video, or 「复刻这个视频」「照着这个视频做一个」.
 ---
 
 **Plugin installs:** Inside a HyperFrames plugin, follow [plugin execution rules](../hyperframes/references/plugin-installation.md).
 
-**Usage beacon:** run `npx hyperframes events --skill=reverse-any-video` once as this skill starts. It sends the skill's name with the CLI's usual telemetry (account-linked when signed in) and honours the opt-out.
+**Usage beacon for a HyperFrames rebuild:** run `npx hyperframes events --skill=reverse-any-video` once as the rebuild starts. It sends the skill's name with the CLI's usual telemetry (account-linked when signed in) and honours the opt-out.
 
-# Reverse a video
+# Reverse a video — V6 Siêu Cấp
 
 The result is a HyperFrames project whose render matches the original frame for frame and stays editable. Build to the `/hyperframes` contract and work the way you normally would, with ffmpeg, python and your own eyes. Reverse videos the person has the right to use.
 
-Reverse is a HyperFrames Pro feature. Open with `npx hyperframes reverse start <video> --dir <project>` and `references/start.md`; if it refuses, say why and give the person its upgrade link and `fix` to run themselves (you never run `billing`), then start again once they have upgraded. Given a link, run `npx hyperframes auth status` before downloading it. Resuming (a `REVERSE.md` or half-built project) opens the same. A step an earlier session gave up on (a refused re-shoot) gets one more try, then ask them. If it ran under a credit limit, ask whether that limit still holds. Rebuild the video as it is; remix it only when the person asks.
+A HyperFrames rebuild uses the Pro Reverse workflow. Open with `npx hyperframes reverse start <video> --dir <project>` and `references/start.md`; if it refuses, say why and give the person its upgrade link and `fix` to run themselves (you never run `billing`), then start again once they have upgraded. Given a link, run `npx hyperframes auth status` before downloading it. Resuming (a `REVERSE.md` or half-built project) opens the same. A step an earlier session gave up on (a refused re-shoot) gets one more try, then ask them. If it ran under a credit limit, ask whether that limit still holds. Rebuild the video as it is; remix it only when the person asks.
+
+## Analyze the reference with the V6 blueprint
+
+For analysis alone, run the Python tool on the local reference and deliver the JSON. For a rebuild, write it into the initialized HyperFrames project before laying out the timeline. `hyperframes init` needs the project folder available for initialization.
+
+```powershell
+python -X utf8 ".agents/skills/reverse-any-video/scripts/video_dna_reverse_engineer.py" --video "<video.mp4>" --out "<project>/reverse_blueprint.json"
+```
+
+Use Python 3.11 with OpenCV (`cv2`), NumPy and `ffprobe` on `PATH`. Run the same script with `--self-test` to verify the synthetic cut and pan, or `--help` to inspect its inputs. In the restricted Windows sandbox, keep validation to Python. Browser-backed HyperFrames checks and rendering require a supported environment.
+
+- `shot_boundaries` lists candidate cuts as zero-based frame numbers and seconds. Each entry in `shots` covers `[start_frame, end_frame)`. Use the frame indices and `video.fps_fraction` to place constant-rate cuts. When `video.timing_source` is `source_timestamps`, map the reported source times to output frames and verify them against the reference.
+- `avg_asl_seconds` is the average shot length. `cuts_per_minute` counts internal cuts. `beat_grid_s` lists visual edit points in seconds, starting at zero. Measure audio beats separately when music drives the edit.
+- The predominant Farneback estimate per shot appears in `camera_motion` as `STATIC`, `PUSH_IN`, `PULL_OUT`, `PAN_LEFT`, `PAN_RIGHT`, `TILT_UP` or `TILT_DOWN`. Judge direction from the camera's movement. `STATIC` also covers shots without a reliable global estimate. `dominant_hex_palette` gives five sampled colors in `#RRGGBB`, repeating the last color when fewer are found.
+- Review candidate cuts and motion against adjacent frames. Flashes, dissolves, hard cuts between similar images and foreground motion can affect the estimates. Place verified shots as editable HyperFrames clips and use the palette as a starting point for scene colors.
 
 ## The original decides the frame
 

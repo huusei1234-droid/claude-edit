@@ -1,24 +1,54 @@
 ---
 name: talking-head-v3
 description: >-
-  Quy trình chuẩn sản xuất Video Talking Head dọc (1080x1920 @ 30fps) phong cách
-  Dược sĩ / Chuyên gia tư vấn sản phẩm (chuẩn BOJOMI v3 & LT PLUS v3): tách nền
-  RVM giữ phòng thật + làm tối mượt khi lên Animation, chữ lớn & vòng xoay sau
-  lưng đầu, phụ đề từng từ Face-Safe & Box-Safe phát sáng giữ màu, 4 cảnh Split
-  B-Roll 2 lớp riêng biệt khoá tỷ lệ 0% méo hình (Google Flow + Showcase ảnh sản
-  phẩm thật), phối âm BGM 2 nửa C-Major + EQ Voice Pocket + Sidechain Ducking
-  chuẩn -14.0 LUFS, xuất nháp CapCut đa track và lưu Final lên Google Drive.
+  Dựng Talking Head dọc 1080×1920 @ 30fps chuẩn V6 Siêu Cấp cho dược sĩ và
+  chuyên gia tư vấn theo BOJOMI V3 và LT PLUS V3. Lập 4 cảnh Split B-Roll
+  từ transcript, dựng nền phòng thật với RVM, chữ lớn và vòng xoay sau đầu,
+  kiểm vùng an toàn cho phụ đề từng từ và phối BGM C-Major ở -14.0 LUFS.
 ---
 
-# Talking Head v3 Skill (Dược Sĩ / Chuyên Gia Tư Vấn Sản Phẩm)
+# Talking Head V3 · V6 Siêu Cấp
 
-Skill này đóng gói trọn vẹn quy trình dựng **Video Talking Head Dọc (`1080×1920 @ 30fps`)** thế hệ `v3` đã kiểm chứng thực tế trên hai dự án thương mại **BOJOMI An Vượng v3** và **Viên Đặt LT PLUS Hằng Thu v3**, kết hợp **RVM Person Matting**, **Infinity Studio Canvas (Google Flow)**, **Engine Compositing Python + Pillow + NumPy + FFmpeg** và **CapCut Pro Editor**.
+Quy trình dựng **Talking Head dọc 1080×1920 @ 30fps** dựa trên **BOJOMI An Vượng V3** và **Viên Đặt LT PLUS Hằng Thu V3**, dùng RVM Person Matting, Google Flow và FFmpeg. Bản V6 bổ sung planner, kiểm phụ đề theo tọa độ và sân khấu HTML theo frame.
+
+## Bộ công cụ V6
+
+- CLI Python 3.11 tại `.agents/skills/talking-head-v3/scripts/talking_head_v3_master_pipeline.py`.
+- Sân khấu HTML tại `.agents/skills/talking-head-v3/templates/talking_head_v3_stage_9x16.html`.
+
+```powershell
+$python = 'C:\Users\001\AppData\Local\Programs\Python\Python311\python.exe'
+$pipeline = '.agents/skills/talking-head-v3/scripts/talking_head_v3_master_pipeline.py'
+& $python -X utf8 $pipeline --self-test
+& $python -X utf8 $pipeline --plan-split-broll main_cut_clean.json --out plan.json
+& $python -X utf8 $pipeline --check-subtitles words.json
+& $python -X utf8 $pipeline --build-audio-filtergraph --duration 60 --split-at 30 --out mix_v6.ffgraph
+```
+
+### Hợp đồng timeline và media
+
+- `main_cut_clean.json` dùng `segments[].start/end/text` hoặc `segments[].words[]` kiểu Whisper. Dạng phẳng `{"words":[{"word":"Theo dõi","start":0.2,"end":0.6}]}` cũng dùng được. Thêm `duration` theo giây để bao cả đuôi hình sau câu cuối. Thêm `protected_ranges` với các cặp `start/end` để giữ nguyên Hook và cảnh người nói trực tiếp cầm hoặc chỉ hộp. Planner cần tối thiểu bốn khoảng 12 frame khả dụng.
+- Planner chia bốn cửa sổ theo thứ tự thời gian, ưu tiên đặt đầu cảnh gần mốc lời và nhắm khoảng 2,4 giây mỗi cảnh. `start_frame` là frame đầu và `end_frame` là frame ngay sau cảnh. `dim_room_alpha` lưu các mốc `0.0 → 0.42 → 0.0`. Fade nền dùng `smoothstep` 15 frame mỗi đầu ở cảnh đủ dài. Lớp B-Roll có fade riêng tối đa 13 frame.
+- Có thể thêm 4 object `assets` theo thứ tự cảnh. Mỗi object nhận `flow_src`, `product_src`, `flow_in` theo giây và `flow_focus`/`product_focus` theo `[x, y]` chuẩn hóa `0..1`. Mặc định là `assets/flow_01.mp4` đến `assets/flow_04.mp4` và `assets/SP_PRODUCT_CUTOUT.png`. Thay tên mẫu bằng tài nguyên thật trước khi dựng. Với ảnh sản phẩm, chừa đệm trong suốt quanh bao bì và kiểm tra chữ trên nhãn sau khi crop.
+- Sao chép HTML vào thư mục dự án. Dùng `assets/presenter_room.mp4` và `assets/presenter_cutout.webm` có alpha, cùng khung hình, đồng bộ cùng frame đầu. Trong `stage-data`, dán nội dung `plan.json` vào `plan`, danh sách từ vào `captions`, và thêm các cue dạng `{"text":"THEO DÕI","start_frame":0,"end_frame":90}` vào `keywords`. Khi dán JSON chứa ký tự `<`, ghi ký tự đó dưới dạng `\u003c`.
+- Sân khấu dựng theo thứ tự nền phòng, lớp tối, vòng xoay và chữ lớn, người nói đã tách nền, video Flow và Showcase, rồi đến phụ đề. `await window.talkingHeadV3.setFrame(60)` hiển thị giây thứ hai và đợi media sẵn sàng. `window.talkingHeadV3.configure({...})` có thể nạp cấu hình trực tiếp. `window.talkingHeadV3.captionLayout()` trả lại `words` kèm bbox cuối để đưa vào CLI. Template mặc định đặt phụ đề dưới hai thẻ Split và cho phép chỉnh bbox theo cằm, áo và hộp thật của từng footage.
+- `words.json` dùng danh sách từ hoặc `{"words":[...]}`. Mỗi từ có `bbox: [left, top, right, bottom]` theo px hoặc object `x/y/width/height`. Bbox cuối bao cả viền và glow. Nếu bbox mới đo chữ gốc, truyền thêm `glow_padding` để mở đều bốn cạnh. `--check-subtitles` trả JSON và mã `0` khi đạt, `1` khi từ vượt vùng hoặc thiếu bbox, `2` khi cấu trúc tệp đầu vào sai. Kiểm bằng mắt để xác nhận Face-Safe và Box-Safe trên footage thật.
+
+### Tạo filtergraph FFmpeg
+
+Gán input `0:a` cho giọng đọc đã dựng, `1:a` cho `bgm_warm_fretless.mp3` và `2:a` cho `bgm_bright_riley.mp3`. Có thể dùng `-stream_loop -1` trước từng input BGM khi nguồn ngắn. `--duration` là thời lượng hình, mặc định 60 giây. `--split-at` là tâm crossfade, mặc định giữa timeline. Chèn SFX vào stem giọng trước khi phối nếu dự án có cue SFX.
+
+```powershell
+ffmpeg -hide_banner -i voice.wav -stream_loop -1 -i bgm_warm_fretless.mp3 -stream_loop -1 -i bgm_bright_riley.mp3 -/filter_complex mix_v6.ffgraph -map '[aout]' -f null -
+```
+
+Lưu object JSON `loudnorm` cuối log thành `mix_stats.json`. Sinh lại graph với cùng `--duration` và `--split-at`, thêm `--loudnorm-stats mix_stats.json` và xuất `mix_v6_pass2.ffgraph`. Dùng graph lượt hai với đúng ba input trên, map `[aout]` ra WAV 48 kHz stereo rồi ghép hình. Đo lại file giao để xác nhận mục tiêu **-14.0 LUFS** và **True Peak ≤ -0.95 dBTP**.
 
 ---
 
 ## 1. Đường Dẫn Lưu Trữ & Môi Trường Chuẩn Trên Máy
 
-- **Kho Lưu Trữ Chính (Master Cloud Storage)**: `Z:\Drive của tôi\AI_Full_Studio`
+- **Kho Lưu Trữ Chính (Master Cloud Storage)**: `G:\My Drive\AI_Full_Studio`. Các đường dẫn `Z:` dưới đây thuộc cấu hình máy dựng cũ.
   - Kho Skills: `Z:\Drive của tôi\AI_Full_Studio\01_Skills`
   - Kho Kiến thức & Tài nguyên âm thanh chuẩn (`3 BGM C-Major` + `10 Studio SFX`):
     `Z:\Drive của tôi\AI_Full_Studio\02_Kien_Thuc_Va_Quy_Chuan\BO_KIEN_THUC_TVC_AI_PORTABLE\03_TAI_NGUYEN_DUNG_CHUNG\audio_bgm_sfx`
@@ -30,14 +60,14 @@ Skill này đóng gói trọn vẹn quy trình dựng **Video Talking Head Dọc
     `d:\AI\full studio\BO_KIEN_THUC_TVC_AI_PORTABLE\03_TAI_NGUYEN_DUNG_CHUNG\fcp_hyperframes_pack`
   - Hồ sơ Dự án (kịch bản, transcript, script dựng, báo cáo QC): `Z:\Drive của tôi\AI_Full_Studio\03_Du_An\<slug>`
   - **Thư mục Xuất Video Final Hằng Thu Pharma (`HTPM`)**: **`Z:\.shortcut-targets-by-id\1qjnlz_54ZT5OlI9dKMelZ5PJauD4etj-\hằng thu pharma\05. Video Hoàn Thiện\K6 - Hằng Thu Pharma\`** (đồng bộ bản sao tại `D:\XUẤT CAPCUT\hằng thu pharma\` và `Z:\Drive của tôi\AI_Full_Studio\04_Videos_Final\`), **bắt buộc đặt tên theo chuẩn `<YYMMDD> HTPM <tên tiếng Việt có dấu> final.mp4`** (ví dụ: `261119 HTPM 5 sản phẩm tuổi 25 final.mp4`).
-- **Thư mục Render Trung Gian Tốc Độ Cao (Local Scratch)**: `d:\AI\full studio\output\<slug>` (giữ file trung gian nặng `_mc_p1.mp4`, `_v3_video_only.mp4` trên ổ D cục bộ để tránh nghẽn mạng Google Drive khi render frame-by-frame).
+- **Thư mục Render Trung Gian Tốc Độ Cao (Local Scratch)**: `C:\AI\full studio\output\<slug>` (giữ file trung gian `_mc_p1.mp4`, `_v3_video_only.mp4` cục bộ khi render theo frame).
 - **Python Venv Có Đủ Thư Viện (`PIL`, `numpy`, `onnxruntime`, `faster_whisper`)**:
   `d:\AI\full studio\voice-studio\.venv\Scripts\python.exe`
 - **Dự án CapCut Desktop**: `C:\Users\Hang thu\AppData\Local\CapCut\User Data\Projects\com.lveditor.draft`
 
 ---
 
-## 2. Quy Trình 7 Bước Sản Xuất Talking Head v3 (End-to-End)
+## 2. Quy Trình 7 Bước Sản Xuất Talking Head V3 · V6
 
 ### Bước 1: Kiểm Tra Footage A-Roll, Phiên Âm `--cpu` & Hiệu Đính 100% Chính Tả
 1. Trích xuất lưới khung hình `raw_sheet.jpg` và phóng cận vùng ngực/bàn (`box_closeup.jpg`) để đo chính xác toạ độ `y` của **cằm người nói**, **mép bàn** và **vùng hộp sản phẩm thật** (trên bàn hoặc cầm trên tay).
@@ -71,28 +101,28 @@ Skill này đóng gói trọn vẹn quy trình dựng **Video Talking Head Dọc
    - Ưu tiên họ font **`Asap Condensed`** (`AsapCondensed-Bold.ttf` cho phụ đề Sentence-Case *"Viết hoa đầu câu"* viền mảnh `2px`; `AsapCondensed-ExtraBold.ttf` / `Black.ttf` cho tiêu đề thẻ Liquid-Glass Bento & hiệu ứng FCP/AE).
    - Tuyệt đối không sử dụng các SFX ồn/gắt (đã xoá vĩnh viễn `Whoosh - Lướt chuyển cảnh cơ bản.mp3`); chỉ chọn SFX êm nhẹ (`-19dB` đến `-21dB`).
 
-### Bước 4: Luật Thiết Kế Đồ Hoạ & Chuyển Động Chuẩn v3 (`scripts/render_talking_head_v3_template.py`)
+### Bước 4: Đồ Họa Và Chuyển Động V6
 1. **Nền Phòng Thật + Làm Tối Mượt Khi Lên Animation (`ANIM_DIM_WINDOWS`)**:
    - Không thay phông giả cứng suốt video. Khi người nói dẫn chuyện bình thường (`dim == 0`), giữ **100% nền phòng thật tự nhiên**.
-   - Khi vào vùng có chữ lớn sau đầu / số thứ tự / Hook / Orbital Rings (`ANIM_DIM_WINDOWS`), dùng hàm bao `smooth_in_out_env` (`smoothstep` bậc 3, `0.50s` ra/vào) hạ độ sáng nền sau lưng xuống `25%` kèm `GaussianBlur(radius=5px)`, trong khi lớp `FG_Person` + `Desk_Box_Mask` giữ nguyên độ sáng sắc nét ở tiền cảnh.
+   - Khi xuất hiện chữ lớn sau đầu, Hook, vòng xoay hoặc Split B-Roll, tăng `dim_room_alpha` trên lớp nền phòng từ `0.0` đến `0.42` rồi giảm về `0.0` bằng `smoothstep`. Lớp người nói và mask hộp thật đặt phía trên lớp dim để giữ sáng và nét.
 2. **4 Cảnh Split B-Roll 2 Lớp Riêng Biệt — `0%` Méo Tỷ Lệ (`fit_cover`)**:
-   - Tuyệt đối không dùng phép biến đổi phối cảnh kéo giãn ảnh tĩnh. Dùng `fit_cover(rgb, 920, 720, zoom)` khoá cứng tỷ lệ khung hình trên 2 thẻ bo góc `radius=54`, xoay nhẹ đối xứng `±1.0°`, trượt mượt `±42px` kèm crossfade `0.42s` và 2 clip chuyển động hoàn toàn khác nhau ở tầng Trên – Dưới.
+   - Hai thẻ V6 tách lớp riêng, trên là video Google Flow và dưới là Showcase từ ảnh thật `SP_*_CUTOUT.png`. Dùng `fit-cover` với một hệ số phóng đồng nhất, canh vào tâm chủ thể trong phạm vi crop. Sân khấu dùng hai khung `766×465`, xoay `±1°`, trượt ngang tối đa `18px` và fade tối đa `13` frame. Phụ đề nằm ở dải riêng bên dưới khi dùng tọa độ mặc định.
    - *Lưu ý đạo diễn*: Khi người nói đang **cầm hộp sản phẩm trên tay và chỉ trực tiếp vào hộp** (*"1 hộp như thế này..."*), giữ cảnh người nói cầm hộp trên màn hình (kèm `Orbital Rings` + `Từ khoá lớn` sau lưng), không đè B-Roll che mất hành động thật.
 3. **Bố Cục Chữ Face-Safe, Box-Safe & An Toàn Kiểm Duyệt**:
-   - **Từ khoá lớn sau đầu (`Oswald-Bold`, `y = 445`)**: Luôn để 1 dòng; cụm `≥ 12` ký tự giữ cỡ `132–158px` để cách lề trái/phải tối thiểu `50px`; quét vệt sáng chéo `sweep_prog`.
+   - **Từ khóa lớn sau đầu** giữ một dòng và thu cỡ theo bề ngang, căn giữa quanh `Y = 445px`. Đồng bộ vệt sáng chéo và vòng xoay với `start_frame`/`end_frame` của cue `keywords`.
    - **Chữ Hook 3 kiểu font (`0.05 – 4.5s`)**: Dùng từ ngữ y khoa trung tính, không che mặt, đi kèm **3 thẻ Icon Tile viền sáng chạy vòng (`EdgeSweep`)** xếp vòng cung trên đỉnh đầu (`cx = 215, 540, 865`, bật lệch nhau `0.18s` + nổ vòng tròn `Burst`).
-   - **Phụ đề từng từ (`Palatino Bold Italic` / `Asap Condensed`, tối đa 2 dòng)**: Đặt đúng dải áo tối giữa cằm và hộp sản phẩm (thường `y_base = 1130`, `lh = 66`), bề ngang nằm gọn trong vùng trắng an toàn nửa dưới `X = [54..884px]` và mép dưới `Y <= 1545px` (tuyệt đối không chạm cột nút tương tác phải `X >= 886px` hay vùng đen đáy `Y >= 1548px` theo `safe_zone_9x16.py`), dùng **Dual Drop-Shadow Glow giữ màu** (không dùng Glow cộng sáng gây trắng xoá chữ), kèm hiệu ứng nở viền `Stroke Up` cho 4–5 từ nhấn quan trọng.
+   - **Phụ đề từng từ** dùng Asap Condensed và bóng đổ hai lớp cùng màu chữ. Đo dải áo tối giữa cằm và hộp sản phẩm khi chọn tọa độ. Toàn bộ chữ và glow nằm trong `X = 54..884px`, `Y = 248..1545px`. Chạy `--check-subtitles` với bbox sau hiệu ứng ở hệ tọa độ canvas `1080×1920`.
    - **Thẻ `Icon Tile` & Lớp phủ thân bài**: Luôn tuân thủ **Vùng Trắng An Toàn TikTok × Reels (`Y = 250..1545px`, nửa trên `X = 54..1024px`, nửa dưới `Y >= 860px` giới hạn `X = 54..884px`)**. Nếu hộp sản phẩm đặt bên phải bàn, đặt `Icon Tile` ở góc trái dưới (`cx = 215, cy = 1410`, mép dưới `<= 1545px`) để vừa không đè sản phẩm thật vừa không chạm vùng đen đáy.
 
-### Bước 5: Kiểm Định Khung Thử Trước Render (`--test`)
-- Luôn chạy `render_..._v3.py --test` xuất 8–9 khung đại diện ghép thành `v3_test_grid.jpg`, kiểm tra bằng mắt bằng công cụ `read_file`: dấu tiếng Việt, lề trái/phải của chữ sau đầu, vị trí phụ đề so với cằm & hộp sản phẩm, và tính đúng đắn của mọi icon trước khi chạy render toàn bộ.
+### Bước 5: Kiểm Định Khung Thử Trước Render
+- Chạy `--self-test` và kiểm `words.json` bằng CLI. Kiểm hình đại diện ở đầu, giữa, cuối từng cảnh Split và tại mốc dim nền. Soát dấu tiếng Việt, alpha của người nói, mép nhãn sản phẩm, vị trí phụ đề so với cằm và hộp. Với dự án dùng renderer LT PLUS cũ, chế độ `--test` nằm tại `.agents/skills/talking-head-v3/scripts/render_talking_head_v3_template.py`.
 
 ### Bước 6: Phối Âm BGM 2 Nửa C-Major + EQ Voice Pocket + Sidechain Ducking (`-14.0 LUFS`)
 - **Nhạc nền 2 nửa cảm xúc**: Nửa đầu (nêu vấn đề/triệu chứng) dùng `bgm_warm_fretless.mp3`, crossfade `1.6s` sang `bgm_bright_riley.mp3` ở nửa sau (giới thiệu giải pháp sản phẩm & CTA).
-- **EQ Voice Pocket + Sidechain Ducking + `Tactile Micro-SFX` (`phong-cach/kobe-ai-motion-talking-head/CHUYEN-DONG-LOP-PHU-VA-SFX.md`)**: Lọc `highpass=f=75,equalizer=f=1750:t=q:w=1.25:g=-4.5` trên nhạc nền (`-13.5` đến `-15.7 dB` dưới giọng đọc), kết hợp `sidechaincompress` theo tín hiệu giọng nói. Mọi thẻ `Icon Tile`, chữ từ khóa hoặc B-Roll vào/ra bằng mở nét quang học `Blur-Focus` (`0.26s` vào / `0.20s` ra) kèm `Micro-SFX` xúc giác ngắn gọn (`30–120ms`, `-9` đến `-14 dB` dưới giọng đọc, đặt `0ms` đúng frame chạm đích, `Whoosh` sớm `-110ms`, chuỗi nhiều mục tăng `+1 semitone`/bậc, cấm tiếng nổ `Boom` rền to).
+- **EQ Voice Pocket và Sidechain Ducking** áp `highpass=f=75,equalizer=f=1850:t=q:w=1.4:g=-3.5` lên BGM đã crossfade. `sidechaincompress` nhận tín hiệu giọng đọc với attack `35 ms` và release `380 ms`. Nếu dùng Micro-SFX cho icon hoặc từ khóa, canh cue `30–120 ms` ở frame chạm đích và giữ thấp hơn giọng đọc `9–14 dB`.
 - **Chuẩn hoá 2 lượt (`2-pass loudnorm`)**: Đưa bản trộn cuối cùng về đúng **`-14.0 LUFS`** (`True Peak <= -0.95 dBTP`).
 
 ### Bước 7: Xuất Bản Final Cục Bộ & Lưu Hồ Sơ Dự Án Lên Google Drive (Không Xuất Nháp CapCut)
-1. **Chỉ xuất 1 bản Final cục bộ duy nhất** tại **`D:\XUẤT CAPCUT\<TEN_VIDEO>_FINAL.mp4`** (kèm đồng bộ kho lưu trữ trung tâm `Z:\Drive của tôi\AI_Full_Studio\04_Videos_Final\<TEN_VIDEO>_FINAL.mp4`). **Không tạo bản nháp vào `com.lveditor.draft` của CapCut Desktop** trừ khi người dùng có yêu cầu riêng.
+1. Xuất **một bản Final cục bộ** tại `D:\XUẤT CAPCUT\<TEN_VIDEO>_FINAL.mp4` và đồng bộ vào `G:\My Drive\AI_Full_Studio\04_Videos_Final`. Tạo nháp CapCut khi người dùng yêu cầu.
 2. Kiểm tra lại bằng `ffprobe -count_frames`, giải mã thử `ffmpeg -v error ... -f null -` và chụp Contact Sheet 20 khung `v3_sheet.jpg`.
-3. Lưu toàn bộ kịch bản (`job.json`), báo cáo QC (`report.md`), lưới `v3_sheet.jpg` và mã dựng (`.py`) vào **`Z:\Drive của tôi\AI_Full_Studio\03_Du_An\<slug>`**.
+3. Lưu kịch bản (`job.json`), `plan.json`, báo cáo QC (`report.md`), lưới `v3_sheet.jpg` và mã dựng vào `G:\My Drive\AI_Full_Studio\03_Du_An\<slug>`.

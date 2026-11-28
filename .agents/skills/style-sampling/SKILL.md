@@ -1,13 +1,13 @@
 ---
 name: style-sampling
-description: Make a new episode in a proven video style - Collage Explainer, Finance Explainer, Animated Science Explainer, 3D Brand Explainer, 3D True Crime - on the person's topic. Use for "an episode of", "in the style of", "sample this style", 「用这个风格做一集」. One video to copy is reverse-any-video.
+description: Make a new episode with a HyperFrames style template or use a V6 reference blueprint to adapt a video's rhythm, motion and color to a new topic. Use for "an episode of", "in the style of", "sample this style", 「用这个风格做一集」. Use reverse-any-video for a frame-by-frame rebuild.
 ---
 
 **Plugin installs:** Inside a HyperFrames plugin, follow [plugin execution rules](../hyperframes/references/plugin-installation.md).
 
 **Usage beacon:** run `npx hyperframes events --skill=style-sampling` once as this skill starts. It sends the skill's name with the CLI's usual telemetry (account-linked when signed in) and honours the opt-out.
 
-# A new episode from a style template
+# A new episode from a style template — V6 Siêu Cấp
 
 A good episode is one the series' own viewers would take for the next upload: its structure, pacing, look, graphics and sound, on a new topic, in the person's voice and, when the series has a presenter, their own face. Never use a creator's face, voice, footage, logo or show name.
 
@@ -27,9 +27,25 @@ Style templates are a HyperFrames Pro feature. The CLI pulls them and the server
 
 The person named a template, or their topic fits only one: go on with it. Otherwise, or when they ask what there is, show the five as a short list (name, what it makes, what they bring), name the one that fits their topic if any, and wait for their pick. Nothing is checked, pulled or paid before it.
 
-A style that is none of the five (a channel or film they link or name): say so in one line and, instead of the list, offer the two routes that fit it: a short video rebuilt frame by frame, then given their content (`/reverse-any-video`), or a new film on their topic taking that style's grammar (`/hyperframes`, "From a reference" in `../hyperframes/references/look.md`). Both need a video, so a style they only name gets a request for one example. They pick; nothing is pulled.
+For a new episode in a style outside the five templates, use the V6 blueprint below and "From a reference" in `../hyperframes/references/look.md`. If they only named the style, ask for one example. Route a requested frame-by-frame rebuild to `/reverse-any-video`.
 
-## Start
+## Sample a reference with the V6 blueprint
+
+When the person supplies a video as a style reference, measure it before storyboarding. Use the same analysis when a pulled template also has a supplied reference. Templates can be used on their own.
+
+```powershell
+python -X utf8 ".agents/skills/reverse-any-video/scripts/video_dna_reverse_engineer.py" --video "<reference.mp4>" --out "<analysis-dir>/reverse_blueprint.json"
+```
+
+Use the [reverse-any-video blueprint workflow](../reverse-any-video/SKILL.md#analyze-the-reference-with-the-v6-blueprint) to verify the measurements against the reference, then apply them to the episode:
+
+- Use `avg_asl_seconds` and `cuts_per_minute` as pacing targets. Read `shot_boundaries` and `beat_grid_s` to see how holds and bursts of cuts are distributed. Place the new cuts at the new narration and visual beats, and measure music separately if the edit follows a track.
+- Read `shots[].camera_motion` to identify where the reference holds still or moves. Carry those choices into the shot plan where they serve the new story.
+- Use `shots[].dominant_hex_palette` to identify recurring background, foreground and accent colors. Adapt those roles to the person's brand and the episode's own footage and graphics.
+
+Compare the draft with the verified pacing, motion and palette before render. Use original copy, visuals and sound for the new episode.
+
+## Start a template
 
 Run `npx hyperframes auth status` first, every time, resuming included. It is for the sign-in: don't repeat its plan or credits line to the person.
 

@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Talking Head Ngồi Bàn · V6 Master</title>
+  <style>
+    * { box-sizing: border-box; }
+    html, body { margin: 0; width: 100%; height: 100%; background: #101212; }
+    #root {
+      position: relative; isolation: isolate; overflow: hidden;
+      width: 1080px; height: 1920px;
+      font-family: "Segoe UI", Arial, sans-serif;
+      --accent: #ffd979;
+    }
+    #root[data-theme="LightSweep_Emerald"] { --accent: #79f5bd; }
+    #root[data-theme="StrokeUp_Ruby"] { --accent: #ff829b; }
+    #root[data-theme="NeonNumber_Cyan"] { --accent: #75efff; }
+    #root[data-theme="RingsBg_Amber"] { --accent: #ffc266; }
+
+    #presenter-room, #presenter-cutout, #behind-stage { position: absolute; inset: 0; }
+    #presenter-room, #presenter-cutout {
+      width: 100%; height: 100%; object-fit: cover; object-position: center;
+    }
+    #presenter-room { z-index: 0; }
+    #behind-stage { z-index: 10; pointer-events: none; }
+    #presenter-cutout { z-index: 20; pointer-events: none; }
+
+    #cards-substage {
+      position: absolute; top: 512px; width: 308px; height: 336px;
+      perspective: 820px;
+    }
+    #root[data-shoulder="left"] #cards-substage { left: 66px; }
+    #root[data-shoulder="right"] #cards-substage { right: 84px; }
+    .card-broll { margin: 0; }
+    .card-orbit {
+      position: absolute; inset: 0; transform-style: preserve-3d;
+    }
+    .card-slot, .card {
+      position: absolute; inset: 34px 78px; transform-style: preserve-3d;
+    }
+    .card { inset: 0; transform-origin: center 80%; }
+    .card-face {
+      position: absolute; inset: 0; overflow: hidden;
+      border: 2px solid var(--accent); border-radius: 24px;
+      backface-visibility: hidden; box-shadow: 0 16px 32px #07111468;
+      background: #1a2c30;
+    }
+    .card-face img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .card-back {
+      transform: rotateY(180deg);
+      background:
+        radial-gradient(ellipse at 50% 36%, color-mix(in srgb, var(--accent) 50%, transparent), transparent 72%),
+        linear-gradient(155deg, #243842, #111d22);
+    }
+    .card-back::before {
+      content: ""; position: absolute; inset: 28% 22%; border: 2px solid var(--accent);
+      border-radius: 50%;
+    }
+    #root[data-card-motion="carousel"] .card-slot {
+      transform: rotateY(var(--azimuth)) translateZ(99px);
+    }
+
+    #th-float-cvs, .rings { position: absolute; inset: 0; }
+    .float-icon, .ring {
+      position: absolute; display: block; color: var(--accent); opacity: 0;
+    }
+    .float-icon { width: 38px; height: 38px; }
+    .float-icon::before, .float-icon::after { content: ""; position: absolute; }
+    .icon-plus { left: 90px; top: 410px; }
+    .icon-plus::before { inset: 16px 0; border-radius: 8px; background: currentColor; }
+    .icon-plus::after { inset: 0 16px; border-radius: 8px; background: currentColor; }
+    .icon-orbit { right: 128px; top: 460px; }
+    .icon-orbit::before { inset: 0; border: 3px solid currentColor; border-radius: 50%; }
+    .icon-orbit::after { inset: 12px; background: currentColor; border-radius: 50%; }
+    .icon-diamond { right: 207px; top: 757px; width: 24px; height: 24px; }
+    .icon-diamond::before { inset: 0; border: 3px solid currentColor; border-radius: 5px; transform: rotate(45deg); }
+    .ring {
+      inset: 570px auto auto 540px; width: 440px; height: 440px;
+      margin: -220px 0 0 -220px; border: 2px solid currentColor; border-radius: 50%;
+    }
+
+    #hook, .keyword, .subtitle { position: absolute; text-align: center; pointer-events: none; }
+    #hook {
+      z-index: 32; left: 96px; top: 1136px; width: 788px; height: 122px;
+      display: grid; place-items: center; overflow: hidden; padding: 8px 26px;
+      border-radius: 42px; background: #ffd600; color: #000;
+      box-shadow: 0 14px 30px #17150045;
+      font-size: 49px; font-weight: 950; line-height: 1.04; text-transform: uppercase;
+    }
+    .hook-copy, .keyword-copy, .subtitle-copy {
+      display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden;
+    }
+    .hook-sweep, .keyword-sweep {
+      position: absolute; top: -25%; bottom: -25%; left: 0; width: 28%;
+      background: linear-gradient(100deg, transparent, #ffffff9e, transparent);
+      opacity: 0; pointer-events: none;
+    }
+    #top-keywords, #subtitle-mask { position: absolute; inset: 0; pointer-events: none; }
+    #top-keywords { z-index: 31; }
+    #subtitle-mask { z-index: 30; }
+    .keyword {
+      left: 104px; width: 780px; padding: 8px 18px 12px; max-height: 160px; overflow: hidden;
+      border-radius: 22px; color: var(--accent);
+      font-weight: 950; font-size: 65px; line-height: 1.03; text-transform: uppercase;
+      text-shadow: 0 4px 4px #071214, 0 10px 25px #071214;
+    }
+    .keyword::before { content: ""; position: absolute; inset: 2px; pointer-events: none; border-radius: inherit; }
+    #root[data-theme="EdgeSweep_Gold"] .keyword::before { border: 2px solid #ffd979a6; }
+    #root[data-theme="LightSweep_Emerald"] .keyword { background: #092820a8; }
+    #root[data-theme="StrokeUp_Ruby"] .keyword-copy {
+      -webkit-text-stroke: 7px #391521; paint-order: stroke fill;
+    }
+    #root[data-theme="NeonNumber_Cyan"] .keyword-copy { text-shadow: 0 0 16px #30bde9, 0 4px 6px #001e2d; }
+    #root[data-theme="NeonNumber_Cyan"] .keyword-number { color: #dbfbff; font-size: 1.04em; }
+    .subtitle {
+      inset: 1288px auto auto 80px; width: 804px; padding: 0 8px 9px;
+      color: #fff; font-weight: 800; font-size: 47px; line-height: 1.12;
+      -webkit-text-stroke: 6px #081315; paint-order: stroke fill;
+      text-shadow: 0 4px 9px #081315;
+    }
+  </style>
+  <script src="assets/vendor/gsap.min.js"></script>
+</head>
+<body>
+  <!-- Copy as index.html. Use the final cut's duration for the root and full-length media. -->
+  <main id="root" data-composition-id="behind-shoulder-stage-v6" data-start="0"
+        data-duration="15" data-width="1080" data-height="1920" data-fps="30"
+        data-theme="EdgeSweep_Gold" data-card-motion="fan" data-shoulder="left" data-head-top-y="486">
+    <video id="presenter-room" class="clip" data-start="0" data-duration="15" data-track-index="0"
+           src="assets/presenter.mp4" muted playsinline></video>
+
+    <div id="behind-stage" data-layout-allow-overlap>
+      <div id="th-float-cvs" aria-hidden="true">
+        <i class="float-icon icon-plus"></i>
+        <i class="float-icon icon-orbit"></i>
+        <i class="float-icon icon-diamond"></i>
+      </div>
+      <div class="rings" aria-hidden="true"><i class="ring"></i><i class="ring"></i><i class="ring"></i></div>
+      <div id="cards-substage">
+        <figure id="broll-01" class="clip card-broll" data-start="3.20" data-duration="10.80" data-track-index="1"
+             data-track-kind="graphics" data-layout-allow-overlap>
+          <span class="card-orbit">
+            <span class="card-slot" style="--azimuth: 0deg">
+              <span class="card"><span class="card-face"><img src="assets/broll-01.jpg" alt=""></span><span class="card-face card-back"></span></span>
+            </span>
+            <span class="card-slot" style="--azimuth: 120deg">
+              <span class="card"><span class="card-face"><img src="assets/broll-02.jpg" alt=""></span><span class="card-face card-back"></span></span>
+            </span>
+            <span class="card-slot" style="--azimuth: 240deg">
+              <span class="card"><span class="card-face"><img src="assets/broll-03.jpg" alt=""></span><span class="card-face card-back"></span></span>
+            </span>
+          </span>
+        </figure>
+      </div>
+    </div>
+
+    <video id="presenter-cutout" class="clip" data-start="0" data-duration="15" data-track-index="2"
+           src="assets/presenter_cutout.webm" muted playsinline data-layout-allow-occlusion></video>
+
+    <h1 id="hook" class="clip" data-start="0" data-duration="3" data-track-index="3" data-track-kind="graphics">
+      <span class="hook-copy">Dấu hiệu nào cần chú ý?</span><i class="hook-sweep" aria-hidden="true"></i>
+    </h1>
+    <div id="top-keywords" data-track-kind="graphics">
+      <div id="kw-01" class="clip keyword" data-start="6" data-duration="1.8" data-track-index="4">
+        <span class="keyword-copy">Theo dõi đều đặn</span><i class="keyword-sweep" aria-hidden="true"></i>
+      </div>
+    </div>
+    <div id="subtitle-mask" data-track-kind="captions">
+      <div id="caption-01" class="clip subtitle" data-start="3" data-duration="6" data-track-index="5">
+        <span class="subtitle-copy">Hãy quan sát các dấu hiệu.</span>
+      </div>
+      <div id="caption-02" class="clip subtitle" data-start="9" data-duration="3" data-track-index="5">
+        <span class="subtitle-copy">Ghi lại những thay đổi.</span>
+      </div>
+    </div>
+    <audio id="voice-master" class="clip" src="assets/voice_master.wav" data-start="0"
+           data-duration="15" data-track-index="6" data-volume="1"></audio>
+    <!-- Optional tactile SFX. Repeat with unique IDs and edited timing.
+    <audio id="tactile-pop-01" class="clip" src="assets/sfx_pop_clean.wav" data-start="3.34"
+           data-duration="0.10" data-track-index="7" data-volume="0.1"></audio>
+    -->
+  </main>
+  <script>
+    (() => {
+      const root = document.getElementById("root");
+      const duration = Number(root.dataset.duration);
+      const fps = Number(root.dataset.fps);
+      const theme = root.dataset.theme;
+      const motion = root.dataset.cardMotion;
+      const side = root.dataset.shoulder === "left" ? 1 : -1;
+      const headTopY = Number(root.dataset.headTopY);
+      const keywordTop = Math.max(14, headTopY - 186);
+      const keywords = [...root.querySelectorAll(".keyword")];
+      if (keywords.length && (!Number.isFinite(headTopY) || keywordTop < 248 || keywordTop > 1388)) {
+        throw new Error("V6: the keyword falls outside the vertical title-safe area. Check data-head-top-y.");
+      }
+
+      const tl = gsap.timeline({ paused: true });
+      tl.to({}, { duration }, 0);
+      const timing = (clip) => {
+        const start = Number(clip.dataset.start);
+        return [start, start + Number(clip.dataset.duration)];
+      };
+
+      tl.fromTo(".hook-sweep", { x: -240, skewX: -18, opacity: 0.46 },
+        { x: 880, skewX: -18, opacity: 0.08, ease: "power2.inOut", duration: 0.82 }, 0.30);
+
+      root.querySelectorAll("#cards-substage .clip").forEach((clip) => {
+        const [start, end] = timing(clip);
+        const span = end - start;
+        const orbit = clip.querySelector(".card-orbit");
+        const cards = [...clip.querySelectorAll(".card")];
+        if (motion === "carousel") {
+          tl.fromTo(orbit, { opacity: 0 },
+            { opacity: 1, duration: Math.min(0.25, span / 3) }, start);
+          tl.fromTo(orbit, { rotationY: -25 * side },
+            { rotationY: 335 * side, duration: span, ease: "none" }, start);
+        } else {
+          cards.forEach((card, i) => {
+            const offset = i - (cards.length - 1) / 2;
+            const flip = motion === "flip";
+            tl.fromTo(card, {
+              x: 0, y: 28, z: -85, rotationY: flip ? -174 * side : -28 * side, rotationZ: 0, opacity: 0,
+            }, {
+              x: offset * 59 * side, y: Math.abs(offset) * 13, z: -Math.abs(offset) * 26,
+              rotationY: flip ? -14 * side : offset * 15,
+              rotationZ: offset * 13 * side, opacity: 1, ease: "power3.out",
+              duration: Math.min(flip ? 0.64 : 0.46, span * 0.68),
+            }, start + Math.min(i * 0.09, span * 0.20));
+          });
+        }
+        const exit = Math.min(0.24, span * 0.12);
+        tl.to(orbit, { opacity: 0, duration: exit, ease: "power2.in" }, end - exit);
+      });
+
+      root.querySelectorAll(".float-icon").forEach((icon, i) => {
+        const lap = 2.9 + i * 0.52;
+        tl.fromTo(icon, { x: -12, y: 22, rotation: 0, scale: 0.82 },
+          { x: 19, y: -26, rotation: 31 * side, scale: 1.12, duration: lap,
+            repeat: Math.floor(duration / lap), yoyo: true, ease: "sine.inOut" }, 0);
+        tl.fromTo(icon, { opacity: 0 }, { opacity: 0.58 - i * 0.1, duration: 0.65 }, 0.1 + i * 0.18);
+      });
+
+      if (theme === "RingsBg_Amber") {
+        root.querySelectorAll(".ring").forEach((ring, i) => {
+          const tail = Math.min(duration, 3);
+          const start = duration - tail + i * tail / 6;
+          tl.fromTo(ring, { scale: 0.68, opacity: 0.38 },
+            { scale: 1.56, opacity: 0, duration: tail / 2, ease: "sine.out" }, start);
+        });
+      }
+
+      const maskFrames = [];
+      keywords.sort((a, b) => timing(a)[0] - timing(b)[0]).forEach((keyword) => {
+        const [start, end] = timing(keyword);
+        keyword.style.top = keywordTop + "px";
+        const copy = keyword.querySelector(".keyword-copy");
+        tl.fromTo(copy, { y: theme === "StrokeUp_Ruby" ? 19 : 7, opacity: 0.18 },
+          { y: 0, opacity: 1, duration: Math.min(0.24, (end - start) / 2), ease: "power3.out" }, start);
+        if (theme === "EdgeSweep_Gold" || theme === "LightSweep_Emerald") {
+          tl.fromTo(keyword.querySelector(".keyword-sweep"), { x: -245, opacity: 0.46 },
+            { x: 810, opacity: 0, duration: Math.min(0.65, end - start), ease: "power2.inOut" }, start);
+        }
+
+        // Inclusive [start - 0.08, end + 0.08] on the 30 fps frame grid.
+        const first = Math.max(0, Math.ceil((start - 0.08) * fps - 1e-8));
+        const after = Math.min(Math.ceil(duration * fps), Math.floor((end + 0.08) * fps + 1e-8) + 1);
+        const previous = maskFrames[maskFrames.length - 1];
+        if (previous && first <= previous[1]) {
+          previous[1] = Math.max(previous[1], after);
+        } else {
+          maskFrames.push([first, after]);
+        }
+      });
+      const masks = ["#subtitle-mask", "#cards-substage"];
+      for (const [first, after] of maskFrames) {
+        tl.set(masks, { opacity: 0 }, first / fps);
+        tl.set(masks, { opacity: 1 }, after / fps);
+      }
+
+      window.__timelines = window.__timelines || {};
+      window.__timelines[root.dataset.compositionId] = tl;
+    })();
+  </script>
+</body>
+</html>

@@ -1,19 +1,50 @@
 ---
 name: tvc-qc-san-pham
 description: >-
-  Skill "TVC QC sản phẩm" chuyên dựng video quảng cáo sản phẩm thương mại cao cấp
-  (FMCG, Mỹ phẩm, Dược phẩm, Thời trang, Tiêu dùng nhanh) trên HyperFrames (HTML +
-  CSS + GSAP + SVG + WebGL Shaders). Đúc kết từ chuẩn TVC quốc tế (Unilever /
-  Comfort "Thơm Xinh Cứ Bling!"): nhịp dựng Beat-Grid 0.92s, Diegetic Typography,
-  3D Gold Glitter Bling Text, Specular Shimmer, chữ ký SVG Write-On, Portal
-  Transitions, 3D Sensory Ingredient World và hệ thống UL/UI Brand End-Card. Kích
-  hoạt khi người dùng yêu cầu làm "TVC QC sản phẩm", dựng TVC quảng cáo thương
-  hiệu/sản phẩm bằng HyperFrames, hoặc thiết kế Motion Graphics/End-Card TVC.
+  Dựng TVC quảng cáo sản phẩm cao cấp V6 Siêu Cấp cho FMCG, mỹ phẩm, dược phẩm
+  và thời trang. Dùng Adobe After Effects 2027 để dựng chữ vàng kim hoặc Silk-Satin,
+  camera 3D, bảng Đen–Vàng và xuất Lossless Alpha. Dùng HyperFrames cho TVC sản phẩm,
+  nhịp Beat-Grid 0.92s, chuyển cảnh Portal và End-Card. Kích hoạt khi người dùng yêu
+  cầu làm TVC QC sản phẩm hoặc dựng Motion Graphics và End-Card cho TVC thương mại.
 ---
 
-# TVC QC Sản Phẩm — Hệ Quy Chuẩn Đạo Diễn & Dựng TVC Thương Mại Trên HyperFrames
+# TVC QC Sản Phẩm V6 Siêu Cấp — Adobe After Effects 2027 × HyperFrames
 
 Skill này biến HyperFrames (`index.html` + `compositions/*.html` + GSAP paused timelines) thành bàn dựng **TVC Quảng Cáo Sản Phẩm chuẩn Agency** (FMCG, Beauty, Dược mỹ phẩm, Thời trang). Đọc kết hợp cùng skill gốc [`hyperframes`](../hyperframes/SKILL.md) và [`hyperframes-registry`](../hyperframes-registry/SKILL.md) để đảm bảo tuân thủ 100% **12 Quy Tắc Render Contract**.
+
+---
+
+## V6 Siêu Cấp — Đồ họa Lossless Alpha trên After Effects 2027
+
+Dùng [`.agents/skills/tvc-qc-san-pham/scripts/ae2027_luxury_tvc_builder.jsx`](./scripts/ae2027_luxury_tvc_builder.jsx) để tạo composition trong project After Effects đang mở. Tiêu đề có mặt chữ gradient, `CC Light Sweep` và camera 3D với Easy Ease trên đồ thị tốc độ. Bảng tiêu đề Đen–Vàng gồm nền đen quét từ phải sang trái, vệt vàng chạy sang phải và chữ mở qua matte. Các lớp chữ, camera và keyframe có thể chỉnh sửa trong After Effects.
+
+Mở project đích rồi chạy lệnh PowerShell bên dưới với đường dẫn `AfterFX.exe` của bản 2027 đã cài. [Hướng dẫn chạy script bằng dòng lệnh của Adobe](https://helpx.adobe.com/after-effects/desktop/automate-in-after-effects/automate-animation/scripts.html).
+
+```powershell
+& "C:\Program Files\Adobe\Adobe After Effects 2027\Support Files\AfterFX.exe" -r "C:\AI\full studio\.agents\skills\tvc-qc-san-pham\scripts\ae2027_luxury_tvc_builder.jsx"
+```
+
+Script dùng mẫu dọc `1080×1920 @ 30fps` dài 6 giây khi thiếu cấu hình. Để dùng mẫu ngang hoặc đổi nội dung, tạo tệp UTF-8 `ae2027_luxury_tvc_builder.json` cạnh script. Các trường lược bỏ dùng giá trị mặc định.
+
+```json
+{
+  "compName": "TVC Dấu Ấn Thương Hiệu",
+  "width": 1920,
+  "height": 1080,
+  "fps": 30,
+  "durationSeconds": 6,
+  "title": "TUYỆT TÁC\nÁNH KIM",
+  "titleStyle": "silk-satin",
+  "titleFont": "Georgia-Bold",
+  "bannerTitle": "DẤU ẤN THƯƠNG HIỆU",
+  "bannerSubtitle": "Tinh tế trong từng chi tiết",
+  "bannerFont": "Arial-BoldMT"
+}
+```
+
+- `durationSeconds` nhận từ 3 đến 300 giây. `titleStyle` nhận `gold` hoặc `silk-satin`. `titleFont` và `bannerFont` nhận tên PostScript của font đã cài. Dùng `\n` để xuống dòng tiêu đề và chuỗi rỗng để ẩn dòng phụ.
+- Render Queue mặc định dùng `Lossless with Alpha` và kiểm tra `RGB + Alpha`. Với AE bản địa hóa, đặt `outputModuleTemplate` theo đúng tên preset Lossless Alpha dạng phim QuickTime hoặc AVI đã cài. Mặc định tệp sẽ nằm cạnh script, với đuôi `.mov` hoặc `.avi` theo preset. Có thể đặt `outputFile` là đường dẫn tuyệt đối hoặc tương đối với script, trỏ đến thư mục đã có và dùng đúng đuôi tệp.
+- Trong AE, kiểm tra dấu tiếng Việt, tốc độ quét sáng, vùng an toàn `9:16` và lưới trong suốt trước khi bấm **Render**. Khi TVC cần xử lý LUT và nháy biên clip nền, dùng [`.agents/skills/tvc-khong-gian-dich-vu/scripts/nvenc_lut_and_flash_sanitizer.py`](../tvc-khong-gian-dich-vu/scripts/nvenc_lut_and_flash_sanitizer.py) cho clip nền rồi ghép lớp Lossless Alpha trong timeline.
 
 ---
 

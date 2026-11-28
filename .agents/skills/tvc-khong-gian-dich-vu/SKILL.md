@@ -1,22 +1,38 @@
 ---
 name: tvc-khong-gian-dich-vu
 description: >-
-  Quy chuẩn đạo diễn và dựng TVC Giới Thiệu Không Gian & Dịch Vụ Cao Cấp (Salon,
-  Spa, Thẩm mỹ viện, Phòng khám, Showroom, Nhà hàng, Resort — phát màn hình TV
-  cửa hàng, YouTube & Fanpage 1920x1080 @ 30fps) phối hợp CapCut Color/Beauty
-  Round-Trip × HyperFrames Motion Graphics. Đúc kết thực chiến từ TVC Win Hair
-  Salon CS2 (V11 Master): trích xuất 100% màu chỉnh & làm mịn da từ bản xuất
-  CapCut (Direct Crop + Poly3 33x33x33 3D-LUT sau xoay 90°), khử sạch 100% nháy
-  frame biên chuyển cảnh, bảng tiêu đề trượt ngược Đen–Vàng kiểu Final Cut Pro,
-  thẻ tên đôi KOL nổi tiếng, chữ vàng kim không cắt dấu tiếng Việt, phụ đề 43px
-  đọc rõ trên TV từ xa, và bộ 23 màu âm Whoosh/Deep Woosh/Swish/Wish xoay vòng.
+  Dựng TVC giới thiệu không gian và dịch vụ cao cấp V6 Siêu Cấp cho salon, spa,
+  phòng khám, showroom và nhà hàng. Kết hợp CapCut Color/Beauty Round-Trip,
+  3D LUT .cube với mã hóa GPU NVENC, tự khử nháy luma ở biên clip và dựng đồ
+  họa Đen–Vàng bằng After Effects 2027 hoặc HyperFrames. Dùng cho TVC cơ sở,
+  dịch vụ và bảng giá chiếu TV, YouTube hoặc Fanpage ở 1920x1080 @ 30fps.
 ---
 
-# TVC Không Gian & Dịch Vụ Cao Cấp — Quy Chuẩn CapCut Color Round-Trip × HyperFrames
+# TVC Không Gian & Dịch Vụ V6 Siêu Cấp — CapCut Round-Trip × GPU NVENC × After Effects 2027
 
 Skill này đóng gói trọn vẹn quy trình sản xuất **TVC Giới Thiệu Không Gian & Trải Nghiệm Dịch Vụ dài (`2 – 6 phút`, `1920×1080 @ 30fps`, chuẩn màu `SDR bt709`)** phục vụ trình chiếu màn hình TV lớn tại cơ sở kinh doanh, YouTube và Fanpage thương hiệu (Salon tóc nam/nữ, Spa dưỡng sinh, Phòng khám, Thẩm mỹ viện, Showroom, Khách sạn/Nhà hàng).
 
 Đọc kết hợp cùng [`hyperframes`](../hyperframes/SKILL.md) và [`capcut-pro-editor`](../capcut-pro-editor/SKILL.md).
+
+---
+
+## V6 Siêu Cấp — Áp 3D LUT và khử nháy biên clip
+
+Dùng [`.agents/skills/tvc-khong-gian-dich-vu/scripts/nvenc_lut_and_flash_sanitizer.py`](./scripts/nvenc_lut_and_flash_sanitizer.py) cho từng clip SDR nguồn trước khi đưa lên timeline. Cần Python 3.11, FFmpeg 6.1 trở lên có `lut3d` và `h264_nvenc` trên `PATH`, cùng GPU NVIDIA và driver tương thích. Chuẩn bị `.cube` phù hợp với không gian màu clip nguồn, ví dụ LUT `33×33×33` xuất từ bước CapCut Color Round-Trip.
+
+```powershell
+& "C:\Users\001\AppData\Local\Programs\Python\Python311\python.exe" -X utf8 ".agents/skills/tvc-khong-gian-dich-vu/scripts/nvenc_lut_and_flash_sanitizer.py" --input "assets\slides\clip nguồn.mp4" --lut "assets\luts\grade.cube" --output "assets\slides\clip đã chỉnh màu.mp4" --trim-flash-frames 2
+```
+
+- `--trim-flash-frames` nhận `0`, `1` hoặc `2`. Mặc định dò tối đa hai frame ở mỗi biên. Dùng `0` để áp LUT và giữ nhịp cắt đã duyệt. Script tìm bước nhảy luma sáng hoặc tối từ 28 mức trên thang 8-bit so với ba frame ổn định ngay bên trong rồi báo số frame cắt ở `FLASH_TRIM`. Với cú nháy sáng chủ ý, rà lại hai biên trước khi thay clip trong timeline.
+- FFmpeg áp LUT bằng `lut3d` nội suy tetrahedral trên CPU. NVIDIA NVENC mã hóa H.264 với `-preset p5 -rc vbr -cq 18`. Các track âm thanh hiện có được mã hóa AAC và cắt theo timestamp của video. Tệp đích phải là tên mới. Cập nhật thời lượng và điểm cắt trong timeline nếu script đã cắt frame. [Tài liệu lut3d của FFmpeg](https://ffmpeg.org/ffmpeg-filters.html#lut3d), [hướng dẫn NVENC của NVIDIA](https://docs.nvidia.com/video-technologies/video-codec-sdk/13.1/ffmpeg-with-nvidia-gpu/index.html#control-encoder-behavior).
+- Dùng [`.agents/skills/tvc-qc-san-pham/scripts/ae2027_luxury_tvc_builder.jsx`](../tvc-qc-san-pham/scripts/ae2027_luxury_tvc_builder.jsx) theo cấu hình ngang `1920×1080 @ 30fps` để dựng bảng Đen–Vàng và chữ vàng kim trong After Effects. Ghép lớp Lossless Alpha lên clip nền đã xử lý.
+
+Chạy self-test để kiểm tra logic cắt biên và sinh lệnh NVENC. Kết quả mong đợi là `SELF_TEST_OK`. Bài test chạy bằng Python và dùng các mẫu luma giả lập.
+
+```powershell
+& "C:\Users\001\AppData\Local\Programs\Python\Python311\python.exe" -X utf8 ".agents/skills/tvc-khong-gian-dich-vu/scripts/nvenc_lut_and_flash_sanitizer.py" --self-test
+```
 
 ---
 
@@ -65,7 +81,7 @@ Mọi dự án TVC dài trên HyperFrames phải phân tách rõ 7 lớp độc 
    - Đọc chi tiết thuật toán tại [`references/capcut-color-roundtrip-and-boundary-sanitizer.md`](./references/capcut-color-roundtrip-and-boundary-sanitizer.md):
      - Luôn lấy kích thước thực **sau xoay `90°`** (`cv2.VideoCapture` `rw, rh`) vì CapCut lưu metadata `1920×1080` cho cả clip dọc quay máy Sony/iPhone.
      - Chỉ dùng **`DIRECT_CROP`** từ video xuất CapCut khi chiều rộng hiển thị thực `vis_w == box_w` (nếu `vis_w < box_w` trên clip dọc như `C0057.MP4`, crop rộng ra sẽ làm lọt chữ biển hiệu `Track 0` vào trong thẻ!). Với mọi clip dọc `9:16`, dùng **`Poly3 33×33×33 3D-LUT`** khớp trên vùng không bị che khuất.
-     - Chạy bộ lọc **`Boundary Frame Sanitizer`** quét toàn bộ clip trong `assets/slides/`: loại bỏ ngay `frame 0` hoặc frame cuối bị dính cảnh kế bên khi cắt bằng `ffmpeg -ss` (`max_frame_diff < 18.0` trên toàn bộ 100% clip).
+     - Chạy bộ xử lý V6 trên từng clip trong `assets/slides/` để dò nháy luma ở biên khi áp LUT. Dùng phép so sánh `max_frame_diff < 18.0` trong tài liệu tham chiếu để rà trường hợp frame dính cảnh kế bên có luma trung bình gần giống nhau.
 3. **Giữ Nguyên Vẹn Độ Sắc Nét Cảnh Mở 3D Logo Cuối Phim (`End-Card Cleanliness`)**:
    - Khi `Track 0` cuối phim đã là video 3D Logo thương hiệu có sẵn hạt bụi vàng kim (`Logo_revealing_with_gold_dust`), **cấm phủ đè thêm video `golden_dust_16x9.mp4` (`#end-bokeh`)** và **cấm đặt `tvc-transitions` cắt ngang lúc mở Logo** (gây nháy sáng trễ 6 frame và làm đục bề mặt kim loại của Logo).
    - Mount `#end-lockup` ngay đúng frame cắt sang Logo, đặt `opacity: 0` mặc định cho `#end-top` / `#end-bot`, chờ biểu tượng 3D hiện rõ mới trượt nhẹ dòng Slogan & Địa chỉ/Hotline lên. Nếu dùng chung 1 ảnh logo `.png` ở 2 beat khác nhau trong cùng 1 composition, tạo bản sao tên tệp riêng (`logo_b3.png`) để triệt tiêu cảnh báo `duplicate_media_discovery_risk`.

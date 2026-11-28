@@ -1,0 +1,111 @@
+{
+  "title": "Ngọn đèn còn sáng",
+  "scenes": [
+    {
+      "id": "K4_S01",
+      "setting": "BO-1",
+      "camera_axis": "A",
+      "shot_size": "WS",
+      "refs": ["CH-1", "CH-2", "BO-1"],
+      "IMAGE XUẤT HIỆN": "Image 1 — CH-1 (mẹ). Image 2 — CH-2 (con gái). Image 3 — BO-1 (phòng khách).",
+      "CHỐT KHÔNG GIAN & VỊ TRÍ": "Phòng khách lúc chạng vạng. Nhìn từ phía cửa sổ vào. CH-1 ở cạnh đèn bàn, CH-2 vừa dừng ở cửa ra vào.",
+      "BẮT ĐẦU PROMPT": "Máy cố định, thấy được cả bàn và cửa. CH-1 xoay đầu về phía cửa khi nghe tiếng chân. CH-2 nhìn lại. Giữ nguyên khuôn mặt, tóc và trang phục theo ảnh tham chiếu. Không chữ, phụ đề hoặc logo.",
+      "start_positions": {
+        "CH-1": {"side": "left", "place": "ngồi trên ghế cạnh đèn bàn"},
+        "CH-2": {"side": "right", "place": "đứng ngay trong cửa ra vào"}
+      },
+      "end_positions": {
+        "CH-1": {"side": "left", "place": "ngồi trên ghế cạnh đèn bàn"},
+        "CH-2": {"side": "right", "place": "đứng ngay trong cửa ra vào"}
+      },
+      "dialogue": [],
+      "action_seconds": 2
+    },
+    {
+      "id": "K4_S02",
+      "setting": "BO-1",
+      "camera_axis": "A",
+      "shot_size": "CU",
+      "refs": ["CH-1", "CH-2", "BO-1"],
+      "IMAGE XUẤT HIỆN": "Image 1 — CH-1. Image 2 — CH-2. Image 3 — BO-1.",
+      "CHỐT KHÔNG GIAN & VỊ TRÍ": "Giữ hướng nhìn từ phía cửa sổ. CH-2 ở hậu cảnh mờ phía cửa, bên phải CH-1.",
+      "BẮT ĐẦU PROMPT": "Cận biểu cảm CH-1. Bà nhìn về cửa, ngập ngừng nửa nhịp rồi hỏi CH-2 bằng giọng nhỏ. CH-2 lắng nghe, giữ vị trí. Khớp môi CH-1 với thoại tiếng Việt.",
+      "start_positions": {
+        "CH-1": {"side": "left", "place": "ngồi trên ghế cạnh đèn bàn"},
+        "CH-2": {"side": "right", "place": "đứng ngay trong cửa ra vào"}
+      },
+      "end_positions": {
+        "CH-1": {"side": "left", "place": "ngồi trên ghế cạnh đèn bàn"},
+        "CH-2": {"side": "right", "place": "đứng ngay trong cửa ra vào"}
+      },
+      "dialogue": [
+        {"speaker": "CH-1", "text": "Con về rồi à? Mẹ cứ tưởng tối nay con lại ăn ở ngoài."}
+      ],
+      "action_seconds": 0.6
+    },
+    {
+      "id": "K4_S03",
+      "setting": "BO-1",
+      "camera_axis": "A",
+      "shot_size": "MS",
+      "refs": ["CH-1", "CH-2", "BO-1"],
+      "IMAGE XUẤT HIỆN": "Image 1 — CH-1. Image 2 — CH-2. Image 3 — BO-1.",
+      "CHỐT KHÔNG GIAN & VỊ TRÍ": "Cùng phía máy. CH-1 tiếp tục ngồi bên trái. CH-2 đi từ cửa tới đứng cạnh bàn và vẫn ở bên phải.",
+      "BẮT ĐẦU PROMPT": "Khung trung giữ nét ở CH-2. Cô bước từ cửa về phía bàn, dừng lại và nhìn mẹ rồi mới đáp. Vai CH-1 thấp ở góc trái khung hình. Khớp môi CH-2 với thoại tiếng Việt.",
+      "start_positions": {
+        "CH-1": {"side": "left", "place": "ngồi trên ghế cạnh đèn bàn"},
+        "CH-2": {"side": "right", "place": "đứng ngay trong cửa ra vào"}
+      },
+      "end_positions": {
+        "CH-1": {"side": "left", "place": "ngồi trên ghế cạnh đèn bàn"},
+        "CH-2": {"side": "right", "place": "đứng cạnh bàn đối diện mẹ"}
+      },
+      "dialogue": [
+        {"speaker": "CH-2", "text": "Con xin lỗi. Hôm nay con muốn về ăn cơm với mẹ."}
+      ],
+      "action_seconds": 2
+    },
+    {
+      "id": "K4_S04",
+      "setting": "BO-1",
+      "camera_axis": "A",
+      "shot_size": "MCU",
+      "refs": ["CH-1", "CH-2", "BO-1"],
+      "IMAGE XUẤT HIỆN": "Image 1 — CH-1. Image 2 — CH-2. Image 3 — BO-1.",
+      "CHỐT KHÔNG GIAN & VỊ TRÍ": "CH-1 ngồi phía trái. Vai CH-2 xuất hiện ở mép phải, cạnh bàn. Đèn bàn vẫn sáng.",
+      "BẮT ĐẦU PROMPT": "CH-1 nhìn lên CH-2. Bà thả lỏng vai, cười nhẹ rồi nói. CH-2 giữ yên và lắng nghe. Khớp môi CH-1 với thoại tiếng Việt.",
+      "start_positions": {
+        "CH-1": {"side": "left", "place": "ngồi trên ghế cạnh đèn bàn"},
+        "CH-2": {"side": "right", "place": "đứng cạnh bàn đối diện mẹ"}
+      },
+      "end_positions": {
+        "CH-1": {"side": "left", "place": "ngồi trên ghế cạnh đèn bàn"},
+        "CH-2": {"side": "right", "place": "đứng cạnh bàn đối diện mẹ"}
+      },
+      "dialogue": [
+        {"speaker": "CH-1", "text": "Mẹ để đèn sáng để con về còn thấy đường."}
+      ],
+      "action_seconds": 1.5
+    },
+    {
+      "id": "K4_S05",
+      "setting": "BO-1",
+      "camera_axis": "A",
+      "shot_size": "MLS",
+      "refs": ["CH-1", "CH-2", "BO-1"],
+      "IMAGE XUẤT HIỆN": "Image 1 — CH-1. Image 2 — CH-2. Image 3 — BO-1.",
+      "CHỐT KHÔNG GIAN & VỊ TRÍ": "Máy vẫn ở phía cửa sổ. CH-1 ngồi cạnh đèn bên trái và CH-2 đứng bên phải bàn.",
+      "BẮT ĐẦU PROMPT": "Thấy cả hai trong ánh đèn ấm. CH-2 đưa tay nắm nhẹ tay mẹ, CH-1 đáp lại bằng một cái gật. Giữ im lặng và kết thúc khi hai bàn tay chạm nhau.",
+      "start_positions": {
+        "CH-1": {"side": "left", "place": "ngồi trên ghế cạnh đèn bàn"},
+        "CH-2": {"side": "right", "place": "đứng cạnh bàn đối diện mẹ"}
+      },
+      "end_positions": {
+        "CH-1": {"side": "left", "place": "ngồi trên ghế cạnh đèn bàn"},
+        "CH-2": {"side": "right", "place": "đứng cạnh bàn đối diện mẹ"}
+      },
+      "dialogue": [],
+      "action_seconds": 3
+    }
+  ]
+}

@@ -1,79 +1,67 @@
 ---
 name: photoshop-pro-studio
 description: >-
-  Bộ kỹ năng chuyên sâu chỉnh ảnh thương mại chuẩn Studio & Adobe Photoshop 2026:
-  Retouch chân dung & món ăn tự nhiên (khóa bảo vệ 100% mắt/mí mắt/chân mày, chấm xóa
-  mụn/nốt ruồi/vật thừa bằng Big-LaMa + bù hạt da thật, Frequency Separation nhẹ giữ
-  96% lỗ chân lông, chỉnh tươi chuẩn ICC sRGB), Tách nền chủ thể sắc nét (BiRefNet FP16)
-  căn tỷ lệ đồng nhất hàng loạt, xuất file .PSD đa layer chuẩn Photoshop và điều khiển
-  trực tiếp Adobe Photoshop 2026 qua Photoshop MCP / ExtendScript (.jsx).
-  Kích hoạt ngay khi người dùng yêu cầu chỉnh ảnh, retouch da, xóa vật thừa/mụn,
-  tách nền ghép hình, xuất file .PSD hoặc thao tác với Photoshop.
+  Quy trình V6 Siêu Cấp cho retouch ảnh thương mại trong Adobe Photoshop 2026,
+  khóa vùng mắt, kiểm tra chi tiết da và ICC sRGB, tách nền BiRefNet,
+  chuẩn hóa lô PNG sản phẩm và dựng PSD poster 4 nhóm qua ExtendScript.
 ---
 
-# Photoshop Pro Studio Skill (Retouch Tự Nhiên, Cutout Đồng Bộ & Photoshop 2026 MCP)
+# Photoshop Pro Studio V6 Siêu Cấp
 
-Skill này đóng gói trọn bộ quy chuẩn xử lý ảnh thương mại & chân dung chuẩn Studio kết hợp **Adobe Photoshop 2026** (`Photoshop MCP Server` + `.PSD` đa layer + GPU Vision Pipeline trên `D:\AI\full studio\voice-studio\.venv\Scripts\python.exe`).
+## Retouch tự nhiên và bảo vệ ngũ quan
 
----
+- Giữ nguyên con ngươi, tròng mắt, nếp mí trên, bọng mắt cười và chân mày. Tạo `eye_socket_guard` bằng cách mở rộng vùng mắt khoảng 5.5–7.5% chiều ngang mặt. Mở rộng riêng vùng chân mày khoảng 5.5% theo chiều ngang mặt để giữ đuôi mày. Khóa lỗ mũi, viền môi và rãnh cười khỏi các bước làm mịn, chấm xóa và cộng sáng. Giới hạn `shirt_mask` dưới cằm `y > face_bottom`.
+- Chấm xóa cục bộ ở độ phân giải gốc bằng Big-LaMa và bù hạt cảm biến với `grain_strength = 0.55–0.65`. Dùng `red_score > 2.65` cho mụn đỏ và `dark_score > 3.8` cho điểm thâm đậm làm ngưỡng rà soát. Dùng kernel `cv2.MORPH_RECT` khi gom cụm có kích thước lớn hơn 45 px.
+- Làm mịn nhẹ với mức hòa trộn Low-Frequency Bilateral 22–28%. Mục tiêu giữ 96% fine texture và 68% mid texture trong bước retouch. Chỉnh vùng midtone khoảng +0.15 đến +0.20 EV, bảo vệ vùng tối và giữ sắc trắng ngà khi khử vàng răng.
+- Đọc HEIC bằng `pillow_heif`, áp dụng `ImageOps.exif_transpose` rồi chuyển từ ICC nguồn sang sRGB bằng `ImageCms.profileToProfile`. Xác nhận màu nguồn khi ảnh thiếu ICC. Nhúng sRGB khi xuất JPEG với `quality=98, subsampling=0`.
+- Dùng [retouch_portrait_natural.py](./scripts/retouch_portrait_natural.py) cho retouch GPU và PSD 3 lớp `Anh Goc`, `Xoa Mun & Vat Thua`, `Chinh Tuoi & Min Nhe`. Soi 2–3 cặp ảnh mẫu ở 200% trước khi xử lý cả lô.
 
-## 1. Quy Tắc Sống Còn Khi Làm Ảnh (Bắt Buộc Tuân Thủ 100%)
+## Chuẩn hóa lô PNG sản phẩm
 
-### A. Quy Tắc Vàng Số 1: Bảo Vệ Tuyệt Đối 100% Đôi Mắt & Ngũ Quan
-- **TUYỆT ĐỐI KHÔNG BAO GIỜ** chạy làm mịn (Bilateral / Frequency Separation), chấm xóa tự động hoặc cộng sáng (`+L*`) đè lên:
-  1. **Con ngươi & tròng mắt (`l_eye`, `r_eye`)** — cộng sáng làm con ngươi đen bị đục/mờ sương!
-  2. **Nếp mí mắt trên (Double Eyelid) & Bọng mắt cười dưới (`aegyo-sal`)** — `face-parsing` mặc định gộp vùng da mí mắt vào `class 1 (face_skin)`. Nếu không tạo vùng đệm **`eye_socket_guard` (dilate mắt tối thiểu `5.5% – 7.5%` chiều ngang mặt)**, bộ lọc làm mịn sẽ xóa phẳng nếp mí khiến mắt trông sưng, mờ và giả!
-  3. **Chân mày (`l_brow`, `r_brow` mở rộng ngang `5.5%` bảo vệ phần đuôi mày thưa)**, lỗ mũi, viền môi và rãnh cười tự nhiên.
-- **Mask Áo Trắng (`shirt_mask`)**: Luôn cắt cứng **chỉ áp dụng phía dưới cằm (`y > face_bottom`)** để thuật toán khử ám vàng áo trắng không bao giờ ăn nhầm lên sợi chân mày hay lòng trắng mắt.
+Khi ảnh còn nền, dùng [cutout_align_batch.py](./scripts/cutout_align_batch.py) để tách nền với BiRefNet FP16, xử lý halo và căn baseline. Chuẩn bị tên `SP_*_CUTOUT.png` cho bước dàn trang sản phẩm.
 
-### B. Quy Tắc Vàng Số 2: "Retouch Ít Thôi" — Tự Nhiên Như Chụp Máy Cơ
-- **Spot Healing chọn lọc (`Big-LaMa` Crop ở độ phân giải gốc + bù hạt cảm biến `grain_strength = 0.55–0.65`)**:
-  - Chỉ chấm xóa các khuyết điểm rời rạc thật sự: mụn đỏ (`red_score > 2.65`), thâm mụn/nốt ruồi đậm (`dark_score > 3.8`, dilate rộng `0.020 * face_w` cho nốt ruồi sát viền hàm), lông thừa vùng cổ, cúc micro cài áo, tem dán thừa ở mép bàn.
-  - Luôn dùng `cv2.MORPH_RECT` khi gom cụm cluster kích thước lớn (`> 45px`) thay vì `MORPH_ELLIPSE` để chạy trong `0.005s` thay vì `60s`.
-- **Làm mịn da siêu nhẹ (`22% – 28%` Low-Frequency Bilateral + giữ `96%` Fine Pores & `68%` Mid Texture)**:
-  - Giữ nguyên khối sáng tối tự nhiên trên sống mũi, gò má và **lỗ chân lông nam/nữ thật ở mức phóng đại 200%**. Không tẩy trắng bệt da.
-- **Chỉnh tươi kiểu Camera Raw (`+0.15` đến `+0.20 EV` vùng midtone)**:
-  - Nhân trọng số bảo vệ vùng tối (`x^0.85 * (1-x)^1.15`) để tóc đen, con ngươi đen và chữ in trên áo giữ độ đen sâu trong trẻo.
-  - Khử vàng răng nhẹ nhàng (`28%–32%`), giữ sắc trắng ngà tự nhiên.
+Dùng Python 3.11 có Pillow và NumPy để chạy [ps2026_commercial_batch_studio.py](./scripts/ps2026_commercial_batch_studio.py) từ thư mục gốc workspace.
 
-### C. Quy Tắc Vàng Số 3: Chuẩn Hệ Màu Apple `.HEIC` (`Display P3` -> `sRGB ICC`)
-- File `.HEIC` từ iPhone luôn mang hệ màu rộng **Display P3 (`smpte432`)**. Không giải mã qua `ffmpeg` trần vì sẽ mất ICC làm ảnh xỉn màu.
-- Bắt buộc giải mã bằng `pillow_heif` + `ImageOps.exif_transpose` + `ImageCms.profileToProfile(..., sRGB)` và **nhúng `icc_profile=SRGB_ICC` khi xuất `.jpg` (`quality=98, subsampling=0`)**.
+```powershell
+$python311 = 'C:\Users\001\AppData\Local\Programs\Python\Python311\python.exe'
+$commercialStudio = '.agents/skills/photoshop-pro-studio/scripts/ps2026_commercial_batch_studio.py'
+& $python311 -X utf8 $commercialStudio --normalize-cutouts 'cutouts/input' --out 'cutouts/normalized' --canvas 1200x1200 --fill-ratio 0.78
+```
 
-### D. Quy Tắc Vàng Số 4: Chống Treo Ngầm `Photoshop.exe`
-- Trước hoặc sau khi gọi tự động hóa Photoshop trên Windows, kiểm tra tiến trình bằng [check_photoshop_health.ps1](./scripts/check_photoshop_health.ps1).
-- Nếu phát hiện `Photoshop.exe` có `MainWindowHandle == 0` tồn tại lâu (zombie process) hoặc `Adobe Crash Processor`, phải tắt tiến trình treo đó ngay để người dùng mở giao diện **Adobe Photoshop 2026** bình thường.
+CLI cắt sát biên alpha, resize đồng tỷ lệ và căn tâm theo trọng số alpha trên cả hai trục. Mặc định chiều cao chung là 936 px. SKU quá rộng sẽ hạ chiều cao chung xuống mức cả lô có thể nằm vừa canvas. PNG đích giữ nguyên tên, nền trong suốt và ICC nhúng của nguồn nếu có. Chọn thư mục đích riêng. Khi chạy lại, tệp trùng tên trong thư mục đích được thay thế.
 
----
+## Kiểm định ảnh retouch
 
-## 2. Hai Chế Độ Vận Hành Linh Hoạt
+```powershell
+& $python311 -X utf8 $commercialStudio --verify-retouch 'before.png' 'after.png' --eye-box 420,280,290,125 --skin-box 455,455,90,100 --skin-box 620,455,90,100
+& $python311 -X utf8 $commercialStudio --self-test
+```
 
-### Chế Độ 1: Điều Khiển Trực Tiếp Adobe Photoshop 2026 Qua `photoshop` MCP Server
-- Khi **Adobe Photoshop 2026** đang mở trên màn hình người dùng, sử dụng các tool của MCP server `photoshop` (đã cấu hình trong `~/.gemini/config/mcp_config.json`) hoặc chạy script mẫu [run_photoshop_jsx.jsx](./scripts/run_photoshop_jsx.jsx) để:
-  - Mở tài liệu, nhân đôi Layer (`Spot Heal`, `Frequency Separation Low/High`, `Camera Raw Filter`), tạo Adjustment Layers (`Curves`, `Selective Color`, `Hue/Saturation`, `Vibrance`), chạy Action `.atn` có sẵn của người dùng và lưu `.PSD` / `.JPG`.
+- Dùng hai PNG 8-bit cùng kích thước, cùng vị trí pixel, đã áp dụng hướng ảnh và có ICC sRGB nhúng. Tọa độ lấy theo pixel từ góc trên trái. Bao trọn chân mày, nếp mí, bọng mắt cười và con ngươi bằng một `--eye-box x,y,w,h` hoặc một hộp cho mỗi mắt. Mỗi hộp phải có đúng 0 pixel RGBA thay đổi.
+- Đặt `--skin-box` ở vùng da có chi tiết, như má hoặc trán, và có thể lặp cờ để kiểm nhiều vùng. Khi bỏ cờ này, phép đo lấy mẫu toàn khung ngoài vùng mắt. Chỉ số `pore_retention_pct` đo độ khớp của chi tiết tần số cao theo đúng vị trí pixel và cần đạt ít nhất 92%. Báo cáo trả `null` nếu mẫu thiếu chi tiết để tính. Kiểm tra ICC cho cả hai ảnh bằng phép chuyển màu tham chiếu sRGB.
+- Báo cáo JSON có mã thoát `0` khi PASS, `1` khi FAIL, `2` khi đầu vào hoặc tham số lỗi. Self-test tạo ảnh RGBA trong thư mục tạm và in `SELF_TEST_OK` khi cả hai chế độ đạt.
 
-### Chế Độ 2: Xử Lý Hàng Loạt Tốc Độ Cao Bằng GPU + Xuất `.PSD` Đa Layer Chuẩn Photoshop
-Khi cần xử lý tự động hàng chục bức ảnh nặng (`12MP – 24MP`) với độ chính xác AI phân vùng ngữ nghĩa (`BiRefNet` + `SegFormer Face Parsing` + `Big-LaMa`):
-1. **Retouch Chân Dung & Ẩm Thực Tự Nhiên + Xuất `.JPG` & `.PSD` 3 Layer**:
-   - Chạy hoặc tùy biến từ script chuẩn: [retouch_portrait_natural.py](./scripts/retouch_portrait_natural.py)
-   - Luôn kiểm tra trước trên 2–3 ảnh mẫu ở **độ phóng đại 200% vùng mắt (`_face_zoom_BA.jpg`)** bằng `read_file` trước khi chạy hàng loạt!
-   - Xuất kèm bộ file `.PSD` nén RLE (`pytoshop` + `packbits`) gồm 3 layer rời (`Anh Goc`, `Xoa Mun & Vat Thua`, `Chinh Tuoi & Min Nhe`) để Editor mở bằng Photoshop 2026 tinh chỉnh Opacity bất cứ lúc nào.
-2. **Tách Nền Sắc Nét (`BiRefNet FP16`) & Căn Tỷ Lệ Đồng Nhất Hàng Loạt**:
-   - Sử dụng script chuẩn: [cutout_align_batch.py](./scripts/cutout_align_batch.py)
-   - Khử viền halo màu nền quanh tóc (`edge color decontamination`), căn đáy chân chủ thể về cùng một vạch baseline và đồng bộ chiều cao chủ thể trên toàn bộ khung hình (`1080×1920` hoặc kích thước gốc), xuất cả `.PNG` trong suốt và `.PSD` tách lớp.
+## Dựng poster PSD 4 nhóm trong Photoshop 2026
 
----
+Trong Photoshop, mở **File → Scripts → Browse** và chọn `.agents/skills/photoshop-pro-studio/scripts/ps_extendscript_poster_4layer.jsx`. Chọn đường dẫn PSD mới, rồi chọn ảnh nền, cutout mẫu và ảnh thật của SKU theo các hộp thoại. Có thể bỏ qua từng ảnh và tiêu đề để dựng template. Ảnh được đặt dưới dạng Embedded Smart Object. Để bổ sung SKU vào template, mở khóa nhóm và lớp chờ, thay bằng ảnh SKU thật rồi khóa lại. [Mở script poster PSD](./scripts/ps_extendscript_poster_4layer.jsx)
 
-## 3. Chỉnh Màu & Kiến Trúc Mask Sáng Tối 16-Bit Chuẩn Mizuki Kikkawa (`Camera Raw` + `Photoshop`)
-- Khi chỉnh Beauty từ file RAW (`.ARW`, `.CR3`, `.NEF`) hoặc cần chất màu điện ảnh Nhật Bản trong trẻo (`透明感` — Toumeikan) có chiều sâu ánh sáng 3D mà không ám vàng đục:
-  - **Bắt buộc đọc**: [mizuki-color-and-masking.md](./references/mizuki-color-and-masking.md)
-  - Giữ nguyên **99.7% pixel 16-bit gốc từ Adobe Camera Raw (`Adobe Portrait`)** + chấm mụn rời rạc + **Native 16-bit Frequency Separation** (`Surface Blur` ~42%), tuyệt đối không tô đè màu da bằng Python LAB.
-  - Xây dựng nhóm **5 lớp `Mask Sáng Tối & Màu Mizuki` (`03_MAU_&_MASK_SANG_TOI_MIZUKI`)** bằng Adjustment Layers 16-bit: `Mask3 Background Minus Subject` (lọc biên `Guided Filter` 0% viền halo), `Pine-Emerald Foliage & Lycoris RedContrast`, `Mask1 Diagonal Shadow Anchor (-Shadow)`, `Mask2 Directional Sunlight Glow + Black Mist 1/4`, và `Mask4 Tight Facial Luminance (+顔の明るさを上げる)`.
+PSD khổ 1080 × 1920, RGB 8-bit, nhúng `sRGB IEC61966-2.1` và lưu đủ bốn nhóm có thể chỉnh sửa theo thứ tự sau từ dưới lên.
 
----
+1. `01_BACKGROUND_STUDIO`
+2. `02_MODEL_CUTOUT`
+3. `03_PRODUCT_SKU_LOCKED` (khóa nhóm và layer SKU)
+4. `04_TYPOGRAPHY_SAFEZONE`
 
-## 4. Quy Trình Kiểm Định Chất Lượng (QC Checklist) Trước Khi Bàn Giao
-1. Soi ảnh cắt 200% vùng mắt & chân mày (`read_file`): nếp mí trên, bọng mắt dưới, con ngươi và đuôi chân mày phải sắc nét 100% y hệt ảnh gốc.
-2. Soi 4 góc ảnh: kiểm tra không để sót mép tem bàn, vệt biên padding hay lem vùng inpaint sang vật thể kế bên (như đĩa đồ ăn).
-3. Kiểm tra `check_photoshop_health.ps1` đảm bảo không để lại tiến trình `Photoshop.exe` treo ngầm.
-4. Lưu trữ script & bảng Contact Sheet Trước/Sau vào `Z:\Drive của tôi\AI_Full_Studio\03_Du_An\<slug>\`.
+Guide vùng chữ đặt tại X = 54, 884, 1024 và Y = 248, 860, 1548. Trong dải Y = 860–1548, giữ chữ và thẻ UI ở X ≤ 884. Soi lại bounds sau khi sửa tiêu đề hoặc thêm chữ. Script tạo tài liệu mới và giữ các tài liệu đang mở của người dùng.
+
+Với các tác vụ retouch trên tài liệu được chỉ định, dùng Photoshop MCP hoặc [run_photoshop_jsx.jsx](./scripts/run_photoshop_jsx.jsx) để chuẩn bị các lớp chỉnh sửa. Khi cần kiểm tra trạng thái tiến trình, dùng lệnh chỉ đọc dưới đây.
+
+```powershell
+Get-Process -Name Photoshop -ErrorAction SilentlyContinue | Select-Object Id, MainWindowTitle, Responding
+```
+
+## RAW 16-bit và bàn giao
+
+- Với RAW Beauty hoặc màu Mizuki, xử lý Adobe Portrait trong Camera Raw, chấm mụn cục bộ và tách tần số trực tiếp ở 16-bit. Dùng năm lớp mask Mizuki cho nền, tán lá, vùng tối, nắng xiên và vùng sáng khuôn mặt. [Hướng dẫn màu và mask Mizuki](./references/mizuki-color-and-masking.md)
+- Soi nếp mí, bọng mắt, con ngươi và đuôi mày ở 200%. Kiểm tra bốn góc, halo, tem thừa, mép padding và dấu loang inpaint. Với poster, mở PSD để kiểm tra ICC nhúng, bốn nhóm, khóa SKU và vùng an toàn của chữ.
+- Lưu script dự án và contact sheet trước/sau tại `G:\My Drive\AI_Full_Studio\03_Du_An\<slug>\`.

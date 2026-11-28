@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="vi" data-composition-variables='[
+  {"id":"hookMode","type":"enum","label":"Hook 3 giây","default":"A","options":[{"value":"A","label":"A · Câu hỏi"},{"value":"B","label":"B · Neo giá"}]},
+  {"id":"clinic","type":"enum","label":"Cơ sở","default":"viet-han","options":[{"value":"viet-han","label":"Việt Hàn · 36 Phan Chu Trinh"},{"value":"thien-trang","label":"Thiện Trang · 85 Nguyễn Trãi"}]},
+  {"id":"bentoCount","type":"number","label":"Số ô Bento","default":5,"min":5,"max":6,"step":1}
+]'>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Việt Hàn × Thiện Trang · Bento Medical Ads V6</title>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <style>
+    * { box-sizing: border-box; }
+    html, body { margin: 0; }
+    #root {
+      --brand: #08623f;
+      --medical: #0a7940;
+      --accent: #c40029;
+      --yellow: #ffe65a;
+      --safe-left: 74px;
+      --safe-width: 790px;
+      position: relative;
+      isolation: isolate;
+      width: 1080px;
+      height: 1920px;
+      overflow: hidden;
+      background: #10362e;
+      color: white;
+      font: 700 32px/1.2 Arial, sans-serif;
+    }
+    #root[data-clinic="thien-trang"] { --brand: #105d54; }
+    #root[data-clinic="viet-han"] .for-thien-trang,
+    #root[data-clinic="thien-trang"] .for-viet-han,
+    #root[data-hook="A"] .hook-b,
+    #root[data-hook="B"] .hook-a,
+    #root[data-bento-count="5"] .bento-sixth { display: none !important; }
+
+    .full-video, .shade, .brand-frame { position: absolute; inset: 0; }
+    .full-video { width: 100%; height: 100%; object-fit: cover; z-index: 1; }
+    .shade { z-index: 2; background: rgba(5, 37, 26, .20); }
+    .hook-shade { background: linear-gradient(90deg, rgba(3, 33, 22, .66), transparent); }
+    .facade-shade {
+      background: linear-gradient(180deg, transparent 50%, rgba(5, 41, 30, .35) 58%, #062b20 88%);
+    }
+    .brand-frame { z-index: 10; pointer-events: none; }
+    .brand-frame::before {
+      position: absolute;
+      content: "";
+      inset: 20px;
+      border: 5px solid var(--brand);
+      border-radius: 50px;
+      box-shadow: inset 0 0 0 2px rgba(255, 255, 255, .72);
+    }
+    .brand-sign {
+      position: absolute;
+      top: 274px;
+      left: var(--safe-left);
+      width: var(--safe-width);
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      min-height: 88px;
+      padding: 13px 23px;
+      border: 2px solid rgba(255, 255, 255, .84);
+      border-radius: 22px;
+      background: var(--brand);
+      box-shadow: 0 5px 20px rgba(1, 23, 14, .28);
+      font-size: 32px;
+      letter-spacing: .015em;
+    }
+    .brand-mark {
+      flex: none;
+      display: grid;
+      place-items: center;
+      width: 52px;
+      height: 52px;
+      border-radius: 12px;
+      background: white;
+      color: var(--brand);
+      font-size: 44px;
+      line-height: 1;
+    }
+    .safe-overlay { position: absolute; left: var(--safe-left); width: var(--safe-width); }
+    .hook { z-index: 6; top: 490px; }
+    .hook-a { display: block; font-size: 86px; line-height: 1.06; letter-spacing: -.03em; }
+    .hook-a span { display: block; }
+    .hook-a .question-accent {
+      color: var(--accent);
+      paint-order: stroke fill;
+      -webkit-text-stroke: 8px white;
+    }
+    .hook-a .question-lead { text-shadow: 0 4px 14px rgba(0, 23, 15, .75); }
+    .offer {
+      display: grid;
+      gap: 12px;
+      padding: 24px;
+      border-radius: 34px;
+      background: #f6fffa;
+      box-shadow: 0 18px 48px rgba(0, 33, 20, .34);
+    }
+    .offer-heading { padding: 2px 8px 4px; color: var(--brand); font-size: 34px; }
+    .offer-tier { display: grid; gap: 2px; padding: 13px 20px; border-radius: 18px; }
+    .offer-tier small { font-size: 25px; }
+    .offer-tier strong { font-size: 48px; line-height: 1.12; }
+    .offer-original { color: #294d40; background: #e5f0ea; }
+    .offer-original s { text-decoration-color: var(--accent); text-decoration-thickness: 5px; }
+    .offer-current { color: var(--accent); background: var(--yellow); }
+    .offer-current strong { font-size: 68px; }
+    .offer-gift { color: white; background: var(--brand); }
+    .offer-gift strong { font-size: 36px; }
+
+    .bento-title { z-index: 4; top: 398px; margin: 0; }
+    .pill {
+      display: inline-block;
+      padding: 12px 22px;
+      border-radius: 16px;
+      background: var(--yellow);
+      color: #174837;
+      font-size: 34px;
+      line-height: 1.13;
+    }
+    .bento-grid { z-index: 4; top: 490px; display: grid; gap: 16px; }
+    .bento-row { display: flex; justify-content: center; gap: 14px; }
+    .bento-slot { flex: 0 0 calc((100% - 28px) / 3); height: 338px; }
+    .bento-focus {
+      position: relative;
+      height: 100%;
+      overflow: hidden;
+      border: 4px solid white;
+      border-radius: 26px;
+      background: #10362e;
+      box-shadow: 0 8px 12px rgba(0, 23, 16, .28);
+    }
+    .bento-focus video { width: 100%; height: 100%; display: block; object-fit: cover; }
+    .bento-veil {
+      position: absolute;
+      inset: 8px;
+      z-index: 1;
+      border-radius: 20px;
+      background: rgba(178, 242, 198, .76);
+      opacity: 0;
+      pointer-events: none;
+    }
+    .bento-caption { position: absolute; inset: auto 0 0; z-index: 2; margin: 0; }
+    .bento-label {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 65px;
+      padding: 8px 10px;
+      background: #075036;
+      font-size: 27px;
+      line-height: 1.12;
+      text-align: center;
+    }
+
+    .caption {
+      z-index: 8;
+      left: 86px;
+      width: 766px;
+      bottom: 404px;
+      margin: 0;
+      padding: 0 10px;
+      color: var(--medical);
+      font-size: 53px;
+      line-height: 1.17;
+      font-weight: 900;
+      text-align: center;
+      paint-order: stroke fill;
+      -webkit-text-stroke: 9px white;
+      text-shadow: 0 0 4px white, 0 0 7px white, 0 5px 8px #09221b, 0 8px 12px #09221b;
+    }
+    .caption-emphasis { color: var(--accent); }
+    .closing-cta { z-index: 7; top: 1164px; }
+    .closing-cta .pill { color: #9f0526; }
+    .end-card { z-index: 7; bottom: 416px; }
+    .end-panel {
+      display: grid;
+      gap: 13px;
+      padding: 25px 28px 28px;
+      border-left: 8px solid var(--yellow);
+      border-radius: 22px;
+      background: #06432f;
+    }
+    .end-name { font-size: 28px; }
+    .end-address { font-size: 58px; line-height: 1.07; }
+    .end-action { color: var(--yellow); font-size: 32px; }
+  </style>
+</head>
+<body>
+  <main id="root" data-composition-id="bento-medical-ads" data-width="1080" data-height="1920"
+        data-fps="30" data-duration="42" data-hook="A" data-clinic="viet-han" data-bento-count="5">
+    <video id="main-video" class="clip full-video" data-start="0" data-duration="37" data-track-index="0"
+           src="assets/main.mp4" muted playsinline></video>
+    <video id="clinic-facade" class="clip full-video" data-start="37" data-duration="5" data-track-index="0"
+           src="assets/facade.mp4" muted playsinline></video>
+    <audio id="campaign-mix" class="clip" data-start="0" data-duration="42" data-track-index="1"
+           src="assets/mix.wav" data-volume="1"></audio>
+
+    <div id="hook-shading" class="clip shade hook-shade" data-start="0" data-duration="3"
+         data-track-index="2" data-track-kind="graphics" data-layout-allow-overlap aria-hidden="true"></div>
+    <div id="bento-shading" class="clip shade" data-start="21.4" data-duration="12.1"
+         data-track-index="2" data-track-kind="graphics" data-layout-allow-overlap aria-hidden="true"></div>
+    <div id="facade-shading" class="clip shade facade-shade" data-start="37" data-duration="5"
+         data-track-index="2" data-track-kind="graphics" data-layout-allow-overlap aria-hidden="true"></div>
+
+    <section id="opening-hook" class="clip hook safe-overlay" data-start="0" data-duration="3"
+             data-track-index="3" data-track-kind="graphics">
+      <span class="hook-a" role="heading" aria-level="1"><span class="question-lead">Bạn thấy khỏe.</span><span class="question-accent">Còn chỉ số<br>đường huyết?</span></span>
+      <span class="hook-b offer">
+        <strong class="offer-heading">ƯU ĐÃI GÓI KHÁM</strong>
+        <span class="offer-tier offer-original"><small>GIÁ GỐC</small><strong><s>[Giá gốc]</s></strong></span>
+        <span class="offer-tier offer-current"><small>GIÁ ƯU ĐÃI</small><strong>[Giá ưu đãi]</strong></span>
+        <span class="offer-tier offer-gift"><small>QUÀ TẶNG KÈM</small><strong>[Quà tặng đã duyệt]</strong></span>
+      </span>
+    </section>
+
+    <h2 id="package-title" class="clip bento-title safe-overlay" data-start="21.4" data-duration="12.1"
+        data-track-index="3" data-track-kind="graphics"><span class="pill">GÓI KHÁM BAO GỒM</span></h2>
+    <!-- Đồng bộ data-start/data-duration của video và nhãn theo từng mốc thoại. -->
+    <div class="bento-grid safe-overlay">
+      <div class="bento-row">
+        <div class="bento-slot">
+          <div class="bento-focus">
+            <video id="bento-1" class="clip" data-start="22" data-duration="11.5" data-track-index="4"
+                   src="assets/bento-01.mp4" muted playsinline></video>
+            <div class="bento-veil" aria-hidden="true" data-layout-allow-overlap></div>
+            <p id="bento-label-1" class="clip bento-caption" data-start="22" data-duration="11.5"
+               data-track-index="10" data-track-kind="graphics" data-layout-allow-overlap><span class="bento-label">Xét nghiệm máu</span></p>
+          </div>
+        </div>
+        <div class="bento-slot">
+          <div class="bento-focus">
+            <video id="bento-2" class="clip" data-start="23.2" data-duration="10.3" data-track-index="5"
+                   src="assets/bento-02.mp4" muted playsinline></video>
+            <div class="bento-veil" aria-hidden="true" data-layout-allow-overlap></div>
+            <p id="bento-label-2" class="clip bento-caption" data-start="23.2" data-duration="10.3"
+               data-track-index="11" data-track-kind="graphics" data-layout-allow-overlap><span class="bento-label">Siêu âm</span></p>
+          </div>
+        </div>
+        <div class="bento-slot">
+          <div class="bento-focus">
+            <video id="bento-3" class="clip" data-start="24.4" data-duration="9.1" data-track-index="6"
+                   src="assets/bento-03.mp4" muted playsinline></video>
+            <div class="bento-veil" aria-hidden="true" data-layout-allow-overlap></div>
+            <p id="bento-label-3" class="clip bento-caption" data-start="24.4" data-duration="9.1"
+               data-track-index="12" data-track-kind="graphics" data-layout-allow-overlap><span class="bento-label">Điện tim</span></p>
+          </div>
+        </div>
+      </div>
+      <div class="bento-row">
+        <div class="bento-slot">
+          <div class="bento-focus">
+            <video id="bento-4" class="clip" data-start="25.6" data-duration="7.9" data-track-index="7"
+                   src="assets/bento-04.mp4" muted playsinline></video>
+            <div class="bento-veil" aria-hidden="true" data-layout-allow-overlap></div>
+            <p id="bento-label-4" class="clip bento-caption" data-start="25.6" data-duration="7.9"
+               data-track-index="13" data-track-kind="graphics" data-layout-allow-overlap><span class="bento-label">Khám mắt</span></p>
+          </div>
+        </div>
+        <div class="bento-slot">
+          <div class="bento-focus">
+            <video id="bento-5" class="clip" data-start="26.8" data-duration="6.7" data-track-index="8"
+                   src="assets/bento-05.mp4" muted playsinline></video>
+            <div class="bento-veil" aria-hidden="true" data-layout-allow-overlap></div>
+            <p id="bento-label-5" class="clip bento-caption" data-start="26.8" data-duration="6.7"
+               data-track-index="14" data-track-kind="graphics" data-layout-allow-overlap><span class="bento-label">Tai Mũi Họng</span></p>
+          </div>
+        </div>
+        <div class="bento-slot bento-sixth">
+          <div class="bento-focus">
+            <video id="bento-6" class="clip" data-start="28" data-duration="5.5" data-track-index="9"
+                   src="assets/bento-06.mp4" muted playsinline></video>
+            <div class="bento-veil" aria-hidden="true" data-layout-allow-overlap></div>
+            <p id="bento-label-6" class="clip bento-caption" data-start="28" data-duration="5.5"
+               data-track-index="15" data-track-kind="graphics" data-layout-allow-overlap><span class="bento-label">Răng Hàm Mặt</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <aside id="closing-cta" class="clip closing-cta safe-overlay" data-start="33.5" data-duration="3.5"
+           data-track-index="3" data-track-kind="graphics"><span class="pill">NHẮN TIN ĐẶT LỊCH</span></aside>
+    <section id="clinic-end-card" class="clip end-card safe-overlay" data-start="37" data-duration="5"
+             data-track-index="3" data-track-kind="graphics">
+      <span class="end-panel">
+        <span class="end-name for-viet-han">PHÒNG KHÁM ĐA KHOA QUỐC TẾ VIỆT HÀN</span>
+        <span class="end-name for-thien-trang">PHÒNG KHÁM ĐA KHOA THIỆN TRANG</span>
+        <strong class="end-address for-viet-han">36 Phan Chu Trinh</strong>
+        <strong class="end-address for-thien-trang">85 Nguyễn Trãi</strong>
+        <span class="end-action">Nhắn tin đặt lịch khám</span>
+      </span>
+    </section>
+
+    <!-- Cue mẫu. Nhân bản cả phần tử, đổi id và khớp mốc vào/ra với bản mix. -->
+    <p id="caption-01" class="clip caption" data-start="3" data-duration="2.6"
+       data-track-index="16" data-track-kind="captions">Hãy kiểm tra các <span class="caption-emphasis">chỉ số sức khỏe</span></p>
+    <p id="caption-02" class="clip caption" data-start="16" data-duration="3.4"
+       data-track-index="16" data-track-kind="captions">Tìm hiểu <span class="caption-emphasis">gói khám</span> phù hợp</p>
+    <p id="caption-03" class="clip caption" data-start="21.4" data-duration="2.6"
+       data-track-index="16" data-track-kind="captions">Gói khám gồm <span class="caption-emphasis">những gì?</span></p>
+    <p id="caption-04" class="clip caption" data-start="34" data-duration="2.8"
+       data-track-index="16" data-track-kind="captions">Nhắn tin để <span class="caption-emphasis">đặt lịch khám</span></p>
+
+    <div id="brand-frame" class="clip brand-frame" data-start="0" data-duration="42"
+         data-track-index="17" data-track-kind="graphics" data-layout-allow-overlap>
+      <span class="brand-sign">
+        <span class="brand-mark" aria-hidden="true">+</span>
+        <span class="for-viet-han">PHÒNG KHÁM ĐA KHOA QUỐC TẾ VIỆT HÀN</span>
+        <span class="for-thien-trang">PHÒNG KHÁM ĐA KHOA THIỆN TRANG</span>
+      </span>
+    </div>
+  </main>
+  <script>
+    (() => {
+      const root = document.querySelector("#root");
+      const vars = window.__hyperframes?.getVariables?.() ?? {};
+      if (["A", "B"].includes(vars.hookMode)) root.dataset.hook = vars.hookMode;
+      if (["viet-han", "thien-trang"].includes(vars.clinic)) root.dataset.clinic = vars.clinic;
+      if ([5, 6].includes(vars.bentoCount)) root.dataset.bentoCount = String(vars.bentoCount);
+
+      const tl = gsap.timeline({ paused: true });
+      const opening = root.dataset.hook === "B"
+        ? root.querySelectorAll(".offer-heading, .offer-tier")
+        : root.querySelectorAll(".hook-a span");
+
+      tl.fromTo(opening, { opacity: 0, y: 20 },
+        { opacity: 1, y: 0, duration: .26, stagger: .19, ease: "power2.out" }, 0);
+      tl.fromTo(".bento-title .pill", { opacity: 0, y: 16 },
+        { opacity: 1, y: 0, duration: .24, ease: "power2.out" }, Number(document.querySelector("#package-title").dataset.start));
+
+      for (const card of root.querySelectorAll(".bento-focus")) {
+        const video = card.querySelector("video");
+        const start = Number(video.dataset.start);
+        const end = start + Number(video.dataset.duration);
+        tl.fromTo(card, { opacity: 0, scale: .93, y: 12 },
+          { opacity: 1, scale: 1, y: 0, duration: .32, ease: "power3.out" }, start);
+        tl.fromTo(card.querySelector(".bento-veil"), { opacity: .74, filter: "blur(13px)" },
+          { opacity: 0, filter: "blur(0px)", duration: .26, ease: "power2.out" }, start);
+        tl.fromTo(card.querySelector(".bento-label"), { opacity: .35, filter: "blur(10px)" },
+          { opacity: 1, filter: "blur(0px)", duration: .26, ease: "power2.out" }, start);
+        tl.to(card, { opacity: 0, duration: .16, ease: "power1.in" }, end - .16);
+      }
+
+      for (const selector of ["#closing-cta .pill", "#clinic-end-card .end-panel"]) {
+        const element = root.querySelector(selector);
+        const start = Number(element.closest(".clip").dataset.start);
+        tl.fromTo(element, { opacity: 0, y: 18 },
+          { opacity: 1, y: 0, duration: .28, ease: "power2.out" }, start);
+      }
+
+      // Keep the GSAP timeline seekable through the final frame of the composition.
+      tl.to({}, { duration: Number(root.dataset.duration) }, 0);
+      window.__timelines = window.__timelines || {};
+      window.__timelines["bento-medical-ads"] = tl;
+    })();
+  </script>
+</body>
+</html>

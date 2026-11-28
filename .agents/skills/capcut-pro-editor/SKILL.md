@@ -3,12 +3,15 @@ name: capcut-pro-editor
 description: >-
   Bộ kỹ năng chuyên sâu mô phỏng và nâng cấp phong cách dựng phim CapCut cá nhân
   của Editor (TVC, Reels, Vlog, Storytelling/AI Drama). Sử dụng khi phân tích,
-  chỉnh sửa, nâng cấp hoặc tạo mới dự án CapCut (draft_content.json).
+  chỉnh sửa, nâng cấp hoặc tạo mới dự án CapCut (draft_content.json), gồm kiểm tra
+  vùng an toàn 9:16, thêm micro-zoom và micro-fade thoại, tìm lại media bị mất liên kết.
 ---
 
-# CapCut Pro Editor Skill (Signature Style + Pro Upgrades)
+# CapCut Pro Editor V6 Siêu Cấp
 
 Skill này cung cấp toàn bộ thông số kỹ thuật JSON (`draft_content.json`), ID hiệu ứng/mask/font/SFX trên máy của Editor và bộ công cụ tự động hóa để dựng hoặc nâng cấp dự án CapCut theo đúng chuẩn cá nhân đã nâng tầm.
+
+Dùng Draft Doctor ở mục 6 khi yêu cầu sửa vùng an toàn, thêm chuyển động V6 hoặc tìm lại media cho một tệp JSON cụ thể.
 
 ---
 
@@ -168,3 +171,25 @@ python "Z:\Drive của tôi\AI_Full_Studio\01_Skills\capcut-pro-editor\scripts\c
 # 2. Tự động áp dụng gói Pro Upgrade (có tự động tạo bản sao lưu .bak):
 python "Z:\Drive của tôi\AI_Full_Studio\01_Skills\capcut-pro-editor\scripts\capcut_pro_engine.py" upgrade "<Tên dự án CapCut>" --micro-fade --micro-zoom --text-fade
 ```
+
+## 6. Kiểm Tra Và Sửa Bản Nháp Bằng Draft Doctor V6
+
+Chạy `.agents/skills/capcut-pro-editor/scripts/capcut_draft_doctor_and_safezone.py` bằng Python 3.11 ở chế độ UTF-8. Công cụ đọc một `draft_content.json` mỗi lần. Với dự án có `Timelines/<id>/draft_content.json`, chọn tệp chứa timeline cần sửa. Công cụ xuất JSON riêng để kiểm tra. Quy trình ghi trực tiếp vào dự án đang dùng thuộc mục 4.6.
+
+```powershell
+$python = 'C:\Users\001\AppData\Local\Programs\Python\Python311\python.exe'
+$doctor = '.agents/skills/capcut-pro-editor/scripts/capcut_draft_doctor_and_safezone.py'
+
+& $python -X utf8 $doctor --self-test
+& $python -X utf8 $doctor --draft 'D:\Du an\draft_content.json' --audit
+& $python -X utf8 $doctor --draft 'D:\Du an\draft_content.json' `
+    --fix-safe-zone --inject-dna-motion --relink-media 'D:\Media goc' `
+    --out 'D:\Du an\draft_content.v6.json'
+```
+
+- `--audit` báo cáo vị trí cơ sở của chữ, phụ đề và sticker trên canvas `1080×1920`. Đọc `issues` để biết số vị trí cần chỉnh, `unknown_bounds` để biết lớp thiếu kích thước pixel và `animated` để biết lớp có chuyển động cần xem theo thời gian. Chạy riêng chế độ này để xem báo cáo chỉ đọc.
+- `--fix-safe-zone` đưa `transform.y` vào `[-0.58, +0.72]`. Với lớp ở `y <= 0.10` hoặc có mép chạm dải nút từ `Y = 860px`, công cụ đặt `transform.x = -0.12`. Khi có kích thước pixel, công cụ căn cả mép và thu đều hai trục nếu cần để giữ vùng `X = 54..884px` cạnh cột nút và `X = 54..1024px` phía trên, trong vùng dọc `Y = 248..1548px`. Xem lại mép hiển thị ở các lớp báo thiếu kích thước hoặc có chuyển động.
+- `--inject-dna-motion` thêm `KFTypeScale` từ `1.00` đến `1.06` cho clip video dài hơn `2.2s` có scale gốc `1.00` và chưa có chuyển động khung hình. Công cụ nhận biết thoại qua nhãn và tên tệp. Với track audio chưa có nhãn, công cụ dùng thời lượng `0.3–12s` làm dấu hiệu đoạn cắt. Fade dùng `materials.audio_fades` và `extra_material_refs`, mỗi đầu `40000` µs. Với đoạn ngắn hơn `80ms`, mỗi đầu tối đa bằng nửa thời lượng.
+- `--relink-media <dir>` quét thư mục con để dò basename, không phân biệt hoa thường. Dùng thư mục gốc tập hợp footage, ảnh và âm thanh. Công cụ sửa đường dẫn đang thiếu khi có một kết quả duy nhất. Đọc `unresolved` để xử lý tên trùng hoặc nguồn chưa tìm thấy.
+- `--out <new_draft.json>` chọn tên tệp đích mới. Tên mặc định là `<tên nguồn>.v6.json` cạnh tệp nguồn. Các cờ chỉnh sửa có thể kết hợp trong một lần chạy. Draft Doctor chỉ thao tác với tệp và hoạt động khi CapCut đang mở.
+- `--self-test` kiểm tra bằng nháp mẫu trong bộ nhớ và in `SELF_TEST_OK` khi đạt.

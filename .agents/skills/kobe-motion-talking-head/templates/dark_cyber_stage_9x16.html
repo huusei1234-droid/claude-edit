@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="vi" data-composition-variables='[
+  {"id":"headline","type":"string","label":"Tiêu đề","default":"Tín hiệu đúng"},
+  {"id":"focusLabel","type":"string","label":"Nhãn lấy nét","default":"Lấy nét"},
+  {"id":"stepOne","type":"string","label":"Thẻ 1","default":"Lọc"},
+  {"id":"stepTwo","type":"string","label":"Thẻ 2","default":"Nối"},
+  {"id":"stepThree","type":"string","label":"Thẻ 3","default":"Chốt"}
+]'>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dark Cyber Stage · Kobe Motion V6</title>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #000; }
+    #root { position: absolute; inset: 0; width: 1080px; height: 1920px; overflow: hidden; font: 700 38px/1.15 Arial, sans-serif; color: #edfbff; }
+    .band {
+      position: absolute; inset: 656px 0 auto; height: 608px;
+      background: radial-gradient(ellipse at 75% 63%, #173138 0, transparent 44%),
+        linear-gradient(90deg, #77d6d318 1px, transparent 1px) 0 0 / 40px 40px,
+        linear-gradient(#77d6d318 1px, transparent 1px) 0 0 / 40px 40px,
+        #10161b;
+      border-block: 1px solid #80eae53b;
+    }
+    /* Background may bleed. Every foreground pixel goes through this stepped mask. */
+    .safe {
+      position: absolute; inset: 0;
+      clip-path: polygon(54px 250px, 1024px 250px, 1024px 860px, 884px 860px, 884px 1545px, 54px 1545px);
+    }
+    .camera { position: absolute; inset: 0; }
+    h1 { position: absolute; left: 92px; top: 734px; width: 466px; margin: 0; font-size: 72px; line-height: 1.12; letter-spacing: -.045em; }
+    .focus-box { position: absolute; left: 595px; top: 745px; width: 259px; text-align: center; }
+    .focus-label { display: block; padding: 11px 16px; border: 1px solid #7ae8dd66; border-radius: 100px; background: #183538; color: #c6fff2; font-size: 38px; }
+    .thread { position: absolute; left: 54px; top: 860px; width: 830px; height: 300px; overflow: visible; }
+    .thread path { fill: none; stroke-linecap: round; stroke-linejoin: round; }
+    #dark-thread-base { stroke: #63918f; stroke-width: 2; stroke-dasharray: 3 12; }
+    #dark-thread-line { stroke: #6be9da; stroke-width: 4; filter: drop-shadow(0 0 6px #42d7c8aa); }
+    #dark-thread-tip { fill: #ddfff9; filter: drop-shadow(0 0 9px #6be9da); }
+    .card-slot { position: absolute; top: 953px; width: 156px; height: 144px; }
+    #dark-step-one { left: 92px; }
+    #dark-step-two { left: 282px; }
+    #dark-step-three { left: 472px; }
+    .card {
+      position: relative; z-index: 1; display: grid; align-content: center; justify-items: start;
+      gap: 2px; width: 100%; height: 100%; padding: 12px 18px; transform-origin: 50% 100%;
+      border: 1px solid #5db7b899; border-radius: 23px; background: linear-gradient(145deg, #254347, #17272e 72%);
+      box-shadow: inset 0 1px #daffff24, 0 9px 24px #0006;
+    }
+    .card b { color: #a4f7e8; font-size: 50px; font-variant-numeric: tabular-nums; }
+    .card span { font-size: 38px; }
+    #dark-step-three .card { border-color: #ec9d6e; background: linear-gradient(145deg, #3e2d30, #241e27 72%); }
+    #dark-step-three b { color: #ffd1a9; }
+    .ripple {
+      position: absolute; width: 168px; height: 42px; left: -6px; bottom: -21px;
+      border: 3px solid #7cf6dd; border-radius: 50%; pointer-events: none;
+    }
+    #dark-pip { position: absolute; left: 650px; top: 968px; width: 220px; height: 220px; }
+    #dark-iris {
+      position: absolute; inset: 0; border-radius: 50%; overflow: hidden;
+      border: 4px solid #6be9da; background: radial-gradient(circle at 50% 40%, #405969, #202c36 78%);
+    }
+    .portrait-placeholder { position: absolute; inset: 0; pointer-events: none; }
+    .portrait-placeholder::before, .portrait-placeholder::after { content: ""; position: absolute; left: 50%; translate: -50% 0; }
+    .portrait-placeholder::before { top: 19%; width: 38%; height: 40%; border-radius: 48% 48% 45% 45%; background: #a6d2d1; }
+    .portrait-placeholder::after { top: 63%; width: 84%; height: 50%; border-radius: 54% 54% 0 0; background: #779baf; }
+    .pip-media { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 42%; }
+  </style>
+</head>
+<body>
+  <main id="root" data-composition-id="dark-cyber-stage" data-start="0" data-duration="6" data-width="1080" data-height="1920" data-fps="30">
+    <div class="band" aria-hidden="true"></div>
+    <div class="safe">
+      <div id="dark-camera" class="camera">
+        <h1 data-var-text="headline">Tín hiệu đúng</h1>
+        <div id="dark-focus" class="clip focus-box" data-start="1.04" data-duration="3.66" data-track-index="1" data-track-kind="graphics">
+          <span id="dark-focus-label" class="focus-label" data-var-text="focusLabel">Lấy nét</span>
+        </div>
+        <svg class="thread" viewBox="0 0 830 300" aria-hidden="true">
+          <path id="dark-thread-base" d="M 52 237 H 546 Q 572 237 591 222 L 631 195"/>
+          <path id="dark-thread-line" d="M 52 237 H 546 Q 572 237 591 222 L 631 195"/>
+          <circle id="dark-thread-tip" cx="0" cy="0" r="6"/>
+        </svg>
+        <div id="dark-step-one" class="clip card-slot" data-start="1.46" data-duration="4.54" data-track-index="2" data-track-kind="graphics">
+          <span class="ripple" aria-hidden="true"></span><span class="card"><b>1</b><span data-var-text="stepOne">Lọc</span></span>
+        </div>
+        <div id="dark-step-two" class="clip card-slot" data-start="2.36" data-duration="3.64" data-track-index="3" data-track-kind="graphics">
+          <span class="ripple" aria-hidden="true"></span><span class="card"><b>2</b><span data-var-text="stepTwo">Nối</span></span>
+        </div>
+        <div id="dark-step-three" class="clip card-slot" data-start="3.26" data-duration="2.74" data-track-index="4" data-track-kind="graphics">
+          <span class="ripple" aria-hidden="true"></span><span class="card"><b>3</b><span data-var-text="stepThree">Chốt</span></span>
+        </div>
+      </div>
+      <div id="dark-pip">
+        <div id="dark-iris">
+          <div class="portrait-placeholder" aria-hidden="true"></div>
+          <!-- Replace the placeholder with a real source. Keep this wrapper untimed.
+          <video id="dark-presenter" class="clip pip-media" data-start="0" data-duration="6" data-track-index="5" src="assets/presenter.mp4" muted playsinline></video>
+          -->
+        </div>
+      </div>
+    </div>
+  </main>
+  <script>
+    window.__timelines = window.__timelines || {};
+    const darkTimeline = gsap.timeline({ paused: true });
+    const darkPanAt = 39 / 30;
+    const darkThreadAt = darkPanAt - 0.15;
+    const darkPath = document.querySelector("#dark-thread-line");
+    const darkTip = document.querySelector("#dark-thread-tip");
+    const darkPathLength = darkPath.getTotalLength();
+    const darkTrace = { distance: 0 };
+
+    darkTimeline.fromTo("#dark-iris", { clipPath: "circle(0px at 50% 50%)" },
+      { clipPath: "circle(110px at 50% 50%)", duration: 0.20, ease: "power2.inOut" }, 0.40);
+    darkTimeline.fromTo("#dark-focus-label", { opacity: 0, filter: "blur(18px)" },
+      { opacity: 1, filter: "blur(0px)", duration: 0.26, ease: "power2.out" }, darkPanAt - 0.26);
+    darkTimeline.to("#dark-focus-label", { opacity: 0, filter: "blur(14px)", duration: 0.20, ease: "power2.in" }, 4.50);
+
+    darkTimeline.set(darkPath, { attr: { "stroke-dasharray": darkPathLength, "stroke-dashoffset": darkPathLength } }, 0);
+    darkTimeline.set(darkTip, { opacity: 0 }, 0);
+    darkTimeline.set(darkTip, { opacity: 1 }, darkThreadAt);
+    darkTimeline.to(darkTrace, {
+      distance: darkPathLength, duration: 2.35, ease: "power1.inOut",
+      onUpdate() {
+        const point = darkPath.getPointAtLength(darkTrace.distance);
+        darkPath.setAttribute("stroke-dashoffset", darkPathLength - darkTrace.distance);
+        darkTip.setAttribute("cx", point.x);
+        darkTip.setAttribute("cy", point.y);
+      },
+    }, darkThreadAt);
+    darkTimeline.fromTo("#dark-camera", { x: 28 },
+      { x: 0, duration: 0.62, ease: "power2.inOut" }, darkPanAt);
+
+    ["dark-step-one", "dark-step-two", "dark-step-three"].forEach((id, index) => {
+      const card = `#${id} .card`;
+      const ring = `#${id} .ripple`;
+      const contact = [51, 78, 105][index] / 30;
+      darkTimeline.fromTo(card, { opacity: 0, y: -66, scaleY: 1 },
+        { opacity: 1, y: 0, scaleY: 1, duration: 0.24, ease: "power2.in" }, contact - 0.24);
+      darkTimeline.to(card, { scaleY: 0.94, duration: 0.06, ease: "power2.out" }, contact);
+      darkTimeline.to(card, { scaleY: 1.06, duration: 0.10, ease: "power2.out" }, contact + 0.06);
+      darkTimeline.to(card, { scaleY: 1, duration: 0.16, ease: "power2.inOut" }, contact + 0.16);
+      darkTimeline.fromTo(ring, { scale: 0.40, opacity: 0.88 },
+        { scale: 1.25, opacity: 0, duration: 0.38, ease: "power2.out", immediateRender: false }, contact);
+      darkTimeline.set(ring, { opacity: 0 }, 0);
+    });
+
+    darkTimeline.set("#dark-iris", { clipPath: "circle(110px at 50% 50%)" }, 6);
+    window.__timelines["dark-cyber-stage"] = darkTimeline;
+  </script>
+</body>
+</html>
