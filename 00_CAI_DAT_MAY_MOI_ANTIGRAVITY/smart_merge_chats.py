@@ -710,8 +710,8 @@ def main():
     )
     sync_small_folder_two_way(local_proj, cloud_proj, args.mode)
 
-    # 4. Đồng bộ thư mục brain/ (BAO GỒM .system_generated/logs/transcript.jsonl; loại trừ file tạm nặng)
-    xd = ["browser_sandbox", "scratch", "chrome_tmp", "Crashpad", "GPUPersistentCache", "Code Cache", "Cache", "uploads"]
+    # 4. Đồng bộ thư mục brain/ (BAO GỒM .system_generated/logs/transcript.jsonl; TUYỆT ĐỐI LOẠI TRỪ messages/ để không hồi sinh Queued Messages cũ!)
+    xd = ["messages", "tasks", "browser_sandbox", "scratch", "chrome_tmp", "Crashpad", "GPUPersistentCache", "Code Cache", "Cache", "uploads"]
     xf = ["*.tmp", "*.crdownload", "*.log", "transcript_full.jsonl", "*.db-wal", "*.db-shm"]
     l_brain = os.path.join(local_agy, "brain")
     c_brain = os.path.join(cloud_agy, "brain")

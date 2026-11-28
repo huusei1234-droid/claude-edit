@@ -472,19 +472,8 @@ for r in [r'.git\refs\heads\main',r'.git\refs\remotes\origin\main',r'.git\refs\r
         Invoke-PullNewer
         Invoke-PushNewer
         Sync-McpConfigTwoWay
+        # Đồng bộ hợp nhất thông minh 2 chiều toàn bộ Lịch sử Chat Antigravity (SQLite WAL-safe, 1 lượt duy nhất)
         Invoke-SmartMergeChats "both"
-
-        # Đồng bộ hợp nhất thông minh 2 chiều toàn bộ Lịch sử Chat Antigravity (SQLite WAL-safe, không cần tắt app!)
-        $cloudChatPy = Join-Path $syncDir "smart_merge_chats.py"
-        $localChatPy = Join-Path $localSyncBin "smart_merge_chats.py"
-        if (Test-Path -LiteralPath $cloudChatPy) {
-            if (-not (Test-Path -LiteralPath $localChatPy) -or ((Get-Item -LiteralPath $cloudChatPy).LastWriteTimeUtc -gt (Get-Item -LiteralPath $localChatPy).LastWriteTimeUtc.AddSeconds(2))) {
-                Copy-Item -LiteralPath $cloudChatPy -Destination $localChatPy -Force
-            }
-        }
-        if ((Test-Path -LiteralPath $localChatPy) -and (Get-Command python -ErrorAction SilentlyContinue)) {
-            python -X utf8 "$localChatPy" --mode both | Out-Null
-        }
 
         $cloudEngine = Join-Path $syncDir "sync_engine.ps1"
         $localEngine = Join-Path $localSyncBin "sync_engine.ps1"
