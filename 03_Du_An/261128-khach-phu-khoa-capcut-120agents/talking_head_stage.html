@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8" />
+<title>Deliverable 1 — Ultra-Cool Gynecology Talking-Head 60fps (V3 QC-Certified)</title>
+<style>
+  @font-face {
+    font-family: 'MontserratBlack';
+    src: url('file:///C:/AI/full%20studio/BO_KIEN_THUC_TVC_AI_PORTABLE/03_TAI_NGUYEN_DUNG_CHUNG/fonts_tvc_vi/Montserrat-Black.ttf') format('truetype');
+    font-weight: 900;
+  }
+  @font-face {
+    font-family: 'BeVietnamExtraBold';
+    src: url('file:///C:/AI/full%20studio/BO_KIEN_THUC_TVC_AI_PORTABLE/03_TAI_NGUYEN_DUNG_CHUNG/fonts_tvc_vi/BeVietnamPro-ExtraBold.ttf') format('truetype');
+    font-weight: 800;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; user-select: none; }
+  html, body {
+    width: 1080px; height: 1920px; overflow: hidden;
+    background: #9FA4AC;
+    font-family: 'BeVietnamExtraBold', 'MontserratBlack', 'Segoe UI', sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  #stage {
+    position: relative; width: 1080px; height: 1920px; overflow: hidden;
+    background: #9FA4AC;
+  }
+
+  /* 1. PURE CLEAN STUDIO WALL EXTENSION (Cropped strictly from top 96px above head -> 0% hair reflection, 0% dark band!) */
+  #ceiling-ext-wrap {
+    position: absolute; left: 0; top: 0; width: 1080px; height: 560px; z-index: 1; overflow: hidden;
+  }
+  #ceiling-ext-img {
+    width: 1080px; height: 560px; object-fit: fill; display: block;
+  }
+
+  /* 2. CAMERA BASE LAYER (Pushes Down & Pulls Up smoothly in lockstep with FG RVM Cutout!) */
+  #bg-cam-wrap {
+    position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; z-index: 4;
+    will-change: transform;
+  }
+  #bg-cam-img {
+    width: 1080px; height: 1920px; object-fit: cover; display: block;
+    -webkit-mask-image: linear-gradient(180deg, rgba(0,0,0,0) 0px, rgba(0,0,0,1) 56px, rgba(0,0,0,1) 100%);
+  }
+  #desk-clean-patch {
+    position: absolute; left: 825px; top: 1660px; width: 155px; height: 145px;
+    overflow: hidden; border-radius: 24px; filter: blur(4px); opacity: 0.96; pointer-events: none;
+  }
+  #desk-clean-patch img {
+    position: absolute; left: -650px; top: -1660px; width: 1080px; height: 1920px; object-fit: cover;
+  }
+
+  /* Gentle centered spotlight vignette (NO dark top bar!) */
+  #bg-anim-dim {
+    position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; z-index: 6;
+    background: radial-gradient(ellipse at 50% 34%, rgba(15, 23, 42, 0.34) 0%, rgba(15, 23, 42, 0.10) 55%, rgba(15, 23, 42, 0) 80%);
+    opacity: 0.85; pointer-events: none;
+  }
+
+  /* 3. BEHIND-PRESENTER FX CANVAS (z-index 10) */
+  #behind-fx-cvs {
+    position: absolute; left: 0; top: 0; width: 1080px; height: 1920px;
+    z-index: 10; pointer-events: none;
+  }
+
+  /* 4. 3D B-ROLL CARD DECK CONTAINER (Strictly clipped to Safe Zone: Y ∈ [252..852], X ∈ [55..1022]!) */
+  #card-deck-stage {
+    position: absolute; left: 0; top: 0; width: 1080px; height: 1920px;
+    z-index: 14; perspective: 1400px; pointer-events: none;
+    clip-path: inset(252px 55px 1066px 55px);
+  }
+  .broll-card {
+    position: absolute; left: 0; top: 0;
+    border-radius: 26px; overflow: hidden;
+    background: #0F172A;
+    border: 3.5px solid #FFFFFF;
+    box-shadow: 0 20px 46px rgba(0, 0, 0, 0.68), 0 0 22px rgba(56, 189, 248, 0.34);
+    transform-origin: center center;
+    display: none;
+  }
+  .broll-card img {
+    width: 100%; height: 100%; object-fit: cover; display: block;
+  }
+  .broll-card-grad {
+    position: absolute; left: 0; right: 0; top: 0; height: 56%;
+    background: linear-gradient(180deg, rgba(8,12,24,0.92) 0%, rgba(8,12,24,0.64) 56%, rgba(8,12,24,0) 100%);
+  }
+  .broll-card-botgrad {
+    position: absolute; left: 0; right: 0; bottom: 0; height: 36%;
+    background: linear-gradient(0deg, rgba(8,12,24,0.90) 0%, rgba(8,12,24,0) 100%);
+  }
+  .broll-badge {
+    position: absolute; left: 14px; top: 12px;
+    padding: 4px 12px; border-radius: 999px;
+    font-family: 'MontserratBlack', sans-serif;
+    font-size: 15px; font-weight: 900; letter-spacing: 0.3px;
+    color: #FFFFFF;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  }
+  .broll-title {
+    position: absolute; left: 14px; right: 14px; top: 46px;
+    font-family: 'MontserratBlack', sans-serif;
+    font-size: 25px; line-height: 1.14; font-weight: 900;
+    color: #FFFFFF; text-transform: uppercase; text-align: left;
+    text-shadow: 0 3px 10px rgba(0,0,0,0.98);
+  }
+  .broll-sub {
+    position: absolute; left: 14px; right: 14px; bottom: 12px;
+    font-family: 'BeVietnamExtraBold', sans-serif;
+    font-size: 17px; line-height: 1.2; font-weight: 800; color: #FDE047; text-align: left;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.95);
+  }
+  /* Right-side cards right-align their badge & text so Center Card / Hair never obscures a single letter! */
+  .broll-card.align-r .broll-badge { left: auto; right: 14px; }
+  .broll-card.align-r .broll-title,
+  .broll-card.align-r .broll-sub { text-align: right; }
+  /* Center hero card centers its badge & text */
+  .broll-card.align-c .broll-badge { left: 50%; transform: translateX(-50%); white-space: nowrap; }
+  .broll-card.align-c .broll-title,
+  .broll-card.align-c .broll-sub { text-align: center; font-size: 28px; }
+  .broll-card.align-c .broll-sub { font-size: 18.5px; }
+
+  /* 5. GIANT MULTI-EFFECT KEY TEXT BEHIND HEAD (Strictly Y >= 258px, X ∈ [64..1016] -> 100% Safe Zone!) */
+  #behind-keytext-wrap {
+    position: absolute; left: 64px; width: 952px; top: 260px;
+    z-index: 18; text-align: center; pointer-events: none;
+    perspective: 1100px; display: none;
+  }
+  .kt-kicker {
+    display: inline-block; padding: 6px 22px; border-radius: 999px;
+    font-family: 'MontserratBlack', sans-serif;
+    font-size: 22px; font-weight: 900; letter-spacing: 0.8px;
+    color: #09101D; background: linear-gradient(90deg, #FDE047, #FB923C);
+    box-shadow: 0 8px 22px rgba(245, 158, 11, 0.48);
+    margin-bottom: 8px;
+  }
+  .kt-line-wrap {
+    position: relative; display: block; line-height: 1.05;
+  }
+  .kt-back {
+    font-family: 'MontserratBlack', sans-serif;
+    font-size: 76px; font-weight: 900; text-transform: uppercase;
+    letter-spacing: -1px;
+    -webkit-text-stroke: 15px #070B16;
+    color: #070B16;
+    filter: drop-shadow(0 10px 22px rgba(0,0,0,0.85));
+  }
+  .kt-front {
+    position: absolute; left: 0; right: 0; top: 0;
+    font-family: 'MontserratBlack', sans-serif;
+    font-size: 76px; font-weight: 900; text-transform: uppercase;
+    letter-spacing: -1px;
+    background-size: 220% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* 6. RVM FOREGROUND PERSON CUTOUT (z-index 30) */
+  #fg-person-wrap {
+    position: absolute; left: 0; top: 0; width: 1080px; height: 1920px;
+    z-index: 30; pointer-events: none; will-change: transform;
+  }
+  #fg-person-img {
+    width: 1080px; height: 1920px; object-fit: cover; display: block;
+  }
+
+  /* 7. FOREGROUND SAFE-ZONE HOOK & SUBTITLES (Strictly X ∈ [62..878px] <= 884px, Y <= 1520px!) */
+  #hook-banner {
+    position: absolute; left: 62px; width: 816px; top: 1310px;
+    z-index: 44; border-radius: 32px; padding: 17px 24px;
+    background: linear-gradient(135deg, #FFE600 0%, #FFB800 100%);
+    border: 4px solid #FFFFFF;
+    box-shadow: 0 18px 42px rgba(0,0,0,0.68), 0 0 28px rgba(255, 214, 0, 0.45);
+    text-align: center; display: none; overflow: hidden;
+  }
+  #hook-banner .hb-top {
+    display: inline-block; background: #0F172A; color: #FDE047;
+    font-size: 21px; font-weight: 900; padding: 4px 16px; border-radius: 999px; margin-bottom: 6px;
+  }
+  #hook-banner .hb-main {
+    font-family: 'MontserratBlack', sans-serif;
+    font-size: 42px; line-height: 1.15; font-weight: 900; color: #090D16; text-transform: uppercase;
+  }
+
+  /* Solid High-Contrast Safe-Zone Subtitle Pill (alpha=0.96 -> 100% readable over dark pendant!) */
+  #sub-box {
+    position: absolute; left: 62px; width: 816px; top: 1348px;
+    z-index: 42; text-align: center; pointer-events: none;
+  }
+  .sub-pill {
+    display: inline-block; max-width: 816px;
+    background: #090E1E;
+    border: 3px solid #38BDF8;
+    border-radius: 26px;
+    padding: 14px 26px;
+    box-shadow: 0 14px 34px rgba(0,0,0,0.82);
+  }
+  .sub-word {
+    display: inline-block; margin: 0 9px;
+    font-family: 'BeVietnamExtraBold', sans-serif;
+    font-size: 42px; line-height: 1.22; font-weight: 800;
+    color: #FFFFFF;
+    text-shadow: 0 3px 8px rgba(0,0,0,0.95);
+  }
+  .sub-word.active {
+    color: #FFE600;
+    transform: translateY(-2px) scale(1.03);
+    text-shadow: 0 0 16px rgba(255, 230, 0, 0.65), 0 4px 8px rgba(0,0,0,0.98);
+  }
+  .sub-word.em {
+    color: #38BDF8;
+  }
+</style>
+</head>
+<body>
+<div id="stage">
+  <div id="ceiling-ext-wrap">
+    <img id="ceiling-ext-img" src="assets/wall_top_clean.jpg" />
+  </div>
+
+  <div id="bg-cam-wrap">
+    <img id="bg-cam-img" src="assets/bg_frames/bg_0001.jpg" />
+    <div id="desk-clean-patch"><img id="desk-patch-img" src="assets/bg_frames/bg_0001.jpg" /></div>
+  </div>
+  <div id="bg-anim-dim"></div>
+
+  <canvas id="behind-fx-cvs" width="1080" height="1920"></canvas>
+
+  <!-- 5 Large Crystal-Clear B-Roll Cards -->
+  <div id="card-deck-stage">
+    <div class="broll-card" id="bcard-0">
+      <img src="assets/broll_pk01.jpg" />
+      <div class="broll-card-grad"></div><div class="broll-card-botgrad"></div>
+      <span class="broll-badge" style="background:linear-gradient(90deg,#E11D48,#FB7185);">⚠ TRIỆU CHỨNG</span>
+      <div class="broll-title">NIÊM MẠC<br/>KÍCH ỨNG</div>
+      <div class="broll-sub">Dễ tái đi tái lại</div>
+    </div>
+    <div class="broll-card" id="bcard-1">
+      <img src="assets/broll_pk02.jpg" />
+      <div class="broll-card-grad"></div><div class="broll-card-botgrad"></div>
+      <span class="broll-badge" style="background:linear-gradient(90deg,#D97706,#F59E0B);">✕ THỦ PHẠM</span>
+      <div class="broll-title">DUNG DỊCH<br/>KIỀM MẠNH</div>
+      <div class="broll-sub">Phá vỡ độ ẩm tự nhiên</div>
+    </div>
+    <div class="broll-card" id="bcard-2">
+      <img src="assets/broll_pk03.jpg" />
+      <div class="broll-card-grad"></div><div class="broll-card-botgrad"></div>
+      <span class="broll-badge" style="background:linear-gradient(90deg,#0284C7,#38BDF8);">💧 ĐỘ pH CHUẨN</span>
+      <div class="broll-title">CÂN BẰNG<br/>pH 3.8 – 4.5</div>
+      <div class="broll-sub">Môi trường dịu êm</div>
+    </div>
+    <div class="broll-card" id="bcard-3">
+      <img src="assets/broll_pk04.jpg" />
+      <div class="broll-card-grad"></div><div class="broll-card-botgrad"></div>
+      <span class="broll-badge" style="background:linear-gradient(90deg,#7C3AED,#C084FC);">🛡 LỢI KHUẨN</span>
+      <div class="broll-title">HÀNG RÀO<br/>LỢI KHUẨN</div>
+      <div class="broll-sub">Bảo vệ tự nhiên</div>
+    </div>
+    <div class="broll-card" id="bcard-4">
+      <img src="assets/broll_pk05.jpg" />
+      <div class="broll-card-grad"></div><div class="broll-card-botgrad"></div>
+      <span class="broll-badge" style="background:linear-gradient(90deg,#059669,#34D399);">✓ CHĂM SÓC</span>
+      <div class="broll-title">ÊM THOÁNG<br/>MỖI NGÀY</div>
+      <div class="broll-sub">Dịu nhẹ chuẩn pH 4.5</div>
+    </div>
+  </div>
+
+  <!-- Giant Key Text Perched Behind Presenter's Hair Crown -->
+  <div id="behind-keytext-wrap">
+    <div class="kt-kicker" id="kt-kicker">⚠ CẢNH BÁO PHỤ KHOA</div>
+    <div class="kt-line-wrap" id="kt-l1-wrap">
+      <div class="kt-back" id="kt-l1-b">VẪN ẨM NGỨA</div>
+      <div class="kt-front" id="kt-l1-f">VẪN ẨM NGỨA</div>
+    </div>
+    <div class="kt-line-wrap" id="kt-l2-wrap">
+      <div class="kt-back" id="kt-l2-b">QUAY LẠI?</div>
+      <div class="kt-front" id="kt-l2-f">QUAY LẠI?</div>
+    </div>
+  </div>
+
+  <!-- RVM Foreground Cutout -->
+  <div id="fg-person-wrap">
+    <img id="fg-person-img" src="assets/fg_rgba/fg_0001.webp" />
+  </div>
+
+  <!-- 3s Hook Yellow Box -->
+  <div id="hook-banner">
+    <div class="hb-top">⚡ BÍ QUYẾT CHĂM SÓC PHỤ KHOA</div>
+    <div class="hb-main">VỆ SINH KỸ MÀ VẪN<br/>ẨM NGỨA QUAY LẠI?</div>
+  </div>
+
+  <!-- Dynamic Word-Synced Safe-Zone Subtitles -->
+  <div id="sub-box"></div>
+</div>
+
+<script src="assets/audio_data_inline.js"></script>
+<script src="assets/words_inline.js"></script>
+<script>
+(function () {
+  const meta = window.AUDIO_DATA || { fps: 60, total_frames: 1110, duration_sec: 18.5, head_top_y: 194 };
+  const FPS = meta.fps || 60;
+  const TOTAL_FRAMES = meta.total_frames || 1110;
+  const DUR = meta.duration_sec || (TOTAL_FRAMES / FPS);
+
+  function clamp01(v) { return v < 0 ? 0 : v > 1 ? 1 : v; }
+  function minJerk(u) { u = clamp01(u); return u * u * u * (10 + u * (-15 + 6 * u)); }
+  function easeOutBack(u) {
+    u = clamp01(u);
+    const c1 = 1.55, c3 = c1 + 1;
+    return 1 + c3 * Math.pow(u - 1, 3) + c1 * Math.pow(u - 1, 2);
+  }
+  function lerp(a, b, u) { return a + (b - a) * u; }
+
+  const words = (window.WORDS_DATA && window.WORDS_DATA.words) ? window.WORDS_DATA.words : [];
+  function findPhraseTime(kwList, fallbackRatio) {
+    for (const kw of kwList) {
+      const idx = words.findIndex(w => (w.n || w.w.toLowerCase()).includes(kw));
+      if (idx >= 0) return words[idx].s;
+    }
+    return DUR * fallbackRatio;
+  }
+
+  const tKi = Math.max(2.3, Math.min(DUR * 0.36, findPhraseTime(['thủ', 'kiềm'], 0.28)));
+  const tPh = Math.max(tKi + 2.0, Math.min(DUR * 0.52, findPhraseTime(['mất', 'ph'], 0.42)));
+  const tLk = Math.max(tPh + 1.8, Math.min(DUR * 0.66, findPhraseTime(['khi', 'hàng', 'lợi'], 0.52)));
+  const tDn = Math.max(tLk + 2.2, Math.min(DUR * 0.84, findPhraseTime(['hãy', 'dịu', 'chuẩn'], 0.72)));
+  const tEt = Math.max(tDn + 1.6, Math.min(DUR - 1.5, findPhraseTime(['êm', 'thoáng'], 0.87)));
+
+  // PUSH MODEL DOWN & PULL BACK UP SCHEDULE (Smooth & 100% Seamless with Pure Studio Wall Top!)
+  // - 0..2.25s (Hook): Eye-level +80px -> pushes down to +265px at 2.30s for Key Text #1 -> +355px at tKi for 3-Card Fan Deck!
+  // - tLk: Pulls model back up to +25px eye-level ("kéo mẫu lên lại")!
+  // - tDn: Pushes model down again to +350px ("đẩy mẫu xuống lần 2") for 3-Card Waterfall!
+  // - tEt..DUR: Pulls to +265px for Closing Key Text behind hair crown!
+  const PUSH_KF = [
+    { t: 0.00,       y: 90  },
+    { t: 1.95,       y: 90  },
+    { t: 2.38,       y: 268 },
+    { t: tKi - 0.30, y: 268 },
+    { t: tKi + 0.22, y: 355 },
+    { t: tPh - 0.22, y: 355 },
+    { t: tPh + 0.22, y: 270 },
+    { t: tLk - 0.18, y: 270 },
+    { t: tLk + 0.38, y: 28  },
+    { t: tDn - 0.32, y: 28  },
+    { t: tDn + 0.22, y: 350 },
+    { t: tEt - 0.20, y: 350 },
+    { t: tEt + 0.26, y: 268 },
+    { t: DUR + 0.50, y: 268 }
+  ];
+
+  function getPushY(t) {
+    for (let i = 0; i < PUSH_KF.length - 1; i++) {
+      const a = PUSH_KF[i], b = PUSH_KF[i + 1];
+      if (t >= a.t && t <= b.t) {
+        return lerp(a.y, b.y, minJerk((t - a.t) / Math.max(0.001, b.t - a.t)));
+      }
+    }
+    return 268;
+  }
+
+  const GRADIENTS = [
+    'linear-gradient(90deg, #FFF1F2 0%, #FDA4AF 25%, #FB7185 50%, #FDE047 78%, #FFFFFF 100%)',
+    'linear-gradient(90deg, #E0F2FE 0%, #38BDF8 28%, #818CF8 55%, #FDE047 82%, #FFFFFF 100%)',
+    'linear-gradient(90deg, #ECFDF5 0%, #34D399 28%, #FDE047 58%, #6EE7B7 84%, #FFFFFF 100%)'
+  ];
+
+  // RULE #10 COMPLIANT:
+  // 1) Zero Key Text during [0..2.28s] while Yellow Hook Banner is shown!
+  // 2) Whenever Key Text is shown, lower subtitles auto-hide (0% duplicate text!)
+  // 3) Final Key Text holds 100% CRISP (holdEnd: true -> blur = 0px, opacity = 1.0 right to EOF!)
+  const KEY_TEXT_BEATS = [
+    { s: 2.32, e: tKi - 0.14, kick: '⚠ CẢNH BÁO PHỤ KHOA',  l1: 'VẪN ẨM NGỨA', l2: 'QUAY LẠI?',    grad: GRADIENTS[0], mode: 'blurScale',    topY: 260, holdEnd: false },
+    { s: tPh,  e: tLk - 0.08, kick: '💧 ĐỘ ẨM SINH LÝ',     l1: 'MẤT ĐỘ pH',   l2: 'TỰ NHIÊN!',    grad: GRADIENTS[1], mode: 'flip3d',       topY: 260, holdEnd: false },
+    { s: tEt,  e: DUR + 0.50, kick: '✨ CHĂM SÓC CHUẨN pH', l1: 'ÊM THOÁNG',   l2: 'TỰ TIN NGAY!', grad: GRADIENTS[2], mode: 'splitCascade', topY: 260, holdEnd: true  }
+  ];
+
+  const subChunks = [];
+  if (words.length > 0) {
+    let cur = [];
+    for (let i = 0; i < words.length; i++) {
+      cur.push(words[i]);
+      const span = cur[cur.length - 1].e - cur[0].s;
+      const punct = /[?.!,;:]$/.test(words[i].w);
+      if (cur.length >= 5 || (cur.length >= 4 && (span >= 1.45 || punct)) || i === words.length - 1) {
+        subChunks.push({ s: cur[0].s, e: cur[cur.length - 1].e + 0.14, words: cur });
+        cur = [];
+      }
+    }
+  }
+
+  const bgWrap   = document.getElementById('bg-cam-wrap');
+  const bgImg    = document.getElementById('bg-cam-img');
+  const patchImg = document.getElementById('desk-patch-img');
+  const fgWrap   = document.getElementById('fg-person-wrap');
+  const fgImg    = document.getElementById('fg-person-img');
+  const ktWrap   = document.getElementById('behind-keytext-wrap');
+  const hookEl   = document.getElementById('hook-banner');
+  const subBox   = document.getElementById('sub-box');
+  const bCtx     = document.getElementById('behind-fx-cvs').getContext('2d');
+  const cardEls  = [0, 1, 2, 3, 4].map(i => document.getElementById(`bcard-${i}`));
+
+  function placeCard(idx, x, y, w, h, rotDeg, rotYDeg, scale, opacity, blurPx, zIdx, alignMode) {
+    const el = cardEls[idx];
+    if (opacity <= 0.02) { el.style.display = 'none'; return; }
+    el.className = 'broll-card' + (alignMode === 'r' ? ' align-r' : alignMode === 'c' ? ' align-c' : '');
+    el.style.display = 'block';
+    el.style.left = `${x.toFixed(1)}px`;
+    el.style.top  = `${y.toFixed(1)}px`;
+    el.style.width  = `${w.toFixed(1)}px`;
+    el.style.height = `${h.toFixed(1)}px`;
+    el.style.zIndex = String(zIdx || 14);
+    el.style.opacity = opacity.toFixed(3);
+    el.style.filter  = blurPx > 0.3 ? `blur(${blurPx.toFixed(1)}px)` : 'none';
+    el.style.transform = `perspective(1200px) rotate(${rotDeg.toFixed(2)}deg) rotateY(${rotYDeg.toFixed(2)}deg) scale(${scale.toFixed(3)})`;
+  }
+
+  function drawBehindStageFX(t, pushY) {
+    bCtx.clearRect(0, 0, 1080, 1920);
+    const cy = Math.max(540, 460 + pushY * 0.65);
+
+    bCtx.save();
+    for (let rIdx = 0; rIdx < 3; rIdx++) {
+      const rad = 240 + rIdx * 75 + Math.sin(t * 2.6 + rIdx) * 8;
+      bCtx.strokeStyle = rIdx === 0 ? 'rgba(2, 132, 199, 0.36)' : rIdx === 1 ? 'rgba(219, 39, 119, 0.28)' : 'rgba(217, 119, 6, 0.22)';
+      bCtx.lineWidth = 2.4;
+      bCtx.setLineDash(rIdx % 2 === 0 ? [16, 12] : [8, 14]);
+      bCtx.lineDashOffset = (rIdx % 2 === 0 ? 1 : -1) * t * 52;
+      bCtx.beginPath();
+      bCtx.arc(540, cy, rad, 0, Math.PI * 2);
+      bCtx.stroke();
+    }
+    bCtx.restore();
+
+    // Keep floating medical icons strictly inside Safe Zone X ∈ [75..865], Y ∈ [280..1240]!
+    for (let i = 0; i < 10; i++) {
+      const leftSide = i % 2 === 0;
+      const baseX = leftSide ? (82 + (i * 31) % 165) : (745 + (i * 29) % 115);
+      const yLoop = 1180 - ((t * (58 + (i % 4) * 15) + i * 95) % 860);
+      const xWave = baseX + Math.sin(t * 2.1 + i * 1.3) * 14;
+      const sc = 0.78 + (i % 3) * 0.18;
+
+      bCtx.save();
+      bCtx.translate(xWave, yLoop);
+      bCtx.scale(sc, sc);
+      if (i % 3 === 0) {
+        const g = bCtx.createRadialGradient(-3, -3, 2, 0, 0, 18);
+        g.addColorStop(0, 'rgba(224, 242, 254, 0.92)');
+        g.addColorStop(0.6, 'rgba(14, 165, 233, 0.65)');
+        g.addColorStop(1, 'rgba(2, 132, 199, 0)');
+        bCtx.fillStyle = g;
+        bCtx.beginPath();
+        bCtx.moveTo(0, -18); bCtx.bezierCurveTo(15, -2, 15, 15, 0, 17); bCtx.bezierCurveTo(-15, 15, -15, -2, 0, -18);
+        bCtx.fill();
+      } else if (i % 3 === 1) {
+        bCtx.rotate(Math.sin(t * 1.6 + i) * 0.5);
+        bCtx.fillStyle = 'rgba(251, 207, 232, 0.65)';
+        bCtx.strokeStyle = 'rgba(219, 39, 119, 0.85)';
+        bCtx.lineWidth = 2;
+        bCtx.beginPath(); bCtx.roundRect(-15, -7, 30, 14, 7); bCtx.fill(); bCtx.stroke();
+      } else {
+        bCtx.fillStyle = 'rgba(16, 185, 129, 0.55)';
+        bCtx.fillRect(-3.5, -12, 7, 24); bCtx.fillRect(-12, -3.5, 24, 7);
+      }
+      bCtx.restore();
+    }
+  }
+
+  window.renderFrame = async function (frameIdx) {
+    const f = Math.max(0, Math.min(TOTAL_FRAMES - 1, frameIdx));
+    const t = f / FPS;
+    const f1 = f + 1;
+
+    const bgSrc = `assets/bg_frames/bg_${String(f1).padStart(4, '0')}.jpg`;
+    const fgSrc = `assets/fg_rgba/fg_${String(f1).padStart(4, '0')}.webp`;
+    const waits = [];
+    if (!bgImg.src.endsWith(bgSrc)) {
+      waits.push(new Promise(res => { bgImg.onload = res; bgImg.onerror = res; bgImg.src = bgSrc; }));
+      patchImg.src = bgSrc;
+    }
+    if (!fgImg.src.endsWith(fgSrc)) {
+      waits.push(new Promise(res => { fgImg.onload = res; fgImg.onerror = res; fgImg.src = fgSrc; }));
+    }
+    if (waits.length) await Promise.all(waits);
+
+    const pushY = getPushY(t);
+    bgWrap.style.transform = `translateY(${pushY.toFixed(2)}px)`;
+    fgWrap.style.transform = `translateY(${pushY.toFixed(2)}px)`;
+
+    drawBehindStageFX(t, pushY);
+
+    // 2. SAFE-ZONE COMPLIANT 3D CARD DECK (All cards strictly inside X ∈ [64..1014], Y ∈ [258..835]!)
+    for (let c = 0; c < 5; c++) cardEls[c].style.display = 'none';
+
+    // BEAT 1 [0.25s .. 2.25s]: Dual Shoulder Cards rising Bottom-Up & Top-Down behind shoulders during Hook!
+    if (t >= 0.25 && t < 2.28) {
+      const dt = t - 0.25, rem = 2.28 - t;
+      const env = clamp01(dt / 0.24) * clamp01(rem / 0.20);
+      placeCard(0, 78,  lerp(840, 415, easeOutBack(dt / 0.44)), 286, 365, -6.5, 14, 0.96, env, (1 - clamp01(dt/0.22)) * 10, 14, 'l');
+      placeCard(1, 716, lerp(255, 415, easeOutBack(Math.max(0, dt - 0.10) / 0.44)), 286, 365, 6.5, -14, 0.96, env, (1 - clamp01((dt-0.10)/0.22)) * 10, 14, 'r');
+    }
+
+    // BEAT 2 [tKi - 0.12 .. tPh - 0.04]: 3-CARD FAN STACK ("lá bài xếp") DROPPING TOP-TO-BOTTOM ("trên xuống")!
+    // Left x=84..376 ('l'), Center x=362..718 ('c'), Right x=704..996 ('r' right-aligned -> 0% covered letters!)
+    if (t >= tKi - 0.12 && t < tPh - 0.02) {
+      const dt = t - (tKi - 0.12), rem = (tPh - 0.02) - t;
+      const outU = clamp01(rem / 0.20);
+      const u0 = easeOutBack(dt / 0.40);
+      placeCard(0, 84, lerp(256, 286, u0), 292, 378, lerp(-16, -8.5, minJerk(dt/0.40)), 14, lerp(0.84, 0.96, clamp01(dt/0.30)), clamp01(dt/0.20) * outU, (1 - clamp01(dt/0.20)) * 12, 13, 'l');
+      if (dt > 0.10) {
+        const u2 = easeOutBack((dt - 0.10) / 0.40);
+        placeCard(2, 704, lerp(256, 286, u2), 292, 378, lerp(16, 8.5, minJerk((dt-0.10)/0.40)), -14, lerp(0.84, 0.96, clamp01((dt-0.10)/0.30)), clamp01((dt-0.10)/0.20) * outU, (1 - clamp01((dt-0.10)/0.20)) * 12, 13, 'r');
+      }
+      if (dt > 0.20) {
+        const u1 = easeOutBack((dt - 0.20) / 0.42);
+        placeCard(1, 362, lerp(254, 264, u1), 356, 405, 0, 0, lerp(0.88, 1.0, clamp01((dt-0.20)/0.30)), clamp01((dt-0.20)/0.20) * outU, (1 - clamp01((dt-0.20)/0.20)) * 12, 15, 'c');
+      }
+    }
+
+    // BEAT 3 [tPh .. tLk - 0.05]: Counter-Scrolling Shoulder Deal (Left slides Top-Down, Right rises Bottom-Up) while Key Text #2 is at top!
+    if (t >= tPh && t < tLk - 0.05) {
+      const dt = t - tPh, rem = (tLk - 0.05) - t;
+      const env = clamp01(dt / 0.22) * clamp01(rem / 0.20);
+      const uIn = minJerk(dt / 0.44);
+      placeCard(1, 78,  lerp(280, 465, uIn), 282, 355, -6.5, 14, 0.95, env, (1 - clamp01(dt/0.20)) * 10, 14, 'l');
+      placeCard(2, 720, lerp(835, 465, uIn), 282, 355,  6.5, -14, 0.96, env, (1 - clamp01(dt/0.20)) * 10, 14, 'r');
+    }
+
+    // BEAT 4 [tLk .. tDn - 0.06]: MODEL PULLED BACK UP ("kéo lên lại") + DUAL SHOULDER CARDS RISING BOTTOM-TO-TOP ("dưới lên")!
+    if (t >= tLk && t < tDn - 0.05) {
+      const dt = t - tLk, rem = (tDn - 0.05) - t;
+      const env = clamp01(dt / 0.24) * clamp01(rem / 0.20);
+      const uL = easeOutBack(dt / 0.44);
+      const uR = easeOutBack(Math.max(0, dt - 0.12) / 0.44);
+      placeCard(0, 76,  lerp(840, 385, uL) + Math.sin(t * 2.5) * 10, 286, 368, -6.5, 15, 0.96, env, (1 - clamp01(dt/0.22)) * 10, 14, 'l');
+      placeCard(3, 718, lerp(840, 375, uR) - Math.sin(t * 2.5) * 10, 286, 368,  6.5, -15, 0.97, env, (1 - clamp01((dt-0.12)/0.22)) * 10, 15, 'r');
+    }
+
+    // BEAT 5 [tDn - 0.05 .. tEt - 0.04]: MODEL PUSHED DOWN #2 + 3-CARD WATERFALL SHUFFLE (Bottom-Up + Top-Down, 0% clipped letters!)
+    if (t >= tDn - 0.05 && t < tEt - 0.02) {
+      const dt = t - (tDn - 0.05), rem = (tEt - 0.02) - t;
+      const outU = clamp01(rem / 0.20);
+      const uA = easeOutBack(dt / 0.42);
+      const uB = easeOutBack(Math.max(0, dt - 0.12) / 0.42);
+      const uC = easeOutBack(Math.max(0, dt - 0.22) / 0.44);
+      placeCard(3, 84,  lerp(835, 286, uA), 292, 378, -8.5, 14, 0.96, clamp01(dt/0.20) * outU, (1 - clamp01(dt/0.20)) * 10, 13, 'l');
+      placeCard(4, 704, lerp(256, 286, uB), 292, 378,  8.5, -14, 0.96, clamp01((dt-0.12)/0.20) * outU, (1 - clamp01((dt-0.12)/0.20)) * 10, 13, 'r');
+      placeCard(2, 362, lerp(820, 264, uC), 356, 405,  0,    0,  1.00, clamp01((dt-0.22)/0.20) * outU, (1 - clamp01((dt-0.22)/0.20)) * 10, 15, 'c');
+    }
+
+    // BEAT 6 [tEt .. DUR]: CLOSING KEY TEXT ABOVE HEAD + DUAL RADIANT SHOULDER CARDS HELD CRISP TO END!
+    if (t >= tEt) {
+      const dt = t - tEt;
+      const u = easeOutBack(dt / 0.44);
+      const inEnv = clamp01(dt / 0.24);
+      placeCard(3, 78,  lerp(275, 470, u), 282, 352, -6.5, 14, 0.95, inEnv, (1 - inEnv) * 10, 13, 'l');
+      placeCard(4, 720, lerp(835, 470, u), 282, 352,  6.5, -14, 0.96, inEnv, (1 - inEnv) * 10, 14, 'r');
+    }
+
+    // 3. GIANT MULTI-EFFECT KEY TEXT BEHIND HEAD
+    let activeKT = null;
+    for (const kb of KEY_TEXT_BEATS) {
+      if (t >= kb.s && t <= kb.e) { activeKT = kb; break; }
+    }
+
+    if (activeKT) {
+      const inT  = (t - activeKT.s) / 0.26;
+      const outT = activeKT.holdEnd ? 1.0 : ((activeKT.e - t) / 0.20);
+      const env  = clamp01(inT) * clamp01(outT);
+      ktWrap.style.display = 'block';
+      ktWrap.style.top = `${activeKT.topY}px`;
+      ktWrap.style.opacity = env.toFixed(3);
+
+      document.getElementById('kt-kicker').textContent = activeKT.kick;
+      for (const id of ['kt-l1-b', 'kt-l1-f']) document.getElementById(id).textContent = activeKT.l1;
+      for (const id of ['kt-l2-b', 'kt-l2-f']) document.getElementById(id).textContent = activeKT.l2;
+
+      const sweepPos = ((t * 95) % 220).toFixed(1);
+      for (const id of ['kt-l1-f', 'kt-l2-f']) {
+        const el = document.getElementById(id);
+        el.style.backgroundImage = activeKT.grad;
+        el.style.backgroundPosition = `${sweepPos}% 50%`;
+      }
+
+      const l1w = document.getElementById('kt-l1-wrap');
+      const l2w = document.getElementById('kt-l2-wrap');
+      const uIn1 = easeOutBack(inT);
+      const uIn2 = easeOutBack(Math.max(0, (t - activeKT.s - 0.07) / 0.26));
+      const blurVal = (1 - env) * 12;
+      ktWrap.style.filter = blurVal > 0.25 ? `blur(${blurVal.toFixed(1)}px)` : 'none';
+
+      if (activeKT.mode === 'blurScale') {
+        l1w.style.transform = `scale(${lerp(0.82, 1.0, uIn1).toFixed(3)}) translateY(${lerp(24, 0, uIn1).toFixed(1)}px)`;
+        l2w.style.transform = `scale(${lerp(0.82, 1.0, uIn2).toFixed(3)}) translateY(${lerp(30, 0, uIn2).toFixed(1)}px)`;
+      } else if (activeKT.mode === 'flip3d') {
+        l1w.style.transform = `rotateX(${lerp(-76, 0, minJerk(inT)).toFixed(1)}deg) scale(${lerp(0.88, 1.0, uIn1).toFixed(3)})`;
+        l2w.style.transform = `rotateX(${lerp(76, 0, minJerk((t - activeKT.s - 0.07)/0.26)).toFixed(1)}deg) scale(${lerp(0.88, 1.0, uIn2).toFixed(3)})`;
+      } else {
+        l1w.style.transform = `translateX(${lerp(-85, 0, uIn1).toFixed(1)}px) scale(${lerp(0.88, 1.0, uIn1).toFixed(3)})`;
+        l2w.style.transform = `translateX(${lerp(85, 0, uIn2).toFixed(1)}px) scale(${lerp(0.88, 1.0, uIn2).toFixed(3)})`;
+      }
+    } else {
+      ktWrap.style.display = 'none';
+    }
+
+    // 4. HOOK BANNER & RULE #10 SUBTITLE AUTO-PAUSE (0% overlap / duplicate with Key Text!)
+    if (t < 2.26) {
+      const hEnv = clamp01(t / 0.20) * clamp01((2.26 - t) / 0.18);
+      hookEl.style.display = 'block';
+      hookEl.style.opacity = hEnv.toFixed(3);
+      hookEl.style.transform = `scale(${lerp(0.88, 1.0, easeOutBack(t / 0.26)).toFixed(3)})`;
+      hookEl.style.filter = hEnv < 0.98 ? `blur(${((1 - hEnv) * 10).toFixed(1)}px)` : 'none';
+      subBox.style.display = 'none';
+    } else if (activeKT) {
+      // RULE #10: Auto-hide lower subtitle whenever Top Behind-Head Key Text is visible!
+      hookEl.style.display = 'none';
+      subBox.style.display = 'none';
+    } else {
+      hookEl.style.display = 'none';
+      const chunk = subChunks.find(c => t >= c.s - 0.04 && t <= c.e);
+      if (chunk) {
+        const cEnv = clamp01((t - (chunk.s - 0.04)) / 0.10) * clamp01((chunk.e - t) / 0.10);
+        subBox.style.display = 'block';
+        subBox.style.opacity = Math.max(0.92, cEnv).toFixed(3);
+        subBox.style.transform = `translateY(${lerp(10, 0, minJerk((t - chunk.s + 0.04) / 0.14)).toFixed(1)}px)`;
+        const htmlWords = chunk.words.map(w => {
+          const isCur = t >= w.s - 0.03 && t <= w.e + 0.08;
+          const isEm  = /(ngứa|kiềm|ph|4\.5|khuẩn|kích|dịu|thoáng)/i.test(w.w);
+          const cls = 'sub-word' + (isCur ? ' active' : (isEm ? ' em' : ''));
+          return `<span class="${cls}">${w.w}</span>`;
+        }).join('');
+        subBox.innerHTML = `<div class="sub-pill">${htmlWords}</div>`;
+      } else {
+        subBox.style.display = 'none';
+      }
+    }
+  };
+})();
+</script>
+</body>
+</html>

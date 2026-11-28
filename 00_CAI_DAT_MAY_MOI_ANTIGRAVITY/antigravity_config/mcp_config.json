@@ -1,0 +1,30 @@
+﻿{
+  "mcpServers": {
+    "premiere-pro": {
+      "command": "C:\\Program Files\\nodejs\\node.exe",
+      "args": [
+        "C:\\\\Users\\\\001\\\\AppData\\\\Roaming\\npm\\node_modules\\premiere-pro-mcp\\dist\\index.js"
+      ],
+      "env": {
+        "PREMIERE_MCP_TOOL_PACKS": "essential,captions,delivery,inspection",
+        "PREMIERE_MCP_SCHEMA_PROFILE": "compact"
+      }
+    },
+    "photoshop": {
+      "command": "C:\\Program Files\\nodejs\\node.exe",
+      "args": [
+        "C:\\\\Users\\\\001\\\\AppData\\\\Roaming\\npm\\node_modules\\@immersive-media-technologies\\photoshop-mcp-imt\\dist\\index.js"
+      ],
+      "env": {
+        "PS_MCP_FACADE": "1",
+        "PS_MCP_UXP": "1",
+        "PHOTOSHOP_PATH": "C:\\Program Files\\Adobe\\Adobe Photoshop 2027\\Photoshop.exe"
+      }
+    }
+  }
+}
+
+
+
+
+

@@ -1,0 +1,96 @@
+{
+  "accounts": [
+    {
+      "id": "a1",
+      "name": "Isolated u5",
+      "profile": "MAIN_BRAVE",
+      "userPrefix": "u/3/",
+      "projectId": "b4be63e7-f63c-468d-827e-eacd8db91dfa",
+      "preferredEmail": "",
+      "agentOwnedProjects": [],
+      "prefixCredits": {
+        "u/0/": {
+          "credits": 0,
+          "updatedAt": 1795858496466,
+          "exhaustedUntil": 1795872896466
+        },
+        "u/1/": {
+          "credits": 0,
+          "email": "capcutvid274@gmail.com",
+          "updatedAt": 1795858429583,
+          "exhaustedUntil": 1795872829583
+        },
+        "u/2/": {
+          "credits": 2,
+          "updatedAt": 1795858504227,
+          "exhaustedUntil": 1795872904227,
+          "email": "lmtcvn002@gmail.com"
+        },
+        "u/3/": {
+          "credits": 20,
+          "updatedAt": 1795858789204,
+          "email": "capcutvid254@gmail.com"
+        },
+        "u/4/": {
+          "credits": 50,
+          "email": "capcutvid259@gmail.com",
+          "updatedAt": 1795857929499
+        },
+        "u/5/": {
+          "credits": 9,
+          "updatedAt": 1795857929499,
+          "exhaustedUntil": 1795901129499
+        },
+        "u/6/": {
+          "credits": 50,
+          "email": "capcutvid269@gmail.com",
+          "updatedAt": 1795857929499
+        },
+        "u/7/": {
+          "credits": 0,
+          "updatedAt": 1795857929499,
+          "exhaustedUntil": 1795901129499
+        },
+        "u/8/": {
+          "credits": 0,
+          "updatedAt": 1795857929499,
+          "exhaustedUntil": 1795901129499
+        }
+      },
+      "workerTargets": [
+        {
+          "prefix": "u/1/",
+          "projectId": "45d5c476-0a65-4694-b20a-85d43de6e892",
+          "email": "capcutvid274@gmail.com"
+        },
+        {
+          "prefix": "u/1/",
+          "projectId": "038395cb-9119-4059-b304-87e6cfb52df9",
+          "email": "capcutvid274@gmail.com"
+        },
+        {
+          "prefix": "u/3/",
+          "projectId": "b4be63e7-f63c-468d-827e-eacd8db91dfa",
+          "email": "capcutvid254@gmail.com"
+        },
+        {
+          "prefix": "u/3/",
+          "projectId": "da35d273-f4f0-448b-8ab7-fd8c9fb38c30",
+          "email": "capcutvid254@gmail.com"
+        }
+      ],
+      "agentOwnedProjectIds": [
+        "45d5c476-0a65-4694-b20a-85d43de6e892",
+        "038395cb-9119-4059-b304-87e6cfb52df9",
+        "b4be63e7-f63c-468d-827e-eacd8db91dfa",
+        "da35d273-f4f0-448b-8ab7-fd8c9fb38c30"
+      ],
+      "email": "capcutvid254@gmail.com"
+    }
+  ],
+  "active": "a1",
+  "minCredits": {
+    "video": 10,
+    "image": 5
+  }
+}

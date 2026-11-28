@@ -1,0 +1,110 @@
+{
+  "inspected_at": "2026-11-28T19:13:29.117264",
+  "video_path": "C:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Ngay_05_2811_Chi_Hang_SP_CTKM\\V05_AV_Protein\\03_Final\\261128 AVPM Chị Hằng AV Protein bữa sáng đạm sạch mua 5 tặng 1 final.mp4",
+  "fingerprint": {
+    "file_size": 27308126,
+    "sha256_head_tail": "cc144ee47639424bdfd75a7b3fda217212aebc5d42c7ae67e36522b957020b03"
+  },
+  "streams": {
+    "width": 1080,
+    "height": 1920,
+    "v_codec": "h264",
+    "a_codec": "aac",
+    "fps": 24.0,
+    "format_dur": 25.792,
+    "video_dur": 25.75,
+    "audio_dur": 25.75,
+    "av_sync_delta": 0.0
+  },
+  "letterbox": {
+    "top_black_px": 0,
+    "bottom_black_px": 0
+  },
+  "integrated_lufs": -14.7,
+  "cut_count": 10,
+  "cuts": [
+    {
+      "index": 1,
+      "start": 0.0,
+      "end": 2.5,
+      "dur": 2.5,
+      "label": "s1_mcu_hook"
+    },
+    {
+      "index": 2,
+      "start": 2.5,
+      "end": 5.2,
+      "dur": 2.7,
+      "label": "s1_ws_sinh_hoat"
+    },
+    {
+      "index": 3,
+      "start": 5.2,
+      "end": 8.75,
+      "dur": 3.55,
+      "label": "s1_mcu_cam_hop"
+    },
+    {
+      "index": 4,
+      "start": 8.75,
+      "end": 10.3,
+      "dur": 1.55,
+      "label": "s2_mcu_gioi_thieu"
+    },
+    {
+      "index": 5,
+      "start": 10.3,
+      "end": 12.41,
+      "dur": 2.11,
+      "label": "s2_broll_xe_do_bot"
+    },
+    {
+      "index": 6,
+      "start": 12.41,
+      "end": 14.52,
+      "dur": 2.11,
+      "label": "s2_broll_rot_nuoc_khuay"
+    },
+    {
+      "index": 7,
+      "start": 14.52,
+      "end": 16.33,
+      "dur": 1.81,
+      "label": "s2_uong_thuong_thuc"
+    },
+    {
+      "index": 8,
+      "start": 16.33,
+      "end": 19.13,
+      "dur": 2.8,
+      "label": "s3_mls_ctkm_open"
+    },
+    {
+      "index": 9,
+      "start": 19.13,
+      "end": 21.63,
+      "dur": 2.5,
+      "label": "s3_cu_bo_hop_qua"
+    },
+    {
+      "index": 10,
+      "start": 21.63,
+      "end": 25.75,
+      "dur": 4.12,
+      "label": "s3_mls_ctkm_cta"
+    }
+  ],
+  "sheets": {
+    "all_cuts_full": "C:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Ngay_05_2811_Chi_Hang_SP_CTKM\\V05_AV_Protein\\04_QC_Gate\\QC_FINAL_ALL_CUTS_FULL.jpg",
+    "all_cuts_zoom": "C:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Ngay_05_2811_Chi_Hang_SP_CTKM\\V05_AV_Protein\\04_QC_Gate\\QC_FINAL_ALL_CUTS_ZOOM.jpg"
+  },
+  "audio_audit": {
+    "word_count": 83,
+    "eof_tail_sec": 0.712,
+    "eof_cutoff": false,
+    "repetitions": [],
+    "transcript": "Sáng vội đi làm, chị em ngại ăn đồ khô, mà bỏ bữa thì 10 giờ đã đói cồn cào. Hằng luôn ưu tiên nạp đủ đạm sạch từ sáng. Một khẩu phần AV protein có 22 gram đạm thực vật dễ tiêu hóa, thêm chất sơ và lợi khuẩn, giúp nhẹ bụng suốt buổi sáng. Đến hết ngày 30 tháng này, chị em lấy 5 hộp đạm AV protein được tặng ngay một hộp Bozomi 520 .000. Nhắn chữ đạm sạch nhé!"
+  },
+  "machine_failures": [],
+  "machine_status": "READY_FOR_VISUAL_SIGN_OFF"
+}

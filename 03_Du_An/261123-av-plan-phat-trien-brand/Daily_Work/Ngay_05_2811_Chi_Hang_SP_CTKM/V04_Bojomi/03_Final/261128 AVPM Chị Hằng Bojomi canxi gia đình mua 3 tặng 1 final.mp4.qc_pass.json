@@ -1,0 +1,13 @@
+{
+  "signed_at": "2026-11-28T18:46:45.045769",
+  "certified_path": "C:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Ngay_05_2811_Chi_Hang_SP_CTKM\\V04_Bojomi\\03_Final\\261128 AVPM Chị Hằng Bojomi canxi gia đình mua 3 tặng 1 final.mp4",
+  "verdict": "PASS",
+  "auditor_verified": true,
+  "auditor": "video-qc-auditor:0f9b4ca0-0f72-469c-84ef-509c59ee9d87",
+  "notes": "Đã kiểm duyệt độc lập 100% 7 cú cắt (#01..#07) trên FULL/ZOOM sheets, đối chiếu SKU gốc và nghe trọn vẹn MP4 (24.25s, SyncDelta=0.02s, -14.8 LUFS): Hộp và gói stick BOJOMI 20g chuẩn thiết kế thật 100% ở mọi cảnh, ô #07 đủ chính xác tháp 3 hộp mua bên trái + 1 hộp tặng 520K bên phải = 4 hộp thật (0% hộp giả, 0% watermark); đầy đủ 4 bước pha chế nhịp nhanh (1.53s-1.75s: xé gói & đổ bột, rót nước ấm, khuấy tan mịn, ly gốm xanh ấm bên hộp thật); Chị Hằng đồng nhất Áo Polo Kem viền xanh, 3 thẻ chữ chuẩn vùng an toàn 9:16, BGM Voice-Pocket êm sạch, thoại đủ 79 từ (0% lặp/đứt chữ).",
+  "override_reason": "",
+  "cut_count": 7,
+  "integrated_lufs": -14.8,
+  "file_size": 26427624,
+  "sha256_head_tail": "f5a3120f65a77435ff0ac4f59c5f4ed501148f73ab7aa804b257cff6be9fcabe"
+}

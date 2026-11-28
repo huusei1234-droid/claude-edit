@@ -1,0 +1,13 @@
+{
+  "signed_at": "2026-11-28T16:50:59.363376",
+  "certified_path": "C:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Ngay_05_2811_Chi_Hang_SP_CTKM\\V01_Curcumilk_Sample\\03_Final\\261128 AVPM Chị Hằng Curcumilk Phyto mua 4 tặng 1 final.mp4",
+  "verdict": "PASS",
+  "auditor_verified": true,
+  "auditor": "video-qc-auditor:0f9b4ca0-0f72-469c-84ef-509c59ee9d87",
+  "notes": "Đã kiểm duyệt độc lập bản lồng nhạc nền MP4 (32.33s, SyncDelta=0.0s, -14.7 LUFS) cùng FULL/ZOOM sheets (7 cú cắt #01..#07): Nhạc nền bgm_fresh_wellness_tvc phối EQ Voice-Pocket & Sidechain Ducking êm sạch dưới thoại, fade-out mượt cuối file (tail 0.563s), giọng Chị Hằng rõ nét đủ 108/108 từ (0% lặp từ, 0% đứt chữ); giữ nguyên 100% bao bì hộp & gói stick thật ANVUONG CURCUMILK PHYTO, đầy đủ 4 bước pha chế nhịp nhanh, cụm 4+1 hộp ưu đãi 650K đến 30/11 và vùng an toàn 9:16.",
+  "override_reason": "",
+  "cut_count": 7,
+  "integrated_lufs": -14.7,
+  "file_size": 32754880,
+  "sha256_head_tail": "ecd6d8793935ff1a4238156b5cad37bb328e75d9b4889f03e43dd988c76b215a"
+}

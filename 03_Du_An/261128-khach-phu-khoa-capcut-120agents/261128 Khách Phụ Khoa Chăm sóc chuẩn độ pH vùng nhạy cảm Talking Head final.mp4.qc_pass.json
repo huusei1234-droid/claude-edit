@@ -1,0 +1,13 @@
+{
+  "signed_at": "2026-11-28T10:06:47.691998",
+  "certified_path": "C:\\AI\\full studio\\projects\\khach_phu_khoa_capcut_120agents_261128\\261128 Khách Phụ Khoa Chăm sóc chuẩn độ pH vùng nhạy cảm Talking Head final.mp4",
+  "verdict": "PASS",
+  "auditor_verified": true,
+  "auditor": "video-qc-auditor",
+  "notes": "PASS 100% ca 5 tieu chi Talking-Head Phu Khoa (1080x1920 @ 60fps, 18.46s, -14.0 LUFS, SyncDelta=0.01s): (A)&(B) Khop 100% guong mat khach_ref.jpg, 0% hop thuoc/chai lo gia tren ban va trong 5 la bai B-Roll; (C) Tuong tren Push-Y lien mach sach 100%, can le trai/giua/phai doc ro 100% chu tren 3 la bai, chong trung Key Text x Phu de theo Rule #10, ket net cang blur=0px cuoi bang; (D)&(E) 100% nam gon trong vung trang an toan TikTok/Reels 9:16, chu chuan 'pH 4.5' & 'nhe!', 0% lap tu, 0% dut chu.",
+  "override_reason": "",
+  "cut_count": 1,
+  "integrated_lufs": -14.0,
+  "file_size": 54783747,
+  "sha256_head_tail": "83b0601ea9a4182dd57feb510275532354a63b00fd21d20bdf6bc865c5d46c21"
+}

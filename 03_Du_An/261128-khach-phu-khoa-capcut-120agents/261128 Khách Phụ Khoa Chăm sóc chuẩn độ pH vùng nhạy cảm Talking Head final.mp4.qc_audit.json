@@ -1,0 +1,47 @@
+{
+  "inspected_at": "2026-11-28T09:58:55.551185",
+  "video_path": "C:\\AI\\full studio\\projects\\khach_phu_khoa_capcut_120agents_261128\\261128 Khách Phụ Khoa Chăm sóc chuẩn độ pH vùng nhạy cảm Talking Head final.mp4",
+  "fingerprint": {
+    "file_size": 54783747,
+    "sha256_head_tail": "83b0601ea9a4182dd57feb510275532354a63b00fd21d20bdf6bc865c5d46c21"
+  },
+  "streams": {
+    "width": 1080,
+    "height": 1920,
+    "v_codec": "h264",
+    "a_codec": "aac",
+    "fps": 60.0,
+    "format_dur": 18.46,
+    "video_dur": 18.45,
+    "audio_dur": 18.46,
+    "av_sync_delta": 0.01
+  },
+  "letterbox": {
+    "top_black_px": 0,
+    "bottom_black_px": 0
+  },
+  "integrated_lufs": -14.0,
+  "cut_count": 1,
+  "cuts": [
+    {
+      "index": 1,
+      "start": 0.0,
+      "end": 18.46,
+      "dur": 18.46,
+      "label": "cut_01"
+    }
+  ],
+  "sheets": {
+    "all_cuts_full": "C:\\AI\\full studio\\projects\\khach_phu_khoa_capcut_120agents_261128\\qc_v1\\QC_FINAL_ALL_CUTS_FULL.jpg",
+    "all_cuts_zoom": "C:\\AI\\full studio\\projects\\khach_phu_khoa_capcut_120agents_261128\\qc_v1\\QC_FINAL_ALL_CUTS_ZOOM.jpg"
+  },
+  "audio_audit": {
+    "word_count": 61,
+    "eof_tail_sec": 0.54,
+    "eof_cutoff": false,
+    "repetitions": [],
+    "transcript": "Chị em vệ sinh kỹ mỗi ngày mà vùng nhạy cảm vẫn ẩm ngứa quay lại. Thủ phạm chính là dung dịch kiềm mạnh, làm mất độ pH tự nhiên. Khi hàng rào lợi khuẩn suy yếu, niêm mạc rất dễ kích ứng. Chị em hãy làm sạch dịu nhẹ, chuẩn pH 4 .5 để luôn êm thoáng tự tin nhé."
+  },
+  "machine_failures": [],
+  "machine_status": "READY_FOR_VISUAL_SIGN_OFF"
+}

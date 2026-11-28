@@ -1,0 +1,57 @@
+{
+  "channel_id": "NHABO",
+  "channel_title": "Gia Đình Bé Bơ — Hiếu × Trang × Bé Bơ (AI Family Sitcom × Shopee Affiliate)",
+  "updated_at": "2026-11-28",
+  "version": "V5_HIEU_TRANG_BEBO_SCALE_LOCKED",
+  "beauty_standard": "Bố Hiếu (G05_02) + Mẹ Trang (100% đầu Trang G05_03 gắn trên dáng đồng hồ cát & set tweed Bảo Châu) + Bé Bơ (G01_06, khóa kích thước nhỏ nhắn ~55% chiều cao bố đúng bằng trang mẫu Linhmitdaily) • 100% Đồ Bán Chạy Shopee",
+  "scale_lock_rule": "Trong khung dọc 9:16 (1080x1920), chừa ~20% khoảng không phía trên đầu bố mẹ; đỉnh búi tóc/nơ của Bé Bơ chỉ cao ngang túi quần hông của Bố Hiếu và gấu chân váy ngắn của Mẹ Trang (~55% chiều cao bố).",
+  "total_files": 4,
+  "items": [
+    {
+      "code": "G01_01a",
+      "branch": "G01",
+      "name": "Hiếu",
+      "age": 28,
+      "role": "Chồng Trang / Bố Bé Bơ",
+      "relation": "Chồng Trang (G01_02a); bố ruột Bé Bơ (G01_03a) — kế thừa nhân vật Hiếu (G05_02)",
+      "personality": "Ông bố trẻ điển trai, phong thái chững chạc ấm áp, cười hiền cưng chiều vợ Trang & con gái Bé Bơ hết mực",
+      "file": "G01_01a - Hiếu (Bố Bé Bơ - Chồng Trang) [Áo polo dệt kim đen khóa kéo bạc quần trắng].png",
+      "shopee_item": "Áo Polo Nam Dệt Kim Cao Cấp Khóa Kéo – Áo Thun Nam Cổ Bẻ Form Slim Fit Hàn Quốc",
+      "outfit_desc": "Áo polo dệt kim màu đen cổ bẻ khóa kéo bạc (half-zip) form vừa vặn + quần âu trắng kem lịch lãm & giày loafers đen",
+      "shopee_short_url": "https://shopee.vn/product/47553988/54109767470",
+      "shopee_full_url": "https://shopee.vn/Áo-Polo-Nam-Dệt-Kim-Cao-Cấp-Khóa-Kéo-–-Áo-Thun-Nam-Cổ-Bẻ-Form-Slim-Fit-Co-Giãn-Thoáng-Mát-Phong-Cách-Hàn-Quốc-i.47553988.54109767470",
+      "backup_url": "https://shopee.vn/product/1219175223/50507459198"
+    },
+    {
+      "code": "G01_02a",
+      "branch": "G01",
+      "name": "Trang",
+      "age": 25,
+      "role": "Vợ Hiếu / Mẹ Bé Bơ",
+      "relation": "Vợ Hiếu (G01_01a); mẹ ruột Bé Bơ (G01_03a) — đầu & gương mặt Trang (G05_03) kết hợp dáng đồng hồ cát & set đồ của Bảo Châu",
+      "personality": "Mẹ trẻ baby-face xinh xắn môi mọng nũng nịu (100% đầu & gương mặt Trang vợ Hiếu + 100% vóc dáng đồng hồ cát quyến rũ của Bảo Châu)",
+      "file": "G01_02a - Trang (Mẹ Bé Bơ - Vợ Hiếu dáng đồng hồ cát) [Set khoác lửng croptop chân váy chữ A kèm đai].png",
+      "shopee_item": "Set Bộ Áo Khoác Lửng Dáng Croptop Chân Váy Ngắn Chữ A Cạp Cao Kèm Đai",
+      "outfit_desc": "Set dạ tweed kem be gồm áo khoác lửng croptop mặc ngoài áo trắng ôm + chân váy ngắn chữ A cạp cao kèm đai đen khóa vàng, túi đen trần trám",
+      "shopee_short_url": "https://shopee.vn/product/24427214/54400357484",
+      "shopee_full_url": "https://shopee.vn/Set-Bộ-Áo-Khoác-Lửng-Dáng-Croptop-Chân-Váy-Ngắn-Chữ-A-Cạp-Cao-Kèm-Đai-i.24427214.54400357484",
+      "backup_url": "https://shopee.vn/product/1826181929/49619043265"
+    },
+    {
+      "code": "G01_03a",
+      "branch": "G01",
+      "name": "Bé Bơ",
+      "age": 2,
+      "role": "Con gái cưng của Hiếu & Trang",
+      "relation": "Con gái ruột Hiếu (G01_01a) & Trang (G01_02a) — kế thừa nhân vật Bé Bơ (G01_06), khóa kích thước nhỏ nhắn chuẩn trang mẫu (~55% chiều cao bố)",
+      "personality": "Em bé hạt tiêu bụ bẫm má lúm đồng tiền 2 bên, đỉnh búi tóc ngang đúng túi quần bố & gấu váy mẹ chuẩn 100% trang mẫu, chuyên bắt chước mẹ khoanh tay chu môi dỗi",
+      "file": "G01_03a - Bé Bơ (Con gái cưng của Hiếu & Trang) [Váy thủy thủ trắng phối cổ xanh xòe tầng].png",
+      "shopee_item": "Váy thủy thủ bé gái 1–7 tuổi trắng phối cổ xanh – Váy xòe tầng mát mẻ dễ thương",
+      "outfit_desc": "Set váy tiểu thư bé gái áo trắng phối cổ thủy thủ xanh dương thắt nơ + chân váy xòe tầng trắng kem, nơ tóc ren kem & túi da nâu mini",
+      "shopee_short_url": "https://shopee.vn/product/999144046/29642987755",
+      "shopee_full_url": "https://shopee.vn/Váy-thủy-thủ-bé-gái-1–7-tuổi-trắng-phối-cổ-xanh-–-Váy-xòe-tầng-mát-mẻ-dễ-thương-i.999144046.29642987755",
+      "backup_url": "https://shopee.vn/product/1244875660/28527258760"
+    }
+  ],
+  "family_master_9x16": "G01_04a - Cảnh Khóa Tỷ Lệ Chuẩn Trang Mẫu Hiếu Trang Bé Bơ (9x16).png"
+}

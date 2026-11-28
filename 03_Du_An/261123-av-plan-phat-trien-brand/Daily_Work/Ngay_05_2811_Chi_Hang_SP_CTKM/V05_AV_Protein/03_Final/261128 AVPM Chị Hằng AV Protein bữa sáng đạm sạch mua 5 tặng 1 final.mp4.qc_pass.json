@@ -1,0 +1,13 @@
+{
+  "signed_at": "2026-11-28T19:20:37.891609",
+  "certified_path": "C:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Ngay_05_2811_Chi_Hang_SP_CTKM\\V05_AV_Protein\\03_Final\\261128 AVPM Chị Hằng AV Protein bữa sáng đạm sạch mua 5 tặng 1 final.mp4",
+  "verdict": "PASS",
+  "auditor_verified": true,
+  "auditor": "video-qc-auditor:5b9be55d-95e1-49c5-b890-749195e6e611",
+  "notes": "PASS 100% (Vong 4 Final - 10 cuts #01..#10, 25.792s, -14.7 LUFS, SyncDelta=0.0s): (A) Bao bi AV PROTEIN & BOJOMI khop 100% SKU goc, #08-#10 trung bay du chinh xac 5 hop AV Protein (3 duoi + 2 tren) + 1 hop tang Bojomi tren ban da Carrara sach bong 100%, the thanh phan #05-#06 chuan 22g Dam thuc vat + 1.63g L-Leucine + Chat xo Inulin & Loi khuan; (B) Dong nhat trang phuc ao linen xanh mint, 0% ao den lot goc, 0% dao cu sai; (C) Du 4 buoc pha che vat ly: xe goi & do dong bot dam min (#05) -> nghieng binh rot nuoc that & khuay sanh min (#06) -> Chi Hang nang ly sua dam uong thuong thuc that (#07); (D) Da dang co canh WS (#02 buoi sang xem dong ho trong bep), MLS, MCU, CU (#09 can bo qua nang la xanh), nhip cat nhanh 1.55s-4.12s; (E) Safe zone 9:16 dat 100%, 0% lap tu, 0% dut chu, BGM Voice-Pocket chuan.",
+  "override_reason": "",
+  "cut_count": 10,
+  "integrated_lufs": -14.7,
+  "file_size": 27308126,
+  "sha256_head_tail": "cc144ee47639424bdfd75a7b3fda217212aebc5d42c7ae67e36522b957020b03"
+}

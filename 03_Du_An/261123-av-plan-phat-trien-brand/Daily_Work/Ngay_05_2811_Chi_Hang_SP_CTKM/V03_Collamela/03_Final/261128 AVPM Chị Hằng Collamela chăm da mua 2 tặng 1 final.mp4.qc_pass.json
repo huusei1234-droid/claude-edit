@@ -1,0 +1,13 @@
+{
+  "signed_at": "2026-11-28T19:20:32.665968",
+  "certified_path": "C:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Ngay_05_2811_Chi_Hang_SP_CTKM\\V03_Collamela\\03_Final\\261128 AVPM Chị Hằng Collamela chăm da mua 2 tặng 1 final.mp4",
+  "verdict": "PASS",
+  "auditor_verified": true,
+  "auditor": "video-qc-auditor:5b9be55d-95e1-49c5-b890-749195e6e611",
+  "notes": "PASS 100% (Vong 4 Final - 10 cuts #01..#10, 26.125s, -14.7 LUFS, SyncDelta=0.061s): (A) Bao bi COLLAMELA khop 100% SKU goc xuyen suot #01..#10, bo qua #08-#10 gom dung 2 hop lon + 1 hop tang 10 goi tren ban da Carrara tu nhien, the thanh phan #05-#06 chuan 2.530mg Collagen Tripeptide + Vitamin C, Kem & HA; (B) 0% dao cu thua; (C) Du 4 buoc pha che vat ly lien mach: xe goi xuoi chieu & do dong bot hong (#05) -> rot nuoc mat & khuay tan (#06) -> Chi Hang nang ly uong thuong thuc that (#07); (D) Da dang co canh WS (#02 chuan bi dam tiec), MLS, MCU, CU (#09 can bo qua nang la xanh, 0% mo mat), nhip cat nhanh 1.55s-3.58s; (E) Safe zone 9:16 dat 100%, 0% lap tu, 0% dut chu, BGM Voice-Pocket em diu.",
+  "override_reason": "",
+  "cut_count": 10,
+  "integrated_lufs": -14.7,
+  "file_size": 27315033,
+  "sha256_head_tail": "f92466cbf490ea33e27a4451756eeeeef779386f67acd0bae13eccabb01eeb00"
+}

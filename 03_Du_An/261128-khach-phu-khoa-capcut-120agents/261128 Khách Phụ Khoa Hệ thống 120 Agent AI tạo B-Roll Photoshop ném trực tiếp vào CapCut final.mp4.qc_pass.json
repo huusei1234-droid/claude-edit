@@ -1,0 +1,13 @@
+{
+  "signed_at": "2026-11-28T14:13:54.591256",
+  "certified_path": "C:\\AI\\full studio\\projects\\khach_phu_khoa_capcut_120agents_261128\\261128 Khách Phụ Khoa Hệ thống 120 Agent AI tạo B-Roll Photoshop ném trực tiếp vào CapCut final.mp4",
+  "verdict": "PASS",
+  "auditor_verified": true,
+  "auditor": "video-qc-auditor",
+  "notes": "PASS 100% ca 5 tieu chi ban V6 ke thua co che gap-nem truc tiep 261127 x CapCut PC Tieng Viet (1080x1920 @ 60fps, 18.46s, -13.9 LUFS, SyncDelta=0.01s): (A)&(B) Da bo 100% Google Flow, 6 cua so xep chong dao Z-order (Photoshop 2026, ChatGPT Plus 4o, Illustrator, Chrome CMS, Swarm IDE, Live Stream), 0% hop thuoc gia AI, chinh ta Tieng Viet chuan 100%; (C) 25 luot gap & nem B-Roll/KeyText/Sub theo duong cong net dut cyan dap truc tiep xuong Trinh phat & Tep phuong tien CapCut (2->4->5->7 files lien mach khong lo hong, Timeline lap cuon chieu den Hoan tat), 120 con tro ne sach 100% guong mat mau; (D)&(E) Trinh phat nam gon trong vung an toan TikTok/Reels 9:16, 0% lap tu, 0% dut chu.",
+  "override_reason": "",
+  "cut_count": 1,
+  "integrated_lufs": -13.9,
+  "file_size": 57650312,
+  "sha256_head_tail": "815bd549df3422771622bc20e37a0be98ced7119120d9bedc6581c96b6532605"
+}

@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8" />
+<title>V6 Direct Top-to-Bottom B-Roll Thrower (261127 Style, Zero Flow) × Vietnamese CapCut PC × 120 Agents</title>
+<style>
+  @font-face {
+    font-family: 'MontserratBlack';
+    src: url('file:///C:/AI/full%20studio/BO_KIEN_THUC_TVC_AI_PORTABLE/03_TAI_NGUYEN_DUNG_CHUNG/fonts_tvc_vi/Montserrat-Black.ttf') format('truetype');
+    font-weight: 900;
+  }
+  @font-face {
+    font-family: 'BeVietnamExtraBold';
+    src: url('file:///C:/AI/full%20studio/BO_KIEN_THUC_TVC_AI_PORTABLE/03_TAI_NGUYEN_DUNG_CHUNG/fonts_tvc_vi/BeVietnamPro-ExtraBold.ttf') format('truetype');
+    font-weight: 800;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; user-select: none; }
+  html, body {
+    width: 1080px; height: 1920px; overflow: hidden;
+    background: #0D0F14;
+    font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Inter, sans-serif;
+    color: #E5E7EB;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  #stage { position: relative; width: 1080px; height: 1920px; background: #0E1016; }
+
+  /* ================= TOP HALF (0..916px): OVERLAPPING, Z-JUMPING MULTI-APP WORKSPACE (261127 STYLE — ZERO FLOW!) ================= */
+  #top-desktop {
+    position: absolute; left: 0; top: 0; width: 1080px; height: 916px;
+    background: radial-gradient(circle at 35% 25%, #1A2234 0%, #0D1017 78%);
+    overflow: hidden;
+  }
+
+  #top-dock {
+    position: absolute; left: 0; top: 0; width: 1080px; height: 30px;
+    background: rgba(13, 16, 23, 0.95); border-bottom: 1px solid #262C3A;
+    display: flex; align-items: center; padding: 0 10px; gap: 6px; z-index: 60;
+    font-size: 9.2px; color: #9CA3AF;
+  }
+  .dk-item {
+    padding: 3px 9px; border-radius: 5px; background: #181C26; border: 1px solid #2A3040;
+    display: inline-flex; align-items: center; gap: 5px; font-weight: 600; color: #BAC2D2;
+  }
+  .dk-item.on {
+    background: #1E293B; border-color: #38BDF8; color: #FFFFFF;
+    box-shadow: 0 0 10px rgba(56, 189, 248, 0.30);
+  }
+  .dk-badge { width: 15px; height: 15px; border-radius: 3px; display: inline-flex; align-items: center; justify-content: center; font-weight: 900; font-size: 8.5px; }
+  .dk-right { margin-left: auto; display: flex; align-items: center; gap: 10px; font-family: Consolas, monospace; font-size: 9.2px; }
+
+  /* Dynamic Overlapping Windows (Smoothly Slide, Scale & Jump Z-Order like 261127!) */
+  .app-win {
+    position: absolute;
+    background: #1A1C22;
+    border: 1.2px solid #323746;
+    border-radius: 9px;
+    overflow: hidden;
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.65);
+    display: flex; flex-direction: column;
+    transform-origin: center center;
+  }
+  .app-win.focused {
+    border-color: #38BDF8;
+    box-shadow: 0 20px 48px rgba(0, 0, 0, 0.85), 0 0 0 1px rgba(56, 189, 248, 0.32);
+  }
+  .win-hdr {
+    height: 26px; background: #22252E; border-bottom: 1px solid #2F3442;
+    display: flex; align-items: center; padding: 0 10px; gap: 7px; font-size: 9.4px; font-weight: 600; color: #E5E7EB; flex-shrink: 0;
+  }
+  .win-dots { display: flex; gap: 5px; margin-right: 3px; }
+  .win-dots i { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
+  .win-tag { margin-left: auto; font-size: 8.5px; color: #38BDF8; font-weight: 700; }
+
+  /* 1. Adobe Photoshop 2026 — Live Layer Cutout & Card Thrower */
+  .ps-menubar {
+    height: 20px; background: #2A2A2E; border-bottom: 1px solid #1C1C1F;
+    display: flex; align-items: center; padding: 0 8px; gap: 9px; font-size: 8.5px; color: #CFCFCF; flex-shrink: 0;
+  }
+  .ps-body { flex: 1; display: flex; background: #1B1B1E; overflow: hidden; }
+  .ps-tools {
+    width: 26px; background: #29292D; border-right: 1px solid #19191C;
+    display: flex; flex-direction: column; align-items: center; padding: 5px 0; gap: 5px; font-size: 10px; color: #C8C8C8; flex-shrink: 0;
+  }
+  .ps-tl { width: 20px; height: 19px; border-radius: 3px; display: flex; align-items: center; justify-content: center; }
+  .ps-tl.on { background: #454954; color: #38BDF8; }
+  #ps-cvs { flex: 1; height: 100%; display: block; }
+  .ps-layers {
+    width: 152px; background: #252529; border-left: 1px solid #19191C;
+    display: flex; flex-direction: column; font-size: 8.4px; color: #D4D4D8; flex-shrink: 0;
+  }
+  .ps-lhdr { padding: 5px 7px; background: #1F1F23; font-weight: 700; color: #F3F4F6; border-bottom: 1px solid #18181B; }
+  .ps-lyr { display: flex; align-items: center; gap: 5px; padding: 5px 6px; border-bottom: 1px solid #2E2E34; color: #BDBDC4; }
+  .ps-lyr.sel { background: #364156; color: #FFFFFF; font-weight: 700; border-left: 2.5px solid #38BDF8; }
+  .ps-lyr img { width: 19px; height: 19px; border-radius: 2px; object-fit: cover; border: 1px solid #666; }
+
+  /* 2. Adobe Illustrator 2026 — Live KeyText & Subtitle Vector Thrower */
+  #ai-cvs { width: 100%; flex: 1; display: block; background: #16171C; }
+
+  /* 3. ChatGPT Plus Web (`chatgpt.com`) — Live B-Roll Image Creator -> Throw to PS & CapCut! */
+  #gpt-cvs { width: 100%; flex: 1; display: block; background: #212121; }
+
+  /* 4. Chrome Auto-Web CMS & TikTok Shop Sync (Exact Beloved 261127 Window!) */
+  .cms-url {
+    height: 23px; background: #F1F5F9; border-bottom: 1px solid #CBD5E1;
+    display: flex; align-items: center; padding: 0 8px; gap: 6px; font-size: 8.6px; color: #334155; flex-shrink: 0;
+  }
+  .cms-body { flex: 1; background: #FFFFFF; color: #0F172A; padding: 8px; display: flex; flex-direction: column; gap: 6px; overflow: hidden; }
+  .cms-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
+  .cms-card { border: 1.5px solid #CBD5E1; border-radius: 6px; padding: 3px; background: #F8FAFC; }
+  .cms-card.hot { border-color: #2563EB; background: #EFF6FF; }
+  .cms-card img { width: 100%; height: 84px; object-fit: cover; object-position: top center; border-radius: 4px; display: block; }
+  .cms-card div { font-size: 8px; font-weight: 700; color: #0F172A; margin-top: 3px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .cms-input {
+    border: 1.5px solid #3B82F6; border-radius: 5px; padding: 4px 8px;
+    font-size: 8.8px; font-weight: 600; color: #0F172A; background: #F8FAFC; min-height: 22px;
+  }
+  .cms-tbl { font-size: 8.2px; display: flex; flex-direction: column; gap: 3px; margin-top: 2px; }
+  .cms-tr { display: grid; grid-template-columns: 1.2fr 1.6fr 0.7fr; padding: 3px 5px; border-bottom: 1px solid #E2E8F0; color: #334155; }
+  .cms-tr.hd { font-weight: 700; color: #64748B; background: #F1F5F9; border-radius: 3px; }
+
+  /* 5. Antigravity Swarm Code IDE */
+  .ide-body { flex: 1; background: #0D1117; padding: 8px 10px; font-family: Consolas, monospace; font-size: 9px; line-height: 1.55; color: #C9D1D9; overflow: hidden; }
+  .cl { padding: 1px 5px; border-radius: 3px; white-space: nowrap; }
+  .cl.cur { background: rgba(56, 189, 248, 0.16); border-left: 2px solid #38BDF8; }
+  .kw { color: #FF7B72; } .fn { color: #D2A8FF; } .nu { color: #79C0FF; } .cm { color: #8B949E; }
+
+  /* 6. 120-Agent Live Throw Stream */
+  .swarm-body { flex: 1; background: #0F131C; padding: 7px 8px; display: flex; flex-direction: column; gap: 4px; font-family: Consolas, monospace; font-size: 8.6px; overflow: hidden; }
+  .srow { display: flex; align-items: center; justify-content: space-between; padding: 4px 7px; border-radius: 4px; background: #161C28; border: 1px solid #242D40; color: #CBD5E1; }
+  .srow.hot { border-color: #38BDF8; background: rgba(14, 165, 233, 0.16); color: #FFFFFF; }
+
+  /* Windows Alt+Tab Quick Switcher HUD */
+  #alt-tab-hud {
+    position: absolute; left: 50%; top: 430px; transform: translate(-50%, -50%);
+    background: rgba(15, 18, 26, 0.92); border: 1px solid #475569; border-radius: 10px;
+    padding: 8px 12px; display: none; gap: 8px; z-index: 55; box-shadow: 0 14px 36px rgba(0,0,0,0.8);
+  }
+  .at-it { padding: 5px 9px; border-radius: 6px; font-size: 8.8px; font-weight: 700; color: #94A3B8; background: #1E2433; }
+  .at-it.sel { background: #2563EB; color: #FFFFFF; outline: 2px solid #93C5FD; }
+
+  /* ================= BOTTOM HALF (916..1920px): 100% VIETNAMESE CAPCUT PC (1:1 USER SCREENSHOTS) ================= */
+  #capcut-vi {
+    position: absolute; left: 0; top: 916px; width: 1080px; height: 1004px;
+    background: #101114; display: flex; flex-direction: column;
+    border-top: 1.5px solid #2A2D36;
+  }
+
+  #cc-topbar {
+    height: 28px; background: #141519;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 0 0 8px; font-size: 9.8px; color: #A0A5B1; flex-shrink: 0;
+  }
+  .cc-brand { display: flex; align-items: center; gap: 6px; color: #F3F4F6; font-weight: 600; }
+  .cc-mark {
+    width: 15px; height: 15px; border-radius: 3px; background: #FFFFFF; color: #0B0C0E;
+    display: inline-flex; align-items: center; justify-content: center; font-size: 9.5px; font-weight: 900;
+  }
+  .cc-autosave { color: #9CA3AF; font-size: 9px; display: inline-flex; align-items: center; gap: 4px; margin-left: 6px; }
+  .cc-autosave i { color: #00D4D8; font-style: normal; }
+  .cc-draft-name { color: #D1D5DB; font-size: 10px; font-weight: 600; }
+  .cc-top-actions { display: flex; align-items: center; gap: 6px; height: 100%; }
+  .cc-pro-pill {
+    background: linear-gradient(90deg, #2D2246, #3B265E); border: 1px solid #6D4AFF;
+    color: #E9D5FF; padding: 2px 7px; border-radius: 4px; font-size: 8.8px; font-weight: 700;
+  }
+  .cc-share-btn { background: #272930; color: #E5E7EB; padding: 3px 9px; border-radius: 4px; font-size: 9.2px; font-weight: 600; }
+  .cc-export-btn { background: #00D4D8; color: #041F22; padding: 3px 11px; border-radius: 4px; font-size: 9.4px; font-weight: 700; }
+  .cc-export-btn.done { background: #10B981; color: #FFFFFF; }
+  .win-ctrls { display: flex; align-items: center; height: 100%; color: #9CA3AF; font-size: 9.5px; }
+  .win-ctrls span { width: 22px; height: 100%; display: inline-flex; align-items: center; justify-content: center; }
+
+  #cc-upper {
+    height: 534px; padding: 3px 4px; gap: 4px;
+    display: flex; background: #0F1013; flex-shrink: 0;
+  }
+  .cc-pane {
+    background: #1B1C20; border-radius: 5px; overflow: hidden;
+    display: flex; flex-direction: column; border: 1px solid #262830; position: relative;
+  }
+
+  /* LEFT PANE: Tệp phương tiện */
+  #cc-left-pane { width: 334px; flex-shrink: 0; }
+  #cc-vi-ribbon {
+    height: 42px; background: #16171B; border-bottom: 1px solid #25272F;
+    display: flex; align-items: center; justify-content: space-between; padding: 0 4px; flex-shrink: 0;
+  }
+  .vi-rtab {
+    display: flex; flex-direction: column; align-items: center; gap: 2px;
+    font-size: 7.7px; color: #9499A6; padding: 3px 3px; border-radius: 4px; white-space: nowrap;
+  }
+  .vi-rtab b { font-size: 11px; font-weight: 700; line-height: 1; }
+  .vi-rtab.on { color: #00E5E5; font-weight: 700; }
+
+  .cc-left-body { flex: 1; display: flex; overflow: hidden; position: relative; }
+  .cc-vi-tree {
+    width: 74px; background: #16171B; border-right: 1px solid #25272F;
+    padding: 6px 4px; display: flex; flex-direction: column; gap: 3px; font-size: 8.2px; color: #9CA3AF; flex-shrink: 0;
+  }
+  .vi-titem { padding: 4px 5px; border-radius: 4px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .vi-titem.grp { color: #00E5E5; font-weight: 700; }
+  .vi-titem.on { background: #13393E; color: #00E5E5; font-weight: 700; }
+  .vi-ai-tag { background: #00D4D8; color: #042024; font-size: 6.8px; font-weight: 800; padding: 0 3px; border-radius: 2px; float: right; }
+  #cc-left-cvs { width: 258px; height: 490px; display: block; }
+
+  /* CENTER PANE: Trình phát: Dòng thời gian 01 */
+  #cc-center-pane { width: 434px; flex-shrink: 0; }
+  .cc-vi-phdr {
+    height: 26px; padding: 0 10px; border-bottom: 1px solid #25272F;
+    display: flex; align-items: center; justify-content: space-between;
+    font-size: 9.4px; color: #D1D5DB; font-weight: 600; flex-shrink: 0;
+  }
+  #cc-stage-wrap {
+    flex: 1; background: #17181C; position: relative;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .cc-ruler-top {
+    position: absolute; left: 18px; right: 0; top: 0; height: 14px;
+    border-bottom: 1px solid #262830; display: flex; justify-content: space-around; align-items: center;
+    font-size: 7px; color: #5E626E; font-family: Consolas, monospace;
+  }
+  .cc-ruler-left {
+    position: absolute; left: 0; top: 14px; bottom: 0; width: 18px;
+    border-right: 1px solid #262830; display: flex; flex-direction: column; justify-content: space-around; align-items: center;
+    font-size: 6.5px; color: #5E626E; font-family: Consolas, monospace;
+  }
+  #cc-viewport-wrap {
+    width: 248px; height: 441px; margin-left: 12px; margin-top: 10px;
+    position: relative; background: #0B0C0E; border: 1px solid #2E313B; overflow: hidden;
+  }
+  #liveview-img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  #cc-snap-box {
+    position: absolute; border: 1.8px solid #00E5FF;
+    box-shadow: 0 0 14px rgba(0, 229, 255, 0.55);
+    pointer-events: none; display: none; z-index: 8;
+  }
+  .cc-h { width: 7px; height: 7px; background: #FFFFFF; border: 1.2px solid #083344; border-radius: 50%; position: absolute; }
+
+  #cc-player-btm {
+    height: 28px; background: #1B1C20; border-top: 1px solid #25272F;
+    display: flex; align-items: center; justify-content: space-between; padding: 0 10px;
+    font-size: 9.2px; color: #9CA3AF; flex-shrink: 0;
+  }
+  .cc-pbtn-pill { background: #262830; border: 1px solid #343742; padding: 1px 5px; border-radius: 3px; font-size: 7.8px; color: #C8CCD6; }
+
+  /* RIGHT PANE: Vietnamese Inspector */
+  #cc-right-pane { flex: 1; }
+  #cc-insp-top {
+    height: 26px; background: #16171B; border-bottom: 1px solid #25272F;
+    display: flex; align-items: center; padding: 0 7px; gap: 9px; font-size: 8.8px; color: #9499A6; flex-shrink: 0;
+  }
+  .insp-m-tab { padding: 5px 0; white-space: nowrap; }
+  .insp-m-tab.on { color: #00E5E5; font-weight: 700; border-bottom: 2px solid #00E5E5; }
+  #cc-insp-cvs { width: 294px; height: 506px; display: block; }
+
+  /* BOTTOM TIMELINE */
+  #cc-tl-wrap {
+    flex: 1; background: #15161A; display: flex; flex-direction: column;
+    border-top: 1px solid #262830; position: relative; overflow: hidden;
+  }
+  #cc-tl-bar {
+    height: 30px; background: #1B1C20; border-bottom: 1px solid #262830;
+    display: flex; align-items: center; justify-content: space-between; padding: 0 10px; font-size: 10.5px; color: #B8BCC8; flex-shrink: 0;
+  }
+  .tl-grp { display: flex; align-items: center; gap: 9px; }
+  .tl-ico { padding: 2px 4px; border-radius: 3px; font-size: 10px; color: #B0B5C2; }
+  .tl-ico.cyan { color: #00E5E5; background: rgba(0, 229, 229, 0.14); font-weight: 700; }
+  .tl-sep { width: 1px; height: 13px; background: #2D303B; }
+  .tl-zoom { width: 64px; height: 3px; background: #2E313C; border-radius: 2px; position: relative; }
+  #tl-zoom-knob { position: absolute; left: 60%; top: -3px; width: 9px; height: 9px; border-radius: 50%; background: #E5E7EB; }
+  #tl-canvas { width: 1080px; height: 410px; display: block; }
+
+  #cc-editpilot {
+    position: absolute; right: 12px; bottom: 10px;
+    background: #262832; border: 1px solid #3A3E4D; border-radius: 999px;
+    padding: 4px 11px; display: flex; align-items: center; gap: 6px;
+    font-size: 9px; font-weight: 600; color: #E5E7EB; box-shadow: 0 4px 12px rgba(0,0,0,0.5); z-index: 15;
+  }
+
+  /* FULL-SCREEN DIRECT THROW ARCS + FLYING CARDS + 120 SWARM CURSORS */
+  #fx-canvas {
+    position: absolute; left: 0; top: 0; width: 1080px; height: 1920px;
+    pointer-events: none; z-index: 100;
+  }
+</style>
+</head>
+<body>
+<div id="stage">
+  <!-- ================= TOP HALF: OVERLAPPING, Z-JUMPING MULTI-APP STAGE (ZERO FLOW!) ================= -->
+  <div id="top-desktop">
+    <div id="top-dock">
+      <div class="dk-item on" id="dk-ps"><span class="dk-badge" style="background:#001E36;color:#31A8FF;">Ps</span>Photoshop</div>
+      <div class="dk-item" id="dk-gpt"><span class="dk-badge" style="background:#10A37F;color:#FFF;">◎</span>ChatGPT Plus</div>
+      <div class="dk-item" id="dk-ai"><span class="dk-badge" style="background:#330000;color:#FF9A00;">Ai</span>Illustrator</div>
+      <div class="dk-item" id="dk-cms"><span class="dk-badge" style="background:#2563EB;color:#FFF;">🌐</span>Auto-Web</div>
+      <div class="dk-item on" id="dk-cc"><span class="dk-badge" style="background:#FFF;color:#000;">✂</span>CapCut VN</div>
+      <div class="dk-item" id="dk-sw"><span class="dk-badge" style="background:#7C3AED;color:#FFF;">⚡</span>120 AI Agents</div>
+      <div class="dk-right">
+        <span style="color:#34D399;">● LIVE THROW SYNC</span>
+        <span id="sys-ops" style="color:#38BDF8;font-weight:700;">428 ops/s</span>
+      </div>
+    </div>
+
+    <!-- 1. PHOTOSHOP 2026: Crafts Exact B-Roll Card -> Grabbed & Thrown Down Into CapCut! -->
+    <div class="app-win focused" id="win-ps">
+      <div class="win-hdr">
+        <div class="win-dots"><i style="background:#EF4444"></i><i style="background:#F59E0B"></i><i style="background:#10B981"></i></div>
+        <span class="dk-badge" style="background:#001E36;color:#31A8FF;">Ps</span>
+        <span>Photoshop 2026 — Đang cắt Layer & đóng khung B-Roll ném xuống CapCut...</span>
+        <span class="win-tag">MCP Live</span>
+      </div>
+      <div class="ps-menubar">
+        <span>File</span><span>Edit</span><span>Image</span><span>Layer</span><span>Select</span>
+        <span style="color:#38BDF8;font-weight:700;">Generative Cutout</span><span>Filter</span>
+      </div>
+      <div class="ps-body">
+        <div class="ps-tools">
+          <div class="ps-tl on">✥</div><div class="ps-tl">⬚</div><div class="ps-tl">🪄</div>
+          <div class="ps-tl">⌗</div><div class="ps-tl">✒</div><div class="ps-tl">T</div>
+        </div>
+        <canvas id="ps-cvs" width="430" height="390"></canvas>
+        <div class="ps-layers">
+          <div class="ps-lhdr">Live Queue Layers</div>
+          <div class="ps-lyr sel" id="psl-0"><span>👁</span><img src="assets/broll_pk01.jpg"/><span>01_NiemMac_Cut</span></div>
+          <div class="ps-lyr" id="psl-1"><span>👁</span><img src="assets/broll_pk02.jpg"/><span>02_KiemManh_Cut</span></div>
+          <div class="ps-lyr" id="psl-2"><span>👁</span><img src="assets/broll_pk03.jpg"/><span>03_ChuanPH_45</span></div>
+          <div class="ps-lyr" id="psl-3"><span>👁</span><img src="assets/broll_pk04.jpg"/><span>04_LoiKhuan_3D</span></div>
+          <div class="ps-lyr" id="psl-4"><span>👁</span><img src="assets/broll_pk05.jpg"/><span>05_EmThoang_Card</span></div>
+          <div class="ps-lyr" id="psl-5"><span>👁</span><img src="assets/thumbs_face/face_02.jpg"/><span>RVM_Hair_Alpha</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. ILLUSTRATOR 2026: Live KeyText & Subtitle Vector Thrower -->
+    <div class="app-win" id="win-ai">
+      <div class="win-hdr">
+        <div class="win-dots"><i style="background:#EF4444"></i><i style="background:#F59E0B"></i><i style="background:#10B981"></i></div>
+        <span class="dk-badge" style="background:#330000;color:#FF9A00;">Ai</span>
+        <span>Illustrator × Live KeyText & Subtitle Vector Thrower</span>
+      </div>
+      <canvas id="ai-cvs" width="510" height="380"></canvas>
+    </div>
+
+    <!-- 3. CHATGPT PLUS (`chatgpt.com`): Creates Raw B-Roll Source Images -> Feeds PS & CapCut! -->
+    <div class="app-win" id="win-gpt">
+      <div class="win-hdr" style="background:#171717;">
+        <div class="win-dots"><i style="background:#EF4444"></i><i style="background:#F59E0B"></i><i style="background:#10B981"></i></div>
+        <span class="dk-badge" style="background:#10A37F;color:#FFF;">◎</span>
+        <span>ChatGPT Plus 4o — Tạo hình Source B-Roll Phụ Khoa 9:16 ➔ Gắp qua Photoshop & CapCut</span>
+        <span class="win-tag" style="color:#34D399;">IMAGE GEN</span>
+      </div>
+      <canvas id="gpt-cvs" width="520" height="390"></canvas>
+    </div>
+
+    <!-- 4. CHROME AUTO-AGENT CMS & TIKTOK SYNC (Beloved 261127 White Web Dashboard!) -->
+    <div class="app-win" id="win-cms">
+      <div class="win-hdr">
+        <div class="win-dots"><i style="background:#EF4444"></i><i style="background:#F59E0B"></i><i style="background:#10B981"></i></div>
+        <span>🌐 Chrome Auto-Agent — Chăm Sóc Phụ Khoa CMS & Reels Ads</span>
+        <span class="win-tag" style="color:#34D399;">24 Bots</span>
+      </div>
+      <div class="cms-url"><span>🔒</span><span>https://cms.chamsocphukhoa.vn/auto-reels/chuan-ph-45-moi-ngay</span></div>
+      <div class="cms-body">
+        <div class="cms-cards">
+          <div class="cms-card hot" id="cmsc-0"><img src="assets/thumbs_face/face_04.jpg"/><div>Chuyên Gia Tư Vấn 9:16</div></div>
+          <div class="cms-card" id="cmsc-1"><img src="assets/broll_pk03.jpg"/><div>Chuẩn Độ pH 3.8 – 4.5</div></div>
+          <div class="cms-card" id="cmsc-2"><img src="assets/broll_pk04.jpg"/><div>Hàng Rào Lợi Khuẩn</div></div>
+        </div>
+        <div class="cms-input" id="cms-type">Bí quyết giữ chuẩn độ pH 4.5 dịu nhẹ...</div>
+        <div class="cms-tbl">
+          <div class="cms-tr hd"><span>Kênh Tự Động</span><span>Tác Vụ Đồng Bộ</span><span>Trạng Thái</span></div>
+          <div class="cms-tr"><span>Facebook Reels 9:16</span><span>Đăng Reel 60fps + Ghim bài</span><span style="color:#059669;font-weight:800;">LIVE ✓</span></div>
+          <div class="cms-tr"><span>TikTok Kênh Chuyên Gia</span><span>Đồng bộ Phụ đề & Vùng an toàn</span><span style="color:#0284C7;font-weight:800;">SYNCING</span></div>
+          <div class="cms-tr"><span>Zalo OA & Website</span><span>Tự động hóa bài chuẩn Y khoa</span><span style="color:#059669;font-weight:800;">200 OK</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. ANTIGRAVITY SWARM CODE IDE -->
+    <div class="app-win" id="win-ide">
+      <div class="win-hdr">
+        <div class="win-dots"><i style="background:#EF4444"></i><i style="background:#F59E0B"></i><i style="background:#10B981"></i></div>
+        <span>⚡ Antigravity 120-Agent Swarm — capcut_live_thrower.py</span>
+        <span class="win-tag" style="color:#34D399;">+620 lines</span>
+      </div>
+      <div class="ide-body" id="ide-lines"></div>
+    </div>
+
+    <!-- 6. 120-AGENT LIVE THROW DISPATCH STREAM -->
+    <div class="app-win" id="win-swarm">
+      <div class="win-hdr">
+        <div class="win-dots"><i style="background:#EF4444"></i><i style="background:#F59E0B"></i><i style="background:#10B981"></i></div>
+        <span>🚀 120-Agent Live Throw Stream (60 Task + 60 Swarm)</span>
+        <span class="win-tag" style="color:#34D399;">ACTIVE</span>
+      </div>
+      <div class="swarm-body" id="swarm-rows"></div>
+    </div>
+
+    <!-- Windows Alt+Tab Switcher Flash -->
+    <div id="alt-tab-hud">
+      <div class="at-it sel" id="at-0">Ps Cutout</div>
+      <div class="at-it" id="at-1">◎ ChatGPT</div>
+      <div class="at-it" id="at-2">Ai Vector</div>
+      <div class="at-it" id="at-3">🌐 Auto-Web</div>
+      <div class="at-it" id="at-4">⚡ 120 Swarm</div>
+    </div>
+  </div>
+
+  <!-- ================= BOTTOM HALF: 100% VIETNAMESE CAPCUT PC (EXACT USER SCREENSHOTS) ================= -->
+  <div id="capcut-vi">
+    <div id="cc-topbar">
+      <div class="cc-brand">
+        <span class="cc-mark">✂</span>
+        <span>CapCut</span>
+        <span style="color:#8E93A2;font-weight:400;margin-left:4px;">Menu ▾</span>
+        <span class="cc-autosave"><i>✔</i> <span id="cc-save-txt">Tự động lưu: 13:52:18</span></span>
+      </div>
+      <div class="cc-draft-name">1128</div>
+      <div class="cc-top-actions">
+        <span style="color:#8E93A2;">◫ ▾</span>
+        <span class="cc-pro-pill">💎 Pro</span>
+        <span class="cc-share-btn">Chia sẻ</span>
+        <span class="cc-export-btn" id="cc-export">⇥ Xuất</span>
+        <div class="win-ctrls"><span>─</span><span>□</span><span>✕</span></div>
+      </div>
+    </div>
+
+    <div id="cc-upper">
+      <!-- LEFT PANE: Tệp phương tiện (Progressively adds items right as they are thrown down from Photoshop/ChatGPT!) -->
+      <div class="cc-pane" id="cc-left-pane">
+        <div id="cc-vi-ribbon">
+          <div class="vi-rtab on" id="vrt-0"><b>⊞</b><span>Tệp phương tiện</span></div>
+          <div class="vi-rtab" id="vrt-1"><b>♫</b><span>Âm thanh</span></div>
+          <div class="vi-rtab" id="vrt-2"><b>T</b><span>Văn bản</span></div>
+          <div class="vi-rtab" id="vrt-3"><b>☺</b><span>Nhãn dán</span></div>
+          <div class="vi-rtab" id="vrt-4"><b>✦</b><span>Hiệu ứng</span></div>
+          <div class="vi-rtab" id="vrt-5"><b>⋈</b><span>Chuyển tiếp</span></div>
+          <div class="vi-rtab" id="vrt-6"><b>◐</b><span>Bộ lọc</span></div>
+        </div>
+        <div class="cc-left-body">
+          <div class="cc-vi-tree">
+            <div class="vi-titem grp">Nhập ▾</div>
+            <div class="vi-titem on">Tệp phương tiện</div>
+            <div class="vi-titem">Dòng thời gian</div>
+            <div class="vi-titem">Dự án con</div>
+            <div class="vi-titem">Tài sản của...</div>
+            <div class="vi-titem">Tạo <span class="vi-ai-tag">AI</span></div>
+            <div class="vi-titem">Không gian</div>
+            <div class="vi-titem">Thư viện</div>
+            <div class="vi-titem">Dreamina</div>
+          </div>
+          <canvas id="cc-left-cvs" width="258" height="490"></canvas>
+        </div>
+      </div>
+
+      <!-- CENTER PANE: Trình phát: Dòng thời gian 01 -->
+      <div class="cc-pane" id="cc-center-pane">
+        <div class="cc-vi-phdr">
+          <span>Trình phát: Dòng thời gian 01</span>
+          <span style="color:#00E5E5;font-size:8.2px;font-weight:700;" id="cc-live-badge">● LIVE THROW 60FPS</span>
+        </div>
+        <div id="cc-stage-wrap">
+          <div class="cc-ruler-top"><span>-1000</span><span>-500</span><span>0</span><span>500</span><span>1000</span></div>
+          <div class="cc-ruler-left"><span>1400</span><span>700</span><span>0</span><span>-700</span><span>-1400</span></div>
+          <div id="cc-viewport-wrap">
+            <img id="liveview-img" src="th_rendered_frames/frame_0000.jpg" />
+            <div id="cc-snap-box">
+              <div class="cc-h" style="left:-4px;top:-4px;"></div>
+              <div class="cc-h" style="right:-4px;top:-4px;"></div>
+              <div class="cc-h" style="left:-4px;bottom:-4px;"></div>
+              <div class="cc-h" style="right:-4px;bottom:-4px;"></div>
+            </div>
+          </div>
+        </div>
+        <div id="cc-player-btm">
+          <div style="font-family:Consolas,monospace;font-size:9.2px;">
+            <span id="cc-tc" style="color:#00E5E5;">00:00:00:00</span>
+            <span style="color:#6B7280;"> 00:00:18:27</span>
+          </div>
+          <div id="cc-play-ico" style="color:#FFFFFF;font-size:11px;">⏸</div>
+          <div style="display:flex;align-items:center;gap:4px;">
+            <span class="cc-pbtn-pill">Đầu đổi</span>
+            <span class="cc-pbtn-pill">Tỷ lệ khung hình</span>
+            <span style="color:#9CA3AF;">⛶</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT PANE: Rapidly Cycling Vietnamese Inspector -->
+      <div class="cc-pane" id="cc-right-pane">
+        <div id="cc-insp-top">
+          <span class="insp-m-tab on" id="imt-0">Video</span>
+          <span class="insp-m-tab" id="imt-1">Hiệu ứng động</span>
+          <span class="insp-m-tab" id="imt-2">Điều chỉnh</span>
+          <span class="insp-m-tab" id="imt-3">Cách điệu bằng AI</span>
+        </div>
+        <canvas id="cc-insp-cvs" width="294" height="506"></canvas>
+      </div>
+    </div>
+
+    <!-- BOTTOM TIMELINE -->
+    <div id="cc-tl-wrap">
+      <div id="cc-tl-bar">
+        <div class="tl-grp">
+          <span class="tl-ico">+ ▾</span>
+          <span class="tl-ico cyan">↖ ▾</span>
+          <span class="tl-sep"></span>
+          <span class="tl-ico">↩</span>
+          <span class="tl-ico">↪</span>
+          <span class="tl-sep"></span>
+          <span class="tl-ico">][</span>
+          <span class="tl-ico">⌫</span>
+          <span class="tl-ico">⌦</span>
+          <span class="tl-ico">🗑</span>
+          <span class="tl-ico">❄</span>
+          <span class="tl-ico">⇄</span>
+          <span class="tl-ico">🪞</span>
+        </div>
+        <div class="tl-grp">
+          <span id="tl-stat-lbl" style="font-size:8.6px;color:#00E5E5;font-weight:700;margin-right:6px;">Đang lắp: 2/26 Clips...</span>
+          <span class="tl-ico">🎙</span>
+          <span class="tl-ico cyan">🧲</span>
+          <span class="tl-ico cyan">⫯</span>
+          <span class="tl-ico cyan">🔗</span>
+          <span style="color:#7C8190;">−</span>
+          <div class="tl-zoom"><i id="tl-zoom-knob"></i></div>
+          <span style="color:#7C8190;">+</span>
+        </div>
+      </div>
+      <canvas id="tl-canvas" width="1080" height="410"></canvas>
+      <div id="cc-editpilot"><span style="color:#00E5E5;">✦</span><span>EditPilot</span></div>
+    </div>
+  </div>
+
+  <!-- FULL-SCREEN 60FPS DIRECT CURVED-ARC THROWS + 120 SWARM CURSORS -->
+  <canvas id="fx-canvas" width="1080" height="1920"></canvas>
+</div>
+
+<script src="assets/audio_data_inline.js"></script>
+<script src="assets/words_inline.js"></script>
+<script src="capcut_120_engine.js"></script>
+</body>
+</html>

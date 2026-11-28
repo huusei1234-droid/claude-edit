@@ -1,0 +1,89 @@
+{
+  "inspected_at": "2026-11-28T16:10:02.698362",
+  "video_path": "C:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Ngay_05_2811_Chi_Hang_SP_CTKM\\V01_Curcumilk_Sample\\03_Final\\261128 AVPM Chị Hằng Curcumilk Phyto mua 4 tặng 1 final.mp4",
+  "fingerprint": {
+    "file_size": 32754880,
+    "sha256_head_tail": "ecd6d8793935ff1a4238156b5cad37bb328e75d9b4889f03e43dd988c76b215a"
+  },
+  "streams": {
+    "width": 1080,
+    "height": 1920,
+    "v_codec": "h264",
+    "a_codec": "aac",
+    "fps": 24.0,
+    "format_dur": 32.333,
+    "video_dur": 32.292,
+    "audio_dur": 32.292,
+    "av_sync_delta": 0.0
+  },
+  "letterbox": {
+    "top_black_px": 0,
+    "bottom_black_px": 0
+  },
+  "integrated_lufs": -14.7,
+  "cut_count": 7,
+  "cuts": [
+    {
+      "index": 1,
+      "start": 0.0,
+      "end": 11.66,
+      "dur": 11.66,
+      "label": "s1_mo_dau_1box"
+    },
+    {
+      "index": 2,
+      "start": 11.66,
+      "end": 13.81,
+      "dur": 2.15,
+      "label": "s2_gioi_thieu_hop"
+    },
+    {
+      "index": 3,
+      "start": 13.81,
+      "end": 16.29,
+      "dur": 2.48,
+      "label": "s2_broll_xe_do_bot"
+    },
+    {
+      "index": 4,
+      "start": 16.29,
+      "end": 18.78,
+      "dur": 2.48,
+      "label": "s2_broll_rot_nuoc_am"
+    },
+    {
+      "index": 5,
+      "start": 18.78,
+      "end": 21.26,
+      "dur": 2.48,
+      "label": "s2_broll_khuay_tan_min"
+    },
+    {
+      "index": 6,
+      "start": 21.26,
+      "end": 23.16,
+      "dur": 1.9,
+      "label": "s2_ket_vi_vani"
+    },
+    {
+      "index": 7,
+      "start": 23.16,
+      "end": 32.37,
+      "dur": 9.21,
+      "label": "s3_ctkm_mua4_tang1"
+    }
+  ],
+  "sheets": {
+    "all_cuts_full": "C:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Ngay_05_2811_Chi_Hang_SP_CTKM\\V01_Curcumilk_Sample\\04_QC_Gate\\QC_FINAL_ALL_CUTS_FULL.jpg",
+    "all_cuts_zoom": "C:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Ngay_05_2811_Chi_Hang_SP_CTKM\\V01_Curcumilk_Sample\\04_QC_Gate\\QC_FINAL_ALL_CUTS_ZOOM.jpg"
+  },
+  "audio_audit": {
+    "word_count": 108,
+    "eof_tail_sec": 0.563,
+    "eof_cutoff": false,
+    "repetitions": [],
+    "transcript": "Chị em hay nói nhiều rát cổ hoặc họp hành muộn mà bụng dạ khó chịu, rất thích uống một ly nghệ ấm. Nhưng khi chọn mua cho cả gia đình, hàng luôn nhìn kỹ 2 chi tiết thật trên vỏ hộp. Với Cercumil Phyto của An Vượng, gói 15g có rõ 343 ,2mg curcuminoid, thêm công nghệ PhytoSolm dễ hấp thu, pha nước ấm 40 độ, vị vani thơm ngon dễ uống. Đợt cuối mừng sinh nhật đến hết ngày 30 tháng này, chị em lấy 4 hộp được tặng ngay một hộp mới 650 .000. Nhắn hàng chữ nghệ để giữ quà cho cả nhà nhé"
+  },
+  "machine_failures": [],
+  "machine_status": "READY_FOR_VISUAL_SIGN_OFF"
+}

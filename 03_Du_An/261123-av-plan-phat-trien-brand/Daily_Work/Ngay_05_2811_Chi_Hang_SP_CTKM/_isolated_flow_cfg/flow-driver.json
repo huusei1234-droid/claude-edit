@@ -1,0 +1,80 @@
+{
+  "accounts": [
+    {
+      "id": "a1",
+      "name": "Isolated AVPM Sample u/7",
+      "profile": "MAIN_BRAVE",
+      "userPrefix": "u/5/",
+      "projectId": "dd01573e-f05e-4f59-82ba-8b0c75cb9272",
+      "preferredEmail": "hangthumedia@gmail.com",
+      "agentOwnedProjects": [],
+      "prefixCredits": {
+        "u/0/": {
+          "credits": 0,
+          "updatedAt": 1795840533728,
+          "exhaustedUntil": 1795854933728
+        },
+        "u/1/": {
+          "credits": 20,
+          "updatedAt": 1795840540684,
+          "exhaustedUntil": 1795854940684,
+          "email": "capcutvid274@gmail.com"
+        },
+        "u/2/": {
+          "credits": 75,
+          "updatedAt": 1795840545319,
+          "email": "lmtcvn002@gmail.com"
+        },
+        "u/3/": {
+          "credits": 50,
+          "updatedAt": 1795840620296,
+          "exhaustedUntil": 1795855020296,
+          "email": "capcutvid254@gmail.com"
+        },
+        "u/4/": {
+          "credits": 50,
+          "updatedAt": 1795840624907,
+          "exhaustedUntil": 1795855024907,
+          "email": "capcutvid259@gmail.com"
+        },
+        "u/5/": {
+          "credits": 712,
+          "updatedAt": 1795840631628,
+          "email": "capcutvid264@gmail.com"
+        },
+        "u/6/": {
+          "credits": 50,
+          "updatedAt": 1795840427823,
+          "exhaustedUntil": 1795883627823
+        },
+        "u/7/": {
+          "credits": 920,
+          "email": "hangthumedia@gmail.com",
+          "updatedAt": 1795840427823
+        }
+      },
+      "workerTargets": [
+        {
+          "prefix": "u/5/",
+          "projectId": "9d09a0b7-0fb9-416d-a622-5d0654c04592",
+          "email": "capcutvid264@gmail.com"
+        },
+        {
+          "prefix": "u/5/",
+          "projectId": "dd01573e-f05e-4f59-82ba-8b0c75cb9272",
+          "email": "capcutvid264@gmail.com"
+        }
+      ],
+      "agentOwnedProjectIds": [
+        "dd01573e-f05e-4f59-82ba-8b0c75cb9272",
+        "9d09a0b7-0fb9-416d-a622-5d0654c04592"
+      ],
+      "email": "capcutvid264@gmail.com"
+    }
+  ],
+  "active": "a1",
+  "minCredits": {
+    "video": 60,
+    "image": 10
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "inspected_at": "2026-11-28T18:09:35.077489",
+  "video_path": "C:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Ngay_05_2811_Chi_Hang_SP_CTKM\\V02_CTKM_Tong_Hop\\03_Final\\261128 AVPM Chị Hằng ưu đãi sinh nhật Droppii đến 30 tháng 11 final.mp4",
+  "fingerprint": {
+    "file_size": 29631314,
+    "sha256_head_tail": "12f1f3edc885b8e056802b77613cec994f71c41d2342ee37e08c64ddaef7572b"
+  },
+  "streams": {
+    "width": 1080,
+    "height": 1920,
+    "v_codec": "h264",
+    "a_codec": "aac",
+    "fps": 24.0,
+    "format_dur": 25.25,
+    "video_dur": 25.208,
+    "audio_dur": 25.208,
+    "av_sync_delta": 0.0
+  },
+  "letterbox": {
+    "top_black_px": 0,
+    "bottom_black_px": 0
+  },
+  "integrated_lufs": -15.1,
+  "cut_count": 7,
+  "cuts": [
+    {
+      "index": 1,
+      "start": 0.0,
+      "end": 8.66,
+      "dur": 8.66,
+      "label": "s1_mo_dau"
+    },
+    {
+      "index": 2,
+      "start": 8.66,
+      "end": 10.41,
+      "dur": 1.75,
+      "label": "s2_gioi_thieu"
+    },
+    {
+      "index": 3,
+      "start": 10.41,
+      "end": 11.97,
+      "dur": 1.56,
+      "label": "s2_broll_step1"
+    },
+    {
+      "index": 4,
+      "start": 11.97,
+      "end": 13.52,
+      "dur": 1.56,
+      "label": "s2_broll_step2"
+    },
+    {
+      "index": 5,
+      "start": 13.52,
+      "end": 15.08,
+      "dur": 1.56,
+      "label": "s2_broll_step3"
+    },
+    {
+      "index": 6,
+      "start": 15.08,
+      "end": 16.62,
+      "dur": 1.54,
+      "label": "s2_ket_cau"
+    },
+    {
+      "index": 7,
+      "start": 16.62,
+      "end": 25.2,
+      "dur": 8.58,
+      "label": "s3_ctkm_den_30_11"
+    }
+  ],
+  "sheets": {
+    "all_cuts_full": "C:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Ngay_05_2811_Chi_Hang_SP_CTKM\\V02_CTKM_Tong_Hop\\04_QC_Gate\\QC_FINAL_ALL_CUTS_FULL.jpg",
+    "all_cuts_zoom": "C:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Ngay_05_2811_Chi_Hang_SP_CTKM\\V02_CTKM_Tong_Hop\\04_QC_Gate\\QC_FINAL_ALL_CUTS_ZOOM.jpg"
+  },
+  "audio_audit": {
+    "word_count": 81,
+    "eof_tail_sec": 0.99,
+    "eof_cutoff": false,
+    "repetitions": [],
+    "transcript": "Cả nhà ơi, đợt cuối mừng sinh nhật 8 tuổi của An Vượng chỉ còn đến hết ngày 30 tháng này với mức quà tặng lớn nhất tháng cho cả gia đình mình. Đáng chọn nhất là combo 4 sản phẩm tặng ngay hộp lớn Colamella 920 .000 lấy 3 Bojomi hay 4 nghệ đều tặng thêm 1 hộp. Lấy 2 Colamella tặng hộp nhỏ 480 .000 lấy 5 đạm tặng hộp Bojomi 520 .000 Nhắn hằng trước ngày 30 nhé!"
+  },
+  "machine_failures": [],
+  "machine_status": "READY_FOR_VISUAL_SIGN_OFF"
+}

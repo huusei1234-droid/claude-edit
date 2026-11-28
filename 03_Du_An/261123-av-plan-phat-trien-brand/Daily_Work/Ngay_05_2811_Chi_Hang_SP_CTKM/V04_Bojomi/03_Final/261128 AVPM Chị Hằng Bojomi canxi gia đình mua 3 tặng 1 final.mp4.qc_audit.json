@@ -1,0 +1,89 @@
+{
+  "inspected_at": "2026-11-28T18:31:18.067214",
+  "video_path": "C:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Ngay_05_2811_Chi_Hang_SP_CTKM\\V04_Bojomi\\03_Final\\261128 AVPM Chị Hằng Bojomi canxi gia đình mua 3 tặng 1 final.mp4",
+  "fingerprint": {
+    "file_size": 26427624,
+    "sha256_head_tail": "f5a3120f65a77435ff0ac4f59c5f4ed501148f73ab7aa804b257cff6be9fcabe"
+  },
+  "streams": {
+    "width": 1080,
+    "height": 1920,
+    "v_codec": "h264",
+    "a_codec": "aac",
+    "fps": 24.0,
+    "format_dur": 24.25,
+    "video_dur": 24.208,
+    "audio_dur": 24.188,
+    "av_sync_delta": 0.02
+  },
+  "letterbox": {
+    "top_black_px": 0,
+    "bottom_black_px": 0
+  },
+  "integrated_lufs": -14.8,
+  "cut_count": 7,
+  "cuts": [
+    {
+      "index": 1,
+      "start": 0.0,
+      "end": 7.64,
+      "dur": 7.64,
+      "label": "s1_mo_dau"
+    },
+    {
+      "index": 2,
+      "start": 7.64,
+      "end": 9.39,
+      "dur": 1.75,
+      "label": "s2_gioi_thieu"
+    },
+    {
+      "index": 3,
+      "start": 9.39,
+      "end": 10.95,
+      "dur": 1.56,
+      "label": "s2_broll_step1"
+    },
+    {
+      "index": 4,
+      "start": 10.95,
+      "end": 12.51,
+      "dur": 1.56,
+      "label": "s2_broll_step2"
+    },
+    {
+      "index": 5,
+      "start": 12.51,
+      "end": 14.07,
+      "dur": 1.56,
+      "label": "s2_broll_step3"
+    },
+    {
+      "index": 6,
+      "start": 14.07,
+      "end": 15.6,
+      "dur": 1.53,
+      "label": "s2_ket_cau"
+    },
+    {
+      "index": 7,
+      "start": 15.6,
+      "end": 24.19,
+      "dur": 8.59,
+      "label": "s3_ctkm_den_30_11"
+    }
+  ],
+  "sheets": {
+    "all_cuts_full": "C:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Ngay_05_2811_Chi_Hang_SP_CTKM\\V04_Bojomi\\04_QC_Gate\\QC_FINAL_ALL_CUTS_FULL.jpg",
+    "all_cuts_zoom": "C:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Ngay_05_2811_Chi_Hang_SP_CTKM\\V04_Bojomi\\04_QC_Gate\\QC_FINAL_ALL_CUTS_ZOOM.jpg"
+  },
+  "audio_audit": {
+    "word_count": 79,
+    "eof_tail_sec": 0.75,
+    "eof_cutoff": false,
+    "repetitions": [],
+    "transcript": "Mình hay hỏi bố mẹ ăn no chưa? Chứ ít để ý bữa hàng ngày đã đủ canxi chưa? Người lớn ngại nuốt viên thì bột pha ấm dễ uống hơn. Mỗi gói Bozomi 20g có hơn 400mg canxi tảo biển đỏ, cùng vitamin D3, K2 và collagen, vị vani ngũ cốc thơm dịu. Đến hết ngày 30 tháng này, cả nhà lấy 3 hộp Bozomi, được tặng ngay một hộp mới 520 .000 nhắn hàng chữ canxi nhé."
+  },
+  "machine_failures": [],
+  "machine_status": "READY_FOR_VISUAL_SIGN_OFF"
+}

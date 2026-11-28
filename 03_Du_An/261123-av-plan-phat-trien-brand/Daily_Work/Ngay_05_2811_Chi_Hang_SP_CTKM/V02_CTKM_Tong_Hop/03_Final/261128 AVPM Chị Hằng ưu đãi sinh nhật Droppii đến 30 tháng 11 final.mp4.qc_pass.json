@@ -1,0 +1,13 @@
+{
+  "signed_at": "2026-11-28T18:28:45.463217",
+  "certified_path": "C:\\AI\\full studio\\03_Du_An\\261123-av-plan-phat-trien-brand\\Daily_Work\\Ngay_05_2811_Chi_Hang_SP_CTKM\\V02_CTKM_Tong_Hop\\03_Final\\261128 AVPM Chị Hằng ưu đãi sinh nhật Droppii đến 30 tháng 11 final.mp4",
+  "verdict": "PASS",
+  "auditor_verified": true,
+  "auditor": "video-qc-auditor:0f9b4ca0-0f72-469c-84ef-509c59ee9d87",
+  "notes": "Đã kiểm duyệt độc lập 100% 7 cú cắt (#01..#07) trên FULL/ZOOM sheets, đối chiếu SKU gốc và nghe trọn vẹn MP4 (25.25s, SyncDelta=0.0s, -15.1 LUFS): Toàn bộ 4 bao bì thật AV Protein, Bojomi, Collamela và Curcumilk Phyto chuẩn xác 1:1 (0% hộp giả, 0% watermark); thông tin CTKM sinh nhật đến hết 30/11 chuẩn xác; Chị Hằng đồng nhất Blazer Trắng Kem, 3 thẻ chữ chuẩn vùng an toàn 9:16, BGM Voice-Pocket êm sạch, thoại đủ 81 từ (0% lặp/đứt chữ).",
+  "override_reason": "",
+  "cut_count": 7,
+  "integrated_lufs": -15.1,
+  "file_size": 29631314,
+  "sha256_head_tail": "12f1f3edc885b8e056802b77613cec994f71c41d2342ee37e08c64ddaef7572b"
+}

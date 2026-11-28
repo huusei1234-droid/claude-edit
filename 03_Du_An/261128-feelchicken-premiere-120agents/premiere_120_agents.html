@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8" />
+<title>Feel Chicken Kiểm Tra Miệng 20/11 — 120 AI Agents × Adobe Premiere Pro 2026 Live Throw Showcase (60fps)</title>
+<style>
+  @font-face {
+    font-family: 'MontserratBlack';
+    src: url('file:///C:/AI/full%20studio/BO_KIEN_THUC_TVC_AI_PORTABLE/03_TAI_NGUYEN_DUNG_CHUNG/fonts_tvc_vi/Montserrat-Black.ttf') format('truetype');
+    font-weight: 900;
+  }
+  @font-face {
+    font-family: 'BeVietnamExtraBold';
+    src: url('file:///C:/AI/full%20studio/BO_KIEN_THUC_TVC_AI_PORTABLE/03_TAI_NGUYEN_DUNG_CHUNG/fonts_tvc_vi/BeVietnamPro-ExtraBold.ttf') format('truetype');
+    font-weight: 800;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; user-select: none; }
+  html, body {
+    width: 1080px; height: 1920px; overflow: hidden;
+    background: #0D0F14;
+    font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Inter, sans-serif;
+    color: #E5E7EB;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  #stage { position: relative; width: 1080px; height: 1920px; background: #0E1016; }
+
+  .cc-badge {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 17px; height: 17px; border-radius: 3px; font-weight: 900; font-size: 9.5px; flex-shrink: 0;
+  }
+  .b-pr { background: #00005B; color: #9999FF; border: 1px solid #5C5CFF; }
+  .b-ps { background: #001E36; color: #31A8FF; border: 1px solid #31A8FF; }
+  .b-ai { background: #330000; color: #FF9A00; border: 1px solid #FF9A00; }
+  .b-ae { background: #00005B; color: #CF96FD; border: 1px solid #8F5BFF; }
+  .b-gp { background: #10A37F; color: #FFFFFF; }
+
+  /* ================= TOP HALF (0..916px): OVERLAPPING Z-JUMPING MULTI-APP STAGE (ZERO FLOW!) ================= */
+  #top-desktop {
+    position: absolute; left: 0; top: 0; width: 1080px; height: 916px;
+    background: radial-gradient(circle at 35% 25%, #1E1A2E 0%, #0E1017 78%);
+    overflow: hidden;
+  }
+
+  #top-dock {
+    position: absolute; left: 0; top: 0; width: 1080px; height: 30px;
+    background: rgba(13, 15, 22, 0.96); border-bottom: 1px solid #282D3D;
+    display: flex; align-items: center; padding: 0 10px; gap: 6px; z-index: 60;
+    font-size: 9.2px; color: #9CA3AF;
+  }
+  .dk-item {
+    padding: 3px 9px; border-radius: 5px; background: #171B26; border: 1px solid #293042;
+    display: inline-flex; align-items: center; gap: 5px; font-weight: 600; color: #BAC2D2;
+  }
+  .dk-item.on {
+    background: #222942; border-color: #60A5FA; color: #FFFFFF;
+    box-shadow: 0 0 10px rgba(96, 165, 250, 0.35);
+  }
+  .dk-right { margin-left: auto; display: flex; align-items: center; gap: 10px; font-family: Consolas, monospace; font-size: 9.2px; }
+
+  .app-win {
+    position: absolute; background: #1A1C22;
+    border: 1.2px solid #323746; border-radius: 9px; overflow: hidden;
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.68);
+    display: flex; flex-direction: column; transform-origin: center center;
+  }
+  .app-win.focused {
+    border-color: #38BDF8;
+    box-shadow: 0 20px 48px rgba(0, 0, 0, 0.86), 0 0 0 1px rgba(56, 189, 248, 0.35);
+  }
+  .win-hdr {
+    height: 26px; background: #22252E; border-bottom: 1px solid #2F3442;
+    display: flex; align-items: center; padding: 0 10px; gap: 7px; font-size: 9.4px; font-weight: 600; color: #E5E7EB; flex-shrink: 0;
+  }
+  .win-dots { display: flex; gap: 5px; margin-right: 3px; }
+  .win-dots i { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
+  .win-tag { margin-left: auto; font-size: 8.5px; color: #38BDF8; font-weight: 700; }
+
+  /* 1. Adobe Photoshop 2026 — Live Layer Cutout & Card Thrower */
+  .ps-menubar {
+    height: 20px; background: #2A2A2E; border-bottom: 1px solid #1C1C1F;
+    display: flex; align-items: center; padding: 0 8px; gap: 9px; font-size: 8.5px; color: #CFCFCF; flex-shrink: 0;
+  }
+  .ps-body { flex: 1; display: flex; background: #1B1B1E; overflow: hidden; }
+  .ps-tools {
+    width: 26px; background: #29292D; border-right: 1px solid #19191C;
+    display: flex; flex-direction: column; align-items: center; padding: 5px 0; gap: 5px; font-size: 10px; color: #C8C8C8; flex-shrink: 0;
+  }
+  .ps-tl { width: 20px; height: 19px; border-radius: 3px; display: flex; align-items: center; justify-content: center; }
+  .ps-tl.on { background: #454954; color: #38BDF8; }
+  #ps-cvs { flex: 1; height: 100%; display: block; }
+  .ps-layers {
+    width: 156px; background: #252529; border-left: 1px solid #19191C;
+    display: flex; flex-direction: column; font-size: 8.3px; color: #D4D4D8; flex-shrink: 0;
+  }
+  .ps-lhdr { padding: 5px 7px; background: #1F1F23; font-weight: 700; color: #F3F4F6; border-bottom: 1px solid #18181B; }
+  .ps-lyr { display: flex; align-items: center; gap: 5px; padding: 5px 6px; border-bottom: 1px solid #2E2E34; color: #BDBDC4; }
+  .ps-lyr.sel { background: #364156; color: #FFFFFF; font-weight: 700; border-left: 2.5px solid #38BDF8; }
+  .ps-lyr img { width: 19px; height: 19px; border-radius: 2px; object-fit: cover; border: 1px solid #666; }
+
+  /* 2. Illustrator 2026 — Live Kawaii Vector & Quiz Card Thrower */
+  #ai-cvs { width: 100%; flex: 1; display: block; background: #16171C; }
+
+  /* 3. ChatGPT Plus 4o — B-Roll & Sticker Source Generator */
+  #gpt-cvs { width: 100%; flex: 1; display: block; background: #212121; }
+
+  /* 4. Chrome Auto-Agent — Feel Chicken Fanpage & TikTok Ads */
+  .cms-url {
+    height: 23px; background: #FFF1F2; border-bottom: 1px solid #FECDD3;
+    display: flex; align-items: center; padding: 0 8px; gap: 6px; font-size: 8.6px; color: #881337; flex-shrink: 0;
+  }
+  .cms-body { flex: 1; background: #FFFFFF; color: #0F172A; padding: 8px; display: flex; flex-direction: column; gap: 6px; overflow: hidden; }
+  .cms-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
+  .cms-card { border: 1.5px solid #E2E8F0; border-radius: 6px; padding: 3px; background: #FFFBEB; }
+  .cms-card.hot { border-color: #E11D48; background: #FFF1F2; }
+  .cms-card img { width: 100%; height: 84px; object-fit: cover; border-radius: 4px; display: block; }
+  .cms-card div { font-size: 8px; font-weight: 700; color: #0F172A; margin-top: 3px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .cms-input {
+    border: 1.5px solid #E11D48; border-radius: 5px; padding: 4px 8px;
+    font-size: 8.8px; font-weight: 700; color: #0F172A; background: #FFF1F2; min-height: 22px;
+  }
+  .cms-tbl { font-size: 8.2px; display: flex; flex-direction: column; gap: 3px; margin-top: 2px; }
+  .cms-tr { display: grid; grid-template-columns: 1.25fr 1.55fr 0.7fr; padding: 3px 5px; border-bottom: 1px solid #E2E8F0; color: #334155; }
+  .cms-tr.hd { font-weight: 700; color: #881337; background: #FFE4E6; border-radius: 3px; }
+
+  /* 5. Antigravity Swarm JSX IDE */
+  .ide-body { flex: 1; background: #0D1117; padding: 8px 10px; font-family: Consolas, monospace; font-size: 9px; line-height: 1.55; color: #C9D1D9; overflow: hidden; }
+  .cl { padding: 1px 5px; border-radius: 3px; white-space: nowrap; }
+  .cl.cur { background: rgba(153, 153, 255, 0.18); border-left: 2px solid #9999FF; }
+  .kw { color: #FF7B72; } .fn { color: #D2A8FF; } .nu { color: #79C0FF; } .cm { color: #8B949E; }
+
+  /* 6. 120-Agent Live Throw Stream */
+  .swarm-body { flex: 1; background: #0F131C; padding: 7px 8px; display: flex; flex-direction: column; gap: 4px; font-family: Consolas, monospace; font-size: 8.6px; overflow: hidden; }
+  .srow { display: flex; align-items: center; justify-content: space-between; padding: 4px 7px; border-radius: 4px; background: #161C28; border: 1px solid #242D40; color: #CBD5E1; }
+  .srow.hot { border-color: #9999FF; background: rgba(92, 92, 255, 0.18); color: #FFFFFF; }
+
+  #alt-tab-hud {
+    position: absolute; left: 50%; top: 430px; transform: translate(-50%, -50%);
+    background: rgba(15, 18, 26, 0.92); border: 1px solid #6366F1; border-radius: 10px;
+    padding: 8px 12px; display: none; gap: 8px; z-index: 55; box-shadow: 0 14px 36px rgba(0,0,0,0.85);
+  }
+  .at-it { padding: 5px 9px; border-radius: 6px; font-size: 8.8px; font-weight: 700; color: #94A3B8; background: #1E2433; }
+  .at-it.sel { background: #4F46E5; color: #FFFFFF; outline: 2px solid #A5B4FC; }
+
+  /* ================= BOTTOM HALF (916..1920px): 100% PHOTO-AUTHENTIC ADOBE PREMIERE PRO 2026 ================= */
+  #premiere-pro {
+    position: absolute; left: 0; top: 916px; width: 1080px; height: 1004px;
+    background: #161618; display: flex; flex-direction: column;
+    border-top: 2px solid #2D3250;
+  }
+
+  /* 1. Premiere Pro 2026 Top Application Header */
+  #pr-topbar {
+    height: 32px; background: #1D1D20; border-bottom: 1px solid #0E0E10;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 10px; font-size: 9.6px; color: #BDBDC4; flex-shrink: 0;
+  }
+  .pr-left-nav { display: flex; align-items: center; gap: 9px; }
+  .pr-mode { padding: 5px 4px; color: #9CA3AF; font-weight: 600; }
+  .pr-mode.on { color: #FFFFFF; border-bottom: 2px solid #4B9CFF; font-weight: 700; }
+  .pr-workspaces { display: flex; align-items: center; gap: 4px; }
+  .pr-ws { padding: 3px 7px; border-radius: 3px; font-size: 8.8px; color: #9E9EA6; font-weight: 600; }
+  .pr-ws.on { background: #2D3250; color: #9999FF; border-bottom: 1.5px solid #9999FF; }
+  .pr-export-pill {
+    background: #1473E6; color: #FFFFFF; font-weight: 700; font-size: 9.4px;
+    padding: 4px 12px; border-radius: 12px;
+  }
+  .pr-export-pill.done { background: #059669; box-shadow: 0 0 12px rgba(16, 185, 129, 0.55); }
+
+  /* 2. Premiere Pro Upper 3 Modular Docked Panels (Project Bin | Program Monitor | Effect Controls & Lumetri) */
+  #pr-upper {
+    height: 526px; display: flex; gap: 2px; padding: 2px;
+    background: #0E0E10; flex-shrink: 0;
+  }
+  .pr-panel {
+    background: #232326; border: 1px solid #2E2E33;
+    display: flex; flex-direction: column; overflow: hidden; position: relative;
+  }
+  .pr-ptabs {
+    height: 25px; background: #1B1B1E; border-bottom: 1px solid #111113;
+    display: flex; align-items: center; padding: 0 8px; gap: 10px;
+    font-size: 8.8px; color: #9E9EA6; font-weight: 600; flex-shrink: 0;
+  }
+  .pr-ptabs span.on {
+    color: #FFFFFF; font-weight: 700; border-bottom: 2px solid #4B9CFF; padding: 4px 0;
+  }
+
+  /* Left Panel: Project Bin (Progressively adds items as thrown from Top!) */
+  #pr-proj-panel { width: 296px; flex-shrink: 0; }
+  #pr-bin-cvs { width: 294px; height: 499px; display: block; }
+
+  /* Center Panel: Program Monitor + Live Lumetri Scopes + Master VU Meters */
+  #pr-prog-panel { width: 476px; flex-shrink: 0; background: #1B1B1E; }
+  #pr-mon-stage {
+    flex: 1; background: #141417; padding: 5px 6px;
+    display: flex; align-items: center; justify-content: space-between; position: relative;
+  }
+  #pr-scopes-col {
+    width: 72px; height: 444px; background: #101013; border: 1px solid #26262C;
+    padding: 3px; display: flex; flex-direction: column; gap: 4px; flex-shrink: 0;
+  }
+  .pr-sbox { flex: 1; background: #08080A; border: 1px solid #1E1E24; position: relative; overflow: hidden; }
+  .pr-slbl { position: absolute; left: 3px; top: 2px; font-size: 6.8px; color: #8E8E98; font-weight: 700; z-index: 2; }
+
+  #pr-viewport-wrap {
+    width: 250px; height: 444px; position: relative;
+    background: #000000; border: 1px solid #3C3C46; overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.85);
+  }
+  #liveview-img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  /* Authentic Premiere Pro Blue/Cyan Motion Bounding Box + 8 Square Handles + Center Anchor Crosshair! */
+  #pr-snap-box {
+    position: absolute; border: 1.8px solid #4B9CFF;
+    box-shadow: 0 0 14px rgba(75, 156, 255, 0.65);
+    pointer-events: none; display: none; z-index: 9;
+  }
+  .pr-h { width: 6px; height: 6px; background: #FFFFFF; border: 1px solid #1473E6; position: absolute; }
+
+  #pr-vu-col {
+    width: 56px; height: 444px; background: #101013; border: 1px solid #26262C;
+    padding: 5px 4px; display: flex; flex-direction: column; align-items: center; flex-shrink: 0;
+  }
+  .vu-pair { flex: 1; display: flex; gap: 5px; align-items: stretch; justify-content: center; width: 100%; margin-top: 4px; }
+  .vu-bar { width: 12px; background: #070709; border: 1px solid #24242C; position: relative; overflow: hidden; }
+  .vu-fill {
+    position: absolute; left: 0; right: 0; bottom: 0; height: 40%;
+    background: linear-gradient(0deg, #22C55E 0%, #22C55E 68%, #FACC15 86%, #EF4444 100%);
+  }
+  #pr-vu-db { font-family: Consolas, monospace; font-size: 7.8px; color: #FACC15; margin-top: 4px; font-weight: 700; }
+
+  #pr-transport {
+    height: 28px; background: #1E1E22; border-top: 1px solid #111113;
+    display: flex; align-items: center; justify-content: space-between; padding: 0 10px;
+    font-family: Consolas, monospace; font-size: 9.6px; color: #A1A1AA; flex-shrink: 0;
+  }
+  .pr-dd { background: #2A2A30; border: 1px solid #3A3A42; padding: 1px 5px; border-radius: 2px; font-size: 8px; font-family: "Segoe UI", sans-serif; color: #D4D4D8; }
+
+  /* Right Panel: Effect Controls & Lumetri Color */
+  #pr-insp-panel { flex: 1; }
+  #pr-insp-cvs { width: 300px; height: 499px; display: block; }
+
+  /* 3. Premiere Pro Bottom Timeline Area (Tools Dock + Sequence 01 Multi-Track Canvas) */
+  #pr-lower {
+    flex: 1; display: flex; gap: 2px; padding: 0 2px 2px; background: #0E0E10; overflow: hidden;
+  }
+  #pr-tools-dock {
+    width: 28px; background: #232326; border: 1px solid #2E2E33;
+    display: flex; flex-direction: column; align-items: center; padding: 6px 0; gap: 7px;
+    font-size: 10px; color: #A1A1AA; flex-shrink: 0;
+  }
+  .pr-tbtn { width: 20px; height: 20px; border-radius: 3px; display: flex; align-items: center; justify-content: center; font-weight: 700; }
+  .pr-tbtn.on { background: #1473E6; color: #FFFFFF; }
+
+  #pr-seq-panel { flex: 1; background: #1B1B1E; border: 1px solid #2E2E33; display: flex; flex-direction: column; overflow: hidden; }
+  #pr-seq-bar {
+    height: 25px; background: #222226; border-bottom: 1px solid #111113;
+    display: flex; align-items: center; justify-content: space-between; padding: 0 10px;
+    font-size: 8.8px; color: #D4D4D8; flex-shrink: 0;
+  }
+  .pr-seq-pill { background: #2D3250; color: #9999FF; padding: 2px 7px; border-radius: 3px; font-weight: 700; }
+  #tl-canvas { width: 1046px; height: 416px; display: block; }
+
+  /* Full-Screen 60fps Direct Curved-Arc Throws + 120 Swarm Cursors */
+  #fx-canvas {
+    position: absolute; left: 0; top: 0; width: 1080px; height: 1920px;
+    pointer-events: none; z-index: 100;
+  }
+</style>
+</head>
+<body>
+<div id="stage">
+  <!-- ================= TOP HALF: OVERLAPPING Z-JUMPING MULTI-APP STAGE (ZERO FLOW!) ================= -->
+  <div id="top-desktop">
+    <div id="top-dock">
+      <div class="dk-item on" id="dk-ps"><span class="cc-badge b-ps">Ps</span>Photoshop</div>
+      <div class="dk-item on" id="dk-pr"><span class="cc-badge b-pr">Pr</span>Premiere Pro</div>
+      <div class="dk-item" id="dk-gpt"><span class="cc-badge b-gp">◎</span>ChatGPT Plus</div>
+      <div class="dk-item" id="dk-ai"><span class="cc-badge b-ai">Ai</span>Illustrator</div>
+      <div class="dk-item" id="dk-cms">🌐 FeelChicken Web</div>
+      <div class="dk-item" id="dk-sw"><span class="cc-badge b-ae">⚡</span>120 AI Agents</div>
+      <div class="dk-right">
+        <span style="color:#34D399;">● LIVE PREMIERE THROW</span>
+        <span id="sys-ops" style="color:#60A5FA;font-weight:700;">462 ops/s</span>
+      </div>
+    </div>
+
+    <!-- 1. PHOTOSHOP 2026: Live Cutout & Quiz/B-Roll Card Thrower -->
+    <div class="app-win focused" id="win-ps">
+      <div class="win-hdr">
+        <div class="win-dots"><i style="background:#EF4444"></i><i style="background:#F59E0B"></i><i style="background:#10B981"></i></div>
+        <span class="cc-badge b-ps">Ps</span>
+        <span>Photoshop 2026 — Tách Layer B-Roll & Thẻ Câu Hỏi 20/11 ném xuống Premiere...</span>
+        <span class="win-tag">MCP Live</span>
+      </div>
+      <div class="ps-menubar">
+        <span>File</span><span>Edit</span><span>Image</span><span>Layer</span><span>Select</span>
+        <span style="color:#38BDF8;font-weight:700;">Generative Cutout</span><span>Plugins</span>
+      </div>
+      <div class="ps-body">
+        <div class="ps-tools">
+          <div class="ps-tl on">✥</div><div class="ps-tl">⬚</div><div class="ps-tl">🪄</div>
+          <div class="ps-tl">⌗</div><div class="ps-tl">✒</div><div class="ps-tl">T</div>
+        </div>
+        <canvas id="ps-cvs" width="430" height="390"></canvas>
+        <div class="ps-layers">
+          <div class="ps-lhdr">Live PSD Queue</div>
+          <div class="ps-lyr sel" id="psl-0"><span>👁</span><img src="assets/throws/s1_bub.jpg"/><span>01_Bub_ThanhOi</span></div>
+          <div class="ps-lyr" id="psl-1"><span>👁</span><img src="assets/throws/s2_teacher.jpg"/><span>02_LopHoc_2011</span></div>
+          <div class="ps-lyr" id="psl-2"><span>👁</span><img src="assets/throws/s3_chalk.jpg"/><span>03_BangPhan_KTM</span></div>
+          <div class="ps-lyr" id="psl-3"><span>👁</span><img src="assets/throws/q6_domeo.jpg"/><span>04_6The_CauHoi</span></div>
+          <div class="ps-lyr" id="psl-4"><span>👁</span><img src="assets/throws/s5_feast.jpg"/><span>05_BanTiec_GaSot</span></div>
+          <div class="ps-lyr" id="psl-5"><span>👁</span><img src="assets/throws/s6_endcard.jpg"/><span>06_EndCard_38NDC</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. ILLUSTRATOR 2026: Live Kawaii Vector & Subtitle Pill Thrower -->
+    <div class="app-win" id="win-ai">
+      <div class="win-hdr">
+        <div class="win-dots"><i style="background:#EF4444"></i><i style="background:#F59E0B"></i><i style="background:#10B981"></i></div>
+        <span class="cc-badge b-ai">Ai</span>
+        <span>Illustrator × Essential Graphics Vector Thrower</span>
+      </div>
+      <canvas id="ai-cvs" width="510" height="380"></canvas>
+    </div>
+
+    <!-- 3. CHATGPT PLUS 4o: Creates Classroom B-Roll & Sticker Sources -->
+    <div class="app-win" id="win-gpt">
+      <div class="win-hdr" style="background:#171717;">
+        <div class="win-dots"><i style="background:#EF4444"></i><i style="background:#F59E0B"></i><i style="background:#10B981"></i></div>
+        <span class="cc-badge b-gp">◎</span>
+        <span>ChatGPT Plus 4o — Tạo hình Source Lớp Học 20/11 & Sticker Kawaii ➔ Premiere</span>
+        <span class="win-tag" style="color:#34D399;">IMAGE GEN</span>
+      </div>
+      <canvas id="gpt-cvs" width="520" height="390"></canvas>
+    </div>
+
+    <!-- 4. CHROME AUTO-AGENT: Feel Chicken Fanpage & TikTok Campaign -->
+    <div class="app-win" id="win-cms">
+      <div class="win-hdr">
+        <div class="win-dots"><i style="background:#EF4444"></i><i style="background:#F59E0B"></i><i style="background:#10B981"></i></div>
+        <span>🌐 Chrome Auto-Agent — Gà Rán Sốt Hàn Quốc Feel Chicken CMS</span>
+        <span class="win-tag" style="color:#34D399;">24 Bots</span>
+      </div>
+      <div class="cms-url"><span>🔒</span><span>https://facebook.com/feelchickenvn/campaigns/kiem-tra-mieng-20-11</span></div>
+      <div class="cms-body">
+        <div class="cms-cards">
+          <div class="cms-card hot" id="cmsc-0"><img src="assets/thumbs/poster_01.jpg"/><div>Minigame Kiểm Tra Miệng</div></div>
+          <div class="cms-card" id="cmsc-1"><img src="assets/thumbs/poster_02.jpg"/><div>Gà Sốt Phô Mai Béo Ngậy</div></div>
+          <div class="cms-card" id="cmsc-2"><img src="assets/thumbs/poster_03.jpg"/><div>Gà Sốt Cay Hàn Quốc</div></div>
+        </div>
+        <div class="cms-input" id="cms-type">KIỂM TRA MIỆNG 20/11 — Trả lời đúng nhận quà ngay tại Feel Chicken!</div>
+        <div class="cms-tbl">
+          <div class="cms-tr hd"><span>Kênh Tự Động</span><span>Chiến Dịch Đồng Bộ</span><span>Trạng Thái</span></div>
+          <div class="cms-tr"><span>FB @feelchickenvn</span><span>Đăng Reel 60fps + Bộ 7 Ảnh 20/11</span><span style="color:#059669;font-weight:800;">LIVE ✓</span></div>
+          <div class="cms-tr"><span>TikTok Feel Chicken</span><span>Đồng bộ CS1: 38 Nguyễn Đình Chiểu</span><span style="color:#0284C7;font-weight:800;">SYNCING</span></div>
+          <div class="cms-tr"><span>Hotline 0796.601.106</span><span>Tự động ghim CS2: 35 Trần Hữu Duyệt</span><span style="color:#059669;font-weight:800;">200 OK</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. ANTIGRAVITY SWARM PREMIERE JSX IDE -->
+    <div class="app-win" id="win-ide">
+      <div class="win-hdr">
+        <div class="win-dots"><i style="background:#EF4444"></i><i style="background:#F59E0B"></i><i style="background:#10B981"></i></div>
+        <span>⚡ Antigravity 120-Agent Swarm — premiere_kiemtramieng_sync.jsx</span>
+        <span class="win-tag" style="color:#9999FF;">ExtendScript</span>
+      </div>
+      <div class="ide-body" id="ide-lines"></div>
+    </div>
+
+    <!-- 6. 120-AGENT LIVE THROW STREAM -->
+    <div class="app-win" id="win-swarm">
+      <div class="win-hdr">
+        <div class="win-dots"><i style="background:#EF4444"></i><i style="background:#F59E0B"></i><i style="background:#10B981"></i></div>
+        <span class="cc-badge b-pr">Pr</span>
+        <span>120-Agent Premiere Live Throw Stream</span>
+        <span class="win-tag" style="color:#34D399;">ACTIVE</span>
+      </div>
+      <div class="swarm-body" id="swarm-rows"></div>
+    </div>
+
+    <div id="alt-tab-hud">
+      <div class="at-it sel" id="at-0">Ps Cutout</div>
+      <div class="at-it" id="at-1">◎ ChatGPT</div>
+      <div class="at-it" id="at-2">Ai Vector</div>
+      <div class="at-it" id="at-3">🌐 FeelChicken</div>
+      <div class="at-it" id="at-4">Pr Swarm</div>
+    </div>
+  </div>
+
+  <!-- ================= BOTTOM HALF: 100% PHOTO-AUTHENTIC ADOBE PREMIERE PRO 2026 ================= -->
+  <div id="premiere-pro">
+    <!-- 1. Premiere Pro Top Application Header -->
+    <div id="pr-topbar">
+      <div class="pr-left-nav">
+        <span class="cc-badge b-pr">Pr</span>
+        <span>🏠</span>
+        <span class="pr-mode">Import</span>
+        <span class="pr-mode on">Edit</span>
+        <span class="pr-mode">Export</span>
+        <span style="color:#6E6E77;margin-left:6px;">FeelChicken_KiemTraMieng_2011.prproj *</span>
+      </div>
+      <div class="pr-workspaces">
+        <span class="pr-ws" id="pws-0">Editing</span>
+        <span class="pr-ws" id="pws-1">Color</span>
+        <span class="pr-ws" id="pws-2">Effects</span>
+        <span class="pr-ws" id="pws-3">Captions & Graphics</span>
+      </div>
+      <div class="pr-export-pill" id="pr-export">Quick Export</div>
+    </div>
+
+    <!-- 2. Premiere Pro Upper 3 Panels -->
+    <div id="pr-upper">
+      <!-- LEFT: Project Bin (Progressively adds items right as thrown from Photoshop/ChatGPT!) -->
+      <div class="pr-panel" id="pr-proj-panel">
+        <div class="pr-ptabs">
+          <span class="on">Project: FeelChicken_2011</span>
+          <span>Media Browser</span>
+          <span>Effects</span>
+        </div>
+        <canvas id="pr-bin-cvs" width="294" height="499"></canvas>
+      </div>
+
+      <!-- CENTER: Program Monitor + Live Lumetri Scopes + Stereo VU Meters -->
+      <div class="pr-panel" id="pr-prog-panel">
+        <div class="pr-ptabs" style="justify-content:space-between;">
+          <span class="on">Program: KiemTraMieng_9x16</span>
+          <span style="color:#4B9CFF;font-size:8px;font-weight:700;" id="pr-live-pill">● Mercury Playback GPU (CUDA)</span>
+        </div>
+        <div id="pr-mon-stage">
+          <div id="pr-scopes-col">
+            <div class="pr-sbox"><span class="pr-slbl">LUMA</span><canvas id="sc-1" width="64" height="140"></canvas></div>
+            <div class="pr-sbox"><span class="pr-slbl">RGB PARADE</span><canvas id="sc-2" width="64" height="140"></canvas></div>
+            <div class="pr-sbox"><span class="pr-slbl">VECTORSCOPE</span><canvas id="sc-3" width="64" height="140"></canvas></div>
+          </div>
+
+          <div id="pr-viewport-wrap">
+            <img id="liveview-img" src="assets/preview_frames/f_0001.jpg" />
+            <div id="pr-snap-box">
+              <div class="pr-h" style="left:-3.5px;top:-3.5px;"></div>
+              <div class="pr-h" style="right:-3.5px;top:-3.5px;"></div>
+              <div class="pr-h" style="left:-3.5px;bottom:-3.5px;"></div>
+              <div class="pr-h" style="right:-3.5px;bottom:-3.5px;"></div>
+            </div>
+          </div>
+
+          <div id="pr-vu-col">
+            <span style="font-size:7.5px;color:#8E8E98;font-weight:700;">dB</span>
+            <div class="vu-pair">
+              <div class="vu-bar"><div class="vu-fill" id="vu-l"></div></div>
+              <div class="vu-bar"><div class="vu-fill" id="vu-r"></div></div>
+            </div>
+            <span id="pr-vu-db">-14.0</span>
+          </div>
+        </div>
+        <div id="pr-transport">
+          <span id="pr-tc" style="color:#4B9CFF;font-weight:700;">00:00:00:00</span>
+          <div style="display:flex;align-items:center;gap:6px;">
+            <span class="pr-dd">Fit ▾</span>
+            <span id="pr-play-btn" style="color:#FFFFFF;font-size:10.5px;">❙❙</span>
+            <span class="pr-dd">Full ▾</span>
+          </div>
+          <span id="pr-dur-tc" style="color:#7C7C86;">00:00:48:28</span>
+        </div>
+      </div>
+
+      <!-- RIGHT: Effect Controls / Lumetri Color / Essential Graphics -->
+      <div class="pr-panel" id="pr-insp-panel">
+        <div class="pr-ptabs">
+          <span class="on" id="pit-0">Effect Controls</span>
+          <span id="pit-1">Lumetri Color</span>
+          <span id="pit-2">Essential Graphics</span>
+        </div>
+        <canvas id="pr-insp-cvs" width="300" height="499"></canvas>
+      </div>
+    </div>
+
+    <!-- 3. Premiere Pro Bottom Multi-Track Timeline -->
+    <div id="pr-lower">
+      <div id="pr-tools-dock">
+        <div class="pr-tbtn on" id="ptl-0">↖</div>
+        <div class="pr-tbtn" id="ptl-1">⇥</div>
+        <div class="pr-tbtn" id="ptl-2">⇹</div>
+        <div class="pr-tbtn" id="ptl-3">🪒</div>
+        <div class="pr-tbtn" id="ptl-4">⇄</div>
+        <div class="pr-tbtn" id="ptl-5">✒</div>
+        <div class="pr-tbtn" id="ptl-6">✋</div>
+        <div class="pr-tbtn" id="ptl-7">T</div>
+      </div>
+      <div id="pr-seq-panel">
+        <div id="pr-seq-bar">
+          <div style="display:flex;align-items:center;gap:8px;">
+            <span style="color:#FFFFFF;font-weight:700;">≡ KiemTraMieng_2011_Master</span>
+            <span class="pr-seq-pill">🧲 Snap</span>
+            <span class="pr-seq-pill">🔗 Linked Selection</span>
+          </div>
+          <span id="pr-tl-stat" style="color:#60A5FA;font-weight:700;">Live Assembling: 2/36 Clips...</span>
+        </div>
+        <canvas id="tl-canvas" width="1046" height="416"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <!-- FULL-SCREEN 60FPS DIRECT CURVED-ARC THROWS + 120 SWARM CURSORS -->
+  <canvas id="fx-canvas" width="1080" height="1920"></canvas>
+</div>
+
+<script src="assets/audio_data_inline.js"></script>
+<script src="assets/words_inline.js"></script>
+<script src="premiere_120_engine.js"></script>
+</body>
+</html>

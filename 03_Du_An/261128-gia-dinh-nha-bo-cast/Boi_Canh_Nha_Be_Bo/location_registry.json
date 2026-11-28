@@ -1,0 +1,43 @@
+{
+  "universe": "Gia Đình Nhà Bơ (Hiếu × Trang × Bé Bơ)",
+  "updated_at": "2026-11-28",
+  "anchor_from_k4": "BG_01 - Phòng Khách Kute Nhà Bé Bơ (Góc Sofa Gấu Bông & Ban Công Nắng Ấm).png",
+  "locations": [
+    {
+      "code": "BG_01",
+      "title": "Phòng Khách Kute (Góc Sofa Gấu Bông & Ban Công)",
+      "usage": "Mỏ neo kiến trúc gốc đưa từ K4 sang: sofa kem bouclé, gấu bông, gối hoa cúc, thảm lông kem & nắng ban công",
+      "file": "BG_01 - Phòng Khách Kute Nhà Bé Bơ (Góc Sofa Gấu Bông & Ban Công Nắng Ấm).png"
+    },
+    {
+      "code": "BG_02",
+      "title": "Phòng Khách Góc Ngược 180° (Kệ TV, Cửa Chính & Quây Chơi)",
+      "usage": "Đảo trục 180° từ BG_01: kệ TV gỗ sồi bo tròn, cửa ra vào khóa vân tay & quây gấu thỏ của Bé Bơ",
+      "file": "BG_02 - Phòng Khách Góc Ngược 180 Độ (Kệ Tivi Gỗ Sồi, Cửa Chính & Góc Chơi Bé Bơ).png"
+    },
+    {
+      "code": "BG_03",
+      "title": "Bếp Mở & Bàn Ăn Gia Đình (Đảo Bếp & Ghế Ăn Dặm Bé Bơ)",
+      "usage": "Đảo bếp đá kem, bàn ăn tròn gỗ sồi + ghế ăn dặm hồng phấn nhìn thông sang sofa phòng khách BG_01",
+      "file": "BG_03 - Bếp Mở & Bàn Ăn Gia Đình Kute (Đảo Bếp Kem Gỗ & Ghế Ăn Dặm Bé Bơ).png"
+    },
+    {
+      "code": "BG_04",
+      "title": "Phòng Ngủ & Góc Chơi Riêng Của Bé Bơ",
+      "usage": "Giường gỗ mái nhà kem-hồng, lều vải voan, kệ gấu thỏ bông & thảm tròn đón nắng cửa sổ",
+      "file": "BG_04 - Phòng Ngủ & Góc Chơi Kute Của Bé Bơ (Giường Ngôi Nhà, Lều Voan & Kệ Gấu Bông).png"
+    },
+    {
+      "code": "BG_05",
+      "title": "Phòng Ngủ Master Bố Mẹ & Góc Gương Toàn Thân Shopee",
+      "usage": "Giường nỉ kem ấm cúng, tủ áo kính LED vàng & gương vòm toàn thân quay phối đồ Affiliate Shopee",
+      "file": "BG_05 - Phòng Ngủ Master Bố Hiếu Mẹ Trang & Góc Gương Toàn Thân Phối Đồ Shopee.png"
+    },
+    {
+      "code": "BG_06",
+      "title": "Lối Dạo Nội Khu & Quán Cafe Hoa Giấy Chân Tòa Nhà",
+      "usage": "Mặt tiền tầng trệt có giàn hoa giấy hồng, bàn cafe gỗ tròn & sảnh kính căn hộ quay cảnh dạo phố/đón con",
+      "file": "BG_06 - Lối Dạo Nội Khu Xanh Mát & Quán Cafe Chân Tòa Nhà Gia Đình Bé Bơ.png"
+    }
+  ]
+}
