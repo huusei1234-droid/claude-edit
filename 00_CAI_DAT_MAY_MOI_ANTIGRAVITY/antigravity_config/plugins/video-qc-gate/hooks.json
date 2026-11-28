@@ -1,0 +1,18 @@
+﻿{
+  "video-final-qc-gate": {
+    "PreToolUse": [
+      {
+        "matcher": "call_mcp_tool",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python \"C:\\\\Users\\\\001\\.gemini\\config\\plugins\\video-qc-gate\\hooks\\pre_deliver_qc_gate.py\"",
+            "timeout": 15
+          }
+        ]
+      }
+    ]
+  }
+}
+
+

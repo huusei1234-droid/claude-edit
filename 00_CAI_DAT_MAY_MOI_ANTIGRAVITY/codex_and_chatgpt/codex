@@ -1,0 +1,7 @@
+#!/bin/sh
+EXE=$(ls -t "$LOCALAPPDATA"/OpenAI/Codex/bin/*/codex.exe 2>/dev/null | head -n 1)
+if [ -z "$EXE" ]; then
+  echo "OpenAI Codex binary not found" >&2
+  exit 1
+fi
+exec "$EXE" "$@"

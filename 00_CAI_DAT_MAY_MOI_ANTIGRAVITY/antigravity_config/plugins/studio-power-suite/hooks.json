@@ -1,0 +1,18 @@
+﻿{
+  "protect-open-creative-apps": {
+    "PreToolUse": [
+      {
+        "matcher": "run_command",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python -X utf8 \"C:\\\\Users\\\\001\\.gemini\\config\\plugins\\studio-power-suite\\hooks\\protect_user_apps_gate.py\"",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}
+
+

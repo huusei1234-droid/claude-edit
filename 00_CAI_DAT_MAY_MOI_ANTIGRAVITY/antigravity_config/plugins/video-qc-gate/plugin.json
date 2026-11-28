@@ -1,0 +1,11 @@
+{
+  "name": "video-qc-gate",
+  "displayName": "Trạm Kiểm Duyệt Video Độc Lập (Video QC Gate)",
+  "description": "Agent kiểm duyệt độc lập (video-qc-auditor) và khóa chặn tự động PreToolUse đảm bảo 100% dự án video (Phim AI, TVC, Talking-Head, CapCut, HyperFrames, Remotion) không còn lỗi hộp sản phẩm giả, thừa đạo cụ, lủng logic, thiếu cảnh toàn hay lặp/đứt từ trước khi xuất giao.",
+  "version": "1.0.0",
+  "suggestedPrompts": [
+    "Chạy Agent video-qc-auditor kiểm duyệt toàn bộ các cảnh và âm thanh của video Final",
+    "Kiểm tra zoom 100% bao bì sản phẩm và kiểm lỗi lặp từ Whisper cho tệp MP4",
+    "Mở báo cáo QC tất cả các cú cắt trước khi xuất giao khách"
+  ]
+}

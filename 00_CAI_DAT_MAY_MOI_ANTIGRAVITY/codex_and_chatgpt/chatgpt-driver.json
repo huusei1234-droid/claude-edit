@@ -1,0 +1,19 @@
+{
+  "accounts": [
+    {
+      "id": "gpt_htpm",
+      "name": "ChatGPT Plus - HTPM",
+      "profile": "MAIN_BRAVE",
+      "projectLabel": "HTPM",
+      "projectId": "g-p-6b093335deb88191accc76e34088233f"
+    },
+    {
+      "id": "gpt_k4",
+      "name": "ChatGPT Plus - K4 Phim Chuyện Trong Nhà",
+      "profile": "MAIN_BRAVE",
+      "projectLabel": "K4 Phim Chuyện Trong Nhà",
+      "projectId": "g-p-6b09334dab8081919ccd6e3b2d6a06b3"
+    }
+  ],
+  "active": "gpt_htpm"
+}

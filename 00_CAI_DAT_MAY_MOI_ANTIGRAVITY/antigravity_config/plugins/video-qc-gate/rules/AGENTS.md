@@ -1,0 +1,12 @@
+11. **BẮT BUỘC KIỂM DUYỆT ĐỘC LẬP 100% THÀNH PHẨM VIDEO QUA `video-qc-gate` TRƯỚC KHI GIAO KHÁCH (ÁP DỤNG MỌI DỰ ÁN)**:
+    - **Quy tắc Vàng Chống Hộp Sản Phẩm Giả Trên AI Video (Google Flow / Gemini / Veo)**: **CẤM TUYỆT ĐỐI** nhắc tên hoặc mô tả hộp/chai/túi sản phẩm trong phần hình ảnh của Prompt nếu trong `refs` của cảnh đó **KHÔNG truyền trực tiếp ảnh thật độ phân giải cao của sản phẩm (`SKU_REF`)**! Ở các cảnh thoại 2–3 diễn viên đã dùng hết slot `refs` cho bối cảnh + nhân vật, mặt bàn bắt buộc ghi rõ **"mặt bàn trống gọn gàng, tuyệt đối không có hộp giấy hay túi quà"** (0% để lòi hộp trắng giả hoặc đạo cụ thừa không cần thiết); khi cần hiện sản phẩm thì cắt J-cut/L-cut sang cảnh cận hoặc cảnh Toàn có truyền `SKU_REF` trong `refs`.
+    - **Quy tắc Đạo Diễn Logic Nhân Quả & Cảnh Toàn Sinh Động (`WS` / `MLS`)**:
+      1. Không dựng 100% cận mặt (`CU`) bó hẹp: bắt buộc đan xen **25%–35% Cảnh Toàn / Trung-Toàn (`WS` / `MLS`)** ở các nhịp mở không gian, tìm đồ, bước vào nhà, di chuyển đối đầu và kết phim để khung hình sống động, có chiều sâu không gian.
+      2. Mọi tình tiết giấu đồ / bắt quả tang / lật kèo phải có **đầy đủ hành động vật lý trên hình** (cảnh lén giấu tang vật -> cảnh phát hiện chỉ điểm -> cảnh mọi người bước nhanh/chạy qua chỗ kẻ gian bắt tại trận -> cảnh thu hồi tang vật), tuyệt đối không nhảy cóc phi logic.
+    - **Quy tắc Nguồn Thoại Chuẩn & Cắt Sạch 100% Từ Lặp**:
+      1. Kiểm tra `faster-whisper` word-level cho từng clip: ưu tiên quay lại (`retake`) để có **source gốc đọc trôi chảy, đủ chữ, không lắp bắp**.
+      2. Nếu còn sót từ lặp nhỏ (`1-gram`..`4-gram`), bắt buộc cắt gọn tại điểm lặng hơi thở / zero-crossing để thành phẩm đạt **`0%` lặp từ, `0%` đứt chữ**.
+    - **Cổng Chặn Bắt Buộc Trước Khi Bàn Giao (`video_qc_gate.py` + Subagent `video-qc-auditor`)**:
+      - Trước khi gọi `show_file_location_card` hoặc báo hoàn thành bất kỳ video `.mp4` nào (K4, K5, K6 HTPM, AVPM, TVC, Talking-Head, CapCut, HyperFrames, Remotion), **BẮT BUỘC**:
+        1. Chạy `video_qc_gate.py inspect <final.mp4>` để xuất bảng **100% toàn bộ các cú cắt (`QC_FINAL_ALL_CUTS_FULL.jpg`)**, bảng **zoom đạo cụ/mặt bàn của 100% cú cắt (`QC_FINAL_ALL_CUTS_ZOOM.jpg`)** và báo cáo Whisper toàn file (`.qc_audit.json`).
+        2. Gọi subagent độc lập `invoke_subagent(TypeName="video-qc-auditor", ...)` đọc trực tiếp 2 bảng ảnh + `.qc_audit.json`, đối chiếu kịch bản & ảnh sản phẩm gốc và ký `<final.mp4>.qc_pass.json` (`copy-cert` sang các bản sao Drive/Local). Hook `PreToolUse` sẽ tự động chặn cứng nếu thiếu chứng nhận `PASS`!

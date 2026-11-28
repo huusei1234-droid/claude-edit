@@ -1,0 +1,33 @@
+{
+  "mcpServers": {
+    "premiere-pro": {
+      "command": "__NODE_EXE__",
+      "args": [
+        "__APPDATA__\\npm\\node_modules\\premiere-pro-mcp\\dist\\index.js"
+      ],
+      "env": {
+        "PREMIERE_MCP_TOOL_PACKS": "essential,captions,delivery,inspection",
+        "PREMIERE_MCP_SCHEMA_PROFILE": "compact"
+      }
+    },
+    "photoshop": {
+      "command": "__NODE_EXE__",
+      "args": [
+        "__APPDATA__\\npm\\node_modules\\@immersive-media-technologies\\photoshop-mcp-imt\\dist\\index.js"
+      ],
+      "env": {
+        "PS_MCP_FACADE": "1",
+        "PS_MCP_UXP": "1",
+        "PHOTOSHOP_PATH": "__PHOTOSHOP_EXE__"
+      }
+    },
+    "studio-ai-hub": {
+      "command": "__VENV_PYTHON__",
+      "args": [
+        "-X",
+        "utf8",
+        "__USER__\\.gemini\\config\\plugins\\studio-power-suite\\bin\\server.py"
+      ]
+    }
+  }
+}

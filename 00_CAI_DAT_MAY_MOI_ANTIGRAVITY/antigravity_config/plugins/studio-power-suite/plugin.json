@@ -1,0 +1,11 @@
+{
+  "name": "studio-power-suite",
+  "displayName": "AI Full Studio Power Suite (After Effects 2027 + Codex + 3 Subagents + Safety Guard)",
+  "description": "Bộ mở rộng tối thượng cho Antigravity: tích hợp MCP điều khiển Adobe After Effects 2027 (AfterFX JSX & aerender), OpenAI Codex trực tiếp (gpt-6.2-sol / gpt-reserve đa luồng / JSON Schema), Studio TTS tiếng Việt, kiểm tra Safe Zone 9:16, 3 Đặc vụ chuyên gia (tvc-motion-architect, phim-ai-director, capcut-timeline-master) và Khóa bảo vệ không cho phép tắt nhầm CapCut/Premiere/Photoshop/AfterFX/Brave.",
+  "version": "1.0.0",
+  "suggestedPrompts": [
+    "Gọi tvc-motion-architect thiết kế intro 3D trên HyperFrames / After Effects 2027",
+    "Dùng codex_parallel_batch viết 6 kịch bản An Vượng Pharma cùng lúc",
+    "Render composition After Effects 2027 ra ProRes 4444 bằng aerender"
+  ]
+}
